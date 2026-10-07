@@ -39,35 +39,5 @@ discovery through governed release and adoption.
 ## About the bank (from the posting)
 Serves more than 120 communities in Wisconsin, Illinois, Minnesota and Missouri.
 
-## Tech stack summary (written by Claude, 2026-10-07)
-
-> ⚠️ Written from Claude's memory (knowledge up to mid-2026). Product names and features change often. Verify on each vendor's site before an interview.
-
-The posting says "familiarity," so the expectation is knowing what each tool can do and when to use it, not coding in it.
-
-### AI building blocks
-| Tech | What it is | Why it matters here | Core pieces you'd use |
-|---|---|---|---|
-| **Large language models (LLMs)** | The AI "brain" that reads and writes text (e.g. Claude, ChatGPT) | Every AI product you'd own uses one | Prompts, spotting made-up answers ("hallucinations"), testing answer quality before release |
-| **AI agents** | An LLM that takes steps itself: looks things up, drafts, updates records | The job says "configure and deliver… agents" | What the agent may do, when a human must approve, logging its actions |
-| **Retrieval patterns ("RAG")** | The AI looks things up in the bank's own documents before answering | Named in the job; cuts down on made-up answers | Choosing which documents it searches; people only see what they're allowed to |
-
-### Where the AI runs
-| Tech | What it is | Why it matters here | Core pieces you'd use |
-|---|---|---|---|
-| **AWS Bedrock** | Amazon's service for using AI models (Anthropic and others) inside the company's own Amazon cloud | Banks like that data stays in their controlled setup | Knowledge Bases (document lookup), Agents, Guardrails (blocking unsafe answers) |
-| **Snowflake** | A cloud "data warehouse": one organized home for company data | Client and deal data likely lives here; AI needs it | Data access rules, hiding sensitive fields, built-in AI features ("Cortex", not certain what's current) |
-| **Microsoft Fabric** | Microsoft's all-in-one data and reporting platform, includes Power BI | The job asks you to monitor usage and business impact | Power BI dashboards for adoption and results |
-
-### Where bankers already work
-| Tech | What it is | Why it matters here | Core pieces you'd use |
-|---|---|---|---|
-| **Microsoft 365 Copilot** | The AI assistant inside Outlook, Teams, Word, Excel | Fits "tools bankers already use" | Rollout and adoption, custom agents, respecting who can see which files |
-| **Power Platform** | "Low-code" tools (build by clicking, not coding): Power Automate, Power Apps, Copilot Studio | Probably the most hands-on part: "workflow automations" and agents | Power Automate flows, Copilot Studio agents |
-| **Salesforce** | A "CRM": where bankers track clients, deals and pipeline | "Revenue workflows" and "banker capacity" likely run through it | Einstein and Agentforce (its AI agents), connecting AI into banker workflows. Unknown which Salesforce products the bank uses |
-
-### Running through all of it: governance
-Banks must prove their AI is safe, fair and under control. Risk reviews, privacy checks, testing evidence and audit trails are built in from day one. Regulators call this "model risk management."
-
-**Claude's recommendation:** go deepest on Power Platform, Copilot and Salesforce, where the hands-on work is.
-
+## Tech stack
+See `tech-stack.md` for what each technology is and how the bank likely uses it.

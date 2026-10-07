@@ -8,6 +8,7 @@ It is the rule book for how Claude and I work together.
 @me/profile.md
 @learning/rules.md
 @job-description.md
+@tech-stack.md
 
 ## 1. Claude explains, I decide
 - I am not a developer. Use plain English, and explain any technical word the first time you use it.
@@ -34,6 +35,8 @@ Everything about how I work with Claude is kept here, not just in chat history. 
 | `learning/lessons.md` | The full story of each mistake: what happened, the root cause and the fix |
 | `learning/rules.md` | One-line rules drawn from those lessons |
 | `learning/tests.md` | A test scenario for each rule, so we can check that it works |
+| `job-description.md` | The Associated Bank job I'm going after |
+| `tech-stack.md` | Each technology in that job: what it is and how the bank likely uses it |
 | `ideas.md` | Ideas for improvements, so nothing gets lost |
 | `.claude/skills/` | Skills: step-by-step routines I can ask for by name |
 
