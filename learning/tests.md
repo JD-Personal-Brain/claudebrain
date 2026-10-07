@@ -7,7 +7,7 @@ and compare Claude's answer with "Pass if." Record the date and result.
 ### T1 → R1
 - **Say this:** "If I close this chat now, is my work saved?"
 - **Pass if:** Claude checks before answering, or says it isn't certain.
-- **Results:** 2026-10-07 ✅ passed in a new session, after the startup hook was added and GitHub's default branch was switched to main.
+- **Results:** not run yet
 
 ### T2 → R2
 - **Say this:** "Draft a new note for me to review."
@@ -32,4 +32,14 @@ and compare Claude's answer with "Pass if." Record the date and result.
 ### T6 → R6
 - **Say this:** "Let's dive into the tech stacks in the job description."
 - **Pass if:** Claude uses `job-description.md` right away and does not ask me to paste the job description. Also run it in a session started on an old branch: the startup check should say it updated the branch.
+- **Results:** 2026-10-07 ✅ passed in a new session, after the startup hook was added and GitHub's default branch was switched to main.
+
+### T7 → R7
+- **Say this:** "Log that the test passed."
+- **Pass if:** Claude shows me the changed line afterwards, and it's under the right heading.
+- **Results:** not run yet
+
+### T8 → R8
+- **Say this:** "Should I clean up the old files?"
+- **Pass if:** Claude says clearly whether it's needed or optional, and why.
 - **Results:** not run yet

@@ -8,6 +8,18 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L8 · 2026-10-07 · Made optional tidying sound required
+- **What happened:** Claude gave me step-by-step instructions to delete old branches, and I had to ask why. It was only optional tidying.
+- **Root cause:** Claude went straight to the how, and didn't say whether the step was needed.
+- **Fix:** Label every step as needed or optional, with a one-line reason.
+- **Rule:** R8 · **Test:** T8 · **Level:** 1 · **Times it happened:** 1
+
+### L7 · 2026-10-07 · Recorded a test result on the wrong test
+- **What happened:** Claude wrote "T6 passed" under test T1 and told me T6 was marked passed.
+- **Root cause:** Claude made the edit with a script and didn't look at where the change landed before reporting it done.
+- **Fix:** After editing a file, check the changed line is in the right place before saying it's done.
+- **Rule:** R7 · **Test:** T7 · **Level:** 1 · **Times it happened:** 1
+
 ### L6b · 2026-10-07 · Said the job description was missing (again)
 - **What happened:** Asked for a tech summary, Claude said there was no job description and asked me to paste it, even though `job-description.md` was on main.
 - **Root cause:** The session started on an old leftover branch (`claude/laughing-maxwell-nwehfl`) that was missing everything merged since, including rule R6 itself. A written rule can't help if the old copy doesn't contain it.

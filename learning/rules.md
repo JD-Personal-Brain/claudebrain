@@ -9,3 +9,5 @@ Rules at Level 2 or higher go at the top.
 - **R1.** Before explaining how a tool or process works, check it first, or say "I'm not certain." *(from L1)*
 - **R3.** Keep momentum. Ask only before saving to GitHub or doing something big; never about small actions like logging a lesson. *(from L3)*
 - **R5.** Stick to the goal I stated. If a new detail might change the direction, ask before switching. *(from L5)*
+- **R7.** After editing a file, check the change landed in the right place before saying it's done. *(from L7)*
+- **R8.** Say whether each step is needed or optional, and why, before giving instructions. *(from L8)*
