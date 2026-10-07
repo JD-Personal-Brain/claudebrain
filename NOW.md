@@ -7,6 +7,7 @@ _Last updated: 2026-10-07 · Last review: none yet (first one due around 2026-10
 - The first pull request (the setup) is waiting for me to review and merge.
 - An official "main" copy now exists on GitHub. Future work is proposed as pull requests against it.
 - New focus: I'm interviewing for a Principal Applied AI Product Manager job at Associated Bank. The focus is thinking through how I'd do the job itself, not interview prep.
+- The full job description is saved in `job-description.md`.
 
 ## What's next
 1. Think through how I'd do the Associated Bank job: start a new session with the Part 1 prompt in `job-prompts.md`.
