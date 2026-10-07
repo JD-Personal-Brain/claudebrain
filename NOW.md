@@ -10,8 +10,9 @@ _Last updated: 2026-10-07 · Last review: none yet (first one due around 2026-10
 
 ## What's next
 1. Review and merge the setup pull request.
-2. Use Claude for real work, and say "wrap up" at the end of each session.
-3. Do the first weekly review around 2026-10-14.
+2. Review and merge the prototypes pull request.
+3. Use Claude for real work, including prototypes for the new job, and say "wrap up" at the end of each session.
+4. Do the first weekly review around 2026-10-14.
 
 ## Current agreements (and why)
 - **Claude explains, I decide.** Why: I'm not a developer and want to stay in control.

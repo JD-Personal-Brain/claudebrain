@@ -18,6 +18,7 @@ when it learns something new.
 
 ## What I want Claude to help with
 - Getting better at working with Claude.
+- Prototyping screens (UI) for my new job.
 - (more to add)
 
 _Last updated: 2026-10-07_
