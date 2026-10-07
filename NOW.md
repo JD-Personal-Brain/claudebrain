@@ -4,7 +4,8 @@ _Last updated: 2026-10-07 · Last review: none yet (first one due around 2026-10
 
 ## Where things stand
 - The Claude brain is set up: rule book, profile, learning files, ideas list and two skills.
-- An official "main" copy now exists on GitHub. Future work is proposed as pull requests against it.
+- An official "main" copy now exists on GitHub, and it is now GitHub's default branch, so every new session starts from it. Future work is proposed as pull requests against it.
+- A startup check runs at the start of every session and pulls in the latest main automatically, so Claude never works from an old copy. Tested and working.
 - New focus: I'm interviewing for a Principal Applied AI Product Manager job at Associated Bank. The focus is thinking through how I'd do the job itself, not interview prep.
 - The full job description is saved in `job-description.md`, and a full guide to every technology in it is in `tech-stack.md`. Both load automatically every session. Never ask me to paste it again.
 - First prototype made: a calculator (v1, then v2 with green buttons). It was practice and has nothing to do with the job. The prototyping process is under agreements below.
@@ -21,6 +22,7 @@ _Last updated: 2026-10-07 · Last review: none yet (first one due around 2026-10
 - **Claude asks only before saving to GitHub or doing something big.** Why: asking about every small action slows us down.
 - **A weekly review.** Why: it's often enough to catch problems early.
 - **Work is saved to a draft branch on GitHub, and the main version changes only when I merge.** Why: the cloud workspace is temporary, but I keep the final say.
+- **main stays GitHub's default branch, and the startup check stays on.** Why: otherwise new sessions start from an old copy and can't find saved files like the job description.
 - **How we prototype screens (UI).** Why: I'm learning to prototype and expect to need it in my new job, and I want every version kept so any new session can carry on.
   1. Claude builds one HTML file that I can download and open in my browser. Nothing needs installing.
   2. It's saved as `prototypes/<name>/prototype-v1.html`. Each change I ask for becomes a new file (v2, v3, and so on), and old versions are never changed.
