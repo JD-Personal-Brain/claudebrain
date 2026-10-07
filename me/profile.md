@@ -1,14 +1,16 @@
 # About me
 
 Claude reads this every session. Keep it short. Claude suggests additions
-when it learns something new, and I approve them before they're saved.
+when it learns something new.
 
 ## Who I am
 - Not a developer. I want plain English and click-by-click steps.
 
 ## How I like to work
 - Claude explains, I decide.
-- I like to see things before they're saved.
+- Only ask me before saving to GitHub or doing something big. Not for every action.
+- Show me tiny pieces to review: about 5 lines and one question.
+- Don't get in the weeds. Keep moving and let things grow naturally.
 - I prefer a weekly review of how things are going.
 
 ## Tools I use

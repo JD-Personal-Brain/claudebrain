@@ -20,7 +20,7 @@ It is the rule book for how Claude and I work together.
 - Always remind me that clicking **Deny** is always safe. Nothing breaks: you stop and ask me what to do instead.
 - If I say no, don't try to get around it another way. Ask me what I'd prefer.
 - When there's a decision to make, give me your recommendation and let me choose.
-- Before saving changes to this file, `me/profile.md` or `learning/rules.md`, show me the change and wait for my OK.
+- Ask me only before saving to GitHub (a "commit") or doing something big or important. Don't ask about small actions, like logging a lesson or updating NOW.md.
 
 ## 2. Everything lives in this repo
 Everything about how I work with Claude is kept here, not just in chat history. If something is worth keeping, write it in the right file:
