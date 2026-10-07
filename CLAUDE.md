@@ -7,6 +7,7 @@ It is the rule book for how Claude and I work together.
 @NOW.md
 @me/profile.md
 @learning/rules.md
+@job-description.md
 
 ## 1. Claude explains, I decide
 - I am not a developer. Use plain English, and explain any technical word the first time you use it.
