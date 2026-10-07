@@ -33,6 +33,7 @@ Everything about how I work with Claude is kept here, not just in chat history. 
 | `learning/lessons.md` | The full story of each mistake: what happened, the root cause and the fix |
 | `learning/rules.md` | One-line rules drawn from those lessons |
 | `learning/tests.md` | A test scenario for each rule, so we can check that it works |
+| `jobs/` | Job descriptions I'm going after, plus Claude's notes on each |
 | `ideas.md` | Ideas for improvements, so nothing gets lost |
 | `.claude/skills/` | Skills: step-by-step routines I can ask for by name |
 

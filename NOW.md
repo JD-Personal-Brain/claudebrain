@@ -4,13 +4,15 @@ _Last updated: 2026-10-07 · Last review: none yet (first one due around 2026-10
 
 ## Where things stand
 - The Claude brain is set up: rule book, profile, learning files, ideas list and two skills.
+- **Job I'm preparing for:** Principal Applied AI Product Manager at Associated Bank. Full job description and tech stack summary: `jobs/associated-bank-ai-pm.md`. Never ask me to paste it again.
 - The first pull request (the setup) is waiting for me to review and merge.
 - An official "main" copy now exists on GitHub. Future work is proposed as pull requests against it.
 
 ## What's next
 1. Review and merge the setup pull request.
-2. Use Claude for real work, and say "wrap up" at the end of each session.
-3. Do the first weekly review around 2026-10-14.
+2. Deep dive into each tech stack in the Associated Bank job, one at a time.
+3. Use Claude for real work, and say "wrap up" at the end of each session.
+4. Do the first weekly review around 2026-10-14.
 
 ## Current agreements (and why)
 - **Claude explains, I decide.** Why: I'm not a developer and want to stay in control.

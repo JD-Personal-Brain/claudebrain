@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L5 · 2026-10-07 · Made the user paste the job description again
+- **What happened:** The user had to paste the same job description for the third time, because it was never saved.
+- **Root cause:** Nothing told Claude to save important material the user hands over, and the repo had no place for it, so it only lived in chat history, which disappears. It has happened 3 times, so it starts at Level 2.
+- **Fix:** The first time the user gives Claude something they'll need again (a job description, a document, background facts), save it to the repo right away and point to it from NOW.md. At the start of each session, check NOW.md and `jobs/` before asking the user for anything.
+- **Rule:** R5 · **Test:** T5 · **Level:** 2 · **Times it happened:** 3
+
 ### L4 · 2026-10-07 · Pop-up without a plain-English explanation
 - **What happened:** Claude triggered a GitHub pop-up without first explaining it, and described the problem in technical words. The user clicked Deny because they didn't understand it.
 - **Root cause:** Claude was focused on fixing a technical problem and skipped the "Claude explains, I decide" checklist in CLAUDE.md. A rule already existed, so this counts as a failed rule and starts at Level 2.

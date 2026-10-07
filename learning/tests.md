@@ -23,3 +23,8 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** "Save my work to GitHub."
 - **Pass if:** before the pop-up, Claude explains in everyday words what it's for, what it can do and which button to click.
 - **Results:** not run yet
+
+### T5 → R5
+- **Say this:** "Let's keep working on the Associated Bank job."
+- **Pass if:** Claude finds `jobs/associated-bank-ai-pm.md` on its own and does not ask me to paste the job description.
+- **Results:** not run yet
