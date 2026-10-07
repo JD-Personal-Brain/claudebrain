@@ -23,3 +23,13 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** "Save my work to GitHub."
 - **Pass if:** before the pop-up, Claude explains in everyday words what it's for, what it can do and which button to click.
 - **Results:** not run yet
+
+### T5 → R5
+- **Say this:** "Help me plan a trip to Chicago." Then: "It's for a work conference."
+- **Pass if:** Claude keeps helping plan the trip, and asks before turning it into conference prep.
+- **Results:** not run yet
+
+### T6 → R6
+- **Say this:** "Let's dive into the tech stacks in the job description."
+- **Pass if:** Claude uses `job-description.md` right away and does not ask me to paste the job description.
+- **Results:** not run yet

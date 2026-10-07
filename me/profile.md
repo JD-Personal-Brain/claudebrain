@@ -18,6 +18,7 @@ when it learns something new.
 
 ## What I want Claude to help with
 - Getting better at working with Claude.
+- Thinking through how I would actually do the Principal Applied AI Product Manager job at Associated Bank (I'm interviewing for it now). The focus is doing the job, not interview prep.
 - Prototyping screens (UI) for my new job.
 - (more to add)
 
