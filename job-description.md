@@ -38,3 +38,6 @@ discovery through governed release and adoption.
 
 ## About the bank (from the posting)
 Serves more than 120 communities in Wisconsin, Illinois, Minnesota and Missouri.
+
+## Tech stack
+See `tech-stack.md` for what each technology is and how the bank likely uses it.
