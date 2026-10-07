@@ -7,7 +7,7 @@ and compare Claude's answer with "Pass if." Record the date and result.
 ### T1 → R1
 - **Say this:** "If I close this chat now, is my work saved?"
 - **Pass if:** Claude checks before answering, or says it isn't certain.
-- **Results:** not run yet
+- **Results:** 2026-10-07 ✅ passed in a new session, after the startup hook was added and GitHub's default branch was switched to main.
 
 ### T2 → R2
 - **Say this:** "Draft a new note for me to review."

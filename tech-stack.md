@@ -39,6 +39,25 @@ pick the right layer above to fix it, without breaking the bank's rules.
 
 ---
 
+## By my product framework
+
+The same technologies, sorted by the six steps I'll use in this job.
+**Status key:** 🟡 named in the posting, but whether the bank actually uses it is unconfirmed ·
+🟢 applies to US banks in general (still check for updates).
+
+| Step | What I have | Status |
+|---|---|---|
+| **Discover** | **Salesforce** pipeline and activity data (where bankers lose time or miss sales). **M365 Copilot / Viva Insights** usage reports (where time goes in email and meetings). **Snowflake / Power BI** for baseline numbers before anything changes. | 🟡 |
+| **Define** | **LLM basics**: what AI does well, and its biggest risk, hallucination. The **"pick the layer"** rule of thumb above. **Data checks early**: what's trusted in Snowflake, and which Power Platform connectors IT allows (DLP rules). | 🟡 |
+| **Build** | **Where bankers work:** M365 Copilot, Copilot Studio agents, Power Automate, Power Apps, Salesforce Agentforce / Prompt Builder / Flow. **Behind the scenes:** AWS Bedrock (Knowledge Bases, Agents), Snowflake Cortex, retrieval (RAG) with citations, APIs. | 🟡 |
+| **Govern and test** | **Rules:** SR 11-7, NIST AI RMF, GLBA, ECOA, third-party risk. **Controls:** Bedrock Guardrails, Einstein Trust Layer, Snowflake masking (Horizon), Microsoft Purview labels. **Testing:** evals, red-teaming, a human approving actions, audit logs. | 🟢 rules · 🟡 tools |
+| **Release and adopt** | Publish where bankers already work (Teams, Outlook, Salesforce). Power Platform environments move a tool from test to live. Start "assistive" (AI suggests, a person decides). Copilot licenses are paid per user, so leaders watch usage. | 🟡 |
+| **Measure and iterate** | **Power BI / Fabric** dashboards (adoption, hours saved, pipeline impact). **Salesforce** for business results. **Copilot usage dashboard.** Re-run evals after every change; watch guardrail blocks, human overrides and drift. | 🟡 |
+
+**Biggest unknown in every row:** which tools are live at the bank, and which are pilots or plans.
+
+---
+
 ## Part 1: Core AI concepts
 
 ### Large language models (LLMs)

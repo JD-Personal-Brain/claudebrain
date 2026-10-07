@@ -12,6 +12,7 @@ when it learns something new.
 - Show me tiny pieces to review: about 5 lines and one question.
 - Don't get in the weeds. Keep moving and let things grow naturally.
 - I prefer a weekly review of how things are going.
+- When something keeps going wrong, I want a lasting fix that stops it for good, not just an apology.
 
 ## Tools I use
 - (not filled in yet)
