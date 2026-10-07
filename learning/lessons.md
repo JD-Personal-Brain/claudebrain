@@ -8,11 +8,17 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L6b · 2026-10-07 · Said the job description was missing (again)
+- **What happened:** Asked for a tech summary, Claude said there was no job description and asked me to paste it, even though `job-description.md` was on main.
+- **Root cause:** The session started on an old leftover branch (`claude/laughing-maxwell-nwehfl`) that was missing everything merged since, including rule R6 itself. A written rule can't help if the old copy doesn't contain it.
+- **Fix:** A startup hook (`.claude/hooks/session-start.sh`) now runs automatically at the start of every cloud session and merges the latest main in before Claude reads anything. If it can't, it shows Claude a warning to pass on. Backup rule: check origin/main before ever saying something is missing.
+- **Rule:** R6 · **Test:** T6 · **Level:** 3 (repeat of L6) · **Times it happened:** 4
+
 ### L6 · 2026-10-07 · Made me paste the job description again
 - **What happened:** I had to paste the Associated Bank job description a third time. Claude said it couldn't find it, even though `job-description.md` was already on main.
 - **Root cause:** The session was started from an old draft branch (`claude/focused-noether-hvnz1x`) instead of main, so its copy was missing everything merged since. Claude didn't check whether its copy was up to date. Also, the job description was only mentioned in NOW.md, not loaded automatically. It happened 3 times, so it starts at Level 2.
 - **Fix:** `job-description.md` is now loaded automatically by CLAUDE.md in every session. At the start of each session, Claude checks that its copy matches the latest main version. If it doesn't, Claude says so first, before anything else.
-- **Rule:** R6 · **Test:** T6 · **Level:** 2 · **Times it happened:** 3
+- **Rule:** R6 · **Test:** T6 · **Level:** 2 → 3 (see L6b) · **Times it happened:** 3
 
 ### L5 · 2026-10-07 · Steered away from what I asked for
 - **What happened:** I said I wanted to think through how to do a new job. When I mentioned I was still interviewing, Claude switched to interview prep, and I had to correct it.

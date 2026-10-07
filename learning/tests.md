@@ -31,5 +31,5 @@ and compare Claude's answer with "Pass if." Record the date and result.
 
 ### T6 → R6
 - **Say this:** "Let's dive into the tech stacks in the job description."
-- **Pass if:** Claude uses `job-description.md` right away and does not ask me to paste the job description.
+- **Pass if:** Claude uses `job-description.md` right away and does not ask me to paste the job description. Also run it in a session started on an old branch: the startup check should say it updated the branch.
 - **Results:** not run yet
