@@ -11,6 +11,7 @@ If a mistake happens again, its fix moves up a level:
 ### L6b · 2026-10-07 · Said the job description was missing (again)
 - **What happened:** Asked for a tech summary, Claude said there was no job description and asked me to paste it, even though `job-description.md` was on main.
 - **Root cause:** The session started on an old leftover branch (`claude/laughing-maxwell-nwehfl`) that was missing everything merged since, including rule R6 itself. A written rule can't help if the old copy doesn't contain it.
+- **Deeper root cause (found while testing):** GitHub's default branch was still the old setup branch (`claude/focused-noether-hvnz1x`), so every new session started from that first version. I switched the default branch to main on 2026-10-07.
 - **Fix:** A startup hook (`.claude/hooks/session-start.sh`) now runs automatically at the start of every cloud session and merges the latest main in before Claude reads anything. If it can't, it shows Claude a warning to pass on. Backup rule: check origin/main before ever saying something is missing.
 - **Rule:** R6 · **Test:** T6 · **Level:** 3 (repeat of L6) · **Times it happened:** 4
 
