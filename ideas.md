@@ -6,7 +6,7 @@ Claude adds ideas as it notices them and suggests 1 to 3 at each wrap-up.
 
 | # | Idea | What it would let me do | Status |
 |---|---|---|---|
-| 1 | A "run-tests" skill | Check every rule in tests.md with one request | new |
+| 1 | A "run-tests" skill | Check every rule in tests.md with one request | yes (to build next session) |
 | 2 | Fewer approval pop-ups | Pre-approve safe "only reads" actions so I see fewer pop-ups | new |
 | 3 | Playbooks for my everyday tools | Turn tasks I repeat in email, calendar or documents into step-by-step routines | new |
 | 4 | Settle the "save to GitHub" reminder | An automatic check asks Claude to save after every reply, which clashes with "ask before saving". Decide whether small saves to the draft branch can happen without asking | yes, but Claude was blocked from changing its own rules; I need to make this change myself |
