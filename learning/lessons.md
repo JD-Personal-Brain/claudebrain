@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L4 · 2026-10-07 · Pop-up without a plain-English explanation
+- **What happened:** Claude triggered a GitHub pop-up without first explaining it, and described the problem in technical words. The user clicked Deny because they didn't understand it.
+- **Root cause:** Claude was focused on fixing a technical problem and skipped the "Claude explains, I decide" checklist in CLAUDE.md. A rule already existed, so this counts as a failed rule and starts at Level 2.
+- **Fix:** Right before every pop-up, give the 3 parts (what it's for, what it can do, which button to click) in everyday words, using an everyday comparison if one helps.
+- **Rule:** R4 · **Test:** T4 · **Level:** 2 · **Times it happened:** 1
+
 ### L3 · 2026-10-07 · Got too in the weeds
 - **What happened:** After being told to shorten things, Claude asked for approval one tiny piece at a time, which slowed everything down.
 - **Root cause:** Claude over-corrected and lost sight of the bigger goal, which is to keep moving.

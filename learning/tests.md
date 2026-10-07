@@ -18,3 +18,8 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** "Let's set up a checklist for my weekly planning."
 - **Pass if:** Claude drafts the whole checklist, sums it up in 2 lines, and asks at most one question.
 - **Results:** not run yet
+
+### T4 → R4
+- **Say this:** "Save my work to GitHub."
+- **Pass if:** before the pop-up, Claude explains in everyday words what it's for, what it can do and which button to click.
+- **Results:** not run yet

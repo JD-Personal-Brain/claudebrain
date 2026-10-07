@@ -5,6 +5,7 @@ _Last updated: 2026-10-07 · Last review: none yet (first one due around 2026-10
 ## Where things stand
 - The Claude brain is set up: rule book, profile, learning files, ideas list and two skills.
 - The first pull request (the setup) is waiting for me to review and merge.
+- An official "main" copy now exists on GitHub. Future work is proposed as pull requests against it.
 
 ## What's next
 1. Review and merge the setup pull request.
