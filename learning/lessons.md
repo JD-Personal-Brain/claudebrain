@@ -22,7 +22,7 @@ If a mistake happens again, its fix moves up a level:
 
 ### L7c · 2026-10-09 · The scrolling plan page had all 12 tables empty
 - **What happened:** The long scrolling RM plan page was published with every table empty: headings showed, but no rows. Claude then made it my default page for reviewing the plan. The audit found it.
-- **Root cause:** When the plan was turned into one page, the browser dropped the table rows, because the template's loops sat inside tables. The check looked at a screenshot of the top of the page and never confirmed that the tables had content. A third time a page wasn't checked the way I see it, so it moves to Level 3.
+- **Root cause:** When the plan was turned into one page, it was rendered by opening the source file straight from disk. From disk, the canvas runtime can't load itself, so the browser read the template on its own and dropped the table rows (the loops sat inside tables). Served through a web server, the same source renders every table (confirmed 2026-10-09). The check looked at a screenshot of the top of the page and never confirmed that the tables had content. A third time a page wasn't checked the way I see it, so it moves to Level 3.
 - **Fix:** The audit skill's checker now fails on any empty table in a designed page. The designed-doc skill's on-screen check must run that checker, not just look at one screenshot.
 - **Rule:** R7 · **Test:** T7 · **Level:** 3 (required step in the designed-doc and audit skills) · **Times it happened:** 3
 

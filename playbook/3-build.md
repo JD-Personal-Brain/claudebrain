@@ -32,7 +32,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Me**, with platform teams.
   - Note: which spec fields were hard to fill in. That tells you what to ask earlier.
-  - Agent idea: an **agent spec drafter** that turns a user story into a first spec. *Draft*.
+  - Agent idea: an **agent spec drafter** (spec M10) that turns a user story into a first spec. *Draft*.
 - **For RM analytics:** A1 Signal finder → A2 Insight writer → Salesforce record and the A4 Weekly opportunity digest. A3 handles prep and follow-up (memo Appendix A).
 
 ---
@@ -52,7 +52,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Me**, with the data engineer.
   - Note: which checks failed in the first week.
-  - Agent: the quality checks become **Auto** once they run on every refresh. A11 Data contract checker (Appendix A) could watch them, but its spec is a one-time check today, so it needs an ongoing mode added.
+  - Agent: the quality checks become **Auto** once they run on every refresh. A11 Data contract checker (Appendix A) watches them: its ongoing mode runs on every data refresh.
 - **For RM analytics:** signal views for balance trends, product gaps and activity.
 
 ---
@@ -94,7 +94,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Me**, with platform teams.
   - Note: which controls the platform gave you for free, and which needed building. Next project, choose platforms with that in mind.
-  - Agent idea: a **controls checker** that re-runs the control tests on every release. *Auto*, test environment only.
+  - Agent idea: a **controls checker** (spec M11) that re-runs the control tests on every release. *Auto*, test environment only.
 - **For RM analytics:** RMs approve before anything is saved or sent; each RM sees only their permitted clients.
 
 ---
@@ -134,7 +134,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Draft**. AI suggests cases; users approve the answers.
   - Note: how long grading took per example.
-  - Agent idea: a **test case generator** that suggests new cases from feedback and failures. *Draft*.
+  - Agent idea: a **test case generator** (spec M12) that suggests new cases from feedback and failures. *Draft*.
 - **For RM analytics:** real client examples graded by experienced RMs.
 
 ---
@@ -174,12 +174,12 @@ log (see `README.md`) for every sub-step.
 
 | Sub-step | Agent | First time | Aim for | Already specified? |
 |---|---|---|---|---|
-| 3.1 | Agent spec drafter | Me | Draft | New |
-| 3.2 | Data quality checks (A11 in an ongoing mode) | Me | Auto | Partly: add an ongoing mode to A11 |
+| 3.1 | Agent spec drafter | Me | Draft | Yes, M10 |
+| 3.2 | Data quality checks (A11 in an ongoing mode) | Me | Auto | Yes, A11 (ongoing mode added) |
 | 3.3 | None new (A13 checks the outputs) | Draft | Draft | — |
-| 3.4 | Controls checker | Me | Auto (test only) | New |
+| 3.4 | Controls checker | Me | Auto (test only) | Yes, M11 |
 | 3.5 | None (its feedback feeds A17 in step 5) | Me | Me | — |
-| 3.6 | Test case generator | Draft | Draft | New |
+| 3.6 | Test case generator | Draft | Draft | Yes, M12 |
 | 3.7 | A13 Test grader | Draft | Auto | Yes, Appendix A |
 
 **First time** = how the task is done on the first project. **Aim for** = its kind in `product-framework.md`.

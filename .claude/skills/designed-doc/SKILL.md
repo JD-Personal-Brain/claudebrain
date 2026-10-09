@@ -29,7 +29,7 @@ Which format:
 
 ## 4. Check it on screen (required, rule R7)
 Before saying it's done:
-1. Render it locally with Playwright (Chromium is at `/opt/pw-browsers/chromium`). Canvas artboards need the canvas's `dc-runtime.js` saved next to them as `support.js`.
+1. Render it locally with Playwright (Chromium is at `/opt/pw-browsers/chromium`). Canvas artboards need the canvas's `dc-runtime.js` saved next to them as `support.js`, and must be served through a local web server (`python3 -m http.server`), never opened from disk: from disk the runtime drops table rows (from L7c).
 2. Measure: a one-pager's last line must end inside 1,056 px; a long doc must not scroll sideways at 400 px wide.
 3. Run `python3 .claude/skills/audit/check.py`: it fails on any empty table (required, from L7c).
 4. Look at one screenshot. Fix anything cut off, overlapping or empty, then publish.

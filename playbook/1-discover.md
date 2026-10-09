@@ -35,7 +35,7 @@ sub-step. At the end, run the automation review.
 - **Automation watch:**
   - First time: **Me** (sponsor and risk conversations) and **Draft** (setting up the tracker and files).
   - Note: how long setting up the tracker took, and what you copied by hand.
-  - Agent idea: a **kickoff pack builder** that creates the tracker, decision log, project file and who-decides template from one project statement. *Draft*: you check it.
+  - Agent idea: a **kickoff pack builder** (spec M1) that creates the tracker, decision log, project file and who-decides template from one project statement. *Draft*: you check it.
 - **For RM analytics:** sponsor = the commercial banking leader. The statement: "more new revenue from RMs, by finding opportunities and freeing time to act on them." The memo's "Who's involved" table (section 3) is the who-decides list.
 
 ---
@@ -58,7 +58,7 @@ sub-step. At the end, run the automation review.
 - **Automation watch:**
   - First time: **Me**. Agreeing a goal is a conversation.
   - Note: which questions got the most useful answers. They become a standard question list.
-  - Agent idea: an **outcome note drafter** that turns the meeting recap into the one-page note (M365 Copilot). *Draft*.
+  - Agent idea: an **outcome note drafter** (spec M2) that turns the meeting recap into the one-page note (M365 Copilot). *Draft*.
 - **For RM analytics:** two goals (more revenue opportunities, more time to act) and three levers (win new clients, grow existing clients, keep clients), as in memo section 1.
 
 ---
@@ -111,7 +111,7 @@ sub-step. At the end, run the automation review.
   - Note: how long scheduling took (it usually takes more time than you expect), and whether your guide changed after the first few interviews.
   - Agents:
     - **A7 Interview synthesizer** (Appendix A): turns recaps into themes linked to their sources. You check every theme.
-    - New: an **interview scheduler** (Power Automate with Outlook) that sends invitations and reminders to nominated users. *Auto*, once the bank allows automations to message people ⚠️.
+    - New: an **interview scheduler** (spec M3) (Power Automate with Outlook) that sends invitations and reminders to nominated users. *Auto*, once the bank allows automations to message people ⚠️.
 - **For RM analytics:** talk to RMs, their sales managers, and treasury specialists and credit analysts. The key question: "How do you decide which client to call next?"
 
 ---
@@ -182,7 +182,7 @@ sub-step. At the end, run the automation review.
 - **Automation watch:**
   - First time: **Draft** for the mock-up (Claude builds it with the `prototype` skill). **Me** for running the sessions and summarizing reactions.
   - Note: how long each version took to build, and what feedback came up every time.
-  - Agent idea: a **reaction summarizer** that turns session notes into "what to change next". *Draft*.
+  - Agent idea: a **reaction summarizer** (spec M4) that turns session notes into "what to change next". *Draft*.
 - **For RM analytics:** a pre-meeting client brief and a weekly opportunity list, built on sample clients.
 
 ---
@@ -207,8 +207,8 @@ sub-step. At the end, run the automation review.
   - First time: **Me** for the choice and for recording the baseline by hand. **Draft** for scoring and the gate pack.
   - Note: which parts of the gate pack you copied from earlier sub-steps. That copying can be automated.
   - Agent ideas:
-    - A **baseline recorder** (Power BI) that snapshots the measure on a schedule from today on. *Auto*.
-    - A **gate pack drafter** that pulls each sub-step's outputs into one document. *Draft*.
+    - A **baseline recorder** (spec M5) (Power BI) that snapshots the measure on a schedule from today on. *Auto*.
+    - A **gate pack drafter** (spec M6) that pulls each sub-step's outputs into one document. *Draft*.
 - **For RM analytics:** wave 1 = pre-meeting briefs, meeting follow-ups and the weekly opportunity list (memo Step 1).
 
 ---
@@ -231,16 +231,16 @@ table in `product-framework.md`.
 
 | Sub-step | Agent | First time | Aim for | Already specified? |
 |---|---|---|---|---|
-| 1.0 | Kickoff pack builder | Draft | Draft | New |
-| 1.1 | Outcome note drafter | Me | Draft | New |
+| 1.0 | Kickoff pack builder | Draft | Draft | Yes, M1 |
+| 1.1 | Outcome note drafter | Me | Draft | Yes, M2 |
 | 1.2 | A8 Opportunity sizer | Draft | Draft | Yes, Appendix A |
-| 1.3 | Interview scheduler | Me | Auto ⚠️ | New |
+| 1.3 | Interview scheduler | Me | Auto ⚠️ | Yes, M3 |
 | 1.3 | A7 Interview synthesizer | Draft | Draft | Yes, Appendix A |
 | 1.4 | A9 Time-use analyst | Draft | Draft | Yes, Appendix A |
 | 1.5 | None (stays with a person) | Me | Me | — |
-| 1.6 | Reaction summarizer | Me | Draft | New |
-| 1.7 | Baseline recorder | Me | Auto | New |
-| 1.7 | Gate pack drafter | Draft | Draft | New |
+| 1.6 | Reaction summarizer | Me | Draft | Yes, M4 |
+| 1.7 | Baseline recorder | Me | Auto | Yes, M5 |
+| 1.7 | Gate pack drafter | Draft | Draft | Yes, M6 |
 
 **First time** = how the task is done on the first project. **Aim for** = its kind in `product-framework.md`.
 

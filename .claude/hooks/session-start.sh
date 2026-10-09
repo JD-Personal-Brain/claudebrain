@@ -56,5 +56,6 @@ for b in $(git for-each-ref --format='%(refname:short)' refs/remotes/origin); do
     found=yes
   fi
   echo "  • ${b#origin/} (last saved $(git log -1 --format=%cd --date=short "$b")), files:"
-  git diff --name-only origin/main..."$b" | head -12 | sed 's/^/      /'
+  # Only the files main would actually change if this branch were merged (idea 19).
+  git diff --name-only origin/main "$merged_tree" | head -12 | sed 's/^/      /'
 done

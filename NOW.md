@@ -3,7 +3,7 @@
 _Last updated: 2026-10-09 · Last review: none yet (first one due around 2026-10-14)_
 
 ## Where things stand
-- The Claude brain is set up: rule book, profile, learning files, ideas list and eight skills: log-lesson, wrap-up, designed-doc, write-prompt, run-tests, prototype, new-use-case and (new 2026-10-09) audit.
+- The Claude brain is set up: rule book, profile, learning files, ideas list and ten skills: log-lesson, wrap-up, designed-doc, write-prompt, run-tests, prototype, new-use-case, audit and (new 2026-10-09) make-skill and agent-spec.
 - An official "main" copy now exists on GitHub, and it is now GitHub's default branch, so every new session starts from it. Future work is proposed as pull requests against it.
 - A startup check runs at the start of every session and pulls in the latest main automatically, so Claude never works from an old copy. Tested and working.
 - The startup check now also warns about work saved on a side branch that never reached main (added 2026-10-09, after my RM framework was found stranded).
@@ -24,16 +24,20 @@ _Last updated: 2026-10-09 · Last review: none yet (first one due around 2026-10
 - **Playbook started** (2026-10-09): `playbook/` is the field manual under the delivery machine. It covers how to do each sub-step the first time, what to log, and which agent each one could become. Read it as a designed page: https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4 (the .md files are only working copies). All six steps are drafted and passed a full audit on 2026-10-09: 20 findings fixed and checked by a second reviewer, then 8 follow-ups fixed. The framework tables now have one numbered row per playbook sub-step, and the delivery machine page builds straight from them, so they can't drift apart. "Product owner" is now "product manager" everywhere (memo, design page and scrolling page). The product manager owns each product until a long-term owner is named: recorded in Define (2.8), confirmed before scaling (5.7).
 - **Scrolling plan page fixed** (2026-10-09): all 12 tables on https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk had been empty since it was made; the audit found it. They're filled and checked now, so re-read any tables I skimmed past.
 - **Audit is now part of the process** (2026-10-09): the new `audit` skill (checker + two independent reviewers) is step 0 of every wrap-up, and rule R18 says nothing is offered for merging until it passes.
+- **Every approved idea now gets a home that runs** (2026-10-09): the `make-skill` skill puts each one into a new skill, a step in a skill, a rule with a test, or a one-off task, and `ideas.md` has a "Where it runs" column. Ideas 11, 12, 18, 19, 27, 28 and 29 are done.
+- **Agent library** (2026-10-09): `playbook/agents.md` specifies the 19 agents that run the delivery machine (M1–M19), written with the new `agent-spec` skill. It's shown at the end of the playbook page. The RM memo's A11 and A15 now have an ongoing mode.
+- **More designed pages** (2026-10-09), each built from its working file: Product Framework https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ · Tech Stack Guide https://claude.ai/artifact/DDmD65zw7LjnP5v2nHDFW2 · Job Notes https://claude.ai/artifact/SpcnPMbMEgyxZSoYVsRdES.
+- **Design page found healthy** (2026-10-09): rendered properly, every table on the RM design page shows. The scrolling page's empty tables came from rendering its source straight from disk, which the skills now forbid.
 - First prototype made: a calculator (v1, then v2 with green buttons). It was practice and has nothing to do with the job. The prototyping process is under agreements below.
 
 ## What's next
-1. Review the playbook on its designed page (https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4). Then turn the agent shortlists into full specs, and apply the delivery machine to the RM memo as the first worked example.
-2. Check why the RM design page opened blank (it may be the same table problem the scrolling page had), then read the rest of the plan (summary from "What lets us move this fast" on, then Parts 1–6), and open the McKinsey link in a browser before sharing. Use the long scrolling page (https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk): on 2026-10-09 the design page opened blank in the app.
+1. Review the playbook on its designed page (https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4), including the new agent library at the end. Then apply the delivery machine to the RM memo as the first worked example.
+2. Reopen the RM design page to see if it still opens blank (its content is fine; if it's blank, it's the app's viewer). Then read the rest of the plan (summary from "What lets us move this fast" on, then Parts 1–6), and open the McKinsey link in a browser before sharing. Use the long scrolling page (https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk): on 2026-10-09 the design page opened blank in the app.
 3. Keep working through the Claude Mastery course: paste in the next page (after "The Claude Prompt Formula"; next up is Module 3: Projects, Connectors, Skills).
 4. Continue the Associated Bank job, Part 1, with the prompt in `job-prompts.md`. Pick up where `job-notes.md` stops.
 5. Use Claude for real work, including prototypes for the new job, and say "wrap up" at the end of each session.
 6. Run the tests that need a real session (T4, T7, T10, T13, T14, T15, T17; second parts of T2, T3, T9), then try the new skills on real work: say "run the tests", "prototype X", "write a prompt for X" or "new use case: X".
-7. Remove my safety rules and update the wrap-up skill myself in GitHub (idea 16): Claude is blocked from changing those.
+7. Remove my safety rules (idea 16, approved 2026-10-07): the pop-up explanations and "Deny is safe" reminders in `CLAUDE.md` section 1 and rule R4. The wrap-up part is done. Earlier sessions couldn't edit `CLAUDE.md`; Claude tries next time I say go, and if it's blocked, I edit it in GitHub.
 8. Do the first weekly review around 2026-10-14.
 
 ## Current agreements (and why)
