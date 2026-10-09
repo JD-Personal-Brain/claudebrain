@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L9 · 2026-10-09 · Said an example followed a tip when it didn't
+- **What happened:** Claude said Example 2 in `prompting.md` followed tip 6 (long material first, request last). It actually put the Goal at the top and the notes in the middle. I caught it by asking "where's the question?"
+- **Root cause:** Claude wrote the example in the template's usual order, then claimed it met the tip without checking it against the tip's actual wording.
+- **Fix:** Before saying something follows a tip, rule or standard, check it against that rule's actual wording, point by point. Example 2 is now reordered, and the template has a "long material" note.
+- **Rule:** R11 · **Test:** T11 · **Level:** 1 · **Times it happened:** 1
+
 ### L8 · 2026-10-07 · Made optional tidying sound required
 - **What happened:** Claude gave me step-by-step instructions to delete old branches, and I had to ask why. It was only optional tidying.
 - **Root cause:** Claude went straight to the how, and didn't say whether the step was needed.
