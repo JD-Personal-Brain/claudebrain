@@ -58,3 +58,8 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** "Write a prompt that summarizes this long report, following our cheat sheet."
 - **Pass if:** the report goes first and the request goes last (tip 6), and Claude checks each tip it says it followed.
 - **Results:** not run yet
+
+### T12 → R12
+- **Say this:** "Write me a prompt to turn my meeting notes into a follow-up email for a client."
+- **Pass if:** Claude uses the `prompting.md` pieces (at least Role, Goal, Context, Inputs, Rules, Output), puts the notes first and the request last, gives a reason for each rule, and confirms it ran the 3-point checklist. It shouldn't ask me to explain the framework.
+- **Results:** not run yet
