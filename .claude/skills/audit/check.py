@@ -36,14 +36,14 @@ for f in glob.glob('designs/*.html'):
     for body in re.findall(r'<tbody>([\s\S]*?)</tbody>',open(f).read()):
         if not re.sub(r'<[^>]+>','',body).strip(): print(f,"has an empty table"); probs+=1
 # 3. pages built from working copies are up to date
-for page,builder in [('designs/delivery-machine.html','designs/delivery-machine-build.py'),('designs/playbook.html','designs/playbook-build.py'),('designs/product-framework.html','designs/md-page-build.py'),('designs/tech-stack.html','designs/md-page-build.py'),('designs/job-notes.html','designs/md-page-build.py'),('designs/job-description.html','designs/md-page-build.py'),('designs/prompting.html','designs/md-page-build.py'),('designs/library.html','designs/library-build.py')]:
+for page,builder in [('designs/delivery-machine.html','designs/delivery-machine-build.py'),('designs/playbook.html','designs/playbook-build.py'),('designs/product-framework.html','designs/md-page-build.py'),('designs/tech-stack.html','designs/md-page-build.py'),('designs/job-notes.html','designs/md-page-build.py'),('designs/job-description.html','designs/md-page-build.py'),('designs/prompting.html','designs/md-page-build.py'),('designs/library.html','designs/library-build.py'),('designs/workflows.html','designs/workflows-build.py'),('designs/agents.html','designs/agents-build.py')]:
     before=open(page).read()
     subprocess.run(['python3',builder],check=True)
     if open(page).read()!=before: print(page,"was out of date: rebuilt it, republish it"); probs+=1
 # 4. every published page is in the Document Library
 import json
 lib=json.load(open('designs/library.json'))
-lib_urls={d['url'] for a in lib['areas'] for d in [a['parent']]+a['children']}
+lib_urls={d['url'] for a in lib['areas'] for d in [a['parent']]+a['children']}|{b['url'] for b in lib.get('building_blocks',[])}
 readme_urls=set(re.findall(r'https://claude\.ai/artifact/\w+',open('designs/README.md').read()))
 library_url='https://claude.ai/artifact/LTpbCT4kN4LcyEoYnh7vgj'
 for u in sorted(readme_urls-lib_urls-{library_url}): print("designs/library.json is missing",u); probs+=1

@@ -15,6 +15,8 @@ Edit here, publish to the same link, then save a draft.
 | Job Notes | https://claude.ai/artifact/SpcnPMbMEgyxZSoYVsRdES | `job-notes.html` (built by `md-page-build.py` from `job-notes.md`) |
 | Job Description | https://claude.ai/artifact/9CUyQt1EDbmu1R7DVRyvkM | `job-description.html` (built by `md-page-build.py` from `job-description.md`) |
 | Prompting Guide | https://claude.ai/artifact/Secfj5fBtpVA1veroUU7A7 | `prompting.html` (built by `md-page-build.py` from `prompting.md`) |
+| Workflow Maps (building block) | https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX | `workflows.html` (built by `workflows-build.py` from `playbook/`, `product-framework.md` and the RM memo's Appendix B) |
+| Agent Library (building block) | https://claude.ai/artifact/Cn9nANQoqp2BP7yrmy61zn | `agents.html` (built by `agents-build.py` from `playbook/agents.md` and the RM memo's Appendix A) |
 | **Document Library** (pinned to my sidebar; lists every page above) | https://claude.ai/artifact/LTpbCT4kN4LcyEoYnh7vgj | `library.html` (built by `library-build.py` from `library.json`) |
 
 **Shared page kit:** `pagekit.py` holds the house style and the Markdown-to-page code used by `playbook-build.py` and `md-page-build.py`. To give another working file a designed page, add it to `PAGES` in `md-page-build.py`.

@@ -1,41 +1,135 @@
 {
-  "start_here": ["playbook", "rm-plan", "job-description"],
+  "building_blocks": [
+    {
+      "id": "workflows",
+      "name": "Workflow Maps",
+      "what": "See the shape of the work: each main process left to right, with its sub-processes branching off. Click any box for details.",
+      "count": "2 maps · 53 branches",
+      "status": "Waiting for review",
+      "url": "https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX",
+      "source": "playbook/, product-framework.md, RM memo Appendix B"
+    },
+    {
+      "id": "agents",
+      "name": "Agent Library",
+      "what": "Every agent in one place: what it does, what it may and may not do, and who's in charge. Filter by step or by who it serves.",
+      "count": "39 agents",
+      "status": "Waiting for review",
+      "url": "https://claude.ai/artifact/Cn9nANQoqp2BP7yrmy61zn",
+      "source": "playbook/agents.md, RM memo Appendix A"
+    }
+  ],
+  "start_here": [
+    "playbook",
+    "rm-plan",
+    "job-description"
+  ],
   "areas": [
     {
       "id": "job",
       "name": "The job",
       "why": "What Associated Bank needs, the tools it runs on, and my thinking so far.",
-      "parent": {"id": "job-description", "name": "Job Description", "what": "The Principal Applied AI Product Manager posting: what the role owns, what it requires and the tools it names.", "status": "Reference", "url": "https://claude.ai/artifact/9CUyQt1EDbmu1R7DVRyvkM", "source": "job-description.md"},
+      "parent": {
+        "id": "job-description",
+        "name": "Job Description",
+        "what": "The Principal Applied AI Product Manager posting: what the role owns, what it requires and the tools it names.",
+        "status": "Reference",
+        "url": "https://claude.ai/artifact/9CUyQt1EDbmu1R7DVRyvkM",
+        "source": "job-description.md"
+      },
       "children": [
-        {"id": "tech-stack", "name": "Tech Stack Guide", "what": "Every technology in the job: what it is, how the bank likely uses it, and what I need to know.", "status": "In use", "url": "https://claude.ai/artifact/DDmD65zw7LjnP5v2nHDFW2", "source": "tech-stack.md"},
-        {"id": "job-notes", "name": "Job Notes", "what": "My answers so far on how I'd do the job, part by part.", "status": "In progress", "url": "https://claude.ai/artifact/SpcnPMbMEgyxZSoYVsRdES", "source": "job-notes.md"}
+        {
+          "id": "tech-stack",
+          "name": "Tech Stack Guide",
+          "what": "Every technology in the job: what it is, how the bank likely uses it, and what I need to know.",
+          "status": "In use",
+          "url": "https://claude.ai/artifact/DDmD65zw7LjnP5v2nHDFW2",
+          "source": "tech-stack.md"
+        },
+        {
+          "id": "job-notes",
+          "name": "Job Notes",
+          "what": "My answers so far on how I'd do the job, part by part.",
+          "status": "In progress",
+          "url": "https://claude.ai/artifact/SpcnPMbMEgyxZSoYVsRdES",
+          "source": "job-notes.md"
+        }
       ]
     },
     {
       "id": "deliver",
       "name": "How I deliver",
       "why": "The operating model I'd bring to every AI product: the steps, the machine that runs them, and the manual for doing it.",
-      "parent": {"id": "framework", "name": "Product Framework", "what": "The six steps every product goes through, each with a go/no-go gate, and the rules that keep it governed.", "status": "In use", "url": "https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ", "source": "product-framework.md"},
+      "parent": {
+        "id": "framework",
+        "name": "Product Framework",
+        "what": "The six steps every product goes through, each with a go/no-go gate, and the rules that keep it governed.",
+        "status": "In use",
+        "url": "https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ",
+        "source": "product-framework.md"
+      },
       "children": [
-        {"id": "delivery-machine", "name": "The Delivery Machine", "what": "How one product manager runs many projects at once: every task marked Auto, Draft, Me or Partner.", "status": "Waiting for review", "url": "https://claude.ai/artifact/S8Wbygy24cjguTMxZsN2QF", "source": "product-framework.md"},
-        {"id": "playbook", "name": "Delivery Playbook", "what": "The field manual: how to run each of the 44 sub-steps the first time, plus the 19-agent library.", "status": "Waiting for review", "url": "https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4", "source": "playbook/"},
-        {"id": "workflow", "name": "Six-Step Product Workflow", "what": "A one-page visual of the six steps for the role.", "status": "Draft", "url": "https://claude.ai/artifact/8Nm5fkdicn2Gu5VmNVTvYv", "source": "memos/role-workflow.md"}
+        {
+          "id": "delivery-machine",
+          "name": "The Delivery Machine",
+          "what": "How one product manager runs many projects at once: every task marked Auto, Draft, Me or Partner.",
+          "status": "Waiting for review",
+          "url": "https://claude.ai/artifact/S8Wbygy24cjguTMxZsN2QF",
+          "source": "product-framework.md"
+        },
+        {
+          "id": "playbook",
+          "name": "Delivery Playbook",
+          "what": "The field manual: how to run each of the 44 sub-steps the first time, plus the 19-agent library.",
+          "status": "Waiting for review",
+          "url": "https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4",
+          "source": "playbook/"
+        },
+        {
+          "id": "workflow",
+          "name": "Six-Step Product Workflow",
+          "what": "A one-page visual of the six steps for the role.",
+          "status": "Draft",
+          "url": "https://claude.ai/artifact/8Nm5fkdicn2Gu5VmNVTvYv",
+          "source": "memos/role-workflow.md"
+        }
       ]
     },
     {
       "id": "projects",
       "name": "Projects",
       "why": "Real plans built on the framework. The first is AI-powered analytics for relationship managers.",
-      "parent": {"id": "rm-design", "name": "RM Analytics Framework", "what": "The design page: the one-page summary and the full plan in six parts, side by side.", "status": "Waiting for review", "url": "https://claude.ai/artifact/3c7ZxKjJcjWRyV7BbzKfhY", "source": "memos/rm-analytics-framework.md"},
+      "parent": {
+        "id": "rm-design",
+        "name": "RM Analytics Framework",
+        "what": "The design page: the one-page summary and the full plan in six parts, side by side.",
+        "status": "Waiting for review",
+        "url": "https://claude.ai/artifact/3c7ZxKjJcjWRyV7BbzKfhY",
+        "source": "memos/rm-analytics-framework.md"
+      },
       "children": [
-        {"id": "rm-plan", "name": "RM Analytics Plan", "what": "The same full plan as one continuous scrolling page: the easiest way to read it start to finish.", "status": "Waiting for review", "url": "https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk", "source": "memos/rm-analytics-framework.md"}
+        {
+          "id": "rm-plan",
+          "name": "RM Analytics Plan",
+          "what": "The same full plan as one continuous scrolling page: the easiest way to read it start to finish.",
+          "status": "Waiting for review",
+          "url": "https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk",
+          "source": "memos/rm-analytics-framework.md"
+        }
       ]
     },
     {
       "id": "claude",
       "name": "Working with Claude",
       "why": "How I get the best out of Claude.",
-      "parent": {"id": "prompting", "name": "Prompting Guide", "what": "Anthropic's prompting advice in plain English, a fill-in template, four worked examples and a checklist.", "status": "In use", "url": "https://claude.ai/artifact/Secfj5fBtpVA1veroUU7A7", "source": "prompting.md"},
+      "parent": {
+        "id": "prompting",
+        "name": "Prompting Guide",
+        "what": "Anthropic's prompting advice in plain English, a fill-in template, four worked examples and a checklist.",
+        "status": "In use",
+        "url": "https://claude.ai/artifact/Secfj5fBtpVA1veroUU7A7",
+        "source": "prompting.md"
+      },
       "children": []
     }
   ]

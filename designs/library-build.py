@@ -35,7 +35,11 @@ for a in lib["areas"]:
               + (f'<ul class="kids" aria-label="Under {E(a["parent"]["name"])}">{kids}</ul>' if kids else "")
               + '</div></section>')
 
-nav = "".join(f'<a href="#{E(a["id"])}">{E(a["name"])}<span class="count">{1 + len(a["children"])}</span></a>' for a in lib["areas"])
+blocks = "".join(
+    f'<a class="block" href="{E(b["url"])}" target="_blank" rel="noopener" data-search="{E((b["name"] + " " + b["what"]).lower())}">'
+    f'<span class="bcount">{E(b["count"])}</span><span class="name">{E(b["name"])}</span><span class="what">{E(b["what"])}</span>'
+    f'<span class="status {STATUS[b["status"]]}">{E(b["status"])}</span></a>' for b in lib["building_blocks"])
+nav = '<a href="#blocks">By building block</a><a href="#docs">By document</a>' + "".join(f'<a href="#{E(a["id"])}">{E(a["name"])}<span class="count">{1 + len(a["children"])}</span></a>' for a in lib["areas"])
 total = len(docs)
 
 page = f'''<title>Document Library</title>
@@ -57,6 +61,13 @@ page = f'''<title>Document Library</title>
 .start .name{{font-family:var(--serif);font-size:20px;font-weight:600}}
 .start .what{{font-size:14px;color:var(--onnavy-muted)}}
 .area{{gap:14px}}
+.bintro{{color:var(--muted);margin:4px 0 4px}}
+.blocks{{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}}
+.block{{background:var(--teal-bg);border:1px solid var(--line);border-radius:8px;padding:20px 22px;text-decoration:none;color:var(--fg);display:flex;flex-direction:column;gap:6px;align-items:flex-start}}
+.block:hover{{border-color:var(--teal)}}
+.block .bcount{{font-family:var(--mono);font-size:12px;color:var(--teal)}}
+.block .name{{font-family:var(--serif);font-size:24px;font-weight:600}}
+.block .what{{font-size:15px;color:var(--fg)}}
 .ahead{{border-top:4px solid var(--navy);padding-top:20px}}
 .ahead p{{color:var(--muted);margin:6px 0 0}}
 .tree{{display:flex;flex-direction:column;gap:0}}
@@ -76,17 +87,18 @@ page = f'''<title>Document Library</title>
 .kids li::before{{content:"";position:absolute;left:0;top:28px;width:16px;border-top:2px solid var(--line)}}
 .legend{{display:flex;flex-wrap:wrap;gap:10px 18px;font-size:14px;color:var(--muted);align-items:center}}
 .empty{{color:var(--muted)}}
-@media (max-width:760px){{.starts{{grid-template-columns:1fr}}.kids{{margin-left:10px}}.kids li{{padding-left:14px}}.kids li::before{{width:10px}}}}
+@media (max-width:760px){{.starts,.blocks{{grid-template-columns:1fr}}.kids{{margin-left:10px}}.kids li{{padding-left:14px}}.kids li::before{{width:10px}}}}
 </style>
 <div class="band"><div class="wrap">
 <span class="label">Everything in my Claude brain</span>
 <h1>Document Library</h1>
-<p class="lede">All {total} documents in one place, grouped by what they're for. Each document sits under the one it belongs to. Click any card to open it.</p>
+<p class="lede">Everything in one place, two ways in: by building block (workflows and agents) or by document, with each document under the one it belongs to. Click any card to open it.</p>
 <nav class="stepnav" aria-label="Areas">{nav}</nav>
 <div class="filter"><label for="q">Find a document</label><input id="q" type="search" placeholder="Type a word, like plan, agent or prompt" autocomplete="off"></div>
 </div></div>
 <main class="wrap">
-<section><span class="label">Start here</span><div class="starts">{start}</div></section>
+<section id="blocks"><span class="label">Browse by building block</span><p class="bintro">The things people look for, pulled out of the documents into their own pages.</p><div class="blocks">{blocks}</div></section>
+<section id="docs"><span class="label">By document</span><h2 style="margin-top:4px">Start here</h2><div class="starts">{start}</div></section>
 <div class="legend"><span>Status:</span><span class="status s-use">In use</span><span class="status s-review">Waiting for review</span><span class="status s-review">Draft</span><span class="status s-ref">Reference</span></div>
 {areas}
 <p class="empty" id="none" hidden>No documents match that word.</p>
@@ -97,6 +109,7 @@ page = f'''<title>Document Library</title>
   var q=document.getElementById('q'), none=document.getElementById('none');
   q.addEventListener('input',function(){{
     var t=q.value.trim().toLowerCase(), shown=0;
+    document.querySelectorAll('.block').forEach(function(b){{var hit=!t||b.getAttribute('data-search').indexOf(t)>-1;b.hidden=!hit;if(hit)shown++;}});
     document.querySelectorAll('.area').forEach(function(sec){{
       var any=false;
       sec.querySelectorAll('.doc').forEach(function(d){{
