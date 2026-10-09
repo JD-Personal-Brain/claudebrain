@@ -4,6 +4,8 @@
 Auto, Draft or Me (or Partner, for sign-offs). This folder says **how to do it the first time**, sub-step
 by sub-step, and what to watch so the second time can be automated.
 
+**Read it as a designed page:** https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4 (built from these files by `designs/playbook-build.py`; edit the .md files here, then rebuild and republish).
+
 Use it while doing the work: open the step's file, work through each sub-step
 in order, and fill in its **first-time log** as you go.
 

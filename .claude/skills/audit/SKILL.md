@@ -10,11 +10,11 @@ into main until it passes this audit. Keep the report to the user short (rule R2
 
 ## 1. Scope
 - List every file changed since main: `git fetch origin main` then `git diff --name-only origin/main...HEAD`, plus any uncommitted changes.
-- Add the files they depend on or that depend on them. For example, a framework change also touches `playbook/`, the delivery machine page and any memo that copies it.
+- Add the files they depend on or that depend on them. For example, a framework change also touches `playbook/`, the delivery machine page, the playbook page and any memo that copies it.
 - Add every designed page whose source changed, and its published link (see `designs/README.md`).
 
 ## 2. Mechanical checks (always)
-1. Run `python3 .claude/skills/audit/check.py` from the repo root. It checks that the framework and playbook match, that every sub-step has all its fields, that no designed page has an empty table, and that the delivery machine page is up to date. If that page was out of date, the checker rebuilds it: republish it.
+1. Run `python3 .claude/skills/audit/check.py` from the repo root. It checks that the framework and playbook match, that every sub-step has all its fields, that no designed page has an empty table, and that the delivery machine and playbook pages are up to date. If a page was out of date, the checker rebuilds it: republish it.
 2. For each changed designed page: render it at 1280 and 400 pixels wide with Playwright (a browser tool Claude runs; Chromium is at `/opt/pw-browsers/chromium`), confirm nothing is empty, cut off or scrolling sideways, and look at one screenshot.
 3. For each published page: read it with the Artifact tool and confirm it matches the source in `designs/`. If it doesn't, find out why before changing anything.
 

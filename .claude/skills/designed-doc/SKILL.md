@@ -1,14 +1,15 @@
 ---
 name: designed-doc
-description: Make a designed, branded document for other people to read (a memo, plan, brief, one-pager). Use when the user says "make a doc for X", asks for a memo or summary to share, or wants an existing doc updated. Never deliver these as .md files (rule R16).
+description: Make a designed, branded document or page for any person to read, the user included (a memo, plan, manual, playbook, brief, one-pager). Use whenever Claude is about to write something a person will read, without being asked, and when the user says "make a doc for X", asks for a memo or summary to share, or wants an existing doc updated. Never deliver these as .md files (rule R16).
 ---
 
 # Make a designed doc
 
-People-facing documents are designed pages, never Markdown files (R16).
+Anything a person reads, me included, is a designed page, never a Markdown file (R16).
 The .md in `memos/` is only Claude's working copy of the words.
 
 ## 1. Start
+- **First, decide who reads it (rule R16).** If any person will read it, me included (memos, plans, manuals, playbooks, summaries), it's a designed page: use this skill without being asked. Only files that only Claude uses (rules, skills, NOW.md, logs) stay plain.
 - Ask only what's missing: who reads it, and is it a **one-pager** (to print or send as a PDF) or a **long doc** (to scroll)?
 - If a designed version already exists (check NOW.md and the Artifact list), **update it in place** so the link stays the same.
 

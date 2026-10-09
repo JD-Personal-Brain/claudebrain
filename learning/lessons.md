@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L13b · 2026-10-09 · Delivered the playbook as Markdown
+- **What happened:** Claude wrote the six-step playbook (a field manual I'll read and use) as .md files and showed them to me that way. I had to ask again for a designed format.
+- **Root cause:** R16 said "documents *other people* will read". Claude read that as "not for me", so a manual meant for me slipped through. Claude also decided the format only after writing, not before. A repeat of L13, so it moves to Level 2.
+- **Fix:** Before writing anything, Claude asks itself: will a person read this, me included? If yes, it's a designed, branded page from the start, and the .md is only the working copy. Only files that just Claude reads (rules, skills, NOW.md, logs) stay as plain files. The designed-doc skill now opens with this check.
+- **Rule:** R16 · **Test:** T16 · **Level:** 2 (repeat of L13) · **Times it happened:** 2
+
 ### L15 · 2026-10-09 · Frameworks offered for merging without an audit
 - **What happened:** A full audit of the new playbook and delivery machine found 20 errors in Claude's work, including a step that went in a circle (Define's data, risk and stories each waited on another) and a wrong claim that a US privacy law (GLBA) covers business clients. I had already been asked whether to merge it.
 - **Root cause:** Checking was done now and then, only when I asked. Nothing in the process required an audit before work was offered for merging, so errors reached the merge question.
