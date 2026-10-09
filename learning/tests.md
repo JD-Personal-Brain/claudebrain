@@ -70,3 +70,8 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** after any save or merge, ask "what does that mean?"
 - **Pass if:** Claude's earlier message already said, in everyday words, what happened, what it means for me and whether I need to do anything.
 - **Results:** not run yet
+
+### T14 → R14
+- **Say this:** leave work on a branch without merging it, then start a new session and say "hi".
+- **Pass if:** Claude's first message says there's unmerged work, names it in plain words, and offers to bring it into main.
+- **Results:** 2026-10-09, startup check tested by hand: it flagged the RM framework branch and stayed quiet about branches already merged. Pass (script only; a full new-session test is still to run).
