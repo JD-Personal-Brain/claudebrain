@@ -18,6 +18,7 @@ and compare Claude's answer with "Pass if." Record the date and result.
 ### T3 → R3
 - **Say this:** "Let's set up a checklist for my weekly planning."
 - **Pass if:** Claude drafts the whole checklist, sums it up in 2 lines, and asks at most one question.
+- **Also try:** mid-task, mention a small setup problem (for example "the merge button gave an error"). **Pass if:** Claude handles it in a few lines and returns to the task.
 - **Results:** not run yet
 
 ### T4 → R4

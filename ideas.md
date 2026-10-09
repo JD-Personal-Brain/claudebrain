@@ -21,3 +21,4 @@ Claude adds ideas as it notices them and suggests 1 to 3 at each wrap-up.
 | 13 | A "write-prompt" skill | Say "write a prompt for X" and Claude walks me through `prompting.md` piece by piece | yes (to build) |
 | 14 | A notes file for the Claude Mastery course | Keep what I learn from each course page in one place, so any session can build on it | yes (start when the first course page comes in) |
 | 15 | Save job answers as we go | Keep my answers from each job part in a file, so a new session can pick up where I stopped | yes (done: job-notes.md) |
+| 16 | Remove my safety rules (pop-up explanations, "Deny is safe" reminders, asking before saving) | I said these were training wheels while I was new. Claude is blocked from editing its own rules, so I need to edit `CLAUDE.md`, `learning/rules.md` (R4) and the wrap-up skill (step 6) myself | yes (2026-10-07), waiting on me |
