@@ -1,7 +1,7 @@
 # Playbook: the field manual under the delivery machine
 
 `product-framework.md` says **what** happens in each step and marks each task
-Auto, Draft or Me. This folder says **how to do it the first time**, sub-step
+Auto, Draft or Me (or Partner, for sign-offs). This folder says **how to do it the first time**, sub-step
 by sub-step, and what to watch so the second time can be automated.
 
 Use it while doing the work: open the step's file, work through each sub-step
@@ -24,7 +24,7 @@ in order, and fill in its **first-time log** as you go.
 - **First time, step by step:** the actual work, in order.
 - **Output:** what it produces (a document, a number, a decision).
 - **Done when:** how to tell it's finished.
-- **Automation watch:** what to note while doing it, the agent it could become, and today's kind (Auto, Draft or Me).
+- **Automation watch:** what to note while doing it, the agent it could become, the kind to use the first time and the kind to aim for (Auto, Draft or Me).
 - **For RM analytics:** a short worked example from the first project.
 
 ## The first-time log (fill in for every sub-step)

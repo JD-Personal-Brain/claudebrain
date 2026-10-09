@@ -45,7 +45,7 @@ Every project uses the same steps, tracker and templates, so they all run the
 same way side by side. *(Added 2026-10-09. Tool choices are guesses until I see
 the bank's setup: verify each one.)*
 
-### Three kinds of work
+### Three kinds of work, plus partner sign-offs
 Every task in every step is marked as one of these:
 - **Auto (runs on its own):** a workflow or agent does it and tells the right person. No one has to remember it.
 - **Draft (AI drafts, a person checks):** AI does the first version, and a named person approves it.

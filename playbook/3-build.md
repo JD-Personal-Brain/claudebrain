@@ -1,7 +1,7 @@
 # Step 3: Build, the first time
 
 **The question:** what's the smallest version users will use and trust?
-**The gate:** it meets the quality bar in testing.
+**The gate:** it meets the quality bar in testing, and every control has proof.
 **Governance thread:** controls built in; test set created.
 
 Build runs in short cycles: build a piece, test it, show users, repeat.
@@ -33,7 +33,7 @@ log (see `README.md`) for every sub-step.
   - First time: **Me**, with platform teams.
   - Note: which spec fields were hard to fill in. That tells you what to ask earlier.
   - Agent idea: an **agent spec drafter** that turns a user story into a first spec. *Draft*.
-- **For RM analytics:** A1 Signal finder → A2 Insight writer → Salesforce record and A4 Monday digest. A3 handles prep and follow-up (memo Appendix A).
+- **For RM analytics:** A1 Signal finder → A2 Insight writer → Salesforce record and the A4 Weekly opportunity digest. A3 handles prep and follow-up (memo Appendix A).
 
 ---
 

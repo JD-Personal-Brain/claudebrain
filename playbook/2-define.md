@@ -1,7 +1,7 @@
 # Step 2: Define, the first time
 
 **The question:** what exactly do we build first, and how will we know it worked?
-**The gate:** brief, data contract and risk rating agreed; the value model makes sense.
+**The gate:** brief, data contract and risk rating agreed; the value model shows payback within [X] months.
 **Governance thread:** risk intake and early rating; data use approved.
 
 Work through 2.1 to 2.8. 2.3 (data) and 2.4 (risk) take the longest because

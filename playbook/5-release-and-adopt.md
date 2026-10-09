@@ -44,8 +44,9 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
   2. Check the first live outputs by hand on day one.
   3. Check that usage and impact data are flowing into the dashboard.
   4. Make sure the comparison group's numbers are tracked the same way.
+  5. Set the weekly usage report to send itself to the sponsor and user leaders.
 - **Output:** the pilot is live, and data is flowing for both groups.
-- **Done when:** the first week's usage shows on the dashboard for both groups.
+- **Done when:** the first week's usage shows on the dashboard for both groups, and the weekly report has gone out once.
 - **Automation watch:**
   - First time: **Me**, with platform teams.
   - Note: every manual step in the move to live. Those steps are the release checklist for next time.
@@ -172,6 +173,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
 | 5.1 | Readiness tracker | Draft | Auto | New |
 | 5.1 | Pilot dashboard (Power BI, not an agent) | Draft | Draft | — |
 | 5.2 | Release checklist in the platform | Me | Auto ⚠️ | New |
+| 5.2 | Weekly usage report (Power BI, not an agent) | Me | Auto | — |
 | 5.3 | None (stays with a person) | Me | Me | — |
 | 5.4 | A6 Onboarding coach | Me | Auto | Yes, Appendix A |
 | 5.5 | Wins spotter | Me | Draft | New |

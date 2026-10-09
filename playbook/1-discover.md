@@ -107,7 +107,7 @@ sub-step. At the end, run the automation review.
 - **Output:** interview notes, shadowing notes, and a themes list with quotes and sources.
 - **Done when:** you've covered every role and the last two or three interviews added nothing new.
 - **Automation watch:**
-  - First time: **Me** for the conversations. **Auto** for scheduling. **Draft** for themes.
+  - First time: **Me** for the conversations and the scheduling. **Draft** for themes.
   - Note: how long scheduling took (it usually takes more time than you expect), and whether your guide changed after the first few interviews.
   - Agents:
     - **A7 Interview synthesizer** (Appendix A): turns recaps into themes linked to their sources. You check every theme.
@@ -180,7 +180,7 @@ sub-step. At the end, run the automation review.
 - **Output:** the prototype versions and a reaction log (version, user, what they did, what changed).
 - **Done when:** users can say what they'd use it for in their own words, or you've learned it's the wrong problem.
 - **Automation watch:**
-  - First time: **Draft**. Claude builds it with the `prototype` skill, and you run the sessions.
+  - First time: **Draft** for the mock-up (Claude builds it with the `prototype` skill). **Me** for running the sessions and summarizing reactions.
   - Note: how long each version took to build, and what feedback came up every time.
   - Agent idea: a **reaction summarizer** that turns session notes into "what to change next". *Draft*.
 - **For RM analytics:** a pre-meeting client brief and a weekly opportunity list, built on sample clients.
@@ -201,7 +201,7 @@ sub-step. At the end, run the automation review.
   4. Propose a comparison group: similar users who won't get the tool at first. (Finance agrees the method in 2.7; the final group is confirmed in 2.8.)
   5. Write a first rough value model with [X] placeholders, using memo section 2 as the pattern.
   6. Build the gate pack: the outcome note, the sizing table, themes, the time map, the incentive note, reactions, the recommendation and the baseline.
-- **Output:** the recommendation, the recorded baseline, the comparison group, the first value model and the gate pack.
+- **Output:** the recommendation, the recorded baseline, the proposed comparison group, the first value model and the gate pack.
 - **Done when:** the baseline is recorded with its source, and the gate pack is ready.
 - **Automation watch:**
   - First time: **Me** for the choice and for recording the baseline by hand. **Draft** for scoring and the gate pack.
