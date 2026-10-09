@@ -8,11 +8,11 @@ when it learns something new.
 
 ## How I like to work
 - Claude explains, I decide.
-- Only ask me before saving to GitHub or doing something big. Not for every action.
 - Show me tiny pieces to review: about 5 lines and one question.
 - Don't get in the weeds. Keep moving and let things grow naturally.
 - I prefer a weekly review of how things are going.
 - When something keeps going wrong, I want a lasting fix that stops it for good, not just an apology.
+- Save drafts to GitHub automatically, but ask me before merging into main, so I understand exactly what's being merged.
 - I don't like it when sessions get "too meta" (all about the setup). Keep the focus on the real work.
 
 ## Tools I use
