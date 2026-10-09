@@ -30,5 +30,5 @@ Claude adds ideas as it notices them and suggests 1 to 3 at each wrap-up.
 | 22 | A "designed doc" skill | Say "make a doc for X" and Claude builds it on a design page in my style, checks it on screen, and keeps the .md working copy in step | yes (done 2026-10-09: `designed-doc` skill) |
 | 23 | Keep the HTML source of each designed page in the repo | Any future session can rebuild or edit a page (like the continuous memo) even after this cloud workspace is gone | yes (done 2026-10-09: `designs/`) |
 | 24 | Let run-tests handle two-message tests (like T3's "mid-task" part) by giving a helper both messages in turn | More tests can run automatically, with fewer left for a real session | yes (done 2026-10-09: added to `run-tests`) |
-| 25 | Open the long scrolling page by default when I review the plan | The design page opened blank in the app on 2026-10-09; the scrolling version worked | suggested |
-| 26 | A designed page for the delivery machine | Show leaders how I'd run many AI projects at once, as a page people want to read | suggested |
+| 25 | Open the long scrolling page by default when I review the plan | The design page opened blank in the app on 2026-10-09; the scrolling version worked | yes (done 2026-10-09: agreement in NOW.md) |
+| 26 | A designed page for the delivery machine | Show leaders how I'd run many AI projects at once, as a page people want to read | no answer yet |

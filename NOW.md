@@ -20,11 +20,11 @@ _Last updated: 2026-10-09 · Last review: none yet (first one due around 2026-10
 - **Six-step workflow visual** for the role (2026-10-09): https://claude.ai/artifact/8Nm5fkdicn2Gu5VmNVTvYv. Working copy: `memos/role-workflow.md`.
 - **Designed-page sources** are kept in `designs/` (see its README), so any session can rebuild or edit the pages.
 - **Session 2026-10-09 (late):** `prompting.md` now has a Tone piece and "When the answer is off" (from the course's "Claude Prompt Formula" page). Four approved skills were built and tested (write-prompt, run-tests, prototype, new-use-case). First run-tests run: 7 of 8 passed; T8 failed, so R8 is stricter (every suggestion is labeled **Needed** or **Optional**).
-- **Delivery machine added to `product-framework.md`** (2026-10-09): every task in each of the six steps is marked Auto, Draft or Me, with an automation check at every gate and rules for running many projects at once. It's a draft and isn't in main yet. Next: I review it, then apply it to the RM memo as the first worked example.
+- **Delivery machine added to `product-framework.md`** (2026-10-09): every task in each of the six steps is marked Auto, Draft or Me, with an automation check at every gate and rules for running many projects at once. Merged into main (pull request #47). Next: apply it to the RM memo as the first worked example.
 - First prototype made: a calculator (v1, then v2 with green buttons). It was practice and has nothing to do with the job. The prototyping process is under agreements below.
 
 ## What's next
-1. Review the delivery machine in `product-framework.md` (does the gate check match how I want to decide what gets automated?), then merge it and apply it to the RM memo as the first worked example.
+1. Apply the delivery machine in `product-framework.md` to the RM memo as the first worked example, and check that the gate check matches how I want to decide what gets automated.
 2. Read the rest of the plan (summary from "What lets us move this fast" on, then Parts 1–6), and open the McKinsey link in a browser before sharing. Use the long scrolling page (https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk): on 2026-10-09 the design page opened blank in the app.
 3. Keep working through the Claude Mastery course: paste in the next page (after "The Claude Prompt Formula"; next up is Module 3: Projects, Connectors, Skills).
 4. Continue the Associated Bank job, Part 1, with the prompt in `job-prompts.md`. Pick up where `job-notes.md` stops.
@@ -44,6 +44,7 @@ _Last updated: 2026-10-09 · Last review: none yet (first one due around 2026-10
 - **Big tasks get a "done" checklist and progress saved partway.** Why: I can see proof each part works, and a session that dies halfway doesn't lose its place. (Ideas taken from a Karpathy-inspired prompt, 2026-10-09.)
 - **When I say yes to a skill or idea, Claude builds it that session** (rule R17). Why: four approved skills sat unbuilt because nothing said what happens after a yes.
 - **Projects run on the delivery machine** (in `product-framework.md`): every task is marked Auto, Draft or Me, and each gate checks what to automate next. Why: I'm one person running many projects at once, so routine work must run itself and my time goes only to decisions and people (decided 2026-10-09).
+- **When I ask to see or review the RM plan, open the long scrolling page** (https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk), not the design page. Why: the design page opened blank in the app on 2026-10-09; the scrolling page worked. Edits still go to the design page first, then the scrolling page is rebuilt (decided 2026-10-09).
 - **Product work follows `product-framework.md`.** Why: every project gets organized the same way, from Discover to Measure and iterate.
 - **Prompts follow `prompting.md`.** Why: so every prompt we write uses a framework that works, based on Anthropic's own advice.
 - **Documents for other people are designed pages, not .md files** (rule R16). Why: they must look like something a person wants to read; the .md is only the working copy.
