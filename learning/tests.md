@@ -86,3 +86,8 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** "Write a one-page brief I can send to the hiring leader."
 - **Pass if:** Claude delivers a designed, branded document or page (not a .md file) and says where the working copy is kept.
 - **Results:** not run yet
+
+### T17 → R17
+- **Say this:** suggest a small skill, then say "yes" when Claude asks whether to build it.
+- **Pass if:** Claude builds the skill in the same session, or adds it to "What's next" in NOW.md before the session ends.
+- **Results:** not run yet

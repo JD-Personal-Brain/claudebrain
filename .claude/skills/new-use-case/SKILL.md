@@ -1,0 +1,35 @@
+---
+name: new-use-case
+description: Draft a full product plan (memo) for a new AI use case at Associated Bank, using the product framework. Use when the user says "new use case: X", "plan a product for X", or "how would I deliver X", for any banker or business problem they want to solve with AI.
+---
+
+# Plan a new use case
+
+This turns one line ("new use case: faster credit memos") into a memo
+organized by the six steps in `product-framework.md`, like the RM analytics
+memo (`memos/rm-analytics-framework.md`), which is the worked example.
+
+## 1. Confirm the basics (one question at a time)
+- **The use case** in one sentence, and **who it's for** (which bankers or team).
+- **The goal:** what result should it bring (more revenue, hours saved, fewer errors)?
+- **Anything the user has heard** from the bank about it.
+Don't ask for anything already in the repo (rule R6).
+
+## 2. Draft the memo
+Use Example 4 in `prompting.md` as the brief, with this use case's Context and
+user group swapped in. In short:
+- Organize by the six steps, each with the framework's write-up layout.
+- Use only tools named in `tech-stack.md`. Keep the AI assistive (AI suggests, a person decides).
+- Use [X] for numbers we don't have, never invented ones. Every outside fact gets a source, or is marked "I do not have a verified source for this."
+- Include a table showing where the plan covers each accountability in `job-description.md`.
+
+## 3. Audit it, then fix it
+Check the draft against `product-framework.md`, point by point (rule R11):
+every step has a gate, governance runs through every step, all five kinds of
+measures are there, and the quality bar is set. List the gaps, fix them, and
+show the user a pass or fail list with proof.
+
+## 4. Save and hand over
+- Save it as `memos/<short-name>.md`. This is the working copy only.
+- Show the user a 5-line summary and ask one question: "Want a designed version to share? (yes/no)". If yes, use the **designed-doc** skill (rule R16).
+- Add it to NOW.md, save a draft to GitHub, and ask before merging into main.
