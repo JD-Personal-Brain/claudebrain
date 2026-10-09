@@ -30,7 +30,8 @@ Which format:
 Before saying it's done:
 1. Render it locally with Playwright (Chromium is at `/opt/pw-browsers/chromium`). Canvas artboards need the canvas's `dc-runtime.js` saved next to them as `support.js`.
 2. Measure: a one-pager's last line must end inside 1,056 px; a long doc must not scroll sideways at 400 px wide.
-3. Look at one screenshot. Fix anything cut off or overlapping, then publish.
+3. Run `python3 .claude/skills/audit/check.py`: it fails on any empty table (required, from L7c).
+4. Look at one screenshot. Fix anything cut off, overlapping or empty, then publish.
 
 ## 5. Deliver
 - Publish, then open it for the user. Say it's private until they share it from the page's Share menu.

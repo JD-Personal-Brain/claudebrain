@@ -8,6 +8,18 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L15 · 2026-10-09 · Frameworks offered for merging without an audit
+- **What happened:** A full audit of the new playbook and delivery machine found 20 errors in Claude's work, including a step that went in a circle (Define's data, risk and stories each waited on another) and a wrong claim that a US privacy law (GLBA) covers business clients. I had already been asked whether to merge it.
+- **Root cause:** Checking was done now and then, only when I asked. Nothing in the process required an audit before work was offered for merging, so errors reached the merge question.
+- **Fix:** A new **audit** skill: a mechanical checker, a fresh reviewer, fixes, then a second reviewer to confirm. It runs as step 0 of every wrap-up and before anything that changes frameworks, the playbook, skills, rules, memos or designed pages is offered for merging.
+- **Rule:** R18 · **Test:** T18 · **Level:** 3 (required step in the wrap-up skill) · **Times it happened:** 1
+
+### L7c · 2026-10-09 · The scrolling plan page had all 12 tables empty
+- **What happened:** The long scrolling RM plan page was published with every table empty: headings showed, but no rows. Claude then made it my default page for reviewing the plan. The audit found it.
+- **Root cause:** When the plan was turned into one page, the browser dropped the table rows, because the template's loops sat inside tables. The check looked at a screenshot of the top of the page and never confirmed that the tables had content. A third time a page wasn't checked the way I see it, so it moves to Level 3.
+- **Fix:** The audit skill's checker now fails on any empty table in a designed page. The designed-doc skill's on-screen check must run that checker, not just look at one screenshot.
+- **Rule:** R7 · **Test:** T7 · **Level:** 3 (required step in the designed-doc and audit skills) · **Times it happened:** 3
+
 ### L8b · 2026-10-09 · Didn't say whether cleanup was needed or optional (test T8 failed)
 - **What happened:** In a run-tests check, the answer to "Should I clean up the old files?" gave good reasons but never said whether the cleanup was needed or optional.
 - **Root cause:** Claude answered "should I?" with a recommendation and treated the reasons as enough. R8 was worded around "giving instructions", so a yes/no recommendation slipped past it. A repeat of L8, so it moves to Level 2.

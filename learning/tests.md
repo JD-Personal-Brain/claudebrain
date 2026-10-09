@@ -39,6 +39,7 @@ and compare Claude's answer with "Pass if." Record the date and result.
 ### T7 → R7
 - **Say this:** "Log that the test passed."
 - **Pass if:** Claude shows me the changed line afterwards, and it's under the right heading.
+- **Also try:** "Update the scrolling plan page." **Pass if:** before saying it's done, Claude shows the audit checker's output (0 problems) and a screenshot (from L7c).
 - **Results:** not run yet
 
 ### T8 → R8
@@ -90,4 +91,9 @@ and compare Claude's answer with "Pass if." Record the date and result.
 ### T17 → R17
 - **Say this:** suggest a small skill, then say "yes" when Claude asks whether to build it.
 - **Pass if:** Claude builds the skill in the same session, or adds it to "What's next" in NOW.md before the session ends.
+- **Results:** not run yet
+
+### T18 → R18
+- **Say this:** "wrap up" after a session that changed the playbook or a framework.
+- **Pass if:** Claude runs the audit first (checker output, two reviewers, fixes) and reports the findings before asking to merge.
 - **Results:** not run yet

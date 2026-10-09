@@ -1,58 +1,35 @@
 import html
 E=html.escape
-steps=[
-("Discover","Which problem is worth solving first?",[
-("Agree the outcome and measure with the sponsor","me","Meeting","Sponsor"),
-("First look at the size of the opportunity","draft","Snowflake, Power BI","Me, then sponsor"),
-("Schedule interviews and shadowing","auto","Outlook, Power Automate","Users"),
-("Interview and shadow users","me","Teams, in person","—"),
-("Pull themes from interview notes","draft","M365 Copilot","Me"),
-("Record today's baseline numbers (once the measure is set)","auto","Power BI","Sponsor"),
-("Gate decision","me","Meeting","Sponsor")]),
-("Define","What do we build first, and how will we know it worked?",[
-("One-sentence problem and measurable outcome","me","—","Sponsor"),
-("Choose the platform and delivery path (with platform teams)","me","—","Platform teams"),
-("Data contract: fields, freshness, checks","draft","Snowflake","Data owner approves"),
-("Risk intake form, filled in from the brief","draft","Bank's intake process","Model risk rates it"),
-("User stories and acceptance criteria","draft","Backlog tool","Me"),
-("Backlog priorities and trade-offs","me","Backlog tool","Decision log"),
-("Measures, quality bar and value model","draft","Power BI","Me, then sponsor"),
-("Gate decision","me","Meeting","Sponsor, risk")]),
-("Build","What's the smallest version users will use and trust?",[
-("Configure the AI capability (with platform teams)","me","Copilot Studio, Agentforce, Bedrock, Power Automate","—"),
-("Build the test set: real examples, known good answers","draft","Spreadsheet or eval tool","Me and pilot users check"),
-("Run the test set on every new version","auto","Bedrock evaluation or similar","Me, only when something fails"),
-("Gate decision","me","—","Sponsor")]),
-("Govern and test","Is it safe, fair and controlled?",[
-("Red-team the product (try to break it)","auto","Red-team agent","Risk reviews every failure"),
-("Put together the evidence pack","draft","Templates and test results","Me, then risk"),
-("Send sign-off requests and chase them","auto","Power Automate approvals","Risk, compliance, privacy, security"),
-("The sign-offs themselves","partner","—","Recorded in the tracker"),
-("Unblock a stuck sign-off","me","Meeting","—")]),
-("Release and adopt","Will users use it every week?",[
-("Release readiness checklist","draft","Template","Me"),
-("Train users on their own work; recruit champions","me","Teams, in person","Pilot users"),
-("Weekly usage report","auto","Power BI","Sponsor, user leaders"),
-("Sort feedback into bugs, quality issues and ideas","auto","Feedback triage agent","Backlog; I check a weekly sample"),
-("Decide to scale to the next wave","me","Meeting","Sponsor")]),
-("Measure and iterate","Is it delivering, and what comes next?",[
-("Live dashboard against baseline and comparison group","auto","Power BI","Sponsor"),
-("Re-test after every change; alert when quality slips","auto","Eval tool and alerts","Me"),
-("Monthly keep / change / stop pack","draft","Power BI and template","Me"),
-("Keep / change / stop decision and next wave","me","Meeting","Sponsor")]),
-]
-running=[
-("One tracker for all projects: task, owner, date, status","auto","A shared tracker (tool to confirm)","Set up once by me, then updates itself"),
-("Remind owners before a due date; tell me when something is late","auto","Power Automate","Owners, then me"),
-("Weekly status note for each project","draft","M365 Copilot, from the tracker","Me, then stakeholders"),
-("Decision log and risk / issue list, from meeting notes","draft","M365 Copilot","Me"),
-("One view of all projects: step, late items, measures","auto","Power BI","Sponsors and leaders"),
-]
+import re, os
+# Reads the task tables straight from product-framework.md, so the page can't drift from the framework.
+ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+FW=open(os.path.join(ROOT,"product-framework.md")).read()
+def kind_of(k):
+    k=k.lower()
+    for name in ["partner","auto","draft","me"]:
+        if k.startswith(name): return name
+    raise ValueError("unknown kind: "+k)
+def rows_after(header):
+    block=FW[FW.index(header)+len(header):]
+    out=[]
+    for line in block.split("\n"):
+        if line.startswith("| # ") or line.startswith("|---"): continue
+        if not line.startswith("|"):
+            if out: break
+            continue
+        c=[x.strip() for x in line.strip("|").split("|")]
+        out.append((c[1],kind_of(c[2]),c[3],c[4],c[0],"⚠️" in c[2]))
+    return out
+questions={}
+for m in re.finditer(r"\| \*\*(\d)\. ([^*]+)\*\* \| ([^|]+) \|",FW):
+    questions[m.group(1)]=(m.group(2),m.group(3).strip())
+steps=[(questions[n][0],questions[n][1],rows_after(f"**{n}. {questions[n][0]}**\n")) for n in "123456"]
+running=rows_after("### Across every project (the running layer)")
 LBL={"auto":"Auto","draft":"Draft","me":"Me","partner":"Partner"}
 def chip(k): return f'<span class="chip k-{k}">{LBL[k]}</span>'
 def table(rows,head="Task"):
-    r="".join(f'<tr><td>{E(t)}</td><td>{chip(k)}</td><td>{E(tool)}</td><td>{E(to)}</td></tr>' for t,k,tool,to in rows)
-    return f'<div class="tw"><table><thead><tr><th>{head}</th><th>Kind</th><th>Tool <span class="g">(guess)</span></th><th>Goes to</th></tr></thead><tbody>{r}</tbody></table></div>'
+    r="".join(f'<tr><td class="n">{E(num)}</td><td>{E(t)}</td><td>{chip(k)}{" ⚠️" if w else ""}</td><td>{E(tool)}</td><td>{E(to)}</td></tr>' for t,k,tool,to,num,w in rows)
+    return f'<div class="tw"><table><thead><tr><th>#</th><th>{head}</th><th>Kind</th><th>Tool <span class="g">(guess)</span></th><th>Goes to</th></tr></thead><tbody>{r}</tbody></table></div>'
 # mix bars
 bars=""
 for i,(name,q,rows) in enumerate(steps,1):
@@ -86,7 +63,7 @@ h2{{font-family:var(--serif);font-weight:600;font-size:28px;line-height:1.2;marg
 h3{{font-family:var(--serif);font-weight:600;font-size:21px;margin:0}}
 p{{margin:0;max-width:68ch}}
 section{{display:flex;flex-direction:column;gap:16px}}
-.kinds{{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}}
+.kinds{{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}}
 .kind{{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:20px;display:flex;flex-direction:column;gap:10px;min-width:0}}
 .kind p{{color:var(--muted);font-size:15px}}
 .chip{{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.04em;padding:3px 9px;border-radius:999px;white-space:nowrap;font-weight:500}}
@@ -114,7 +91,7 @@ th{{text-align:left;font-family:var(--mono);font-weight:500;font-size:11px;lette
 th .g{{text-transform:none;letter-spacing:0}}
 td{{padding:11px 20px;border-bottom:1px solid var(--line);vertical-align:top}}
 tr:last-child td{{border-bottom:0}}
-td:first-child{{width:42%}}
+td.n{{font-family:var(--mono);font-size:12px;color:var(--teal);white-space:nowrap;width:1%}}td:nth-child(2){{width:40%}}
 td:nth-child(3),td:nth-child(4){{color:var(--muted)}}
 .steps{{display:flex;flex-direction:column;gap:20px}}
 .check{{background:var(--navy);color:var(--onnavy);border-radius:8px;padding:28px;display:flex;flex-direction:column;gap:18px}}
@@ -129,7 +106,7 @@ td:nth-child(3),td:nth-child(4){{color:var(--muted)}}
 .rule h3{{font-size:18px}}
 .rule p{{color:var(--muted);font-size:15px}}
 footer{{color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:16px}}
-@media (max-width:560px){{.rules{{grid-template-columns:1fr}}.mixrow{{grid-template-columns:1fr;gap:6px}}.check{{padding:20px}}}}
+@media (max-width:560px){{.kinds{{grid-template-columns:1fr}}.rules{{grid-template-columns:1fr}}.mixrow{{grid-template-columns:1fr;gap:6px}}.check{{padding:20px}}}}
 </style>
 <div class="band"><div class="wrap">
 <p class="label">Operating model · AI product delivery</p>
@@ -139,26 +116,27 @@ footer{{color:var(--muted);font-size:14px;border-top:1px solid var(--line);paddi
 <main class="wrap">
 <section style="padding-top:32px">
 <p class="label">The idea</p>
-<h2>Every task is one of three kinds</h2>
+<h2>Three kinds of work, plus partner sign-offs</h2>
 <p>Each project moves through the same six steps. Every task in every step is marked by who does it. Each project leaves the machine more automated than it found it.</p>
 <div class="kinds">
 <div class="kind">{chip("auto")}<h3>Runs on its own</h3><p>A workflow or agent does it and tells the right person. No one has to remember it.</p></div>
 <div class="kind">{chip("draft")}<h3>AI drafts, a person checks</h3><p>AI does the first version, and a named person approves it.</p></div>
 <div class="kind">{chip("me")}<h3>Only a person</h3><p>Decisions, agreement between people, relationships and trade-offs. This is where the PM's hours go.</p></div>
+<div class="kind">{chip("partner")}<h3>Partner sign-off</h3><p>A decision only a named partner can make, such as risk or compliance. Never automated.</p></div>
 </div>
 </section>
 <section>
 <p class="label">Where the PM's time goes</p>
 <h2>Early steps need people; later steps run themselves</h2>
-<p>Number of tasks of each kind, by step. Discover and Define are where judgment matters most, so they carry the most person-only work.</p>
+<p>Number of tasks of each kind once the machine is running, by step, gate decisions included. Discover and Define carry the most person-only work, because that is where judgment matters most.</p>
 <div class="mix">{bars}
 <div class="legend">{chip("me")} Only a person {chip("draft")} AI drafts {chip("auto")} Runs on its own {chip("partner")} Partner sign-off</div></div>
 </section>
 <section>
 <p class="label">The six steps</p>
 <h2>Each step's tasks, by kind</h2>
-<p>These tables are the starting point. Tools are first guesses until we confirm the bank's setup.</p>
-<div class="note"><strong>To confirm first:</strong> whether bank policy lets automations message people or update trackers on their own. That decides how much can be marked Auto.</div>
+<p>One row per task, numbered to match the field manual. Kind is the target once the machine is running; the first time through, many tasks are done by hand so they can be logged before they are automated. Tools are first guesses until we confirm the bank's setup.</p>
+<div class="note"><strong>To confirm first:</strong> whether bank policy lets automations message people or update trackers on their own. Tasks marked ⚠️ depend on it.</div>
 <div class="steps">{stepsec}</div>
 </section>
 <section class="check">
@@ -191,4 +169,4 @@ footer{{color:var(--muted);font-size:14px;border-top:1px solid var(--line);paddi
 <footer>Draft, 2026-10-09. Tool choices are guesses until confirmed against the bank's setup. [X] marks numbers still to be set. The RM analytics plan is the first project to run through this machine.</footer>
 </main>
 '''
-open('/home/user/claudebrain/designs/delivery-machine.html','w').write(page)
+open(os.path.join(ROOT,'designs','delivery-machine.html'),'w').write(page)
