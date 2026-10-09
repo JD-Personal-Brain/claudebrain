@@ -7,7 +7,7 @@ _Last updated: 2026-10-09 · Last review: none yet (first one due around 2026-10
 - An official "main" copy now exists on GitHub, and it is now GitHub's default branch, so every new session starts from it. Future work is proposed as pull requests against it.
 - A startup check runs at the start of every session and pulls in the latest main automatically, so Claude never works from an old copy. Tested and working.
 - The startup check now also warns about work saved on a side branch that never reached main (added 2026-10-09, after my RM framework was found stranded).
-- My RM analytics framework (memo v6, audit, market scan, from 2026-10-08) is safe on GitHub but not in main yet. The startup check will flag it until it's brought in.
+- My RM analytics framework is now in main (brought in 2026-10-09): `memos/rm-analytics-framework.md` (memo v6), plus the audit and market scan in `memos/`. Memo v6 is waiting for my review before I share it with Associated.
 - New focus: I'm interviewing for a Principal Applied AI Product Manager job at Associated Bank. The focus is thinking through how I'd do the job itself, not interview prep.
 - The full job description is saved in `job-description.md`, and a full guide to every technology in it is in `tech-stack.md`. Both load automatically every session. Never ask me to paste it again.
 - Job Part 1 (finding problems) has started. My answers so far are in `job-notes.md`; pick up at step 1's open question.
@@ -16,7 +16,7 @@ _Last updated: 2026-10-09 · Last review: none yet (first one due around 2026-10
 - First prototype made: a calculator (v1, then v2 with green buttons). It was practice and has nothing to do with the job. The prototyping process is under agreements below.
 
 ## What's next
-1. Bring the RM framework memos into main (idea 17): just the 3 memos, not the old rule edits. Then review memo v6.
+1. Review memo v6 in `memos/rm-analytics-framework.md`.
 2. Work through the Claude Mastery course: paste in the first page and pick what to add to the brain.
 3. Continue the Associated Bank job, Part 1, with the prompt in `job-prompts.md`. Pick up where `job-notes.md` stops.
 4. Use Claude for real work, including prototypes for the new job, and say "wrap up" at the end of each session.
