@@ -22,13 +22,21 @@ everything else is iterated and grown on top.
 3. **Govern from day one and prove it with evidence.** Risk partners are involved from the first week. Results are measured against RMs not yet using the tool, so revenue is never credited to AI by mistake.
 
 **The plan (estimate):** the first standard use cases live with a pilot
-group in about 6–8 weeks, then a release every two weeks and a new wave of use
+group in about 8 weeks, then a release every two weeks and a new wave of use
 cases about every six weeks. Leading measures show up within weeks; a first
 read on closed revenue comes at about month 6. By day 90: wave 1 live with
-regular releases, wave 2 about to launch, wave 3 in build.
+regular releases, wave 2 about to launch, wave 3 in build. This pace depends
+on five conditions set out in the project plan (Section 6). If the bank's AI
+review or data access takes longer, the meeting follow-up feature still goes
+live in about week 8, and the insight features follow by about week 14.
 
 **What I'd need:** a business sponsor, time with 6–10 RMs and their managers, named data owners, an early risk
 partner, and a willing pilot group.
+
+**How to use this plan.** Sections 1–11 are the plan. Appendix A specifies
+every agent (job, inputs, allowed actions, outputs, when it stops and proof
+it worked), and Appendix B sets out each RM workflow step by step, so the
+team can build directly from them.
 
 ---
 
@@ -120,7 +128,7 @@ each with an owner and a date, reviewed weekly with the core team and at each ga
 ## 4. How the work flows
 
 Six steps, each ending in a **go/no-go gate**. The first pass through all six
-is fast (about 6–8 weeks to wave 1 live); after that, steps 3–6 repeat in
+is fast (about 8 weeks to wave 1 live); after that, steps 3–6 repeat in
 two-week cycles, and each new wave of use cases takes a short pass through
 Discover and Define. **Governance runs through every step**; Step 4 is the
 formal approval gate, not the first time risk partners see the product.
@@ -400,6 +408,37 @@ of standard use cases about every six weeks. The risk partner is engaged from
 week one. Weeks are estimates; the real pace depends on data access and the
 bank's AI review, confirmed in the first weeks.
 
+**What makes an 8-week wave 1 possible.** Moving fast is the goal, so the plan
+is built around five conditions, each checked in week 1:
+
+| Condition | Why it matters | Checked by |
+|---|---|---|
+| **1. Standard features only.** Wave 1 uses features already in Salesforce, M365 Copilot and Power Platform. | Configuring is much faster than building, and these platforms already have bank approval. | PM and platform teams, week 1 |
+| **2. Low risk by design.** Internal only, assistive, read-only by default, nothing near credit decisions or pricing. | Should earn a low risk rating and a lighter review. | Risk partner gives an early rating, week 2 |
+| **3. Evidence built as we go.** Test results and the evidence pack grow during Build. | The formal review becomes a two-week confirmation, not a fresh start. | PM and risk partner, every week |
+| **4. Data in place early.** Access requested in week 1; wave 1 uses only certified data. | Data access is often the slowest step. | Data owners sign the data contract, week 4 |
+| **5. Fast decisions.** The sponsor makes each gate call within a week. | Waiting for a decision adds weeks. | Sponsor, at each gate |
+
+**Backup plan.** If the AI review or data access takes longer, wave 1 is split:
+- **About week 8:** the meeting recap and follow-up draft goes live on its own. It runs in M365 Copilot on the RM's own meetings and email, so it needs the least new data and review.
+- **By about week 14:** the client brief and weekly opportunity list follow, once data access and review are complete.
+- Later waves move back by the same amount. The decision to split is made at Gate 2 (week 4), so no one is surprised later.
+
+**Wave 1, week by week:**
+
+| Week | What gets done | Owner | Proof it's done |
+|---|---|---|---|
+| 1 | Sponsor kickoff; risk partner briefed; data access requested; the five conditions checked | PM | Kickoff notes; access requests logged |
+| 1–2 | RM interviews and shadowing; levers sized; mock-up tested | PM, analyst | Ranked opportunity list; mock-up feedback |
+| 2 | Gate 1: wave 1 use cases, target lever and baseline agreed | Sponsor | Decision log entry |
+| 3–4 | Brief, user stories, data contract, risk intake, value model, Finance attribution method | PM, data owners, risk partner | Signed data contract; early risk rating |
+| 4 | Gate 2: approved to build; split decision made if needed | Sponsor, risk partner | Decision log entry |
+| 4–7 | Configure the agents and workflows in Appendices A and B; build the test set; build the evidence pack | Platform teams, PM | Test results against the quality bar |
+| 6–7 | Formal review and sign-offs | Risk, compliance, privacy, security | Sign-offs recorded |
+| 7 | Gate 3 and Gate 4: quality bar met and approved to launch | Sponsor, risk partner | Test report; sign-offs |
+| 7 | Release readiness: training, support model, incident process, comparison group set | PM, operations | Readiness checklist complete |
+| 8 | Wave 1 live with pilot RMs | PM | First weekly usage report |
+
 ```mermaid
 gantt
     title RM analytics: project plan (estimate; week 1 = start)
@@ -453,7 +492,7 @@ measures are coming in.
 |---|---|
 | **CRM data is incomplete** (RMs skip logging) | Lean on account data in Snowflake first; the time-saving features improve CRM data over time (the flywheel) |
 | **RMs don't trust the insights** | Show the reason and the numbers behind every insight; co-design with pilot RMs; managers model use |
-| **Governance takes longer than planned** | Brief risk partners in week one; keep each wave low-risk, internal-only and on approved platforms; build the evidence pack as we go |
+| **Governance takes longer than planned** | Brief risk partners in week one; keep each wave low-risk, internal-only and on approved platforms; build the evidence pack as we go; if it still runs long, split wave 1 (see the backup plan in Section 6) |
 | **Incentives don't reward acting on insights** | Agree recognition for AI-sourced wins with sales leadership before launch |
 | **Costs grow with usage** | Track cost per active RM; use the smallest AI model that meets the quality bar |
 | **Revenue attribution is disputed** | Agree the comparison-group method and tagging with Finance in Define |
