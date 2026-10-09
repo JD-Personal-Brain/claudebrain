@@ -109,6 +109,11 @@ one. Finance agrees the method before the pilot starts.
 | **Model risk management** | Validates the AI | Risk rating; approval to launch |
 | **Compliance** (including fair lending) and **privacy and security** | Review controls and data use | Required controls; sign-off |
 | **Sales leadership and HR** | Incentives | Whether acting on insights is recognized |
+| **Operations** | Run the product day to day; handle incidents | Support model and incident process |
+
+**Keeping partners aligned.** Every decision goes in a decision log: what was
+decided, who decided and why. Dependencies, risks and issues sit in one list,
+each with an owner and a date, reviewed weekly with the core team and at each gate.
 
 ---
 
@@ -212,13 +217,13 @@ loop compounds over time and is a reason to build both goals together.
 | Sub-step | What happens | Tools that help |
 |---|---|---|
 | 1. Write the problem and outcome | One sentence each, with a measurable target | M365 Copilot in Word |
-| 2. Choose the platform | Apply the five criteria and confirm the pilot platform | Salesforce, Copilot Studio, Power Automate |
+| 2. Choose the platform and delivery path | Apply the five criteria; confirm the pilot platform and the release plan | Salesforce, Copilot Studio, Power Automate |
 | 3. Define the data contract | Exact fields, freshness and quality checks | Snowflake, Salesforce |
-| 4. Start the risk intake | Describe the use case and get an early risk rating | The bank's governance process |
+| 4. Start the risk intake | Describe the use case, get an early risk rating and list the control requirements | The bank's governance process |
 | 5. Write user stories and acceptance criteria | Short "as an RM, I need…" statements, each with a test of done | An approved LLM to draft; the team reviews |
 | 6. Set the measures, quality bar and value model | Revenue, capacity and adoption targets; quality thresholds; payback | Power BI |
 | 7. Agree attribution with Finance | How AI-sourced revenue is tagged and compared | Salesforce |
-| 8. Scope the first release | The smallest useful version, and the pilot group | — |
+| 8. Prioritize and scope the first release | Rank the backlog by value, effort and risk, and record the trade-offs; pick the smallest useful version and the pilot group | — |
 
 **AI strategy:** Use AI as a drafting partner, so the team spends its time on decisions rather than documents. Nothing is approved by an agent.
 
@@ -231,7 +236,7 @@ loop compounds over time and is a reason to build both goals together.
 - **AI for the team:** drafting stories, criteria and test questions for review.
 - **AI for RMs:** defined, not built. For example: "Each Monday, show me my top 5 client opportunities, with the reason and a suggested next step," and "Before each call, give me a one-page brief; afterward, draft my notes for Salesforce."
 - **Data:** a signed-off data contract, so no feature depends on data we don't have.
-- **Output:** a one-page product brief, a first backlog, the data contract, the risk rating and the value model.
+- **Output:** a one-page product brief, a prioritized backlog, the data contract, the risk rating and control requirements, and the value model.
 - **Checks:** the AI plays no part in credit decisions or pricing. Any insight that suggests a credit product, such as a line of credit, is reviewed by compliance, because fair-lending rules (including the Equal Credit Opportunity Act) apply to business credit too.
 - **Gate:** the brief, data contract and risk rating are agreed, and the value model shows payback within [X] months.
 
@@ -240,6 +245,12 @@ loop compounds over time and is a reason to build both goals together.
 ## Step 3: Build
 
 **Goal:** Build the smallest version that RMs will actually use and trust.
+
+**AI capabilities used:** agents (signal finder, insight writer, prep and
+follow-up assistant), retrieval with sources (each insight shows the client
+data behind it), data flows (Snowflake signals into Salesforce), workflow
+automations (the weekly digest) and system integrations (Salesforce, Teams
+and Outlook).
 
 | Sub-step | What happens | Tools that help |
 |---|---|---|
@@ -308,13 +319,14 @@ loop compounds over time and is a reason to build both goals together.
 
 | Sub-step | What happens | Tools that help |
 |---|---|---|
-| 1. Launch the pilot | A small group of RMs and their managers, alongside a comparison group | Power Platform environments (test to live), Salesforce release |
-| 2. Build it into routines (the core of adoption) | Managers run weekly pipeline meetings from the insights, so use becomes a habit, not a training topic | Salesforce, Power BI |
-| 3. Train in context | Short demos built on RMs' own clients | Teams |
-| 4. Recruit champions | Respected RMs who show peers how they use it | A Teams channel |
-| 5. Recognize AI-sourced wins | Celebrate and credit wins that started from an insight | Salesforce, sales leadership |
-| 6. Fix fast | Act on feedback every week | Feedback logged in Salesforce |
-| 7. Scale in waves | Expand only after a go/no-go check | Power BI adoption dashboard |
+| 1. Confirm release readiness | Support model, incident process, training and communications ready; sign-offs in place | Power Platform environments, Teams |
+| 2. Launch the pilot | A small group of RMs and their managers, alongside a comparison group | Power Platform environments (test to live), Salesforce release |
+| 3. Build it into routines (the core of adoption) | Managers run weekly pipeline meetings from the insights, so use becomes a habit, not a training topic | Salesforce, Power BI |
+| 4. Train in context | Short demos built on RMs' own clients | Teams |
+| 5. Recruit champions | Respected RMs who show peers how they use it | A Teams channel |
+| 6. Recognize AI-sourced wins | Celebrate and credit wins that started from an insight | Salesforce, sales leadership |
+| 7. Fix fast | Act on feedback every week | Feedback logged in Salesforce |
+| 8. Scale in waves | Expand only after a go/no-go check | Power BI adoption dashboard |
 
 **AI strategy:** Adoption is a management routine, not a training event; research suggests training rarely sticks and use fades. AI helps RMs learn in the flow of work and turns feedback into fixes quickly.
 
@@ -346,13 +358,15 @@ quarters.
 
 | Type | Measure |
 |---|---|
-| **Adoption** | Weekly active RMs; share of the target group using it |
-| **Capacity** | Client-facing hours per RM; clients covered per RM |
-| **Action** | Insights acted on; new opportunities created from them in Salesforce |
-| **Business impact** | Pipeline and closed revenue from AI-sourced opportunities, against the comparison group |
+| **Usage** | Insights opened and acted on; briefs and follow-ups used; new opportunities created from insights in Salesforce |
+| **Adoption** | Weekly active RMs; share of the target group using it; repeat use |
 | **Quality** | Accuracy, relevance and usefulness against the quality bar |
+| **Business impact** | Pipeline and closed revenue from AI-sourced opportunities, against the comparison group; client-facing hours and clients covered per RM |
 | **Risk and controls** | Incidents, RM overrides, guardrail blocks |
 | **Cost** | Cost per active RM and per acted-on insight |
+
+The first five are the measures the role names. Cost is added because the
+goal is a product that pays for itself.
 
 | Sub-step | What happens | Tools that help |
 |---|---|---|
@@ -498,11 +512,28 @@ comparison group, which is rare in published results.
 
 ---
 
-## 10. What I'd confirm in the first weeks
+## 10. How this plan covers the role
+
+| What the role asks for | Where this plan delivers it |
+|---|---|
+| Own the product from discovery through governed release, adoption and improvement | Section 4 and Steps 1–6 |
+| Work directly with bankers to find needs and turn them into clear products | Step 1 (interviews, shadowing, mock-up) and Step 2 (product brief) |
+| User stories, acceptance criteria, backlog priorities, release scope, success measures, control requirements and trade-offs | Step 2 |
+| Configure practical AI (agents, retrieval, data flows, automations, integrations) in the tools bankers use | Section 5 and Step 3 |
+| Governed delivery, with risk, privacy, responsible AI and regulation built in from the start | The governance thread in Section 4; Step 4; a risk partner from week one |
+| Lead with limited oversight: priorities, decisions, dependencies, testing, controls, release readiness and issues | Section 3 (decision log, one issues list), the gates in Section 4, Steps 3–5 |
+| Drive adoption and change in a regulated environment | Step 5 |
+| Define and monitor usage, quality, business impact, adoption, and risk and control measures | Step 6 |
+| Align business, technology, data, risk, compliance and operations partners | Section 3 |
+
+---
+
+## 11. What I'd confirm in the first weeks
 
 This approach is built on the platforms named in the role: Salesforce,
 Snowflake, Microsoft Fabric and Power BI, Microsoft 365 Copilot, Power
-Platform and AWS Bedrock. I'd expect to build on them, and I'd confirm early:
+Platform and AWS Bedrock. I've been told all of them are live, so the plan
+builds on them. I'd confirm early:
 
 - Which revenue lever matters most to the business right now?
 - How will success be judged in the first 6 months?
@@ -511,4 +542,4 @@ Platform and AWS Bedrock. I'd expect to build on them, and I'd confirm early:
 - How are RMs measured and rewarded today?
 - How long does AI governance review usually take?
 - What team and budget are available for the pilot?
-- Which of these platforms are live for RMs today, and which are planned?
+- How each platform is set up for RMs today: which features, licenses and connections?

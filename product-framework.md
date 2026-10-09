@@ -4,9 +4,10 @@ Claude loads this every session. Whenever we plan or work on a product, we
 organize it by these six steps.
 
 > **Source.** Taken from my RM analytics memo (`memos/rm-analytics-framework.md`,
-> memo v6, 2026-10-08) with the RM details removed. That memo is the full
-> worked example. It's still waiting for my review, so update this page if the
-> review changes the steps.
+> memo v6, 2026-10-08) with the RM details removed. Memo v7 (2026-10-09) is
+> aligned back to this page and the job description, and is the full worked
+> example. It's still waiting for my review, so update this page if the review
+> changes the steps.
 
 ## The six steps at a glance
 Each step ends in a **go/no-go gate**. The first pass through all six is fast.
