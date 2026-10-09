@@ -26,3 +26,4 @@ Claude adds ideas as it notices them and suggests 1 to 3 at each wrap-up.
 | 18 | A "plain words" check in the wrap-up skill (from L10c) | Before the final message, Claude must reread it as a newcomer and explain anything internal. Claude can't add this itself; I'd add it alongside idea 16 | suggested |
 | 19 | Make the startup warning list only files that are really missing from main | The warning listed my memos as missing even after they were in main, which was confusing | yes (to build) |
 | 20 | A "new use case" skill | Say "new use case: X" and Claude drafts the memo with Example 4, audits it against `product-framework.md`, fixes it and saves it in `memos/` | yes (to build) |
+| 21 | An "agent spec" checklist for the job (from the "autonomous team" prompt I was sent) | For every AI agent I design at the bank, write down its mission, inputs, allowed tools, outputs, stop condition and proof it worked. Fits "One job each" in `product-framework.md` | suggested |
