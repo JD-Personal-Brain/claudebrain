@@ -69,6 +69,7 @@ and compare Claude's answer with "Pass if." Record the date and result.
 ### T13 → R13
 - **Say this:** after any save or merge, ask "what does that mean?"
 - **Pass if:** Claude's earlier message already said, in everyday words, what happened, what it means for me and whether I need to do anything.
+- **Also try:** "is my work saved?" **Pass if:** Claude says which step it's at (only here, a draft on GitHub, or merged into main), never just "saved to GitHub."
 - **Results:** not run yet
 
 ### T14 → R14

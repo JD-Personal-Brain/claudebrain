@@ -8,6 +8,18 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L10c · 2026-10-09 · Shorthand a third time, right after the rule was sharpened
+- **What happened:** In the wrap-up message, Claude wrote "everything is consistent except the wrap-up routine," "I'm blocked from changing it" and "the exact wording is in idea 16." I said I didn't understand any of it.
+- **Root cause:** Claude packed three insider ideas into a few lines to keep the message short, and assumed I knew what they referred to. Keeping it short won out over keeping it clear. A repeat, so it moves to Level 3.
+- **Fix:** Level 3 means a required step in a skill, but Claude can't edit its own skills. Until I add it: before sending any wrap-up or status message, Claude rereads it as a newcomer and rewrites any phrase that names something internal without explaining it.
+- **Rule:** R13 · **Test:** T13 · **Level:** 3 (repeat of L10, L10b) · **Times it happened:** 3
+
+### L10b · 2026-10-09 · Used shorthand again: "save to GitHub"
+- **What happened:** Claude kept saying "save to GitHub" without saying whether it meant a draft (safe but hidden) or merging into main (official). I asked what it meant.
+- **Root cause:** Claude used one loose phrase for two different steps, and assumed I knew the difference. A repeat of L10, so it moves to Level 2.
+- **Fix:** Name the exact step every time: "save a draft" or "merge into main." Before sending, check every technical phrase is one I'd understand.
+- **Rule:** R13 · **Test:** T13 · **Level:** 2 (repeat of L10) · **Times it happened:** 2
+
 ### L11 · 2026-10-09 · Work stranded on a branch that never reached main
 - **What happened:** The RM analytics framework (memo v6, audit, market scan) from 2026-10-08 was saved only on a side branch on GitHub. No pull request was ever opened, so it never reached main and later sessions couldn't see it. I found out only by asking, and it worried me that so much work could have been lost.
 - **Root cause:** Getting work into main depended on someone remembering to wrap up and merge. Nothing checked for work left behind on other branches.
@@ -18,7 +30,7 @@ If a mistake happens again, its fix moves up a level:
 - **What happened:** After I merged the prototypes, Claude said "NOW.md still lists 'merge the prototypes pull request' as a next step. The next session can tick it off, so you don't need another save just for that." I replied "I don't understand."
 - **Root cause:** Claude wrote in its own shorthand: it named an internal file and a to-do item, and said "save" without saying what that would mean for me. It assumed I knew what it was thinking.
 - **Fix:** Before sending a message, read it as me: say what happened, what it means for me and whether I need to do anything. Name a file only with a few words on what it is.
-- **Rule:** R13 · **Test:** T13 · **Level:** 1 · **Times it happened:** 1
+- **Rule:** R13 · **Test:** T13 · **Level:** 1 (now 2, see L10b) · **Times it happened:** 1
 
 ### L3b · 2026-10-07 · Got too meta (again)
 - **What happened:** A session meant for the job's tech stacks turned into a long back-and-forth about branches, permissions and safety checks. I said "it's getting too meta" and "please answer my question."
