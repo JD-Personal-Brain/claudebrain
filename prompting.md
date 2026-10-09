@@ -191,6 +191,21 @@ Output:   Executive summary, outcome, value model, who decides, the six
 
 **For a different use case:** change the Context (the use case, its goal and any assumptions) and the user group named in the Rules. Everything else stays.
 
+## Which model to use
+Pick the smallest model that does the job well. I choose the model when I
+start a session; Claude can't switch its own. At the start of a big or unusual
+task, Claude says in one line if a different model would suit it better.
+
+1. **Small, fast jobs** (classifying, tagging, short summaries, bulk cleanup) → **Haiku**.
+2. **Everyday work** where I want my limits to stretch (drafting, cleanup, quick back-and-forth) → **Sonnet**.
+3. **Real reasoning, or a mediocre answer won't do** (memos, plans, designed docs) → **Opus 5.5**, the default on my paid plan.
+4. **Opus really fell short on a hard, long-running problem**, and I'm willing to spend the usage → **Fable 5.1**, if my plan includes it.
+
+Not sure? Stay on the default (Opus 5.5).
+
+> Source: a decision rule I was sent (2026-10-09). Version numbers change
+> often: check the model picker in the Claude app for the current names.
+
 ## Our house style (from my profile and rules)
 Add these to prompts written for me, when they fit:
 - Plain English; explain any technical word.
