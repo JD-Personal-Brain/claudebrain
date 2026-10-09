@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L3b · 2026-10-07 · Got too meta (again)
+- **What happened:** A session meant for the job's tech stacks turned into a long back-and-forth about branches, permissions and safety checks. I said "it's getting too meta" and "please answer my question."
+- **Root cause:** Each problem with the setup pulled Claude into explaining and asking about it, instead of fixing what it could, giving me the one step I had to do, and getting back to the real work. A repeat of L3, so it moves to Level 2.
+- **Fix:** When a setup problem comes up, fix what Claude can, give me at most one step to do, and go straight back to the task I asked for. Answer my actual question first, before any side issue.
+- **Rule:** R3 · **Test:** T3 · **Level:** 2 (repeat of L3) · **Times it happened:** 2
+
 ### L2b · 2026-10-09 · Wrap-up message too long (again)
 - **What happened:** At the end of the last session, Claude's final wrap-up message ran about 15 lines (what's in it, a blocked item, 5 merge steps, next session). I said "say less."
 - **Root cause:** Rule R2 was there, but the wrap-up skill itself asks for a lot at the end, so Claude followed the skill and forgot the rule. A repeat, so the fix moves to Level 3.

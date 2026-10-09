@@ -13,6 +13,7 @@ when it learns something new.
 - Don't get in the weeds. Keep moving and let things grow naturally.
 - I prefer a weekly review of how things are going.
 - When something keeps going wrong, I want a lasting fix that stops it for good, not just an apology.
+- I don't like it when sessions get "too meta" (all about the setup). Keep the focus on the real work.
 
 ## Tools I use
 - Chrome browser.

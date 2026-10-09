@@ -18,7 +18,8 @@ _Last updated: 2026-10-09 · Last review: none yet (first one due around 2026-10
 2. Continue the Associated Bank job, Part 1, with the prompt in `job-prompts.md`. Pick up where `job-notes.md` stops.
 3. Use Claude for real work, including prototypes for the new job, and say "wrap up" at the end of each session.
 4. Build the "run-tests" skill (idea 1, approved).
-5. Do the first weekly review around 2026-10-14.
+5. Remove my safety rules myself in GitHub (idea 16): Claude is blocked from changing its own rules.
+6. Do the first weekly review around 2026-10-14.
 
 ## Current agreements (and why)
 - **Claude explains, I decide.** Why: I'm not a developer and want to stay in control.
