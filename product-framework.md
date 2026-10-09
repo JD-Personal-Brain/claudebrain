@@ -4,9 +4,9 @@ Claude loads this every session. Whenever we plan or work on a product, we
 organize it by these six steps.
 
 > **Source.** Taken from my RM analytics memo (`memos/rm-analytics-framework.md`,
-> memo v6, 2026-10-08) with the RM details removed. Memo v7 (2026-10-09) is
+> memo v6, 2026-10-08) with the RM details removed. Memo v8 (2026-10-09) is
 > aligned back to this page and the job description, and is the full worked
-> example. It's still waiting for my review, so update this page if the review
+> example, with agent specs and workflows in its appendices. It's still waiting for my review, so update this page if the review
 > changes the steps.
 
 ## The six steps at a glance

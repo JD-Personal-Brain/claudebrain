@@ -18,7 +18,7 @@ everything else is iterated and grown on top.
 
 **The approach, in three points:**
 1. **Deploy the standard base fast, aimed at revenue.** Pick the first standard use cases with the sponsor in a two-week sprint, then build them in weeks, not months.
-2. **Pair insights with time.** RMs reportedly spend only about 25–30% of their time with clients. Better opportunities only pay off if RMs have time to act on them, so the base includes time savers (briefs, meeting follow-ups) alongside revenue insights.
+2. **Pair insights with time.** RMs at many commercial banks reportedly spend only about 25–30% of their time with clients. Better opportunities only pay off if RMs have time to act on them, so the base includes time savers (briefs, meeting follow-ups) alongside revenue insights.
 3. **Govern from day one and prove it with evidence.** Risk partners are involved from the first week. Results are measured against RMs not yet using the tool, so revenue is never credited to AI by mistake.
 
 **The plan (estimate):** the first standard use cases live with a pilot
@@ -336,7 +336,7 @@ and Outlook).
 | 7. Fix fast | Act on feedback every week | Feedback logged in Salesforce |
 | 8. Scale in waves | Expand only after a go/no-go check | Power BI adoption dashboard |
 
-**AI strategy:** Adoption is a management routine, not a training event; research suggests training rarely sticks and use fades. AI helps RMs learn in the flow of work and turns feedback into fixes quickly.
+**AI strategy:** Adoption is a management routine, not a training event: new tools that arrive without a change in how teams work tend to get little use. AI helps RMs learn in the flow of work and turns feedback into fixes quickly.
 
 | Agent | Type | Job | Runs on | Reads from | Person in charge |
 |---|---|---|---|---|---|
@@ -523,16 +523,16 @@ controlled results, so treat them as directional.
 
 | Who | What they did | Source |
 |---|---|---|
-| BMO (commercial banking) | "Next Best Offer" engine surfaces client opportunities to relationship teams through the CRM | [BMO AI][bmo] |
-| Bank of America | AI tools reportedly let relationship bankers cover far more clients (about 15 → about 50 in some cases) | [TechInformed][boa] |
-| Morgan Stanley (wealth) | "Debrief" writes meeting notes and follow-ups into Salesforce, with client consent; a referral program reportedly produced over 100,000 successful referrals | [Quartz][ms1], [The Daily Upside][ms2] |
-| JPMorgan (wealth) | "Coach" AI tools credited with lifting sales during the April 2025 market selloff | [Reuters via AOL][jpm] |
-| Banco do Brasil | AI summaries inside the RM workspace, logged back to the CRM | [NICE case study][bdb] (vendor) |
-| CaixaBank | Salesforce Agentforce and Data Cloud for AI-assisted product contracting | [CaixaBank][caixa] |
+| BMO (commercial banking) | "Next Best Offer" engine ranks leads and offers for relationship teams, delivered through the CRM with the reason for each offer shown | [BMO AI][bmo] |
+| Bank of America | Its CTO said AI prep tools mean a banker can cover about 50 clients instead of 15 in some cases (management claim, not audited) | Reuters, 2025, via [TechInformed][boa] |
+| Morgan Stanley (wealth) | "Debrief", used with client consent, summarizes meetings, drafts a follow-up email for the advisor to review and send, and saves a note into Salesforce. Separately, its CFO said AI-matched referrals of prospects to advisors doubled to more than 100,000 (2024, year to date) | [Morgan Stanley][ms1] (June 2024), [The Daily Upside][ms2] (Oct 2024) |
+| JPMorgan (wealth) | Said its AI tools, including the adviser tool "Coach", helped advisers lift sales and handle client requests during the April 2025 selloff (no figure given) | Reuters, May 2025, via [AOL][jpm] |
+| Banco do Brasil | 12,000+ RMs get AI conversation summaries and sentiment in one workspace, with sentiment written back to the CRM | [NiCE case study][bdb] (vendor, 2026) |
+| CaixaBank | Uses Salesforce Agentforce and Data Cloud, and built an AI assistant with Salesforce's AI tools to guide product applications; a specialist always finalizes the contract | [CaixaBank][caixa] (2025) |
 
 **Industry figures (directional):**
-- Banks that rework a frontline area end to end report about 3–15% higher revenue per RM and 20–40% lower cost to serve ([McKinsey][mck]).
-- RMs spend about 25–30% of their time in client conversations; training is infrequent and adoption of new tools fades ([McKinsey][mck], via [Backbase][bb]).
+- McKinsey says banks that rework one frontline area end to end can see about 3–15% higher revenue per RM and 20–40% lower cost to serve ([McKinsey][mck], Dec 2025).
+- RMs at many commercial banks spend only about 25–30% of their time in client conversations ([Backbase][bb], citing McKinsey).
 
 **What this approach takes from it:** pair insights with freed-up time; track
 clients covered per RM; make adoption a management routine; capture why RMs
@@ -542,7 +542,7 @@ comparison group, which is rare in published results.
 [mck]: https://www.mckinsey.com/industries/financial-services/our-insights/agentic-ai-is-here-is-your-banks-frontline-team-ready
 [bmo]: https://ai.bmo.com/?p=569
 [boa]: https://techinformed.com/?p=37424
-[ms1]: https://qz.com/morgan-stanley-openai-debrief-ai-chatbot-genai-1851561076
+[ms1]: https://www.morganstanley.com/press-releases/ai-at-morgan-stanley-debrief-launch
 [ms2]: https://www.thedailyupside.com/technology/artificial-intelligence/how-morgan-stanleys-ai-helped-close-100k-new-clients-this-year/
 [jpm]: https://www.aol.com/news/jpmorgan-says-ai-helped-boost-170825172.html
 [bdb]: https://www.nice.com/resources/banco-do-brasils-bankers-stopped-working-yesterdays-data-and-let-ai-hand-them-todays
@@ -582,3 +582,160 @@ builds on them. I'd confirm early:
 - How long does AI governance review usually take?
 - What team and budget are available for the pilot?
 - How each platform is set up for RMs today: which features, licenses and connections?
+
+---
+
+## Appendix A: Agent specs
+
+Each agent named in Steps 1–6, written so a platform team can build it and a
+risk partner can review it. **[X]** values are set in Define.
+
+**Rules for every agent:**
+- **One job.** If a request falls outside it, the agent says so and stops.
+- **Read-only by default.** Any change to a record, or anything that reaches a client, needs a named person's click.
+- **Approved models and data only.** Uses only AI models and data sources approved for this product.
+- **Never guesses.** If its inputs are missing, stale or fail a check, it stops and alerts its owner rather than producing a weaker answer.
+- **Everything logged.** Each run records who, what, when, which sources and what it produced, for audit and for measuring.
+
+### Agents RMs use (the product)
+
+**A1. Signal finder** · wave 1 · runs on Snowflake (Cortex)
+- **Job:** each night, scan each RM's clients for opportunity signals using the agreed rules and scores (product gaps; from wave 2, early warnings and referral needs).
+- **Inputs:** certified Snowflake views of balances, products, activity and trends; the rule set owned by the business.
+- **Allowed actions:** read the certified views; write signals to a signals table.
+- **Not allowed:** contacting clients; changing Salesforce; inventing signals outside the rule set.
+- **Outputs:** a list of signals per RM, each with the rule that fired and the numbers behind it.
+- **Stops when:** every in-scope client has been scanned, or the data is older than [X] hours (then it alerts the data owner and produces nothing).
+- **Proof it worked:** run log with clients scanned and signals found; a sample of signals matches the source numbers exactly.
+- **Person in charge:** business owner of the rules; data owner for the inputs.
+
+**A2. Insight writer** · wave 1 · runs on Salesforce Prompt Builder (or AWS Bedrock if needed)
+- **Job:** turn each signal into a plain-English reason, talking points and a suggested next step, citing the numbers.
+- **Inputs:** signals from A1; the Salesforce client record.
+- **Allowed actions:** read signals and the client record; write a draft insight to the client record.
+- **Not allowed:** recommending credit decisions or pricing; stating any number not in its inputs.
+- **Outputs:** one insight per signal, with its sources shown.
+- **Stops when:** every signal has an insight, or a guardrail blocks one (logged and sent to the product owner).
+- **Proof it worked:** test-set score meets the quality bar (accuracy, sources, relevance); every number traces to the source.
+- **Person in charge:** the RM decides whether to act; the product owner owns quality.
+
+**A3. Prep and follow-up assistant** · waves 1–2 · runs on M365 Copilot and Salesforce Agentforce
+- **Job:** before a client meeting, draft a one-page brief. After it, draft the recap, follow-up email and (wave 2) call notes for Salesforce.
+- **Inputs:** the Salesforce client record; open insights; the RM's calendar; the Teams meeting recap (recorded only with client consent).
+- **Allowed actions:** read the inputs; create drafts for the RM.
+- **Not allowed:** sending anything to a client; saving to Salesforce without the RM's approval.
+- **Outputs:** a brief, a recap, a draft email and draft call notes, all marked as drafts.
+- **Stops when:** the drafts are delivered to the RM. If there's no recording or consent, it drafts from the RM's own notes or asks for them.
+- **Proof it worked:** the RM approves or edits each draft (logged); share of drafts used with light edits ≥ [X]%.
+- **Person in charge:** the RM approves before anything is saved or sent.
+
+**A4. Weekly opportunity digest** · wave 1 · runs on Power Automate, with A2
+- **Job:** every Monday, send each RM their top [X] opportunities.
+- **Inputs:** insights from A2, ranked by the agreed score.
+- **Allowed actions:** send a message to the RM in Teams or Outlook.
+- **Not allowed:** messaging anyone other than the RM (and, if agreed, their manager).
+- **Outputs:** one digest per RM, with links to each client record.
+- **Stops when:** every pilot RM has a digest, or there are no new insights (then it sends a short "nothing new" note).
+- **Proof it worked:** delivery log; open and act-on rates in Power BI.
+- **Person in charge:** the RM decides what to pursue; the product owner owns timing and ranking.
+
+**A5. RM assistant** · wave 3 · runs on Salesforce Agentforce or a Copilot Studio agent in Teams
+- **Job:** answer "what should I know before my call with this client?" and similar questions.
+- **Inputs:** Salesforce and Snowflake, read-only, only clients the RM is allowed to see.
+- **Allowed actions:** read; answer with sources; propose a record update for the RM to click.
+- **Not allowed:** answering about clients outside the RM's permissions; giving credit or pricing advice.
+- **Outputs:** an answer with its sources, or "I don't have that information."
+- **Stops when:** the question is answered, or it is out of scope (it says so and names who can help).
+- **Proof it worked:** test-set score meets the quality bar; zero permission breaches in red-team testing.
+- **Person in charge:** the RM; the product owner for quality.
+
+**A6. Onboarding coach** · wave 1 · runs on a Copilot Studio agent in Teams
+- **Job:** answer "how do I use this?" questions.
+- **Inputs:** approved training guides and FAQs only.
+- **Allowed actions:** answer, with a link to the guide.
+- **Not allowed:** answering about clients or giving business advice.
+- **Outputs:** short answers with a link to the source.
+- **Stops when:** answered, or out of scope (it points to the champion or the product team).
+- **Proof it worked:** answers rated helpful ≥ [X]%; unanswered questions feed the FAQ.
+- **Person in charge:** the product team keeps the content current.
+
+### Agents the team uses
+
+| Agent | Step | Job | Inputs | Allowed actions | Outputs | Stops when | Proof it worked | Person in charge |
+|---|---|---|---|---|---|---|---|---|
+| **A7. Interview synthesizer** | Discover | Turn interview recaps into themes and quotes | Teams transcripts, interview notes | Read; draft | Themes, each linked to its source | All interviews processed | PM spot-checks every theme against the notes | PM |
+| **A8. Opportunity sizer** | Discover | Answer plain-English sizing questions | Snowflake balances and products; Salesforce pipeline | Read-only queries | Sized levers with the query shown | Each lever sized | An analyst re-runs the key numbers | Analyst |
+| **A9. Time-use analyst** | Discover | Find where RM time goes | Salesforce activity and win/loss | Read-only queries | Time-use breakdown | Breakdown complete | PM confirms with RMs in person | PM |
+| **A10. Requirements drafter** | Define | Draft problem statement, user stories, acceptance criteria | Discover findings | Draft only | Draft brief and stories | Drafts delivered | Team and sponsor approve | PM |
+| **A11. Data contract checker** | Define | Check fields exist, are fresh and pass quality checks | Snowflake tables and their quality and access records | Read-only | Gap list | Every field checked | Data owner signs off | Data owner |
+| **A12. Risk intake assistant** | Define | Pre-fill the risk intake; flag likely high-risk areas | Bank policies, product brief | Draft only | Pre-filled intake | Intake drafted | Risk partner sets the rating | Risk partner |
+| **A13. Test grader** | Build | Score each version against the test set | Test set, product outputs | Read; score | Score report | Every test case scored | Experienced RMs grade a sample | Product owner |
+| **A14. Red-team agent** | Govern | Try to break the product (other RMs' clients, credit requests) | The product in test | Send test requests in the test environment only | Failure list | All attack types run | Risk reviews every failure | Risk partner |
+| **A15. Fairness monitor** | Govern | Check opportunities are spread fairly across segments and regions | Opportunity outputs, client segments | Read-only | Fairness report | Report complete | Compliance reviews results | Compliance |
+| **A16. Evidence pack assembler** | Govern | Compile results, data use and controls into review documents | Test results, data contract, controls | Draft only | Evidence pack | Pack drafted | PM and risk verify every claim | PM |
+| **A17. Feedback triage** | Release | Sort feedback into bugs, quality issues and ideas | Feedback logged in Salesforce | Read; tag; add to backlog | Tagged backlog items | All new feedback sorted | PM reviews a weekly sample | PM |
+| **A18. Impact analyst** | Measure | Report pipeline and revenue from AI insights against the comparison group | AI-tagged Salesforce opportunities; Snowflake | Read-only queries | Monthly impact figures | Report complete | Analytics validates before reporting | Analytics |
+| **A19. Quality watchdog** | Measure | Re-run the test set after every change; alert on drift | Test set, live outputs, feedback | Read; alert | Score trend and alerts | Each run complete | Alerts reviewed within [X] days | Product owner |
+| **A20. Improvement scout** | Measure | Propose next backlog items or the next lever | Dashboards, feedback, reviews | Draft only | Ranked suggestions | List delivered | PM and sponsor decide | PM |
+
+---
+
+## Appendix B: Workflows
+
+Each RM-facing use case as a step-by-step flow. Every flow has one
+**decision point** where the RM decides, and everything is logged.
+
+**B1. Weekly opportunity list** (wave 1)
+- **Trigger:** every night (signals); every Monday morning (digest).
+- **Steps:** 1. A1 scans clients and writes signals. 2. A2 writes an insight for each. 3. Insights appear on the Salesforce client record. 4. A4 sends each RM their top [X]. 5. **Decision point:** the RM accepts, rejects (with a reason) or changes each insight. 6. On accept, the RM creates an opportunity in Salesforce, tagged "AI-sourced." 7. A17 sorts the feedback. 8. Managers review the list in the weekly pipeline meeting.
+- **Logged:** signals, insights, opens, decisions and reasons, opportunities created.
+- **Measures:** share of insights acted on; pipeline from AI-sourced opportunities.
+
+**B2. Pre-meeting client brief** (wave 1)
+- **Trigger:** a client meeting on the RM's calendar, [X] hours before; or the RM asks.
+- **Steps:** 1. A3 pulls the client record, open insights and recent activity. 2. It drafts a one-page brief with sources. 3. The brief reaches the RM in Teams or Outlook. 4. **Decision point:** the RM uses it and rates it with one click.
+- **Logged:** briefs created, opened and rated.
+- **Measures:** briefs used; prep time saved (RM survey); rating.
+
+**B3. Meeting recap and follow-up** (wave 1; first in the backup plan)
+- **Trigger:** a client meeting ends.
+- **Steps:** 1. M365 Copilot produces the recap (from a recording only with client consent; otherwise from the RM's notes). 2. A3 drafts the follow-up email and action items. 3. **Decision point:** the RM edits and sends it themselves. Nothing is sent automatically.
+- **Logged:** drafts created; drafts sent after RM edits.
+- **Measures:** time to follow-up; drafts used; time saved.
+
+**B4. Call notes into Salesforce** (wave 2)
+- **Trigger:** the B3 recap is ready.
+- **Steps:** 1. A3 drafts the Salesforce activity note and next steps. 2. **Decision point:** the RM approves or edits. 3. On approval, the note is saved to Salesforce, tagged "AI-drafted."
+- **Logged:** drafts, approvals and edits.
+- **Measures:** share of meetings logged in Salesforce (the data flywheel); admin time saved.
+
+**B5. Early warning: client may leave** (wave 2)
+- **Trigger:** A1 finds a warning signal, such as falling balances or less activity.
+- **Steps:** 1. A2 explains the signal with the numbers. 2. An alert appears on the client record and in the next digest. 3. **Decision point:** the RM decides whether and how to reach out, and logs the action.
+- **Logged:** alerts, RM actions, outcomes.
+- **Measures:** clients kept against the comparison group.
+
+**B6. Referral prompt** (wave 2)
+- **Trigger:** A1 spots a likely need another team serves, such as treasury management.
+- **Steps:** 1. A2 explains the need. 2. **Decision point:** the RM clicks "refer" or dismisses it. 3. On refer, Power Automate creates the referral in Salesforce and notifies the specialist. 4. The specialist accepts it and the referral is tracked to close.
+- **Logged:** prompts, referrals, acceptances, outcomes.
+- **Measures:** referrals made and won.
+
+**B7. RM assistant questions** (wave 3)
+- **Trigger:** the RM asks a question in Salesforce or Teams.
+- **Steps:** 1. A5 checks the RM's permissions. 2. It answers from permitted data, with sources. 3. **Decision point:** the RM acts; any record update needs their click.
+- **Logged:** questions, answers, sources, updates.
+- **Measures:** questions answered; answer ratings; zero permission breaches.
+
+**B8. Prospect lookalikes** (wave 3)
+- **Trigger:** monthly.
+- **Steps:** 1. Snowflake finds prospects that look like the bank's best clients, using agreed and explainable criteria. 2. A2 explains each match. 3. **Decision point:** the RM decides whether to pursue each one.
+- **Logged:** prospects shown, pursued and won.
+- **Measures:** new clients against the comparison group.
+- **Check:** compliance reviews the criteria before launch, because prospect selection can raise fair-lending questions.
+
+**B9. Every release (the team's two-week cycle)**
+- **Trigger:** any change to prompts, rules, data or models.
+- **Steps:** 1. A19 re-runs the test set. 2. If the score is below the quality bar, the release stops. 3. If the change is material, the risk partner is told before release. 4. Release; A19 watches live quality for [X] days.
+- **Logged:** test scores, approvals, release notes.
+- **Measures:** quality trend; releases rolled back.
