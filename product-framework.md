@@ -173,7 +173,7 @@ Accuracy (numbers match the source) · Sources shown · Relevance (users rate it
 1. Name the outcome and the sponsor.
 2. Fill in the table above for this project: its question, governance thread and gate for each step.
 3. Copy the delivery machine's task tables into the shared tracker, with an owner and a date for each task.
-4. Work through Discover first, using the write-up layout.
+4. Work through Discover first, using the write-up layout and the field manual in `playbook/` (how to do each sub-step the first time, and what to log so it can be automated).
 5. Keep the plan in `memos/<project>.md`, as the RM memo does.
 
 _Last updated: 2026-10-09_
