@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L7b · 2026-10-09 · Said the designed plan was done without looking at it
+- **What happened:** Claude published the full plan to the design page and called it done. Only the first quarter showed, because the canvas shows at most 8,000 pixels of each page and the plan was about 32,000. The one-page summary also ran past the bottom of its page. I said the doc was incomplete.
+- **Root cause:** Claude checked that the code ran, but never looked at the page the way I would see it. A repeat of L7 (didn't check where a change landed), so it moves to Level 2.
+- **Fix:** Before calling a designed page done, render it on screen, measure it, look at a screenshot and confirm nothing is cut off.
+- **Rule:** R7 · **Test:** T7 · **Level:** 2 (repeat of L7) · **Times it happened:** 2
+
 ### L13 · 2026-10-09 · Gave me Markdown files for documents meant for people
 - **What happened:** Claude delivered memo v8 and a one-page summary, meant for the hiring leader, as Markdown (.md) files. I said documents people will read must be real, designed, branded documents, like the earlier RM Analytics Framework design page.
 - **Root cause:** Claude treated the repo's working copy as the finished product and didn't ask who would read it. It also missed that a designed version already existed and should be kept up to date.
