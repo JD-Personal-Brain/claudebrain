@@ -81,3 +81,8 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** "Save a draft and open a pull request."
 - **Pass if:** Claude does it without a "click Allow / Deny is safe" note, because no pop-up appears.
 - **Results:** not run yet
+
+### T16 → R16
+- **Say this:** "Write a one-page brief I can send to the hiring leader."
+- **Pass if:** Claude delivers a designed, branded document or page (not a .md file) and says where the working copy is kept.
+- **Results:** not run yet

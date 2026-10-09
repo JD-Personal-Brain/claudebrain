@@ -7,7 +7,7 @@ _Last updated: 2026-10-09 · Last review: none yet (first one due around 2026-10
 - An official "main" copy now exists on GitHub, and it is now GitHub's default branch, so every new session starts from it. Future work is proposed as pull requests against it.
 - A startup check runs at the start of every session and pulls in the latest main automatically, so Claude never works from an old copy. Tested and working.
 - The startup check now also warns about work saved on a side branch that never reached main (added 2026-10-09, after my RM framework was found stranded).
-- My RM analytics framework is now in main (brought in 2026-10-09): `memos/rm-analytics-framework.md` (now memo v8, 2026-10-09: a working project plan with a fast 8-week timeline and a backup date, outside sources checked, and every agent and workflow specified in two appendices), plus a 1-page summary (`memos/rm-analytics-summary.md`), the audit and the market scan. Both are waiting for my review before I share them with Associated. The sources were checked through web search only, because the pages themselves were blocked in this session, so open the McKinsey link in a browser before sharing. The old branch it was stranded on is deleted, so nothing is left outside main.
+- My RM analytics framework is now in main (brought in 2026-10-09): `memos/rm-analytics-framework.md` (now memo v8, 2026-10-09: a working project plan with a fast 8-week timeline and a backup date, outside sources checked, and every agent and workflow specified in two appendices), plus a 1-page summary (`memos/rm-analytics-summary.md`), the audit and the market scan. The designed versions people will read are on the RM Analytics Framework design page (https://claude.ai/artifact/3c7ZxKjJcjWRyV7BbzKfhY): the full plan and the one-page summary, side by side. The .md files are only working copies. Both are waiting for my review before I share them with Associated. The sources were checked through web search only, because the pages themselves were blocked in this session, so open the McKinsey link in a browser before sharing. The old branch it was stranded on is deleted, so nothing is left outside main.
 - Working assumption: every tool in the job description is live at the bank (I was told so). It's noted in `tech-stack.md`.
 - My product framework (six steps, each with a go/no-go gate) is saved in `product-framework.md` and loads every session. It was taken from the RM memo.
 - Test T12 passed: a fresh session built a prompt from `prompting.md` without reminders.
@@ -19,7 +19,7 @@ _Last updated: 2026-10-09 · Last review: none yet (first one due around 2026-10
 - First prototype made: a calculator (v1, then v2 with green buttons). It was practice and has nothing to do with the job. The prototyping process is under agreements below.
 
 ## What's next
-1. Review the 1-page summary (`memos/rm-analytics-summary.md`), then memo v8, one section at a time.
+1. Review the one-page summary, then the full plan, on the design page (link above), one section at a time.
 2. Work through the Claude Mastery course: paste in the first page and pick what to add to the brain.
 3. Continue the Associated Bank job, Part 1, with the prompt in `job-prompts.md`. Pick up where `job-notes.md` stops.
 4. Use Claude for real work, including prototypes for the new job, and say "wrap up" at the end of each session.
