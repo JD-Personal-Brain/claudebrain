@@ -183,7 +183,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
   5. Ask the sponsor who should own the product long term, for example someone in a revenue line. Record the name, or "to be decided" with a date to decide by. Until then, the product manager owns it.
   6. Complete the one-page brief: problem, outcome, users, platform (2.2), release 1 scope, what's out of scope and the long-term owner.
   7. Build the gate pack: the brief, data contract, risk rating and controls, the backlog with release 1 marked, measures, value model, pilot group and date.
-- **Output:** the release 1 scope, the pilot and comparison groups, a date, the finished brief and the gate pack.
+- **Output:** the release 1 scope, the pilot and comparison groups, a date, the long-term owner (or a date to decide), the finished brief and the gate pack.
 - **Done when:** the gate pack is ready.
 - **Automation watch:**
   - First time: **Me** for the scope, **Draft** for the pack.
@@ -215,6 +215,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
 | 2.6 | Decision log drafter | Me | Draft | New |
 | 2.6, 2.8 | None: priorities and scope stay with a person | Me | Me | — |
 | 2.7 | Measures sheet builder | Draft | Draft | New |
+| 2.8 | None: recording the long-term owner stays with a person | Me | Me | — |
 | 2.8 | Gate pack drafter (shared with Discover) | Draft | Draft | New |
 
 **First time** = how the task is done on the first project. **Aim for** = its kind in `product-framework.md`.

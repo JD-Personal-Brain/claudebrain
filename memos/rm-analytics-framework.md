@@ -110,7 +110,7 @@ one. Finance agrees the method before the pilot starts.
 | **Business sponsor** (commercial banking leader) | Owns the outcome and the funding | Target lever, go/no-go at each gate |
 | **RM leaders and market managers** | Shape the workflow; run the weekly routine | Pilot group, how insights are used in pipeline meetings |
 | **Pilot RMs** | Co-design and test | Whether each insight is useful (their feedback steers the backlog) |
-| **Product manager** (this role) | Owns discovery through adoption | Scope, priorities, trade-offs |
+| **Product manager (PM)** (this role) | Owns discovery through adoption; owns the product until a long-term owner is named | Scope, priorities, trade-offs |
 | **Data owners** (Snowflake, Salesforce) | Provide and certify data | What data may be used, and how |
 | **Platform teams** (Salesforce, Microsoft, AWS, data engineering) | Build and run | Technical design within bank standards |
 | **Model risk management** | Validates the AI | Risk rating; approval to launch |
@@ -388,7 +388,7 @@ goal is a product that pays for itself.
 | Agent | Type | Job | Runs on | Reads from | Person in charge |
 |---|---|---|---|---|---|
 | Impact analyst | For the team | Answers "how much pipeline came from AI insights this month?" against the comparison group | Snowflake Cortex Analyst, Power BI | AI-tagged Salesforce opportunities; Snowflake | Analytics validates before reporting |
-| Quality watchdog | For the team | Re-runs the test set after every change and alerts on drift | AWS Bedrock model evaluation, Power Automate | Test set, live outputs, feedback | Product manager decides to fix or roll back |
+| Quality watchdog | For the team | Re-runs the test set after every change and alerts on drift | AWS Bedrock model evaluation, Power Automate | Test set, live outputs, feedback | PM decides to fix or roll back |
 | Improvement scout | For the team | Proposes the next backlog items or next lever from usage and feedback | M365 Copilot or Copilot Studio | Dashboards, feedback, reviews | PM and sponsor decide |
 
 - **AI for the team:** impact analysis, quality monitoring and improvement ideas.
@@ -638,13 +638,13 @@ risk partner can review it. **[X]** values are set in Define.
 | **A10. Requirements drafter** | Define | Draft problem statement, user stories, acceptance criteria | Discover findings | Draft only | Draft brief and stories | Drafts delivered | Team and sponsor approve | PM |
 | **A11. Data contract checker** | Define | Check fields exist, are fresh and pass quality checks | Snowflake tables and their quality and access records | Read-only | Gap list | Every field checked | Data owner signs off | Data owner |
 | **A12. Risk intake assistant** | Define | Pre-fill the risk intake; flag likely high-risk areas | Bank policies, product brief | Draft only | Pre-filled intake | Intake drafted | Risk partner sets the rating | Risk partner |
-| **A13. Test grader** | Build | Score each version against the test set | Test set, product outputs | Read; score | Score report | Every test case scored | Experienced RMs grade a sample | Product manager |
+| **A13. Test grader** | Build | Score each version against the test set | Test set, product outputs | Read; score | Score report | Every test case scored | Experienced RMs grade a sample | PM |
 | **A14. Red-team agent** | Govern | Try to break the product (other RMs' clients, credit requests) | The product in test | Send test requests in the test environment only | Failure list | All attack types run | Risk reviews every failure | Risk partner |
 | **A15. Fairness monitor** | Govern | Check opportunities are spread fairly across segments and regions | Opportunity outputs, client segments | Read-only | Fairness report | Report complete | Compliance reviews results | Compliance |
 | **A16. Evidence pack assembler** | Govern | Compile results, data use and controls into review documents | Test results, data contract, controls | Draft only | Evidence pack | Pack drafted | PM and risk verify every claim | PM |
 | **A17. Feedback triage** | Release | Sort feedback into bugs, quality issues and ideas | Feedback logged in Salesforce | Read; tag; add to backlog | Tagged backlog items | All new feedback sorted | PM reviews a weekly sample | PM |
 | **A18. Impact analyst** | Measure | Report pipeline and revenue from AI insights against the comparison group | AI-tagged Salesforce opportunities; Snowflake | Read-only queries | Monthly impact figures | Report complete | Analytics validates before reporting | Analytics |
-| **A19. Quality watchdog** | Measure | Re-run the test set after every change; alert on drift | Test set, live outputs, feedback | Read; alert | Score trend and alerts | Each run complete | Alerts reviewed within [X] days | Product manager |
+| **A19. Quality watchdog** | Measure | Re-run the test set after every change; alert on drift | Test set, live outputs, feedback | Read; alert | Score trend and alerts | Each run complete | Alerts reviewed within [X] days | PM |
 | **A20. Improvement scout** | Measure | Propose next backlog items or the next lever | Dashboards, feedback, reviews | Draft only | Ranked suggestions | List delivered | PM and sponsor decide | PM |
 
 ---

@@ -14,12 +14,12 @@ into main until it passes this audit. Keep the report to the user short (rule R2
 - Add every designed page whose source changed, and its published link (see `designs/README.md`).
 
 ## 2. Mechanical checks (always)
-1. Run `python3 .claude/skills/audit/check.py` from the repo root. It checks that the framework and playbook match, that every sub-step has all its fields, that no designed page has an empty table, and that the delivery machine page is up to date.
-2. For each changed designed page: render it at 1280 and 400 pixels wide (Playwright, Chromium at `/opt/pw-browsers/chromium`), confirm nothing is empty, cut off or scrolling sideways, and look at one screenshot.
+1. Run `python3 .claude/skills/audit/check.py` from the repo root. It checks that the framework and playbook match, that every sub-step has all its fields, that no designed page has an empty table, and that the delivery machine page is up to date. If that page was out of date, the checker rebuilds it: republish it.
+2. For each changed designed page: render it at 1280 and 400 pixels wide with Playwright (a browser tool Claude runs; Chromium is at `/opt/pw-browsers/chromium`), confirm nothing is empty, cut off or scrolling sideways, and look at one screenshot.
 3. For each published page: read it with the Artifact tool and confirm it matches the source in `designs/`. If it doesn't, find out why before changing anything.
 
 ## 3. First review: a fresh reviewer
-Start a separate reviewer (the Agent tool, read-only) with the changed files and
+Start a separate reviewer (a second Claude helper that only reads, started with the Agent tool) with the changed files and
 this checklist. Ask for each finding's severity (Must fix, Should fix or Minor),
 where it is, a quote as proof, and the exact fix.
 1. **Consistency:** do the files agree with each other (names, numbers, kinds, gates, steps)?

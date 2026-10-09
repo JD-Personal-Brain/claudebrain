@@ -858,7 +858,7 @@ class Component extends DCLogic {
         strategy: "Use AI to watch the product continuously and explain results in plain English, so decisions rest on evidence.",
         agents: [
           agent("team", "Impact analyst", "Answers “how much pipeline came from AI insights this month?” against the comparison group.", "Snowflake Cortex Analyst, Power BI", "AI-tagged Salesforce opportunities; Snowflake", "Analytics validates before reporting"),
-          agent("team", "Quality watchdog", "Re-runs the test set after every change and alerts on drift.", "AWS Bedrock model evaluation, Power Automate", "Test set, live outputs, feedback", "Product manager decides to fix or roll back"),
+          agent("team", "Quality watchdog", "Re-runs the test set after every change and alerts on drift.", "AWS Bedrock model evaluation, Power Automate", "Test set, live outputs, feedback", "PM decides to fix or roll back"),
           agent("team", "Improvement scout", "Proposes the next backlog items or next lever from usage and feedback.", "M365 Copilot or Copilot Studio", "Dashboards, feedback, reviews", "PM and sponsor decide")
         ],
         cards: cards([
@@ -981,13 +981,13 @@ class Component extends DCLogic {
       ts("A10", "Requirements drafter", "Define", "Draft problem statement, user stories, acceptance criteria", "Discover findings", "Draft only", "Draft brief and stories", "Drafts delivered", "Team and sponsor approve", "PM"),
       ts("A11", "Data contract checker", "Define", "Check fields exist, are fresh and pass quality checks", "Snowflake tables and their quality and access records", "Read-only", "Gap list", "Every field checked", "Data owner signs off", "Data owner"),
       ts("A12", "Risk intake assistant", "Define", "Pre-fill the risk intake; flag likely high-risk areas", "Bank policies, product brief", "Draft only", "Pre-filled intake", "Intake drafted", "Risk partner sets the rating", "Risk partner"),
-      ts("A13", "Test grader", "Build", "Score each version against the test set", "Test set, product outputs", "Read; score", "Score report", "Every test case scored", "Experienced RMs grade a sample", "Product manager"),
+      ts("A13", "Test grader", "Build", "Score each version against the test set", "Test set, product outputs", "Read; score", "Score report", "Every test case scored", "Experienced RMs grade a sample", "PM"),
       ts("A14", "Red-team agent", "Govern", "Try to break the product (other RMs' clients, credit requests)", "The product in test", "Test requests in the test environment only", "Failure list", "All attack types run", "Risk reviews every failure", "Risk partner"),
       ts("A15", "Fairness monitor", "Govern", "Check opportunities are spread fairly across segments and regions", "Opportunity outputs, client segments", "Read-only", "Fairness report", "Report complete", "Compliance reviews results", "Compliance"),
       ts("A16", "Evidence pack assembler", "Govern", "Compile results, data use and controls into review documents", "Test results, data contract, controls", "Draft only", "Evidence pack", "Pack drafted", "PM and risk verify every claim", "PM"),
       ts("A17", "Feedback triage", "Release", "Sort feedback into bugs, quality issues and ideas", "Feedback logged in Salesforce", "Read; tag; add to backlog", "Tagged backlog items", "All new feedback sorted", "PM reviews a weekly sample", "PM"),
       ts("A18", "Impact analyst", "Measure", "Report pipeline and revenue from AI insights against the comparison group", "AI-tagged Salesforce opportunities; Snowflake", "Read-only queries", "Monthly impact figures", "Report complete", "Analytics validates before reporting", "Analytics"),
-      ts("A19", "Quality watchdog", "Measure", "Re-run the test set after every change; alert on drift", "Test set, live outputs, feedback", "Read; alert", "Score trend and alerts", "Each run complete", "Alerts reviewed within [X] days", "Product manager"),
+      ts("A19", "Quality watchdog", "Measure", "Re-run the test set after every change; alert on drift", "Test set, live outputs, feedback", "Read; alert", "Score trend and alerts", "Each run complete", "Alerts reviewed within [X] days", "PM"),
       ts("A20", "Improvement scout", "Measure", "Propose next backlog items or the next lever", "Dashboards, feedback, reviews", "Draft only", "Ranked suggestions", "List delivered", "PM and sponsor decide", "PM")
     ];
     function flow(id, name, wave, color, trigger, steps, logged, measures) {
@@ -1109,7 +1109,7 @@ class Component extends DCLogic {
         { who: "Business sponsor (commercial banking leader)", role: "Owns the outcome and the funding", decides: "Target lever; go/no-go at each gate" },
         { who: "RM leaders and market managers", role: "Shape the workflow; run the weekly routine", decides: "Pilot group; how insights are used in pipeline meetings" },
         { who: "Pilot RMs", role: "Co-design and test", decides: "Whether each insight is useful (their feedback steers the backlog)" },
-        { who: "Product manager (this role)", role: "Owns discovery through adoption", decides: "Scope, priorities, trade-offs" },
+        { who: "Product manager (PM, this role)", role: "Owns discovery through adoption; owns the product until a long-term owner is named", decides: "Scope, priorities, trade-offs" },
         { who: "Data owners (Snowflake, Salesforce)", role: "Provide and certify data", decides: "What data may be used, and how" },
         { who: "Platform teams (Salesforce, Microsoft, AWS, data engineering)", role: "Build and run", decides: "Technical design within bank standards" },
         { who: "Model risk management", role: "Validates the AI", decides: "Risk rating; approval to launch" },

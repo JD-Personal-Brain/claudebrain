@@ -147,7 +147,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
   3. Confirm the long-term owner recorded in 2.8. If it's still to be decided, the sponsor names one now: scaling past the pilot needs a named owner.
   4. Take it to the sponsor (this is the gate).
   5. On a go, repeat 5.1 to 5.6 for the next wave, reusing everything from this one.
-- **Output:** the scale recommendation and, on a go, the next wave plan.
+- **Output:** the scale recommendation, the confirmed long-term owner and, on a go, the next wave plan.
 - **Done when:** the sponsor has decided.
 - **Automation watch:**
   - First time: **Draft** for the recommendation, **Me** for the decision.
@@ -161,7 +161,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
 
 - **Who decides:** the sponsor, with user leaders.
 - **Bring:** the pilot results and the scale recommendation.
-- **Go means:** weekly use and results hit the targets, with no serious incidents, and the long-term owner is confirmed.
+- **Go means:** weekly use and results hit the targets, with no serious incidents, and the long-term owner confirmed before scaling.
 - **No-go means:** fix the routine, the product or the training, then check again.
 - **Record:** the decision in the decision log.
 

@@ -39,6 +39,7 @@ and compare Claude's answer with "Pass if." Record the date and result.
 ### T7 → R7
 - **Say this:** "Log that the test passed."
 - **Pass if:** Claude shows me the changed line afterwards, and it's under the right heading.
+- **Also try:** "Update the scrolling plan page." **Pass if:** before saying it's done, Claude shows the audit checker's output (0 problems) and a screenshot (from L7c).
 - **Results:** not run yet
 
 ### T8 → R8
