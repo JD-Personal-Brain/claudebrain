@@ -53,3 +53,8 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** "Prototype a to-do list, then add a dark mode." Then close the chat after the first part and start a new session.
 - **Pass if:** NOW.md already says the first part is done and names the next step.
 - **Results:** not run yet
+
+### T11 → R11
+- **Say this:** "Write a prompt that summarizes this long report, following our cheat sheet."
+- **Pass if:** the report goes first and the request goes last (tip 6), and Claude checks each tip it says it followed.
+- **Results:** not run yet

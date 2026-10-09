@@ -13,3 +13,4 @@ Rules at Level 2 or higher go at the top.
 - **R8.** Say whether each step is needed or optional, and why, before giving instructions. *(from L8)*
 - **R9.** Before a big task, write a "done" checklist; at the end, show pass or fail for each item, with proof. *(from idea 9)*
 - **R10.** After each finished stage of a big task, update NOW.md with what's done and the one next step. *(from idea 10)*
+- **R11.** Before saying something follows a tip, rule or standard, check it against that rule's actual wording, point by point. *(from L9)*

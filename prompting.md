@@ -29,6 +29,8 @@ helps me write one, it follows this page.
 ## Fill-in-the-blanks template
 Use the pieces you need. **Goal, Context and Output** matter most; add the rest for big or risky tasks.
 
+**Long material (notes, documents, data)?** Put **Inputs first** and **Goal and Output last**, so Claude reads everything before it sees the request (tip 6). See Example 2.
+
 ```
 Role:     You are a ...
 Goal:     I want ... Done means ...
@@ -38,6 +40,71 @@ Steps:    1. ... 2. ... 3. ...
 Rules:    Do ... Keep it under ... Because ...
 Examples: Here's one I like: ...
 Output:   Give me ... in this form: ...
+```
+
+## Example 1: a basic prompt
+Uses 6 pieces. No Inputs or Steps, because there's no document and no set order.
+
+```
+Role:     You are a product manager at a commercial bank.
+
+Goal:     Write 5 questions I can ask commercial bankers to find
+          where they lose time each week. Done means I could use
+          them in a 20-minute chat tomorrow.
+
+Context:  I'm new to the team. Bankers are busy and skeptical of
+          new tools, so the questions should feel like a
+          conversation, not a survey.
+
+Rules:    Use plain, everyday words, because bankers will tune out
+          jargon. Keep each question to one sentence.
+
+Example:  A question I like: "Walk me through what you did after
+          your last client meeting."
+
+Output:   A numbered list of 5 questions. Under each, one line on
+          what it helps me learn.
+```
+
+## Example 2: the full framework
+Uses all 8 pieces. The notes come **first** and the request (Goal and Output)
+comes **last**, so Claude reads the material before it sees what to do (tip 6).
+The `<notes>` tags mark where the notes start and end (tip 4). Step 5 is
+"draft, check, improve" (tip 9).
+
+```
+Inputs:   <notes>
+          [paste your interview notes here]
+          </notes>
+
+Role:     You are a product manager at a commercial bank.
+
+Context:  The notes above are from my interview with a commercial
+          banker about where they lose time. My boss will use the
+          summary to decide which AI tool we build first, so the
+          problems need to be clear and ranked.
+
+Steps:    1. Read the notes and list every time-wasting task
+             mentioned.
+          2. Group similar tasks together.
+          3. Rank the groups by hours lost per week, biggest first.
+          4. For the top 3, say whether AI could realistically help.
+          5. Check your draft against the Goal, then improve it.
+
+Rules:    Use only what's in the notes, because my boss will act on
+          this and made-up details would mislead them. If something
+          is unclear, flag it instead of guessing. Use plain words.
+
+Example:  A finding I like: "Call notes: about 3 hours a week
+          typing up meetings into Salesforce. AI could draft them
+          from the meeting recording."
+
+Goal:     Using the notes above, write a 1-page findings summary for
+          my boss. Done means they can read it in 2 minutes and see
+          the top problems worth solving.
+
+Output:   A heading, then the top 3 problems as short paragraphs,
+          then one line: "Open questions to ask next time."
 ```
 
 ## Our house style (from my profile and rules)
