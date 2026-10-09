@@ -8,13 +8,14 @@ _Last updated: 2026-10-09 · Last review: none yet (first one due around 2026-10
 - A startup check runs at the start of every session and pulls in the latest main automatically, so Claude never works from an old copy. Tested and working.
 - New focus: I'm interviewing for a Principal Applied AI Product Manager job at Associated Bank. The focus is thinking through how I'd do the job itself, not interview prep.
 - The full job description is saved in `job-description.md`, and a full guide to every technology in it is in `tech-stack.md`. Both load automatically every session. Never ask me to paste it again.
+- Job Part 1 (finding problems) has started. My answers so far are in `job-notes.md`; pick up at step 1's open question.
 - A prompting cheat sheet is saved in `prompting.md`, built from Anthropic's official guide, and loads every session. Claude follows it whenever it writes a prompt.
 - I can now work in the Claude desktop app: choose **Cloud** and the claudebrain repo each time. Cloud sessions can't see my Chrome, and the course site (notion.site) is blocked here, so course pages come in by copy-paste or screenshots.
 - First prototype made: a calculator (v1, then v2 with green buttons). It was practice and has nothing to do with the job. The prototyping process is under agreements below.
 
 ## What's next
 1. Work through the Claude Mastery course: paste in the first page and pick what to add to the brain.
-2. Think through how I'd do the Associated Bank job: start a new session with the Part 1 prompt in `job-prompts.md`.
+2. Continue the Associated Bank job, Part 1, with the prompt in `job-prompts.md`. Pick up where `job-notes.md` stops.
 3. Use Claude for real work, including prototypes for the new job, and say "wrap up" at the end of each session.
 4. Build the "run-tests" skill (idea 1, approved).
 5. Do the first weekly review around 2026-10-14.

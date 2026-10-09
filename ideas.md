@@ -20,3 +20,4 @@ Claude adds ideas as it notices them and suggests 1 to 3 at each wrap-up.
 | 12 | Rule: don't retry a failed approach without a new reason (from the same prompt) | Stops Claude going round in circles on the same broken fix | new |
 | 13 | A "write-prompt" skill | Say "write a prompt for X" and Claude walks me through `prompting.md` piece by piece | yes (to build) |
 | 14 | A notes file for the Claude Mastery course | Keep what I learn from each course page in one place, so any session can build on it | yes (start when the first course page comes in) |
+| 15 | Save job answers as we go | Keep my answers from each job part in a file, so a new session can pick up where I stopped | yes (done: job-notes.md) |
