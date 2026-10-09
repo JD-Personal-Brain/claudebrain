@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L11 · 2026-10-09 · Work stranded on a branch that never reached main
+- **What happened:** The RM analytics framework (memo v6, audit, market scan) from 2026-10-08 was saved only on a side branch on GitHub. No pull request was ever opened, so it never reached main and later sessions couldn't see it. I found out only by asking, and it worried me that so much work could have been lost.
+- **Root cause:** Getting work into main depended on someone remembering to wrap up and merge. Nothing checked for work left behind on other branches.
+- **Fix:** The startup check now lists any branch with work that isn't in main, at the start of every session. Wrap-up offers to merge right away.
+- **Rule:** R14 · **Test:** T14 · **Level:** 1 (plus an automatic check) · **Times it happened:** 1
+
 ### L10 · 2026-10-09 · Used shorthand I didn't understand
 - **What happened:** After I merged the prototypes, Claude said "NOW.md still lists 'merge the prototypes pull request' as a next step. The next session can tick it off, so you don't need another save just for that." I replied "I don't understand."
 - **Root cause:** Claude wrote in its own shorthand: it named an internal file and a to-do item, and said "save" without saying what that would mean for me. It assumed I knew what it was thinking.
