@@ -18,3 +18,4 @@ Keep every message short (see rule R2).
    - Lessons learned
    - What to check
 8. **Tell the user how to merge**, step by step: open the link → read the summary → click **Files changed** to look at the details if they want → go back to **Conversation** → click the green **Merge pull request** → click **Confirm merge**.
+9. **Required length check (from L2b).** Before sending the final message, count its lines. It must be 5 lines or fewer: the link, one line on what's in it, the merge steps on one line, and anything I must act on. Cut everything else.

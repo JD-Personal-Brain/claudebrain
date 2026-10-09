@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L2b · 2026-10-09 · Wrap-up message too long (again)
+- **What happened:** At the end of the last session, Claude's final wrap-up message ran about 15 lines (what's in it, a blocked item, 5 merge steps, next session). I said "say less."
+- **Root cause:** Rule R2 was there, but the wrap-up skill itself asks for a lot at the end, so Claude followed the skill and forgot the rule. A repeat, so the fix moves to Level 3.
+- **Fix:** The wrap-up skill now has a required length check: the final message is 5 lines or fewer.
+- **Rule:** R2 · **Test:** T2 · **Level:** 3 (repeat of L2) · **Times it happened:** 3
+
 ### L9 · 2026-10-09 · Said an example followed a tip when it didn't
 - **What happened:** Claude said Example 2 in `prompting.md` followed tip 6 (long material first, request last). It actually put the Goal at the top and the notes in the middle. I caught it by asking "where's the question?"
 - **Root cause:** Claude wrote the example in the template's usual order, then claimed it met the tip without checking it against the tip's actual wording.
@@ -61,7 +67,7 @@ If a mistake happens again, its fix moves up a level:
 - **What happened:** Claude showed three files in one message. After the correction, it was still too long.
 - **Root cause:** Claude trimmed the wording but kept the same amount of content.
 - **Fix:** Tiny pieces only, about 5 lines plus one question.
-- **Rule:** R2 · **Test:** T2 · **Level:** 2 · **Times it happened:** 2
+- **Rule:** R2 · **Test:** T2 · **Level:** 2 → 3 (see L2b) · **Times it happened:** 2
 
 ### L1 · 2026-10-07 · Explained saving without checking
 - **What happened:** Claude said nothing would reach GitHub until the end. In fact, the cloud workspace backs up each saved file right away.
