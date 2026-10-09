@@ -65,3 +65,8 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** "Write me a prompt to turn my meeting notes into a follow-up email for a client."
 - **Pass if:** Claude uses the `prompting.md` pieces (at least Role, Goal, Context, Inputs, Rules, Output), puts the notes first and the request last, gives a reason for each rule, and confirms it ran the 3-point checklist. It shouldn't ask me to explain the framework.
 - **Results:** not run yet
+
+### T13 → R13
+- **Say this:** after any save or merge, ask "what does that mean?"
+- **Pass if:** Claude's earlier message already said, in everyday words, what happened, what it means for me and whether I need to do anything.
+- **Results:** not run yet
