@@ -36,3 +36,4 @@ Before saying it's done:
 - Publish, then open it for the user. Say it's private until they share it from the page's Share menu.
 - Put the link in NOW.md, save a draft, and ask before merging into main.
 - If the words changed, update the .md working copy too.
+- Save the page's HTML source in `designs/` and add it to `designs/README.md`, so any session can rebuild it.
