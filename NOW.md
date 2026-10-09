@@ -3,7 +3,7 @@
 _Last updated: 2026-10-09 · Last review: none yet (first one due around 2026-10-14)_
 
 ## Where things stand
-- The Claude brain is set up: rule book, profile, learning files, ideas list and ten skills: log-lesson, wrap-up, designed-doc, write-prompt, run-tests, prototype, new-use-case, audit and (new 2026-10-09) make-skill and agent-spec.
+- The Claude brain is set up: rule book, profile, learning files, ideas list and eleven skills: log-lesson, wrap-up, designed-doc, write-prompt, run-tests, prototype, new-use-case, audit, make-skill, agent-spec and (new 2026-10-09) documents.
 - An official "main" copy now exists on GitHub, and it is now GitHub's default branch, so every new session starts from it. Future work is proposed as pull requests against it.
 - A startup check runs at the start of every session and pulls in the latest main automatically, so Claude never works from an old copy. Tested and working.
 - The startup check now also warns about work saved on a side branch that never reached main (added 2026-10-09, after my RM framework was found stranded).
@@ -28,11 +28,12 @@ _Last updated: 2026-10-09 · Last review: none yet (first one due around 2026-10
 - **Agent library** (2026-10-09): `playbook/agents.md` specifies the 19 agents that run the delivery machine (M1–M19), written with the new `agent-spec` skill. It's shown at the end of the playbook page. The RM memo's A11 and A15 now have an ongoing mode.
 - **More designed pages** (2026-10-09), each built from its working file: Product Framework https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ · Tech Stack Guide https://claude.ai/artifact/DDmD65zw7LjnP5v2nHDFW2 · Job Notes https://claude.ai/artifact/SpcnPMbMEgyxZSoYVsRdES.
 - **Design page found healthy** (2026-10-09): rendered properly, every table on the RM design page shows. The scrolling page's empty tables came from rendering its source straight from disk, which the skills now forbid.
+- **Document Library, pinned to my claude.ai sidebar** (2026-10-09): https://claude.ai/artifact/LTpbCT4kN4LcyEoYnh7vgj. Two ways in: by building block (the Workflow Maps https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX and the Agent Library https://claude.ai/artifact/Cn9nANQoqp2BP7yrmy61zn, all 39 agents) or by document (each under its parent). Say **/documents** to refresh and open it. Also new: designed pages for the Job Description (https://claude.ai/artifact/9CUyQt1EDbmu1R7DVRyvkM) and the Prompting Guide (https://claude.ai/artifact/Secfj5fBtpVA1veroUU7A7).
 - First prototype made: a calculator (v1, then v2 with green buttons). It was practice and has nothing to do with the job. The prototyping process is under agreements below.
 
 ## What's next
 1. Review the playbook on its designed page (https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4), including the new agent library at the end. Then apply the delivery machine to the RM memo as the first worked example.
-2. Reopen the RM design page to see if it still opens blank (its content is fine; if it's blank, it's the app's viewer). Then read the rest of the plan (summary from "What lets us move this fast" on, then Parts 1–6), and open the McKinsey link in a browser before sharing. Use the long scrolling page (https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk): on 2026-10-09 the design page opened blank in the app.
+2. Read the rest of the plan (summary from "What lets us move this fast" on, then Parts 1–6), and open the McKinsey link in a browser before sharing. Use the long scrolling page (https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk): on 2026-10-09 the design page opened blank in the app.
 3. Keep working through the Claude Mastery course: paste in the next page (after "The Claude Prompt Formula"; next up is Module 3: Projects, Connectors, Skills).
 4. Continue the Associated Bank job, Part 1, with the prompt in `job-prompts.md`. Pick up where `job-notes.md` stops.
 5. Use Claude for real work, including prototypes for the new job, and say "wrap up" at the end of each session.
@@ -56,6 +57,7 @@ _Last updated: 2026-10-09 · Last review: none yet (first one due around 2026-10
 - **The product manager owns each product until a long-term owner is named.** Why: there are no product owners yet, and who holds a product long term (maybe someone in a revenue line) is a decision the process must make (decided 2026-10-09).
 - **Product work follows `product-framework.md`.** Why: every project gets organized the same way, from Discover to Measure and iterate.
 - **Prompts follow `prompting.md`.** Why: so every prompt we write uses a framework that works, based on Anthropic's own advice.
+- **The Document Library is the front door to everything I read.** Every new designed page is added to it, and the audit checker fails if one is missing. Why: I want to see any document at any moment, organized so it's easy to find (decided 2026-10-09).
 - **Anything a person reads, me included, is a designed page, not a .md file** (rule R16). Why: they must look like something a person wants to read; the .md is only the working copy.
 - **Course pages come in by copy-paste or screenshots.** Why: Cloud sessions can't reach my browser or the course site.
 - **How we prototype screens (UI).** Why: I'm learning to prototype and expect to need it in my new job, and I want every version kept so any new session can carry on.
