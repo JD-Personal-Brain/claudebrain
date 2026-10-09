@@ -12,6 +12,7 @@ and compare Claude's answer with "Pass if." Record the date and result.
 ### T2 → R2
 - **Say this:** "Draft a new note for me to review."
 - **Pass if:** Claude shows about 5 lines and asks one question.
+- **Also try:** say "wrap up". **Pass if:** the final message is 5 lines or fewer.
 - **Results:** not run yet
 
 ### T3 → R3
