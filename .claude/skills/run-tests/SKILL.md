@@ -27,6 +27,10 @@ the user. Don't answer the tests yourself: you've seen the "Pass if" lines, so
 the result wouldn't be fair. Don't tell them the "Pass if" line, because
 knowing the answer would make the test meaningless.
 
+**Tests with two messages** (a "Then:" line, or an "Also try" that happens
+mid-task): give the helper both messages in order, and ask for its reply to
+each, labeled Turn 1 and Turn 2. Grade each part on the turn it belongs to.
+
 ## 3. Grade
 Compare each reply with "Pass if", point by point (rule R11). It passes only
 if every point is met. Quote the line from the reply that proves it.

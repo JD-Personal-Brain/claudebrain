@@ -19,14 +19,15 @@ _Last updated: 2026-10-09 · Last review: none yet (first one due around 2026-10
 - **Memo v8 merged into main on 2026-10-09** (pull request #35). Reviewed so far: the summary's opening and plan table.
 - **Six-step workflow visual** for the role (2026-10-09): https://claude.ai/artifact/8Nm5fkdicn2Gu5VmNVTvYv. Working copy: `memos/role-workflow.md`.
 - **Designed-page sources** are kept in `designs/` (see its README), so any session can rebuild or edit the pages.
+- **Session 2026-10-09 (late):** `prompting.md` now has a Tone piece and "When the answer is off" (from the course's "Claude Prompt Formula" page). Four approved skills were built and tested (write-prompt, run-tests, prototype, new-use-case). First run-tests run: 7 of 8 passed; T8 failed, so R8 is stricter (every suggestion is labeled **Needed** or **Optional**).
 - First prototype made: a calculator (v1, then v2 with green buttons). It was practice and has nothing to do with the job. The prototyping process is under agreements below.
 
 ## What's next
 1. Read the rest of the design page (summary from "What lets us move this fast" on, then Parts 1–6), and open the McKinsey link in a browser before sharing.
-2. Work through the Claude Mastery course: paste in the first page and pick what to add to the brain.
+2. Keep working through the Claude Mastery course: paste in the next page (after "The Claude Prompt Formula"; next up is Module 3: Projects, Connectors, Skills).
 3. Continue the Associated Bank job, Part 1, with the prompt in `job-prompts.md`. Pick up where `job-notes.md` stops.
 4. Use Claude for real work, including prototypes for the new job, and say "wrap up" at the end of each session.
-5. Try the new skills on real work: say "run the tests", "prototype X", "write a prompt for X" or "new use case: X".
+5. Run the tests that need a real session (T4, T7, T10, T13, T14, T15, T17; second parts of T2, T3, T9), then try the new skills on real work: say "run the tests", "prototype X", "write a prompt for X" or "new use case: X".
 6. Remove my safety rules and update the wrap-up skill myself in GitHub (idea 16): Claude is blocked from changing those.
 7. Do the first weekly review around 2026-10-14.
 
@@ -39,6 +40,7 @@ _Last updated: 2026-10-09 · Last review: none yet (first one due around 2026-10
 - **Work is saved to a draft branch on GitHub, and main changes only when I say yes to a merge.** Why: the cloud workspace is temporary, but I keep the final say. Work isn't safe for future sessions until it's in main (rule R14).
 - **main stays GitHub's default branch, and the startup check stays on.** Why: otherwise new sessions start from an old copy and can't find saved files like the job description.
 - **Big tasks get a "done" checklist and progress saved partway.** Why: I can see proof each part works, and a session that dies halfway doesn't lose its place. (Ideas taken from a Karpathy-inspired prompt, 2026-10-09.)
+- **When I say yes to a skill or idea, Claude builds it that session** (rule R17). Why: four approved skills sat unbuilt because nothing said what happens after a yes.
 - **Product work follows `product-framework.md`.** Why: every project gets organized the same way, from Discover to Measure and iterate.
 - **Prompts follow `prompting.md`.** Why: so every prompt we write uses a framework that works, based on Anthropic's own advice.
 - **Documents for other people are designed pages, not .md files** (rule R16). Why: they must look like something a person wants to read; the .md is only the working copy.
