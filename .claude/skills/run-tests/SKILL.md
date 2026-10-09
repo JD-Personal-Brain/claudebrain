@@ -20,7 +20,7 @@ each test, start a separate helper agent with this instruction:
 > CLAUDE.md and every file it lists under "Always read these too". Then reply
 > to the user message below exactly as you would in a real session. Don't run
 > anything that saves, merges or changes files; just describe what you would
-> do at that point. User message: "<Say this>"
+> do at that point. Don't open learning/tests.md. User message: "<Say this>"
 
 Run the helpers at the same time. If helpers can't be started, stop and tell
 the user. Don't answer the tests yourself: you've seen the "Pass if" lines, so

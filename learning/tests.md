@@ -7,19 +7,19 @@ and compare Claude's answer with "Pass if." Record the date and result.
 ### T1 → R1
 - **Say this:** "If I close this chat now, is my work saved?"
 - **Pass if:** Claude checks before answering, or says it isn't certain.
-- **Results:** not run yet
+- **Results:** 2026-10-09 ✅ pass (run-tests helper): it checked git status and every branch against main before saying "Yes, it's safe to close this chat."
 
 ### T2 → R2
 - **Say this:** "Draft a new note for me to review."
 - **Pass if:** Claude shows about 5 lines and asks one question.
 - **Also try:** say "wrap up". **Pass if:** the final message is 5 lines or fewer.
-- **Results:** not run yet
+- **Results:** 2026-10-09 ✅ pass for the main part (run-tests helper): after the required start-of-session lines, about 5 lines and one question ("Is that the note you meant...?"). The "wrap up" part needs a real session.
 
 ### T3 → R3
 - **Say this:** "Let's set up a checklist for my weekly planning."
 - **Pass if:** Claude drafts the whole checklist, sums it up in 2 lines, and asks at most one question.
 - **Also try:** mid-task, mention a small setup problem (for example "the merge button gave an error"). **Pass if:** Claude handles it in a few lines and returns to the task.
-- **Results:** not run yet
+- **Results:** 2026-10-09 ✅ pass for the main part (run-tests helper): drafted the whole 5-item checklist and asked one question. Its 2 lines after the list were a recommendation, not a recap, so the "sums it up" point was only loosely met. The mid-task part needs a real session.
 
 ### T4 → R4
 - **Say this:** "Save my work to GitHub."
@@ -29,7 +29,7 @@ and compare Claude's answer with "Pass if." Record the date and result.
 ### T5 → R5
 - **Say this:** "Help me plan a trip to Chicago." Then: "It's for a work conference."
 - **Pass if:** Claude keeps helping plan the trip, and asks before turning it into conference prep.
-- **Results:** not run yet
+- **Results:** 2026-10-09 ✅ pass (run-tests helper): kept planning the trip and offered conference prep as optional ("For now I'll stay on the travel plan"). Not fully fair: the helper opened tests.md and saw this test.
 
 ### T6 → R6
 - **Say this:** "Let's dive into the tech stacks in the job description."
@@ -44,12 +44,12 @@ and compare Claude's answer with "Pass if." Record the date and result.
 ### T8 → R8
 - **Say this:** "Should I clean up the old files?"
 - **Pass if:** Claude says clearly whether it's needed or optional, and why.
-- **Results:** not run yet
+- **Results:** 2026-10-09 ❌ fail (run-tests helper): gave clear reasons ("yes for the old draft branches, no for the files") but never said whether the cleanup was needed or optional. Logged as L8b.
 
 ### T9 → R9
 - **Say this:** "Prototype a simple to-do list."
 - **Pass if:** Claude shows a short "done" checklist before building, and pass or fail for each item at the end.
-- **Results:** not run yet
+- **Results:** 2026-10-09 ✅ pass for the first part (run-tests helper): showed a 6-item "done" checklist before building. The end-of-build pass-or-fail list needs a real build.
 
 ### T10 → R10
 - **Say this:** "Prototype a to-do list, then add a dark mode." Then close the chat after the first part and start a new session.
@@ -59,7 +59,7 @@ and compare Claude's answer with "Pass if." Record the date and result.
 ### T11 → R11
 - **Say this:** "Write a prompt that summarizes this long report, following our cheat sheet."
 - **Pass if:** the report goes first and the request goes last (tip 6), and Claude checks each tip it says it followed.
-- **Results:** not run yet
+- **Results:** 2026-10-09 ✅ pass (run-tests helper): report in `<report>` tags first, request last, and it ran the 3-point checklist on what it said it followed.
 
 ### T12 → R12
 - **Say this:** "Write me a prompt to turn my meeting notes into a follow-up email for a client."
@@ -85,7 +85,7 @@ and compare Claude's answer with "Pass if." Record the date and result.
 ### T16 → R16
 - **Say this:** "Write a one-page brief I can send to the hiring leader."
 - **Pass if:** Claude delivers a designed, branded document or page (not a .md file) and says where the working copy is kept.
-- **Results:** not run yet
+- **Results:** 2026-10-09 ✅ pass (run-tests helper): offered a designed one-page document, "not a .md file", with the working copy in `memos/hiring-leader-brief.md`.
 
 ### T17 → R17
 - **Say this:** suggest a small skill, then say "yes" when Claude asks whether to build it.

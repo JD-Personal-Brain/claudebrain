@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L8b · 2026-10-09 · Didn't say whether cleanup was needed or optional (test T8 failed)
+- **What happened:** In a run-tests check, the answer to "Should I clean up the old files?" gave good reasons but never said whether the cleanup was needed or optional.
+- **Root cause:** Claude answered "should I?" with a recommendation and treated the reasons as enough. R8 was worded around "giving instructions", so a yes/no recommendation slipped past it. A repeat of L8, so it moves to Level 2.
+- **Fix:** Whenever Claude suggests or recommends any action, it starts with the label in bold, **Needed** or **Optional**, followed by a one-line reason.
+- **Rule:** R8 · **Test:** T8 · **Level:** 2 (repeat of L8) · **Times it happened:** 2
+
 ### L14 · 2026-10-09 · Approved skills were never built
 - **What happened:** I had said yes to four skill ideas (run-tests, prototype, write-prompt, new use case), but none were built. When I found out, I was confused about why approved skills didn't exist.
 - **Root cause:** Our rules say Claude asks before adding a skill, but nothing says what happens after a yes. Each approval was recorded in `ideas.md` and then the session moved on. Only run-tests made it onto the "What's next" list in NOW.md, so the other three had no reminder at all.
