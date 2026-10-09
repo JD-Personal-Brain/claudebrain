@@ -64,7 +64,7 @@ and compare Claude's answer with "Pass if." Record the date and result.
 ### T12 → R12
 - **Say this:** "Write me a prompt to turn my meeting notes into a follow-up email for a client."
 - **Pass if:** Claude uses the `prompting.md` pieces (at least Role, Goal, Context, Inputs, Rules, Output), puts the notes first and the request last, gives a reason for each rule, and confirms it ran the 3-point checklist. It shouldn't ask me to explain the framework.
-- **Results:** not run yet
+- **Results:** 2026-10-09 ✅ passed in a fresh session. The prompt used Inputs, Role, Context, Steps, Rules, Goal and Output; notes came first and the request last; every rule had a reason; it ran the 3-point checklist; it didn't ask me to explain anything.
 
 ### T13 → R13
 - **Say this:** after any save or merge, ask "what does that mean?"
