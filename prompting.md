@@ -107,6 +107,45 @@ Output:   A heading, then the top 3 problems as short paragraphs,
           then one line: "Open questions to ask next time."
 ```
 
+## Example 3: meeting notes into a client follow-up email
+Ready to reuse: paste the notes and fill in the `[brackets]`. Notes come
+first and the request last (tip 6). `[CHECK: ...]` marks anything unclear,
+so nothing made up reaches a client.
+
+```
+Inputs:   <notes>
+          [paste your meeting notes here]
+          </notes>
+
+Role:     You are an experienced relationship manager who writes
+          clear, warm client emails.
+
+Context:  The notes above are from my meeting with [client name,
+          company] on [date]. The email goes from me to the client,
+          so it must be accurate and sound like a real person wrote it.
+
+Steps:    1. Pull out what we discussed, what we agreed, and who
+             owes what by when.
+          2. Write the email.
+          3. Check it against the notes and fix anything that
+             doesn't match.
+
+Rules:    Use only facts from the notes, because the client will
+          take anything I send as a commitment. If something is
+          unclear (a date, a number, who owns a task), put
+          [CHECK: ...] in the email instead of guessing.
+          Keep it under 200 words, because busy clients skim.
+          Use plain, friendly words and no jargon.
+
+Goal:     Using the notes above, write a follow-up email I can send
+          after a quick read. Done means the client knows exactly
+          what happens next and who does it.
+
+Output:   A subject line, then the email: a one-line thank-you,
+          a short recap, a "Next steps" list (owner + date for each),
+          and a closing line.
+```
+
 ## Our house style (from my profile and rules)
 Add these to prompts written for me, when they fit:
 - Plain English; explain any technical word.
