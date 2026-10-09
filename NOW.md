@@ -28,7 +28,7 @@ _Last updated: 2026-10-09 · Last review: none yet (first one due around 2026-10
 
 ## What's next
 1. Review the playbook on its designed page (https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4). Then turn the agent shortlists into full specs, and apply the delivery machine to the RM memo as the first worked example.
-2. Read the rest of the plan (summary from "What lets us move this fast" on, then Parts 1–6), and open the McKinsey link in a browser before sharing. Use the long scrolling page (https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk): on 2026-10-09 the design page opened blank in the app.
+2. Check why the RM design page opened blank (it may be the same table problem the scrolling page had), then read the rest of the plan (summary from "What lets us move this fast" on, then Parts 1–6), and open the McKinsey link in a browser before sharing. Use the long scrolling page (https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk): on 2026-10-09 the design page opened blank in the app.
 3. Keep working through the Claude Mastery course: paste in the next page (after "The Claude Prompt Formula"; next up is Module 3: Projects, Connectors, Skills).
 4. Continue the Associated Bank job, Part 1, with the prompt in `job-prompts.md`. Pick up where `job-notes.md` stops.
 5. Use Claude for real work, including prototypes for the new job, and say "wrap up" at the end of each session.

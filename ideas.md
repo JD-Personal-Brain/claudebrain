@@ -32,3 +32,6 @@ Claude adds ideas as it notices them and suggests 1 to 3 at each wrap-up.
 | 24 | Let run-tests handle two-message tests (like T3's "mid-task" part) by giving a helper both messages in turn | More tests can run automatically, with fewer left for a real session | yes (done 2026-10-09: added to `run-tests`) |
 | 25 | Open the long scrolling page by default when I review the plan | The design page opened blank in the app on 2026-10-09; the scrolling version worked | yes (done 2026-10-09: agreement in NOW.md) |
 | 26 | A designed page for the delivery machine | Show leaders how I'd run many AI projects at once, as a page people want to read | yes (done 2026-10-09: designed page) |
+| 27 | Designed pages for the other files I read (product framework, tech stack, job notes) | Under the sharper R16, anything I read should be a designed page; these are still Markdown | suggested |
+| 28 | Find out why the RM design page opened blank | The scrolling page's empty tables came from the same template; the design page may have the same fault | suggested |
+| 29 | Turn the playbook's agent shortlists into full agent specs | Every new agent idea (about 20) gets mission, inputs, allowed actions, outputs, stop condition, proof and owner, ready to build | suggested |
