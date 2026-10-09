@@ -51,7 +51,7 @@ for row in appa.split("### Agents the team uses")[1].split("\n"):
 
 GROUPS = [("machine", "Run the delivery machine", "Help the team run any project through the six steps. Reused on every project."),
           ("team", "Help the RM project team", "The RM project's own helpers, one for each job the team does."),
-          ("product", "The product RMs use", "The agents inside RM Analytics. The RM decides before anything reaches a client or changes a client record; drafts and alerts go only to the RM.")]
+          ("product", "The product RMs use", "The agents inside RM Analytics. Nothing reaches a client without the RM. Insights and alerts are shown to the RM and their manager; anything saved as the RM's own work, like a call note or an opportunity, needs the RM's approval.")]
 counts = {g: sum(a["group"] == g for a in agents) for g, *_ in GROUPS}
 
 def card(a):
