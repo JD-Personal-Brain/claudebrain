@@ -9,6 +9,11 @@ session. Update it as I learn how the bank actually works.
 > **(guess)** are educated guesses about the bank. Lines marked **(verify)** are
 > facts that may have changed: these vendors rename products often. Replace
 > guesses with facts as I learn them, and note the source.
+>
+> **Working assumption (decided 2026-10-07, confirmed 2026-10-09):** every tool
+> named in the job description is live at the bank today and available to us.
+> Source: I was told they are. Plan with them as real tools. "(verify)" now
+> only flags product details such as names, features and pricing.
 
 ## The big picture: how it fits together
 
@@ -42,7 +47,7 @@ pick the right layer above to fix it, without breaking the bank's rules.
 ## By my product framework
 
 The same technologies, sorted by the six steps I'll use in this job.
-**Status key:** 🟡 named in the posting, but whether the bank actually uses it is unconfirmed ·
+**Status key:** 🟡 named in the posting; I was told it's live (see the working assumption above), but product details are unconfirmed ·
 🟢 applies to US banks in general (still check for updates).
 
 | Step | What I have | Status |
@@ -54,7 +59,7 @@ The same technologies, sorted by the six steps I'll use in this job.
 | **Release and adopt** | Publish where bankers already work (Teams, Outlook, Salesforce). Power Platform environments move a tool from test to live. Start "assistive" (AI suggests, a person decides). Copilot licenses are paid per user, so leaders watch usage. | 🟡 |
 | **Measure and iterate** | **Power BI / Fabric** dashboards (adoption, hours saved, pipeline impact). **Salesforce** for business results. **Copilot usage dashboard.** Re-run evals after every change; watch guardrail blocks, human overrides and drift. | 🟡 |
 
-**Biggest unknown in every row:** which tools are live at the bank, and which are pilots or plans.
+**Biggest unknown in every row:** how each tool is set up at the bank (which features, licenses and connections). I was told all of them are live.
 
 ---
 
@@ -208,11 +213,11 @@ control measures. A starter set:
 ---
 
 ## Things to find out at the bank
-- [ ] Which of these tools are actually live, and which are pilots or plans?
+- [x] Which of these tools are actually live? All of them, I was told (2026-10-09).
 - [ ] Which AI models are approved, and where do they run?
 - [ ] Why both Snowflake and Fabric, and which holds what?
 - [ ] Which Salesforce products and licenses does the bank have?
 - [ ] What does the AI governance process look like, and how long does it take?
 - [ ] Who builds: my team, IT, or citizen developers?
 
-_Last updated: 2026-10-07_
+_Last updated: 2026-10-09_
