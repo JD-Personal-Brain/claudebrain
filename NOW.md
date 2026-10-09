@@ -3,7 +3,7 @@
 _Last updated: 2026-10-09 · Last review: none yet (first one due around 2026-10-14)_
 
 ## Where things stand
-- The Claude brain is set up: rule book, profile, learning files, ideas list and three skills (log-lesson, wrap-up, designed-doc).
+- The Claude brain is set up: rule book, profile, learning files, ideas list and seven skills: log-lesson, wrap-up, designed-doc, and (new 2026-10-09) write-prompt, run-tests, prototype and new-use-case.
 - An official "main" copy now exists on GitHub, and it is now GitHub's default branch, so every new session starts from it. Future work is proposed as pull requests against it.
 - A startup check runs at the start of every session and pulls in the latest main automatically, so Claude never works from an old copy. Tested and working.
 - The startup check now also warns about work saved on a side branch that never reached main (added 2026-10-09, after my RM framework was found stranded).
@@ -26,7 +26,7 @@ _Last updated: 2026-10-09 · Last review: none yet (first one due around 2026-10
 2. Work through the Claude Mastery course: paste in the first page and pick what to add to the brain.
 3. Continue the Associated Bank job, Part 1, with the prompt in `job-prompts.md`. Pick up where `job-notes.md` stops.
 4. Use Claude for real work, including prototypes for the new job, and say "wrap up" at the end of each session.
-5. Build the "run-tests" skill (idea 1, approved).
+5. Try the new skills on real work: say "run the tests", "prototype X", "write a prompt for X" or "new use case: X".
 6. Remove my safety rules and update the wrap-up skill myself in GitHub (idea 16): Claude is blocked from changing those.
 7. Do the first weekly review around 2026-10-14.
 

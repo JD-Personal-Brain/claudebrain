@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L14 · 2026-10-09 · Approved skills were never built
+- **What happened:** I had said yes to four skill ideas (run-tests, prototype, write-prompt, new use case), but none were built. When I found out, I was confused about why approved skills didn't exist.
+- **Root cause:** Our rules say Claude asks before adding a skill, but nothing says what happens after a yes. Each approval was recorded in `ideas.md` and then the session moved on. Only run-tests made it onto the "What's next" list in NOW.md, so the other three had no reminder at all.
+- **Fix:** When I say yes to a skill or idea, Claude builds it in the same session. If there's no time, it goes straight onto "What's next" in NOW.md, so it's never just a row in `ideas.md`.
+- **Rule:** R17 · **Test:** T17 · **Level:** 1 · **Times it happened:** 1
+
 ### L7b · 2026-10-09 · Said the designed plan was done without looking at it
 - **What happened:** Claude published the full plan to the design page and called it done. Only the first quarter showed, because the canvas shows at most 8,000 pixels of each page and the plan was about 32,000. The one-page summary also ran past the bottom of its page. I said the doc was incomplete.
 - **Root cause:** Claude checked that the code ran, but never looked at the page the way I would see it. A repeat of L7 (didn't check where a change landed), so it moves to Level 2.
