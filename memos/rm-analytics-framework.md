@@ -17,18 +17,17 @@ deployed quickly on platforms the bank already uses. They form the base, and
 everything else is iterated and grown on top.
 
 **The approach, in three points:**
-1. **Deploy the standard base fast, aimed at revenue.** Pick the first standard use cases with the sponsor in a two-week sprint, then build them in weeks, not months.
+1. **Deploy the standard base fast, aimed at revenue.** Build a working prototype in week 1, shape it with RMs, and get the first features live within weeks.
 2. **Pair insights with time.** RMs at many commercial banks reportedly spend only about 25–30% of their time with clients. Better opportunities only pay off if RMs have time to act on them, so the base includes time savers (briefs, meeting follow-ups) alongside revenue insights.
 3. **Govern from day one and prove it with evidence.** Risk partners are involved from the first week. Results are measured against RMs not yet using the tool, so revenue is never credited to AI by mistake.
 
-**The plan (estimate):** the first standard use cases live with a pilot
-group in about 8 weeks, then a release every two weeks and a new wave of use
-cases about every six weeks. Leading measures show up within weeks; a first
-read on closed revenue comes at about month 6. By day 90: wave 1 live with
-regular releases, wave 2 about to launch, wave 3 in build. This pace depends
-on five conditions set out in the project plan (Section 6). If the bank's AI
-review or data access takes longer, the meeting follow-up feature still goes
-live in about week 8, and the insight features follow by about week 14.
+**The plan (estimate):** a working prototype in week 1, built alongside
+discovery. The meeting follow-up goes to pilot RMs in about weeks 2–4 and the
+insight features in about weeks 4–6, then small releases every week or two and
+a new wave about every five weeks. The pace is set by data access and the
+bank's AI review, not by build time. A first read on closed revenue comes at
+about month 6. By day 90: wave 1 live for about two months, wave 2 live, wave 3
+in review.
 
 **What I'd need:** a business sponsor, time with 6–10 RMs and their managers, named data owners, an early risk
 partner, and a willing pilot group.
@@ -50,13 +49,13 @@ order it in Discover.
 
 | Wave (estimate) | Standard use case | Revenue lever or goal | Built mainly on |
 |---|---|---|---|
-| **Wave 1** (live about week 8) | Pre-meeting client brief | Time; all levers | Salesforce, Snowflake, Agentforce or M365 Copilot |
+| **Wave 1** (live about weeks 3–6) | Pre-meeting client brief | Time; all levers | Salesforce, Snowflake, Agentforce or M365 Copilot |
 | | Meeting recap and follow-up draft | Time | M365 Copilot in Teams and Outlook |
 | | Weekly opportunity list (product gaps) | Grow existing clients | Snowflake signals, Power Automate digest |
-| **Wave 2** (live about week 15) | Early warning: client may leave | Keep clients | Snowflake signals, Salesforce |
+| **Wave 2** (live about week 10) | Early warning: client may leave | Keep clients | Snowflake signals, Salesforce |
 | | Call notes into Salesforce (RM approves) | Time; better data | Salesforce Agentforce |
 | | Referral prompts (for example, RM to treasury specialist) | Grow existing clients | Salesforce, Power Automate |
-| **Wave 3** (live about week 21) | RM assistant ("what should I know about this client?") | Time; all levers | Salesforce Agentforce or Copilot Studio |
+| **Wave 3** (live about week 15) | RM assistant ("what should I know about this client?") | Time; all levers | Salesforce Agentforce or Copilot Studio |
 | | Prospect lookalikes | Win new clients | Snowflake, Salesforce |
 
 **Why this works:** standard use cases on platforms the bank already runs
@@ -128,8 +127,8 @@ each with an owner and a date, reviewed weekly with the core team and at each ga
 ## 4. How the work flows
 
 Six steps, each ending in a **go/no-go gate**. The first pass through all six
-is fast (about 8 weeks to wave 1 live); after that, steps 3–6 repeat in
-two-week cycles, and each new wave of use cases takes a short pass through
+overlaps: a working prototype exists in week 1, and the first features are
+live in weeks 3–6; after that, steps 3–6 repeat in cycles of a week or two, and each new wave of use cases takes a short pass through
 Discover and Define. **Governance runs through every step**; Step 4 is the
 formal approval gate, not the first time risk partners see the product.
 
@@ -171,7 +170,7 @@ Bedrock only where custom AI work is needed beyond what's built into
 Salesforce. Every extra platform adds build work and another review.
 
 **What ships when:** in waves of standard use cases (see *Core assumption*),
-with a release every two weeks in between.
+with a release every week or two in between.
 
 **The data flywheel.** The time-saving features (call notes and CRM updates
 that RMs approve) also improve CRM data quality. Better data makes better
@@ -198,7 +197,7 @@ loop compounds over time and is a reason to build both goals together.
 | 3. Learn from RMs | Interview and shadow RMs and managers: how do they find opportunities today, and what gets in the way? | Teams meetings with M365 Copilot recaps; an approved LLM to find themes |
 | 4. Map the RM's week | Where time goes, and how much is lost to admin | Salesforce activity data; M365 Copilot usage reporting |
 | 5. Understand incentives | How RMs are measured and paid, and whether acting on insights would be rewarded | Conversations with sales leadership and HR |
-| 6. Test reactions | Show RMs a rough mock-up of an "opportunity insights" screen | Power Apps |
+| 6. Test reactions | Show RMs a working prototype built on sample data, and improve it every few days | Copilot Studio, Power Apps, a Salesforce test environment |
 | 7. Pick and baseline | Choose the wave 1 use cases from the standard menu and record today's numbers | Power BI |
 
 **AI strategy:** Use AI to listen and size faster than a team could by hand. Nothing touches clients yet; a person checks every finding.
@@ -210,7 +209,7 @@ loop compounds over time and is a reason to build both goals together.
 | Time-use analyst | For the team | Finds where RM time goes and which activities lead to won deals | Snowflake Cortex, Power BI | Salesforce activity and win/loss | PM confirms with RMs in person |
 
 - **AI for the team:** themes from interviews; a first pass over pipeline and activity data.
-- **AI for RMs:** nothing built yet; a mock-up to test reactions.
+- **AI for RMs:** a working prototype on sample data, so RMs react to something real.
 - **Data:** Salesforce pipeline and activity; client balances and products in Snowflake. Identify the data owners.
 - **Output:** a ranked list of opportunities with sizes, the first target, the baseline, and a first value model.
 - **Checks:** no client data in unapproved AI tools; risk partners briefed on the idea.
@@ -403,86 +402,56 @@ goal is a product that pays for itself.
 
 ## 6. The project plan (estimate)
 
-A fast first pass to wave 1, then two-week iteration cycles, with a new wave
-of standard use cases about every six weeks. The risk partner is engaged from
-week one. Weeks are estimates; the real pace depends on data access and the
-bank's AI review, confirmed in the first weeks.
+Building starts on day one. With today's AI tools, a working version takes
+days, not months, so the plan is organized around what actually holds a bank
+up: access to real client data and sign-off from the AI review. The risk
+partner sees each version as it is built. Weeks are estimates to confirm in
+the first days.
 
-**What makes an 8-week wave 1 possible.** Moving fast is the goal, so the plan
-is built around five conditions, each checked in week 1:
+**What lets us move this fast.** Six conditions, each checked in the first days:
 
 | Condition | Why it matters | Checked by |
 |---|---|---|
-| **1. Standard features only.** Wave 1 uses features already in Salesforce, M365 Copilot and Power Platform. | Configuring is much faster than building, and these platforms already have bank approval. | PM and platform teams, week 1 |
-| **2. Low risk by design.** Internal only, assistive, read-only by default, nothing near credit decisions or pricing. | Should earn a low risk rating and a lighter review. | Risk partner gives an early rating, week 2 |
-| **3. Evidence built as we go.** Test results and the evidence pack grow during Build. | The formal review becomes a two-week confirmation, not a fresh start. | PM and risk partner, every week |
-| **4. Data in place early.** Access requested in week 1; wave 1 uses only certified data. | Data access is often the slowest step. | Data owners sign the data contract, week 4 |
-| **5. Fast decisions.** The sponsor makes each gate call within a week. | Waiting for a decision adds weeks. | Sponsor, at each gate |
+| **1. Build from day one** | A working prototype on sample data in week 1; no real client data is needed until it's tested. | PM and platform team, week 1 |
+| **2. Standard features only** | Wave 1 configures features already in Salesforce, M365 Copilot and Power Platform, which already have bank approval. | PM and platform teams, week 1 |
+| **3. Low risk by design** | Internal only, assistive, read-only by default, nothing near credit decisions or pricing. Should earn a low risk rating. | Risk partner gives an early rating, week 2 |
+| **4. Review as we go** | The risk partner sees each version as it's built, so sign-off confirms what they already know. | PM and risk partner, every week |
+| **5. Data access on day one** | Requests go in on day one and wave 1 uses only certified data, because access is often the slowest step. | Data owners sign the data contract, week 2 |
+| **6. Fast decisions** | The sponsor makes each gate call within days, because waiting for decisions adds weeks. | Sponsor, at each gate |
 
-**Backup plan.** If the AI review or data access takes longer, wave 1 is split:
-- **About week 8:** the meeting recap and follow-up draft goes live on its own. It runs in M365 Copilot on the RM's own meetings and email, so it needs the least new data and review.
-- **By about week 14:** the client brief and weekly opportunity list follow, once data access and review are complete.
-- Later waves move back by the same amount. The decision to split is made at Gate 2 (week 4), so no one is surprised later.
+**Backup plan if data access or review runs long.** The meeting follow-up
+goes first: it runs in M365 Copilot on the RM's own meetings and email, so it
+needs the least new data and review. RMs keep shaping the brief and
+opportunity list in the test environment, so they're ready the day access and
+sign-off land, by about week 10. Later waves move back by the same amount. The
+call is made at Gate 2 (week 2).
 
-**Wave 1, week by week:**
+**Wave 1: the first six weeks**
 
 | Week | What gets done | Owner | Proof it's done |
 |---|---|---|---|
-| 1 | Sponsor kickoff; risk partner briefed; data access requested; the five conditions checked | PM | Kickoff notes; access requests logged |
-| 1–2 | RM interviews and shadowing; levers sized; mock-up tested | PM, analyst | Ranked opportunity list; mock-up feedback |
-| 2 | Gate 1: wave 1 use cases, target lever and baseline agreed | Sponsor | Decision log entry |
-| 3–4 | Brief, user stories, data contract, risk intake, value model, Finance attribution method | PM, data owners, risk partner | Signed data contract; early risk rating |
-| 4 | Gate 2: approved to build; split decision made if needed | Sponsor, risk partner | Decision log entry |
-| 4–7 | Configure the agents and workflows in Appendices A and B; build the test set; build the evidence pack | Platform teams, PM | Test results against the quality bar |
-| 6–7 | Formal review and sign-offs | Risk, compliance, privacy, security | Sign-offs recorded |
-| 7 | Gate 3 and Gate 4: quality bar met and approved to launch | Sponsor, risk partner | Test report; sign-offs |
-| 7 | Release readiness: training, support model, incident process, comparison group set | PM, operations | Readiness checklist complete |
-| 8 | Wave 1 live with pilot RMs | PM | First weekly usage report |
-
-```mermaid
-gantt
-    title RM analytics: project plan (estimate; week 1 = start)
-    dateFormat YYYY-MM-DD
-    axisFormat Wk %W
-    section 1. Discover
-    Discovery sprint, pick wave 1 use cases :2027-01-04, 2w
-    Gate 1 - wave 1 chosen                  :milestone, 2027-01-18, 0d
-    section 2. Define
-    Wave 1 brief, data, stories            :2027-01-18, 2w
-    Gate 2 - approved to build             :milestone, 2027-02-01, 0d
-    section 3. Build
-    Wave 1 build and test                  :2027-01-25, 4w
-    Wave 2 define and build                :2027-03-01, 6w
-    Wave 3 define and build                :2027-04-12, 6w
-    section 4. Govern and test
-    Risk partner engaged (thread)          :2027-01-04, 26w
-    Wave 1 review and sign-off             :2027-02-08, 2w
-    Gate 4 - wave 1 approved               :milestone, 2027-02-22, 0d
-    Wave 2 review                          :2027-03-29, 2w
-    Wave 3 review                          :2027-05-10, 2w
-    section 5. Release and adopt
-    Wave 1 live with pilot RMs             :milestone, 2027-02-22, 0d
-    Manager routine and two-week releases  :2027-02-22, 18w
-    Wave 2 live                            :milestone, 2027-04-12, 0d
-    Wave 3 live                            :milestone, 2027-05-24, 0d
-    section 6. Measure and iterate
-    Leading measures                       :2027-03-01, 17w
-    First closed-revenue read              :2027-06-14, 2w
-    Gate 6 - invest, adjust or stop        :milestone, 2027-06-28, 0d
-```
+| Days 1–5 | Sponsor kickoff; risk partner briefed; data access and test environments requested; working prototype built on sample data | PM, platform team | Prototype shown to the sponsor |
+| 1 | **Gate 1:** sponsor sees the prototype and picks wave 1, the target lever and the baseline | Sponsor | Decision log entry |
+| 1–2 | RM interviews and shadowing using the prototype; improve it every few days; levers sized | PM, pilot RMs, analyst | RM feedback log; sized levers |
+| 2 | **Gate 2:** data contract, early risk rating, value model, Finance attribution method; split decision if needed | Sponsor, data owners, risk partner | Signed data contract; early risk rating |
+| 2–3 | Meeting follow-up set up in M365 Copilot; reviewed and signed off for pilot use | Platform team, risk partner | Sign-off recorded |
+| About 2–4 | **Meeting follow-up live with pilot RMs** | PM | First weekly usage report |
+| 2–5 | Connect real data in the test environment; build the test set and evidence pack; risk partner reviews each version | Platform teams, PM | Test results against the quality bar |
+| 4–5 | Sign-offs for the insight features; release readiness (training, support, incident process, comparison group) | Risk, compliance, privacy, security, operations | Sign-offs recorded; readiness checklist complete |
+| About 4–6 | **Client brief and weekly opportunity list live with pilot RMs** | PM | Usage and act-on rates in Power BI |
 
 | Step | Weeks (estimate) | Ends with |
 |---|---|---|
-| **1. Discover** | 1–2 (short sprints before later waves) | Gate 1: wave 1 use cases, target lever, baseline |
-| **2. Define** | 3–4 | Gate 2: brief, data contract, risk rating; approved to build |
-| **3. Build** | Wave 1: 4–7; wave 2: 9–14; wave 3: 15–20 (each goes live the week after) | Gate 3: each wave meets the quality bar in testing |
-| **4. Govern and test** | Thread from week 1; a short review before each wave | Gate 4: each wave approved to launch |
-| **5. Release and adopt** | Wave 1 live about week 8, then a release every two weeks | Gate 5: each wave meets its adoption targets |
-| **6. Measure and iterate** | Leading measures from week 9; closed revenue read about month 6 | Gate 6: invest more, adjust or stop |
+| **1. Discover** | Weeks 1–2, with a working prototype in week 1 (short sprints before later waves) | Gate 1 (end of week 1): wave 1 use cases, target lever, baseline |
+| **2. Define** | Weeks 1–2, alongside discovery | Gate 2 (week 2): data contract, risk rating, value model; split decision if needed |
+| **3. Build** | From day 1. Wave 1: weeks 1–5; wave 2: 7–9; wave 3: 11–14 | Gate 3: each feature meets the quality bar in testing |
+| **4. Govern and test** | Risk partner reviews each version from week 1; sign-offs per feature | Gate 4: each feature approved for real RMs and real client data |
+| **5. Release and adopt** | Follow-up live about weeks 2–4; insights about weeks 4–6; releases every week or two | Gate 5: each wave meets its adoption targets |
+| **6. Measure and iterate** | Leading measures from the first live week; closed revenue read about month 6 | Gate 6: invest more, adjust or stop |
 
-**By day 90 (about week 13):** wave 1 is live with pilot RMs and shipping
-every two weeks, wave 2 is in final review, wave 3 is starting, and leading
-measures are coming in.
+**By day 90 (about week 13):** wave 1 has been live with pilot RMs for about
+two months, wave 2 is live, wave 3 is in review, and leading measures are
+coming in.
 
 ---
 
@@ -556,7 +525,7 @@ comparison group, which is rare in published results.
 | What the role asks for | Where this plan delivers it |
 |---|---|
 | Own the product from discovery through governed release, adoption and improvement | Section 4 and Steps 1–6 |
-| Work directly with bankers to find needs and turn them into clear products | Step 1 (interviews, shadowing, mock-up) and Step 2 (product brief) |
+| Work directly with bankers to find needs and turn them into clear products | Step 1 (interviews, shadowing, working prototype) and Step 2 (product brief) |
 | User stories, acceptance criteria, backlog priorities, release scope, success measures, control requirements and trade-offs | Step 2 |
 | Configure practical AI (agents, retrieval, data flows, automations, integrations) in the tools bankers use | Section 5 and Step 3 |
 | Governed delivery, with risk, privacy, responsible AI and regulation built in from the start | The governance thread in Section 4; Step 4; a risk partner from week one |
@@ -734,7 +703,7 @@ Each RM-facing use case as a step-by-step flow. Every flow has one
 - **Measures:** new clients against the comparison group.
 - **Check:** compliance reviews the criteria before launch, because prospect selection can raise fair-lending questions.
 
-**B9. Every release (the team's two-week cycle)**
+**B9. Every release (every week or two)**
 - **Trigger:** any change to prompts, rules, data or models.
 - **Steps:** 1. A19 re-runs the test set. 2. If the score is below the quality bar, the release stops. 3. If the change is material, the risk partner is told before release. 4. Release; A19 watches live quality for [X] days.
 - **Logged:** test scores, approvals, release notes.
