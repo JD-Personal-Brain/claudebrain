@@ -7,7 +7,9 @@ _Last updated: 2026-10-09 · Last review: none yet (first one due around 2026-10
 - An official "main" copy now exists on GitHub, and it is now GitHub's default branch, so every new session starts from it. Future work is proposed as pull requests against it.
 - A startup check runs at the start of every session and pulls in the latest main automatically, so Claude never works from an old copy. Tested and working.
 - The startup check now also warns about work saved on a side branch that never reached main (added 2026-10-09, after my RM framework was found stranded).
-- My RM analytics framework is now in main (brought in 2026-10-09): `memos/rm-analytics-framework.md` (memo v6), plus the audit and market scan in `memos/`. Memo v6 is waiting for my review before I share it with Associated.
+- My RM analytics framework is now in main (brought in 2026-10-09): `memos/rm-analytics-framework.md` (memo v6), plus the audit and market scan in `memos/`. Memo v6 is waiting for my review before I share it with Associated. The old branch it was stranded on is deleted, so nothing is left outside main.
+- Working assumption: every tool in the job description is live at the bank (I was told so). It's noted in `tech-stack.md`.
+- Test T12 passed: a fresh session built a prompt from `prompting.md` without reminders.
 - New focus: I'm interviewing for a Principal Applied AI Product Manager job at Associated Bank. The focus is thinking through how I'd do the job itself, not interview prep.
 - The full job description is saved in `job-description.md`, and a full guide to every technology in it is in `tech-stack.md`. Both load automatically every session. Never ask me to paste it again.
 - Job Part 1 (finding problems) has started. My answers so far are in `job-notes.md`; pick up at step 1's open question.
