@@ -41,7 +41,7 @@ log (see `README.md`) for every sub-step.
 ## 4.2 Review data and privacy
 
 - **Goal:** confirm that the data the AI sees matches what was approved, and that privacy rules are met.
-- **Why it matters:** customer financial data is protected by law (for example, GLBA). Data use that drifted from the approval is a serious finding.
+- **Why it matters:** data about individuals, such as business owners and guarantors, is protected by law (for example, GLBA, whose privacy rules cover consumers). Business client data is protected by bank policy and contracts ⚠️. Either way, data use that drifted from the approval is a serious finding.
 - **Know first:** the signed data contract (2.3), the data views (3.2), and the privacy team contact. ⚠️
 - **First time, step by step:**
   1. List every field the product actually reads, from the live build rather than the plan.
@@ -67,7 +67,7 @@ log (see `README.md`) for every sub-step.
   1. Re-run the full test set on the frozen version.
   2. Report accuracy, made-up answers ("hallucinations"), relevance and permissions against the quality bar.
   3. Red-team it: try to make it reveal other users' data, give a credit decision, or answer off-topic.
-  4. Record every failure, its fix and the re-test.
+  4. Record every failure, its fix and the re-test. Each fix creates a new frozen version: re-run the test set (A13) and the 4.5 control tests on it.
 - **Output:** the test report and the red-team report.
 - **Done when:** results meet the bar, and every red-team failure is fixed or accepted by risk.
 - **Automation watch:**
@@ -93,7 +93,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Draft**.
   - Note: the groups and thresholds compliance chose. Reuse them.
-  - Agent: **A15 Fairness monitor** (Appendix A). It can keep running after launch. *Auto* report; compliance reviews.
+  - Agent: **A15 Fairness monitor** (Appendix A). *Auto* report; compliance reviews. To keep it running after launch, its spec needs an ongoing mode (today it stops when the report is complete).
 - **For RM analytics:** check that opportunities, especially credit-related ones, are spread fairly across segments and regions.
 
 ---
@@ -174,7 +174,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Draft**.
   - Note: the thresholds chosen. Reuse them next time.
-  - Agent: **A19 Quality watchdog** (Appendix A) runs much of this plan in step 6. *Auto*.
+  - Agent idea: a **monitoring plan template**, so the plan is drafted the same way every time. *Draft*. A19 Quality watchdog (Appendix A) then runs much of the plan in step 6.
 - **For RM analytics:** re-test after every change, with alerts on drift.
 
 ---
@@ -196,12 +196,14 @@ log (see `README.md`) for every sub-step.
 | 4.1 | A12 Risk intake assistant | Me | Draft | Yes, Appendix A |
 | 4.2 | Data-use checker | Draft | Auto | New |
 | 4.3 | A13 Test grader, A14 Red-team agent | Draft | Auto | Yes, Appendix A |
-| 4.4 | A15 Fairness monitor | Draft | Auto | Yes, Appendix A |
+| 4.4 | A15 Fairness monitor | Draft | Auto | Partly: add an ongoing mode to A15 |
 | 4.5 | Controls checker (from 3.4) | Draft | Auto | New |
 | 4.6 | Approved vendors list (not an agent) | Me | Me | — |
 | 4.7 | A16 Evidence pack assembler | Draft | Draft | Yes, Appendix A |
 | 4.7 | Sign-off router | Me | Auto ⚠️ | New |
-| 4.8 | A19 Quality watchdog | Draft | Auto | Yes, Appendix A |
+| 4.8 | Monitoring plan template | Draft | Draft | New |
+
+**First time** = how the task is done on the first project. **Aim for** = its kind in `product-framework.md`.
 
 **Never automated:** the sign-offs themselves. Risk partners make every call.
 

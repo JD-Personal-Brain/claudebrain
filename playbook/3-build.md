@@ -52,7 +52,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Me**, with the data engineer.
   - Note: which checks failed in the first week.
-  - Agent: the quality checks become **Auto** once they run on every refresh. A11 Data contract checker (Appendix A) can watch them.
+  - Agent: the quality checks become **Auto** once they run on every refresh. A11 Data contract checker (Appendix A) could watch them, but its spec is a one-time check today, so it needs an ongoing mode added.
 - **For RM analytics:** signal views for balance trends, product gaps and activity.
 
 ---
@@ -162,7 +162,7 @@ log (see `README.md`) for every sub-step.
 
 ## The Build gate
 
-- **Who decides:** the sponsor, with the product owner.
+- **Who decides:** the sponsor, with the product manager.
 - **Bring:** the gate pack from 3.7.
 - **Go means:** it meets the quality bar in testing, and every control has proof.
 - **No-go means:** another build cycle on the failures, or a smaller scope.
@@ -175,9 +175,13 @@ log (see `README.md`) for every sub-step.
 | Sub-step | Agent | First time | Aim for | Already specified? |
 |---|---|---|---|---|
 | 3.1 | Agent spec drafter | Me | Draft | New |
-| 3.2 | Data quality checks (A11 watches) | Me | Auto | Yes, A11 |
+| 3.2 | Data quality checks (A11 in an ongoing mode) | Me | Auto | Partly: add an ongoing mode to A11 |
+| 3.3 | None new (A13 checks the outputs) | Draft | Draft | — |
 | 3.4 | Controls checker | Me | Auto (test only) | New |
+| 3.5 | None (its feedback feeds A17 in step 5) | Me | Me | — |
 | 3.6 | Test case generator | Draft | Draft | New |
 | 3.7 | A13 Test grader | Draft | Auto | Yes, Appendix A |
+
+**First time** = how the task is done on the first project. **Aim for** = its kind in `product-framework.md`.
 
 _Last updated: 2026-10-09_

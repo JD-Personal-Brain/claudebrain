@@ -1,7 +1,7 @@
 # Step 6: Measure and iterate, the first time
 
 **The question:** is it delivering the outcome, and what comes next?
-**The gate:** each wave, keep, change or stop each feature; each quarter, invest more, adjust or stop overall.
+**The gate:** each month (and at the end of each wave), keep, change or stop each feature; each quarter, invest more, adjust or stop overall.
 **Governance thread:** ongoing monitoring.
 
 This step never really ends: it runs every month for as long as the product
@@ -17,11 +17,11 @@ log (see `README.md`) for every sub-step.
 
 ## 6.1 Track the measures on a live dashboard
 
-- **Goal:** one dashboard showing all five kinds of measures, updated automatically.
+- **Goal:** extend the pilot dashboard (built in 5.1) to all five kinds of measures, updated automatically.
 - **Why it matters:** if numbers have to be pulled by hand each month, they'll be late, and decisions will be made without them.
 - **Know first:** the measures sheet (2.7), the data sources, and who builds dashboards (Power BI). ⚠️
 - **First time, step by step:**
-  1. Build one page per measure kind: usage, quality, business impact, adoption, risk and controls (plus cost).
+  1. Extend the pilot dashboard to one page per measure kind: usage, quality, business impact, adoption, risk and controls (plus cost).
   2. Split **leading** measures (use, insights acted on, pipeline created, visible within weeks) from **lagging** ones (closed revenue, which takes months).
   3. Check each number against its source by hand once.
   4. Share it with the sponsor and user leaders, and set it to refresh automatically.
@@ -70,7 +70,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Draft**.
   - Note: what caused each drop.
-  - Agent: **A19 Quality watchdog** (Appendix A) re-runs the test set and alerts. The product owner decides whether to fix or roll back. Aim for **Auto**.
+  - Agent: **A19 Quality watchdog** (Appendix A) re-runs the test set and alerts. The product manager decides whether to fix or roll back. Aim for **Auto**.
 - **For RM analytics:** watch RM rejections of insights; a rising rate is the earliest warning.
 
 ---
@@ -140,7 +140,7 @@ log (see `README.md`) for every sub-step.
 
 - **Who decides:** the sponsor; Finance for the impact numbers.
 - **Bring:** the monthly pack (each wave) or a quarterly summary (overall).
-- **Each wave:** keep, change or stop each feature.
+- **Each month (and at the end of each wave):** keep, change or stop each feature.
 - **Each quarter:** invest more, adjust or stop overall, based on results against the comparison group.
 - **Record:** the decisions in the decision log.
 
@@ -156,5 +156,7 @@ log (see `README.md`) for every sub-step.
 | 6.4 | Monthly review pack drafter | Draft | Draft | New |
 | 6.5 | A20 Improvement scout | Draft | Draft | Yes, Appendix A |
 | 6.6 | Log summarizer | Me | Draft | New |
+
+**First time** = how the task is done on the first project. **Aim for** = its kind in `product-framework.md`.
 
 _Last updated: 2026-10-09_

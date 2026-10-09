@@ -33,7 +33,7 @@ sub-step. At the end, run the automation review.
 - **Output:** a one-line project statement, the who-decides list, the tracker, the risk contact briefed, the decision log.
 - **Done when:** the sponsor has confirmed their role, and every Discover task has an owner and a date.
 - **Automation watch:**
-  - Today: **Me** (sponsor and risk conversations) and **Draft** (setting up the tracker and files).
+  - First time: **Me** (sponsor and risk conversations) and **Draft** (setting up the tracker and files).
   - Note: how long setting up the tracker took, and what you copied by hand.
   - Agent idea: a **kickoff pack builder** that creates the tracker, decision log, project file and who-decides template from one project statement. *Draft*: you check it.
 - **For RM analytics:** sponsor = the commercial banking leader. The statement: "more new revenue from RMs, by finding opportunities and freeing time to act on them." The memo's "Who's involved" table (section 3) is the who-decides list.
@@ -56,7 +56,7 @@ sub-step. At the end, run the automation review.
 - **Output:** the outcome note: goal, levers, one measure each, out of scope.
 - **Done when:** the sponsor has confirmed the note in writing (an email reply is enough).
 - **Automation watch:**
-  - Today: **Me**. Agreeing a goal is a conversation.
+  - First time: **Me**. Agreeing a goal is a conversation.
   - Note: which questions got the most useful answers. They become a standard question list.
   - Agent idea: an **outcome note drafter** that turns the meeting recap into the one-page note (M365 Copilot). *Draft*.
 - **For RM analytics:** two goals (more revenue opportunities, more time to act) and three levers (win new clients, grow existing clients, keep clients), as in memo section 1.
@@ -68,7 +68,7 @@ sub-step. At the end, run the automation review.
 - **Goal:** put a rough dollar figure on each lever, so you know which one is biggest.
 - **Why it matters:** without sizing, the first target is picked by opinion, and the value model in Define has nothing to stand on.
 - **Know first:**
-  - Where the data lives (Salesforce for pipeline and win/loss; Snowflake for balances and products) and who owns it.
+  - Where the data lives (likely Salesforce for pipeline and win/loss, and Snowflake for balances and products ⚠️) and who owns it.
   - What you're allowed to query, and with which tools. Ask the data owner before running anything.
   - An analyst who can check the numbers.
 - **First time, step by step:**
@@ -81,7 +81,7 @@ sub-step. At the end, run the automation review.
 - **Output:** a sizing table (lever, question, answer, dollar range, confidence, query used).
 - **Done when:** every lever has a range and the biggest numbers have been checked by someone else.
 - **Automation watch:**
-  - Today: **Draft**. AI can run first-pass questions; a person checks them.
+  - First time: **Draft**. AI can run first-pass questions; a person checks them.
   - Note: which questions you asked. They will repeat on every project with a revenue goal.
   - Agent: **A8 Opportunity sizer** (memo Appendix A). It answers plain-English sizing questions read-only, on Snowflake Cortex Analyst. An analyst re-runs the key numbers.
 - **For RM analytics:** size new clients (prospects that look like the best clients), growth (product gaps such as treasury management) and retention (falling balances). Use Salesforce pipeline and Snowflake balances.
@@ -107,7 +107,7 @@ sub-step. At the end, run the automation review.
 - **Output:** interview notes, shadowing notes, and a themes list with quotes and sources.
 - **Done when:** you've covered every role and the last two or three interviews added nothing new.
 - **Automation watch:**
-  - Today: **Me** for the conversations. **Auto** for scheduling. **Draft** for themes.
+  - First time: **Me** for the conversations. **Auto** for scheduling. **Draft** for themes.
   - Note: how long scheduling took (it usually takes more time than you expect), and whether your guide changed after the first few interviews.
   - Agents:
     - **A7 Interview synthesizer** (Appendix A): turns recaps into themes linked to their sources. You check every theme.
@@ -133,7 +133,7 @@ sub-step. At the end, run the automation review.
 - **Output:** a time map (activity, hours per week, type, source: data or estimate).
 - **Done when:** users recognize it as their week.
 - **Automation watch:**
-  - Today: **Draft**.
+  - First time: **Draft**.
   - Note: which data sources were useful, and which were empty or untrusted.
   - Agent: **A9 Time-use analyst** (Appendix A). It reads Salesforce activity read-only. You confirm the results with users in person.
 - **For RM analytics:** the memo targets meeting prep, call notes and CRM updates as the admin to cut.
@@ -155,7 +155,7 @@ sub-step. At the end, run the automation review.
 - **Output:** a short note: what users are measured on, whether it matches the outcome, and any gap.
 - **Done when:** the sponsor knows about any gap and has said how it will be handled.
 - **Automation watch:**
-  - Today: **Me**. These are sensitive conversations.
+  - First time: **Me**. These are sensitive conversations.
   - Note: who had the real answer. Next project, go to them first.
   - Agent idea: none. This stays with a person.
 - **For RM analytics:** if RMs are paid on closed revenue but not on referrals, cross-team referral insights will be ignored. Raise that early.
@@ -180,7 +180,7 @@ sub-step. At the end, run the automation review.
 - **Output:** the prototype versions and a reaction log (version, user, what they did, what changed).
 - **Done when:** users can say what they'd use it for in their own words, or you've learned it's the wrong problem.
 - **Automation watch:**
-  - Today: **Draft**. Claude builds it with the `prototype` skill, and you run the sessions.
+  - First time: **Draft**. Claude builds it with the `prototype` skill, and you run the sessions.
   - Note: how long each version took to build, and what feedback came up every time.
   - Agent idea: a **reaction summarizer** that turns session notes into "what to change next". *Draft*.
 - **For RM analytics:** a pre-meeting client brief and a weekly opportunity list, built on sample clients.
@@ -198,13 +198,13 @@ sub-step. At the end, run the automation review.
   1. List the candidate targets. Score each on size (1.2), pain (1.3 and 1.4), user reaction (1.6), data readiness and risk.
   2. Recommend one, with the reason and the runners-up.
   3. For its measure, record today's number, the date, the source and the exact definition.
-  4. Pick a comparison group: similar users who won't get the tool at first.
+  4. Propose a comparison group: similar users who won't get the tool at first. (Finance agrees the method in 2.7; the final group is confirmed in 2.8.)
   5. Write a first rough value model with [X] placeholders, using memo section 2 as the pattern.
   6. Build the gate pack: the outcome note, the sizing table, themes, the time map, the incentive note, reactions, the recommendation and the baseline.
 - **Output:** the recommendation, the recorded baseline, the comparison group, the first value model and the gate pack.
 - **Done when:** the baseline is recorded with its source, and the gate pack is ready.
 - **Automation watch:**
-  - Today: **Me** for the choice. **Draft** for scoring and the gate pack. **Auto** for recording the baseline once it's defined.
+  - First time: **Me** for the choice and for recording the baseline by hand. **Draft** for scoring and the gate pack.
   - Note: which parts of the gate pack you copied from earlier sub-steps. That copying can be automated.
   - Agent ideas:
     - A **baseline recorder** (Power BI) that snapshots the measure on a schedule from today on. *Auto*.
@@ -231,7 +231,7 @@ table in `product-framework.md`.
 
 | Sub-step | Agent | First time | Aim for | Already specified? |
 |---|---|---|---|---|
-| 1.0 | Kickoff pack builder | Me | Draft | New |
+| 1.0 | Kickoff pack builder | Draft | Draft | New |
 | 1.1 | Outcome note drafter | Me | Draft | New |
 | 1.2 | A8 Opportunity sizer | Draft | Draft | Yes, Appendix A |
 | 1.3 | Interview scheduler | Me | Auto ⚠️ | New |
@@ -240,7 +240,9 @@ table in `product-framework.md`.
 | 1.5 | None (stays with a person) | Me | Me | — |
 | 1.6 | Reaction summarizer | Me | Draft | New |
 | 1.7 | Baseline recorder | Me | Auto | New |
-| 1.7 | Gate pack drafter | Me | Draft | New |
+| 1.7 | Gate pack drafter | Draft | Draft | New |
+
+**First time** = how the task is done on the first project. **Aim for** = its kind in `product-framework.md`.
 
 **Rule for this table:** a new agent gets a full spec (mission, inputs,
 allowed actions, outputs, stop condition, proof it worked, person in charge)

@@ -66,7 +66,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
   - Data owners for each source (Snowflake, Salesforce).
   - Which tables are trusted ("certified") and who may see what. ⚠️ Ask the data team how certification works at the bank.
 - **First time, step by step:**
-  1. From the user stories (2.5, drafted in parallel), list every field the product needs.
+  1. From the Discover target and the 1.6 mock-up screens, list a first set of fields the product needs. Update the list when the user stories (2.5) are done.
   2. For each field: source, owner, refresh rate needed, refresh rate today, quality check, and who may see it.
   3. Check that each field exists and is fresh enough. Mark the gaps.
   4. Agree with the data owner how each gap is fixed or worked around.
@@ -77,7 +77,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
   - First time: **Draft**.
   - Note: how long the sign-off took, and which gaps came up. Expect the same gaps on the next project.
   - Agent: **A11 Data contract checker** (Appendix A). It checks fields, freshness and quality read-only, and the data owner signs off.
-- **For RM analytics:** balances, product holdings and trends from Snowflake; client records, pipeline and activity from Salesforce.
+- **For RM analytics:** balances, product holdings and trends from Snowflake; client records, pipeline and activity from Salesforce ⚠️ (where each lives is still to confirm).
 
 ---
 
@@ -91,7 +91,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
   - The governance basics in `tech-stack.md` (SR 11-7, privacy, fair lending).
 - **First time, step by step:**
   1. Get the intake form and ask your risk contact how long a review usually takes.
-  2. Fill it in from the brief: what the product does, which data, who uses it, what it can change, and whether anything reaches a client.
+  2. Fill it in from the brief so far (2.1) and the Discover gate pack: what the product does, which data (the first field list from 2.3), who uses it, what it can change, and whether anything reaches a client.
   3. Say plainly what it does **not** do, for example "no credit decisions, no pricing."
   4. Submit it, then meet the risk partner to walk through it.
   5. Write down the control requirements they give you (human approval, logging, guardrails, permissions) and copy them into the backlog as must-haves.
@@ -113,7 +113,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
 - **First time, step by step:**
   1. Write each story as "As a [user], I need [what], so that [why]."
   2. Under each, add 2 to 4 acceptance criteria: "Given [situation], when [action], then [result]."
-  3. Add control stories too, for example "As a risk partner, I need every AI action logged."
+  3. Add control stories once the control list comes back from 2.4, for example "As a risk partner, I need every AI action logged."
   4. Review them with two users and one engineer: are they clear, and are they buildable?
   5. Put them in the backlog tool. ⚠️ Which tool the bank uses isn't known yet.
 - **Output:** a backlog of stories with acceptance criteria.
@@ -158,7 +158,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
   1. Pick one or two measures for each of the five kinds: usage, quality, business impact, adoption, risk and controls.
   2. Set the quality bar thresholds: accuracy, sources shown, relevance, usefulness, and permissions (zero tolerance). Use [X] until agreed.
   3. Fill in the value model with real numbers where you have them, and [X] where you don't.
-  4. Agree with Finance how impact is counted: how wins are tagged, and the comparison group.
+  4. Agree with Finance how impact is counted: how wins are tagged, and how the comparison group is used.
   5. Define each measure exactly (source, formula, owner), so the dashboard can be built from it.
 - **Output:** the measures sheet, the quality bar, the value model, and the method Finance agreed.
 - **Done when:** the sponsor and Finance agree, and every measure has a source.
@@ -178,10 +178,11 @@ Fill in the first-time log (see `README.md`) for every sub-step.
 - **First time, step by step:**
   1. Draw a line in the backlog: above it is release 1.
   2. Test it: "Would a user use this every week, even if it had nothing else?" If not, move the line.
-  3. Pick the pilot group ([X] users) and a matching comparison group, with user leaders.
+  3. Confirm the final pilot group ([X] users) and the comparison group proposed in 1.7, with user leaders.
   4. Set a target date for release 1, paced by what really blocks you (data access, approvals), not by habit.
-  5. Build the gate pack: brief, data contract, risk rating and controls, the backlog with release 1 marked, measures, value model, pilot group and date.
-- **Output:** the release 1 scope, the pilot and comparison groups, a date, and the gate pack.
+  5. Complete the one-page brief: problem, outcome, users, platform (2.2), release 1 scope and what's out of scope.
+  6. Build the gate pack: the brief, data contract, risk rating and controls, the backlog with release 1 marked, measures, value model, pilot group and date.
+- **Output:** the release 1 scope, the pilot and comparison groups, a date, the finished brief and the gate pack.
 - **Done when:** the gate pack is ready.
 - **Automation watch:**
   - First time: **Me** for the scope, **Draft** for the pack.
@@ -209,9 +210,12 @@ Fill in the first-time log (see `README.md`) for every sub-step.
 | 2.2 | Platform fit checker | Me | Draft | New |
 | 2.3 | A11 Data contract checker | Draft | Draft | Yes, Appendix A |
 | 2.4 | A12 Risk intake assistant | Draft | Draft | Yes, Appendix A |
-| 2.5 | Story library (reusable stories, not an agent) | Me | Draft | New |
+| 2.5 | Story library (reusable stories, not an agent) | Draft | Draft | New |
 | 2.6 | Decision log drafter | Me | Draft | New |
-| 2.7 | Measures sheet builder | Me | Draft | New |
-| 2.8 | Gate pack drafter (shared with Discover) | Me | Draft | New |
+| 2.6, 2.8 | None: priorities and scope stay with a person | Me | Me | — |
+| 2.7 | Measures sheet builder | Draft | Draft | New |
+| 2.8 | Gate pack drafter (shared with Discover) | Draft | Draft | New |
+
+**First time** = how the task is done on the first project. **Aim for** = its kind in `product-framework.md`.
 
 _Last updated: 2026-10-09_

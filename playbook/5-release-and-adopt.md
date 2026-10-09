@@ -21,9 +21,10 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
 - **Know first:** the sign-offs and conditions from step 4, operations contacts, and the release process for the platform. ⚠️
 - **First time, step by step:**
   1. Go through a readiness checklist: sign-offs and conditions met, support contact named, incident process tested, training ready, communications drafted, monitoring switched on.
-  2. Do a dry run of the incident process: who is called, and how the product is paused.
-  3. Agree the release date with operations and the platform team.
-- **Output:** the completed readiness checklist.
+  2. Build the pilot dashboard from the 2.7 measures sheet, so usage and results are visible from day one.
+  3. Do a dry run of the incident process: who is called, and how the product is paused.
+  4. Agree the release date with operations and the platform team.
+- **Output:** the completed readiness checklist and the pilot dashboard.
 - **Done when:** every item is ticked, or has an owner and a date before go-live.
 - **Automation watch:**
   - First time: **Draft**.
@@ -68,7 +69,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Me**. This is change management.
   - Note: which routine worked, and how managers phrased it. Reuse that for the next team.
-  - Agent: the **A4 Weekly opportunity digest** (Appendix A) is the automated part of the routine. *Auto*.
+  - Agent: none. This stays with a person. The **A4 Weekly opportunity digest** (Appendix A) is a product feature that supports the routine, not an agent that runs it.
 - **For RM analytics:** managers run weekly pipeline meetings from the insights.
 
 ---
@@ -169,12 +170,15 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
 | Sub-step | Agent | First time | Aim for | Already specified? |
 |---|---|---|---|---|
 | 5.1 | Readiness tracker | Draft | Auto | New |
+| 5.1 | Pilot dashboard (Power BI, not an agent) | Draft | Draft | — |
 | 5.2 | Release checklist in the platform | Me | Auto ⚠️ | New |
-| 5.3 | A4 Weekly opportunity digest | Me | Auto | Yes, Appendix A |
+| 5.3 | None (stays with a person) | Me | Me | — |
 | 5.4 | A6 Onboarding coach | Me | Auto | Yes, Appendix A |
 | 5.5 | Wins spotter | Me | Draft | New |
 | 5.6 | A17 Feedback triage | Me | Auto | Yes, Appendix A |
 | 5.7 | Gate pack drafter (shared) | Draft | Draft | New |
+
+**First time** = how the task is done on the first project. **Aim for** = its kind in `product-framework.md`.
 
 **Stays with a person:** working with managers on routines (5.3) and recruiting champions (5.5).
 
