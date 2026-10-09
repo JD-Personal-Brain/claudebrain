@@ -146,6 +146,51 @@ Output:   A subject line, then the email: a one-line thank-you,
           and a closing line.
 ```
 
+## Example 4: a full product memo (like the RM analytics memo)
+Builds a plan for a new use case from my saved files. The four files go in as
+Inputs, in tags (tip 4), and the request comes last (tip 6). Step 4 is
+"draft, check, improve" (tip 9). Expect a strong first draft: the RM memo took
+7 rounds, so follow up with an audit against `product-framework.md`, then a fix round.
+
+```
+Inputs:   <job_description> [job-description.md] </job_description>
+          <framework> [product-framework.md] </framework>
+          <tech_stack> [tech-stack.md] </tech_stack>
+          <my_notes> [what the hiring leader told me] </my_notes>
+
+Role:     You are a Principal Applied AI Product Manager at a
+          commercial bank, writing for its business and risk leaders.
+
+Context:  The first use case is AI-powered analytics for relationship
+          managers (RMs). Assume the goal is new revenue that more than
+          pays for the tool, because that's my working assumption. The
+          bank wants working versions quickly, so plan a standard base
+          of use cases rolled out in waves, then iterate.
+
+Steps:    1. Organize the plan by the six steps in <framework>, using
+             its write-up layout for each step.
+          2. Add a table showing where the plan covers each
+             accountability in <job_description>.
+          3. Use only tools named in <tech_stack>.
+          4. Draft it, check it against the Goal and the checklist,
+             then improve it.
+
+Rules:    Use [X] placeholders, never invented numbers, because leaders
+          will check them. Cite a source for every outside fact, so it
+          can be verified. Keep the AI assistive (AI suggests, the RM
+          decides), because the bank will require it. Plain English.
+
+Goal:     Using everything above, write a memo on how I'd deliver this
+          first use case. Done means a business leader could read the
+          summary in 2 minutes and approve a pilot.
+
+Output:   Executive summary, outcome, value model, who decides, the six
+          steps, project plan, risks, how the plan covers the role,
+          and what I'd confirm first.
+```
+
+**For a different use case:** change the Context (the use case, its goal and any assumptions) and the user group named in the Rules. Everything else stays.
+
 ## Our house style (from my profile and rules)
 Add these to prompts written for me, when they fit:
 - Plain English; explain any technical word.
