@@ -52,7 +52,7 @@ _Last updated: 2026-10-09 · Last review: none yet (first one due around 2026-10
 - **The product manager owns each product until a long-term owner is named.** Why: there are no product owners yet, and who holds a product long term (maybe someone in a revenue line) is a decision the process must make (decided 2026-10-09).
 - **Product work follows `product-framework.md`.** Why: every project gets organized the same way, from Discover to Measure and iterate.
 - **Prompts follow `prompting.md`.** Why: so every prompt we write uses a framework that works, based on Anthropic's own advice.
-- **Documents for other people are designed pages, not .md files** (rule R16). Why: they must look like something a person wants to read; the .md is only the working copy.
+- **Anything a person reads, me included, is a designed page, not a .md file** (rule R16). Why: they must look like something a person wants to read; the .md is only the working copy.
 - **Course pages come in by copy-paste or screenshots.** Why: Cloud sessions can't reach my browser or the course site.
 - **How we prototype screens (UI).** Why: I'm learning to prototype and expect to need it in my new job, and I want every version kept so any new session can carry on.
   1. Claude builds one HTML file that I can download and open in my browser. Nothing needs installing.

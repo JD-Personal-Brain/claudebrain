@@ -14,7 +14,7 @@ when it learns something new.
 - When something keeps going wrong, I want a lasting fix that stops it for good, not just an apology.
 - Save drafts to GitHub automatically, but ask me before merging into main, so I understand exactly what's being merged.
 - I don't like it when sessions get "too meta" (all about the setup). Keep the focus on the real work.
-- Documents for other people should be designed and branded, never Markdown files. When I review one, I may want to see the whole designed document rather than piece by piece in chat.
+- Anything a person reads, me included, should be a designed, branded page, never a Markdown file. When I review one, I may want to see the whole designed document rather than piece by piece in chat.
 - When I approve something, I expect it to get done, not just written down.
 - I think in systems: build a reusable machine that runs many projects at once, with automation doing the routine work, not a one-off plan for one project.
 - I push for speed: plans should be paced by what really blocks us (data access, approvals), not traditional phases.

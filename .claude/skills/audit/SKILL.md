@@ -10,7 +10,7 @@ into main until it passes this audit. Keep the report to the user short (rule R2
 
 ## 1. Scope
 - List every file changed since main: `git fetch origin main` then `git diff --name-only origin/main...HEAD`, plus any uncommitted changes.
-- Add the files they depend on or that depend on them. For example, a framework change also touches `playbook/`, the delivery machine page and any memo that copies it.
+- Add the files they depend on or that depend on them. For example, a framework change also touches `playbook/`, the delivery machine page, the playbook page and any memo that copies it.
 - Add every designed page whose source changed, and its published link (see `designs/README.md`).
 
 ## 2. Mechanical checks (always)
