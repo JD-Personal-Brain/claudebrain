@@ -9,6 +9,7 @@ People-facing documents are designed pages, never Markdown files (R16).
 The .md in `memos/` is only Claude's working copy of the words.
 
 ## 1. Start
+- **First, decide who reads it (rule R16).** If any person will read it, me included (memos, plans, manuals, playbooks, summaries), it's a designed page: use this skill without being asked. Only files just Claude works from (rules, skills, NOW.md, logs) stay plain.
 - Ask only what's missing: who reads it, and is it a **one-pager** (to print or send as a PDF) or a **long doc** (to scroll)?
 - If a designed version already exists (check NOW.md and the Artifact list), **update it in place** so the link stays the same.
 
