@@ -9,8 +9,8 @@ Each rule has a test in `learning/tests.md`: a "Say this" line and a
 "Pass if" line. This skill runs them and records what happened.
 
 ## 1. Pick which tests
-- Default: all tests whose result is "not run yet" or failed last time. If the user names tests (for example "T2 and T13"), run just those.
-- Some tests need things a helper can't fake: a real pop-up, a brand-new session, or something left on a branch overnight. Mark those **needs a real session** and list them at the end with the exact words to type. Don't pretend they passed.
+- Default: all tests whose result is "not run yet", failed, or only partly passed last time. If the user names tests (for example "T2 and T13"), run just those.
+- Some tests need things a helper can't fake: a real pop-up, a brand-new session, or something left on a branch overnight. Mark those **needs a real session** and list them at the end with the exact words to type. Don't pretend they passed. Treat each "Also try" line as its own part: a test passes only when every part does.
 
 ## 2. Run each test with a fresh helper
 A test is only fair if the one answering hasn't seen this conversation. For
@@ -22,7 +22,9 @@ each test, start a separate helper agent with this instruction:
 > anything that saves, merges or changes files; just describe what you would
 > do at that point. User message: "<Say this>"
 
-Run the helpers at the same time. Don't tell them the "Pass if" line, because
+Run the helpers at the same time. If helpers can't be started, stop and tell
+the user. Don't answer the tests yourself: you've seen the "Pass if" lines, so
+the result wouldn't be fair. Don't tell them the "Pass if" line, because
 knowing the answer would make the test meaningless.
 
 ## 3. Grade
