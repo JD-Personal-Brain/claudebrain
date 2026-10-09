@@ -40,7 +40,12 @@ Steps:    1. ... 2. ... 3. ...
 Rules:    Do ... Keep it under ... Because ...
 Examples: Here's one I like: ...
 Output:   Give me ... in this form: ...
+Tone:     One main feel, said specifically: "friendly but direct" ...
 ```
+
+**Tone:** pick one main feel and describe it specifically, like "confident but
+not salesy." Plain "professional" leaves Claude guessing. Skip it when tone
+doesn't matter. *(From the Claude Mastery course, 2026-10-09.)*
 
 ## Example 1: a basic prompt
 Uses 6 pieces. No Inputs or Steps, because there's no document and no set order.
@@ -191,6 +196,15 @@ Output:   Executive summary, outcome, value model, who decides, the six
 
 **For a different use case:** change the Context (the use case, its goal and any assumptions) and the user group named in the Rules. Everything else stays.
 
+## When the answer is off: ask for changes, don't start over
+Never just say "try again" or "make it better": that tells Claude nothing.
+Say what to keep and what to change, one thing at a time.
+1. **First draft:** use the full template and expect a solid start, not perfection.
+2. **Change the direction:** "Keep the structure. Replace the generic points with three real examples."
+3. **Polish:** "The intro is too long. Cut it to two sentences."
+
+*(From the Claude Mastery course, 2026-10-09.)*
+
 ## Which model to use
 Pick the smallest model that does the job well. I choose the model when I
 start a session; Claude can't switch its own. At the start of a big or unusual
@@ -216,5 +230,6 @@ Add these to prompts written for me, when they fit:
 - [ ] Would a newcomer understand it? (golden rule)
 - [ ] Does it say what "done" looks like, and the output format?
 - [ ] Does each rule have a reason?
+- [ ] If the feel matters, is the tone specific (one main feel)?
 
 _Last updated: 2026-10-09_
