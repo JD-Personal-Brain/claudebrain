@@ -56,7 +56,7 @@ When I correct you, or you notice you got something wrong:
 - When you learn something about how I like to work, suggest adding it to `me/profile.md`.
 
 ## 5. Start and end of each session
-- **Start:** in 2 or 3 lines, tell me where we left off and what's next, using NOW.md.
+- **Start:** in 2 or 3 lines, tell me where we left off, using NOW.md. Then a short **"Still to do"** list: the top 3 items from "What's next" in NOW.md, plus any unmerged work the startup check found. Nothing more, so we get to the real work fast.
 - **End:** when I say "wrap up" (or something similar), use the **wrap-up** skill.
 - **Big tasks:** before starting, write a short "done" checklist. At the end, show pass or fail for each item, with proof.
 - **Save progress partway:** after each finished stage of a big task, update NOW.md with what's done and the one next step.
