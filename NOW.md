@@ -18,6 +18,7 @@ _Last updated: 2026-10-09 · Last review: none yet (first one due around 2026-10
 - I can now work in the Claude desktop app: choose **Cloud** and the claudebrain repo each time. Cloud sessions can't see my Chrome, and the course site (notion.site) is blocked here, so course pages come in by copy-paste or screenshots.
 - **Memo v8 merged into main on 2026-10-09** (pull request #35). Reviewed so far: the summary's opening and plan table.
 - **Six-step workflow visual** for the role (2026-10-09): https://claude.ai/artifact/8Nm5fkdicn2Gu5VmNVTvYv. Working copy: `memos/role-workflow.md`.
+- **Designed-page sources** are kept in `designs/` (see its README), so any session can rebuild or edit the pages.
 - First prototype made: a calculator (v1, then v2 with green buttons). It was practice and has nothing to do with the job. The prototyping process is under agreements below.
 
 ## What's next
