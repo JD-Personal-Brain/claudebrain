@@ -1,0 +1,126 @@
+<title>The Delivery Machine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
+<style>
+/* Layout: navy header band, then a single reading column of sections; each step is a card with a task table. */
+:root{--bg:#F4F6F8;--card:#FFFFFF;--line:#D9DEE5;--fg:#1B2433;--muted:#4D5868;--navy:#14213D;--onnavy:#FFFFFF;--onnavy-muted:#C9D3E3;--teal:#0F5F59;--teal-bg:#E1F0EE;--amber-bg:#FDF3E1;--amber:#8A4B00;--me:#14213D;--me-fg:#FFFFFF;--partner-bg:#E6E9EE;--partner:#3B4656;
+--serif:"IBM Plex Serif",Georgia,"Times New Roman",serif;--sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1420;--card:#161E2C;--line:#2A3446;--fg:#E6EAF0;--muted:#A3AEBF;--navy:#0A1830;--onnavy:#FFFFFF;--onnavy-muted:#B4C1D6;--teal:#5FC4B8;--teal-bg:#123A37;--amber-bg:#3A2A10;--amber:#F2C27A;--me:#C9D6F0;--me-fg:#0E1420;--partner-bg:#2A3446;--partner:#C6CFDC;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0E1420;--card:#161E2C;--line:#2A3446;--fg:#E6EAF0;--muted:#A3AEBF;--navy:#0A1830;--onnavy:#FFFFFF;--onnavy-muted:#B4C1D6;--teal:#5FC4B8;--teal-bg:#123A37;--amber-bg:#3A2A10;--amber:#F2C27A;--me:#C9D6F0;--me-fg:#0E1420;--partner-bg:#2A3446;--partner:#C6CFDC;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.55}
+.band{background:var(--navy);color:var(--onnavy);padding-block:48px 40px;padding-inline:20px}
+.wrap{max-width:960px;margin:0 auto}
+main.wrap{padding-block:8px 64px;padding-inline:20px;display:flex;flex-direction:column;gap:48px}
+.label{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin:0 0 8px}
+.band .label{color:#8FD3CA}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(32px,5vw,46px);line-height:1.15;margin:0 0 12px;text-wrap:balance}
+.lede{font-size:18px;color:var(--onnavy-muted);max-width:62ch;margin:0}
+h2{font-family:var(--serif);font-weight:600;font-size:28px;line-height:1.2;margin:0 0 12px;text-wrap:balance}
+h3{font-family:var(--serif);font-weight:600;font-size:21px;margin:0}
+p{margin:0;max-width:68ch}
+section{display:flex;flex-direction:column;gap:16px}
+.kinds{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.kind{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:20px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.kind p{color:var(--muted);font-size:15px}
+.chip{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.04em;padding:3px 9px;border-radius:999px;white-space:nowrap;font-weight:500}
+.k-auto{background:var(--teal-bg);color:var(--teal)}
+.k-draft{background:var(--amber-bg);color:var(--amber)}
+.k-me{background:var(--me);color:var(--me-fg)}
+.k-partner{background:var(--partner-bg);color:var(--partner)}
+.kind .chip{align-self:flex-start;font-size:13px}
+.mix{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:20px;display:flex;flex-direction:column;gap:12px}
+.mixrow{display:grid;grid-template-columns:190px 1fr;gap:16px;align-items:center}
+.mixname{font-weight:500;display:flex;gap:10px;align-items:center}
+.num{font-family:var(--mono);font-size:12px;color:var(--teal);min-width:1.2em}
+.mixbar{display:flex;gap:3px;height:28px}
+.seg{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;border-radius:4px;font-variant-numeric:tabular-nums}
+.legend{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:14px;color:var(--muted);align-items:center}
+.note{background:var(--amber-bg);color:var(--fg);border-radius:8px;padding:16px 20px}
+.note strong{color:var(--amber)}
+.step{background:var(--card);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.step header{display:flex;gap:16px;align-items:center;padding:18px 20px;border-bottom:1px solid var(--line)}
+.num.big{font-size:15px;width:34px;height:34px;border-radius:50%;border:1.5px solid var(--teal);display:flex;align-items:center;justify-content:center;flex:none}
+.q{color:var(--muted);font-size:15px}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:15px;min-width:620px}
+th{text-align:left;font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:10px 20px;border-bottom:1px solid var(--line)}
+th .g{text-transform:none;letter-spacing:0}
+td{padding:11px 20px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td:first-child{width:42%}
+td:nth-child(3),td:nth-child(4){color:var(--muted)}
+.steps{display:flex;flex-direction:column;gap:20px}
+.check{background:var(--navy);color:var(--onnavy);border-radius:8px;padding:28px;display:flex;flex-direction:column;gap:18px}
+.check h2{color:var(--onnavy)}
+.check ol{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.check li{border:1px solid rgba(255,255,255,.22);border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:6px}
+.check li b{font-family:var(--serif);font-size:19px;font-weight:600}
+.check li span,.check p{color:var(--onnavy-muted)}
+.check .label{color:#8FD3CA}
+.rules{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.rule{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:20px;display:flex;flex-direction:column;gap:8px}
+.rule h3{font-size:18px}
+.rule p{color:var(--muted);font-size:15px}
+footer{color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:560px){.rules{grid-template-columns:1fr}.mixrow{grid-template-columns:1fr;gap:6px}.check{padding:20px}}
+</style>
+<div class="band"><div class="wrap">
+<p class="label">Operating model · AI product delivery</p>
+<h1>The Delivery Machine</h1>
+<p class="lede">How one product manager runs many AI projects at once: routine work runs on its own and pushes tasks to people on time, so the PM's hours go to decisions and people.</p>
+</div></div>
+<main class="wrap">
+<section style="padding-top:32px">
+<p class="label">The idea</p>
+<h2>Every task is one of three kinds</h2>
+<p>Each project moves through the same six steps. Every task in every step is marked by who does it. Each project leaves the machine more automated than it found it.</p>
+<div class="kinds">
+<div class="kind"><span class="chip k-auto">Auto</span><h3>Runs on its own</h3><p>A workflow or agent does it and tells the right person. No one has to remember it.</p></div>
+<div class="kind"><span class="chip k-draft">Draft</span><h3>AI drafts, a person checks</h3><p>AI does the first version, and a named person approves it.</p></div>
+<div class="kind"><span class="chip k-me">Me</span><h3>Only a person</h3><p>Decisions, agreement between people, relationships and trade-offs. This is where the PM's hours go.</p></div>
+</div>
+</section>
+<section>
+<p class="label">Where the PM's time goes</p>
+<h2>Early steps need people; later steps run themselves</h2>
+<p>Number of tasks of each kind, by step. Discover and Define are where judgment matters most, so they carry the most person-only work.</p>
+<div class="mix"><div class="mixrow"><div class="mixname"><span class="num">1</span>Discover</div><div class="mixbar" role="img" aria-label="Discover: 3 Me, 2 Draft, 2 Auto"><span class="seg k-me" style="flex:3" title="Me: 3">3</span><span class="seg k-draft" style="flex:2" title="Draft: 2">2</span><span class="seg k-auto" style="flex:2" title="Auto: 2">2</span></div></div><div class="mixrow"><div class="mixname"><span class="num">2</span>Define</div><div class="mixbar" role="img" aria-label="Define: 4 Me, 4 Draft"><span class="seg k-me" style="flex:4" title="Me: 4">4</span><span class="seg k-draft" style="flex:4" title="Draft: 4">4</span></div></div><div class="mixrow"><div class="mixname"><span class="num">3</span>Build</div><div class="mixbar" role="img" aria-label="Build: 2 Me, 1 Draft, 1 Auto"><span class="seg k-me" style="flex:2" title="Me: 2">2</span><span class="seg k-draft" style="flex:1" title="Draft: 1">1</span><span class="seg k-auto" style="flex:1" title="Auto: 1">1</span></div></div><div class="mixrow"><div class="mixname"><span class="num">4</span>Govern and test</div><div class="mixbar" role="img" aria-label="Govern and test: 1 Me, 1 Draft, 2 Auto, 1 Partner"><span class="seg k-me" style="flex:1" title="Me: 1">1</span><span class="seg k-draft" style="flex:1" title="Draft: 1">1</span><span class="seg k-auto" style="flex:2" title="Auto: 2">2</span><span class="seg k-partner" style="flex:1" title="Partner: 1">1</span></div></div><div class="mixrow"><div class="mixname"><span class="num">5</span>Release and adopt</div><div class="mixbar" role="img" aria-label="Release and adopt: 2 Me, 1 Draft, 2 Auto"><span class="seg k-me" style="flex:2" title="Me: 2">2</span><span class="seg k-draft" style="flex:1" title="Draft: 1">1</span><span class="seg k-auto" style="flex:2" title="Auto: 2">2</span></div></div><div class="mixrow"><div class="mixname"><span class="num">6</span>Measure and iterate</div><div class="mixbar" role="img" aria-label="Measure and iterate: 1 Me, 1 Draft, 2 Auto"><span class="seg k-me" style="flex:1" title="Me: 1">1</span><span class="seg k-draft" style="flex:1" title="Draft: 1">1</span><span class="seg k-auto" style="flex:2" title="Auto: 2">2</span></div></div>
+<div class="legend"><span class="chip k-me">Me</span> Only a person <span class="chip k-draft">Draft</span> AI drafts <span class="chip k-auto">Auto</span> Runs on its own <span class="chip k-partner">Partner</span> Partner sign-off</div></div>
+</section>
+<section>
+<p class="label">The six steps</p>
+<h2>Each step's tasks, by kind</h2>
+<p>These tables are the starting point. Tools are first guesses until we confirm the bank's setup.</p>
+<div class="note"><strong>To confirm first:</strong> whether bank policy lets automations message people or update trackers on their own. That decides how much can be marked Auto.</div>
+<div class="steps"><article class="step"><header><span class="num big">1</span><div><h3>Discover</h3><p class="q">Which problem is worth solving first?</p></div></header><div class="tw"><table><thead><tr><th>Task</th><th>Kind</th><th>Tool <span class="g">(guess)</span></th><th>Goes to</th></tr></thead><tbody><tr><td>Agree the outcome and measure with the sponsor</td><td><span class="chip k-me">Me</span></td><td>Meeting</td><td>Sponsor</td></tr><tr><td>First look at the size of the opportunity</td><td><span class="chip k-draft">Draft</span></td><td>Snowflake, Power BI</td><td>Me, then sponsor</td></tr><tr><td>Schedule interviews and shadowing</td><td><span class="chip k-auto">Auto</span></td><td>Outlook, Power Automate</td><td>Users</td></tr><tr><td>Interview and shadow users</td><td><span class="chip k-me">Me</span></td><td>Teams, in person</td><td>—</td></tr><tr><td>Pull themes from interview notes</td><td><span class="chip k-draft">Draft</span></td><td>M365 Copilot</td><td>Me</td></tr><tr><td>Record today&#x27;s baseline numbers (once the measure is set)</td><td><span class="chip k-auto">Auto</span></td><td>Power BI</td><td>Sponsor</td></tr><tr><td>Gate decision</td><td><span class="chip k-me">Me</span></td><td>Meeting</td><td>Sponsor</td></tr></tbody></table></div></article><article class="step"><header><span class="num big">2</span><div><h3>Define</h3><p class="q">What do we build first, and how will we know it worked?</p></div></header><div class="tw"><table><thead><tr><th>Task</th><th>Kind</th><th>Tool <span class="g">(guess)</span></th><th>Goes to</th></tr></thead><tbody><tr><td>One-sentence problem and measurable outcome</td><td><span class="chip k-me">Me</span></td><td>—</td><td>Sponsor</td></tr><tr><td>Choose the platform and delivery path (with platform teams)</td><td><span class="chip k-me">Me</span></td><td>—</td><td>Platform teams</td></tr><tr><td>Data contract: fields, freshness, checks</td><td><span class="chip k-draft">Draft</span></td><td>Snowflake</td><td>Data owner approves</td></tr><tr><td>Risk intake form, filled in from the brief</td><td><span class="chip k-draft">Draft</span></td><td>Bank&#x27;s intake process</td><td>Model risk rates it</td></tr><tr><td>User stories and acceptance criteria</td><td><span class="chip k-draft">Draft</span></td><td>Backlog tool</td><td>Me</td></tr><tr><td>Backlog priorities and trade-offs</td><td><span class="chip k-me">Me</span></td><td>Backlog tool</td><td>Decision log</td></tr><tr><td>Measures, quality bar and value model</td><td><span class="chip k-draft">Draft</span></td><td>Power BI</td><td>Me, then sponsor</td></tr><tr><td>Gate decision</td><td><span class="chip k-me">Me</span></td><td>Meeting</td><td>Sponsor, risk</td></tr></tbody></table></div></article><article class="step"><header><span class="num big">3</span><div><h3>Build</h3><p class="q">What&#x27;s the smallest version users will use and trust?</p></div></header><div class="tw"><table><thead><tr><th>Task</th><th>Kind</th><th>Tool <span class="g">(guess)</span></th><th>Goes to</th></tr></thead><tbody><tr><td>Configure the AI capability (with platform teams)</td><td><span class="chip k-me">Me</span></td><td>Copilot Studio, Agentforce, Bedrock, Power Automate</td><td>—</td></tr><tr><td>Build the test set: real examples, known good answers</td><td><span class="chip k-draft">Draft</span></td><td>Spreadsheet or eval tool</td><td>Me and pilot users check</td></tr><tr><td>Run the test set on every new version</td><td><span class="chip k-auto">Auto</span></td><td>Bedrock evaluation or similar</td><td>Me, only when something fails</td></tr><tr><td>Gate decision</td><td><span class="chip k-me">Me</span></td><td>—</td><td>Sponsor</td></tr></tbody></table></div></article><article class="step"><header><span class="num big">4</span><div><h3>Govern and test</h3><p class="q">Is it safe, fair and controlled?</p></div></header><div class="tw"><table><thead><tr><th>Task</th><th>Kind</th><th>Tool <span class="g">(guess)</span></th><th>Goes to</th></tr></thead><tbody><tr><td>Red-team the product (try to break it)</td><td><span class="chip k-auto">Auto</span></td><td>Red-team agent</td><td>Risk reviews every failure</td></tr><tr><td>Put together the evidence pack</td><td><span class="chip k-draft">Draft</span></td><td>Templates and test results</td><td>Me, then risk</td></tr><tr><td>Send sign-off requests and chase them</td><td><span class="chip k-auto">Auto</span></td><td>Power Automate approvals</td><td>Risk, compliance, privacy, security</td></tr><tr><td>The sign-offs themselves</td><td><span class="chip k-partner">Partner</span></td><td>—</td><td>Recorded in the tracker</td></tr><tr><td>Unblock a stuck sign-off</td><td><span class="chip k-me">Me</span></td><td>Meeting</td><td>—</td></tr></tbody></table></div></article><article class="step"><header><span class="num big">5</span><div><h3>Release and adopt</h3><p class="q">Will users use it every week?</p></div></header><div class="tw"><table><thead><tr><th>Task</th><th>Kind</th><th>Tool <span class="g">(guess)</span></th><th>Goes to</th></tr></thead><tbody><tr><td>Release readiness checklist</td><td><span class="chip k-draft">Draft</span></td><td>Template</td><td>Me</td></tr><tr><td>Train users on their own work; recruit champions</td><td><span class="chip k-me">Me</span></td><td>Teams, in person</td><td>Pilot users</td></tr><tr><td>Weekly usage report</td><td><span class="chip k-auto">Auto</span></td><td>Power BI</td><td>Sponsor, user leaders</td></tr><tr><td>Sort feedback into bugs, quality issues and ideas</td><td><span class="chip k-auto">Auto</span></td><td>Feedback triage agent</td><td>Backlog; I check a weekly sample</td></tr><tr><td>Decide to scale to the next wave</td><td><span class="chip k-me">Me</span></td><td>Meeting</td><td>Sponsor</td></tr></tbody></table></div></article><article class="step"><header><span class="num big">6</span><div><h3>Measure and iterate</h3><p class="q">Is it delivering, and what comes next?</p></div></header><div class="tw"><table><thead><tr><th>Task</th><th>Kind</th><th>Tool <span class="g">(guess)</span></th><th>Goes to</th></tr></thead><tbody><tr><td>Live dashboard against baseline and comparison group</td><td><span class="chip k-auto">Auto</span></td><td>Power BI</td><td>Sponsor</td></tr><tr><td>Re-test after every change; alert when quality slips</td><td><span class="chip k-auto">Auto</span></td><td>Eval tool and alerts</td><td>Me</td></tr><tr><td>Monthly keep / change / stop pack</td><td><span class="chip k-draft">Draft</span></td><td>Power BI and template</td><td>Me</td></tr><tr><td>Keep / change / stop decision and next wave</td><td><span class="chip k-me">Me</span></td><td>Meeting</td><td>Sponsor</td></tr></tbody></table></div></article></div>
+</section>
+<section class="check">
+<p class="label">At every gate</p>
+<h2>The automation check</h2>
+<p>Before each go/no-go, ask three questions of every task done by a person or drafted by AI:</p>
+<ol>
+<li><b>Did it repeat?</b><span>Will it come up again, in this project or the next one?</span></li>
+<li><b>Is it stable?</b><span>Did we do it the same way at least twice?</span></li>
+<li><b>Is it safe alone?</b><span>It makes no decision, nothing reaches a client, and bank rules allow it.</span></li>
+</ol>
+<p>Three yeses: move the task one kind toward Auto before the next project. If an automated task goes wrong, a person takes it back until it's fixed.</p>
+</section>
+<section>
+<p class="label">Across every project</p>
+<h2>The running layer</h2>
+<p>One set of automations keeps all projects on schedule, so nothing depends on the PM remembering to chase.</p>
+<div class="step"><div class="tw"><table><thead><tr><th>Task</th><th>Kind</th><th>Tool <span class="g">(guess)</span></th><th>Goes to</th></tr></thead><tbody><tr><td>One tracker for all projects: task, owner, date, status</td><td><span class="chip k-auto">Auto</span></td><td>A shared tracker (tool to confirm)</td><td>Set up once by me, then updates itself</td></tr><tr><td>Remind owners before a due date; tell me when something is late</td><td><span class="chip k-auto">Auto</span></td><td>Power Automate</td><td>Owners, then me</td></tr><tr><td>Weekly status note for each project</td><td><span class="chip k-draft">Draft</span></td><td>M365 Copilot, from the tracker</td><td>Me, then stakeholders</td></tr><tr><td>Decision log and risk / issue list, from meeting notes</td><td><span class="chip k-draft">Draft</span></td><td>M365 Copilot</td><td>Me</td></tr><tr><td>One view of all projects: step, late items, measures</td><td><span class="chip k-auto">Auto</span></td><td>Power BI</td><td>Sponsors and leaders</td></tr></tbody></table></div></div>
+</section>
+<section>
+<p class="label">Many projects at once</p>
+<h2>Four rules for running them side by side</h2>
+<div class="rules">
+<div class="rule"><h3>One machine for every project</h3><p>The same steps, tables and tracker, so any project can be compared with any other.</p></div>
+<div class="rule"><h3>Limit the person-heavy steps</h3><p>At most [X] projects in Discover or Define at once. Steps 3 to 6 are mostly automated, so more projects can sit there.</p></div>
+<div class="rule"><h3>Stagger the gates</h3><p>No two gate meetings in the same week.</p></div>
+<div class="rule"><h3>Plan the PM's week</h3><p>[X] hours on decisions and gates, [X] on users, [X] on partners and sign-offs, [X] checking drafts. If person-only work runs over, the automation check comes first.</p></div>
+</div>
+</section>
+<footer>Draft, 2026-10-09. Tool choices are guesses until confirmed against the bank's setup. [X] marks numbers still to be set. The RM analytics plan is the first project to run through this machine.</footer>
+</main>

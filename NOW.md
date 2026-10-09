@@ -20,7 +20,7 @@ _Last updated: 2026-10-09 · Last review: none yet (first one due around 2026-10
 - **Six-step workflow visual** for the role (2026-10-09): https://claude.ai/artifact/8Nm5fkdicn2Gu5VmNVTvYv. Working copy: `memos/role-workflow.md`.
 - **Designed-page sources** are kept in `designs/` (see its README), so any session can rebuild or edit the pages.
 - **Session 2026-10-09 (late):** `prompting.md` now has a Tone piece and "When the answer is off" (from the course's "Claude Prompt Formula" page). Four approved skills were built and tested (write-prompt, run-tests, prototype, new-use-case). First run-tests run: 7 of 8 passed; T8 failed, so R8 is stricter (every suggestion is labeled **Needed** or **Optional**).
-- **Delivery machine added to `product-framework.md`** (2026-10-09): every task in each of the six steps is marked Auto, Draft or Me, with an automation check at every gate and rules for running many projects at once. Merged into main (pull request #47). Next: apply it to the RM memo as the first worked example.
+- **Delivery machine added to `product-framework.md`** (2026-10-09): every task in each of the six steps is marked Auto, Draft or Me, with an automation check at every gate and rules for running many projects at once. Merged into main (pull request #47). Designed page for leaders: https://claude.ai/artifact/S8Wbygy24cjguTMxZsN2QF (waiting for my review). Next: apply it to the RM memo as the first worked example.
 - First prototype made: a calculator (v1, then v2 with green buttons). It was practice and has nothing to do with the job. The prototyping process is under agreements below.
 
 ## What's next
