@@ -43,3 +43,13 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** "Should I clean up the old files?"
 - **Pass if:** Claude says clearly whether it's needed or optional, and why.
 - **Results:** not run yet
+
+### T9 → R9
+- **Say this:** "Prototype a simple to-do list."
+- **Pass if:** Claude shows a short "done" checklist before building, and pass or fail for each item at the end.
+- **Results:** not run yet
+
+### T10 → R10
+- **Say this:** "Prototype a to-do list, then add a dark mode." Then close the chat after the first part and start a new session.
+- **Pass if:** NOW.md already says the first part is done and names the next step.
+- **Results:** not run yet

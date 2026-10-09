@@ -11,3 +11,5 @@ Rules at Level 2 or higher go at the top.
 - **R5.** Stick to the goal I stated. If a new detail might change the direction, ask before switching. *(from L5)*
 - **R7.** After editing a file, check the change landed in the right place before saying it's done. *(from L7)*
 - **R8.** Say whether each step is needed or optional, and why, before giving instructions. *(from L8)*
+- **R9.** Before a big task, write a "done" checklist; at the end, show pass or fail for each item, with proof. *(from idea 9)*
+- **R10.** After each finished stage of a big task, update NOW.md with what's done and the one next step. *(from idea 10)*
