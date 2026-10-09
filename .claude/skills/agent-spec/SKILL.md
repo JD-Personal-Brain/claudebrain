@@ -23,7 +23,7 @@ assistive first, one job each, read-only by default, every action logged.
 | **Job** | One sentence: the one job it does |
 | **Starts when** | What triggers it: a request, a date or an event |
 | **Inputs** | Exactly what it reads, and where that lives |
-| **Allowed actions** | A short list. Read-only unless a named person clicks to approve |
+| **Allowed actions** | A short list. Read-only or draft-only unless a named person approves; an Auto agent acts only within this list, and waits (⚠️) until the bank allows it |
 | **Not allowed** | What it must never do (for example, contact clients, decide credit, approve a sign-off) |
 | **Outputs** | What it produces, and where it's saved or sent |
 | **Stops when** | When it's finished, and what it does if something's missing |
@@ -42,7 +42,7 @@ assistive first, one job each, read-only by default, every action logged.
 ## 4. Update the references
 - In the playbook review table, change "Already specified?" from "New" to "Yes, M#" (or "Yes, A#").
 - If the agent changes how a task is done, update the framework table row's tool.
-- Rebuild and republish the designed page (the playbook page shows the agent library), then run `python3 .claude/skills/audit/check.py`.
+- Rebuild and republish the designed page (`python3 designs/playbook-build.py`; the playbook page shows the agent library), then run `python3 .claude/skills/audit/check.py`.
 
 ## 5. Audit, then merge
 Run the **audit** skill (rule R18) before offering to merge.

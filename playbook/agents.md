@@ -6,8 +6,9 @@ agents (the product users see, or agents only that project needs) go in its
 memo's Appendix A, like A1 to A20 in the RM memo.
 
 Written with the **agent-spec** skill. Every agent follows the AI principles in
-`product-framework.md`: assistive first, one job each, read-only unless a named
-person clicks to approve, and every action logged.
+`product-framework.md`: assistive first, one job each, read-only or draft-only unless a named
+person approves, and every action logged. Auto agents act only within their
+listed actions, and those marked ⚠️ wait until the bank allows it.
 
 > ⚠️ **How much to trust this.** Written 2026-10-09 from the playbook, not
 > from Associated Bank. "Runs on" tools are guesses from `tech-stack.md`, and
@@ -89,7 +90,7 @@ person clicks to approve, and every action logged.
 - **Allowed actions:** read the source; save a dated snapshot.
 - **Not allowed:** changing the definition; filling gaps with estimates.
 - **Outputs:** a dated history of the measure, for the pilot group and the comparison group.
-- **Stops when:** never; it runs on schedule. If the source is missing or late, it alerts the data owner.
+- **Stops when:** the product is retired or the measure is replaced. If the source is missing or late, it alerts the data owner.
 - **Proof it worked:** the first snapshot matches the number recorded by hand in 1.7.
 - **Person in charge:** product manager; the data owner owns the source.
 - **Runs on (guess):** Power BI with scheduled refresh, or Snowflake.
@@ -178,7 +179,7 @@ person clicks to approve, and every action logged.
 ### M11. Controls checker
 - **Used in:** 3.4, 4.5
 - **For:** the team
-- **Kind:** Me → Auto (test environment only)
+- **Kind:** Me (3.4) / Draft (4.5) → Auto (test environment only)
 - **Job:** re-run every control test on each new version.
 - **Starts when:** a new version reaches the test environment.
 - **Inputs:** the controls checklist and its test cases.

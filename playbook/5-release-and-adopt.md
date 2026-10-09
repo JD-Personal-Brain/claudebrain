@@ -50,7 +50,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Me**, with platform teams.
   - Note: every manual step in the move to live. Those steps are the release checklist for next time.
-  - Agent idea: a **release checklist** (spec M16) in the platform's own deployment tools. *Auto* where the platform supports it ⚠️.
+  - Agent idea: a **release automation** (spec M16) that runs the release checklist in the platform's own deployment tools. *Auto* where the platform supports it ⚠️.
 - **For RM analytics:** pilot RMs and their managers, compared with similar RMs not yet using it.
 
 ---
@@ -173,7 +173,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
 |---|---|---|---|---|
 | 5.1 | Readiness tracker | Draft | Auto | Yes, M15 |
 | 5.1 | Pilot dashboard (Power BI, not an agent) | Draft | Draft | — |
-| 5.2 | Release checklist in the platform | Me | Auto ⚠️ | Yes, M16 |
+| 5.2 | Release automation | Me | Auto ⚠️ | Yes, M16 |
 | 5.2 | Weekly usage report (Power BI, not an agent) | Me | Auto | — |
 | 5.3 | None (stays with a person) | Me | Me | — |
 | 5.4 | A6 Onboarding coach | Me | Auto | Yes, Appendix A |
