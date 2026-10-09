@@ -17,6 +17,7 @@ when it learns something new.
 - Anything a person reads, me included, should be a designed, branded page, never a Markdown file. When I review one, I may want to see the whole designed document rather than piece by piece in chat.
 - When I approve something, I expect it to get done, not just written down.
 - I think in systems: build a reusable machine that runs many projects at once, with automation doing the routine work, not a one-off plan for one project.
+- I'm a big audit person: errors always turn up, so every piece of work gets a full audit before it goes into main, as a standard step, not now and then.
 - I push for speed: plans should be paced by what really blocks us (data access, approvals), not traditional phases.
 
 ## Tools I use
