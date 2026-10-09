@@ -15,6 +15,10 @@ PAGES = [
      "Each technology in the job: what it is, how the bank likely uses it, and what I need to know."),
     ("job-notes.md", "job-notes.html", "Job Notes", "Associated Bank · thinking through the job",
      "My answers so far, part by part, so any session can pick up where I stopped."),
+    ("job-description.md", "job-description.html", "Job Description", "Associated Bank · the role",
+     "The Principal Applied AI Product Manager posting: what the role owns, what it requires, and the tools it names."),
+    ("prompting.md", "prompting.html", "Prompting Guide", "Working with Claude",
+     "How we write prompts: Anthropic's advice in plain English, a fill-in template, worked examples and a checklist."),
 ]
 
 def slug(t):

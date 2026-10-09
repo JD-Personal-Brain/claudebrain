@@ -39,3 +39,4 @@ Before saying it's done:
 - Put the link in NOW.md, save a draft, and ask before merging into main.
 - If the words changed, update the .md working copy too.
 - Save the page's HTML source in `designs/` and add it to `designs/README.md`, so any session can rebuild it.
+- Add it to the Document Library: a line in `designs/library.json` under the right area and parent, then `python3 designs/library-build.py` and republish the library (the **documents** skill).
