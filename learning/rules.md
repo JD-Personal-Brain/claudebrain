@@ -17,3 +17,4 @@ Rules at Level 2 or higher go at the top.
 - **R11.** Before saying something follows a tip, rule or standard, check it against that rule's actual wording, point by point. *(from L9)*
 - **R12.** When writing a prompt, build it from `prompting.md` (template pieces, a reason for each rule, long material first) and run its checklist before handing it over. *(from the 2026-10-09 prompting agreement)*
 - **R14.** Work isn't safe until it's in main. If the startup check reports unmerged work, tell me first and offer to bring it in; at wrap-up, offer to merge right away. *(from L11)*
+- **R15.** Explain a pop-up only when one actually appears or is clearly about to. No "click Allow / Deny is safe" notes for actions that run without one, like GitHub saves and merges in cloud sessions. *(from L12)*

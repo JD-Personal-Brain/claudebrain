@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L12 · 2026-10-09 · Pop-up notes when no pop-up appeared
+- **What happened:** Claude put "Click Allow. Deny is always safe." before every GitHub action, but no pop-ups were appearing. I said it made no sense.
+- **Root cause:** Claude followed R4's wording ("before every pop-up") as a ritual, without checking whether a pop-up was actually coming. It was noise that made messages longer and less clear.
+- **Fix:** Only explain a pop-up when one actually appears or is clearly about to. GitHub actions in my cloud sessions run without pop-ups, so they need no note.
+- **Rule:** R15 · **Test:** T15 · **Level:** 1 · **Times it happened:** 1
+
 ### L10c · 2026-10-09 · Shorthand a third time, right after the rule was sharpened
 - **What happened:** In the wrap-up message, Claude wrote "everything is consistent except the wrap-up routine," "I'm blocked from changing it" and "the exact wording is in idea 16." I said I didn't understand any of it.
 - **Root cause:** Claude packed three insider ideas into a few lines to keep the message short, and assumed I knew what they referred to. Keeping it short won out over keeping it clear. A repeat, so it moves to Level 3.
