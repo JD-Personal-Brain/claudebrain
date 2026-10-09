@@ -9,7 +9,8 @@ This turns one line ("new use case: faster credit memos") into a memo
 organized by the six steps in `product-framework.md`, like the RM analytics
 memo (`memos/rm-analytics-framework.md`), which is the worked example.
 
-## 1. Confirm the basics (one question at a time)
+## 1. Confirm the basics
+Ask only for what the user's message doesn't already say, one question at a time:
 - **The use case** in one sentence, and **who it's for** (which bankers or team).
 - **The goal:** what result should it bring (more revenue, hours saved, fewer errors)?
 - **Anything the user has heard** from the bank about it.
@@ -22,11 +23,13 @@ user group swapped in. In short:
 - Use only tools named in `tech-stack.md`. Keep the AI assistive (AI suggests, a person decides).
 - Use [X] for numbers we don't have, never invented ones. Every outside fact gets a source, or is marked "I do not have a verified source for this."
 - Include a table showing where the plan covers each accountability in `job-description.md`.
+- Aim for a first version of about 300 to 400 lines. Leave out the RM memo's appendices (agent specs, workflows) and market scan unless the user asks; offer them as a next step.
 
 ## 3. Audit it, then fix it
 Check the draft against `product-framework.md`, point by point (rule R11):
 every step has a gate, governance runs through every step, all five kinds of
-measures are there, and the quality bar is set. List the gaps, fix them, and
+measures are there, the quality bar is set, only `tech-stack.md` tools are named,
+unknown numbers are [X], and the accountability table is complete. List the gaps, fix them, and
 show the user a pass or fail list with proof.
 
 ## 4. Save and hand over
