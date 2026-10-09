@@ -90,7 +90,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Draft** for the pack, **Me** for the decision.
   - Note: what the sponsor looked at first. Put that at the top next time.
-  - Agent idea: a **monthly review pack drafter** built from the dashboard and the impact note. *Draft*.
+  - Agent idea: a **monthly review pack drafter** (spec M18) built from the dashboard and the impact note. *Draft*.
 - **For RM analytics:** each wave's standard use cases reviewed separately.
 
 ---
@@ -131,7 +131,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Me**.
   - Note: which agents you built, and how much time they saved on the next project.
-  - Agent idea: a **log summarizer** that totals time and waits from the first-time logs. *Draft*.
+  - Agent idea: a **log summarizer** (spec M19) that totals time and waits from the first-time logs. *Draft*.
 - **For RM analytics:** the RM project is the first run, so its logs set the starting point for every project after it.
 
 ---
@@ -150,12 +150,12 @@ log (see `README.md`) for every sub-step.
 
 | Sub-step | Agent | First time | Aim for | Already specified? |
 |---|---|---|---|---|
-| 6.1 | Live dashboard (template) | Draft | Auto | New |
+| 6.1 | Live dashboard (template) | Draft | Auto | Asset: agent library |
 | 6.2 | A18 Impact analyst | Draft | Draft | Yes, Appendix A |
 | 6.3 | A19 Quality watchdog | Draft | Auto | Yes, Appendix A |
-| 6.4 | Monthly review pack drafter | Draft | Draft | New |
+| 6.4 | Monthly review pack drafter | Draft | Draft | Yes, M18 |
 | 6.5 | A20 Improvement scout | Draft | Draft | Yes, Appendix A |
-| 6.6 | Log summarizer | Me | Draft | New |
+| 6.6 | Log summarizer | Me | Draft | Yes, M19 |
 
 **First time** = how the task is done on the first project. **Aim for** = its kind in `product-framework.md`.
 

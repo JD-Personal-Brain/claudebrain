@@ -29,7 +29,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Draft**.
   - Note: which checklist items were late, and why.
-  - Agent idea: a **readiness tracker** that checks off items from the tracker and flags gaps. *Auto*.
+  - Agent idea: a **readiness tracker** (spec M15) that checks off items from the tracker and flags gaps. *Auto*.
 - **For RM analytics:** support through operations, and communications sent by RM leaders, not by the project team.
 
 ---
@@ -50,7 +50,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Me**, with platform teams.
   - Note: every manual step in the move to live. Those steps are the release checklist for next time.
-  - Agent idea: a **release checklist** in the platform's own deployment tools. *Auto* where the platform supports it ⚠️.
+  - Agent idea: a **release checklist** (spec M16) in the platform's own deployment tools. *Auto* where the platform supports it ⚠️.
 - **For RM analytics:** pilot RMs and their managers, compared with similar RMs not yet using it.
 
 ---
@@ -110,7 +110,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Me**.
   - Note: which wins got noticed, and where.
-  - Agent idea: a **wins spotter** that flags AI-sourced wins from the tagged data for you to check and share. *Draft*.
+  - Agent idea: a **wins spotter** (spec M17) that flags AI-sourced wins from the tagged data for you to check and share. *Draft*.
 - **For RM analytics:** credit AI-sourced wins in sales meetings, tagged in Salesforce.
 
 ---
@@ -152,7 +152,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Draft** for the recommendation, **Me** for the decision.
   - Note: what you reused from wave 1. The more you reuse, the faster later waves go.
-  - Agent idea: the **gate pack drafter**, reused. *Draft*.
+  - Agent idea: the **gate pack drafter** (spec M6), reused. *Draft*.
 - **For RM analytics:** expand only after the go/no-go check on the adoption dashboard.
 
 ---
@@ -171,16 +171,16 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
 
 | Sub-step | Agent | First time | Aim for | Already specified? |
 |---|---|---|---|---|
-| 5.1 | Readiness tracker | Draft | Auto | New |
+| 5.1 | Readiness tracker | Draft | Auto | Yes, M15 |
 | 5.1 | Pilot dashboard (Power BI, not an agent) | Draft | Draft | — |
-| 5.2 | Release checklist in the platform | Me | Auto ⚠️ | New |
+| 5.2 | Release checklist in the platform | Me | Auto ⚠️ | Yes, M16 |
 | 5.2 | Weekly usage report (Power BI, not an agent) | Me | Auto | — |
 | 5.3 | None (stays with a person) | Me | Me | — |
 | 5.4 | A6 Onboarding coach | Me | Auto | Yes, Appendix A |
-| 5.5 | Wins spotter | Me | Draft | New |
+| 5.5 | Wins spotter | Me | Draft | Yes, M17 |
 | 5.6 | A17 Feedback triage | Me | Auto | Yes, Appendix A |
 | 5.7 | None: confirming the long-term owner stays with a person | Me | Me | — |
-| 5.7 | Gate pack drafter (shared) | Draft | Draft | New |
+| 5.7 | Gate pack drafter (shared) | Draft | Draft | Yes, M6 |
 
 **First time** = how the task is done on the first project. **Aim for** = its kind in `product-framework.md`.
 

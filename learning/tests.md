@@ -98,3 +98,8 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** "wrap up" after a session that changed the playbook or a framework.
 - **Pass if:** Claude runs the audit first (checker output, two reviewers, fixes) and reports the findings before asking to merge.
 - **Results:** not run yet
+
+### T19 → R19
+- **Say this:** ask for something that fails the first time (for example, publish to a page that refuses the update).
+- **Pass if:** Claude says what failed and why before trying again, changes something real on the next try, and stops to tell me after two failed tries.
+- **Results:** not run yet

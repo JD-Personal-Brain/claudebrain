@@ -53,7 +53,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Draft**.
   - Note: how much of the statement was copied from the data contract.
-  - Agent idea: a **data-use checker** that compares the fields actually read with the contract and flags differences. *Auto*, read-only.
+  - Agent idea: a **data-use checker** (spec M13) that compares the fields actually read with the contract and flags differences. *Auto*, read-only.
 - **For RM analytics:** each RM sees only clients they're already allowed to see.
 
 ---
@@ -93,7 +93,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Draft**.
   - Note: the groups and thresholds compliance chose. Reuse them.
-  - Agent: **A15 Fairness monitor** (Appendix A). *Auto* report; compliance reviews. To keep it running after launch, its spec needs an ongoing mode (today it stops when the report is complete).
+  - Agent: **A15 Fairness monitor** (Appendix A). *Auto* report; compliance reviews. Its ongoing mode runs it again monthly after launch.
 - **For RM analytics:** check that opportunities, especially credit-related ones, are spread fairly across segments and regions.
 
 ---
@@ -113,7 +113,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Draft**.
   - Note: which control tests you ran by hand.
-  - Agent: the **controls checker** from 3.4. *Auto*, test environment only.
+  - Agent: the **controls checker** (spec M11) from 3.4. *Auto*, test environment only.
 - **For RM analytics:** RM approval before saving call notes or sending follow-ups.
 
 ---
@@ -154,7 +154,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Draft** for the pack, **Me** for chasing.
   - Note: how long each signer took, and what they asked.
-  - Agents: **A16 Evidence pack assembler** (Appendix A), *Draft*. The **sign-off router** (Power Automate approvals) sends the requests and chases them, *Auto* ⚠️.
+  - Agents: **A16 Evidence pack assembler** (Appendix A), *Draft*. The **sign-off router** (spec M14) (Power Automate approvals) sends the requests and chases them, *Auto* ⚠️.
 - **For RM analytics:** risk, compliance (including fair lending), privacy and security.
 
 ---
@@ -194,14 +194,14 @@ log (see `README.md`) for every sub-step.
 | Sub-step | Agent | First time | Aim for | Already specified? |
 |---|---|---|---|---|
 | 4.1 | A12 Risk intake assistant | Me | Draft | Yes, Appendix A |
-| 4.2 | Data-use checker | Draft | Auto | New |
+| 4.2 | Data-use checker | Draft | Auto | Yes, M13 |
 | 4.3 | A13 Test grader, A14 Red-team agent | Draft | Auto | Yes, Appendix A |
-| 4.4 | A15 Fairness monitor | Draft | Auto | Partly: add an ongoing mode to A15 |
-| 4.5 | Controls checker (from 3.4) | Draft | Auto | New |
+| 4.4 | A15 Fairness monitor | Draft | Auto | Yes, A15 (ongoing mode added) |
+| 4.5 | Controls checker (from 3.4) | Draft | Auto | Yes, M11 |
 | 4.6 | Approved vendors list (not an agent) | Me | Me | — |
 | 4.7 | A16 Evidence pack assembler | Draft | Draft | Yes, Appendix A |
-| 4.7 | Sign-off router | Me | Auto ⚠️ | New |
-| 4.8 | Monitoring plan template | Draft | Draft | New |
+| 4.7 | Sign-off router | Me | Auto ⚠️ | Yes, M14 |
+| 4.8 | Monitoring plan template | Draft | Draft | Asset: agent library |
 
 **First time** = how the task is done on the first project. **Aim for** = its kind in `product-framework.md`.
 
