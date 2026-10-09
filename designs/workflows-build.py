@@ -70,12 +70,15 @@ for block in re.split(r"\n\*\*(?=B\d+\. )", appb)[1:]:
 # The RM's week as the main process. This grouping is my framing of the
 # memo's workflows; confirm it with RMs in Discover.
 RM_STAGES = [
-    ("1", "Find the opportunity", "Which clients should I call, and why?", ["B1", "B5", "B6", "B8"]),
-    ("2", "Prepare", "What do I need to know before I talk to them?", ["B2", "B7"]),
+    ("1", "Find the opportunity or risk", "Which clients should I call, and why?", ["B1", "B5", "B6", "B8"]),
+    ("2", "Prepare (or any time)", "What do I need to know before I talk to them? The assistant (B7) works at any stage.", ["B2", "B7"]),
     ("3", "Meet and follow up", "What did we agree, and what happens next?", ["B3"]),
     ("4", "Log it", "Is the client record up to date?", ["B4"]),
 ]
-used = {b for *_, bs in RM_STAGES for b in bs} | {"B9"}
+flat = [b for *_, bs in RM_STAGES for b in bs] + ["B9"]
+if len(flat) != len(set(flat)):
+    raise SystemExit("A workflow is placed twice on the RM map")
+used = set(flat)
 missing = set(flows) - used
 if missing:
     raise SystemExit(f"Workflows not placed on the RM map: {sorted(missing)}")
@@ -137,8 +140,6 @@ def spine_map(mid, stages, branch_html, detail_html, tag):
 d_branch = lambda b: f'<span class="bnum">{b["num"]}</span><span class="btitle">{inline(b["title"])}</span><span class="bkinds">{chips(b["tasks"])}</span>'
 r_branch = lambda f: f'<span class="bnum">{f["num"]}</span><span class="btitle">{inline(f["title"])}</span><span class="bkinds">{"<span class=wave>" + E(f["wave"].split(";")[0]) + "</span>" if f["wave"] else ""}</span>'
 
-for st in stages1:
-    pass
 map1 = spine_map("deliver", stages1, d_branch, delivery_detail, "Step")
 rm_stages = [{"n": n, "name": nm, "q": q, "gate": "", "branches": [flows[b] for b in bs]} for n, nm, q, bs in RM_STAGES]
 map2 = spine_map("rm", rm_stages, r_branch, rm_detail, "Stage")
@@ -210,7 +211,7 @@ page = f'''<title>Workflow Maps</title>
 </section>
 <section id="rm" class="mapwrap">
 <div class="stephead"><span class="label">Map 2 · RM Analytics</span><h2>How an RM uses the product</h2>
-<p class="intro" style="margin-top:6px;color:var(--muted)">An RM's week, with each of the product's workflows placed where it helps. Every workflow ends with the RM deciding; nothing reaches a client on its own.</p></div>
+<p class="intro" style="margin-top:6px;color:var(--muted)">An RM's week, with each of the product's workflows placed where it helps. Every workflow has a point where the RM decides; nothing reaches a client without the RM.</p></div>
 <div class="note">⚠️ Grouping the workflows into these four stages is my framing of the plan. Confirm it with RMs in Discover.</div>
 {map2}
 {loop}

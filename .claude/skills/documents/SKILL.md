@@ -1,6 +1,6 @@
 ---
 name: documents
-description: Show the Document Library, the one page listing every designed document in this repo, grouped by area with each document under its parent. Use when the user says "/documents", "documents", "show me my documents", "what documents do we have", "the library" or "where's the X page".
+description: Show the Document Library, the one page listing every designed document in this repo, grouped by area with each document under its parent. Use when the user says "/documents", "show me my documents", "open the document library", "what documents do we have", "the library" or "where's the X page".
 ---
 
 # Show the Document Library

@@ -99,7 +99,7 @@ page = f'''<title>Document Library</title>
 <main class="wrap">
 <section id="blocks"><span class="label">Browse by building block</span><p class="bintro">The things people look for, pulled out of the documents into their own pages.</p><div class="blocks">{blocks}</div></section>
 <section id="docs"><span class="label">By document</span><h2 style="margin-top:4px">Start here</h2><div class="starts">{start}</div></section>
-<div class="legend"><span>Status:</span><span class="status s-use">In use</span><span class="status s-review">Waiting for review</span><span class="status s-review">Draft</span><span class="status s-ref">Reference</span></div>
+<div class="legend"><span>Status:</span><span class="status s-use">In use</span><span class="status s-review">Waiting for review</span><span class="status s-review">Draft</span><span class="status s-review">In progress</span><span class="status s-ref">Reference</span></div>
 {areas}
 <p class="empty" id="none" hidden>No documents match that word.</p>
 <footer>Built from <code>designs/library.json</code>. Say <strong>/documents</strong> to Claude to refresh it. Every page is private until you share it from its Share menu.</footer>

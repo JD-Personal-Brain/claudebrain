@@ -2,7 +2,8 @@
 1. Framework task tables and playbook sub-steps match (every sub-step has rows, every
    review-table "Aim for" kind matches the framework, every sub-step has all 8 fields).
 2. Designed-page sources in designs/ have no empty tables.
-3. Every page built from a working copy (delivery machine, playbook, product framework, tech stack, job notes) is up to date.
+3. Every page built from a working copy is up to date.
+4. Every page in designs/README.md is in the Document Library (designs/library.json), and the other way round.
 Prints each problem and a total. 0 problems means the mechanical checks pass."""
 import subprocess
 import re,glob
