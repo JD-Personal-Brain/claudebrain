@@ -15,12 +15,15 @@ when it learns something new.
 - When something keeps going wrong, I want a lasting fix that stops it for good, not just an apology.
 
 ## Tools I use
-- (not filled in yet)
+- Chrome browser.
+- The Claude desktop app, using **Cloud** sessions on my claudebrain repo (I pick Cloud and the repo each time; there's no default).
+- GitHub, to review and merge Claude's pull requests.
 
 ## What I want Claude to help with
 - Getting better at working with Claude.
 - Thinking through how I would actually do the Principal Applied AI Product Manager job at Associated Bank (I'm interviewing for it now). The focus is doing the job, not interview prep.
 - Prototyping screens (UI) for my new job.
+- Learning to write good prompts (see `prompting.md`), and working through a "Claude Mastery" course I bought.
 - (more to add)
 
-_Last updated: 2026-10-07_
+_Last updated: 2026-10-09_

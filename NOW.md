@@ -9,13 +9,15 @@ _Last updated: 2026-10-09 · Last review: none yet (first one due around 2026-10
 - New focus: I'm interviewing for a Principal Applied AI Product Manager job at Associated Bank. The focus is thinking through how I'd do the job itself, not interview prep.
 - The full job description is saved in `job-description.md`, and a full guide to every technology in it is in `tech-stack.md`. Both load automatically every session. Never ask me to paste it again.
 - A prompting cheat sheet is saved in `prompting.md`, built from Anthropic's official guide, and loads every session. Claude follows it whenever it writes a prompt.
+- I can now work in the Claude desktop app: choose **Cloud** and the claudebrain repo each time. Cloud sessions can't see my Chrome, and the course site (notion.site) is blocked here, so course pages come in by copy-paste or screenshots.
 - First prototype made: a calculator (v1, then v2 with green buttons). It was practice and has nothing to do with the job. The prototyping process is under agreements below.
 
 ## What's next
-1. Think through how I'd do the Associated Bank job: start a new session with the Part 1 prompt in `job-prompts.md`.
-2. Use Claude for real work, including prototypes for the new job, and say "wrap up" at the end of each session.
-3. Build the "run-tests" skill (idea 1, approved).
-4. Do the first weekly review around 2026-10-14.
+1. Work through the Claude Mastery course: paste in the first page and pick what to add to the brain.
+2. Think through how I'd do the Associated Bank job: start a new session with the Part 1 prompt in `job-prompts.md`.
+3. Use Claude for real work, including prototypes for the new job, and say "wrap up" at the end of each session.
+4. Build the "run-tests" skill (idea 1, approved).
+5. Do the first weekly review around 2026-10-14.
 
 ## Current agreements (and why)
 - **Claude explains, I decide.** Why: I'm not a developer and want to stay in control.
@@ -26,6 +28,8 @@ _Last updated: 2026-10-09 · Last review: none yet (first one due around 2026-10
 - **Work is saved to a draft branch on GitHub, and the main version changes only when I merge.** Why: the cloud workspace is temporary, but I keep the final say.
 - **main stays GitHub's default branch, and the startup check stays on.** Why: otherwise new sessions start from an old copy and can't find saved files like the job description.
 - **Big tasks get a "done" checklist and progress saved partway.** Why: I can see proof each part works, and a session that dies halfway doesn't lose its place. (Ideas taken from a Karpathy-inspired prompt, 2026-10-09.)
+- **Prompts follow `prompting.md`.** Why: so every prompt we write uses a framework that works, based on Anthropic's own advice.
+- **Course pages come in by copy-paste or screenshots.** Why: Cloud sessions can't reach my browser or the course site.
 - **How we prototype screens (UI).** Why: I'm learning to prototype and expect to need it in my new job, and I want every version kept so any new session can carry on.
   1. Claude builds one HTML file that I can download and open in my browser. Nothing needs installing.
   2. It's saved as `prototypes/<name>/prototype-v1.html`. Each change I ask for becomes a new file (v2, v3, and so on), and old versions are never changed.
