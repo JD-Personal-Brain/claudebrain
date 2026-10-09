@@ -25,11 +25,19 @@ step.** Step 4 is the formal approval, not the first time risk partners see the 
 
 ## What happens in each step
 - **1. Discover:** frame the outcome with the sponsor · size the opportunity with real data · interview and shadow users · map where their time goes · understand how they're measured and rewarded · test a rough mock-up · pick the first target and record today's numbers.
-- **2. Define:** one-sentence problem and measurable outcome · choose the platform · data contract (exact fields, freshness, quality checks) · start the risk intake · user stories with acceptance criteria · measures, quality bar and value model · scope the smallest useful first release and pilot group.
-- **3. Build:** prepare trusted data · simple, explainable logic first (AI explains, it doesn't invent) · deliver it where users already work · show the source behind every answer · one-click feedback · build the test set (real examples with known good answers).
+- **2. Define:** one-sentence problem and measurable outcome · choose the platform and delivery path · data contract (exact fields, freshness, quality checks) · start the risk intake and list the control requirements · user stories with acceptance criteria · backlog priorities and the trade-offs behind them · the five kinds of measures (below), quality bar and value model · scope the smallest useful first release and pilot group.
+- **3. Build:** configure the right AI capability: agents, retrieval (search over documents, with sources), data flows, workflow automations or system integrations · prepare trusted data · simple, explainable logic first (AI explains, it doesn't invent) · deliver it where users already work · show the source behind every answer · one-click feedback · build the test set (real examples with known good answers).
 - **4. Govern and test:** confirm the risk rating · review data and privacy · testing evidence (accuracy, made-up answers, red-teaming) · fairness check · confirm controls (human approval, guardrails, audit logs) · vendor reviews · sign-offs from risk, compliance, privacy and security.
-- **5. Release and adopt:** pilot with a comparison group · build it into existing routines (the core of adoption) · train on users' own work · recruit champions · celebrate wins · fix fast · scale in waves after a go/no-go check.
+- **5. Release and adopt:** confirm release readiness · pilot with a comparison group · build it into existing routines (the core of adoption) · train on users' own work · recruit champions · celebrate wins · fix fast · scale in waves after a go/no-go check.
 - **6. Measure and iterate:** live dashboards · compare with the baseline and comparison group · re-test after every change and watch for quality slipping ("drift") · monthly keep/change/stop review · feed the next wave.
+
+## Running the work (every step)
+- **Who's involved and who decides:** sponsor (outcome, funding, go/no-go) · user leaders and pilot users (workflow, feedback) · product manager (scope, priorities, trade-offs) · data owners (what data may be used) · platform teams (technical design) · model risk (risk rating, approval) · compliance, privacy and security (controls, sign-off) · operations (running it day to day). Agree this at the start of Discover.
+- **Decisions and trade-offs:** record each one with who decided and why, so partners stay aligned.
+- **Dependencies, risks and issues:** one list, each item with an owner and a date; review it weekly.
+
+## The five kinds of measures (set in Define, tracked in Measure)
+Usage · Quality · Business impact · Adoption · Risk and controls. These are the five the job description names.
 
 ## How each step is written up
 Every step uses the same layout, so plans are easy to compare:
@@ -43,6 +51,19 @@ Every step uses the same layout, so plans are easy to compare:
 
 ## The quality bar (thresholds set in Define)
 Accuracy (numbers match the source) · Sources shown · Relevance (users rate it relevant) · Usefulness (users would act on it) · Permissions (no one sees data they shouldn't, with zero tolerance).
+
+## How the job description maps to this framework
+| Job accountability (from `job-description.md`) | Where it lives here |
+|---|---|
+| Own products from discovery through governed release, adoption and improvement | All six steps |
+| Work with bankers to find needs; turn them into clear products | Discover → Define |
+| User stories, acceptance criteria, backlog priorities, release scope, success measures, control requirements, trade-offs | Define |
+| Configure AI capabilities (agents, retrieval, data flows, automations, integrations) in tools bankers use | Build |
+| Governed delivery: risk, controls, privacy, responsible AI and regulation built in from the start | Governance thread in every step; formal approval in Govern and test |
+| Lead with limited oversight: priorities, decisions, dependencies, testing, controls, release readiness, issues | Running the work; Build to Release gates |
+| Drive adoption and change in a regulated environment | Release and adopt |
+| Define and monitor usage, quality, impact, adoption, and risk and control measures | The five kinds of measures; Define and Measure and iterate |
+| Align business, technology, data, risk, compliance and operations partners | Running the work: who decides, decision log |
 
 ## Starting a new project with this framework
 1. Name the outcome and the sponsor.
