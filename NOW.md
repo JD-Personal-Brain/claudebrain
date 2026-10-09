@@ -9,6 +9,7 @@ _Last updated: 2026-10-09 · Last review: none yet (first one due around 2026-10
 - The startup check now also warns about work saved on a side branch that never reached main (added 2026-10-09, after my RM framework was found stranded).
 - My RM analytics framework is now in main (brought in 2026-10-09): `memos/rm-analytics-framework.md` (memo v6), plus the audit and market scan in `memos/`. Memo v6 is waiting for my review before I share it with Associated. The old branch it was stranded on is deleted, so nothing is left outside main.
 - Working assumption: every tool in the job description is live at the bank (I was told so). It's noted in `tech-stack.md`.
+- My product framework (six steps, each with a go/no-go gate) is saved in `product-framework.md` and loads every session. It was taken from the RM memo.
 - Test T12 passed: a fresh session built a prompt from `prompting.md` without reminders.
 - New focus: I'm interviewing for a Principal Applied AI Product Manager job at Associated Bank. The focus is thinking through how I'd do the job itself, not interview prep.
 - The full job description is saved in `job-description.md`, and a full guide to every technology in it is in `tech-stack.md`. Both load automatically every session. Never ask me to paste it again.
@@ -35,6 +36,7 @@ _Last updated: 2026-10-09 · Last review: none yet (first one due around 2026-10
 - **Work is saved to a draft branch on GitHub, and main changes only when I say yes to a merge.** Why: the cloud workspace is temporary, but I keep the final say. Work isn't safe for future sessions until it's in main (rule R14).
 - **main stays GitHub's default branch, and the startup check stays on.** Why: otherwise new sessions start from an old copy and can't find saved files like the job description.
 - **Big tasks get a "done" checklist and progress saved partway.** Why: I can see proof each part works, and a session that dies halfway doesn't lose its place. (Ideas taken from a Karpathy-inspired prompt, 2026-10-09.)
+- **Product work follows `product-framework.md`.** Why: every project gets organized the same way, from Discover to Measure and iterate.
 - **Prompts follow `prompting.md`.** Why: so every prompt we write uses a framework that works, based on Anthropic's own advice.
 - **Course pages come in by copy-paste or screenshots.** Why: Cloud sessions can't reach my browser or the course site.
 - **How we prototype screens (UI).** Why: I'm learning to prototype and expect to need it in my new job, and I want every version kept so any new session can carry on.

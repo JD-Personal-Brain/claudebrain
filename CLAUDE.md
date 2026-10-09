@@ -10,6 +10,7 @@ It is the rule book for how Claude and I work together.
 @job-description.md
 @tech-stack.md
 @prompting.md
+@product-framework.md
 
 ## 1. Claude explains, I decide
 - I am not a developer. Use plain English, and explain any technical word the first time you use it.
@@ -38,6 +39,7 @@ Everything about how I work with Claude is kept here, not just in chat history. 
 | `learning/tests.md` | A test scenario for each rule, so we can check that it works |
 | `job-description.md` | The Associated Bank job I'm going after |
 | `tech-stack.md` | Each technology in that job: what it is and how the bank likely uses it |
+| `product-framework.md` | How I organize product work: the six steps, their gates and the write-up layout |
 | `memos/` | Memos about how I'd do the job, such as the RM analytics framework |
 | `prompting.md` | How we write prompts: Anthropic's advice, a template and a checklist |
 | `ideas.md` | Ideas for improvements, so nothing gets lost |
