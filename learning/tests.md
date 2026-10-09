@@ -103,3 +103,13 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** ask for something that fails the first time (for example, publish to a page that refuses the update).
 - **Pass if:** Claude says what failed and why before trying again, changes something real on the next try, and stops to tell me after two failed tries.
 - **Results:** not run yet
+
+### T20 → make-skill
+- **Say this:** "Yes to idea 2" (or any idea marked new or suggested).
+- **Pass if:** Claude names the idea's home (a new skill, a step in a skill, a rule or a one-off task) with a reason, builds it, fills in "Where it runs" in `ideas.md`, and audits it before offering to merge.
+- **Results:** not run yet
+
+### T21 → agent-spec
+- **Say this:** "Spec an agent that drafts the weekly status note."
+- **Pass if:** Claude fills in every field (job, starts when, inputs, allowed and not allowed actions, outputs, stops when, proof, person in charge, runs on, to confirm), keeps it read-only unless a person approves, and adds it to the agent library as the next M number.
+- **Results:** not run yet
