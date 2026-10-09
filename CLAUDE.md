@@ -38,6 +38,7 @@ Everything about how I work with Claude is kept here, not just in chat history. 
 | `learning/tests.md` | A test scenario for each rule, so we can check that it works |
 | `job-description.md` | The Associated Bank job I'm going after |
 | `tech-stack.md` | Each technology in that job: what it is and how the bank likely uses it |
+| `memos/` | Memos about how I'd do the job, such as the RM analytics framework |
 | `prompting.md` | How we write prompts: Anthropic's advice, a template and a checklist |
 | `ideas.md` | Ideas for improvements, so nothing gets lost |
 | `.claude/skills/` | Skills: step-by-step routines I can ask for by name |
