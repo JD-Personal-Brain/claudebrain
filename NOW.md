@@ -8,6 +8,7 @@ _Last updated: 2026-10-09 · Last review: none yet (first one due around 2026-10
 - A startup check runs at the start of every session and pulls in the latest main automatically, so Claude never works from an old copy. Tested and working.
 - New focus: I'm interviewing for a Principal Applied AI Product Manager job at Associated Bank. The focus is thinking through how I'd do the job itself, not interview prep.
 - The full job description is saved in `job-description.md`, and a full guide to every technology in it is in `tech-stack.md`. Both load automatically every session. Never ask me to paste it again.
+- A prompting cheat sheet is saved in `prompting.md`, built from Anthropic's official guide, and loads every session. Claude follows it whenever it writes a prompt.
 - First prototype made: a calculator (v1, then v2 with green buttons). It was practice and has nothing to do with the job. The prototyping process is under agreements below.
 
 ## What's next
