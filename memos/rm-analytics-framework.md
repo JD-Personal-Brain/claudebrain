@@ -388,7 +388,7 @@ goal is a product that pays for itself.
 | Agent | Type | Job | Runs on | Reads from | Person in charge |
 |---|---|---|---|---|---|
 | Impact analyst | For the team | Answers "how much pipeline came from AI insights this month?" against the comparison group | Snowflake Cortex Analyst, Power BI | AI-tagged Salesforce opportunities; Snowflake | Analytics validates before reporting |
-| Quality watchdog | For the team | Re-runs the test set after every change and alerts on drift | AWS Bedrock model evaluation, Power Automate | Test set, live outputs, feedback | Product owner decides to fix or roll back |
+| Quality watchdog | For the team | Re-runs the test set after every change and alerts on drift | AWS Bedrock model evaluation, Power Automate | Test set, live outputs, feedback | Product manager decides to fix or roll back |
 | Improvement scout | For the team | Proposes the next backlog items or next lever from usage and feedback | M365 Copilot or Copilot Studio | Dashboards, feedback, reviews | PM and sponsor decide |
 
 - **AI for the team:** impact analysis, quality monitoring and improvement ideas.
@@ -584,9 +584,9 @@ risk partner can review it. **[X]** values are set in Define.
 - **Allowed actions:** read signals and the client record; write a draft insight to the client record.
 - **Not allowed:** recommending credit decisions or pricing; stating any number not in its inputs.
 - **Outputs:** one insight per signal, with its sources shown.
-- **Stops when:** every signal has an insight, or a guardrail blocks one (logged and sent to the product owner).
+- **Stops when:** every signal has an insight, or a guardrail blocks one (logged and sent to the product manager).
 - **Proof it worked:** test-set score meets the quality bar (accuracy, sources, relevance); every number traces to the source.
-- **Person in charge:** the RM decides whether to act; the product owner owns quality.
+- **Person in charge:** the RM decides whether to act; the product manager owns quality.
 
 **A3. Prep and follow-up assistant** · waves 1–2 · runs on M365 Copilot and Salesforce Agentforce
 - **Job:** before a client meeting, draft a one-page brief. After it, draft the recap, follow-up email and (wave 2) call notes for Salesforce.
@@ -606,7 +606,7 @@ risk partner can review it. **[X]** values are set in Define.
 - **Outputs:** one digest per RM, with links to each client record.
 - **Stops when:** every pilot RM has a digest, or there are no new insights (then it sends a short "nothing new" note).
 - **Proof it worked:** delivery log; open and act-on rates in Power BI.
-- **Person in charge:** the RM decides what to pursue; the product owner owns timing and ranking.
+- **Person in charge:** the RM decides what to pursue; the product manager owns timing and ranking.
 
 **A5. RM assistant** · wave 3 · runs on Salesforce Agentforce or a Copilot Studio agent in Teams
 - **Job:** answer "what should I know before my call with this client?" and similar questions.
@@ -616,7 +616,7 @@ risk partner can review it. **[X]** values are set in Define.
 - **Outputs:** an answer with its sources, or "I don't have that information."
 - **Stops when:** the question is answered, or it is out of scope (it says so and names who can help).
 - **Proof it worked:** test-set score meets the quality bar; zero permission breaches in red-team testing.
-- **Person in charge:** the RM; the product owner for quality.
+- **Person in charge:** the RM; the product manager for quality.
 
 **A6. Onboarding coach** · wave 1 · runs on a Copilot Studio agent in Teams
 - **Job:** answer "how do I use this?" questions.
@@ -638,13 +638,13 @@ risk partner can review it. **[X]** values are set in Define.
 | **A10. Requirements drafter** | Define | Draft problem statement, user stories, acceptance criteria | Discover findings | Draft only | Draft brief and stories | Drafts delivered | Team and sponsor approve | PM |
 | **A11. Data contract checker** | Define | Check fields exist, are fresh and pass quality checks | Snowflake tables and their quality and access records | Read-only | Gap list | Every field checked | Data owner signs off | Data owner |
 | **A12. Risk intake assistant** | Define | Pre-fill the risk intake; flag likely high-risk areas | Bank policies, product brief | Draft only | Pre-filled intake | Intake drafted | Risk partner sets the rating | Risk partner |
-| **A13. Test grader** | Build | Score each version against the test set | Test set, product outputs | Read; score | Score report | Every test case scored | Experienced RMs grade a sample | Product owner |
+| **A13. Test grader** | Build | Score each version against the test set | Test set, product outputs | Read; score | Score report | Every test case scored | Experienced RMs grade a sample | Product manager |
 | **A14. Red-team agent** | Govern | Try to break the product (other RMs' clients, credit requests) | The product in test | Send test requests in the test environment only | Failure list | All attack types run | Risk reviews every failure | Risk partner |
 | **A15. Fairness monitor** | Govern | Check opportunities are spread fairly across segments and regions | Opportunity outputs, client segments | Read-only | Fairness report | Report complete | Compliance reviews results | Compliance |
 | **A16. Evidence pack assembler** | Govern | Compile results, data use and controls into review documents | Test results, data contract, controls | Draft only | Evidence pack | Pack drafted | PM and risk verify every claim | PM |
 | **A17. Feedback triage** | Release | Sort feedback into bugs, quality issues and ideas | Feedback logged in Salesforce | Read; tag; add to backlog | Tagged backlog items | All new feedback sorted | PM reviews a weekly sample | PM |
 | **A18. Impact analyst** | Measure | Report pipeline and revenue from AI insights against the comparison group | AI-tagged Salesforce opportunities; Snowflake | Read-only queries | Monthly impact figures | Report complete | Analytics validates before reporting | Analytics |
-| **A19. Quality watchdog** | Measure | Re-run the test set after every change; alert on drift | Test set, live outputs, feedback | Read; alert | Score trend and alerts | Each run complete | Alerts reviewed within [X] days | Product owner |
+| **A19. Quality watchdog** | Measure | Re-run the test set after every change; alert on drift | Test set, live outputs, feedback | Read; alert | Score trend and alerts | Each run complete | Alerts reviewed within [X] days | Product manager |
 | **A20. Improvement scout** | Measure | Propose next backlog items or the next lever | Dashboards, feedback, reviews | Draft only | Ranked suggestions | List delivered | PM and sponsor decide | PM |
 
 ---

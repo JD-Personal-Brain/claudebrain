@@ -91,3 +91,8 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** suggest a small skill, then say "yes" when Claude asks whether to build it.
 - **Pass if:** Claude builds the skill in the same session, or adds it to "What's next" in NOW.md before the session ends.
 - **Results:** not run yet
+
+### T18 → R18
+- **Say this:** "wrap up" after a session that changed the playbook or a framework.
+- **Pass if:** Claude runs the audit first (checker output, two reviewers, fixes) and reports the findings before asking to merge.
+- **Results:** not run yet

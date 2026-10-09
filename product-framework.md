@@ -21,7 +21,7 @@ step.** Step 4 is the formal approval, not the first time risk partners see the 
 | **2. Define** | What exactly do we build first, and how will we know it worked? | Risk intake and early rating; data use approved | Brief, data contract and risk rating agreed; value model shows payback within [X] months |
 | **3. Build** | What's the smallest version users will use and trust? | Controls built in; test set created | Meets the quality bar in testing; every control has proof |
 | **4. Govern and test** | Is it safe, fair and controlled? | Formal validation and sign-offs | All sign-offs recorded; monitoring plan agreed |
-| **5. Release and adopt** | Will users use it every week? | Live monitoring; incident process | Weekly use and results hit targets; no serious incidents |
+| **5. Release and adopt** | Will users use it every week? | Live monitoring; incident process | Weekly use and results hit targets; no serious incidents; long-term owner confirmed before scaling |
 | **6. Measure and iterate** | Is it delivering the outcome, and what comes next? | Ongoing monitoring | Each month: keep, change or stop each feature; each quarter: invest more, adjust or stop overall |
 
 ## What happens in each step
@@ -33,7 +33,7 @@ step.** Step 4 is the formal approval, not the first time risk partners see the 
 - **6. Measure and iterate:** live dashboards · compare with the baseline and comparison group · re-test after every change and watch for quality slipping ("drift") · monthly keep/change/stop review · feed the next wave · improve the delivery machine itself.
 
 ## Running the work (every step)
-- **Who's involved and who decides:** sponsor (outcome, funding, go/no-go) · user leaders and pilot users (workflow, feedback) · product manager (scope, priorities, trade-offs) · data owners (what data may be used) · platform teams (technical design) · model risk (risk rating, approval) · compliance, privacy and security (controls, sign-off) · operations (running it day to day). Agree this at the start of Discover.
+- **Who's involved and who decides:** sponsor (outcome, funding, go/no-go) · user leaders and pilot users (workflow, feedback) · product manager (scope, priorities, trade-offs; owns the product until a long-term owner is named) · long-term product owner (to be identified during the project, for example someone in a revenue line; named in Define if known, confirmed before scaling) · data owners (what data may be used) · platform teams (technical design) · model risk (risk rating, approval) · compliance, privacy and security (controls, sign-off) · operations (running it day to day). Agree this at the start of Discover.
 - **Decisions and trade-offs:** record each one with who decided and why, so partners stay aligned.
 - **Dependencies, risks and issues:** one list, each item with an owner and a date; review it weekly.
 
@@ -97,6 +97,7 @@ bank allowing automations to message people.
 | 2.6 | Decision log entries | Draft | Decision log drafter (M365 Copilot) | Me |
 | 2.7 | Measures, quality bar and value model | Draft | Measures sheet builder (Power BI) | Sponsor, Finance |
 | 2.8 | Scope release 1 and the pilot group | Me | Backlog tool | Sponsor |
+| 2.8 | Record the long-term owner, or "to be decided" with a date to decide by | Me | Meeting | Sponsor |
 | 2.8 | Complete the brief and the gate pack | Draft | Gate pack drafter | Sponsor |
 | Gate | Go/no-go | Me | Meeting | Sponsor, risk, data owner |
 
@@ -146,6 +147,7 @@ bank allowing automations to message people.
 | 5.5 | Spot wins to celebrate | Draft | Wins spotter | Me, then leaders |
 | 5.6 | Sort feedback into bugs, quality issues and ideas | Auto | A17 Feedback triage | Backlog; I check a weekly sample |
 | 5.6 | Fix and tell users what changed | Me | Release notes | Users |
+| 5.7 | Confirm the long-term owner before scaling | Me | Meeting | Sponsor |
 | 5.7 | Write the scale recommendation | Draft | Gate pack drafter | Sponsor |
 | Gate | Go/no-go to scale | Me | Meeting | Sponsor, user leaders |
 

@@ -1,7 +1,7 @@
 # Step 5: Release and adopt, the first time
 
 **The question:** will users use it every week?
-**The gate:** weekly use and results hit targets; no serious incidents.
+**The gate:** weekly use and results hit targets; no serious incidents; long-term owner confirmed before scaling.
 **Governance thread:** live monitoring; incident process.
 
 Adoption comes from changing how teams work, not from a training event. The
@@ -144,8 +144,9 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
 - **First time, step by step:**
   1. Compare pilot results with the targets: weekly use, results, incidents.
   2. Write a one-page scale recommendation: go, wait or change, with the next wave and its date.
-  3. Take it to the sponsor (this is the gate).
-  4. On a go, repeat 5.1 to 5.6 for the next wave, reusing everything from this one.
+  3. Confirm the long-term owner recorded in 2.8. If it's still to be decided, the sponsor names one now: scaling past the pilot needs a named owner.
+  4. Take it to the sponsor (this is the gate).
+  5. On a go, repeat 5.1 to 5.6 for the next wave, reusing everything from this one.
 - **Output:** the scale recommendation and, on a go, the next wave plan.
 - **Done when:** the sponsor has decided.
 - **Automation watch:**
@@ -160,7 +161,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
 
 - **Who decides:** the sponsor, with user leaders.
 - **Bring:** the pilot results and the scale recommendation.
-- **Go means:** weekly use and results hit the targets, with no serious incidents.
+- **Go means:** weekly use and results hit the targets, with no serious incidents, and the long-term owner is confirmed.
 - **No-go means:** fix the routine, the product or the training, then check again.
 - **Record:** the decision in the decision log.
 
@@ -178,6 +179,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
 | 5.4 | A6 Onboarding coach | Me | Auto | Yes, Appendix A |
 | 5.5 | Wins spotter | Me | Draft | New |
 | 5.6 | A17 Feedback triage | Me | Auto | Yes, Appendix A |
+| 5.7 | None: confirming the long-term owner stays with a person | Me | Me | — |
 | 5.7 | Gate pack drafter (shared) | Draft | Draft | New |
 
 **First time** = how the task is done on the first project. **Aim for** = its kind in `product-framework.md`.

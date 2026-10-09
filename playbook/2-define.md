@@ -180,8 +180,9 @@ Fill in the first-time log (see `README.md`) for every sub-step.
   2. Test it: "Would a user use this every week, even if it had nothing else?" If not, move the line.
   3. Confirm the final pilot group ([X] users) and the comparison group proposed in 1.7, with user leaders.
   4. Set a target date for release 1, paced by what really blocks you (data access, approvals), not by habit.
-  5. Complete the one-page brief: problem, outcome, users, platform (2.2), release 1 scope and what's out of scope.
-  6. Build the gate pack: the brief, data contract, risk rating and controls, the backlog with release 1 marked, measures, value model, pilot group and date.
+  5. Ask the sponsor who should own the product long term, for example someone in a revenue line. Record the name, or "to be decided" with a date to decide by. Until then, the product manager owns it.
+  6. Complete the one-page brief: problem, outcome, users, platform (2.2), release 1 scope, what's out of scope and the long-term owner.
+  7. Build the gate pack: the brief, data contract, risk rating and controls, the backlog with release 1 marked, measures, value model, pilot group and date.
 - **Output:** the release 1 scope, the pilot and comparison groups, a date, the finished brief and the gate pack.
 - **Done when:** the gate pack is ready.
 - **Automation watch:**
