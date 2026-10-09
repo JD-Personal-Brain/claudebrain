@@ -20,16 +20,18 @@ _Last updated: 2026-10-09 · Last review: none yet (first one due around 2026-10
 - **Six-step workflow visual** for the role (2026-10-09): https://claude.ai/artifact/8Nm5fkdicn2Gu5VmNVTvYv. Working copy: `memos/role-workflow.md`.
 - **Designed-page sources** are kept in `designs/` (see its README), so any session can rebuild or edit the pages.
 - **Session 2026-10-09 (late):** `prompting.md` now has a Tone piece and "When the answer is off" (from the course's "Claude Prompt Formula" page). Four approved skills were built and tested (write-prompt, run-tests, prototype, new-use-case). First run-tests run: 7 of 8 passed; T8 failed, so R8 is stricter (every suggestion is labeled **Needed** or **Optional**).
+- **Delivery machine added to `product-framework.md`** (2026-10-09): every task in each of the six steps is marked Auto, Draft or Me, with an automation check at every gate and rules for running many projects at once. It's a draft and isn't in main yet. Next: I review it, then apply it to the RM memo as the first worked example.
 - First prototype made: a calculator (v1, then v2 with green buttons). It was practice and has nothing to do with the job. The prototyping process is under agreements below.
 
 ## What's next
-1. Read the rest of the design page (summary from "What lets us move this fast" on, then Parts 1–6), and open the McKinsey link in a browser before sharing.
-2. Keep working through the Claude Mastery course: paste in the next page (after "The Claude Prompt Formula"; next up is Module 3: Projects, Connectors, Skills).
-3. Continue the Associated Bank job, Part 1, with the prompt in `job-prompts.md`. Pick up where `job-notes.md` stops.
-4. Use Claude for real work, including prototypes for the new job, and say "wrap up" at the end of each session.
-5. Run the tests that need a real session (T4, T7, T10, T13, T14, T15, T17; second parts of T2, T3, T9), then try the new skills on real work: say "run the tests", "prototype X", "write a prompt for X" or "new use case: X".
-6. Remove my safety rules and update the wrap-up skill myself in GitHub (idea 16): Claude is blocked from changing those.
-7. Do the first weekly review around 2026-10-14.
+1. Review the delivery machine in `product-framework.md` (does the gate check match how I want to decide what gets automated?), then merge it and apply it to the RM memo as the first worked example.
+2. Read the rest of the plan (summary from "What lets us move this fast" on, then Parts 1–6), and open the McKinsey link in a browser before sharing. Use the long scrolling page (https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk): on 2026-10-09 the design page opened blank in the app.
+3. Keep working through the Claude Mastery course: paste in the next page (after "The Claude Prompt Formula"; next up is Module 3: Projects, Connectors, Skills).
+4. Continue the Associated Bank job, Part 1, with the prompt in `job-prompts.md`. Pick up where `job-notes.md` stops.
+5. Use Claude for real work, including prototypes for the new job, and say "wrap up" at the end of each session.
+6. Run the tests that need a real session (T4, T7, T10, T13, T14, T15, T17; second parts of T2, T3, T9), then try the new skills on real work: say "run the tests", "prototype X", "write a prompt for X" or "new use case: X".
+7. Remove my safety rules and update the wrap-up skill myself in GitHub (idea 16): Claude is blocked from changing those.
+8. Do the first weekly review around 2026-10-14.
 
 ## Current agreements (and why)
 - **Claude explains, I decide.** Why: I'm not a developer and want to stay in control.
@@ -41,6 +43,7 @@ _Last updated: 2026-10-09 · Last review: none yet (first one due around 2026-10
 - **main stays GitHub's default branch, and the startup check stays on.** Why: otherwise new sessions start from an old copy and can't find saved files like the job description.
 - **Big tasks get a "done" checklist and progress saved partway.** Why: I can see proof each part works, and a session that dies halfway doesn't lose its place. (Ideas taken from a Karpathy-inspired prompt, 2026-10-09.)
 - **When I say yes to a skill or idea, Claude builds it that session** (rule R17). Why: four approved skills sat unbuilt because nothing said what happens after a yes.
+- **Projects run on the delivery machine** (in `product-framework.md`): every task is marked Auto, Draft or Me, and each gate checks what to automate next. Why: I'm one person running many projects at once, so routine work must run itself and my time goes only to decisions and people (decided 2026-10-09).
 - **Product work follows `product-framework.md`.** Why: every project gets organized the same way, from Discover to Measure and iterate.
 - **Prompts follow `prompting.md`.** Why: so every prompt we write uses a framework that works, based on Anthropic's own advice.
 - **Documents for other people are designed pages, not .md files** (rule R16). Why: they must look like something a person wants to read; the .md is only the working copy.

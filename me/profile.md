@@ -16,6 +16,7 @@ when it learns something new.
 - I don't like it when sessions get "too meta" (all about the setup). Keep the focus on the real work.
 - Documents for other people should be designed and branded, never Markdown files. When I review one, I may want to see the whole designed document rather than piece by piece in chat.
 - When I approve something, I expect it to get done, not just written down.
+- I think in systems: build a reusable machine that runs many projects at once, with automation doing the routine work, not a one-off plan for one project.
 - I push for speed: plans should be paced by what really blocks us (data access, approvals), not traditional phases.
 
 ## Tools I use
