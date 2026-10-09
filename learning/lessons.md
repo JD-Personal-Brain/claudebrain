@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L10d · 2026-10-09 · Kept saying "the McKinsey link" without explaining it
+- **What happened:** Across several messages and in NOW.md, Claude told me to "open the McKinsey link before sharing". I had no idea what it was.
+- **Root cause:** The note was written into NOW.md as a reminder for Claude, in shorthand. Every later message copied the shorthand without rereading it as a newcomer. The wrap-up plain-words check only covers the final wrap-up message, not NOW.md or mid-session messages. A fourth time, at Level 3.
+- **Fix:** Every "What's next" item in NOW.md now says what the thing is and why it matters, not just its name. The audit skill's plain-English check now includes NOW.md, so a shorthand item fails the audit. Automatic check suggested as idea 32.
+- **Rule:** R13 · **Test:** T13 · **Level:** 3 (repeat of L10, L10b, L10c) · **Times it happened:** 4
+
 ### L13b · 2026-10-09 · Delivered the playbook as Markdown
 - **What happened:** Claude wrote the six-step playbook (a field manual I'll read and use) as .md files and showed them to me that way. I had to ask again for a designed format.
 - **Root cause:** R16 said "documents *other people* will read". Claude read that as "not for me", so a manual meant for me slipped through. Claude also decided the format only after writing, not before. A repeat of L13, so it moves to Level 2.

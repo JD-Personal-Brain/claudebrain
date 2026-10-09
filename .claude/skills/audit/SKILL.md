@@ -28,7 +28,7 @@ where it is, a quote as proof, and the exact fix.
 4. **Facts:** any law, product feature or number stated as fact that might be wrong? Guesses about the bank marked ⚠️, unknown numbers shown as [X], outside facts with a source?
 5. **Logic:** would anything stall or go in a circle if someone followed it for real? Is each output used, and does each gate have what it needs?
 6. **Drift:** does each working copy (.md) match its designed page?
-7. **Plain English:** could a newcomer follow it (rule R13)?
+7. **Plain English:** could a newcomer follow it (rule R13)? Include NOW.md: every "What's next" item must say what the thing is and why it matters, not just its name (from L10d).
 
 ## 4. Fix
 - Fix every Must fix and Should fix. Fix Minor ones too, unless a fix would change a decision the user made.
