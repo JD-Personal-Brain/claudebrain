@@ -11,11 +11,11 @@ in order, and fill in its **first-time log** as you go.
 | Step | File | Status |
 |---|---|---|
 | 1. Discover | `1-discover.md` | Draft, 2026-10-09, waiting for my review |
-| 2. Define | `2-define.md` | Not written yet |
-| 3. Build | `3-build.md` | Not written yet |
-| 4. Govern and test | `4-govern-and-test.md` | Not written yet |
-| 5. Release and adopt | `5-release-and-adopt.md` | Not written yet |
-| 6. Measure and iterate | `6-measure-and-iterate.md` | Not written yet |
+| 2. Define | `2-define.md` | Draft, 2026-10-09, waiting for my review |
+| 3. Build | `3-build.md` | Draft, 2026-10-09, waiting for my review |
+| 4. Govern and test | `4-govern-and-test.md` | Draft, 2026-10-09, waiting for my review |
+| 5. Release and adopt | `5-release-and-adopt.md` | Draft, 2026-10-09, waiting for my review |
+| 6. Measure and iterate | `6-measure-and-iterate.md` | Draft, 2026-10-09, waiting for my review |
 
 ## How every sub-step is written
 - **Goal:** what this sub-step is for, in one line.
