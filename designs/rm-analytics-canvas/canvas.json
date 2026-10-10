@@ -14,7 +14,7 @@
       "x": 896,
       "y": 0,
       "w": 1280,
-      "h": 7041,
+      "h": 6994,
       "expand": "fill",
       "title": "Part 1 · Overview"
     },
@@ -54,9 +54,9 @@
       "x": 7696,
       "y": 0,
       "w": 1280,
-      "h": 2516,
+      "h": 3908,
       "expand": "fill",
-      "title": "Part 6 · Workflows"
+      "title": "Part 6 · How we deploy AI, and workflows"
     }
   },
   "createdOnFiles": {

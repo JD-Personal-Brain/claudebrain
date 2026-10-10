@@ -32,7 +32,7 @@ in review.
 **What I'd need:** a business sponsor, time with 6–10 RMs and their managers, named data owners, an early risk
 partner, and a willing pilot group.
 
-**How to use this plan.** Sections 1–11 are the plan. Appendix A specifies
+**How to use this plan.** The AI products are organized under five core use cases on McKinsey's framework, each with a return profile (see "Core use cases"). Sections 1–11 are the plan. Appendix A specifies
 the product's agents in full (job, inputs, allowed actions, outputs, when it
 stops and proof it worked) and shows how the team uses the delivery machine's
 general agents, whose full specs are in the agent library. Appendix B sets out each RM workflow step by step, so the
@@ -40,7 +40,38 @@ team can build directly from them.
 
 ---
 
-## Core assumption: a standard base, then iterate
+## Core use cases, on McKinsey's framework
+
+The AI products in this plan sit under five core use cases, the ones McKinsey
+identifies for bank front lines ("Agentic AI is here. Is your bank's frontline
+team ready?", checked against the article's text on 2026-10-10). Each has an RM
+problem it solves and a return profile. McKinsey's numbers come from its client
+work and early pilots, so they are outside benchmarks, never our targets: our
+own targets are set from the bank's data in Define.
+
+| Core use case | RM problem | Our AI products under it | Return McKinsey reports (directional) | Our measure (target set in Define) |
+|---|---|---|---|---|
+| **1. Prospecting and next best opportunities** | Too few good leads; opportunities in the book go unnoticed | Weekly opportunity list (wave 1); prospect lookalikes (wave 3) | About 30% more pipeline and 10% more revenue; twice the conversion of traditional leads | AI-sourced pipeline and wins, against the comparison group [X] |
+| **2. Lead nurturing, including cross-sell** | Leads and cross-sell needs get little or no follow-up | Referral prompts (wave 2). The RM does the outreach; no agent contacts clients on its own | Two to three times more qualified leads; 5% higher conversion (early pilots) | Referrals made and won [X] |
+| **3. Account intelligence and meeting prep** | Preparing for one meeting can take half a day; insights are scattered | Pre-meeting client brief (wave 1); RM assistant (wave 3) | About 25% less prep time; 10% more time with clients | Prep time per meeting; client-facing hours [X] |
+| **4. Deal scoring and pricing** | Pricing is slow and inconsistent | None: out of scope for now, because pricing touches fair-lending rules (control K3; decision D8) | 10% margin gains; quote turnaround cut from five days to two in one case | — |
+| **5. AI sales coaching** | Training rarely sticks; good practice doesn't spread | None yet (decision D6) | Customer satisfaction up seven points; new bankers up to speed 20% faster | — |
+
+**Beyond McKinsey's five**, two more of our products have their own lines:
+
+| Core use case | RM problem | Our AI products under it | Return McKinsey reports (directional) | Our measure (target set in Define) |
+|---|---|---|---|---|
+| **Admin off the RM's plate** | Admin and CRM updates take more time than clients do (McKinsey's top problem) | Meeting follow-up (wave 1); call notes into Salesforce (wave 2) | Part of the 10 to 12 hours a week McKinsey expects back per banker, and about 40% better coverage | Hours saved per week; share of meetings logged [X] |
+| **Keep clients** | Clients drift away before anyone notices | Early warning: client may leave (wave 2) | No McKinsey figure; set from the bank's own retention data | Clients kept, against the comparison group [X] |
+
+**Overall:** McKinsey reports 3 to 15% higher revenue per RM and 20 to 40%
+lower cost to serve when a bank reworks a frontline area end to end. That's why
+the plan builds whole use cases, wave by wave, rather than scattered tools. Each
+core use case becomes one line of the value model (section 2).
+
+---
+
+## The AI products, in delivery order: a standard base, then iterate
 
 Many RM use cases are standard across banks. Building these first, using
 features already in Salesforce, Microsoft 365 Copilot and Power Platform, gets
@@ -48,7 +79,7 @@ value to RMs quickly and creates the base that later, more tailored use cases
 build on. The menu below is a starting point; the sponsor and RMs pick and
 order it in Discover.
 
-| Wave (estimate) | Standard use case | Revenue lever or goal | Built mainly on |
+| Wave (estimate) | AI product (its core use case is in the section above) | Revenue lever or goal | Built mainly on |
 |---|---|---|---|
 | **Wave 1** (live about weeks 2–6: follow-up about weeks 2–4, brief and opportunity list about weeks 4–6) | Pre-meeting client brief | Time; all levers | Salesforce, Snowflake, Agentforce or M365 Copilot |
 | | Meeting recap and follow-up draft | Time | M365 Copilot in Teams and Outlook |

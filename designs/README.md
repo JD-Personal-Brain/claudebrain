@@ -21,6 +21,7 @@ Edit here, publish to the same link, then save a draft.
 | Agent Library (building block) | https://claude.ai/artifact/Cn9nANQoqp2BP7yrmy61zn | `agents.html` (built by `agents-build.py` from `playbook/agents.md` and the RM memo's Appendix A) |
 | Steps Catalog (building block) | https://claude.ai/artifact/8UncWMYUq7hsJUhn5NSYEB | `steps.html` (built by `catalogs-build.py` from `playbook/` and `product-framework.md`) |
 | Controls Catalog (building block) | https://claude.ai/artifact/7GmH3iBG6jcDkdacUysUrQ | `controls.html` (built by `catalogs-build.py` from `playbook/controls.md`) |
+| McKinsey Use Cases (core reference for choosing use cases) | https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X | `mckinsey-use-cases.html` (built by `md-page-build.py` from `memos/mckinsey-frontline-ai.md`) |
 | Glossary (reference: the words we use) | https://claude.ai/artifact/LRQHSz65beh9XewB6qsQvQ | `glossary.html` (built by `md-page-build.py` from `glossary.md`) |
 | **Document Library** (pinned to my sidebar; lists every page above) | https://claude.ai/artifact/LTpbCT4kN4LcyEoYnh7vgj | `library.html` (built by `library-build.py` from `library.json`) |
 

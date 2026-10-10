@@ -23,7 +23,7 @@ Claude updates it at every wrap-up: finished items move to "Closed" with the dat
 
 | Stage | Open | What it is |
 |---|---|---|
-| Stage 1. Read and lock the core | 6 | What I read, then the decision on the RM framework |
+| Stage 1. Read and lock the core | 10 | What I read, then the decision on the RM framework |
 | Stage 2. Make the machine runnable | 4 | What Claude builds so a real run is possible |
 | Stage 3. Dry run and fix | 3 | Running the machine once and fixing it |
 | Stage 4. Get ready for Andy | 10 | What Andy sees, and what I ask him |
@@ -70,6 +70,10 @@ every working file (this section replaces the separate Gap Review page).
 | V4 | Read the The Delivery Machine: the page for leaders on how one product manager runs many projects | Me | Nothing |
 | V5 | Read the Bank Business Briefing: the whole page, new on 2026-10-09 | Me | Nothing |
 | V8 | Read the Six-Step Product Workflow: the one-page visual, still marked Draft | Me | Nothing |
+| V12 | Read the McKinsey Use Cases page: McKinsey's five frontline AI use cases and their returns, how the RM plan covers them, and the questions it raises | Me | Nothing |
+| D7 | Move prospecting (winning new clients) earlier than wave 3? McKinsey reports its biggest revenue numbers there; outside prospect data may set the pace | Me | V12 |
+| D6 | Add AI sales coaching (personal guidance from call transcripts) as a use case? Low risk, and McKinsey reports new bankers ramping up 20% faster | Me | V12 |
+| D8 | Keep autonomous lead nurturing and pricing out for now, because they conflict with "nothing reaches a client without the RM" and the fair-lending control? Claude recommends yes, revisit later with evidence | Me | V12 |
 | D1 | Is the RM framework ready to copy to other use cases? My answer on 2026-10-09: not yet. The reviews in section 2 and the work in section 3 come first | Me | Credit, the next use case, waits on this |
 
 ## Stage 2. Make the machine runnable
@@ -178,5 +182,6 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C9 | Was W22: keeping the reference pages in line is now built into every audit (the alignment sweep and its automatic checks), and the Glossary was added as a fifth reference page | 2026-10-10 |
 | C10 | Was D5: yes to ideas 35 and 36. The design canvas's runtime is kept in the repo so the render check always runs, and a check before every merge blocks it if the audit checker or render check finds a problem | 2026-10-10 |
 | C11 | Was V2: the McKinsey numbers in the RM plan are confirmed against the article's text (3–15% higher revenue per RM, 20–40% lower cost to serve, and RMs spending about 25–30% of their time with clients). The last one is now credited to McKinsey directly | 2026-10-10 |
+| C12 | Was D9: yes. The RM plan is now organized on McKinsey's five frontline use cases, with our AI products underneath each and a return profile for each (McKinsey benchmarks next to our own [X] targets). Admin and client retention sit "beyond McKinsey's five" | 2026-10-10 |
 
 _Last updated: 2026-10-10_
