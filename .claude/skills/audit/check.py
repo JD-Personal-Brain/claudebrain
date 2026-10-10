@@ -10,6 +10,7 @@
 7. Alignment across documents (from L18): counts of agents, sub-steps, controls and workflow branches
    quoted anywhere match the sources; the framework's "What happens" lists have one item per playbook
    sub-step; the Six-Step Workflow memo and page carry the framework's gate wording.
+8. The glossary: no word from its "Words we don't use" table appears in the core documents.
 Prints each problem and a total. 0 problems means the mechanical checks pass."""
 import subprocess
 import re,glob
@@ -47,7 +48,7 @@ for f in glob.glob('designs/*.html'):
     for m in re.findall(r'<(?:p|li|td|dd|dt|span|div|h\d)[^>]*>_[^<]{0,40}|[^<]{0,40}_</(?:p|li|td|dd|dt|span|div|h\d)>',open(f).read()):
         print(f,"shows a stray underscore:",m); probs+=1
 # 3. pages built from working copies are up to date
-for page,builder in [('designs/delivery-machine.html','designs/delivery-machine-build.py'),('designs/playbook.html','designs/playbook-build.py'),('designs/product-framework.html','designs/md-page-build.py'),('designs/tech-stack.html','designs/md-page-build.py'),('designs/job-notes.html','designs/md-page-build.py'),('designs/job-description.html','designs/md-page-build.py'),('designs/prompting.html','designs/md-page-build.py'),('designs/bank-business.html','designs/md-page-build.py'),('designs/open-items.html','designs/md-page-build.py'),('designs/library.html','designs/library-build.py'),('designs/workflows.html','designs/workflows-build.py'),('designs/agents.html','designs/agents-build.py'),('designs/steps.html','designs/catalogs-build.py'),('designs/controls.html','designs/catalogs-build.py')]:
+for page,builder in [('designs/delivery-machine.html','designs/delivery-machine-build.py'),('designs/playbook.html','designs/playbook-build.py'),('designs/product-framework.html','designs/md-page-build.py'),('designs/tech-stack.html','designs/md-page-build.py'),('designs/job-notes.html','designs/md-page-build.py'),('designs/job-description.html','designs/md-page-build.py'),('designs/prompting.html','designs/md-page-build.py'),('designs/bank-business.html','designs/md-page-build.py'),('designs/open-items.html','designs/md-page-build.py'),('designs/library.html','designs/library-build.py'),('designs/workflows.html','designs/workflows-build.py'),('designs/agents.html','designs/agents-build.py'),('designs/steps.html','designs/catalogs-build.py'),('designs/controls.html','designs/catalogs-build.py'),('designs/glossary.html','designs/md-page-build.py')]:
     before=open(page).read()
     subprocess.run(['python3',builder],check=True)
     if open(page).read()!=before: print(page,"was out of date: rebuilt it, republish it"); probs+=1
@@ -142,4 +143,25 @@ for m in re.finditer(r'^\| (\d)\. [^|]+\|[^|]+\|[^|]+\| ([^|]+) \|$',rw,re.M):
 rh=_html.unescape(open('designs/role-workflow.html').read())
 for n,g in gates.items():
     if f'<b>Gate {n}</b><span>{g[0].upper()+g[1:]}</span>' not in rh: print('designs/role-workflow.html gate',n,'differs from product-framework.md'); probs+=1
+# 8. the glossary (glossary.md): no "Don't say" word (or its plural) in the core documents, and the library's term count is right
+gl=open('glossary.md').read()
+GT=len(re.findall(r'^\| \*\*[^*]+\*\* \|',gl,re.M))
+gb=[b for b in lib['building_blocks'] if b['id']=='glossary']
+if not gb: print('designs/library.json has no Glossary entry under building_blocks'); probs+=1
+for b in gb:
+    if b['count']!=f'{GT} terms': print('designs/library.json count for Glossary is',repr(b['count']),'but glossary.md has',GT,'terms'); probs+=1
+bad=[]
+if "## Words we don't use" not in gl: print('glossary.md has no "Words we don\'t use" heading, so the word check did not run'); probs+=1
+else:
+    dont=gl.split("## Words we don't use")[1].split('\n## ')[0]
+    for row in [l for l in dont.split('\n') if l.startswith('|') and not re.match(r'^\|\s*-',l) and "Don't say" not in l]:
+        m=re.match(r'^\| ([^|*]+?) \| [^|]+ \| [^|]+ \|$',row)
+        if m: bad.append(m.group(1).strip())
+        else: print('glossary.md: could not read this "Words we don\'t use" row:',row[:60]); probs+=1
+    if not bad: print('glossary.md: the "Words we don\'t use" table is empty'); probs+=1
+core=['product-framework.md','open-items.md','tech-stack.md','memos/rm-analytics-framework.md','memos/rm-analytics-summary.md','memos/role-workflow.md']+sorted(glob.glob('playbook/*.md'))
+for f in core:
+    for i,line in enumerate(open(f).read().split('\n'),1):
+        for w in bad:
+            if re.search(r'\b'+re.escape(w)+r'(s|es)?\b',line,re.I): print(f+':'+str(i),'uses',repr(w),'(see the glossary\'s "Words we don\'t use")'); probs+=1
 print("problems:",probs)

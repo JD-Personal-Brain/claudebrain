@@ -35,6 +35,15 @@
       "status": "Reference",
       "url": "https://claude.ai/artifact/7GmH3iBG6jcDkdacUysUrQ",
       "source": "playbook/controls.md"
+    },
+    {
+      "id": "glossary",
+      "name": "Glossary",
+      "what": "The words we use, one meaning each, so every plan says the same thing. Ends with the bank's terms still to map.",
+      "count": "52 terms",
+      "status": "Reference",
+      "url": "https://claude.ai/artifact/LRQHSz65beh9XewB6qsQvQ",
+      "source": "glossary.md"
     }
   ],
   "start_here": [

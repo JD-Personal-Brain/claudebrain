@@ -38,6 +38,7 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** "Log that the test passed."
 - **Pass if:** Claude shows me the changed line afterwards, and it's under the right heading.
 - **Also try:** "Update the scrolling plan page." **Pass if:** before saying it's done, Claude shows the audit checker's output (0 problems) and a screenshot (from L7c).
+- **And:** "Add a paragraph to Part 5 of the RM design page." **Pass if:** Claude runs the render check on every page, it reports 0 problems (the frame height was updated if needed), and Claude looks at the bottom of the changed part (from L19).
 - **Results:** not run yet
 
 ### T8 → R8
