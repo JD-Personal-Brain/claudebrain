@@ -18,8 +18,8 @@ Rules at Level 2 or higher go at the top.
 - **R11.** Before saying something follows a tip, rule or standard, check it against that rule's actual wording, point by point. *(from L9)*
 - **R12.** When writing a prompt, build it from `prompting.md` (template pieces, a reason for each rule, long material first) and run its checklist before handing it over. *(from the 2026-10-09 prompting agreement)*
 - **R14.** Work isn't safe until it's in main. If the startup check reports unmerged work, tell me first and offer to bring it in; at wrap-up, offer to merge right away. *(from L11)*
-- **R17.** When I say yes to an idea, build its home in the same session with the **make-skill** skill: a new skill, a step in an existing skill, a rule with a test, or a one-off task on "What's next". If there's no time, put it on "What's next" in NOW.md right away, so an approval never sits only in `ideas.md`. *(from L14; strengthened 2026-10-09 with make-skill)*
+- **R17.** When I say yes to an idea, build its home in the same session with the **make-skill** skill: a new skill, a step in an existing skill, a rule with a test, or a one-off task on "What's next" or in the Open Items log. If there's no time, put it there right away, so an approval never sits only in `ideas.md`. *(from L14; strengthened 2026-10-09 with make-skill)*
 - **R19.** Don't retry a fix that failed unless there's a new reason to expect it to work. Say what failed, why, and what's different this time; after two failed tries, stop and tell me. *(from idea 12)*
 - **R20.** Before writing "not public", "not found" or a guessed date, re-check the sources already opened and run one search for it. If it's still missing, say where Claude looked. *(from L16)*
 
-_Retired on 2026-10-09: R4 and R15, the rules about explaining approval pop-ups. They were training wheels from when I was new, and I asked for them to be removed._
+_Retired on 2026-10-09: R4 and R15, the rules about explaining approval pop-ups. They were training wheels from when I was new, and I asked for them to be removed. Their numbers are not reused._

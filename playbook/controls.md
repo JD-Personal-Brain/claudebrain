@@ -17,7 +17,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 ### K1. A person decides
 - **Group:** People in charge
 - **What it is:** the AI drafts or suggests, and a named person approves before anything reaches a client or changes a record.
-- **Why it matters:** the bank stays accountable for every client message and every record. This is the control reviewers ask about first.
+- **Why it matters:** the bank stays accountable for every client message and every record. ⚠️ I expect this to be the control reviewers ask about first.
 - **Set in:** 2.4
 - **Built in:** 3.1, 3.4
 - **Proved in:** 4.5
@@ -28,8 +28,8 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 ### K2. Read-only unless approved
 - **Group:** People in charge
 - **What it is:** every agent only reads by default and has a short list of things it may do.
-- **Why it matters:** the more an agent can do, the more review it needs. A short list keeps the risk rating low.
-- **Set in:** 2.4
+- **Why it matters:** the more an agent can do, the more review it needs. ⚠️ I expect a short list to help keep the risk rating low.
+- **Set in:** 2.4 (confirmed there; it comes from the AI principles in my product framework)
 - **Built in:** 3.1
 - **Proved in:** 4.5
 - **Watched in:** not covered in the playbook yet
@@ -38,12 +38,12 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 
 ### K3. No credit decisions or pricing
 - **Group:** People in charge
-- **What it is:** the intake says plainly what the product does not do, such as credit decisions or pricing. Any insight that suggests a credit product goes to compliance review.
+- **What it is:** the intake says plainly what the product does not do, such as credit decisions or pricing. For RM analytics, any insight that suggests a credit product goes to compliance review.
 - **Why it matters:** fair-lending rules apply to business credit too, and they set a much higher bar.
 - **Set in:** 2.4
-- **Built in:** 3.4
-- **Proved in:** 4.3
-- **Watched in:** 6.3
+- **Built in:** 3.4 (guardrails), 3.6 (test cases the product must refuse)
+- **Proved in:** 3.7, 4.3
+- **Watched in:** 6.3 (the test set, with its must-refuse cases, is re-run)
 - **Tool (guess):** guardrail filters
 - **Proof:** a red-team test (someone trying to break it on purpose) showing it won't give a credit decision
 
@@ -73,10 +73,10 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Group:** Data
 - **What it is:** sensitive fields are hidden ("masked") and sensitive files carry labels that limit who can open them.
 - **Why it matters:** data about individuals, such as business owners and guarantors, is protected by law.
-- **Set in:** 2.3, 2.4
-- **Built in:** 3.2
+- **Set in:** 2.3 (who may see each field)
+- **Built in:** 3.2, 3.4
 - **Proved in:** 4.2
-- **Watched in:** 6.3
+- **Watched in:** not covered in the playbook yet
 - **Tool (guess):** Snowflake masking and Microsoft Purview labels
 - **Proof:** a test showing a masked field stays hidden from a user without the right access
 
@@ -117,21 +117,21 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Group:** Quality
 - **What it is:** trying on purpose to make the product reveal other users' data, give a credit decision or answer off-topic.
 - **Why it matters:** reviewers want to see how it fails, not only how it works.
-- **Set in:** 2.4
+- **Set in:** 4.3 (not set any earlier in the playbook yet)
 - **Built in:** 4.3
 - **Proved in:** 4.3
-- **Watched in:** 6.3
+- **Watched in:** not covered in the playbook yet
 - **Tool (guess):** a red-team agent, with risk reviewing every failure
 - **Proof:** the red-team report, with each failure fixed or accepted by risk
 
 ### K11. A fairness check
 - **Group:** Quality
 - **What it is:** a check that the product treats similar clients alike, reviewed by compliance.
-- **Why it matters:** an AI that surfaces opportunities for some kinds of client and not others creates a fair-lending risk.
-- **Set in:** 2.4
+- **Why it matters:** an AI that surfaces opportunities for some kinds of client and not others can create a fair-lending risk if the opportunities touch credit, and a reputational risk either way.
+- **Set in:** 4.4 (the groups and thresholds are agreed with compliance)
 - **Built in:** 4.4
 - **Proved in:** 4.4
-- **Watched in:** 6.3 (run again each month after launch)
+- **Watched in:** 4.8 (fairness is in the monitoring plan, and the check runs again each month after launch)
 - **Tool (guess):** a fairness monitor agent
 - **Proof:** the fairness report and compliance's response
 
@@ -142,7 +142,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Set in:** 2.4
 - **Built in:** 3.4
 - **Proved in:** 4.5
-- **Watched in:** 4.8 (the monitoring plan says what is checked)
+- **Watched in:** not covered in the playbook yet
 - **Tool (guess):** each platform's own activity log
 - **Proof:** the log for a sample of actions
 
@@ -151,7 +151,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **What it is:** the product goes through the bank's AI or model risk intake, gets a rating and is registered.
 - **Why it matters:** the rating decides how much review is needed and how long approval takes.
 - **Set in:** 2.4
-- **Built in:** 2.4
+- **Built in:** 2.4 (intake), 4.1 (registration)
 - **Proved in:** 4.1
 - **Watched in:** not covered in the playbook yet. The RM plan says the risk partner is told before a material change
 - **Tool (guess):** the bank's intake form
@@ -159,9 +159,9 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 
 ### K14. Vendor reviews
 - **Group:** Approvals
-- **What it is:** each outside vendor the product relies on is on the bank's approved list for this use.
-- **Why it matters:** regulators hold the bank responsible for what its vendors do with its data.
-- **Set in:** 2.2
+- **What it is:** each outside vendor the product relies on is on the bank's approved list for this use, with terms that say what the vendor may do with the bank's data.
+- **Why it matters:** ⚠️ regulators expect the bank to manage the risk of the vendors it relies on (US interagency guidance on third parties, 2023; check for updates).
+- **Set in:** 4.6 (start any missing review on day one; the playbook has no earlier step for it yet)
 - **Built in:** 4.6
 - **Proved in:** 4.6
 - **Watched in:** not covered in the playbook yet
@@ -172,7 +172,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Group:** Approvals
 - **What it is:** risk, compliance, privacy and security each approve the release. Only a named partner can give a sign-off, and it is never automated.
 - **Why it matters:** this is the formal approval. Everything before it is preparation.
-- **Set in:** 1.0 (who decides is agreed at kick-off)
+- **Set in:** 1.0 (who decides), 2.4 (what risk will need)
 - **Built in:** 4.7
 - **Proved in:** 4.7
 - **Watched in:** 5.1
@@ -189,5 +189,71 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Watched in:** 5.6, 6.1, 6.3
 - **Tool (guess):** Power BI, and a quality watchdog agent
 - **Proof:** the monitoring plan, a dry run of the incident process and the incident log
+
+### K17. Frozen versions and change control
+- **Group:** After launch
+- **What it is:** reviewers approve one frozen version. Every fix creates a new version that is re-tested, and a change that makes things worse is fixed, rolled back or paused.
+- **Why it matters:** an approval only means something if the thing approved is the thing running.
+- **Set in:** 4.3
+- **Built in:** 4.3
+- **Proved in:** 4.5
+- **Watched in:** 6.3
+- **Tool (guess):** each platform's version history, and a quality watchdog agent
+- **Proof:** the list of versions, with the test results for each
+
+### K18. Separate build, test and live spaces
+- **Group:** Approvals
+- **What it is:** the product moves from a build space to a test space to live use, and each move needs a named approval.
+- **Why it matters:** nothing untested reaches bankers, and automated tests never run against live data.
+- **Set in:** 2.2
+- **Built in:** 2.2
+- **Proved in:** 5.1
+- **Watched in:** 5.2
+- **Tool (guess):** Power Platform environments and the bank's release process
+- **Proof:** the written delivery path, and the approval recorded for each move
+
+### K19. Approved AI models only
+- **Group:** Approvals
+- **What it is:** the product uses only the AI models the bank has approved, running where the bank has approved them.
+- **Why it matters:** a model the bank hasn't reviewed can't be relied on for bank data.
+- **Set in:** 2.2
+- **Built in:** 3.3
+- **Proved in:** 4.6
+- **Watched in:** not covered in the playbook yet
+- **Tool (guess):** AWS Bedrock's model list, and the models inside Microsoft and Salesforce
+- **Proof:** the model named in the design, matched to the bank's approved list
+
+### K20. Rules on which systems may share data
+- **Group:** Data
+- **What it is:** IT decides which systems an automation may connect, and which may pass data to which. These are often called DLP rules, for "data loss prevention".
+- **Why it matters:** they often block an idea outright, so they are checked before the platform is chosen.
+- **Set in:** 2.2
+- **Built in:** 2.2
+- **Proved in:** 4.2
+- **Watched in:** not covered in the playbook yet
+- **Tool (guess):** Power Platform data policies
+- **Proof:** IT's confirmation that every connection the product uses is allowed
+
+### K21. A named owner
+- **Group:** People in charge
+- **What it is:** one named person is accountable for the product. The product manager owns it until a long-term owner is named, and scaling past the pilot needs that name.
+- **Why it matters:** a product with no owner has nobody to answer for it when something goes wrong.
+- **Set in:** 2.8
+- **Built in:** 2.8
+- **Proved in:** 5.7
+- **Watched in:** 6.4
+- **Tool (guess):** the decision log
+- **Proof:** the owner's name recorded, or "to be decided" with a date
+
+### K22. Simple rules first, and the AI explains
+- **Group:** Quality
+- **What it is:** the logic that finds an insight is simple and explainable. The AI's job is to explain it in plain words, not to invent facts.
+- **Why it matters:** bankers and reviewers can both see why the product said what it said.
+- **Set in:** 2.1
+- **Built in:** 3.3
+- **Proved in:** 3.7
+- **Watched in:** 6.3
+- **Tool (guess):** rules in Snowflake, with the AI writing the explanation
+- **Proof:** for a sample of answers, the rule that fired and the data behind it
 
 _Last updated: 2026-10-09_

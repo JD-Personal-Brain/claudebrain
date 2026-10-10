@@ -124,7 +124,7 @@ def step_card(num, name, f):
     step = STEPS[num[0]]
     rows = "".join(f"<li>{chipify(k)} {inline(t)} <span class=\"cmeta\">→ {inline(to)}</span></li>" for t, k, to in tasks.get(num, []))
     spec = "".join(f"<div><dt>{E(k)}</dt><dd>{inline(cap(f[k]))}</dd></div>" for k in ["Why it matters", "Output", "Done when"] if f.get(k))
-    return (f'<details class="ccard" data-group="{E(step)}" data-search="{E((num + " " + name + " " + f.get("Goal", "")).lower())}">'
+    return (f'<details class="ccard" data-group="{E(step)}" data-search="{E((num + " " + name + " " + " ".join(f.get(k, "") for k in ["Goal", "Why it matters", "Output", "Done when"]) + " " + " ".join(t for t, _, _ in tasks.get(num, []))).lower())}">'
             f'<summary><span class="cid">{num}</span><span class="cname">{inline(name)}</span>'
             f'<span class="cwhat">{inline(cap(f.get("Goal", "")))}</span><span class="cmeta">{E(step)} step · {len(tasks.get(num, []))} task{"" if len(tasks.get(num, [])) == 1 else "s"}</span></summary>'
             f'<dl class="spec">{spec}</dl><ul class="tasks" aria-label="Tasks in {num}">{rows}</ul>'
@@ -141,7 +141,7 @@ howto = ('<div class="howto"><span>Each task is marked with who does it once the
 page("Steps Catalog", "Building block · steps",
      f"All {len(subs)} sub-steps of the six-step delivery process in one place. Open any card to see why it matters, what it produces and its tasks.",
      "Step", list(STEPS.values()), sections, howto,
-     "Built from the six playbook steps and the task tables in <code>product-framework.md</code> by <code>designs/catalogs-build.py</code>. Tools and task kinds are guesses until confirmed at the bank.",
+     "Built from the Delivery Playbook and the task tables in the Product Framework, so it always matches them. Tools and task kinds are guesses until confirmed at the bank.",
      "Like sign-off or pilot", "steps.html")
 
 # ---------- Controls Catalog ----------
@@ -155,6 +155,12 @@ for cid, name, f in controls:
     missing = [k for k in NEED if not f.get(k)]
     if missing:
         raise SystemExit(f"{cid} is missing fields: {missing}")
+real = {x[0] for x in subs}
+for cid, name, f in controls:
+    for k in ["Set in", "Built in", "Proved in", "Watched in"]:
+        for n in re.findall(r"\b\d\.\d\b", f[k]):
+            if n not in real:
+                raise SystemExit(f"{cid} '{k}' names sub-step {n}, which isn't in the playbook")
 groups = []
 for _, _, f in controls:
     if f["Group"] not in groups:
@@ -162,7 +168,7 @@ for _, _, f in controls:
 
 def control_card(cid, name, f):
     spec = "".join(f"<div><dt>{E(k)}</dt><dd>{inline(cap(f[k]))}</dd></div>" for k in NEED[2:])
-    return (f'<details class="ccard" data-group="{E(f["Group"])}" data-search="{E((cid + " " + name + " " + f["What it is"]).lower())}">'
+    return (f'<details class="ccard" data-group="{E(f["Group"])}" data-search="{E((cid + " " + name + " " + " ".join(f[k] for k in ["Group", "What it is", "Why it matters", "Tool (guess)", "Proof"])).lower())}">'
             f'<summary><span class="cid">{cid}</span><span class="cname">{inline(name)}</span>'
             f'<span class="cwhat">{inline(cap(f["What it is"]))}</span><span class="cmeta">Set in {E(f["Set in"].split(" (")[0])} · proved in {E(f["Proved in"].split(" (")[0])}</span></summary>'
             f'<dl class="spec">{spec}</dl><p class="csrc">Numbers such as 2.4 are playbook sub-steps: look them up in the Steps Catalog.</p></details>')
@@ -173,10 +179,11 @@ for g in groups:
     sections += (f'<section class="grp"><div class="ahead"><h2>{E(g)} <span class="gcount">{len(mine)}</span></h2></div>'
                  f'<div class="clist">{"".join(control_card(*c) for c in mine)}</div></section>')
 howto = ('<div class="note"><span class="warn">⚠️</span> Gathered from my own framework and playbook, not from Associated Bank. '
-         "The bank's own control list comes from its risk partner early in the Define step, and it replaces this one where they differ.</div>")
+         "The bank's own control list comes from its risk partner early in the Define step, and it replaces this one where they differ. "
+         "Numbers such as 2.4 are sub-steps of my six-step process: look them up in the Steps Catalog.</div>")
 page("Controls Catalog", "Building block · controls",
      f"All {len(controls)} governance controls in one place: the safeguards built into every AI product, with where each is set, built, proved and watched.",
      "Kind of control", groups, sections, howto,
-     "Built from <code>playbook/controls.md</code> by <code>designs/catalogs-build.py</code>. \"Tool\" lines are guesses until confirmed at the bank.",
+     "Built from my controls list (kept with the playbook). \"Tool\" lines are guesses until confirmed at the bank.",
      "Like approval or data", "controls.html")
 print(len(subs), "sub-steps;", len(controls), "controls")

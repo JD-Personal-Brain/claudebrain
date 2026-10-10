@@ -2,8 +2,8 @@
 
 Ideas for improving this system or how I work with Claude.
 Claude adds ideas as it notices them and suggests 1 to 3 at each wrap-up.
-**Status:** new · suggested · yes · no · done
-**Where it runs:** every idea marked yes must have a home that runs: a skill, a step in a skill, a rule with a test, or a one-off task on "What's next" (rule R17, the `make-skill` skill). An idea with no home isn't done.
+**Status:** new · suggested · yes · not yet · no · done
+**Where it runs:** every idea marked yes must have a home that runs: a skill, a step in a skill, a rule with a test, or a one-off task on "What's next" or in the Open Items log (rule R17, the `make-skill` skill). An idea with no home isn't done.
 
 | # | Idea | What it would let me do | Where it runs | Status |
 |---|---|---|---|---|
@@ -22,7 +22,7 @@ Claude adds ideas as it notices them and suggests 1 to 3 at each wrap-up.
 | 13 | A "write-prompt" skill | Say "write a prompt for X" and Claude walks me through `prompting.md` piece by piece | Skill: `write-prompt` | done (2026-10-09: `write-prompt` skill) |
 | 14 | A notes file for the Claude Mastery course | Keep what I learn from each course page in one place, so any session can build on it | Task: NOW.md "What's next" 3 (start when the first course page comes in) | yes (start when the first course page comes in) |
 | 15 | Save job answers as we go | Keep my answers from each job part in a file, so a new session can pick up where I stopped | File: `job-notes.md` | done (job-notes.md) |
-| 16 | Remove my safety rules (pop-up explanations, "Deny is safe" reminders, asking before saving) | I said these were training wheels while I was new. Claude is blocked from editing its own rules, so I need to edit `CLAUDE.md`, `learning/rules.md` (R4) and the wrap-up skill myself. Wrap-up step 6 should become: "Save a draft automatically; ask \"Merge into main now? (y / review first / n)\"" and step 8 should merge on a yes (from L11) | Rule book (`CLAUDE.md` section 1), rules R4 and R15 (removed), tests T4 and T15 (retired) | done (2026-10-09: the pop-up explanations and "Deny is safe" reminders are gone) |
+| 16 | Remove my safety rules (pop-up explanations, "Deny is safe" reminders, asking before saving) | I said these were training wheels while I was new. Claude is blocked from editing its own rules, so I need to edit `CLAUDE.md`, `learning/rules.md` (R4) and the wrap-up skill myself. Wrap-up step 6 should become: "Save a draft automatically; ask \"Merge into main now? (y / review first / n)\"" and step 8 should merge on a yes (from L11) (Update: Claude was able to make the edits itself on 2026-10-09.) | Rule book (`CLAUDE.md` section 1), rules R4 and R15 (removed), tests T4 and T15 (retired) | done (2026-10-09: the pop-up explanations and "Deny is safe" reminders are gone) |
 | 17 | Bring in the RM framework memos | Get my 2026-10-08 RM analytics memos (framework, audit, market scan) into main so every session can use them; leave the older rule edits on that branch out | One-off task (done) | done (2026-10-09) |
 | 18 | A "plain words" check in the wrap-up skill (from L10c) | Before the final message, Claude must reread it as a newcomer and explain anything internal. Claude can't add this itself; I'd add it alongside idea 16 | Step in `wrap-up` (step 9) | done (2026-10-09: wrap-up step 9) |
 | 19 | Make the startup warning list only files that are really missing from main | The warning listed my memos as missing even after they were in main, which was confusing | Startup check (`.claude/hooks/session-start.sh`) | done (2026-10-09: startup check lists only files main is missing) |
@@ -39,5 +39,5 @@ Claude adds ideas as it notices them and suggests 1 to 3 at each wrap-up.
 | 30 | A Document Library with a /documents command, pinned to my sidebar | See every document at any moment, organized by area with each one under its parent | Skill: `documents`; page built by `designs/library-build.py`; completeness check in `audit` | done (2026-10-09) |
 | 31 | Building block pages: workflow maps and an agent library | See the shape of each process and every agent without digging through documents | Pages built by `designs/workflows-build.py` and `designs/agents-build.py`; listed in the library; up-to-date check in `audit` | done (2026-10-09) |
 | 32 | An automatic shorthand check | Flag NOW.md items and messages that name something internal (a link, a file, a rule number) without explaining it | Automatic check in the audit checker (section 6 of `check.py`); test T23 | done (2026-10-09) |
-| 33 | An "Associated edition" of the Document Library | Share a clean library with the bank: only pages meant for them, no internal labels, with a list of pages to share one by one | Task: NOW.md "What's next" 9, when I'm ready | not yet (2026-10-10) |
+| 33 | An "Associated edition" of the Document Library | Share a clean library with the bank: only pages meant for them, no internal labels, with a list of pages to share one by one | Task: NOW.md "What's next" 9, when I'm ready | not yet (2026-10-09) |
 | 34 | A Steps catalog and a Controls catalog (more building blocks) | Find any of the 44 sub-steps, or any governance control, on its own page | Pages built by `designs/catalogs-build.py`; controls kept in `playbook/controls.md`; listed in the library; up-to-date check in `audit`; test T24 | done (2026-10-09) |

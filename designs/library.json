@@ -31,7 +31,7 @@
       "id": "controls",
       "name": "Controls Catalog",
       "what": "Every governance control in one place: the safeguards built into each product, and where each is set, built, proved and watched.",
-      "count": "16 controls",
+      "count": "22 controls",
       "status": "Waiting for review",
       "url": "https://claude.ai/artifact/7GmH3iBG6jcDkdacUysUrQ",
       "source": "playbook/controls.md"

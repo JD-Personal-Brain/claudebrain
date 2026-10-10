@@ -4,7 +4,7 @@ The one log of everything still open across my Claude brain. Claude updates it a
 every wrap-up: finished items move to "Closed" with the date, and new ones are added.
 
 > **How to read this.** Every item has a number that never changes, so I can say
-> "close R2" or "what's W4?". **Who** says who moves it next: **Me**, **Claude**,
+> "close V2" or "what's W4?". **Who** says who moves it next: **Me**, **Claude**,
 > or **The bank** (it can only be answered from inside the bank or by someone
 > there). ⚠️ marks a guess. First gathered on 2026-10-09 from every file in the
 > repo, the Document Library and the unmerged work on GitHub.
@@ -14,14 +14,14 @@ every wrap-up: finished items move to "Closed" with the date, and new ones are a
 | Group | Open | What it is |
 |---|---|---|
 | 1. Decisions waiting on me | 1 | Things only I can decide |
-| 2. Reviews waiting on me | 10 | Pages Claude built that I haven't read yet |
+| 2. Reviews waiting on me | 10 | Pages Claude built that I haven't read yet (numbered V, for "review") |
 | 3. Work to do | 12 | Next pieces of real work, in rough order |
 | 4. To confirm at the bank | 27 | Questions the plans depend on, 7 of which I can ask Andy now |
 | 5. Parked on purpose | 3 | Not forgotten; waiting for a signal from me |
 
 "Andy" here is my main contact at the bank. ⚠️ Claude assumes this is Andy Miner, the bank's senior director of AI for Corporate & Commercial Banking.
 
-**The one that unblocks the most:** R1, reading the rest of the RM (relationship manager) plan. The RM
+**The one that unblocks the most:** V1, reading the rest of the RM (relationship manager) plan. The RM
 framework can't be called ready (D1) until I've read it, and credit (P1) waits on D1.
 
 ## 1. Decisions waiting on me
@@ -34,16 +34,16 @@ framework can't be called ready (D1) until I've read it, and credit (P1) waits o
 
 | # | Page | What's left to review | Who |
 |---|---|---|---|
-| R1 | RM Analytics Plan (the long scrolling page) | Everything after the summary's opening and plan table: from "What lets us move this fast" on, then Parts 1 to 6. The RM Analytics Framework design page holds the same words | Me |
-| R2 | One outside source in the RM plan | Open the McKinsey article in a browser and check its numbers before sharing the plan. Cloud sessions can't open that site, so the numbers were checked through search summaries only | Me |
-| R3 | Delivery Playbook | All six steps, plus the agent library at the end | Me |
-| R4 | The Delivery Machine | The page for leaders on how one product manager runs many projects | Me |
-| R5 | Bank Business Briefing | The whole page, new on 2026-10-09 | Me |
-| R6 | Workflow Maps | Both maps | Me |
-| R7 | Agent Library | All 39 agents | Me |
-| R8 | Six-Step Product Workflow | The one-page visual, still marked Draft | Me |
-| R9 | Steps Catalog | New on 2026-10-09: all 44 sub-steps as cards I can search | Me |
-| R10 | Controls Catalog | New on 2026-10-09: 16 governance controls. Claude gathered them from my own framework, so check they are the right ones | Me |
+| V1 | RM Analytics Plan (the long scrolling page) | Everything after the summary's opening and plan table: from "What lets us move this fast" on, then Parts 1 to 6. The RM Analytics Framework design page holds the same words | Me |
+| V2 | One outside source in the RM plan | Open the McKinsey article in a browser and check its numbers before sharing the plan. Cloud sessions can't open that site, so the numbers were checked through search summaries only | Me |
+| V3 | Delivery Playbook | All six steps, plus the agent library at the end | Me |
+| V4 | The Delivery Machine | The page for leaders on how one product manager runs many projects | Me |
+| V5 | Bank Business Briefing | The whole page, new on 2026-10-09 | Me |
+| V6 | Workflow Maps | Both maps | Me |
+| V7 | Agent Library | All 39 agents | Me |
+| V8 | Six-Step Product Workflow | The one-page visual, still marked Draft | Me |
+| V9 | Steps Catalog | New on 2026-10-09: all 44 sub-steps as cards I can search | Me |
+| V10 | Controls Catalog | New on 2026-10-09: 22 governance controls. Claude gathered them from my own framework, so check they are the right ones | Me |
 
 If a review changes the six steps, the Product Framework page has to be updated to match.
 
@@ -51,7 +51,7 @@ If a review changes the six steps, the Product Framework page has to be updated 
 
 | # | Work | Who | Waits on |
 |---|---|---|---|
-| W1 | Apply the delivery machine to the RM plan as the first worked example: mark every RM task Auto, Draft or Me | Claude, with me | R1 and R3 |
+| W1 | Apply the delivery machine to the RM plan as the first worked example: mark every RM task Auto, Draft or Me | Claude, with me | V1 and V3 |
 | W2 | Thinking through the job, Part 1 (finding problems), kept on the Job Notes page: answer the open question in step 1 ("Have I worked with bankers or salespeople before?"), then steps 2 to 4. Parts 2 to 4 aren't started | Me, with Claude | Nothing |
 | W3 | Claude Mastery course: paste in the next page (Module 3: Projects, Connectors and Skills). Claude starts a course notes file when it arrives (idea 14, approved) | Me, then Claude | Nothing |
 | W4 | Re-run the Bank Business Briefing after the bank's Q3 2026 results on October 22, 2026, using the saved prompt (Example 5 in the Prompting Guide). Read the full Q2 earnings call transcript at the same time; only a summary was available the first time | Claude | October 22, 2026 |
@@ -115,6 +115,6 @@ or the hiring team before I start. The rest need someone inside.
 | C2 | Decide the order of use cases: RM first, credit second | 2026-10-09 |
 | C3 | Was D2: bring in the unmerged work from my other session. Merged into this log's pull request, with both sides kept where they overlapped | 2026-10-09 |
 | C4 | Was D3: yes to four ideas. The shorthand check (idea 32) and the Steps and Controls catalogs (idea 34) are built. Fewer pop-ups (idea 2) and everyday playbooks (idea 3) need facts from me first: see W11 and W12 | 2026-10-09 |
-| C5 | Was D4: remove my safety rules (idea 16). The pop-up explanations and "Deny is safe" reminders are gone from the rule book, with rules R4 and R15 and their two tests | 2026-10-09 |
+| C5 | Was D4: remove my safety rules (idea 16). The pop-up explanations and "Deny is safe" reminders are gone from the rule book, with the two pop-up rules and their tests | 2026-10-09 |
 
 _Last updated: 2026-10-09_
