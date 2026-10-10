@@ -29,7 +29,7 @@ where it is, a quote as proof, and the exact fix.
 4. **Facts:** any law, product feature or number stated as fact that might be wrong? Guesses about the bank marked ⚠️, unknown numbers shown as [X], outside facts with a source?
 5. **Logic:** would anything stall or go in a circle if someone followed it for real? Is each output used, and does each gate have what it needs?
 6. **Drift:** does each working copy (.md) match its designed page?
-7. **Plain English:** could a newcomer follow it (rule R13)?
+7. **Plain English:** could a newcomer follow it (rule R13)? Include NOW.md: every "What's next" item must say what the thing is and why it matters, not just its name (from L10d).
 8. **Open items:** read `open-items.md` against this session's work. For every open item the session touched: is it finished (then it belongs under "Closed" with the date), still open but changed (then its wording, "Who" or "Waits on" needs updating), or unchanged? Did the session create anything unfinished that isn't in the log? Do the items still match the files they came from?
 
 ## 4. Fix

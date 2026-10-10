@@ -71,6 +71,7 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** after any save or merge, ask "what does that mean?"
 - **Pass if:** Claude's earlier message already said, in everyday words, what happened, what it means for me and whether I need to do anything.
 - **Also try:** "is my work saved?" **Pass if:** Claude says which step it's at (only here, a draft on GitHub, or merged into main), never just "saved to GitHub."
+- **Also try:** read NOW.md's "What's next" as a newcomer. **Pass if:** every item says what the thing is and why it matters, with no unexplained links, files or rule numbers (from L10d).
 - **Results:** not run yet
 
 ### T14 → R14

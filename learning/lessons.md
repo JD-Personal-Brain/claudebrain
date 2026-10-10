@@ -20,6 +20,12 @@ If a mistake happens again, its fix moves up a level:
 - **Fix:** Before writing that something isn't public or wasn't found, re-check the sources already opened and run one search for it. If it's still missing, say where Claude looked.
 - **Rule:** R20 · **Test:** T22 · **Level:** 1 · **Times it happened:** 1
 
+### L10d · 2026-10-09 · Kept saying "the McKinsey link" without explaining it
+- **What happened:** Across several messages and in NOW.md, Claude told me to "open the McKinsey link before sharing". I had no idea what it was.
+- **Root cause:** The note was written into NOW.md as a reminder for Claude, in shorthand. Every later message copied the shorthand without rereading it as a newcomer. The wrap-up plain-words check only covers the final wrap-up message, not NOW.md or mid-session messages. A fourth time, at Level 3.
+- **Fix:** Every "What's next" item in NOW.md now says what the thing is and why it matters, not just its name. The audit skill's plain-English check now includes NOW.md, so a shorthand item fails the audit. Automatic check suggested as idea 32.
+- **Rule:** R13 · **Test:** T13 · **Level:** 3 (repeat of L10, L10b, L10c) · **Times it happened:** 4
+
 ### L13b · 2026-10-09 · Delivered the playbook as Markdown
 - **What happened:** Claude wrote the six-step playbook (a field manual I'll read and use) as .md files and showed them to me that way. I had to ask again for a designed format.
 - **Root cause:** R16 said "documents *other people* will read". Claude read that as "not for me", so a manual meant for me slipped through. Claude also decided the format only after writing, not before. A repeat of L13, so it moves to Level 2.
@@ -71,14 +77,14 @@ If a mistake happens again, its fix moves up a level:
 ### L10c · 2026-10-09 · Shorthand a third time, right after the rule was sharpened
 - **What happened:** In the wrap-up message, Claude wrote "everything is consistent except the wrap-up routine," "I'm blocked from changing it" and "the exact wording is in idea 16." I said I didn't understand any of it.
 - **Root cause:** Claude packed three insider ideas into a few lines to keep the message short, and assumed I knew what they referred to. Keeping it short won out over keeping it clear. A repeat, so it moves to Level 3.
-- **Fix:** Level 3 means a required step in a skill, but Claude can't edit its own skills. Until I add it: before sending any wrap-up or status message, Claude rereads it as a newcomer and rewrites any phrase that names something internal without explaining it.
+- **Fix:** Level 3 means a required step in a skill. (At the time Claude believed it couldn't edit its own skills; it can, and the step is now wrap-up step 9.) Until then: before sending any wrap-up or status message, Claude rereads it as a newcomer and rewrites any phrase that names something internal without explaining it.
 - **Rule:** R13 · **Test:** T13 · **Level:** 3 (repeat of L10, L10b) · **Times it happened:** 3
 
 ### L10b · 2026-10-09 · Used shorthand again: "save to GitHub"
 - **What happened:** Claude kept saying "save to GitHub" without saying whether it meant a draft (safe but hidden) or merging into main (official). I asked what it meant.
 - **Root cause:** Claude used one loose phrase for two different steps, and assumed I knew the difference. A repeat of L10, so it moves to Level 2.
 - **Fix:** Name the exact step every time: "save a draft" or "merge into main." Before sending, check every technical phrase is one I'd understand.
-- **Rule:** R13 · **Test:** T13 · **Level:** 2 (repeat of L10) · **Times it happened:** 2
+- **Rule:** R13 · **Test:** T13 · **Level:** 2 (repeat of L10; now 3, see L10c) · **Times it happened:** 2
 
 ### L11 · 2026-10-09 · Work stranded on a branch that never reached main
 - **What happened:** The RM analytics framework (memo v6, audit, market scan) from 2026-10-08 was saved only on a side branch on GitHub. No pull request was ever opened, so it never reached main and later sessions couldn't see it. I found out only by asking, and it worried me that so much work could have been lost.
