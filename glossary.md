@@ -96,7 +96,8 @@ The audit flags these in the core documents. Use the word on the right.
 
 When we rename something or change a count, the old wording goes here. The
 audit checker fails on any of it left in a core document, a memo, NOW.md, the
-Document Library or a designed page, so a rename can't stop halfway. A line
+working copy of a designed page, the Document Library, the scrolling RM plan or
+the design canvas, so a rename can't stop halfway. A line
 that also says the new wording (a note about the change) is allowed.
 
 | Retired wording | Use instead | Retired on |

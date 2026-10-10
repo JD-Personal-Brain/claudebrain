@@ -133,7 +133,7 @@ for f in ['NOW.md','open-items.md','product-framework.md','playbook/README.md','
         elif noun=='sub-steps': ok={SUB}
         else: ok={CTL} | ({UNCOV} if after.startswith(' of the') or 'have a stage' in after or 'not covered' in after else set())
         if num not in ok: print(f,'says',repr(m.group(0)),'but the sources give',sorted(ok)); probs+=1
-    if re.search(r'\b\d+-agent library',t): print(f,'says "N-agent library": say which agents (machine, project or all)'); probs+=1
+    if re.search(r'\b\d+-agent library',t): print(f,'says "N-agent library": say which agents (general, project or all)'); probs+=1
 items={m.group(1):m.group(2).split(' · ') for m in re.finditer(r'^- \*\*(\d)\. [^:]+:\*\* (.+)$',fw,re.M)}
 for n,c in n_sub.items():
     if len(items.get(n,[]))!=c: print('product-framework.md "What happens" step',n,'has',len(items.get(n,[])),'items but the playbook has',c,'sub-steps'); probs+=1
@@ -166,22 +166,32 @@ for f in core:
     for i,line in enumerate(open(f).read().split('\n'),1):
         for w in bad:
             if re.search(r'\b'+re.escape(w)+r'(s|es)?\b',line,re.I): print(f+':'+str(i),'uses',repr(w),'(see the glossary\'s "Words we don\'t use")'); probs+=1
-# 9. retired wording (idea 37): nothing from the glossary's "Old wording we've retired" table is left behind
+# 9. retired wording (idea 37): nothing from the glossary's "Old wording we've retired" table is left behind.
+# Each file is read as plain text (tags removed, entities decoded, spaces collapsed), so a phrase split by a tag,
+# a line break or a non-breaking space is still found. A match is allowed only when the new wording sits within
+# 150 characters of it (a note about the change), so one long line can't hide a leftover.
 import html as _html
+def _plain(t,is_html):
+    if is_html: t=re.sub(r'<[^>]+>',' ',t)
+    return re.sub(r'\s+',' ',_html.unescape(t).replace('\xa0',' '))
 if "## Old wording we've retired" not in gl: print('glossary.md has no "Old wording we\'ve retired" heading, so the retired-wording check did not run'); probs+=1
 else:
     ret=[]
     for row in gl.split("## Old wording we've retired")[1].split('\n## ')[0].split('\n'):
-        m=re.match(r'^\| ([^|]+?) \| ([^|]+?) \| \d{4}-\d\d-\d\d \|$',row)
-        if m and m.group(1)!='Retired wording': ret.append((m.group(1),m.group(2)))
+        if not row.startswith('|') or re.match(r'^\|\s*-',row) or row.startswith('| Retired wording'): continue
+        m=re.match(r'^\| ([^|]+?) \| ([^|]+?) \| \d{4}-\d\d-\d\d \|\s*$',row)
+        if m: ret.append((m.group(1).strip(),m.group(2).strip()))
+        else: print('glossary.md: could not read this "Old wording we\'ve retired" row:',row[:60]); probs+=1
     if not ret: print('glossary.md: the "Old wording we\'ve retired" table is empty'); probs+=1
-    where=sorted(set(core+glob.glob('memos/*.md')+['NOW.md','designs/library.json','designs/README.md','designs/role-workflow.html','designs/rm-analytics-plan.html']+glob.glob('designs/*-build.py')+glob.glob('designs/rm-analytics-canvas/*.dc.html')+['glossary.md']))
+    where=sorted(set(core+glob.glob('memos/*.md')+['NOW.md','glossary.md','prompting.md','job-notes.md','job-description.md','designs/library.json','designs/README.md','designs/role-workflow.html','designs/rm-analytics-plan.html']+glob.glob('designs/*-build.py')+glob.glob('designs/rm-analytics-canvas/*.dc.html')))
     for f in where:
         txt=open(f).read()
         if f=='glossary.md': txt=txt.split("## Old wording we've retired")[0]
-        for i,line in enumerate(txt.split('\n'),1):
-            plain=_html.unescape(line)
-            for old,new in ret:
-                if old.lower() in plain.lower() and new.split(' (')[0].lower() not in plain.lower():
-                    print(f+':'+str(i),'still says',repr(old),'(retired; use',repr(new)+')'); probs+=1
+        plain=_plain(txt,f.endswith('.html') or f.endswith('.py'))
+        low=plain.lower()
+        for old,new in ret:
+            nw=new.split(' (')[0].lower() if not new.startswith('(') else new.lower()
+            for m in re.finditer(r'(?<!\w)'+re.escape(old.lower())+r'(?!\w)',low):
+                if nw in low[max(0,m.start()-150):m.end()+150]: continue
+                print(f,'still says',repr(old),'(retired; use',repr(new)+'), near:',repr(plain[max(0,m.start()-40):m.end()+40])); probs+=1
 print("problems:",probs)
