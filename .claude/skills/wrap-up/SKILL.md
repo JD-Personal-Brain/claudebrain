@@ -7,10 +7,11 @@ description: End a work session. Logs lessons, updates NOW.md, suggests improvem
 
 Keep every message short (see rule R2).
 
-0. **Audit first.** Run the **audit** skill on everything done this session. Fix every finding before going on. Wrap-up's own small edits (lessons, NOW.md, ideas) get the audit's mechanical checks again just before saving.
+0. **Audit first.** Run the **audit** skill on everything done this session, and on the Open Items log (`open-items.md`): every open item is checked, not only the ones the session touched, so the log is scrubbed at every wrap-up. Fix every finding before going on. Wrap-up's own small edits (lessons, NOW.md, ideas) get the audit's mechanical checks again just before saving.
 1. **Lessons.** Look back over the session for corrections or mistakes. Log each one with the **log-lesson** skill.
 2. **Profile.** If you learned something new about how the user likes to work, add it to `me/profile.md`.
 3. **NOW.md.** Update where things stand, what's next and any new agreements (each with its reason). Update the "Last updated" date.
+   - **Open items.** Scrub the whole log in `open-items.md`, the one list of everything still open: read every open item, not only the ones this session touched. Move finished items to "Closed" with the date, add new ones under the right group with the next free number (numbers are never reused), and correct the counts in "At a glance". Then rebuild the page (`python3 designs/md-page-build.py`) and republish it to the same link.
 4. **Improvements.** Add new ideas to `ideas.md`. Suggest 1 to 3 of them, each as one line: what it would let the user do, then "(yes/no)". Record each answer as the idea's status. For each yes, build its home now with the **make-skill** skill (rule R17).
 5. **Weekly review.** If "Last review" in NOW.md is 7 or more days ago, offer a 5-minute review: what's working, what's annoying and what to change. If they agree, do it and update "Last review."
 6. **Save a draft, then ask about merging.** Save a draft to GitHub without asking (commit and push to the working branch). Then ask once: "Merge into main now? (y / review first / n)".

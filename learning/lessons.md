@@ -8,11 +8,29 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L17 · 2026-10-09 · Pointed controls at playbook steps that don't cover them
+- **What happened:** In the new Controls Catalog, Claude wrote where each control is set, built, proved and watched. Two audits in a row found references the playbook doesn't support: about ten in the first pass, and six more in the controls Claude added while fixing the first.
+- **Root cause:** Claude filled in each step number from where the control would logically belong, without opening that step and reading what it says.
+- **Fix:** Before writing that a step covers something, open the step and find the words. If they aren't there, write "not covered yet" so the gap shows. The catalog builder also fails now if a control names a step that doesn't exist.
+- **Rule:** R21 · **Test:** T25 · **Level:** 1 · **Times it happened:** 1
+
+### L7d · 2026-10-09 · Stray underscores at the top of two designed pages
+- **What happened:** The Bank Business Briefing went into main with its first line wrapped in underscores (Markdown for italics that the page builder doesn't handle across two lines). The new Open Items page had the same fault. Claude caught it only when it looked at the top of the Open Items page.
+- **Root cause:** For the briefing, Claude checked one screenshot from the middle of the page, never the top. Rule R7 already covers this, so the rule failed again.
+- **Fix:** An automatic check: the audit checker now fails if any built page shows a stray underscore at the start or end of a line. And the screenshot Claude looks at must include the top of the page.
+- **Rule:** R7 · **Test:** T7 · **Level:** 3 (automatic check added) · **Times it happened:** 4
+
 ### L16 · 2026-10-09 · Said a number wasn't public when a source I'd already opened had it
 - **What happened:** In the first draft of the Bank Business Briefing, Claude wrote that the bank publishes fee lines for the whole bank only, and guessed that Q3 results were "probably due in late October." The audit found the segment's fee lines in the annual report page the briefing already cited, and a press release giving the date (October 22, 2026).
 - **Root cause:** Claude wrote "not public" and "not found" from what it remembered seeing, without going back through the sources it had opened or running one search for the missing fact.
 - **Fix:** Before writing that something isn't public or wasn't found, re-check the sources already opened and run one search for it. If it's still missing, say where Claude looked.
 - **Rule:** R20 · **Test:** T22 · **Level:** 1 · **Times it happened:** 1
+
+### L10d · 2026-10-09 · Kept saying "the McKinsey link" without explaining it
+- **What happened:** Across several messages and in NOW.md, Claude told me to "open the McKinsey link before sharing". I had no idea what it was.
+- **Root cause:** The note was written into NOW.md as a reminder for Claude, in shorthand. Every later message copied the shorthand without rereading it as a newcomer. The wrap-up plain-words check only covers the final wrap-up message, not NOW.md or mid-session messages. A fourth time, at Level 3.
+- **Fix:** Every "What's next" item in NOW.md now says what the thing is and why it matters, not just its name. The audit skill's plain-English check now includes NOW.md, so a shorthand item fails the audit. Automatic check suggested as idea 32.
+- **Rule:** R13 · **Test:** T13 · **Level:** 3 (repeat of L10, L10b, L10c) · **Times it happened:** 4
 
 ### L13b · 2026-10-09 · Delivered the playbook as Markdown
 - **What happened:** Claude wrote the six-step playbook (a field manual I'll read and use) as .md files and showed them to me that way. I had to ask again for a designed format.
@@ -65,14 +83,14 @@ If a mistake happens again, its fix moves up a level:
 ### L10c · 2026-10-09 · Shorthand a third time, right after the rule was sharpened
 - **What happened:** In the wrap-up message, Claude wrote "everything is consistent except the wrap-up routine," "I'm blocked from changing it" and "the exact wording is in idea 16." I said I didn't understand any of it.
 - **Root cause:** Claude packed three insider ideas into a few lines to keep the message short, and assumed I knew what they referred to. Keeping it short won out over keeping it clear. A repeat, so it moves to Level 3.
-- **Fix:** Level 3 means a required step in a skill, but Claude can't edit its own skills. Until I add it: before sending any wrap-up or status message, Claude rereads it as a newcomer and rewrites any phrase that names something internal without explaining it.
+- **Fix:** Level 3 means a required step in a skill. (At the time Claude believed it couldn't edit its own skills; it can, and the step is now wrap-up step 9.) Until then: before sending any wrap-up or status message, Claude rereads it as a newcomer and rewrites any phrase that names something internal without explaining it.
 - **Rule:** R13 · **Test:** T13 · **Level:** 3 (repeat of L10, L10b) · **Times it happened:** 3
 
 ### L10b · 2026-10-09 · Used shorthand again: "save to GitHub"
 - **What happened:** Claude kept saying "save to GitHub" without saying whether it meant a draft (safe but hidden) or merging into main (official). I asked what it meant.
 - **Root cause:** Claude used one loose phrase for two different steps, and assumed I knew the difference. A repeat of L10, so it moves to Level 2.
 - **Fix:** Name the exact step every time: "save a draft" or "merge into main." Before sending, check every technical phrase is one I'd understand.
-- **Rule:** R13 · **Test:** T13 · **Level:** 2 (repeat of L10) · **Times it happened:** 2
+- **Rule:** R13 · **Test:** T13 · **Level:** 2 (repeat of L10; now 3, see L10c) · **Times it happened:** 2
 
 ### L11 · 2026-10-09 · Work stranded on a branch that never reached main
 - **What happened:** The RM analytics framework (memo v6, audit, market scan) from 2026-10-08 was saved only on a side branch on GitHub. No pull request was ever opened, so it never reached main and later sessions couldn't see it. I found out only by asking, and it worried me that so much work could have been lost.

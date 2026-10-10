@@ -17,6 +17,24 @@
       "status": "Waiting for review",
       "url": "https://claude.ai/artifact/Cn9nANQoqp2BP7yrmy61zn",
       "source": "playbook/agents.md, RM memo Appendix A"
+    },
+    {
+      "id": "steps",
+      "name": "Steps Catalog",
+      "what": "Find any sub-step of the six-step process on its own: why it matters, what it produces and its tasks.",
+      "count": "44 sub-steps",
+      "status": "Waiting for review",
+      "url": "https://claude.ai/artifact/8UncWMYUq7hsJUhn5NSYEB",
+      "source": "playbook/, product-framework.md"
+    },
+    {
+      "id": "controls",
+      "name": "Controls Catalog",
+      "what": "Every governance control in one place: the safeguards built into each product, and where each is set, built, proved and watched.",
+      "count": "22 controls",
+      "status": "Waiting for review",
+      "url": "https://claude.ai/artifact/7GmH3iBG6jcDkdacUysUrQ",
+      "source": "playbook/controls.md"
     }
   ],
   "start_here": [
@@ -25,6 +43,20 @@
     "job-description"
   ],
   "areas": [
+    {
+      "id": "status",
+      "name": "Where things stand",
+      "why": "What's still open, so I can see at any moment what's waiting on me and what comes next.",
+      "parent": {
+        "id": "open-items",
+        "name": "Open Items",
+        "what": "Everything still open in one log: decisions and reviews waiting on me, work to do, questions for the bank, and what's parked.",
+        "status": "In use",
+        "url": "https://claude.ai/artifact/NsW5AH5XFNHmDNYJvmVDMb",
+        "source": "open-items.md"
+      },
+      "children": []
+    },
     {
       "id": "job",
       "name": "The job",

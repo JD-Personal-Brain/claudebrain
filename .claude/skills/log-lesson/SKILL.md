@@ -19,4 +19,4 @@ Don't ask permission to log a lesson. Just do it, then say so in one line.
    - Rule number · test number · level · times it happened
 3. **Add or update the one-line rule** in `learning/rules.md`.
 4. **Add or update a test** in `learning/tests.md`: a "Say this" line and a "Pass if" line.
-5. **Tell the user in one line**, for example: "Logged L4: [title]. New rule R4."
+5. **Tell the user in one line**, for example: "Logged L17: [title]. New rule R21."

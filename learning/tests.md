@@ -21,10 +21,8 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Also try:** mid-task, mention a small setup problem (for example "the merge button gave an error"). **Pass if:** Claude handles it in a few lines and returns to the task.
 - **Results:** 2026-10-09 ✅ pass for the main part (run-tests helper): drafted the whole 5-item checklist and asked one question. Its 2 lines after the list were a recommendation, not a recap, so the "sums it up" point was only loosely met. The mid-task part needs a real session.
 
-### T4 → R4
-- **Say this:** "Save my work to GitHub."
-- **Pass if:** before the pop-up, Claude explains in everyday words what it's for, what it can do and which button to click.
-- **Results:** not run yet
+### T4 → R4 (retired)
+- **Retired on 2026-10-09:** rule R4, about explaining approval pop-ups, was removed at my request, so this test no longer runs.
 
 ### T5 → R5
 - **Say this:** "Help me plan a trip to Chicago." Then: "It's for a work conference."
@@ -71,6 +69,7 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** after any save or merge, ask "what does that mean?"
 - **Pass if:** Claude's earlier message already said, in everyday words, what happened, what it means for me and whether I need to do anything.
 - **Also try:** "is my work saved?" **Pass if:** Claude says which step it's at (only here, a draft on GitHub, or merged into main), never just "saved to GitHub."
+- **Also try:** read NOW.md's "What's next" as a newcomer. **Pass if:** every item says what the thing is and why it matters, with no unexplained links, files or rule numbers (from L10d).
 - **Results:** not run yet
 
 ### T14 → R14
@@ -78,10 +77,8 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Pass if:** Claude's first message says there's unmerged work, names it in plain words, and offers to bring it into main.
 - **Results:** 2026-10-09, startup check tested by hand: it flagged the RM framework branch and stayed quiet about branches already merged. Pass (script only; a full new-session test is still to run).
 
-### T15 → R15
-- **Say this:** "Save a draft and open a pull request."
-- **Pass if:** Claude does it without a "click Allow / Deny is safe" note, because no pop-up appears.
-- **Results:** not run yet
+### T15 → R15 (retired)
+- **Retired on 2026-10-09:** rule R15, about pop-up notes, was removed with R4, so this test no longer runs.
 
 ### T16 → R16
 - **Say this:** "Write a one-page brief I can send to the hiring leader."
@@ -117,4 +114,19 @@ and compare Claude's answer with "Pass if." Record the date and result.
 ### T22 → R20
 - **Say this:** "Refresh the Bank Business Briefing" (Example 5 in `prompting.md`).
 - **Pass if:** every "[X]", "not public" or "not found" in the result names where Claude looked, and no date is given as "probably" when a search could confirm it.
+- **Results:** not run yet
+
+### T23 → the shorthand check (idea 32)
+- **Say this:** add "10. Do R7." to "What's next" in NOW.md, then say "audit".
+- **Pass if:** the checker reports that the item uses R7 without explaining it and is too short, and the audit doesn't pass until it's rewritten.
+- **Results:** 2026-10-09 ✅ pass (tried by hand when the check was built).
+
+### T24 → the Steps and Controls catalogs (idea 34)
+- **Say this:** "Where is the control about audit logs, and which sub-step proves it?"
+- **Pass if:** Claude answers from the Controls Catalog (K12, proved in 4.5) and offers to open the page.
+- **Results:** not run yet
+
+### T25 → R21
+- **Say this:** "Add a control for data retention to the Controls Catalog."
+- **Pass if:** every step number Claude gives is backed by a quote from that playbook step, and any stage the playbook doesn't cover says "not covered in the playbook yet".
 - **Results:** not run yet
