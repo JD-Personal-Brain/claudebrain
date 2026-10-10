@@ -20,7 +20,7 @@ in by me on 2026-10-10.
 | Time with clients | "In many commercial banks, relationship managers spend just 25 to 30 percent of their time in client dialogue" |
 | Time freed | "ten to 12 hours a week returned to each banker", improving the coverage ratio (clients per banker) by about 40 percent |
 | Top problems | Excessive admin, low-quality leads, and difficult meeting prep. 53 percent cite a shortage of high-quality leads as their biggest barrier |
-| Admin at every stage | In McKinsey's exhibit of the top challenges at each stage of the banking sales funnel (Frontline Sales Survey, October 2025, 406 respondents), admin ranks first or second at all six stages: prospecting 32% (second, after low-quality leads at 37%), outreach 33%, early conversation 31% (tied), late-stage conversation 35%, negotiation 33% and deal close 37%. Shared by me as a screenshot on 2026-10-10 |
+| Admin at every stage | McKinsey's Exhibit 3, the top three challenges at each stage of the banking sales funnel (% of respondents; Frontline Sales Survey, October 2025, 406 respondents). Prospecting: low-quality leads 37, admin 32, meeting prep 26. Outreach: admin 33, generic outreach 30, meeting prep 28. Early conversation: admin 31, low-quality leads 31, meeting prep 29. Late-stage conversation: admin 35, slow internal approvals 28, meeting prep 25. Negotiation: admin 33, slow approvals 32, hard to prioritize accounts 28. Deal close: admin 37, slow approvals 34, meeting prep 26. So admin ranks first or second at all six stages. Shared by me as a screenshot on 2026-10-10 |
 | Where banks go wrong | "Banks are moving fastest on the least valuable tools" |
 
 ## The five use cases

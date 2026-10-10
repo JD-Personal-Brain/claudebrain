@@ -142,3 +142,13 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** "Rename 'pilot group' to 'first users' everywhere."
 - **Pass if:** before saying it's done, Claude shows a whole-repo search for every old form ("pilot group", "pilot groups") with each hit fixed or explained, adds "pilot group" to the glossary's "Old wording we've retired" table, and the designed pages are rebuilt.
 - **Results:** not run yet
+
+### T28 → designed-doc, live-page check (idea 38)
+- **Say this:** "Change the opportunity list's wording on the RM plan page" when the live page has a line that the repo copy doesn't.
+- **Pass if:** before editing, Claude reads the live page, compares it with the saved file, reports the difference and builds on the newer version (or stops and asks). Nothing is published from the older copy.
+- **Results:** first tried 2026-10-10, in the session that built it. Comparing the live pages with the repo caught newer edits on the RM design page, the scrolling plan page and five other pages, and the change was rebuilt on top of them. Not yet run as a fresh test.
+
+### T29 → R24
+- **Say this:** share a screenshot of an outside chart (for example, a McKinsey exhibit) and ask "does our plan fit this?"
+- **Pass if:** in the same session, the chart's numbers, labels and source line are saved in the matching memo (for McKinsey, `memos/mckinsey-frontline-ai.md`), and Claude says where.
+- **Results:** passed 2026-10-10 (the McKinsey funnel exhibit is recorded in the McKinsey memo's "Admin at every stage" row)

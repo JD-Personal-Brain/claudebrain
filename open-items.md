@@ -27,7 +27,7 @@ Claude updates it at every wrap-up: finished items move to "Closed" with the dat
 | Stage 2. Make the machine runnable | 4 | What Claude builds so a real run is possible |
 | Stage 3. Dry run and fix | 3 | Running the machine once and fixing it |
 | Stage 4. Get ready for Andy | 10 | What Andy sees, and what I ask him |
-| Alongside the path | 12 | Useful any time; doesn't block a stage. Dated items first |
+| Alongside the path | 11 | Useful any time; doesn't block a stage. Dated items first |
 | Inside the bank | 21 | Questions only someone at the bank can answer |
 | Parked on purpose | 3 | Not forgotten; waiting for a signal from me |
 
@@ -123,7 +123,6 @@ Useful any time; none of these blocks a stage. Dated ones first.
 | W6 | First weekly review: what's working, what's annoying, what to change. Also re-check Anthropic's prompting guide for changes | Me, with Claude | Around 2026-10-14 |
 | W4 | Re-run the Bank Business Briefing after the bank's Q3 2026 results on October 22, 2026, using the saved prompt (Example 5 in the Prompting Guide). Read the full Q2 earnings call transcript at the same time; only a summary was available the first time | Claude | October 22, 2026 |
 | W22 | Two loose ends from the McKinsey article: confirm its publication date (the pasted page showed none), and decide whether role redesign (new RM roles as agents take on work, McKinsey's fifth principle) belongs in the playbook; it isn't covered yet | Claude, then me | Nothing |
-| D10 | Yes or no to two suggested ideas: idea 38 (before any edit, compare each live designed page with its saved file, so two sessions can't overwrite each other) and idea 39 (save every outside chart I share with its numbers and source) | Me | Nothing |
 | W5 | Loose ends in the Bank Business Briefing: check the exact wording of the bank's AI announcement before quoting it; replace the 2016 description of who the segment serves once the annual report for the 2025 financial year can be opened in full; and confirm two of my guesses, the RM headcount read from an unclear chart and that Omaha came with American National | Claude | Nothing |
 | W7 | Run the tests of Claude's rules that need a real session. Each test is a short scenario in `learning/tests.md` that checks one rule still works. Not yet run in a live session: T7, T10, T13, T14 and T17, and the second parts of T2, T3, T9 and T16. Never run at all: T18 to T22, T24 and T25. Re-run T8 (does Claude label every suggestion Needed or Optional?), which failed on 2026-10-09 before its rule was tightened, and T5, whose first run wasn't a fair test | Claude, in a new session | Nothing |
 | W10 | Check the product details marked "(verify)" in the Tech Stack Guide: product names, prices, vendor terms and any update to the regulators' model-risk guidance. Eleven lines carry the mark | Claude | Nothing |
@@ -187,5 +186,6 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C12 | Was D9: yes. The RM plan is now organized on seven core use cases: McKinsey's five frontline use cases plus two of our own (admin off the RM's plate, keep clients), with our AI products underneath each and a return profile for each (McKinsey benchmarks next to our own [X] targets) | 2026-10-10 |
 | C13 | Was W23 (idea 37): yes. The audit checker now fails on any old wording left after a rename, from a new "Old wording we've retired" table in the glossary | 2026-10-10 |
 | C14 | Call notes into Salesforce moved from wave 2 into wave 1, live with the insights about weeks 4–6, because McKinsey's banker survey ranks admin a top-two problem at every stage of the sales funnel | 2026-10-10 |
+| C15 | Was D10: yes to ideas 38 and 39. Before editing a designed page, Claude now checks that the live page isn't newer than the repo copy (a step in the designed-doc skill), and every outside chart I share is saved with its numbers and source in the matching memo (rule R24) | 2026-10-10 |
 
 _Last updated: 2026-10-10_
