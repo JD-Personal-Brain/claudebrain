@@ -9,7 +9,7 @@ a product that pays for itself and then some.
 
 **The approach.**
 1. **Deploy a standard base fast, aimed at revenue.** Start with use cases most banks need: client briefs before meetings, meeting follow-ups and a weekly list of product-gap opportunities. They run on platforms the bank already uses: Salesforce, Microsoft 365 Copilot, Power Platform and Snowflake.
-2. **Pair insights with time.** RMs at many commercial banks reportedly spend only about 25–30% of their time with clients, so time savers ship alongside revenue insights.
+2. **Pair insights with time.** RMs at many commercial banks spend only about 25–30% of their time with clients, according to McKinsey, so time savers ship alongside revenue insights.
 3. **Govern from day one.** A risk partner is involved from day one. The AI only suggests and drafts; the RM always decides. Results are measured against RMs not yet using the tool.
 
 **The plan (estimate).**

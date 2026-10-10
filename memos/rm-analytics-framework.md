@@ -18,7 +18,7 @@ everything else is iterated and grown on top.
 
 **The approach, in three points:**
 1. **Deploy the standard base fast, aimed at revenue.** Build a working prototype in week 1, shape it with RMs, and get the first features live within weeks.
-2. **Pair insights with time.** RMs at many commercial banks reportedly spend only about 25–30% of their time with clients. Better opportunities only pay off if RMs have time to act on them, so the base includes time savers (briefs, meeting follow-ups) alongside revenue insights.
+2. **Pair insights with time.** RMs at many commercial banks spend only about 25–30% of their time with clients, according to McKinsey. Better opportunities only pay off if RMs have time to act on them, so the base includes time savers (briefs, meeting follow-ups) alongside revenue insights.
 3. **Govern from day one and prove it with evidence.** Risk partners are involved from the first week. Results are measured against RMs not yet using the tool, so revenue is never credited to AI by mistake.
 
 **The plan (estimate):** a working prototype in week 1, built alongside
@@ -500,9 +500,9 @@ controlled results, so treat them as directional.
 | Banco do Brasil | 12,000+ RMs get AI conversation summaries and sentiment in one workspace, with sentiment written back to the CRM | [NiCE case study][bdb] (vendor, 2026) |
 | CaixaBank | Uses Salesforce Agentforce and Data Cloud, and built an AI assistant with Salesforce's AI tools to guide product applications; a specialist always finalizes the contract | [CaixaBank][caixa] (2025) |
 
-**Industry figures (directional):**
+**Industry figures (directional; checked against the article's text on 2026-10-10):**
 - McKinsey says banks that rework one frontline area end to end can see about 3–15% higher revenue per RM and 20–40% lower cost to serve ([McKinsey][mck], Dec 2025).
-- RMs at many commercial banks spend only about 25–30% of their time in client conversations ([Backbase][bb], citing McKinsey).
+- RMs at many commercial banks spend only about 25–30% of their time in client conversations ([McKinsey][mck], same article).
 
 **What this approach takes from it:** pair insights with freed-up time; track
 clients covered per RM; make adoption a management routine; capture why RMs
@@ -517,7 +517,6 @@ comparison group, which is rare in published results.
 [jpm]: https://www.aol.com/news/jpmorgan-says-ai-helped-boost-170825172.html
 [bdb]: https://www.nice.com/resources/banco-do-brasils-bankers-stopped-working-yesterdays-data-and-let-ai-hand-them-todays
 [caixa]: https://www.caixabank.com/en/headlines/news/caixabank-and-salesforce-collaborate-to-personalise-customer-experience-in-banking-services-through-ai
-[bb]: https://www.backbase.com/blog/how-ai-is-transforming-relationship-manager-productivity-in-commercial-banking
 
 ---
 

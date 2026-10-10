@@ -12,18 +12,18 @@ Claude updates it at every wrap-up: finished items move to "Closed" with the dat
 
 ## The path (agreed 2026-10-10)
 
-1. **Read and lock the core** (me): the RM plan, its one outside source and the playbook.
+1. **Read and lock the core** (me): the RM plan and the playbook.
 2. **Make the machine runnable** (Claude): templates, task list design, approvals map, control gaps.
 3. **Dry run and fix** (both): one made-up product through all six steps; fix what breaks.
 4. **Get ready for Andy** (Claude builds, I decide): the RM mock-up, the Andy edition and my questions for him.
 
-**Next up:** stage 1 (V1 and V2, the RM plan) and, at the same time, stage 2 (W17 and W18). Neither waits on the other.
+**Next up:** stage 1 (V1, the RM plan) and, at the same time, stage 2 (W17 and W18). Neither waits on the other.
 
 ## At a glance
 
 | Stage | Open | What it is |
 |---|---|---|
-| Stage 1. Read and lock the core | 7 | What I read, then the decision on the RM framework |
+| Stage 1. Read and lock the core | 6 | What I read, then the decision on the RM framework |
 | Stage 2. Make the machine runnable | 4 | What Claude builds so a real run is possible |
 | Stage 3. Dry run and fix | 3 | Running the machine once and fixing it |
 | Stage 4. Get ready for Andy | 10 | What Andy sees, and what I ask him |
@@ -48,7 +48,7 @@ every working file (this section replaces the separate Gap Review page).
 | Area | Rating | Where we are | Open items |
 |---|---|---|---|
 | The six-step process for one product | Strong on paper | Steps, gates, 44 sub-steps, first-time logs and the automation check at every gate. Not yet tried on real work | V3, W20 |
-| RM plan (the first worked example) | Strong draft, not reviewed | Memo v8, with agent specs and workflows. I've read only the summary's opening and plan table | V1, V2 |
+| RM plan (the first worked example) | Strong draft, not reviewed | Memo v8, with agent specs and workflows. I've read only the summary's opening and plan table | V1 |
 | Governance and controls | Partial | 25 controls named. 13 have a stage the playbook doesn't cover yet, such as who proves that only approved AI models are used | W13 |
 | Automating the process | Partial | Every task is marked Auto, Draft or Me, and 39 agents are fully specified: 33 general agents that run the delivery machine, and the RM product's own 6. None is built or tested. How much can run alone depends on whether the bank lets automations message people ⚠️ | B22, W20 |
 | Ready-to-fill templates | Missing | The brief, data contract, risk intake, gate pack, evidence pack and monitoring plan are described, but none exists as a template yet. The Draft agents need these to fill in | W17 |
@@ -66,7 +66,6 @@ every working file (this section replaces the separate Gap Review page).
 | # | Item | Who | Waits on |
 |---|---|---|---|
 | V1 | Read the RM Analytics Plan (the long scrolling page): everything after the summary's opening and plan table: from "What lets us move this fast" on, then Parts 1 to 6. The RM Analytics Framework design page holds the same words | Me | Nothing |
-| V2 | Read the One outside source in the RM plan: open the McKinsey article in a browser and check its numbers before sharing the plan. Cloud sessions can't open that site, so the numbers were checked through search summaries only | Me | Nothing |
 | V3 | Read the Delivery Playbook: all six steps (the agent list at the end is reference only) | Me | Nothing |
 | V4 | Read the The Delivery Machine: the page for leaders on how one product manager runs many projects | Me | Nothing |
 | V5 | Read the Bank Business Briefing: the whole page, new on 2026-10-09 | Me | Nothing |
@@ -178,5 +177,6 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C8 | Was W9: the line saying credit comes next is now part of W15, the Andy edition | 2026-10-10 |
 | C9 | Was W22: keeping the reference pages in line is now built into every audit (the alignment sweep and its automatic checks), and the Glossary was added as a fifth reference page | 2026-10-10 |
 | C10 | Was D5: yes to ideas 35 and 36. The design canvas's runtime is kept in the repo so the render check always runs, and a check before every merge blocks it if the audit checker or render check finds a problem | 2026-10-10 |
+| C11 | Was V2: the McKinsey numbers in the RM plan are confirmed against the article's text (3–15% higher revenue per RM, 20–40% lower cost to serve, and RMs spending about 25–30% of their time with clients). The last one is now credited to McKinsey directly | 2026-10-10 |
 
 _Last updated: 2026-10-10_
