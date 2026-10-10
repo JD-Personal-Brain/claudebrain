@@ -26,6 +26,21 @@ for block in re.split(r"\n### ", read("playbook/agents.md"))[1:]:
                    "fields": [(k, f[k]) for k in ["Starts when", "Inputs", "Allowed actions", "Not allowed", "Outputs", "Stops when", "Proof it worked", "Person in charge", "Runs on (guess)", "To confirm"]],
                    "source": "Delivery Playbook · agent library"})
 
+# Where each project agent (A#) is used in the delivery process: the framework task tables
+# tool column and the playbook review tables, so an agent used in several steps shows under each.
+used = {}
+for row in re.findall(r"^\| (\d\.\d) \|[^|]+\|[^|]+\|([^|]+)\|", read("product-framework.md"), re.M):
+    for aid in re.findall(r"\bA\d+\b", row[1]):
+        used.setdefault(aid, set()).add(row[0])
+import glob
+for f in sorted(glob.glob(os.path.join(ROOT, "playbook", "[1-6]-*.md"))):
+    for row in re.findall(r"^\| (\d\.\d) \|([^|]+)\|[^|]+\|[^|]+\|([^|]+)\|", open(f).read(), re.M):
+        if row[2].strip().lower().startswith("yes"):
+            for aid in re.findall(r"\bA\d+\b", row[1] + row[2]):
+                used.setdefault(aid, set()).add(row[0])
+order = lambda nums: sorted(nums, key=lambda n: tuple(map(int, n.split("."))))
+steps_of = lambda nums: sorted({STEPS[n[0]] for n in nums}, key=list(STEPS.values()).index)
+
 memo = read("memos/rm-analytics-framework.md")
 appa = memo.split("## Appendix A: Agent specs")[1].split("## Appendix B")[0]
 # A1-A6: the product RMs use
@@ -33,8 +48,9 @@ for block in re.split(r"\n\*\*(?=A\d+\. )", appa.split("### Agents the team uses
     head, _, body = block.partition("\n")
     m = re.match(r"(A\d+)\. (.+?)\*\*\s*·\s*(.+)", head)
     f = dict(re.findall(r"^- \*\*([^*]+):\*\*\s*(.*)$", body, re.M))
-    agents.append({"id": m.group(1), "name": m.group(2), "group": "product", "steps": ["Used by RMs"], "aim": "",
-                   "job": f["Job"], "meta": cap(m.group(3).strip()),
+    u = order(used.get(m.group(1), []))
+    agents.append({"id": m.group(1), "name": m.group(2), "group": "product", "steps": ["Used by RMs"] + steps_of(u), "aim": "",
+                   "job": f["Job"], "meta": cap(m.group(3).strip()) + (f" · also used in {', '.join(u)}" if u else ""),
                    "fields": [(k, f[k]) for k in ["Inputs", "Allowed actions", "Not allowed", "Outputs", "Stops when", "Proof it worked", "Person in charge"] if k in f],
                    "source": "RM Analytics plan · Appendix A"})
 # A7-A20: the RM project team
@@ -44,8 +60,9 @@ for row in appa.split("### Agents the team uses")[1].split("\n"):
         continue
     c = [x.strip() for x in m.group(3).split("|")]
     step, job, inputs, allowed, outputs, stops, proof, owner = c
-    agents.append({"id": m.group(1), "name": m.group(2), "group": "team", "steps": [SHORT[step]], "aim": "",
-                   "job": job, "meta": f"{SHORT[step]} step",
+    u = order(used.get(m.group(1), []))
+    agents.append({"id": m.group(1), "name": m.group(2), "group": "team", "steps": sorted(set([SHORT[step]] + steps_of(u)), key=list(STEPS.values()).index), "aim": "",
+                   "job": job, "meta": f"Used in {', '.join(u)}" if u else f"{SHORT[step]} step",
                    "fields": [("Inputs", inputs), ("Allowed actions", allowed), ("Outputs", outputs), ("Stops when", stops), ("Proof it worked", proof), ("Person in charge", owner)],
                    "source": "RM Analytics plan · Appendix A"})
 

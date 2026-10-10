@@ -13,22 +13,59 @@ every wrap-up: finished items move to "Closed" with the date, and new ones are a
 
 | Group | Open | What it is |
 |---|---|---|
-| 1. Decisions waiting on me | 1 | Things only I can decide |
-| 2. Reviews waiting on me | 10 | Pages Claude built that I haven't read yet (numbered V, for "review") |
-| 3. Work to do | 13 | Next pieces of real work, in rough order |
+| 1. Decisions waiting on me | 3 | Things only I can decide |
+| 2. Reviews waiting on me | 6 | Pages Claude built that I haven't read yet (numbered V, for "review") |
+| 3. Work to do | 21 | Next pieces of real work, in rough order |
 | 4. To confirm at the bank | 27 | Questions the plans depend on, 7 of which I can ask Andy now |
-| 5. Parked on purpose | 3 | Not forgotten; waiting for a signal from me |
+| 5. Parked on purpose | 4 | Not forgotten; waiting for a signal from me |
 
 "Andy" here is my main contact at the bank. ⚠️ Claude assumes this is Andy Miner, the bank's senior director of AI for Corporate & Commercial Banking.
 
 **The one that unblocks the most:** V1, reading the rest of the RM (relationship manager) plan. The RM
 framework can't be called ready (D1) until I've read it, and credit (P1) waits on D1.
 
+## Where we stand
+
+**The goal right now:** build the machine for one product, end to end, and get
+it running. Two or more products come after that. Checked on 2026-10-10 against
+every working file (this section replaces the separate Gap Review page).
+
+> **Later, not now: running many products at once.** We know we'll need it, but
+> it isn't a priority until the machine runs one product well. It covers: one
+> intake form for new product ideas, a scoring rule to rank them against each
+> other, how many products I can run at once, my week and month across products,
+> and when a live product is retired. Kept as parked item P4.
+
+| Area | Rating | Where we are | Open items |
+|---|---|---|---|
+| The six-step process for one product | Strong on paper | Steps, gates, 44 sub-steps, first-time logs and the automation check at every gate. Not yet tried on real work | V3, W20 |
+| RM plan (the first worked example) | Strong draft, not reviewed | Memo v8, with agent specs and workflows. I've read only the summary's opening and plan table | V1, V2 |
+| Governance and controls | Partial | 22 controls named. 11 have a stage the playbook doesn't cover yet, such as who proves that only approved AI models are used | W13 |
+| Automating the process | Partial | Every task is marked Auto, Draft or Me, and 39 agents are listed: the 19 that run the delivery machine are fully specified, and the RM project's 20 are in a shorter form. None is built or tested. How much can run alone depends on whether the bank lets automations message people ⚠️ | B22, W20 |
+| Ready-to-fill templates | Missing | The brief, data contract, risk intake, gate pack, evidence pack and monitoring plan are described, but none exists as a template yet. The Draft agents need these to fill in | W17 |
+| Task list design | Missing | The reminders, status notes and progress view all read from one task list, but its fields aren't written down, and we don't know the bank's tool yet | W18, B23 |
+| Approvals | Partial | Who decides is clear for every step. There's no map of who signs what, how long it takes, or who to go to when a sign-off is stuck | W19, B21 |
+| Showing what an RM sees | Missing | The plan promises a working prototype in week 1, but there's nothing to show yet | W14 |
+| A version written for Andy | Missing | The plan is written as my working plan, with internal labels, and doesn't say credit comes next | W15 |
+| Knowing the RM's real day | Partial | The Bank Business Briefing is done. My own notes on bankers' problems stopped at step 1 | V5, W2 |
+| After launch: support and incidents | Partial | Incident steps exist (who to call, how to pause). No support model or runbook yet. Needed before the first product goes live, not before Andy | W21 |
+
+**The path (decided 2026-10-10):**
+1. I read the pages, starting with the RM plan (V1, V2, then V3).
+2. Claude builds the templates (W17) and the task list design (W18).
+3. A dry run of the machine on a small made-up product (W20), logging where it breaks.
+4. Before sharing anything with Andy: the RM mock-up (W14) and the short Andy edition (W15).
+
+**What we don't need more of:** new catalogs or building-block pages. Reading
+what exists, then the dry run, is the bottleneck.
+
 ## 1. Decisions waiting on me
 
 | # | Decision | Why it matters | Where it came from |
 |---|---|---|---|
 | D1 | Is the RM framework ready to copy to other use cases? My answer on 2026-10-09: not yet. The reviews in section 2 and the work in section 3 come first | Credit, the next use case, waits on this | My decision on 2026-10-09: RM first, credit second |
+| D2 | The 14 helper agents in the RM plan (A7 to A20, such as the test grader and the feedback sorter) are written for RM, but my product framework uses them for every project. Should Claude rewrite them as general agents in the delivery machine's library? Claude recommends yes: otherwise the next project (credit) has no sizing, testing, red-teaming or impact agents | Every project after RM reuses these | Alignment audit, 2026-10-10 |
+| D3 | Three safeguards in the RM plan have no control in the Controls Catalog: no client data in unapproved AI tools, client consent before recording a meeting, and agents stop rather than guess when their inputs are bad. Add them as new controls (with playbook lines), or fold each into an existing one? Claude recommends adding them. The same audit found that the playbook's control check (4.5) never mentions separate build, test and live spaces or IT's data-sharing rules, though the RM plan does; that's a playbook change under W13 | The controls must cover everything the plan promises | Alignment audit, 2026-10-10 |
 
 ## 2. Reviews waiting on me
 
@@ -36,14 +73,10 @@ framework can't be called ready (D1) until I've read it, and credit (P1) waits o
 |---|---|---|---|
 | V1 | RM Analytics Plan (the long scrolling page) | Everything after the summary's opening and plan table: from "What lets us move this fast" on, then Parts 1 to 6. The RM Analytics Framework design page holds the same words | Me |
 | V2 | One outside source in the RM plan | Open the McKinsey article in a browser and check its numbers before sharing the plan. Cloud sessions can't open that site, so the numbers were checked through search summaries only | Me |
-| V3 | Delivery Playbook | All six steps, plus the agent library at the end | Me |
+| V3 | Delivery Playbook | All six steps (the agent list at the end is reference only) | Me |
 | V4 | The Delivery Machine | The page for leaders on how one product manager runs many projects | Me |
 | V5 | Bank Business Briefing | The whole page, new on 2026-10-09 | Me |
-| V6 | Workflow Maps | Both maps | Me |
-| V7 | Agent Library | All 39 agents | Me |
 | V8 | Six-Step Product Workflow | The one-page visual, still marked Draft | Me |
-| V9 | Steps Catalog | New on 2026-10-09: all 44 sub-steps as cards I can search | Me |
-| V10 | Controls Catalog | New on 2026-10-09: 22 governance controls. Claude gathered them from my own framework, so check they are the right ones | Me |
 
 If a review changes the six steps, the Product Framework page has to be updated to match.
 
@@ -63,7 +96,15 @@ If a review changes the six steps, the Product Framework page has to be updated 
 | W10 | Check the product details marked "(verify)" in the Tech Stack Guide: product names, prices, vendor terms and any update to the regulators' model-risk guidance. Eleven lines carry the mark | Claude | Nothing |
 | W11 | Fewer approval pop-ups (idea 2, approved): tell Claude which pop-ups I still see and in which app, so it can pre-approve the safe, read-only ones. Claude won't change my permission settings on a guess | Me, then Claude | Nothing |
 | W12 | Playbooks for my everyday tools (idea 3, approved): name two or three tasks I repeat in email, calendar or documents. Claude turns each into a step-by-step skill | Me, then Claude | Nothing |
-| W13 | Close the gaps the Controls Catalog found in my playbook: 11 of the 22 controls have a stage marked "not covered in the playbook yet", such as who proves that only approved AI models are used. Each needs a line added to the right playbook step, or a decision that it isn't needed | Claude, with my yes for each playbook change | V10 |
+| W13 | Close the gaps the Controls Catalog found in my playbook: 11 of the 22 controls have a stage marked "not covered in the playbook yet", such as who proves that only approved AI models are used. Each needs a line added to the right playbook step, or a decision that it isn't needed | Claude, with my yes for each playbook change | Nothing |
+| W14 | Build an RM mock-up: clickable screens of the Monday opportunity list and the pre-meeting client brief, on made-up sample data, so Andy can see what an RM gets | Claude, with my review | My yes |
+| W15 | Build an "Andy edition" of the RM plan: two to three pages in his terms, no internal labels, with one line that credit comes next. Includes W9 | Claude, then me | V1, V2 and my yes |
+| W17 | Ready-to-fill templates: brief, data contract, risk intake, gate pack, decision log, evidence pack, monitoring plan, release-readiness checklist | Claude drafts, I review | My yes |
+| W18 | Tracker design: the fields every task carries, written to work in any tool (bank question B23 is still open) | Claude drafts, I review | My yes |
+| W19 | Approvals map for one product: who signs what at each gate, typical turnaround ⚠️, and who to go to when a sign-off is stuck | Claude drafts, I review | My yes |
+| W20 | Dry run of the machine: take one small made-up product through all six steps with the templates and two or three agents built as Claude skills, and log where it breaks | Claude and me | W17 and W18, and my read of the pages (V1, V3) |
+| W21 | Support model and incident runbook for one product: who users call, how issues are logged and fixed, and the steps to pause or roll back the product | Claude drafts, I review | Before the first product goes live |
+| W22 | Keep the reference pages (Agent Library, Workflow Maps, Steps Catalog, Controls Catalog) in line with every working file: run the alignment audit and fix what it finds. These are never on my review list (lesson L18, 2026-10-10) | Claude | Nothing |
 
 ## 4. To confirm at the bank
 
@@ -95,7 +136,7 @@ or the hiring team before I start. The rest need someone inside.
 | B21 | What does the AI governance process look like, and how long does a review usually take? | No | RM plan, section 11; Tech Stack Guide |
 | B22 | May automations message people or update trackers by themselves? This decides how much of the delivery machine can run on its own | No | Product Framework |
 | B23 | Which tracker tool does the bank use for projects? | No | Product Framework; agent library |
-| B24 | Eleven smaller permissions the delivery agents depend on, such as whether meeting recaps are allowed, which test environments exist and how sign-offs must be recorded. Each is listed under "To confirm" in the agent library, and one overlaps B22 | No | `playbook/agents.md` |
+| B24 | Eleven smaller permissions (twelve "To confirm" items, minus the tracker question in B23) the delivery agents depend on, such as whether meeting recaps are allowed, which test environments exist and how sign-offs must be recorded. Each is listed under "To confirm" in the agent library, and one overlaps B22 | No | `playbook/agents.md` |
 | B25 | Do RMs work mainly in Salesforce? This decides where the insights appear | No | RM plan, section 5 |
 | B26 | The numbers still shown as [X] in the RM plan and the Product Framework, such as payback months, weekly-use targets and how many projects I run at once, and the plan's week estimates. Each gets set with the bank's real figures | No | RM plan; Product Framework |
 | B27 | The 46 guesses about the bank marked ⚠️ across the six playbook steps. Each gets replaced with a fact as I learn it. Many overlap B15 to B23 | No | Delivery Playbook |
@@ -107,6 +148,7 @@ or the hiring team before I start. The rest need someone inside.
 | P1 | The credit (portfolio management) use case. Ready for then: six credit processes AI could support, franchise banking as a possible pilot, and whether to add "costs saved" and "loan losses avoided" to the value model | Me saying the RM framework is ready (D1) | 2026-10-09 |
 | P2 | Sharing with Associated. When I'm ready, Claude builds an "Associated edition" of the Document Library (idea 33): only the pages meant for them, with no internal labels | Me saying I'm ready to share | 2026-10-09 |
 | P3 | A treasury and payments use case. The bank named it as a starting point for AI, and nothing has been planned yet | After credit, unless B3 changes the order | 2026-10-09 |
+| P4 | **Featured: running many products at once.** One intake form for new product ideas, a scoring rule to rank them against each other, how many products I can run at once, my week and month across products, and when a live product is retired | The machine running one product well first | 2026-10-10 |
 
 ## 6. Closed
 
@@ -118,4 +160,4 @@ or the hiring team before I start. The rest need someone inside.
 | C4 | Was D3: yes to four ideas. The shorthand check (idea 32) and the Steps and Controls catalogs (idea 34) are built. Fewer pop-ups (idea 2) and everyday playbooks (idea 3) need facts from me first: see W11 and W12 | 2026-10-09 |
 | C5 | Was D4: remove my safety rules (idea 16). The pop-up explanations and "Deny is safe" reminders are gone from the rule book, with the two pop-up rules and their tests | 2026-10-09 |
 
-_Last updated: 2026-10-09_
+_Last updated: 2026-10-10_

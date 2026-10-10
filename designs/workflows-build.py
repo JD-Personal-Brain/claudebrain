@@ -36,16 +36,21 @@ for fn in sorted(f for f in os.listdir(os.path.join(ROOT, "playbook")) if re.mat
         if not m:
             continue
         num, title = m.groups()
-        agents = set()
+        agents, assets = set(), []
         for row in review.split("\n"):
             cells = [c.strip() for c in row.strip().strip("|").split("|")]
             if len(cells) >= 5 and num in [x.strip() for x in cells[0].split(",")]:
-                agents |= set(re.findall(r"\b[MA]\d+\b", cells[1] + " " + cells[4]))
+                # only agents the row actually uses: the "Already specified?" cell names them ("Yes, M1",
+                # "Yes, A11 ..."); a mention like "None (feeds A17)" in the Agent cell is not a use
+                if cells[4].lower().startswith("asset"):
+                    assets.append(cells[1])
+                if cells[4].lower().startswith("yes"):
+                    agents |= set(re.findall(r"\b[MA]\d+\b", cells[1] + " " + cells[4]))
         agents = sorted(agents, key=lambda a: (a[0], int(a[1:])))
         branches.append({
             "id": f"d{num.replace('.', '-')}", "num": num, "title": title,
             "goal": field(body, "Goal"), "done": field(body, "Done when"),
-            "tasks": kinds.get(num, []), "agents": agents,
+            "tasks": kinds.get(num, []), "agents": agents, "assets": assets,
             "link": f"{PLAYBOOK_URL}#s{num.replace('.', '-')}",
         })
     stages1.append({"n": n, "name": name, "q": q, "gate": gate, "branches": branches})
@@ -94,7 +99,10 @@ def chips(ts):
 
 def delivery_detail(b):
     tasks = "".join(f"<li>{chipify(k)} {inline(t)}</li>" for t, k in b["tasks"])
-    ag = ", ".join(b["agents"]) if b["agents"] else "None: this stays with a person"
+    auto = any(kind.split()[0] in ("Auto", "Draft") for _, kind in b["tasks"])
+    ag = ", ".join(b["agents"] + [f"{a.replace(' (template)', '')} (a reusable template)" for a in b["assets"]])
+    if not ag:
+        ag = "No named agent yet" if auto else "None: this stays with a person"
     return (f'<h4><span class="num">{b["num"]}</span> {inline(b["title"])}</h4>'
             f'<dl class="facts"><div><dt>Goal</dt><dd>{inline(b["goal"][:1].upper() + b["goal"][1:])}</dd></div>'
             f'<div><dt>Done when</dt><dd>{inline(b["done"][:1].upper() + b["done"][1:])}</dd></div>'
@@ -211,7 +219,7 @@ page = f'''<title>Workflow Maps</title>
 </section>
 <section id="rm" class="mapwrap">
 <div class="stephead"><span class="label">Map 2 · RM Analytics</span><h2>How an RM uses the product</h2>
-<p class="intro" style="margin-top:6px;color:var(--muted)">An RM's week, with each of the product's workflows placed where it helps. Every workflow has a point where the RM decides; nothing reaches a client without the RM.</p></div>
+<p class="intro" style="margin-top:6px;color:var(--muted)">An RM's week, with each of the product's workflows placed where it helps. Every RM-facing workflow (B1 to B8) has a point where the RM decides, and nothing reaches a client without the RM. B9 is the release routine behind them.</p></div>
 <div class="note">⚠️ Grouping the workflows into these four stages is my framing of the plan. Confirm it with RMs in Discover.</div>
 {map2}
 {loop}

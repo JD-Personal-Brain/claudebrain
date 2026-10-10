@@ -97,7 +97,7 @@ listed actions, and those marked ⚠️ wait until the bank allows it.
 - **To confirm:** ⚠️ who may set up scheduled snapshots.
 
 ### M6. Gate pack drafter
-- **Used in:** 1.7, 2.8, 5.7 (and any gate)
+- **Used in:** 1.7, 2.8, 3.7, 5.7 (and any gate)
 - **For:** the team
 - **Kind:** Draft → Draft
 - **Job:** put a step's outputs together into one gate pack.

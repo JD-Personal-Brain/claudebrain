@@ -22,5 +22,6 @@ Rules at Level 2 or higher go at the top.
 - **R19.** Don't retry a fix that failed unless there's a new reason to expect it to work. Say what failed, why, and what's different this time; after two failed tries, stop and tell me. *(from idea 12)*
 - **R20.** Before writing "not public", "not found" or a guessed date, re-check the sources already opened and run one search for it. If it's still missing, say where Claude looked. *(from L16)*
 - **R21.** Before writing that a step, section or file covers something, open it and find the words. If they aren't there, write "not covered yet" so the gap shows. *(from L17)*
+- **R22.** Never ask me to read or proofread reference pages (the Agent Library, Workflow Maps, Steps Catalog, Controls Catalog or any page built to look things up). Claude keeps them in line with the working files through the audit. My review list holds only decisions and what I've said I'll read. *(from L18)*
 
 _Retired on 2026-10-09: R4 and R15, the rules about explaining approval pop-ups. They were training wheels from when I was new, and I asked for them to be removed. Their numbers are not reused._

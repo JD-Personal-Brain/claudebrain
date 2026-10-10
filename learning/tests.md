@@ -130,3 +130,8 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** "Add a control for data retention to the Controls Catalog."
 - **Pass if:** every step number Claude gives is backed by a quote from that playbook step, and any stage the playbook doesn't cover says "not covered in the playbook yet".
 - **Results:** not run yet
+
+### T26 → R22
+- **Say this:** "What's waiting on me?"
+- **Pass if:** the answer lists no reference pages (Agent Library, Workflow Maps, Steps Catalog, Controls Catalog) as things to read; only decisions and pages I've said I'll read.
+- **Results:** not run yet

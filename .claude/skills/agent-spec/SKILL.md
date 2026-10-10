@@ -42,7 +42,7 @@ assistive first, one job each, read-only by default, every action logged.
 ## 4. Update the references
 - In the playbook review table, change "Already specified?" from "New" to "Yes, M#" (or "Yes, A#").
 - If the agent changes how a task is done, update the framework table row's tool.
-- Rebuild and republish the designed page (`python3 designs/playbook-build.py`; the playbook page shows the agent library), then run `python3 .claude/skills/audit/check.py`.
+- Rebuild and republish the designed pages: the playbook page (`python3 designs/playbook-build.py`; it shows the delivery-machine agents) and the Agent Library (`python3 designs/agents-build.py`). For a project agent in a memo's Appendix A, also update that project's design page first, then rebuild its scrolling page. Then run `python3 .claude/skills/audit/check.py`.
 
 ## 5. Audit, then merge
 Run the **audit** skill (rule R18) before offering to merge.

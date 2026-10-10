@@ -110,11 +110,11 @@ footer{font-size:14px;color:var(--muted);padding-block:0 48px}
         <div class="step last" style="grid-column:6"><span class="n">STEP 6</span><h3>Measure and iterate</h3><p>Is it delivering the outcome, and what comes next?</p></div>
 
         <div class="gate" style="grid-column:1"><i></i><b>Gate 1</b><span>Sponsor agrees on the target, the measure and today's baseline</span></div>
-        <div class="gate" style="grid-column:2"><i></i><b>Gate 2</b><span>Brief, data contract and risk rating agreed; value model makes sense</span></div>
-        <div class="gate" style="grid-column:3"><i></i><b>Gate 3</b><span>Meets the quality bar in testing</span></div>
+        <div class="gate" style="grid-column:2"><i></i><b>Gate 2</b><span>Brief, data contract and risk rating agreed; value model shows payback within [X] months</span></div>
+        <div class="gate" style="grid-column:3"><i></i><b>Gate 3</b><span>Meets the quality bar in testing; every control has proof</span></div>
         <div class="gate" style="grid-column:4"><i></i><b>Gate 4</b><span>All sign-offs recorded; monitoring plan agreed</span></div>
-        <div class="gate" style="grid-column:5"><i></i><b>Gate 5</b><span>Weekly use and results hit targets; no serious incidents</span></div>
-        <div class="gate" style="grid-column:6"><i></i><b>Gate 6</b><span>Keep, change or stop each feature; invest more, adjust or stop overall</span></div>
+        <div class="gate" style="grid-column:5"><i></i><b>Gate 5</b><span>Weekly use and results hit targets; no serious incidents; long-term owner confirmed before scaling</span></div>
+        <div class="gate" style="grid-column:6"><i></i><b>Gate 6</b><span>Each month (and at the end of each wave): keep, change or stop each feature; each quarter: invest more, adjust or stop overall</span></div>
 
         <div class="gov">
           <div class="title">Governance thread · runs through every step</div>
@@ -143,23 +143,23 @@ footer{font-size:14px;color:var(--muted);padding-block:0 48px}
     </div>
     <div class="cards">
       <div class="card"><span class="label">Step 1</span><h3>Discover</h3>
-        <ul><li>Frame the outcome with the sponsor</li><li>Size the opportunity with real data</li><li>Interview and shadow users; map where their time goes</li><li>Understand how they're measured and rewarded</li><li>Show users a working prototype from week 1</li><li>Pick the first target and record today's numbers</li></ul>
+        <ul><li>Kick off the project (sponsor, who decides, tracker, risk briefing)</li><li>Frame the outcome with the sponsor</li><li>Size the opportunity with real data</li><li>Interview and shadow users</li><li>Map where their time goes</li><li>Understand how they're measured and rewarded</li><li>Test a rough mock-up</li><li>Pick the first target and record today's numbers</li></ul>
         <div class="g"><strong>Gate:</strong> sponsor agrees on the target, the measure and today's baseline.</div></div>
       <div class="card"><span class="label">Step 2</span><h3>Define</h3>
-        <ul><li>One-sentence problem and measurable outcome</li><li>Choose the platform and delivery path</li><li>Data contract: exact fields, freshness, quality checks</li><li>Start the risk intake; list the control requirements</li><li>User stories with acceptance criteria; backlog priorities and trade-offs</li><li>Measures, quality bar and value model; smallest useful first release and pilot group</li></ul>
-        <div class="g"><strong>Gate:</strong> brief, data contract and risk rating agreed; value model makes sense.</div></div>
+        <ul><li>Write the problem and the outcome (one sentence each, measurable)</li><li>Choose the platform and delivery path</li><li>Define the data contract (exact fields, freshness, quality checks)</li><li>Start the risk intake and list the control requirements</li><li>Write user stories and acceptance criteria</li><li>Set priorities and record the trade-offs</li><li>Set the measures (the five kinds, below), quality bar and value model</li><li>Scope the first release and the pilot group</li></ul>
+        <div class="g"><strong>Gate:</strong> brief, data contract and risk rating agreed; value model shows payback within [X] months.</div></div>
       <div class="card"><span class="label">Step 3</span><h3>Build</h3>
-        <ul><li>Configure the right AI capability: agents, retrieval with sources, data flows, automations or integrations</li><li>Prepare trusted data</li><li>Simple, explainable logic first: AI explains, it doesn't invent</li><li>Deliver it where users already work, with the source behind every answer</li><li>One-click feedback; build the test set</li></ul>
-        <div class="g"><strong>Gate:</strong> meets the quality bar in testing.</div></div>
+        <ul><li>Design the solution and choose the AI capabilities (agents, retrieval with sources, data flows, workflow automations or system integrations)</li><li>Prepare trusted data</li><li>Build the logic: simple rules first, AI explains (it doesn't invent)</li><li>Build in the controls</li><li>Deliver it where users work, with the source behind every answer and one-click feedback</li><li>Build the test set (real examples with known good answers)</li><li>Test against the quality bar</li></ul>
+        <div class="g"><strong>Gate:</strong> meets the quality bar in testing; every control has proof.</div></div>
       <div class="card formal"><span class="label" style="color:var(--amber)">Step 4 · Formal approval</span><h3>Govern and test</h3>
-        <ul><li>Confirm the risk rating</li><li>Review data and privacy</li><li>Testing evidence: accuracy, made-up answers, red-teaming</li><li>Fairness check</li><li>Confirm controls: human approval, guardrails, audit logs</li><li>Vendor reviews; sign-offs from risk, compliance, privacy and security</li></ul>
+        <ul><li>Confirm the risk rating and register the product</li><li>Review data and privacy</li><li>Gather the testing evidence (accuracy, made-up answers, red-teaming)</li><li>Check fairness</li><li>Confirm the controls work (human approval, guardrails, audit logs)</li><li>Confirm the vendor reviews</li><li>Assemble the evidence pack and get sign-offs from risk, compliance, privacy and security</li><li>Agree the monitoring plan</li></ul>
         <div class="g"><strong>Gate:</strong> all sign-offs recorded; monitoring plan agreed.</div></div>
       <div class="card"><span class="label">Step 5</span><h3>Release and adopt</h3>
-        <ul><li>Confirm release readiness</li><li>Pilot with a comparison group</li><li>Build it into existing routines (the core of adoption)</li><li>Train on users' own work; recruit champions</li><li>Celebrate wins; fix fast</li><li>Scale in waves after a go/no-go check</li></ul>
-        <div class="g"><strong>Gate:</strong> weekly use and results hit targets; no serious incidents.</div></div>
+        <ul><li>Confirm release readiness</li><li>Launch the pilot, with a comparison group</li><li>Build it into routines (the core of adoption)</li><li>Train users on their own work</li><li>Recruit champions and celebrate wins</li><li>Fix fast</li><li>Scale in waves after a go/no-go check</li></ul>
+        <div class="g"><strong>Gate:</strong> weekly use and results hit targets; no serious incidents; long-term owner confirmed before scaling.</div></div>
       <div class="card"><span class="label">Step 6</span><h3>Measure and iterate</h3>
-        <ul><li>Live dashboards</li><li>Compare with the baseline and the comparison group</li><li>Re-test after every change; watch for quality slipping ("drift")</li><li>Monthly keep, change or stop review</li><li>Feed the next wave</li></ul>
-        <div class="g"><strong>Gate:</strong> keep, change or stop each feature; invest more, adjust or stop overall.</div></div>
+        <ul><li>Track the measures on a live dashboard</li><li>Compare with the baseline and the comparison group</li><li>Re-test after every change, and watch for quality slipping ("drift")</li><li>Hold the monthly keep / change / stop review</li><li>Feed the next wave</li><li>Improve the machine itself</li></ul>
+        <div class="g"><strong>Gate:</strong> each month (and at the end of each wave): keep, change or stop each feature; each quarter: invest more, adjust or stop overall.</div></div>
     </div>
   </section>
 
@@ -175,7 +175,8 @@ footer{font-size:14px;color:var(--muted);padding-block:0 48px}
         <tbody>
           <tr><td>Sponsor</td><td>Outcome, funding, go/no-go at each gate</td></tr>
           <tr><td>User leaders and pilot users</td><td>Workflow and feedback</td></tr>
-          <tr><td>Product manager (this role)</td><td>Scope, priorities, trade-offs</td></tr>
+          <tr><td>Product manager (this role)</td><td>Scope, priorities, trade-offs; owns the product until a long-term owner is named</td></tr>
+          <tr><td>Long-term owner</td><td>Identified during the project (for example, someone in a revenue line); named in Define if known, confirmed before scaling</td></tr>
           <tr><td>Data owners</td><td>What data may be used</td></tr>
           <tr><td>Platform teams</td><td>Technical design</td></tr>
           <tr><td>Model risk</td><td>Risk rating and approval</td></tr>

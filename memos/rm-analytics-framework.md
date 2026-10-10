@@ -49,7 +49,7 @@ order it in Discover.
 
 | Wave (estimate) | Standard use case | Revenue lever or goal | Built mainly on |
 |---|---|---|---|
-| **Wave 1** (live about weeks 3–6) | Pre-meeting client brief | Time; all levers | Salesforce, Snowflake, Agentforce or M365 Copilot |
+| **Wave 1** (live about weeks 2–6: follow-up about weeks 2–4, brief and opportunity list about weeks 4–6) | Pre-meeting client brief | Time; all levers | Salesforce, Snowflake, Agentforce or M365 Copilot |
 | | Meeting recap and follow-up draft | Time | M365 Copilot in Teams and Outlook |
 | | Weekly opportunity list (product gaps) | Grow existing clients | Snowflake signals, Power Automate digest |
 | **Wave 2** (live about week 10) | Early warning: client may leave | Keep clients | Snowflake signals, Salesforce |
@@ -128,7 +128,7 @@ each with an owner and a date, reviewed weekly with the core team and at each ga
 
 Six steps, each ending in a **go/no-go gate**. The first pass through all six
 overlaps: a working prototype exists in week 1, and the first features are
-live in weeks 3–6; after that, steps 3–6 repeat in cycles of a week or two, and each new wave of use cases takes a short pass through
+live in about weeks 2–6 (meeting follow-up about weeks 2–4, insights about weeks 4–6); after that, steps 3–6 repeat in cycles of a week or two, and each new wave of use cases takes a short pass through
 Discover and Define. **Governance runs through every step**; Step 4 is the
 formal approval gate, not the first time risk partners see the product.
 
@@ -136,10 +136,10 @@ formal approval gate, not the first time risk partners see the product.
 |---|---|---|---|
 | **1. Discover** | Which standard use cases come first, and which revenue lever matters most? | Risk partners briefed on the idea | Sponsor agrees on the wave 1 use cases, the target lever and the baseline |
 | **2. Define** | What exactly do we build first, and how will we know it worked? | Risk intake and early rating; data use approved | Brief, data contract and risk rating agreed; value model shows payback within [X] months |
-| **3. Build** | What's the smallest version RMs will use and trust? | Controls built in; test set created | Meets the quality bar (below) in testing |
+| **3. Build** | What's the smallest version RMs will use and trust? | Controls built in; test set created | Meets the quality bar (below) in testing; every control has proof |
 | **4. Govern and test** | Is it safe, fair and controlled? | Formal validation and sign-offs | All sign-offs recorded; monitoring plan agreed |
-| **5. Release and adopt** | Will RMs use it every week? | Live monitoring; incident process | At least [X]% of pilot RMs active weekly, at least [X]% of insights acted on, no high-severity incidents |
-| **6. Measure and iterate** | Is it creating new revenue, and what comes next? | Ongoing model monitoring | Every wave: keep, change or stop each use case; quarterly: invest more, adjust or stop, based on results against the comparison group |
+| **5. Release and adopt** | Will RMs use it every week? | Live monitoring; incident process | At least [X]% of pilot RMs active weekly, at least [X]% of insights acted on, no high-severity incidents; long-term owner confirmed before scaling |
+| **6. Measure and iterate** | Is it creating new revenue, and what comes next? | Ongoing model monitoring | Each month (and at the end of each wave): keep, change or stop each use case; quarterly: invest more, adjust or stop, based on results against the comparison group |
 
 **Each step is described the same way:** Goal · Work (sub-steps and tools) ·
 AI strategy (the agents) · AI for the team · AI for RMs · Data · Output ·
@@ -237,7 +237,7 @@ loop compounds over time and is a reason to build both goals together.
 | Agent | Type | Job | Runs on | Reads from | Person in charge |
 |---|---|---|---|---|---|
 | Requirements drafter | For the team | Drafts the problem statement, user stories and acceptance criteria | M365 Copilot in Word, or Copilot Studio | Discover findings | PM edits; team and sponsor approve |
-| Data contract checker | For the team | Checks fields exist, are fresh and pass quality checks; flags gaps | Snowflake Cortex | Snowflake tables and their quality and access records | Data owner signs off |
+| Data contract checker | For the team | Checks fields exist, are fresh and pass quality checks; flags gaps. After Define, runs on every data refresh and alerts the data owner on failure | Snowflake Cortex | Snowflake tables and their quality and access records | Data owner signs off |
 | Risk intake assistant | For the team | Pre-fills the risk intake and flags likely high-risk areas | Copilot Studio agent grounded in bank policies | Policy documents, product brief | A risk partner sets the rating |
 
 - **AI for the team:** drafting stories, criteria and test questions for review.
@@ -285,7 +285,7 @@ and Outlook).
 - **Data:** live connections from Snowflake and Salesforce; each RM sees only clients they're already allowed to see.
 - **Output:** a working product in a test environment, the test results and an evidence pack started.
 - **Checks:** filters that block sensitive data and off-topic answers (Bedrock Guardrails, Salesforce Einstein Trust Layer); every AI action logged; client consent for any recorded meeting.
-- **Gate:** meets the quality bar in testing.
+- **Gate:** meets the quality bar in testing, and every control has proof.
 
 ---
 
@@ -308,7 +308,7 @@ and Outlook).
 | Agent | Type | Job | Runs on | Reads from | Person in charge |
 |---|---|---|---|---|---|
 | Red-team agent | For the team | Generates thousands of tricky requests (another RM's clients, a credit decision) to try to break the product | AWS Bedrock | The product in test | Risk reviews every failure |
-| Fairness monitor | For the team | Checks opportunities are spread fairly across segments and regions | Snowflake, Power BI | Opportunity outputs, client segments | Compliance reviews results |
+| Fairness monitor | For the team | Checks opportunities are spread fairly across segments and regions; runs again monthly after launch | Snowflake, Power BI | Opportunity outputs, client segments | Compliance reviews results |
 | Evidence pack assembler | For the team | Compiles test results, data use and controls into review documents | M365 Copilot in Word | Test results, data contract, controls | PM and risk verify every claim |
 
 - **AI for the team:** red-teaming at scale; assembling the evidence pack.
@@ -348,7 +348,7 @@ and Outlook).
 - **Data:** usage, feedback and AI-sourced opportunities flowing into dashboards.
 - **Output:** pilot results and a scale decision.
 - **Checks:** live monitoring; every issue has an owner and an escalation path.
-- **Gate:** at least [X]% of pilot RMs active weekly, at least [X]% of insights acted on, and no high-severity incidents.
+- **Gate:** at least [X]% of pilot RMs active weekly, at least [X]% of insights acted on, and no high-severity incidents; the long-term owner is confirmed before scaling.
 
 ---
 
@@ -396,7 +396,7 @@ goal is a product that pays for itself.
 - **Data:** AI-sourced opportunities tagged in Salesforce from day one.
 - **Output:** a monthly impact report and an updated backlog.
 - **Checks:** ongoing monitoring under the model risk framework.
-- **Gate:** every wave, keep, change or stop each use case; each quarter, invest more, adjust or stop, based on results against the comparison group.
+- **Gate:** each month (and at the end of each wave), keep, change or stop each use case; each quarter, invest more, adjust or stop, based on results against the comparison group.
 
 ---
 
@@ -442,12 +442,12 @@ call is made at Gate 2 (week 2).
 
 | Step | Weeks (estimate) | Ends with |
 |---|---|---|
-| **1. Discover** | Weeks 1–2, with a working prototype in week 1 (short sprints before later waves) | Gate 1 (end of week 1): wave 1 use cases, target lever, baseline |
+| **1. Discover** | Weeks 1–2, with a working prototype in week 1 (short sprints before later waves) | Gate 1 (end of week 1): wave 1 use cases, target lever, baseline; interviews and sizing continue in week 2 |
 | **2. Define** | Weeks 1–2, alongside discovery | Gate 2 (week 2): data contract, risk rating, value model; split decision if needed |
-| **3. Build** | From day 1. Wave 1: weeks 1–5; wave 2: 7–9; wave 3: 11–14 | Gate 3: each feature meets the quality bar in testing |
+| **3. Build** | From day 1. Wave 1: weeks 1–5; wave 2: 7–9; wave 3: 11–14 | Gate 3: each feature meets the quality bar in testing, and every control has proof |
 | **4. Govern and test** | Risk partner reviews each version from week 1; sign-offs per feature | Gate 4: each feature approved for real RMs and real client data |
-| **5. Release and adopt** | Follow-up live about weeks 2–4; insights about weeks 4–6; releases every week or two | Gate 5: each wave meets its adoption targets |
-| **6. Measure and iterate** | Leading measures from the first live week; closed revenue read about month 6 | Gate 6: invest more, adjust or stop |
+| **5. Release and adopt** | Follow-up live about weeks 2–4; insights about weeks 4–6; releases every week or two | Gate 5: each wave meets its adoption targets; long-term owner confirmed before scaling |
+| **6. Measure and iterate** | Leading measures from the first live week; closed revenue read about month 6 | Gate 6: keep, change or stop each use case monthly; invest more, adjust or stop each quarter |
 
 **By day 90 (about week 13):** wave 1 has been live with pilot RMs for about
 two months, wave 2 is live, wave 3 is in review, and leading measures are
@@ -588,7 +588,7 @@ risk partner can review it. **[X]** values are set in Define.
 - **Proof it worked:** test-set score meets the quality bar (accuracy, sources, relevance); every number traces to the source.
 - **Person in charge:** the RM decides whether to act; the product manager owns quality.
 
-**A3. Prep and follow-up assistant** · waves 1–2 · runs on M365 Copilot and Salesforce Agentforce
+**A3. Prep and follow-up assistant** · waves 1–2 · runs on Salesforce Agentforce or M365 Copilot
 - **Job:** before a client meeting, draft a one-page brief. After it, draft the recap, follow-up email and (wave 2) call notes for Salesforce.
 - **Inputs:** the Salesforce client record; open insights; the RM's calendar; the Teams meeting recap (recorded only with client consent).
 - **Allowed actions:** read the inputs; create drafts for the RM.
@@ -651,8 +651,9 @@ risk partner can review it. **[X]** values are set in Define.
 
 ## Appendix B: Workflows
 
-Each RM-facing use case as a step-by-step flow. Every flow has one
-**decision point** where the RM decides, and everything is logged.
+Each RM-facing use case as a step-by-step flow. Every RM-facing flow (B1–B8)
+has one **decision point** where the RM decides, and everything is logged.
+B9 is the release routine behind them.
 
 **B1. Weekly opportunity list** (wave 1)
 - **Trigger:** every night (signals); every Monday morning (digest).

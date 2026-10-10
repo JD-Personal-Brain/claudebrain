@@ -29,7 +29,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Group:** People in charge
 - **What it is:** every agent only reads by default and has a short list of things it may do.
 - **Why it matters:** the more an agent can do, the more review it needs. ⚠️ I expect a short list to help keep the risk rating low.
-- **Set in:** 2.4 (confirmed there; it comes from the AI principles in my product framework)
+- **Set in:** 3.1 ("keep every agent read-only unless a user clicks to approve an action"; it comes from the AI principles in my product framework, and the risk intake doesn't name it yet)
 - **Built in:** 3.1
 - **Proved in:** 4.5 (the playbook doesn't name a test for this yet)
 - **Watched in:** not covered in the playbook yet
@@ -65,7 +65,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Set in:** 2.3
 - **Built in:** 3.2
 - **Proved in:** 4.2
-- **Watched in:** 3.2 (checks run on every data refresh)
+- **Watched in:** 3.2 (checks run on every data refresh), 4.2 (the data-use checker, M13, also runs monthly after launch)
 - **Tool (guess):** Snowflake data checks
 - **Proof:** the signed contract, and a comparison of the fields actually read with the fields in the contract
 
@@ -131,7 +131,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Set in:** 4.4 (the groups and thresholds are agreed with compliance)
 - **Built in:** 4.4
 - **Proved in:** 4.4
-- **Watched in:** 4.8 (fairness is in the monitoring plan, and the check runs again each month after launch)
+- **Watched in:** 4.4 (the fairness monitor's ongoing mode runs it again each month after launch), 4.8 (fairness is in the monitoring plan)
 - **Tool (guess):** a fairness monitor agent
 - **Proof:** the fairness report and compliance's response
 
@@ -172,7 +172,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Group:** Approvals
 - **What it is:** risk, compliance, privacy and security each approve the release. Only a named partner can give a sign-off, and it is never automated.
 - **Why it matters:** this is the formal approval. Everything before it is preparation.
-- **Set in:** 1.0 (who decides), 2.4 (what risk will need)
+- **Set in:** 1.0 (who decides, and asking the risk contact what they'll need to see)
 - **Built in:** 4.7
 - **Proved in:** 4.7
 - **Watched in:** 5.1
@@ -196,7 +196,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Why it matters:** an approval only means something if the thing approved is the thing running.
 - **Set in:** 4.3
 - **Built in:** 4.3
-- **Proved in:** 4.5
+- **Proved in:** 4.3 (each fix creates a new frozen version), 4.5
 - **Watched in:** 6.3
 - **Tool (guess):** each platform's version history, and a quality watchdog agent
 - **Proof:** the list of versions, with the test results for each

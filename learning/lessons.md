@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L18 · 2026-10-10 · Asked me to read reference pages Claude should check itself
+- **What happened:** The Open Items log listed the Agent Library, Workflow Maps, Steps Catalog and Controls Catalog as "reviews waiting on me", and the scorecard pointed me at them. I should never be asked to read these. They're reference pages built from the working files, and the 19-versus-39 agent count mismatch showed nobody was keeping them in line.
+- **Root cause:** Claude treated every page it built as something for me to review, which made me the checker for Claude's own consistency work. Reference pages are Claude's to keep correct, through the audit, not mine to proofread.
+- **Fix:** Building-block and reference pages are never put on my review list. Claude checks them against the working files in every audit and fixes drift itself. The audit skill now has a required alignment sweep (step 2b) that checks every core document against the four reference pages, not only the files a session changed, because the 19-versus-39 mismatch sat in two files no session had touched. My review list holds only what I must decide on or have said I'll read (for example, the RM plan).
+- **Rule:** R22 · **Test:** T26 · **Level:** 1 · **Times it happened:** 1
+
 ### L17 · 2026-10-09 · Pointed controls at playbook steps that don't cover them
 - **What happened:** In the new Controls Catalog, Claude wrote where each control is set, built, proved and watched. Two audits in a row found references the playbook doesn't support: about ten in the first pass, and six more in the controls Claude added while fixing the first.
 - **Root cause:** Claude filled in each step number from where the control would logically belong, without opening that step and reading what it says.
