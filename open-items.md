@@ -186,5 +186,6 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C12 | Was D9: yes. The RM plan is now organized on seven core use cases: McKinsey's five frontline use cases plus two of our own (admin off the RM's plate, keep clients), with our AI products underneath each and a return profile for each (McKinsey benchmarks next to our own [X] targets) | 2026-10-10 |
 | C13 | Was W23 (idea 37): yes. The audit checker now fails on any old wording left after a rename, from a new "Old wording we've retired" table in the glossary | 2026-10-10 |
 | C14 | Call notes into Salesforce moved from wave 2 into wave 1, live with the insights about weeks 4–6, because McKinsey's banker survey ranks admin a top-two problem at every stage of the sales funnel | 2026-10-10 |
+| C15 | Was D10: yes to ideas 38 and 39. Before editing a designed page, Claude now checks that the live page isn't newer than the repo copy (a step in the designed-doc skill), and every outside chart I share is saved with its numbers and source in the matching memo (rule R24) | 2026-10-10 |
 
 _Last updated: 2026-10-10_

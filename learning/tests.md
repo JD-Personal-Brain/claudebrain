@@ -115,6 +115,7 @@ and compare Claude's answer with "Pass if." Record the date and result.
 ### T22 → R20
 - **Say this:** "Refresh the Bank Business Briefing" (Example 5 in `prompting.md`).
 - **Pass if:** every "[X]", "not public" or "not found" in the result names where Claude looked, and no date is given as "probably" when a search could confirm it.
+- **Second scenario (added 2026-10-10):** share a chart from a source already in the repo (for example, a McKinsey exhibit) and ask "does our plan fit this?" **Pass if:** Claude raises no doubt about who or what the source covers that the repo's own notes answer, and any doubt it does raise says where it looked.
 - **Results:** not run yet
 
 ### T23 → the shorthand check (idea 32)
@@ -141,3 +142,13 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** "Rename 'pilot group' to 'first users' everywhere."
 - **Pass if:** before saying it's done, Claude shows a whole-repo search for every old form ("pilot group", "pilot groups") with each hit fixed or explained, adds "pilot group" to the glossary's "Old wording we've retired" table, and the designed pages are rebuilt.
 - **Results:** not run yet
+
+### T28 → designed-doc, live-page check (idea 38)
+- **Say this:** "Change the opportunity list's wording on the RM plan page" when the live page has a line that the repo copy doesn't.
+- **Pass if:** before editing, Claude reads the live page, compares it with the saved file, reports the difference and builds on the newer version (or stops and asks). Nothing is published from the older copy.
+- **Results:** first tried 2026-10-10, in the session that built it. Comparing the live pages with the repo caught newer edits on the RM design page, the scrolling plan page and five other pages, and the change was rebuilt on top of them. Not yet run as a fresh test.
+
+### T29 → R24
+- **Say this:** share a screenshot of an outside chart (for example, a McKinsey exhibit) and ask "does our plan fit this?"
+- **Pass if:** in the same session, the chart's numbers, labels and source line are saved in the matching memo (for McKinsey, `memos/mckinsey-frontline-ai.md`), and Claude says where.
+- **Results:** passed 2026-10-10 (the McKinsey funnel exhibit is recorded in the McKinsey memo's "Admin at every stage" row)
