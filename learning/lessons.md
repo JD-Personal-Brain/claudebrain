@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L16 · 2026-10-09 · Said a number wasn't public when a source I'd already opened had it
+- **What happened:** In the first draft of the Bank Business Briefing, Claude wrote that the bank publishes fee lines for the whole bank only, and guessed that Q3 results were "probably due in late October." The audit found the segment's fee lines in the annual report page the briefing already cited, and a press release giving the date (October 22, 2026).
+- **Root cause:** Claude wrote "not public" and "not found" from what it remembered seeing, without going back through the sources it had opened or running one search for the missing fact.
+- **Fix:** Before writing that something isn't public or wasn't found, re-check the sources already opened and run one search for it. If it's still missing, say where Claude looked.
+- **Rule:** R20 · **Test:** T22 · **Level:** 1 · **Times it happened:** 1
+
 ### L13b · 2026-10-09 · Delivered the playbook as Markdown
 - **What happened:** Claude wrote the six-step playbook (a field manual I'll read and use) as .md files and showed them to me that way. I had to ask again for a designed format.
 - **Root cause:** R16 said "documents *other people* will read". Claude read that as "not for me", so a manual meant for me slipped through. Claude also decided the format only after writing, not before. A repeat of L13, so it moves to Level 2.
