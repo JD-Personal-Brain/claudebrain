@@ -53,4 +53,22 @@ readme_urls=set(re.findall(r'https://claude\.ai/artifact/\w+',open('designs/READ
 library_url='https://claude.ai/artifact/LTpbCT4kN4LcyEoYnh7vgj'
 for u in sorted(readme_urls-lib_urls-{library_url}): print("designs/library.json is missing",u); probs+=1
 for u in sorted(lib_urls-readme_urls): print("designs/README.md is missing",u); probs+=1
+# 5. the Open Items log is in step with the rest of the repo (open-items.md)
+oi=open('open-items.md').read()
+nums=re.findall(r'^\| ([A-Z]\d+) \|',oi,re.M)
+for n in sorted({x for x in nums if nums.count(x)>1}): print("open-items.md uses the number",n,"twice"); probs+=1
+for label,pre in [('1. Decisions waiting on me','D'),('2. Reviews waiting on me','R'),('3. Work to do','W'),('4. To confirm at the bank','B'),('5. Parked on purpose','P')]:
+    m=re.search(r'^\| '+re.escape(label)+r' \| (\d+) \|',oi,re.M)
+    rows=len([x for x in nums if x[0]==pre])
+    if not m or int(m.group(1))!=rows: print("open-items.md 'At a glance' count for",label,"should be",rows); probs+=1
+for a in lib['areas']:
+    for d in [a['parent']]+a['children']:
+        if d['status'] in ('Waiting for review','Draft','In progress') and d['name'] not in oi: print("open-items.md doesn't mention the page",d['name'],"(status:",d['status']+")"); probs+=1
+for b in lib.get('building_blocks',[]):
+    if b['status'] in ('Waiting for review','Draft','In progress') and b['name'] not in oi: print("open-items.md doesn't mention the page",b['name']); probs+=1
+for m in re.finditer(r'^\| (\d+) \|.*\| ([^|]+) \|$',open('ideas.md').read(),re.M):
+    if re.match(r'(new|suggested|yes)\b',m.group(2).strip()) and not re.search(r'\bideas? [\d, and]*\b'+m.group(1)+r'\b',oi): print("open-items.md doesn't mention idea",m.group(1),"(status:",m.group(2).strip()[:20]+")"); probs+=1
+def upd(f):
+    m=re.search(r'_Last updated: (\d{4}-\d{2}-\d{2})',open(f).read()); return m.group(1) if m else ''
+if upd('open-items.md')<upd('NOW.md'): print("open-items.md was last updated",upd('open-items.md'),"but NOW.md on",upd('NOW.md')+": review the open items"); probs+=1
 print("problems:",probs)

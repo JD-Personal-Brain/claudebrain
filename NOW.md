@@ -40,7 +40,7 @@ _Last updated: 2026-10-09 · Last review: none yet (first one due around 2026-10
 3. Keep working through the Claude Mastery course: paste in the next page (after "The Claude Prompt Formula"; next up is Module 3: Projects, Connectors, Skills).
 4. Continue the Associated Bank job, Part 1, with the prompt in `job-prompts.md`. Pick up where `job-notes.md` stops.
 5. Use Claude for real work, including prototypes for the new job, and say "wrap up" at the end of each session.
-6. Run the tests that need a real session (T4, T7, T10, T13, T14, T15, T17; second parts of T2, T3, T9), then try the new skills on real work: say "run the tests", "prototype X", "write a prompt for X" or "new use case: X".
+6. Run the tests that need a real session (the full list is item W7 in the Open Items log), then try the new skills on real work: say "run the tests", "prototype X", "write a prompt for X" or "new use case: X".
 7. Remove my safety rules (idea 16, approved 2026-10-07): the pop-up explanations and "Deny is safe" reminders in `CLAUDE.md` section 1 and rule R4. The wrap-up part is done. Earlier sessions couldn't edit `CLAUDE.md`; Claude tries next time I say go, and if it's blocked, I edit it in GitHub.
 8. Do the first weekly review around 2026-10-14.
 9. Later, once I say the RM framework is ready: plan the credit (portfolio management) use case with the same structure.
@@ -61,7 +61,7 @@ _Last updated: 2026-10-09 · Last review: none yet (first one due around 2026-10
 - **The product manager owns each product until a long-term owner is named.** Why: there are no product owners yet, and who holds a product long term (maybe someone in a revenue line) is a decision the process must make (decided 2026-10-09).
 - **Product work follows `product-framework.md`.** Why: every project gets organized the same way, from Discover to Measure and iterate.
 - **Prompts follow `prompting.md`.** Why: so every prompt we write uses a framework that works, based on Anthropic's own advice.
-- **Open items live in one log** (`open-items.md`, the Open Items page). Why: they were scattered across seven files and I couldn't see what was open. When something new comes up that isn't finished, it goes in the log (decided 2026-10-09).
+- **Open items live in one log** (`open-items.md`, the Open Items page). Why: they were scattered across seven files and I couldn't see what was open. When something new comes up that isn't finished, it goes in the log. Every wrap-up audits the log as well as the session's work, because open items go out of date quickly (decided 2026-10-09).
 - **The Document Library is the front door to everything I read.** Every new designed page is added to it, and the audit checker fails if one is missing. Why: I want to see any document at any moment, organized so it's easy to find (decided 2026-10-09).
 - **Anything a person reads, me included, is a designed page, not a .md file** (rule R16). Why: they must look like something a person wants to read; the .md is only the working copy.
 - **Course pages come in by copy-paste or screenshots.** Why: Cloud sessions can't reach my browser or the course site.
