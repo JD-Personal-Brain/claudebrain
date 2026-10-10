@@ -53,7 +53,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Draft**.
   - Note: how much of the statement was copied from the data contract.
-  - Agent idea: a **data-use checker** (spec M13) that compares the fields actually read with the contract and flags differences. *Auto*, read-only. It runs on each new frozen version, and again monthly after launch.
+  - Agent: **M13 Data-use checker** (agent library) that compares the fields actually read with the contract and flags differences. *Auto*, read-only. It runs on each new frozen version, and again monthly after launch.
 - **For RM analytics:** each RM sees only clients they're already allowed to see.
 
 ---
@@ -66,7 +66,7 @@ log (see `README.md`) for every sub-step.
 - **First time, step by step:**
   1. Re-run the full test set on the frozen version.
   2. Report accuracy, made-up answers ("hallucinations"), relevance and permissions against the quality bar.
-  3. Red-team it: try to make it reveal other users' data, give a credit decision, or answer off-topic.
+  3. Red-team it: try to make it reveal other users' data, give a credit decision or a price, or answer off-topic.
   4. Record every failure, its fix and the re-test. Each fix creates a new frozen version: re-run the test set (M26) and the 4.5 control tests on it.
 - **Output:** the test report and the red-team report.
 - **Done when:** results meet the bar, and every red-team failure is fixed or accepted by risk.
@@ -136,7 +136,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Me**.
   - Note: which vendors were already approved. Keep a list, because the next project will likely reuse them.
-  - Agent idea: none needed. A shared **approved vendors list** does the job.
+  - Agent: none needed. A shared **approved vendors list** does the job.
 - **For RM analytics:** Salesforce, Microsoft and AWS (with the model provider behind Bedrock).
 
 ---
@@ -177,7 +177,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Draft**.
   - Note: the thresholds chosen. Reuse them next time.
-  - Agent idea: a **monitoring plan template**, so the plan is drafted the same way every time. *Draft*. M32 Quality watchdog (agent library) then runs much of the plan in step 6.
+  - Asset: the **monitoring plan template** (not an agent), so the plan is drafted the same way every time. *Draft*. M32 Quality watchdog (agent library) then runs much of the plan in step 6.
 - **For RM analytics:** re-test after every change, with alerts on drift.
 
 ---

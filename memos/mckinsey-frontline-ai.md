@@ -1,6 +1,6 @@
 # McKinsey's frontline AI use cases, and how our RM plan covers them
 
-A core reference for choosing which use cases to build, and the framework the RM plan is now organized on. It summarizes McKinsey's
+A core reference for choosing which use cases to build, and the basis for the RM plan's seven core use cases. It summarizes McKinsey's
 article "Agentic AI is here. Is your bank's frontline team ready?" and checks the
 RM plan against its five use cases. Checked against the article's text, pasted
 in by me on 2026-10-10.
@@ -10,7 +10,7 @@ in by me on 2026-10-10.
 > Based on a survey of about 400 US and Canadian bankers, RMs and sales leaders.
 > McKinsey's numbers come from its own client work and early pilots, not
 > controlled studies, so treat them as directional. ⚠️ The page I pasted showed no
-> publication date; the RM plan says December 2025, which I haven't confirmed.
+> publication date; so the date is unconfirmed (an earlier draft said December 2025).
 
 ## The headline numbers
 
@@ -40,11 +40,11 @@ coaching in late stage), and negotiation (4).
 
 | McKinsey use case | In our RM plan | Coverage |
 |---|---|---|
-| 1. Prospecting | Wave 3: prospect lookalikes (B8). Wave 1's weekly opportunity list finds next best opportunities in existing clients | **Partly.** New-client prospecting comes late (wave 3), and McKinsey reports its biggest numbers here |
+| 1. Prospecting and next best opportunities | Wave 3: prospect lookalikes (B8). Wave 1's weekly opportunity list finds next best opportunities in existing clients | **Partly.** New-client prospecting comes late (wave 3), and McKinsey reports its biggest numbers here |
 | 2. Lead nurturing, including cross-sell | Wave 2: referral prompts (B6) for cross-sell between teams. Nothing contacts prospects on its own | **Partly, by design.** Our rule is that nothing reaches a client without the RM, so an agent that writes to prospects by itself is out of scope today |
-| 3. Account planning and meeting prep | Wave 1: pre-meeting client brief (B2). Wave 3: RM assistant (B7) | **Covered**, and first in line |
-| 4. Deal structuring and pricing | Not in the plan. The plan keeps the AI away from pricing and credit decisions (control K3) | **Not covered, by design.** Pricing touches fair-lending rules, so it would need a much higher bar |
-| 5. Coaching | Not in the plan. The onboarding coach (A6) answers "how do I use this?" only | **Not covered** |
+| 3. Account intelligence and meeting prep (McKinsey: account planning and meeting prep) | Wave 1: pre-meeting client brief (B2). Wave 3: RM assistant (B7) | **Covered**, and first in line |
+| 4. Deal scoring and pricing (McKinsey: deal structuring and pricing) | Not in the plan. The plan keeps the AI away from pricing and credit decisions (control K3) | **Not covered, by design.** Pricing touches fair-lending rules, so it would need a much higher bar |
+| 5. AI sales coaching | Not in the plan. The onboarding coach (A6) answers "how do I use this?" only | **Not covered** |
 
 **Also in our plan, not in McKinsey's five:** early warning when a client may
 leave (B5), and the meeting follow-up (B3) and call notes saved to the CRM (B4),
@@ -58,14 +58,14 @@ reasons. Each open question is a decision in the Open Items log (D6 to D8).
 
 ## What it changed: the RM plan now uses McKinsey's framework (decided 2026-10-10)
 
-The RM plan is now organized around McKinsey's five use cases, with our AI
-products underneath each one and a return profile for each (the plan's "Core
-use cases" section). Two of our products sit "beyond McKinsey's five": admin
+The RM plan is now organized on seven core use cases, with our AI products
+underneath each one and a return profile for each (the plan's "Core use cases"
+section): McKinsey's five, plus two of our own beyond McKinsey's five: admin
 off the RM's plate (McKinsey's top problem, which its five use cases don't
-name) and keeping clients. Open questions:
+name) and keep clients. Open questions:
 - **Prospecting earlier?** (D7) McKinsey's biggest revenue numbers are in prospecting, and our prospect lookalikes come in wave 3. Outside prospect data may set the pace.
 - **Add coaching?** (D6) Low risk, uses call transcripts the meeting features already need, and McKinsey reports faster ramp-up for new bankers.
-- **Lead nurturing and pricing stay out for now?** (D8) An agent that writes to prospects on its own, or recommends prices, conflicts with "nothing reaches a client without the RM" and the fair-lending control (K3).
+- **Autonomous lead nurturing and pricing stay out for now?** (D8) An agent that writes to prospects on its own, or recommends prices, conflicts with "nothing reaches a client without the RM" and the fair-lending control (K3).
 
 ## McKinsey's five principles for capturing the value
 

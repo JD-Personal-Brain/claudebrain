@@ -53,18 +53,6 @@ for block in re.split(r"\n\*\*(?=A\d+\. )", appa.split("### Agents the team uses
                    "job": f["Job"], "meta": cap(m.group(3).strip()) + (f" · also used in {', '.join(u)}" if u else ""),
                    "fields": [(k, f[k]) for k in ["Inputs", "Allowed actions", "Not allowed", "Outputs", "Stops when", "Proof it worked", "Person in charge"] if k in f],
                    "source": "RM Analytics plan · Appendix A"})
-# Team agents now live in playbook/agents.md (M20-M33); the memo's team table only shows the RM settings
-for row in appa.split("### Agents the team uses")[1].split("\n"):
-    m = re.match(r"^\| \*\*(A\d+)\. ([^*]+)\*\* \|(.*)\|\s*$", row)
-    if not m:
-        continue
-    c = [x.strip() for x in m.group(3).split("|")]
-    step, job, inputs, allowed, outputs, stops, proof, owner = c
-    u = order(used.get(m.group(1), []))
-    agents.append({"id": m.group(1), "name": m.group(2), "group": "team", "steps": sorted(set([SHORT[step]] + steps_of(u)), key=list(STEPS.values()).index), "aim": "",
-                   "job": job, "meta": f"Used in {', '.join(u)}" if u else f"{SHORT[step]} step",
-                   "fields": [("Inputs", inputs), ("Allowed actions", allowed), ("Outputs", outputs), ("Stops when", stops), ("Proof it worked", proof), ("Person in charge", owner)],
-                   "source": "RM Analytics plan · Appendix A"})
 
 GROUPS = [("machine", "Run the delivery machine", "Handle the paperwork and routing that move any project through the six steps: kickoff, notes, gate packs, sign-offs and releases. Reused on every project."),
           ("team", "Do the team's analysis, testing and monitoring", "General agents for every project: sizing, research, requirements, data checks, testing, red-teaming, fairness, evidence, feedback and impact. The RM plan shows how it uses each one."),

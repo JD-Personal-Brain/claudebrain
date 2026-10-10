@@ -51,23 +51,23 @@ own targets are set from the bank's data in Define.
 
 | Core use case | RM problem | Our AI products under it | Return McKinsey reports (directional) | Our measure (target set in Define) |
 |---|---|---|---|---|
-| **1. Prospecting and next best opportunities** | Too few good leads; opportunities in the book go unnoticed | Weekly opportunity list (wave 1); prospect lookalikes (wave 3) | About 30% more pipeline and 10% more revenue; one bank saw twice the conversion of traditional leads | AI-sourced pipeline and wins, against the comparison group [X] |
-| **2. Lead nurturing, including cross-sell** | Leads and cross-sell needs get little or no follow-up | Referral prompts (wave 2). The RM does the outreach; no agent contacts clients on its own | Two to three times more qualified leads; 5% higher conversion (early pilots) | Referrals made and won [X] |
-| **3. Account intelligence and meeting prep** | Preparing for one meeting can take half a day; insights are scattered | Pre-meeting client brief (wave 1); RM assistant (wave 3) | About 25% less prep time; 10% more time with clients | Prep time per meeting; client-facing hours [X] |
-| **4. Deal scoring and pricing** | Pricing is slow and inconsistent | None: out of scope for now, because pricing touches fair-lending rules (control K3; decision D8) | 10% margin gains; deal turnaround cut from five days to two in one case | — |
+| **1. Prospecting and next best opportunities** | Too few good leads; opportunities in the book go unnoticed | Weekly opportunity list (wave 1); prospect lookalikes (wave 3) | About 30% more pipeline and 10% more revenue; one bank saw twice the conversion of traditional leads (for McKinsey's full version; ours is narrower) | AI-sourced pipeline and wins, against the comparison group [X] |
+| **2. Lead nurturing, including cross-sell** | Leads and cross-sell needs get little or no follow-up | Referral prompts (wave 2). The RM does the outreach; no agent contacts clients on its own | Two to three times more qualified leads; 5% higher conversion (early pilots; for McKinsey's full version, an agent that contacts prospects, which we rule out) | Referrals made and won [X] |
+| **3. Account intelligence and meeting prep** | Meeting prep is slow and insights are scattered (a top problem in McKinsey's survey) | Pre-meeting client brief (wave 1); RM assistant (wave 3) | About 25% less prep time; 10% more time with clients | Prep time per meeting; client-facing hours [X] |
+| **4. Deal scoring and pricing** | Pricing and approvals can be slow (one bank took five days, per McKinsey) | None: out of scope for now, because pricing touches fair-lending rules (control K3; decision D8) | 10% margin gains; deal turnaround cut from five days to two in one case | — |
 | **5. AI sales coaching** | Training rarely sticks; good practice doesn't spread | None yet (decision D6) | Customer satisfaction up seven points; new bankers up to speed 20% faster | — |
 
 **Beyond McKinsey's five**, two core use cases of our own:
 
 | Core use case | RM problem | Our AI products under it | Return McKinsey reports (directional) | Our measure (target set in Define) |
 |---|---|---|---|---|
-| **Admin off the RM's plate** | Admin and CRM updates take more time than clients do (McKinsey's top problem) | Meeting follow-up (wave 1); call notes into Salesforce (wave 2) | Part of the 10 to 12 hours a week McKinsey expects back per banker, and about 40% better coverage | Hours saved per week; share of meetings logged [X] |
+| **Admin off the RM's plate** | Admin and CRM updates crowd out client time (McKinsey's top problem) | Meeting follow-up (wave 1); call notes into Salesforce (wave 2) | Part of the 10 to 12 hours a week McKinsey expects back per banker, and about 40% better coverage | Hours saved per week; share of meetings logged [X] |
 | **Keep clients** | Clients drift away before anyone notices | Early warning: client may leave (wave 2) | No McKinsey figure; set from the bank's own retention data | Clients kept, against the comparison group [X] |
 
 **Overall:** McKinsey reports 3 to 15% higher revenue per RM and 20 to 40%
 lower cost to serve when a bank reworks a frontline area end to end. That's why
-the plan builds whole use cases, wave by wave, rather than scattered tools. Each
-core use case becomes one line of the value model (section 2).
+the plan builds whole core use cases, wave by wave, rather than scattered tools.
+Each core use case will get its own line in the value model once targets are set in Define.
 
 ---
 
@@ -75,7 +75,7 @@ core use case becomes one line of the value model (section 2).
 
 Many RM AI products are standard across banks. Building these first, using
 features already in Salesforce, Microsoft 365 Copilot and Power Platform, gets
-value to RMs quickly and creates the base that later, more tailored use cases
+value to RMs quickly and creates the base that later, more tailored AI products
 build on. The menu below is a starting point; the sponsor and RMs pick and
 order it in Discover.
 
@@ -90,7 +90,7 @@ order it in Discover.
 | **Wave 3** (live about week 15) | RM assistant ("what should I know about this client?") | Time; all levers | Salesforce Agentforce or Copilot Studio |
 | | Prospect lookalikes | Win new clients | Snowflake, Salesforce |
 
-**Why this works:** standard use cases on platforms the bank already runs
+**Why this works:** standard AI products on platforms the bank already runs
 need less build and fit existing approvals. Each wave is low-risk and
 internal-only: the AI suggests and drafts, and the RM decides. If the bank's
 AI review applies to every new use, the review sets the real pace, which is
@@ -160,18 +160,18 @@ each with an owner and a date, reviewed weekly with the core team and at each ga
 
 Six steps, each ending in a **go/no-go gate**. The first pass through all six
 overlaps: a working prototype exists in week 1, and the first features are
-live in about weeks 2–6 (meeting follow-up about weeks 2–4, insights about weeks 4–6); after that, steps 3–6 repeat in cycles of a week or two, and each new wave of use cases takes a short pass through
+live in about weeks 2–6 (meeting follow-up about weeks 2–4, insights about weeks 4–6); after that, steps 3–6 repeat in cycles of a week or two, and each new feature wave takes a short pass through
 Discover and Define. **Governance runs through every step**; Step 4 is the
 formal approval gate, not the first time risk partners see the product.
 
 | Step | Question it answers | Governance thread | Gate (go/no-go) |
 |---|---|---|---|
-| **1. Discover** | Which standard use cases come first, and which revenue lever matters most? | Risk partners briefed on the idea | Sponsor agrees on the wave 1 use cases, the target lever and the baseline |
+| **1. Discover** | Which standard AI products come first, and which revenue lever matters most? | Risk partners briefed on the idea | Sponsor agrees on the wave 1 AI products, the target lever and the baseline |
 | **2. Define** | What exactly do we build first, and how will we know it worked? | Risk intake and early rating; data use approved | Brief, data contract and risk rating agreed; value model shows payback within [X] months |
 | **3. Build** | What's the smallest version RMs will use and trust? | Controls built in; test set created | Meets the quality bar (below) in testing; every control has proof |
 | **4. Govern and test** | Is it safe, fair and controlled? | Formal validation and sign-offs | All sign-offs recorded; monitoring plan agreed |
 | **5. Release and adopt** | Will RMs use it every week? | Live monitoring; incident process | At least [X]% of pilot RMs active weekly, at least [X]% of insights acted on, no high-severity incidents; long-term owner confirmed before scaling |
-| **6. Measure and iterate** | Is it creating new revenue, and what comes next? | Ongoing model monitoring | Each month (and at the end of each wave): keep, change or stop each use case; quarterly: invest more, adjust or stop, based on results against the comparison group |
+| **6. Measure and iterate** | Is it creating new revenue, and what comes next? | Ongoing model monitoring | Each month (and at the end of each feature wave): keep, change or stop each AI product; quarterly: invest more, adjust or stop, based on results against the comparison group |
 
 **Each step is described the same way:** Goal · Work (sub-steps and tools) ·
 AI strategy (the agents) · AI for the team · AI for RMs · Data · Output ·
@@ -230,22 +230,22 @@ loop compounds over time and is a reason to build both goals together.
 | 4. Map the RM's week | Where time goes, and how much is lost to admin | Salesforce activity data; M365 Copilot usage reporting |
 | 5. Understand incentives | How RMs are measured and paid, and whether acting on insights would be rewarded | Conversations with sales leadership and HR |
 | 6. Test reactions | Show RMs a working prototype built on sample data, and improve it every few days | Copilot Studio, Power Apps, a Salesforce test environment |
-| 7. Pick and baseline | Choose the wave 1 use cases from the standard menu and record today's numbers | Power BI |
+| 7. Pick and baseline | Choose the wave 1 AI products from the standard menu and record today's numbers | Power BI |
 
 **AI strategy:** Use AI to listen and size faster than a team could by hand. Nothing touches clients yet; a person checks every finding.
 
 | Agent | Type | Job | Runs on | Reads from | Person in charge |
 |---|---|---|---|---|---|
-| Interview synthesizer | For the team | Turns interview recaps into themes and quotes, linked to each source | M365 Copilot, Copilot Studio | Teams transcripts (only with consent), interview notes | PM reviews every theme |
-| Opportunity sizer | For the team | Answers plain-English questions to size each lever | Snowflake Cortex Analyst | Snowflake balances and products; Salesforce pipeline | An analyst checks the numbers |
-| Time-use analyst | For the team | Finds where RM time goes and which activities lead to won deals | Snowflake Cortex, Power BI | Salesforce activity and win/loss | PM confirms with RMs in person |
+| M20 Interview synthesizer | For the team | Turns interview recaps into themes and quotes, linked to each source | M365 Copilot, Copilot Studio | Teams transcripts (only with consent), interview notes | PM reviews every theme |
+| M21 Opportunity sizer | For the team | Answers plain-English questions to size each lever | Snowflake Cortex Analyst | Snowflake balances and products; Salesforce pipeline | An analyst checks the numbers |
+| M22 Time-use analyst | For the team | Finds where RM time goes and which activities lead to won deals | Snowflake Cortex, Power BI | Salesforce activity and win/loss | PM confirms with RMs in person |
 
 - **AI for the team:** themes from interviews; a first pass over pipeline and activity data.
 - **AI for RMs:** a working prototype on sample data, so RMs react to something real.
 - **Data:** Salesforce pipeline and activity; client balances and products in Snowflake. Identify the data owners.
 - **Output:** a ranked list of opportunities with sizes, the first target, the baseline, and a first value model.
 - **Checks:** no client data in unapproved AI tools; risk partners briefed on the idea.
-- **Gate:** the sponsor agrees on the wave 1 use cases, the target lever and the baseline.
+- **Gate:** the sponsor agrees on the wave 1 AI products, the target lever and the baseline.
 
 ---
 
@@ -268,9 +268,9 @@ loop compounds over time and is a reason to build both goals together.
 
 | Agent | Type | Job | Runs on | Reads from | Person in charge |
 |---|---|---|---|---|---|
-| Requirements drafter | For the team | Drafts the problem statement, user stories and acceptance criteria | M365 Copilot in Word, or Copilot Studio | Discover findings | PM edits; team and sponsor approve |
-| Data contract checker | For the team | Checks fields exist, are fresh and pass quality checks; flags gaps. After Define, runs on every data refresh and alerts the data owner on failure | Snowflake Cortex | Snowflake tables and their quality and access records | Data owner signs off |
-| Risk intake assistant | For the team | Pre-fills the risk intake and flags likely high-risk areas | Copilot Studio agent grounded in bank policies | Policy documents, product brief | A risk partner sets the rating |
+| M23 Requirements drafter | For the team | Drafts the problem statement, user stories and acceptance criteria | M365 Copilot in Word, or Copilot Studio | Discover findings | PM edits; team and sponsor approve |
+| M24 Data contract checker | For the team | Checks fields exist, are fresh and pass quality checks; flags gaps. After Define, runs on every data refresh and alerts the data owner on failure | Snowflake Cortex | Snowflake tables and their quality and access records | Data owner signs off |
+| M25 Risk intake assistant | For the team | Pre-fills the risk intake and flags likely high-risk areas | Copilot Studio agent grounded in bank policies | Policy documents, product brief | A risk partner sets the rating |
 
 - **AI for the team:** drafting stories, criteria and test questions for review.
 - **AI for RMs:** defined, not built. For example: "Each Monday, show me my top 5 client opportunities, with the reason and a suggested next step," and "Before each call, give me a one-page brief; afterward, draft my notes for Salesforce."
@@ -306,14 +306,14 @@ and Outlook).
 
 | Agent | Type | Job | Runs on | Reads from | Person in charge |
 |---|---|---|---|---|---|
-| Signal finder | For RMs | Scans each RM's clients overnight for opportunity signals using explainable rules and scores | Snowflake (Cortex) | Snowflake balances, products, trends | Business owns the rules; no client contact |
-| Insight writer | For RMs | Turns each signal into a plain-English reason and talking points, citing the numbers | Salesforce Prompt Builder or AWS Bedrock | Signal finder output; Salesforce client record | The RM decides whether to act |
-| Prep and follow-up assistant (waves 1–2) | For RMs | Drafts a pre-call brief, then call notes and follow-ups | Salesforce Agentforce or M365 Copilot | Salesforce client record; Teams meeting recap (with client consent where recorded) | The RM approves before anything is saved or sent |
-| RM assistant (wave 3) | For RMs | Answers "what should I know before my call with this client?" | Salesforce Agentforce or a Copilot Studio agent in Teams | Salesforce and Snowflake, read-only, only the RM's permitted clients | Any record update needs the RM's click |
-| Test grader | For the team | Scores every version against the test set and the quality bar | AWS Bedrock model evaluation | Test set, product outputs | Experienced RMs grade a sample |
+| A1 Signal finder | For RMs | Scans each RM's clients overnight for opportunity signals using explainable rules and scores | Snowflake (Cortex) | Snowflake balances, products, trends | Business owns the rules; no client contact |
+| A2 Insight writer | For RMs | Turns each signal into a plain-English reason and talking points, citing the numbers | Salesforce Prompt Builder or AWS Bedrock | Signal finder output; Salesforce client record | The RM decides whether to act |
+| A3 Prep and follow-up assistant (waves 1–2) | For RMs | Drafts a pre-call brief, then call notes and follow-ups | Salesforce Agentforce or M365 Copilot | Salesforce client record; Teams meeting recap (with client consent where recorded) | The RM approves before anything is saved or sent |
+| A5 RM assistant (wave 3) | For RMs | Answers "what should I know before my call with this client?" | Salesforce Agentforce or a Copilot Studio agent in Teams | Salesforce and Snowflake, read-only, only the RM's permitted clients | Any record update needs the RM's click |
+| M26 Test grader | For the team | Scores every version against the test set and the quality bar | AWS Bedrock model evaluation | Test set, product outputs | Experienced RMs grade a sample |
 
 - **AI for the team:** drafting prompts and test questions; checking every version against the test set.
-- **AI for RMs:** wave 1: pre-meeting briefs, meeting follow-ups and the weekly opportunity list, with one-click feedback. Later waves add the next standard use cases. Assistive only.
+- **AI for RMs:** wave 1: pre-meeting briefs, meeting follow-ups and the weekly opportunity list, with one-click feedback. Later waves add the next standard AI products. Assistive only.
 - **Data:** live connections from Snowflake and Salesforce; each RM sees only clients they're already allowed to see.
 - **Output:** a working product in a test environment, the test results and an evidence pack started.
 - **Checks:** filters that block sensitive data and off-topic answers (Bedrock Guardrails, Salesforce Einstein Trust Layer); every AI action logged; client consent for any recorded meeting.
@@ -339,9 +339,9 @@ and Outlook).
 
 | Agent | Type | Job | Runs on | Reads from | Person in charge |
 |---|---|---|---|---|---|
-| Red-team agent | For the team | Generates thousands of tricky requests (another RM's clients, a credit decision) to try to break the product | AWS Bedrock | The product in test | Risk reviews every failure |
-| Fairness monitor | For the team | Checks opportunities are spread fairly across segments and regions; runs again monthly after launch | Snowflake, Power BI | Opportunity outputs, client segments | Compliance reviews results |
-| Evidence pack assembler | For the team | Compiles test results, data use and controls into review documents | M365 Copilot in Word | Test results, data contract, controls | PM and risk verify every claim |
+| M27 Red-team agent | For the team | Generates thousands of tricky requests (another RM's clients, a credit decision) to try to break the product | AWS Bedrock | The product in test | Risk reviews every failure |
+| M28 Fairness monitor | For the team | Checks opportunities are spread fairly across segments and regions; runs again monthly after launch | Snowflake, Power BI | Opportunity outputs, client segments | Compliance reviews results |
+| M29 Evidence pack assembler | For the team | Compiles test results, data use and controls into review documents | M365 Copilot in Word | Test results, data contract, controls | PM and risk verify every claim |
 
 - **AI for the team:** red-teaming at scale; assembling the evidence pack.
 - **AI for RMs:** no change; the product is frozen for review.
@@ -371,9 +371,9 @@ and Outlook).
 
 | Agent | Type | Job | Runs on | Reads from | Person in charge |
 |---|---|---|---|---|---|
-| Onboarding coach | For RMs | Answers "how do I use this?" inside Teams | Copilot Studio agent in Teams | Training guides, FAQs | Product team keeps content current |
-| Weekly opportunity digest | For RMs | Sends each RM their top opportunities every Monday | Power Automate with the insight writer | Signal finder and insight writer outputs | The RM decides what to pursue |
-| Feedback triage | For the team | Sorts feedback into bugs, quality issues and ideas, and routes it to the backlog | Power Automate with an approved LLM | Feedback logged in Salesforce | PM sets priorities |
+| A6 Onboarding coach | For RMs | Answers "how do I use this?" inside Teams | Copilot Studio agent in Teams | Training guides, FAQs | Product team keeps content current |
+| A4 Weekly opportunity digest | For RMs | Sends each RM their top opportunities every Monday | Power Automate with the insight writer | Signal finder and insight writer outputs | The RM decides what to pursue |
+| M30 Feedback triage | For the team | Sorts feedback into bugs, quality issues and ideas, and routes it to the backlog | Power Automate with an approved LLM | Feedback logged in Salesforce | PM sets priorities |
 
 - **AI for the team:** summarizing pilot feedback and spotting patterns.
 - **AI for RMs:** the live product, still assistive.
@@ -413,22 +413,22 @@ goal is a product that pays for itself.
 | 2. Compare with the baseline | Pilot RMs vs. the comparison group | Power BI |
 | 3. Re-test after every change | Re-run the test set; watch for quality slipping over time ("drift") | AWS Bedrock model evaluation |
 | 4. Review monthly | With the sponsor: keep, change or stop | — |
-| 5. Feed the next wave | Choose and order the next standard use cases | — |
+| 5. Feed the next feature wave | Choose and order the next standard AI products | — |
 
 **AI strategy:** Use AI to watch the product continuously and explain results in plain English, so decisions rest on evidence.
 
 | Agent | Type | Job | Runs on | Reads from | Person in charge |
 |---|---|---|---|---|---|
-| Impact analyst | For the team | Answers "how much pipeline came from AI insights this month?" against the comparison group | Snowflake Cortex Analyst, Power BI | AI-tagged Salesforce opportunities; Snowflake | Analytics validates before reporting |
-| Quality watchdog | For the team | Re-runs the test set after every change and alerts on drift | AWS Bedrock model evaluation, Power Automate | Test set, live outputs, feedback | PM decides to fix or roll back |
-| Improvement scout | For the team | Proposes the next backlog items or next lever from usage and feedback | M365 Copilot or Copilot Studio | Dashboards, feedback, reviews | PM and sponsor decide |
+| M31 Impact analyst | For the team | Answers "how much pipeline came from AI insights this month?" against the comparison group | Snowflake Cortex Analyst, Power BI | AI-tagged Salesforce opportunities; Snowflake | Analytics validates before reporting |
+| M32 Quality watchdog | For the team | Re-runs the test set after every change and alerts on drift | AWS Bedrock model evaluation, Power Automate | Test set, live outputs, feedback | PM decides to fix or roll back |
+| M33 Improvement scout | For the team | Proposes the next backlog items or next lever from usage and feedback | M365 Copilot or Copilot Studio | Dashboards, feedback, reviews | PM and sponsor decide |
 
 - **AI for the team:** impact analysis, quality monitoring and improvement ideas.
 - **AI for RMs:** a better product with each release.
 - **Data:** AI-sourced opportunities tagged in Salesforce from day one.
 - **Output:** a monthly impact report and an updated backlog.
 - **Checks:** ongoing monitoring under the model risk framework.
-- **Gate:** each month (and at the end of each wave), keep, change or stop each use case; each quarter, invest more, adjust or stop, based on results against the comparison group.
+- **Gate:** each month (and at the end of each feature wave), keep, change or stop each AI product; each quarter, invest more, adjust or stop, based on results against the comparison group.
 
 ---
 
@@ -474,12 +474,12 @@ call is made at Gate 2 (week 2).
 
 | Step | Weeks (estimate) | Ends with |
 |---|---|---|
-| **1. Discover** | Weeks 1–2, with a working prototype in week 1 (short sprints before later waves) | Gate 1 (end of week 1): wave 1 use cases, target lever, baseline; interviews and sizing continue in week 2 |
+| **1. Discover** | Weeks 1–2, with a working prototype in week 1 (short sprints before later waves) | Gate 1 (end of week 1): wave 1 AI products, target lever, baseline; interviews and sizing continue in week 2 |
 | **2. Define** | Weeks 1–2, alongside discovery | Gate 2 (week 2): data contract, risk rating, value model; split decision if needed |
-| **3. Build** | From day 1. Wave 1: weeks 1–5; wave 2: 7–9; wave 3: 11–14 | Gate 3: each feature meets the quality bar in testing, and every control has proof |
-| **4. Govern and test** | Risk partner reviews each version from week 1; sign-offs per feature | Gate 4: each feature approved for real RMs and real client data |
+| **3. Build** | From day 1. Wave 1: weeks 1–5; wave 2: 7–9; wave 3: 11–14 | Gate 3: each AI product meets the quality bar in testing, and every control has proof |
+| **4. Govern and test** | Risk partner reviews each version from week 1; sign-offs per AI product | Gate 4: each AI product approved for real RMs and real client data |
 | **5. Release and adopt** | Follow-up live about weeks 2–4; insights about weeks 4–6; releases every week or two | Gate 5: each wave meets its adoption targets; long-term owner confirmed before scaling |
-| **6. Measure and iterate** | Leading measures from the first live week; closed revenue read about month 6 | Gate 6: keep, change or stop each use case monthly; invest more, adjust or stop each quarter |
+| **6. Measure and iterate** | Leading measures from the first live week; closed revenue read about month 6 | Gate 6: keep, change or stop each AI product monthly; invest more, adjust or stop each quarter |
 
 **By day 90 (about week 13):** wave 1 has been live with pilot RMs for about
 two months, wave 2 is live, wave 3 is in review, and leading measures are

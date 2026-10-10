@@ -117,7 +117,7 @@ lib=_json.load(open('designs/library.json'))
 want={'agents':f'{M+A} agents','steps':f'{SUB} sub-steps','controls':f'{CTL} controls','workflows':f'2 maps · {SUB+B} branches'}
 for b in lib['building_blocks']:
     if b['id'] in want and b['count']!=want[b['id']]: print('designs/library.json count for',b['name'],'is',repr(b['count']),'but the sources give',repr(want[b['id']])); probs+=1
-# Each count is read with up to one word in front of the noun ("22 governance controls"). A total is
+# Each count is read with up to one word in front of the noun ("25 governance controls"). A total is
 # checked against its own number: "all 39 agents" must be every agent, "19 ... machine" agents the machine's.
 for f in ['NOW.md','open-items.md','product-framework.md','playbook/README.md','designs/library.json','memos/role-workflow.md','tech-stack.md']:
     t=open(f).read()

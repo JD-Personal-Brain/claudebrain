@@ -29,7 +29,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Draft**.
   - Note: which checklist items were late, and why.
-  - Agent idea: a **readiness tracker** (spec M15) that checks off items from the tracker and flags gaps. *Auto*.
+  - Agent: **M15 Readiness tracker** (agent library) that checks off items from the tracker and flags gaps. *Auto*.
 - **For RM analytics:** support through operations, and communications sent by RM leaders, not by the project team.
 
 ---
@@ -40,7 +40,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
 - **Why it matters:** without a comparison group you can't tell the product's effect from a good quarter.
 - **Know first:** the pilot and comparison groups (2.8), and the measures (2.7).
 - **First time, step by step:**
-  1. Move the product from test to live for the pilot group only.
+  1. Move the product from test to live for the pilot group only, with the approval for the move recorded.
   2. Check the first live outputs by hand on day one.
   3. Check that usage and impact data are flowing into the dashboard.
   4. Make sure the comparison group's numbers are tracked the same way.
@@ -50,7 +50,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Me**, with platform teams.
   - Note: every manual step in the move to live. Those steps are the release checklist for next time.
-  - Agent idea: a **release automation** (spec M16) that runs the release checklist in the platform's own deployment tools. *Auto* where the platform supports it ⚠️.
+  - Agent: **M16 Release automation** (agent library) that runs the release checklist in the platform's own deployment tools. *Auto* where the platform supports it ⚠️.
 - **For RM analytics:** pilot RMs and their managers, compared with similar RMs not yet using it.
 
 ---
@@ -90,7 +90,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Me**.
   - Note: the questions people asked. They feed the onboarding coach.
-  - Agent: **A6 Onboarding coach** (Appendix A) answers "how do I…?" in Teams from the guide and the FAQ. *Auto* for answers; the product team keeps the content current.
+  - Agent: the product's **onboarding coach** (A6 in the RM plan, Appendix A) answers "how do I…?" in Teams from the guide and the FAQ. *Auto* for answers; the product team keeps the content current.
 - **For RM analytics:** demos built on each RM's own clients.
 
 ---
@@ -110,7 +110,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Me**.
   - Note: which wins got noticed, and where.
-  - Agent idea: a **wins spotter** (spec M17) that flags AI-sourced wins from the tagged data for you to check and share. *Draft*.
+  - Agent: **M17 Wins spotter** (agent library) that flags AI-sourced wins from the tagged data for you to check and share. *Draft*.
 - **For RM analytics:** credit AI-sourced wins in sales meetings, tagged in Salesforce.
 
 ---
@@ -143,16 +143,16 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
 - **Know first:** the pilot results against the targets from 2.7.
 - **First time, step by step:**
   1. Compare pilot results with the targets: weekly use, results, incidents.
-  2. Write a one-page scale recommendation: go, wait or change, with the next wave and its date.
+  2. Write a one-page scale recommendation: go, wait or change, with the next user wave and its date.
   3. Confirm the long-term owner recorded in 2.8. If it's still to be decided, the sponsor names one now: scaling past the pilot needs a named owner.
   4. Take it to the sponsor (this is the gate).
-  5. On a go, repeat 5.1 to 5.6 for the next wave, reusing everything from this one.
-- **Output:** the scale recommendation, the confirmed long-term owner and, on a go, the next wave plan.
+  5. On a go, repeat 5.1 to 5.6 for the next user wave, reusing everything from this one.
+- **Output:** the scale recommendation, the confirmed long-term owner and, on a go, the next user wave plan.
 - **Done when:** the sponsor has decided.
 - **Automation watch:**
   - First time: **Draft** for the recommendation, **Me** for the decision.
-  - Note: what you reused from wave 1. The more you reuse, the faster later waves go.
-  - Agent idea: the **gate pack drafter** (spec M6), reused. *Draft*.
+  - Note: what you reused from the first user wave. The more you reuse, the faster later user waves go.
+  - Agent: **M6 Gate pack drafter** (agent library), reused. *Draft*.
 - **For RM analytics:** expand only after the go/no-go check on the adoption dashboard.
 
 ---
@@ -176,7 +176,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
 | 5.2 | Release automation | Me | Auto ⚠️ | Yes, M16 |
 | 5.2 | Weekly usage report (Power BI, not an agent) | Me | Auto | — |
 | 5.3 | None (stays with a person) | Me | Me | — |
-| 5.4 | A6 Onboarding coach | Me | Auto | Yes, Appendix A |
+| 5.4 | The product's onboarding coach (A6 in the RM plan) | Me | Auto | Yes, RM plan Appendix A |
 | 5.5 | Wins spotter | Me | Draft | Yes, M17 |
 | 5.6 | M30 Feedback triage | Me | Auto | Yes, M30 |
 | 5.7 | None: confirming the long-term owner stays with a person | Me | Me | — |
