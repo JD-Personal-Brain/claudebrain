@@ -26,4 +26,4 @@ Edit here, publish to the same link, then save a draft.
 
 **Shared page kit:** `pagekit.py` holds the house style and the Markdown-to-page code used by `playbook-build.py` and `md-page-build.py`. To give another working file a designed page, add it to `PAGES` in `md-page-build.py`.
 
-**Rendering canvas pages:** serve `.dc.html` files through a local web server (`python3 -m http.server`) with the canvas runtime beside them as `support.js`. Opened straight from disk, the runtime can't load and table rows are dropped.
+**Rendering canvas pages:** serve `.dc.html` files through a local web server (`python3 -m http.server`) with the canvas runtime beside them as `support.js` (kept in the repo in `rm-analytics-canvas/`). To check every page renders fully, run `node designs/render-check.js`. Opened straight from disk, the runtime can't load and table rows are dropped.

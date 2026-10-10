@@ -6,8 +6,9 @@
 //   - no stray Markdown marks showing (**, __, | --- |, leftover [text](link))
 //   - the page has real text (not a blank render)
 //   - canvas parts: content fits the frame in canvas.json (nothing cut off at the bottom)
-// Canvas parts need the canvas runtime saved as support.js beside them (fetch it with the Artifact
-// tool: read the design page with path "artifact-type/dc-runtime.js"; it is not kept in git).
+// Canvas parts need the canvas runtime saved as support.js beside them. It is kept in the repo
+// (idea 35); if it goes missing, restore it with the Artifact tool: read the design page with path
+// "artifact-type/dc-runtime.js".
 // Saves a full-page screenshot of every page to the folder in SHOTS (default /tmp/render-check) to look at.
 const fs = require('fs'), path = require('path'), http = require('http');
 const { chromium } = require(process.env.PW || 'playwright');

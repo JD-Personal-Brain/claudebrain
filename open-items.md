@@ -15,8 +15,8 @@ every wrap-up: finished items move to "Closed" with the date, and new ones are a
 |---|---|---|
 | 1. Decisions waiting on me | 1 | Things only I can decide |
 | 2. Reviews waiting on me | 6 | Pages Claude built that I haven't read yet (numbered V, for "review") |
-| 3. Work to do | 21 | Next pieces of real work, in rough order |
-| 4. To confirm at the bank | 27 | Questions the plans depend on, 7 of which I can ask Andy now |
+| 3. Work to do | 19 | Next pieces of real work, in rough order |
+| 4. To confirm at the bank | 28 | Questions the plans depend on, 7 of which I can ask Andy now |
 | 5. Parked on purpose | 4 | Not forgotten; waiting for a signal from me |
 
 "Andy" here is my main contact at the bank. ⚠️ Claude assumes this is Andy Miner, the bank's senior director of AI for Corporate & Commercial Banking.
@@ -90,19 +90,17 @@ If a review changes the six steps, the Product Framework page has to be updated 
 | W6 | First weekly review: what's working, what's annoying, what to change. Also re-check Anthropic's prompting guide for changes | Me, with Claude | Around 2026-10-14 |
 | W7 | Run the tests of Claude's rules that need a real session. Each test is a short scenario in `learning/tests.md` that checks one rule still works. Not yet run in a live session: T7, T10, T13, T14 and T17, and the second parts of T2, T3, T9 and T16. Never run at all: T18 to T22, T24 and T25. Re-run T8 (does Claude label every suggestion Needed or Optional?), which failed on 2026-10-09 before its rule was tightened, and T5, whose first run wasn't a fair test | Claude, in a new session | Nothing |
 | W8 | Try the newer skills on real work: "prototype X", "write a prompt for X", "new use case: X" | Me | Nothing |
-| W9 | Add one line to the RM plan saying credit comes next on the same framework, because Andy named both | Claude | My yes |
 | W10 | Check the product details marked "(verify)" in the Tech Stack Guide: product names, prices, vendor terms and any update to the regulators' model-risk guidance. Eleven lines carry the mark | Claude | Nothing |
 | W11 | Fewer approval pop-ups (idea 2, approved): tell Claude which pop-ups I still see and in which app, so it can pre-approve the safe, read-only ones. Claude won't change my permission settings on a guess | Me, then Claude | Nothing |
 | W12 | Playbooks for my everyday tools (idea 3, approved): name two or three tasks I repeat in email, calendar or documents. Claude turns each into a step-by-step skill | Me, then Claude | Nothing |
 | W13 | Close the gaps the Controls Catalog found in my playbook: 13 of the 25 controls have a stage marked "not covered in the playbook yet", such as who proves that only approved AI models are used. Each needs a line added to the right playbook step, or a decision that it isn't needed | Claude, with my yes for each playbook change | Nothing |
 | W14 | Build an RM mock-up: clickable screens of the Monday opportunity list and the pre-meeting client brief, on made-up sample data, so Andy can see what an RM gets | Claude, with my review | My yes |
-| W15 | Build an "Andy edition" of the RM plan: two to three pages in his terms, no internal labels, with one line that credit comes next. Includes W9 | Claude, then me | V1, V2 and my yes |
+| W15 | Build an "Andy edition" of the RM plan: two to three pages in his terms, no internal labels, with one line that credit comes next. Includes the line that credit comes next | Claude, then me | V1, V2 and my yes |
 | W17 | Ready-to-fill templates: brief, data contract, risk intake, gate pack, decision log, evidence pack, monitoring plan, release-readiness checklist | Claude drafts, I review | My yes |
 | W18 | Tracker design: the fields every task carries, written to work in any tool (bank question B23 is still open) | Claude drafts, I review | My yes |
 | W19 | Approvals map for one product: who signs what at each gate, typical turnaround ⚠️, and who to go to when a sign-off is stuck | Claude drafts, I review | My yes |
 | W20 | Dry run of the machine: take one small made-up product through all six steps with the templates and two or three agents built as Claude skills, and log where it breaks | Claude and me | W17 and W18, and my read of the pages (V1, V3) |
 | W21 | Support model and incident runbook for one product: who users call, how issues are logged and fixed, and the steps to pause or roll back the product | Claude drafts, I review | Before the first product goes live |
-| W22 | Keep the reference pages (Agent Library, Workflow Maps, Steps Catalog, Controls Catalog) in line with every working file: run the alignment audit and fix what it finds. These are never on my review list (lesson L18, 2026-10-10) | Claude | Nothing |
 
 ## 4. To confirm at the bank
 
@@ -138,6 +136,7 @@ or the hiring team before I start. The rest need someone inside.
 | B25 | Do RMs work mainly in Salesforce? This decides where the insights appear | No | RM plan, section 5 |
 | B26 | The numbers still shown as [X] in the RM plan and the Product Framework, such as payback months, weekly-use targets and how many projects I run at once, and the plan's week estimates. Each gets set with the bank's real figures | No | RM plan; Product Framework |
 | B27 | The 46 guesses about the bank marked ⚠️ across the six playbook steps. Each gets replaced with a fact as I learn it. Many overlap B15 to B23 | No | Delivery Playbook |
+| B28 | The 20 bank terms listed at the end of the Glossary (such as "AI-sourced opportunity", "qualified opportunity" and "win rate"). Each is marked ⚠️ until the bank's own definition is recorded there, with its source. Many overlap B9 and B10 | No | Glossary |
 
 ## 5. Parked on purpose
 
@@ -159,5 +158,8 @@ or the hiring team before I start. The rest need someone inside.
 | C5 | Was D4: remove my safety rules (idea 16). The pop-up explanations and "Deny is safe" reminders are gone from the rule book, with the two pop-up rules and their tests | 2026-10-09 |
 | C6 | Was D2: yes to making the RM plan's 14 helper agents general. They are now M20 to M33 in the agent library, used by every project; the RM plan shows how it uses each one | 2026-10-10 |
 | C7 | Was D3: yes to three new controls. K23 (approved AI tools for the team's own work), K24 (consent before recording) and K25 (agents stop rather than guess) are in the Controls Catalog, backed by new playbook lines; the playbook's control check (4.5) now also confirms the build, test and live path and IT's approval of every connection | 2026-10-10 |
+| C8 | Was W9: the line saying credit comes next is now part of W15, the Andy edition | 2026-10-10 |
+| C9 | Was W22: keeping the reference pages in line is now built into every audit (the alignment sweep and its automatic checks), and the Glossary was added as a fifth reference page | 2026-10-10 |
+| C10 | Was D5: yes to ideas 35 and 36. The design canvas's runtime is kept in the repo so the render check always runs, and a check before every merge blocks it if the audit checker or render check finds a problem | 2026-10-10 |
 
 _Last updated: 2026-10-10_
