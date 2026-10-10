@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L19 · 2026-10-10 · The bottom of two RM design-page parts was cut off
+- **What happened:** I added a sentence to the team-agents table on the RM design page. Two parts grew taller than their frames, so their bottoms were cut off when you looked. This is the fourth rendering failure (empty tables in L7c, stray marks in L7d, now cut-off bottoms).
+- **Root cause:** rule R7 relied on me remembering to render, and the audit rendered only pages I thought had changed, checking only some kinds of failure. A text edit to a canvas part changes its height, and nothing measured it against its frame.
+- **Fix:** an automatic render check (`designs/render-check.js`) now renders every designed page and canvas part in every audit and fails on empty tables, cut-off parts, sideways scrolling, stray Markdown or a blank render. Audit step 2.2 requires it to report 0 problems, and the designed-doc skill runs it too. Tested: with the old frame size it reports the cut-off.
+- **Rule:** R7 · **Test:** T7 · **Level:** 3 (now an automatic check) · **Times it happened:** 5
+
 ### L18 · 2026-10-10 · Asked me to read reference pages Claude should check itself
 - **What happened:** The Open Items log listed the Agent Library, Workflow Maps, Steps Catalog and Controls Catalog as "reviews waiting on me", and the scorecard pointed me at them. I should never be asked to read these. They're reference pages built from the working files, and the 19-versus-39 agent count mismatch showed nobody was keeping them in line.
 - **Root cause:** Claude treated every page it built as something for me to review, which made me the checker for Claude's own consistency work. Reference pages are Claude's to keep correct, through the audit, not mine to proofread.

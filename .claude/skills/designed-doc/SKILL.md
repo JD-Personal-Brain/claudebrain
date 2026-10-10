@@ -31,7 +31,7 @@ Which format:
 Before saying it's done:
 1. Render it locally with Playwright (Chromium is at `/opt/pw-browsers/chromium`). Canvas artboards need the canvas's `dc-runtime.js` saved next to them as `support.js`, and must be served through a local web server (`python3 -m http.server`), never opened from disk: from disk the runtime drops table rows (from L7c).
 2. Measure: a one-pager's last line must end inside 1,056 px; a long doc must not scroll sideways at 400 px wide.
-3. Run `python3 .claude/skills/audit/check.py`: it fails on any empty table (required, from L7c).
+3. Run `python3 .claude/skills/audit/check.py` and `node designs/render-check.js` (see the audit skill, step 2.2): together they fail on any empty table, cut-off canvas part, sideways scrolling or stray Markdown (required, from L7c and L19). If you changed a canvas part's length, update its frame height in `canvas.json`.
 4. Look at one screenshot. Fix anything cut off, overlapping or empty, then publish.
 
 ## 5. Deliver

@@ -8,17 +8,17 @@ documents against it.
 > how products are delivered: the bank won't supply these, so we define them.
 > The last section lists the bank's business terms our plans depend on. Those
 > are **not** defined here: each one is marked ⚠️ until the bank's own
-> definition replaces it, because the bank's taxonomy is the one we plug into.
+> definition replaces it, because the bank's own names and definitions are the ones we plug into.
 
 ## How the work is organized
 
 | Term | What it means |
 |---|---|
 | **Step** | One of the six parts every product goes through: Discover, Define, Build, Govern and test, Release and adopt, Measure and iterate. |
-| **Sub-step** | A numbered piece of a step, from 1.0 to 6.6 (44 in all). Each has its own page in the playbook and card in the Steps Catalog. |
+| **Sub-step** | A numbered piece of a step, from 1.0 to 6.6 (44 in all). Each has its own section in the playbook and its own card in the Steps Catalog. |
 | **Gate** | The go/no-go decision at the end of each step. A named person decides, and the decision goes in the decision log. |
 | **Governance thread** | The risk and control work that runs through every step, so that step 4 confirms what risk partners have already seen. |
-| **Wave** | A set of features released together, after a quick pass through Discover and Define. |
+| **Wave** | Used two ways, so say which: a **feature wave** is a set of features released together, after a quick pass through Discover and Define; a **user wave** is the next group of users when a product scales (sub-step 5.7). |
 | **Pilot** | The first live use, by a small pilot group, alongside a comparison group. |
 | **Comparison group** | Similar users who don't get the product yet, so its effect can be told apart from everything else that changed. |
 | **Baseline** | A measure's value before the product, recorded with its date, source and exact definition (sub-step 1.7). |
@@ -26,16 +26,16 @@ documents against it.
 | **Delivery machine** | The whole system for running products: the six steps, the task tables in the product framework, the agents and the tracker. |
 | **Playbook** | The field manual: how to do each sub-step the first time, and what to log so it can be automated later. |
 | **First-time log** | The notes kept while doing a sub-step for the first time: time spent, waits, inputs and what repeated. |
-| **Automation check** | Three questions asked of every person-run task at each gate: did it repeat, is it stable, is it safe alone? Three yeses move it one kind toward Auto. |
+| **Automation check** | Three questions asked of every Me and Draft task at each gate: did it repeat, is it stable, is it safe alone? Three yeses move it one kind toward Auto. |
 
 ## People, agents and safeguards
 
 | Term | What it means |
 |---|---|
-| **Sponsor** | The business leader who owns the outcome and the funding, and makes the call at each gate. |
+| **Sponsor** | The business leader who owns the outcome and the funding, and makes the call at each gate (together with risk at the step 4 gate). |
 | **Product manager** | The person who owns scope, priorities and trade-offs, and owns the product until a long-term owner is named. |
 | **Long-term owner** | The person who holds the product after launch, for example someone in a revenue line. Named in Define if known, confirmed before scaling (sub-steps 2.8 and 5.7). |
-| **Risk partner** | The model risk contact who rates the product and works with the team from day one. |
+| **Risk partner** | The model risk contact who rates the product and works with the team from day one. **Risk partners** (plural) means everyone who signs off in step 4: model risk, compliance, privacy and security. |
 | **Data owner** | The person who decides what data may be used, and signs the data contract. |
 | **Champion** | A respected user who shows peers how they use the product. |
 | **Kind** | Who does a task: **Auto** (runs on its own), **Draft** (AI drafts, a named person checks), **Me** (only a person) or **Partner** (a sign-off only a named partner can give). |
@@ -51,9 +51,18 @@ documents against it.
 | **Red-teaming** | Trying on purpose to make the product fail: reveal other users' data, give a credit decision or go off-topic. |
 | **Made-up answer** | An answer the AI states confidently that isn't supported by its sources ("hallucination"). |
 | **Drift** | Quality slipping over time as data, models or instructions change. |
+| **Brief** | The one-page product brief from Define: problem, outcome, users, platform, first-release scope, what's out of scope and the long-term owner. |
+| **Backlog** | The ranked list of work still to build, with must-have controls at the top. |
+| **User story** | A short "As a [user], I need [what], so that [why]" statement of something to build, with **acceptance criteria** that say how to tell it's done. |
+| **Release 1** | The smallest useful first version and the pilot group who get it (sub-step 2.8). |
+| **Assistive first** | The AI drafts or suggests and a named person decides. Autonomy grows only with evidence. |
+| **Guardrail** | A filter that blocks off-topic answers, harmful content or sensitive data. |
+| **Override** | A user changing or rejecting what the AI produced. Tracked as a risk and quality signal. |
+| **Monitoring plan** | What is watched after launch, how often, the alert thresholds, who acts, and how to pause the product (sub-step 4.8). |
+| **Leading and lagging measures** | Leading measures show up within weeks (use, insights acted on, pipeline created); lagging ones take months (closed revenue). |
 | **Data contract** | The signed list of exact fields a product may use, how fresh they must be and the checks they must pass. |
 | **The five kinds of measures** | Usage, quality, business impact, adoption, and risk and controls. Set in Define, tracked in Measure. |
-| **Value model** | The calculation of what a product earns or saves against what it costs, with unknown numbers shown as [X]. |
+| **Value model** | The calculation of what a product earns against what it costs, with unknown numbers shown as [X]. Savings may be added with the credit use case. |
 
 ## Pages and records
 
@@ -63,7 +72,7 @@ documents against it.
 | **Working copy** | The Markdown file behind a designed page. Claude edits it; people read the page. |
 | **Reference page** | A page built to look things up: the Agent Library, Workflow Maps, Steps Catalog, Controls Catalog and this glossary. Claude keeps them aligned; they're never on the review list. |
 | **Gate pack** | Everything the decider needs at a gate, put together in one document. |
-| **Evidence pack** | The test results, data use and controls that reviewers sign in step 4. |
+| **Evidence pack** | Everything reviewers sign in step 4: the outputs of 4.1 to 4.6 (risk rating, data and privacy review, test and red-team results, fairness, controls and vendor reviews). |
 | **Decision log** | The record of each decision: what was decided, the options, who decided and why. |
 | **Tracker** | The one task list for a project: each task with its owner, date and status. |
 | **Open item** | Anything unfinished, kept in the Open Items log with a number that never changes. |
@@ -103,5 +112,10 @@ Our plans depend on these, but the definitions belong to the bank. Each stays
 | Certified data | Data the bank has approved as trusted for use | ⚠️ to map |
 | Risk rating | The level the bank's model risk process assigns to an AI use | ⚠️ to map |
 | Model inventory | The bank's register of models and AI uses | ⚠️ to map |
+| Qualified opportunity | An opportunity good enough to count in the value model ("qualified opportunities surfaced per RM") | ⚠️ to map |
+| Pipeline, closed won | Open opportunities, and opportunities that closed as won | ⚠️ to map |
+| RMs in scope, book size | How many RMs a product covers, and how many clients each RM covers | ⚠️ to map |
+| Hours saved | Time a product frees up each week, and how it's measured (Finance agrees the method) | ⚠️ to map |
+| Client attrition, at-risk client | A client who leaves or reduces business, and early signs that one might | ⚠️ to map |
 
 _Last updated: 2026-10-10_
