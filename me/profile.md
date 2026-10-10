@@ -18,6 +18,8 @@ when it learns something new.
 - When I approve something, I expect it to get done, not just written down.
 - I think in systems: build a reusable machine that runs many projects at once, with automation doing the routine work, not a one-off plan for one project.
 - I'm a big audit person: errors always turn up, so every piece of work gets a full audit before it goes into main, as a standard step, not now and then.
+- My audits must keep every core document consistent with every other and every page fully rendered, not just the files that changed. I shouldn't be asked to proofread reference pages.
+- Build the machine for one product end to end first; many products come later.
 - I push for speed: plans should be paced by what really blocks us (data access, approvals), not traditional phases.
 
 ## Tools I use
@@ -32,4 +34,4 @@ when it learns something new.
 - Learning to write good prompts (see `prompting.md`), and working through a "Claude Mastery" course I bought.
 - (more to add)
 
-_Last updated: 2026-10-09_
+_Last updated: 2026-10-10_
