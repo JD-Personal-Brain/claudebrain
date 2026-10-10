@@ -23,6 +23,8 @@ PAGES = [
      "How the bank earns money, the corporate segment in depth, and where AI work lines up with each revenue line."),
     ("prompting.md", "prompting.html", "Prompting Guide", "Working with Claude",
      "How we write prompts: Anthropic's advice in plain English, a fill-in template, worked examples and a checklist."),
+    ("glossary.md", "glossary.html", "Glossary", "Reference · the words we use",
+     "One meaning for each word in every plan, playbook page and agent spec, plus the bank's terms still to map."),
 ]
 
 def slug(t):

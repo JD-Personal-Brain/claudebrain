@@ -1,0 +1,110 @@
+<title>Glossary</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
+<style>
+/* Layout: navy header band, a pill nav of the six steps, then one reading column; each sub-step is a card with a two-column body. */
+:root{--bg:#F4F6F8;--card:#FFFFFF;--line:#D9DEE5;--fg:#1B2433;--muted:#4D5868;--navy:#14213D;--onnavy:#FFFFFF;--onnavy-muted:#C9D3E3;--teal:#0F5F59;--teal-bg:#E1F0EE;--amber-bg:#FDF3E1;--amber:#8A4B00;--me:#14213D;--me-fg:#FFFFFF;--partner-bg:#E6E9EE;--partner:#3B4656;--label-on-navy:#8FD3CA;
+--serif:"IBM Plex Serif",Georgia,"Times New Roman",serif;--sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1420;--card:#161E2C;--line:#2A3446;--fg:#E6EAF0;--muted:#A3AEBF;--navy:#0A1830;--onnavy:#FFFFFF;--onnavy-muted:#B4C1D6;--teal:#5FC4B8;--teal-bg:#123A37;--amber-bg:#3A2A10;--amber:#F2C27A;--me:#C9D6F0;--me-fg:#0E1420;--partner-bg:#2A3446;--partner:#C6CFDC;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0E1420;--card:#161E2C;--line:#2A3446;--fg:#E6EAF0;--muted:#A3AEBF;--navy:#0A1830;--onnavy:#FFFFFF;--onnavy-muted:#B4C1D6;--teal:#5FC4B8;--teal-bg:#123A37;--amber-bg:#3A2A10;--amber:#F2C27A;--me:#C9D6F0;--me-fg:#0E1420;--partner-bg:#2A3446;--partner:#C6CFDC;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.55}
+a{color:var(--teal)}
+a:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+code{font-family:var(--mono);font-size:.88em;background:var(--teal-bg);color:var(--teal);padding:1px 5px;border-radius:4px}
+.band{background:var(--navy);color:var(--onnavy);padding-block:48px 36px;padding-inline:20px}
+.wrap{max-width:1080px;margin:0 auto}
+.label{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--teal)}
+.band .label{color:var(--label-on-navy)}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(32px,5vw,46px);line-height:1.15;margin:10px 0 12px;text-wrap:balance}
+.lede{font-size:18px;color:var(--onnavy-muted);max-width:66ch;margin:0}
+.stepnav{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.stepnav a{color:var(--onnavy);text-decoration:none;border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:7px 14px;font-size:14px;display:flex;gap:8px;align-items:center}
+.stepnav a:hover{background:rgba(255,255,255,.08)}
+.stepnav .num{color:var(--label-on-navy)}
+main.wrap{padding-block:32px 64px;padding-inline:20px;display:flex;flex-direction:column;gap:56px}
+h2{font-family:var(--serif);font-weight:600;font-size:34px;line-height:1.2;margin:6px 0 0;text-wrap:balance}
+h3{font-family:var(--serif);font-weight:600;font-size:22px;margin:0}
+h4{font-family:var(--serif);font-weight:600;font-size:20px;margin:0;text-wrap:balance}
+h5{font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+p{margin:0 0 8px;max-width:72ch}
+ul,ol{margin:0;padding-left:22px}
+li{margin:3px 0}
+.num{font-family:var(--mono);font-size:13px;color:var(--teal);font-variant-numeric:tabular-nums}
+section{display:flex;flex-direction:column;gap:18px}
+.use{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:20px;min-width:0}
+.stephead{border-top:4px solid var(--navy);padding-top:22px}
+.meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0 0}
+.meta div{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 14px;min-width:0}
+.meta dt{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:4px}
+.meta dd{margin:0;font-size:15px}
+.intro p{color:var(--muted)}
+.note{background:var(--amber-bg);border-radius:8px;padding:14px 18px;font-size:15px;max-width:none}
+.warn{font-size:.9em}
+.toc{display:flex;flex-wrap:wrap;gap:8px}
+.toc a{display:flex;gap:8px;align-items:baseline;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:14px;color:var(--fg);text-decoration:none}
+.toc a:hover{border-color:var(--teal)}
+.sub{background:var(--card);border:1px solid var(--line);border-radius:8px;overflow:hidden;scroll-margin-top:16px}
+.sub>header{display:flex;gap:14px;align-items:baseline;padding:16px 20px;border-bottom:1px solid var(--line)}
+.sub>header .num{font-size:15px}
+.subgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0}
+.col{padding:16px 20px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.col.steps{border-left:1px solid var(--line)}
+.col.steps ol{display:flex;flex-direction:column;gap:6px}
+.fld p,.fld li{font-size:15px}
+.auto{background:var(--teal-bg);padding:14px 20px;font-size:15px}
+.auto h5{color:var(--teal)}
+.rm{padding:12px 20px;font-size:14px;color:var(--muted);border-top:1px solid var(--line);display:flex;gap:10px;flex-wrap:wrap;align-items:baseline}
+.rm p{margin:0}
+.rmlabel{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);background:var(--amber-bg);padding:2px 8px;border-radius:4px;white-space:nowrap}
+.gate{background:var(--navy);color:var(--onnavy);border-radius:8px;padding:22px 24px;display:flex;flex-direction:column;gap:8px}
+.gate .label{color:var(--label-on-navy)}
+.gate h3{color:var(--onnavy)}
+.gate li{color:var(--onnavy-muted)}
+.gate strong{color:var(--onnavy)}
+.review{display:flex;flex-direction:column;gap:10px}
+.review>p{color:var(--muted);font-size:15px}
+.tw{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:8px}
+table{width:100%;border-collapse:collapse;font-size:15px;min-width:600px}
+th{text-align:left;font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:10px 16px;border-bottom:1px solid var(--line)}
+td{padding:10px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+.chip{display:inline-block;font-family:var(--mono);font-size:12px;padding:2px 9px;border-radius:999px;white-space:nowrap;font-weight:500;margin-right:4px}
+.k-auto{background:var(--teal-bg);color:var(--teal)}
+.k-draft{background:var(--amber-bg);color:var(--amber)}
+.k-me{background:var(--me);color:var(--me-fg)}
+.k-partner{background:var(--partner-bg);color:var(--partner)}
+.agents{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.agent{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:18px 20px;display:flex;flex-direction:column;gap:10px;min-width:0;scroll-margin-top:16px}
+.agent header{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline}
+.agent .used{font-family:var(--mono);font-size:12px;color:var(--muted);margin-left:auto}
+.agent .job{margin:0;font-size:16px}
+.kindrow{font-size:14px;color:var(--muted)}
+.spec{margin:0;display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding-top:10px}
+.spec div{display:grid;grid-template-columns:140px minmax(0,1fr);gap:10px}
+.spec dt{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.spec dd{margin:0;font-size:14px}
+pre.diagram{font-family:var(--mono);font-size:13px;line-height:1.5;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px 18px;overflow-x:auto;margin:0}
+.md-h{margin:8px 0 2px}
+footer{color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:760px){.subgrid,.use,.meta,.agents{grid-template-columns:1fr}.spec div{grid-template-columns:1fr;gap:2px}.col.steps{border-left:0;border-top:1px solid var(--line)}}
+
+.mdbody{display:flex;flex-direction:column;gap:12px}
+.mdbody>ul,.mdbody>ol{max-width:78ch}
+.mdbody li{margin:4px 0}
+.intro-block{display:flex;flex-direction:column;gap:12px}
+</style>
+<div class="band"><div class="wrap">
+<span class="label">Reference · the words we use</span>
+<h1>Glossary: the words we use</h1>
+<p class="lede">One meaning for each word in every plan, playbook page and agent spec, plus the bank&#x27;s terms still to map.</p>
+<nav class="stepnav" aria-label="Sections"><a href="#how-the-work-is-organized">How the work is organized</a><a href="#people-agents-and-safeguards">People, agents and safeguards</a><a href="#pages-and-records">Pages and records</a><a href="#words-we-don-t-use">Words we don't use</a><a href="#bank-terms-to-map">Bank terms to map</a></nav>
+</div></div>
+<main class="wrap">
+<div class="intro-block"><p>One meaning for each word, used the same way in every plan, playbook page and agent spec. Claude loads this every session, and the audit checks the core documents against it.</p><div class="note"><strong>Two kinds of terms.</strong> The first two sections are our own working words for how products are delivered: the bank won't supply these, so we define them. The last section lists the bank's business terms our plans depend on. Those are <strong>not</strong> defined here: each one is marked <span class="warn" title="Guess about the bank: to confirm">⚠️</span> until the bank's own definition replaces it, because the bank's taxonomy is the one we plug into.</div></div>
+<section id="how-the-work-is-organized"><div class="stephead"><h2>How the work is organized</h2></div><div class="mdbody"><div class="tw"><table><thead><tr><th>Term</th><th>What it means</th></tr></thead><tbody><tr><td><strong>Step</strong></td><td>One of the six parts every product goes through: Discover, Define, Build, Govern and test, Release and adopt, Measure and iterate.</td></tr><tr><td><strong>Sub-step</strong></td><td>A numbered piece of a step, from 1.0 to 6.6 (44 in all). Each has its own page in the playbook and card in the Steps Catalog.</td></tr><tr><td><strong>Gate</strong></td><td>The go/no-go decision at the end of each step. A named person decides, and the decision goes in the decision log.</td></tr><tr><td><strong>Governance thread</strong></td><td>The risk and control work that runs through every step, so that step 4 confirms what risk partners have already seen.</td></tr><tr><td><strong>Wave</strong></td><td>A set of features released together, after a quick pass through Discover and Define.</td></tr><tr><td><strong>Pilot</strong></td><td>The first live use, by a small pilot group, alongside a comparison group.</td></tr><tr><td><strong>Comparison group</strong></td><td>Similar users who don't get the product yet, so its effect can be told apart from everything else that changed.</td></tr><tr><td><strong>Baseline</strong></td><td>A measure's value before the product, recorded with its date, source and exact definition (sub-step 1.7).</td></tr><tr><td><strong>Frozen version</strong></td><td>The exact version reviewers test and approve in step 4. Every fix creates a new frozen version, which is tested again.</td></tr><tr><td><strong>Delivery machine</strong></td><td>The whole system for running products: the six steps, the task tables in the product framework, the agents and the tracker.</td></tr><tr><td><strong>Playbook</strong></td><td>The field manual: how to do each sub-step the first time, and what to log so it can be automated later.</td></tr><tr><td><strong>First-time log</strong></td><td>The notes kept while doing a sub-step for the first time: time spent, waits, inputs and what repeated.</td></tr><tr><td><strong>Automation check</strong></td><td>Three questions asked of every person-run task at each gate: did it repeat, is it stable, is it safe alone? Three yeses move it one kind toward Auto.</td></tr></tbody></table></div></div></section><section id="people-agents-and-safeguards"><div class="stephead"><h2>People, agents and safeguards</h2></div><div class="mdbody"><div class="tw"><table><thead><tr><th>Term</th><th>What it means</th></tr></thead><tbody><tr><td><strong>Sponsor</strong></td><td>The business leader who owns the outcome and the funding, and makes the call at each gate.</td></tr><tr><td><strong>Product manager</strong></td><td>The person who owns scope, priorities and trade-offs, and owns the product until a long-term owner is named.</td></tr><tr><td><strong>Long-term owner</strong></td><td>The person who holds the product after launch, for example someone in a revenue line. Named in Define if known, confirmed before scaling (sub-steps 2.8 and 5.7).</td></tr><tr><td><strong>Risk partner</strong></td><td>The model risk contact who rates the product and works with the team from day one.</td></tr><tr><td><strong>Data owner</strong></td><td>The person who decides what data may be used, and signs the data contract.</td></tr><tr><td><strong>Champion</strong></td><td>A respected user who shows peers how they use the product.</td></tr><tr><td><strong>Kind</strong></td><td>Who does a task: <strong>Auto</strong> (runs on its own), <strong>Draft</strong> (AI drafts, a named person checks), <strong>Me</strong> (only a person) or <strong>Partner</strong> (a sign-off only a named partner can give).</td></tr><tr><td><strong>Agent</strong></td><td>An AI helper with one job, a short list of allowed actions and a named person in charge.</td></tr><tr><td><strong>Machine agent</strong></td><td>One of the 33 general agents (M1 to M33) that run the delivery machine on every project. Specified in the agent library.</td></tr><tr><td><strong>Product agent</strong></td><td>An agent inside the product that users see, numbered per project (A1 to A6 in the RM plan). Specified in that project's memo, Appendix A.</td></tr><tr><td><strong>Agent spec</strong></td><td>An agent's written definition: its job, inputs, allowed and forbidden actions, outputs, when it stops, proof it worked and the person in charge.</td></tr><tr><td><strong>Ongoing mode</strong></td><td>An agent that keeps running after launch, not just once (for example M24 on every data refresh).</td></tr><tr><td><strong>Control</strong></td><td>A safeguard built into a product so the bank can trust it (K1 to K25 in the Controls Catalog). Each says where it is set, built, proved and watched.</td></tr><tr><td><strong>Sign-off</strong></td><td>A named partner's formal approval in step 4. Never automated.</td></tr><tr><td><strong>Quality bar</strong></td><td>The thresholds a product must meet: accuracy, sources shown, relevance, usefulness and permissions (zero tolerance). Set in Define.</td></tr><tr><td><strong>Test set</strong></td><td>Real examples with known good answers, run against every version.</td></tr><tr><td><strong>Red-teaming</strong></td><td>Trying on purpose to make the product fail: reveal other users' data, give a credit decision or go off-topic.</td></tr><tr><td><strong>Made-up answer</strong></td><td>An answer the AI states confidently that isn't supported by its sources ("hallucination").</td></tr><tr><td><strong>Drift</strong></td><td>Quality slipping over time as data, models or instructions change.</td></tr><tr><td><strong>Data contract</strong></td><td>The signed list of exact fields a product may use, how fresh they must be and the checks they must pass.</td></tr><tr><td><strong>The five kinds of measures</strong></td><td>Usage, quality, business impact, adoption, and risk and controls. Set in Define, tracked in Measure.</td></tr><tr><td><strong>Value model</strong></td><td>The calculation of what a product earns or saves against what it costs, with unknown numbers shown as [X].</td></tr></tbody></table></div></div></section><section id="pages-and-records"><div class="stephead"><h2>Pages and records</h2></div><div class="mdbody"><div class="tw"><table><thead><tr><th>Term</th><th>What it means</th></tr></thead><tbody><tr><td><strong>Designed page</strong></td><td>A branded page a person reads. Everything a person reads is one.</td></tr><tr><td><strong>Working copy</strong></td><td>The Markdown file behind a designed page. Claude edits it; people read the page.</td></tr><tr><td><strong>Reference page</strong></td><td>A page built to look things up: the Agent Library, Workflow Maps, Steps Catalog, Controls Catalog and this glossary. Claude keeps them aligned; they're never on the review list.</td></tr><tr><td><strong>Gate pack</strong></td><td>Everything the decider needs at a gate, put together in one document.</td></tr><tr><td><strong>Evidence pack</strong></td><td>The test results, data use and controls that reviewers sign in step 4.</td></tr><tr><td><strong>Decision log</strong></td><td>The record of each decision: what was decided, the options, who decided and why.</td></tr><tr><td><strong>Tracker</strong></td><td>The one task list for a project: each task with its owner, date and status.</td></tr><tr><td><strong>Open item</strong></td><td>Anything unfinished, kept in the Open Items log with a number that never changes.</td></tr></tbody></table></div></div></section><section id="words-we-don-t-use"><div class="stephead"><h2>Words we don't use</h2></div><div class="mdbody"><p>The audit flags these in the core documents. Use the word on the right.</p><div class="tw"><table><thead><tr><th>Don't say</th><th>Say instead</th><th>Why</th></tr></thead><tbody><tr><td>product owner</td><td>product manager, or long-term owner</td><td>Two different roles; "product owner" blurs them.</td></tr><tr><td>control group</td><td>comparison group</td><td>One name for one idea.</td></tr><tr><td>phase</td><td>step</td><td>Our process has steps, each ending in a gate.</td></tr><tr><td>stage gate</td><td>gate</td><td>One name for one idea.</td></tr><tr><td>signoff</td><td>sign-off</td><td>One spelling.</td></tr><tr><td>cohort</td><td>pilot group, or comparison group</td><td>Say which group.</td></tr></tbody></table></div></div></section><section id="bank-terms-to-map"><div class="stephead"><h2>Bank terms to map</h2></div><div class="mdbody"><p>Our plans depend on these, but the definitions belong to the bank. Each stays <span class="warn" title="Guess about the bank: to confirm">⚠️</span> until the bank's own definition is recorded here, with its source.</p><div class="tw"><table><thead><tr><th>Term</th><th>How our plans use it today</th><th>Bank definition</th></tr></thead><tbody><tr><td>Relationship manager (RM)</td><td>The banker who owns business client relationships and brings in new deals</td><td><span class="warn" title="Guess about the bank: to confirm">⚠️</span> to map</td></tr><tr><td>Portfolio manager</td><td>The credit partner paired with an RM</td><td><span class="warn" title="Guess about the bank: to confirm">⚠️</span> to map</td></tr><tr><td>Treasury management officer</td><td>The specialist an RM refers clients to for payments and cash management</td><td><span class="warn" title="Guess about the bank: to confirm">⚠️</span> to map</td></tr><tr><td>Client, relationship</td><td>A business client and everything the bank does with it</td><td><span class="warn" title="Guess about the bank: to confirm">⚠️</span> to map</td></tr><tr><td>Segment and market</td><td>How clients and bankers are grouped (for example, by size or region)</td><td><span class="warn" title="Guess about the bank: to confirm">⚠️</span> to map</td></tr><tr><td>AI-sourced opportunity</td><td>An opportunity in the CRM that started from an AI insight, tagged so results can be counted</td><td><span class="warn" title="Guess about the bank: to confirm">⚠️</span> to map</td></tr><tr><td>Win rate</td><td>The share of opportunities that close as won</td><td><span class="warn" title="Guess about the bank: to confirm">⚠️</span> to map</td></tr><tr><td>First-year revenue per win</td><td>The revenue a won deal brings in its first year</td><td><span class="warn" title="Guess about the bank: to confirm">⚠️</span> to map</td></tr><tr><td>Active user (weekly)</td><td>A user who used the product in a given week</td><td><span class="warn" title="Guess about the bank: to confirm">⚠️</span> to map</td></tr><tr><td>Client-facing time</td><td>Time a banker spends with clients rather than on admin or internal work</td><td><span class="warn" title="Guess about the bank: to confirm">⚠️</span> to map</td></tr><tr><td>Product gap</td><td>A product a client would likely need but doesn't have with the bank</td><td><span class="warn" title="Guess about the bank: to confirm">⚠️</span> to map</td></tr><tr><td>Referral</td><td>One banker passing a client need to another team</td><td><span class="warn" title="Guess about the bank: to confirm">⚠️</span> to map</td></tr><tr><td>Certified data</td><td>Data the bank has approved as trusted for use</td><td><span class="warn" title="Guess about the bank: to confirm">⚠️</span> to map</td></tr><tr><td>Risk rating</td><td>The level the bank's model risk process assigns to an AI use</td><td><span class="warn" title="Guess about the bank: to confirm">⚠️</span> to map</td></tr><tr><td>Model inventory</td><td>The bank's register of models and AI uses</td><td><span class="warn" title="Guess about the bank: to confirm">⚠️</span> to map</td></tr></tbody></table></div></div></section>
+<footer>Built from the working copy <code>glossary.md</code> · last updated 2026-10-10. Lines marked ⚠️ are guesses to confirm; [X] marks numbers still to be set.</footer>
+</main>

@@ -10,6 +10,7 @@
 7. Alignment across documents (from L18): counts of agents, sub-steps, controls and workflow branches
    quoted anywhere match the sources; the framework's "What happens" lists have one item per playbook
    sub-step; the Six-Step Workflow memo and page carry the framework's gate wording.
+8. The glossary: no word from its "Words we don't use" table appears in the core documents.
 Prints each problem and a total. 0 problems means the mechanical checks pass."""
 import subprocess
 import re,glob
@@ -142,4 +143,17 @@ for m in re.finditer(r'^\| (\d)\. [^|]+\|[^|]+\|[^|]+\| ([^|]+) \|$',rw,re.M):
 rh=_html.unescape(open('designs/role-workflow.html').read())
 for n,g in gates.items():
     if f'<b>Gate {n}</b><span>{g[0].upper()+g[1:]}</span>' not in rh: print('designs/role-workflow.html gate',n,'differs from product-framework.md'); probs+=1
+# 8. the glossary (glossary.md): no "Don't say" word in the core documents, and the library's term count is right
+gl=open('glossary.md').read()
+GT=len(re.findall(r'^\| \*\*[^*]+\*\* \|',gl,re.M))
+for b in lib['building_blocks']:
+    if b['id']=='glossary' and b['count']!=f'{GT} terms': print('designs/library.json count for Glossary is',repr(b['count']),'but glossary.md has',GT,'terms'); probs+=1
+dont=gl.split("## Words we don't use")[1].split('\n## ')[0]
+bad=[m.group(1).strip() for m in re.finditer(r'^\| ([^|*]+?) \| [^|]+ \| [^|]+ \|$',dont,re.M) if m.group(1).strip() not in ("Don't say",)]
+if not bad: print('glossary.md: could not read the "Words we don\'t use" table'); probs+=1
+core=['product-framework.md','open-items.md','tech-stack.md','memos/rm-analytics-framework.md','memos/rm-analytics-summary.md','memos/role-workflow.md']+sorted(glob.glob('playbook/*.md'))
+for f in core:
+    for i,line in enumerate(open(f).read().split('\n'),1):
+        for w in bad:
+            if re.search(r'\b'+re.escape(w)+r'\b',line,re.I): print(f+':'+str(i),'uses',repr(w),'(see the glossary\'s "Words we don\'t use")'); probs+=1
 print("problems:",probs)
