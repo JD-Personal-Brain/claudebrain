@@ -5,29 +5,29 @@ framework: read the core, make it runnable, run it once, then get ready for Andy
 Claude updates it at every wrap-up: finished items move to "Closed" with the date.
 
 > **How to read this.** Work top to bottom: each stage builds on the one before.
-> Every item keeps a number that never changes, so I can say "close V2" or
+> Every item keeps a number that never changes, so I can say "close V1" or
 > "what's W4?". The letter says what kind of item it is: **D** a decision,
-> **V** something to read, **W** work, **B** a question for the bank, **P** parked.
+> **V** something to read, **W** work, **B** a question for the bank (not the RM plan's workflows B1 to B9), **P** parked, **C** closed.
 > **Who** says who moves it next. ⚠️ marks a guess.
 
 ## The path (agreed 2026-10-10)
 
-1. **Read and lock the core** (me): the RM plan, its one outside source and the playbook.
+1. **Read and lock the core** (me): the RM plan and the playbook.
 2. **Make the machine runnable** (Claude): templates, task list design, approvals map, control gaps.
 3. **Dry run and fix** (both): one made-up product through all six steps; fix what breaks.
 4. **Get ready for Andy** (Claude builds, I decide): the RM mock-up, the Andy edition and my questions for him.
 
-**Next up:** stage 1 (V1 and V2, the RM plan) and, at the same time, stage 2 (W17 and W18). Neither waits on the other.
+**Next up:** stage 1 (V1, the RM plan) and, at the same time, stage 2 (W17 and W18). Neither waits on the other.
 
 ## At a glance
 
 | Stage | Open | What it is |
 |---|---|---|
-| Stage 1. Read and lock the core | 7 | What I read, then the decision on the RM framework |
+| Stage 1. Read and lock the core | 10 | What I read, then the decision on the RM framework |
 | Stage 2. Make the machine runnable | 4 | What Claude builds so a real run is possible |
 | Stage 3. Dry run and fix | 3 | Running the machine once and fixing it |
 | Stage 4. Get ready for Andy | 10 | What Andy sees, and what I ask him |
-| Alongside the path | 10 | Useful any time; doesn't block a stage. Dated items first |
+| Alongside the path | 12 | Useful any time; doesn't block a stage. Dated items first |
 | Inside the bank | 21 | Questions only someone at the bank can answer |
 | Parked on purpose | 3 | Not forgotten; waiting for a signal from me |
 
@@ -48,7 +48,7 @@ every working file (this section replaces the separate Gap Review page).
 | Area | Rating | Where we are | Open items |
 |---|---|---|---|
 | The six-step process for one product | Strong on paper | Steps, gates, 44 sub-steps, first-time logs and the automation check at every gate. Not yet tried on real work | V3, W20 |
-| RM plan (the first worked example) | Strong draft, not reviewed | Memo v8, with agent specs and workflows. I've read only the summary's opening and plan table | V1, V2 |
+| RM plan (the first worked example) | Strong draft, not reviewed | Memo v8, with agent specs and workflows. I've read only the summary's opening and plan table. Now organized on seven core use cases | V1, D6 to D8 |
 | Governance and controls | Partial | 25 controls named. 13 have a stage the playbook doesn't cover yet, such as who proves that only approved AI models are used | W13 |
 | Automating the process | Partial | Every task is marked Auto, Draft or Me, and 39 agents are fully specified: 33 general agents that run the delivery machine, and the RM product's own 6. None is built or tested. How much can run alone depends on whether the bank lets automations message people ⚠️ | B22, W20 |
 | Ready-to-fill templates | Missing | The brief, data contract, risk intake, gate pack, evidence pack and monitoring plan are described, but none exists as a template yet. The Draft agents need these to fill in | W17 |
@@ -66,12 +66,15 @@ every working file (this section replaces the separate Gap Review page).
 | # | Item | Who | Waits on |
 |---|---|---|---|
 | V1 | Read the RM Analytics Plan (the long scrolling page): everything after the summary's opening and plan table: from "What lets us move this fast" on, then Parts 1 to 6. The RM Analytics Framework design page holds the same words | Me | Nothing |
-| V2 | Read the One outside source in the RM plan: open the McKinsey article in a browser and check its numbers before sharing the plan. Cloud sessions can't open that site, so the numbers were checked through search summaries only | Me | Nothing |
 | V3 | Read the Delivery Playbook: all six steps (the agent list at the end is reference only) | Me | Nothing |
-| V4 | Read the The Delivery Machine: the page for leaders on how one product manager runs many projects | Me | Nothing |
+| V4 | Read The Delivery Machine: the page for leaders on how one product manager runs many projects | Me | Nothing |
 | V5 | Read the Bank Business Briefing: the whole page, new on 2026-10-09 | Me | Nothing |
 | V8 | Read the Six-Step Product Workflow: the one-page visual, still marked Draft | Me | Nothing |
-| D1 | Is the RM framework ready to copy to other use cases? My answer on 2026-10-09: not yet. The reviews in section 2 and the work in section 3 come first | Me | Credit, the next use case, waits on this |
+| V12 | Read the McKinsey Use Cases page: McKinsey's five frontline AI use cases and their returns, how the RM plan covers them, and the questions it raises | Me | Nothing |
+| D6 | Add an AI product under core use case 5, AI sales coaching (personal guidance from call transcripts)? Low risk, and McKinsey reports new bankers ramping up 20% faster | Me | V12 |
+| D7 | Move prospecting (winning new clients) earlier than wave 3? McKinsey reports its biggest revenue numbers there; outside prospect data may set the pace | Me | V12 |
+| D8 | Keep autonomous lead nurturing and pricing out for now, because they conflict with "nothing reaches a client without the RM" and the fair-lending control? Claude recommends yes, revisit later with evidence | Me | V12 |
+| D1 | Is the RM framework ready to copy to other use cases? My answer on 2026-10-09: not yet. The reading in stage 1 and the work in stages 2 and 3 come first | Me | Credit, the next use case, waits on this |
 
 ## Stage 2. Make the machine runnable
 
@@ -101,7 +104,7 @@ every working file (this section replaces the separate Gap Review page).
 | # | Item | Who | Waits on |
 |---|---|---|---|
 | W14 | Build an RM mock-up: clickable screens of the Monday opportunity list and the pre-meeting client brief, on made-up sample data, so Andy can see what an RM gets | Claude, with my review | Stage 1 |
-| W15 | Build an "Andy edition" of the RM plan: two to three pages in his terms, no internal labels, with one line that credit comes next. Includes the line that credit comes next | Claude, then me | V1, V2 and my yes |
+| W15 | Build an "Andy edition" of the RM plan: two to three pages in his terms, no internal labels, with one line that credit comes next | Claude, then me | V1 and my yes |
 | B1 | Which revenue lever matters most to the business right now? (from: RM plan, section 11) | Me, with Andy | Nothing |
 | B2 | How will success be judged in the first 6 months? (from: RM plan, section 11) | Me, with Andy | Nothing |
 | B3 | What are Andy's first use cases, and how does RM analytics rank against credit (portfolio management) and treasury and payments? (from: Bank Business Briefing, section 9) | Me, with Andy | Nothing |
@@ -119,6 +122,8 @@ Useful any time; none of these blocks a stage. Dated ones first.
 |---|---|---|---|
 | W6 | First weekly review: what's working, what's annoying, what to change. Also re-check Anthropic's prompting guide for changes | Me, with Claude | Around 2026-10-14 |
 | W4 | Re-run the Bank Business Briefing after the bank's Q3 2026 results on October 22, 2026, using the saved prompt (Example 5 in the Prompting Guide). Read the full Q2 earnings call transcript at the same time; only a summary was available the first time | Claude | October 22, 2026 |
+| W22 | Two loose ends from the McKinsey article: confirm its publication date (the pasted page showed none), and decide whether role redesign (new RM roles as agents take on work, McKinsey's fifth principle) belongs in the playbook; it isn't covered yet | Claude, then me | Nothing |
+| W23 | Suggested idea 37: an automatic check for old terms after a rename, so a change like five to seven core use cases can't stop halfway. Waits on my yes or no | Me | My yes or no |
 | W5 | Loose ends in the Bank Business Briefing: check the exact wording of the bank's AI announcement before quoting it; replace the 2016 description of who the segment serves once the annual report for the 2025 financial year can be opened in full; and confirm two of my guesses, the RM headcount read from an unclear chart and that Omaha came with American National | Claude | Nothing |
 | W7 | Run the tests of Claude's rules that need a real session. Each test is a short scenario in `learning/tests.md` that checks one rule still works. Not yet run in a live session: T7, T10, T13, T14 and T17, and the second parts of T2, T3, T9 and T16. Never run at all: T18 to T22, T24 and T25. Re-run T8 (does Claude label every suggestion Needed or Optional?), which failed on 2026-10-09 before its rule was tightened, and T5, whose first run wasn't a fair test | Claude, in a new session | Nothing |
 | W10 | Check the product details marked "(verify)" in the Tech Stack Guide: product names, prices, vendor terms and any update to the regulators' model-risk guidance. Eleven lines carry the mark | Claude | Nothing |
@@ -178,5 +183,7 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C8 | Was W9: the line saying credit comes next is now part of W15, the Andy edition | 2026-10-10 |
 | C9 | Was W22: keeping the reference pages in line is now built into every audit (the alignment sweep and its automatic checks), and the Glossary was added as a fifth reference page | 2026-10-10 |
 | C10 | Was D5: yes to ideas 35 and 36. The design canvas's runtime is kept in the repo so the render check always runs, and a check before every merge blocks it if the audit checker or render check finds a problem | 2026-10-10 |
+| C11 | Was V2: the McKinsey numbers in the RM plan are confirmed against the article's text (3–15% higher revenue per RM, 20–40% lower cost to serve, and RMs spending about 25–30% of their time with clients). The last one is now credited to McKinsey directly | 2026-10-10 |
+| C12 | Was D9: yes. The RM plan is now organized on seven core use cases: McKinsey's five frontline use cases plus two of our own (admin off the RM's plate, keep clients), with our AI products underneath each and a return profile for each (McKinsey benchmarks next to our own [X] targets) | 2026-10-10 |
 
 _Last updated: 2026-10-10_

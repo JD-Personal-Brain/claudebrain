@@ -53,7 +53,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Me**, with platform teams.
   - Note: the questions each platform team asked. They become a standard feasibility checklist.
-  - Agent idea: a **platform fit checker** (spec M7) that scores a brief against the five criteria and lists known blockers. *Draft*.
+  - Agent: **M7 Platform fit checker** (agent library) that scores a brief against the five criteria and lists known blockers. *Draft*.
 - **For RM analytics:** start on the Salesforce client record (Agentforce, Prompt Builder), with a Monday digest through Power Automate (memo section 5).
 
 ---
@@ -141,7 +141,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Me**. Trade-offs are judgment calls.
   - Note: which scoring questions actually changed the order.
-  - Agent idea: a **decision log drafter** (spec M8) that writes log entries from meeting recaps (M365 Copilot). *Draft*.
+  - Agent: **M8 Decision log drafter** (agent library) that writes log entries from meeting recaps (M365 Copilot). *Draft*.
 - **For RM analytics:** briefs, follow-ups and the opportunity list come first; call notes saved to Salesforce wait for wave 2.
 
 ---
@@ -165,7 +165,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Draft**.
   - Note: which measures you could pull automatically and which needed someone by hand.
-  - Agent idea: a **measures sheet builder** (spec M9) that drafts the measures and their sources from the brief and the data contract. *Draft*.
+  - Agent: **M9 Measures sheet builder** (agent library) that drafts the measures and their sources from the brief and the data contract. *Draft*.
 - **For RM analytics:** every AI-sourced opportunity is tagged in Salesforce from day one, and Finance agrees the comparison method before the pilot (memo section 2).
 
 ---
@@ -188,7 +188,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Me** for the scope, **Draft** for the pack.
   - Note: what you copied into the gate pack by hand.
-  - Agent idea: the **gate pack drafter** (spec M6) from Discover, reused here. *Draft*.
+  - Agent: **M6 Gate pack drafter** (agent library) from Discover, reused here. *Draft*.
 - **For RM analytics:** wave 1 = pre-meeting briefs, meeting follow-ups and the weekly opportunity list.
 
 ---

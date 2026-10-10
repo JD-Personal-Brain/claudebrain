@@ -33,7 +33,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Me**, with platform teams.
   - Note: which spec fields were hard to fill in. That tells you what to ask earlier.
-  - Agent idea: an **agent spec drafter** (spec M10) that turns a user story into a first spec. *Draft*.
+  - Agent: **M10 Agent spec drafter** (agent library) that turns a user story into a first spec. *Draft*.
 - **For RM analytics:** A1 Signal finder → A2 Insight writer → Salesforce record and the A4 Weekly opportunity digest. A3 handles prep and follow-up (memo Appendix A).
 
 ---
@@ -46,7 +46,7 @@ log (see `README.md`) for every sub-step.
 - **First time, step by step:**
   1. With the data engineer, build a view for each source in the contract.
   2. Add the quality checks from the contract, such as no blanks and a refresh within [X] hours.
-  3. Apply the permission rule: each user only sees data they're already allowed to see.
+  3. Apply the permission rule: each user only sees data they're already allowed to see. Mask the fields the data contract marks as sensitive, and label sensitive files.
   4. Spot-check 20 records by hand against the source system.
 - **Output:** the data views, with checks and permissions.
 - **Done when:** the spot-check matches and the checks run every refresh.
@@ -96,7 +96,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Me**, with platform teams.
   - Note: which controls the platform gave you for free, and which needed building. Next project, choose platforms with that in mind.
-  - Agent idea: a **controls checker** (spec M11) that re-runs the control tests on every release. *Auto*, test environment only.
+  - Agent: **M11 Controls checker** (agent library) that re-runs the control tests on every release. *Auto*, test environment only.
 - **For RM analytics:** RMs approve before anything is saved or sent; each RM sees only their permitted clients.
 
 ---
@@ -129,14 +129,14 @@ log (see `README.md`) for every sub-step.
 - **First time, step by step:**
   1. Collect [X] real examples covering normal, tricky and edge cases. ⚠️ A common start is about 50 to 100.
   2. Have experienced users write or approve the good answer for each one.
-  3. Add "must refuse" cases, such as another user's client or a credit decision.
+  3. Add "must refuse" cases, such as another user's client, a credit decision or a pricing recommendation.
   4. Store it with a version number, and never change old versions.
 - **Output:** the test set, versioned.
 - **Done when:** it covers every story in release 1 and the main risks.
 - **Automation watch:**
   - First time: **Draft**. AI suggests cases; users approve the answers.
   - Note: how long grading took per example.
-  - Agent idea: a **test case generator** (spec M12) that suggests new cases from feedback and failures. *Draft*.
+  - Agent: **M12 Test case generator** (agent library) that suggests new cases from feedback and failures. *Draft*.
 - **For RM analytics:** real client examples graded by experienced RMs.
 
 ---
@@ -158,7 +158,7 @@ log (see `README.md`) for every sub-step.
   - First time: **Draft**.
   - Note: how long a full test run took by hand. That's the time the agent saves on every later change.
   - Agent: **M26 Test grader** (agent library). It scores every version; users grade a sample. Aim for **Auto** on every new version.
-  - Agent idea: the **gate pack drafter** (spec M6) from Discover, reused for the Build gate pack. *Draft*.
+  - Agent: **M6 Gate pack drafter** (agent library) from Discover, reused for the Build gate pack. *Draft*.
 - **For RM analytics:** accuracy (numbers match the source), relevance and usefulness rated by RMs.
 
 ---

@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L20 · 2026-10-10 · A rename reached only the files I was editing
+- **What happened:** We decided the RM plan has seven core use cases, with AI products under them. The deep audit still found "five core use cases" in the Document Library, the McKinsey page and the Open Items log, about 40 places where "use case" or "feature" still meant one AI product, and a memo line saying each core use case "becomes one line of the value model" when the value model has no such lines.
+- **Root cause:** I changed the words where I was working and never searched every file for the old forms. I also wrote what a section would contain without opening it (rule R21).
+- **Fix:** When a term, count or definition changes, search the whole repo for every old form (singular, plural, number) before calling it done, and fix or deliberately keep each hit.
+- **Rule:** R23 · **Test:** T27 · **Level:** 1 · **Times it happened:** 1
+
 ### L19 · 2026-10-10 · The bottom of two RM design-page parts was cut off
 - **What happened:** I added a sentence to the team-agents table on the RM design page. Two parts grew taller than their frames, so their bottoms were cut off when you looked. This is the fourth rendering failure (empty tables in L7c, stray marks in L7d, now cut-off bottoms).
 - **Root cause:** rule R7 relied on me remembering to render, and the audit rendered only pages I thought had changed, checking only some kinds of failure. A text edit to a canvas part changes its height, and nothing measured it against its frame.

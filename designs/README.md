@@ -7,7 +7,7 @@ Edit here, publish to the same link, then save a draft.
 |---|---|---|
 | RM Analytics Framework design page (summary + six parts) | https://claude.ai/artifact/3c7ZxKjJcjWRyV7BbzKfhY | `rm-analytics-canvas/` (`full-plan-source.dc.html` is the unsplit plan the six parts are built from) |
 | RM analytics plan, one continuous page | https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk | `rm-analytics-plan.html` (rendered from `full-plan-source.dc.html`) |
-| Six-step workflow visual | https://claude.ai/artifact/8Nm5fkdicn2Gu5VmNVTvYv | `role-workflow.html` |
+| Six-Step Product Workflow | https://claude.ai/artifact/8Nm5fkdicn2Gu5VmNVTvYv | `role-workflow.html` |
 | The delivery machine (how one PM runs many AI projects) | https://claude.ai/artifact/S8Wbygy24cjguTMxZsN2QF | `delivery-machine.html` (built by `delivery-machine-build.py` from the tables in `product-framework.md`) |
 | Delivery Playbook (field manual for all six steps) | https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4 | `playbook.html` (built by `playbook-build.py` from `playbook/*.md`) |
 | Product Framework | https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ | `product-framework.html` (built by `md-page-build.py` from `product-framework.md`) |
@@ -21,6 +21,7 @@ Edit here, publish to the same link, then save a draft.
 | Agent Library (building block) | https://claude.ai/artifact/Cn9nANQoqp2BP7yrmy61zn | `agents.html` (built by `agents-build.py` from `playbook/agents.md` and the RM memo's Appendix A) |
 | Steps Catalog (building block) | https://claude.ai/artifact/8UncWMYUq7hsJUhn5NSYEB | `steps.html` (built by `catalogs-build.py` from `playbook/` and `product-framework.md`) |
 | Controls Catalog (building block) | https://claude.ai/artifact/7GmH3iBG6jcDkdacUysUrQ | `controls.html` (built by `catalogs-build.py` from `playbook/controls.md`) |
+| McKinsey Use Cases (core reference for choosing use cases) | https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X | `mckinsey-use-cases.html` (built by `md-page-build.py` from `memos/mckinsey-frontline-ai.md`) |
 | Glossary (reference: the words we use) | https://claude.ai/artifact/LRQHSz65beh9XewB6qsQvQ | `glossary.html` (built by `md-page-build.py` from `glossary.md`) |
 | **Document Library** (pinned to my sidebar; lists every page above) | https://claude.ai/artifact/LTpbCT4kN4LcyEoYnh7vgj | `library.html` (built by `library-build.py` from `library.json`) |
 

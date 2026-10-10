@@ -24,7 +24,7 @@ step.** Step 4 is the formal approval, not the first time risk partners see the 
 | **3. Build** | What's the smallest version users will use and trust? | Controls built in; test set created | Meets the quality bar in testing; every control has proof |
 | **4. Govern and test** | Is it safe, fair and controlled? | Formal validation and sign-offs | All sign-offs recorded; monitoring plan agreed |
 | **5. Release and adopt** | Will users use it every week? | Live monitoring; incident process | Weekly use and results hit targets; no serious incidents; long-term owner confirmed before scaling |
-| **6. Measure and iterate** | Is it delivering the outcome, and what comes next? | Ongoing monitoring | Each month (and at the end of each wave): keep, change or stop each feature; each quarter: invest more, adjust or stop overall |
+| **6. Measure and iterate** | Is it delivering the outcome, and what comes next? | Ongoing monitoring | Each month (and at the end of each feature wave): keep, change or stop each AI product; each quarter: invest more, adjust or stop overall |
 
 ## What happens in each step
 One item per playbook sub-step, in the same order (1.0 to 6.6).
@@ -32,8 +32,8 @@ One item per playbook sub-step, in the same order (1.0 to 6.6).
 - **2. Define:** write the problem and the outcome (one sentence each, measurable) · choose the platform and delivery path · define the data contract (exact fields, freshness, quality checks) · start the risk intake and list the control requirements · write user stories and acceptance criteria · set priorities and record the trade-offs · set the measures (the five kinds, below), quality bar and value model · scope the first release and the pilot group.
 - **3. Build:** design the solution and choose the AI capabilities (agents, retrieval with sources, data flows, workflow automations or system integrations) · prepare trusted data · build the logic: simple rules first, AI explains (it doesn't invent) · build in the controls · deliver it where users work, with the source behind every answer and one-click feedback · build the test set (real examples with known good answers) · test against the quality bar.
 - **4. Govern and test:** confirm the risk rating and register the product · review data and privacy · gather the testing evidence (accuracy, made-up answers, red-teaming) · check fairness · confirm the controls work (human approval, guardrails, audit logs) · confirm the vendor reviews · assemble the evidence pack and get sign-offs from risk, compliance, privacy and security · agree the monitoring plan.
-- **5. Release and adopt:** confirm release readiness · launch the pilot, with a comparison group · build it into routines (the core of adoption) · train users on their own work · recruit champions and celebrate wins · fix fast · scale in waves after a go/no-go check.
-- **6. Measure and iterate:** track the measures on a live dashboard · compare with the baseline and the comparison group · re-test after every change, and watch for quality slipping ("drift") · hold the monthly keep / change / stop review · feed the next wave · improve the machine itself.
+- **5. Release and adopt:** confirm release readiness · launch the pilot, with a comparison group · build it into routines (the core of adoption) · train users on their own work · recruit champions and celebrate wins · fix fast · scale in user waves after a go/no-go check.
+- **6. Measure and iterate:** track the measures on a live dashboard · compare with the baseline and the comparison group · re-test after every change, and watch for quality slipping ("drift") · hold the monthly keep / change / stop review · feed the next feature wave · improve the machine itself.
 
 ## Running the work (every step)
 - **Who's involved and who decides:** sponsor (outcome, funding, go/no-go) · user leaders and pilot users (workflow, feedback) · product manager (scope, priorities, trade-offs; owns the product until a long-term owner is named) · long-term owner (to be identified during the project, for example someone in a revenue line; named in Define if known, confirmed before scaling) · data owners (what data may be used) · platform teams (technical design) · model risk (risk rating, approval) · compliance, privacy and security (controls, sign-off) · operations (running it day to day). Agree this at the start of Discover.
@@ -147,7 +147,7 @@ bank allowing automations to message people.
 | 5.2 | Weekly usage report | Auto | Power BI | Sponsor, user leaders |
 | 5.3 | Build it into a routine managers already run | Me | Meetings | Managers |
 | 5.4 | Train users on their own work | Me | Teams, in person | Pilot users |
-| 5.4 | Answer "how do I…?" questions | Auto | A6 Onboarding coach | Users; the product team keeps content current |
+| 5.4 | Answer "how do I…?" questions | Auto | The product's onboarding coach (A6 in the RM plan) | Users; the product team keeps content current |
 | 5.5 | Recruit champions | Me | A Teams channel | Champions |
 | 5.5 | Spot wins to celebrate | Draft | M17 Wins spotter | Me, then leaders |
 | 5.6 | Sort feedback into bugs, quality issues and ideas | Auto | M30 Feedback triage | Backlog; I check a weekly sample |
@@ -164,7 +164,7 @@ bank allowing automations to message people.
 | 6.3 | Re-test after every change; alert when quality slips | Auto | M32 Quality watchdog | Product manager, on alert |
 | 6.4 | Monthly keep/change/stop pack | Draft | M18 Monthly review pack drafter | Me |
 | 6.4 | Keep/change/stop decision | Me | Meeting | Sponsor |
-| 6.5 | Rank the candidates for the next wave | Draft | M33 Improvement scout | Me, then sponsor |
+| 6.5 | Rank the candidates for the next feature wave | Draft | M33 Improvement scout | Me, then sponsor |
 | 6.6 | Total time and waits from the first-time logs | Draft | M19 Log summarizer | Me |
 | 6.6 | Improve the machine: update this framework and the playbook | Me | — | — |
 | Gate | Keep, change or stop; invest more, adjust or stop | Me | Meeting | Sponsor, Finance |

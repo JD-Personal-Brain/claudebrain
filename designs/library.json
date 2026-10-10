@@ -40,7 +40,7 @@
       "id": "glossary",
       "name": "Glossary",
       "what": "The words we use, one meaning each, so every plan says the same thing. Ends with the bank's terms still to map.",
-      "count": "52 terms",
+      "count": "54 terms",
       "status": "Reference",
       "url": "https://claude.ai/artifact/LRQHSz65beh9XewB6qsQvQ",
       "source": "glossary.md"
@@ -164,6 +164,14 @@
           "status": "Waiting for review",
           "url": "https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk",
           "source": "memos/rm-analytics-framework.md"
+        },
+        {
+          "id": "mckinsey-use-cases",
+          "name": "McKinsey Use Cases",
+          "what": "Core reference for choosing use cases: McKinsey's five frontline AI use cases and their returns, how the RM plan covers them, and the seven core use cases the RM plan is organized on (McKinsey's five plus admin off the RM's plate and keep clients).",
+          "status": "Waiting for review",
+          "url": "https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X",
+          "source": "memos/mckinsey-frontline-ai.md"
         }
       ]
     },

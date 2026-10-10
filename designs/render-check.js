@@ -56,7 +56,7 @@ const server = http.createServer((q, r) => {
       if (r.chars < 200) fail(`${c}/${name}: almost no text rendered (${r.chars} characters)`);
       if (r.marks.length) fail(`${c}/${name}: stray Markdown showing: ${JSON.stringify(r.marks)}`);
       await p.screenshot({ path: path.join(SHOTS, `${c}--${name.replace('.dc.html', '')}.png`), fullPage: true });
-      await p.close(); console.log('ok   ', `${c}/${name} (content ${r.h}px, frame ${fr.h}px)`);
+      await p.close(); if (r.h <= fr.h) console.log('ok   ', `${c}/${name} (content ${r.h}px, frame ${fr.h}px)`);
     }
   }
   await b.close(); server.close();
