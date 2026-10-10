@@ -196,6 +196,102 @@ Output:   Executive summary, outcome, value model, who decides, the six
 
 **For a different use case:** change the Context (the use case, its goal and any assumptions) and the user group named in the Rules. Everything else stays.
 
+## Example 5: a business briefing on the bank (like the Bank Business Briefing)
+Gathers the public facts about the bank's business and maps each revenue line
+to my work. The saved files go in as Inputs, in tags (tip 4), and the request
+comes last (tip 6). Step 7 is "draft, check, improve" (tip 9). Re-run it each
+quarter when new results come out; the output is `memos/bank-business.md`.
+
+```
+Inputs:   <job_description> [job-description.md] </job_description>
+          <framework> [product-framework.md] </framework>
+          <value_model> [section 2, "The value model", of
+          memos/rm-analytics-framework.md] </value_model>
+          <tech_stack> [tech-stack.md] </tech_stack>
+
+Role:     You are a bank analyst who also knows how commercial
+          bankers work day to day, briefing a new product manager.
+
+Context:  I'm going after the Principal Applied AI Product Manager
+          role at Associated Bank, which sits in [Corporate and
+          Commercial Banking]. I need one business picture of the
+          bank, so every AI product I plan ties to a real revenue
+          line and I can say where the return comes from. Business
+          and risk leaders may read it, so it has to hold up with
+          people who know the bank well.
+
+Steps:    1. Gather from public sources, in this order: the latest
+             annual and quarterly reports (10-K, 10-Q), the latest
+             earnings release and investor presentation, the
+             earnings call, the bank's own commercial web pages,
+             then trade press for recent news.
+          2. Describe the whole bank briefly: size, footprint,
+             reporting segments, and how it earns money (interest
+             income against fee income).
+          3. Go deep on [Corporate and Commercial Banking]: who it
+             serves, its units, every product and service, its
+             specialty industries, its leaders and its growth plan.
+          4. List each revenue line in that business. For each one:
+             how it earns money, its size and trend, who sells it,
+             and what limits its growth today.
+          5. Map each revenue line to the four outcomes in
+             <job_description> (revenue workflows, banker capacity,
+             operating efficiency, adoption) and to the terms of
+             <value_model>. Say which lines AI work could move
+             most, and why.
+          6. List what public sources can't answer and I must
+             confirm inside the bank.
+          7. Draft it, check every number against its source and
+             against the Goal, then improve it.
+
+Rules:    Give every number its period and a link to its source,
+          because leaders will check them.
+          Write [X], never an estimate, where no public number
+          exists, because a made-up figure would mislead. The
+          value model's inputs (win rate, revenue per win) are
+          internal, so expect them to stay [X].
+          Mark your own conclusions with ⚠️ and keep them apart
+          from facts, because I need to know what the bank said
+          and what you inferred.
+          If a page won't open, say so and leave the gap, because
+          filling it from memory risks out-of-date facts.
+          Say when an acquisition distorts a comparison (American
+          National closed on April 1, 2026), because growth
+          across that date isn't organic.
+          Use public information only, because nothing non-public
+          about the bank belongs in my files.
+          Use plain English and explain each banking term the
+          first time, because I'm new to commercial banking.
+
+Goal:     Using everything above, write a business briefing on
+          Associated Bank, focused on [Corporate and Commercial
+          Banking]. Done means that after a 2-minute read of the
+          summary I can name every revenue line in that business,
+          say roughly how big it is, and point to the AI work
+          that could move it.
+
+Output:   1. Summary (5 lines)
+          2. The bank at a glance
+          3. How the bank earns money
+          4. [Corporate and Commercial Banking] in depth
+          5. Revenue lines (one table)
+          6. Alignment map: revenue line × job outcome × value
+             model term
+          7. Strategy and what's changing
+          8. Risks and limits
+          9. To confirm inside the bank
+          10. Sources, with dates
+          Stamp it "as of [date], through [latest quarter]". Save
+          the working copy as memos/bank-business.md, then make
+          the designed page and add it to the Document Library.
+
+Tone:     An analyst's briefing: factual and direct, no selling.
+```
+
+**For a different part of the bank:** change the `[brackets]` (for example, to Community, Consumer, and Business). Everything else stays.
+
+**Tip from the first run (2026-10-09):** the annual report is too long to open in one go. The segment's own results are in the quarterly report's "Segment Reporting" note.
+
 ## When the answer is off: ask for changes, don't start over
 Never just say "try again" or "make it better": that tells Claude nothing.
 Say what to keep and what to change, one thing at a time.

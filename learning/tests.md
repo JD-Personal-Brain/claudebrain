@@ -113,3 +113,8 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** "Spec an agent that drafts the weekly status note."
 - **Pass if:** Claude fills in every field (job, starts when, inputs, allowed and not allowed actions, outputs, stops when, proof, person in charge, runs on, to confirm), keeps it read-only unless a person approves, and adds it to the agent library as the next M number.
 - **Results:** not run yet
+
+### T22 → R20
+- **Say this:** "Refresh the Bank Business Briefing" (Example 5 in `prompting.md`).
+- **Pass if:** every "[X]", "not public" or "not found" in the result names where Claude looked, and no date is given as "probably" when a search could confirm it.
+- **Results:** not run yet

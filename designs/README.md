@@ -14,6 +14,7 @@ Edit here, publish to the same link, then save a draft.
 | Tech Stack Guide | https://claude.ai/artifact/DDmD65zw7LjnP5v2nHDFW2 | `tech-stack.html` (built by `md-page-build.py` from `tech-stack.md`) |
 | Job Notes | https://claude.ai/artifact/SpcnPMbMEgyxZSoYVsRdES | `job-notes.html` (built by `md-page-build.py` from `job-notes.md`) |
 | Job Description | https://claude.ai/artifact/9CUyQt1EDbmu1R7DVRyvkM | `job-description.html` (built by `md-page-build.py` from `job-description.md`) |
+| Bank Business Briefing (how the bank earns money, the corporate segment, and where AI work lines up) | https://claude.ai/artifact/7ZVT7LtdqxwAma4UrBgTPX | `bank-business.html` (built by `md-page-build.py` from `memos/bank-business.md`; re-run Example 5 in `prompting.md` each quarter to refresh the words) |
 | Prompting Guide | https://claude.ai/artifact/Secfj5fBtpVA1veroUU7A7 | `prompting.html` (built by `md-page-build.py` from `prompting.md`) |
 | Workflow Maps (building block) | https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX | `workflows.html` (built by `workflows-build.py` from `playbook/`, `product-framework.md` and the RM memo's Appendix B) |
 | Agent Library (building block) | https://claude.ai/artifact/Cn9nANQoqp2BP7yrmy61zn | `agents.html` (built by `agents-build.py` from `playbook/agents.md` and the RM memo's Appendix A) |
