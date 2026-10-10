@@ -13,7 +13,7 @@ every wrap-up: finished items move to "Closed" with the date, and new ones are a
 
 | Group | Open | What it is |
 |---|---|---|
-| 1. Decisions waiting on me | 2 | Things only I can decide |
+| 1. Decisions waiting on me | 1 | Things only I can decide |
 | 2. Reviews waiting on me | 6 | Pages Claude built that I haven't read yet (numbered V, for "review") |
 | 3. Work to do | 19 | Next pieces of real work, in rough order |
 | 4. To confirm at the bank | 28 | Questions the plans depend on, 7 of which I can ask Andy now |
@@ -64,7 +64,6 @@ what exists, then the dry run, is the bottleneck.
 | # | Decision | Why it matters | Where it came from |
 |---|---|---|---|
 | D1 | Is the RM framework ready to copy to other use cases? My answer on 2026-10-09: not yet. The reviews in section 2 and the work in section 3 come first | Credit, the next use case, waits on this | My decision on 2026-10-09: RM first, credit second |
-| D5 | Yes or no to ideas 35 and 36: fetch the design canvas's runtime automatically at the start of each session, and run the checker and the render check automatically before any merge into main | They make the new render check impossible to skip | Wrap-up, 2026-10-10 |
 
 ## 2. Reviews waiting on me
 
@@ -161,5 +160,6 @@ or the hiring team before I start. The rest need someone inside.
 | C7 | Was D3: yes to three new controls. K23 (approved AI tools for the team's own work), K24 (consent before recording) and K25 (agents stop rather than guess) are in the Controls Catalog, backed by new playbook lines; the playbook's control check (4.5) now also confirms the build, test and live path and IT's approval of every connection | 2026-10-10 |
 | C8 | Was W9: the line saying credit comes next is now part of W15, the Andy edition | 2026-10-10 |
 | C9 | Was W22: keeping the reference pages in line is now built into every audit (the alignment sweep and its automatic checks), and the Glossary was added as a fifth reference page | 2026-10-10 |
+| C10 | Was D5: yes to ideas 35 and 36. The design canvas's runtime is kept in the repo so the render check always runs, and a check before every merge blocks it if the audit checker or render check finds a problem | 2026-10-10 |
 
 _Last updated: 2026-10-10_

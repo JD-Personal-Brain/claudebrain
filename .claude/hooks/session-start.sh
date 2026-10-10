@@ -59,3 +59,11 @@ for b in $(git for-each-ref --format='%(refname:short)' refs/remotes/origin); do
   # Only the files main would actually change if this branch were merged (idea 19).
   git diff --name-only origin/main "$merged_tree" | head -12 | sed 's/^/      /'
 done
+
+# The render check needs the design canvas's runtime beside its parts (idea 35, lesson L19).
+# It is kept in the repo; warn if it has gone missing, so the check is never skipped quietly.
+if [ ! -s designs/rm-analytics-canvas/support.js ]; then
+  echo "⚠️ RENDER CHECK NOT READY: designs/rm-analytics-canvas/support.js (the design canvas's runtime) is missing."
+  echo "Restore it (Artifact tool: read the RM design page with path artifact-type/dc-runtime.js) before any audit."
+fi
+
