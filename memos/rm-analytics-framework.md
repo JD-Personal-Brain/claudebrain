@@ -33,8 +33,9 @@ in review.
 partner, and a willing pilot group.
 
 **How to use this plan.** Sections 1–11 are the plan. Appendix A specifies
-every agent (job, inputs, allowed actions, outputs, when it stops and proof
-it worked), and Appendix B sets out each RM workflow step by step, so the
+the product's agents in full (job, inputs, allowed actions, outputs, when it
+stops and proof it worked) and shows how the team uses the delivery machine's
+general agents, whose full specs are in the agent library. Appendix B sets out each RM workflow step by step, so the
 team can build directly from them.
 
 ---
@@ -204,7 +205,7 @@ loop compounds over time and is a reason to build both goals together.
 
 | Agent | Type | Job | Runs on | Reads from | Person in charge |
 |---|---|---|---|---|---|
-| Interview synthesizer | For the team | Turns interview recaps into themes and quotes, linked to each source | M365 Copilot, Copilot Studio | Teams transcripts, interview notes | PM reviews every theme |
+| Interview synthesizer | For the team | Turns interview recaps into themes and quotes, linked to each source | M365 Copilot, Copilot Studio | Teams transcripts (only with consent), interview notes | PM reviews every theme |
 | Opportunity sizer | For the team | Answers plain-English questions to size each lever | Snowflake Cortex Analyst | Snowflake balances and products; Salesforce pipeline | An analyst checks the numbers |
 | Time-use analyst | For the team | Finds where RM time goes and which activities lead to won deals | Snowflake Cortex, Power BI | Salesforce activity and win/loss | PM confirms with RMs in person |
 
@@ -556,8 +557,10 @@ builds on them. I'd confirm early:
 
 ## Appendix A: Agent specs
 
-Each agent named in Steps 1–6, written so a platform team can build it and a
-risk partner can review it. **[X]** values are set in Define.
+Each agent named in Steps 1–6. The product's agents (A1 to A6) are written so a
+platform team can build them and a risk partner can review them; the team's
+agents are the delivery machine's general agents, specified in full in the
+agent library. **[X]** values are set in Define.
 
 **Rules for every agent:**
 - **One job.** If a request falls outside it, the agent says so and stops.
@@ -630,22 +633,25 @@ risk partner can review it. **[X]** values are set in Define.
 
 ### Agents the team uses
 
+These are the delivery machine's general agents (M20 to M33), specified in full in the
+agent library. The table shows how this project uses each one: its RM inputs, owners and checks.
+
 | Agent | Step | Job | Inputs | Allowed actions | Outputs | Stops when | Proof it worked | Person in charge |
 |---|---|---|---|---|---|---|---|---|
-| **A7. Interview synthesizer** | Discover | Turn interview recaps into themes and quotes | Teams transcripts, interview notes | Read; draft | Themes, each linked to its source | All interviews processed | PM spot-checks every theme against the notes | PM |
-| **A8. Opportunity sizer** | Discover | Answer plain-English sizing questions | Snowflake balances and products; Salesforce pipeline | Read-only queries | Sized levers with the query shown | Each lever sized | An analyst re-runs the key numbers | Analyst |
-| **A9. Time-use analyst** | Discover | Find where RM time goes | Salesforce activity and win/loss | Read-only queries | Time-use breakdown | Breakdown complete | PM confirms with RMs in person | PM |
-| **A10. Requirements drafter** | Define | Draft problem statement, user stories, acceptance criteria | Discover findings | Draft only | Draft brief and stories | Drafts delivered | Team and sponsor approve | PM |
-| **A11. Data contract checker** | Define | Check fields exist, are fresh and pass quality checks | Snowflake tables and their quality and access records | Read-only | Gap list | Every field checked in Define; after that, runs on every data refresh and alerts the data owner on failure | Data owner signs off | Data owner |
-| **A12. Risk intake assistant** | Define | Pre-fill the risk intake; flag likely high-risk areas | Bank policies, product brief | Draft only | Pre-filled intake | Intake drafted | Risk partner sets the rating | Risk partner |
-| **A13. Test grader** | Build | Score each version against the test set | Test set, product outputs | Read; score | Score report | Every test case scored | Experienced RMs grade a sample | PM |
-| **A14. Red-team agent** | Govern | Try to break the product (other RMs' clients, credit requests) | The product in test | Send test requests in the test environment only | Failure list | All attack types run | Risk reviews every failure | Risk partner |
-| **A15. Fairness monitor** | Govern | Check opportunities are spread fairly across segments and regions | Opportunity outputs, client segments | Read-only | Fairness report | Report complete; runs again monthly after launch | Compliance reviews results | Compliance |
-| **A16. Evidence pack assembler** | Govern | Compile results, data use and controls into review documents | Test results, data contract, controls | Draft only | Evidence pack | Pack drafted | PM and risk verify every claim | PM |
-| **A17. Feedback triage** | Release | Sort feedback into bugs, quality issues and ideas | Feedback logged in Salesforce | Read; tag; add to backlog | Tagged backlog items | All new feedback sorted | PM reviews a weekly sample | PM |
-| **A18. Impact analyst** | Measure | Report pipeline and revenue from AI insights against the comparison group | AI-tagged Salesforce opportunities; Snowflake | Read-only queries | Monthly impact figures | Report complete | Analytics validates before reporting | Analytics |
-| **A19. Quality watchdog** | Measure | Re-run the test set after every change; alert on drift | Test set, live outputs, feedback | Read; alert | Score trend and alerts | Each run complete | Alerts reviewed within [X] days | PM |
-| **A20. Improvement scout** | Measure | Propose next backlog items or the next lever | Dashboards, feedback, reviews | Draft only | Ranked suggestions | List delivered | PM and sponsor decide | PM |
+| **M20. Interview synthesizer** | Discover | Turn interview recaps into themes and quotes | Teams transcripts (only with consent), interview notes | Read; draft | Themes, each linked to its source | All interviews processed | PM spot-checks every theme against the notes | PM |
+| **M21. Opportunity sizer** | Discover | Answer plain-English sizing questions | Snowflake balances and products; Salesforce pipeline | Read-only queries | Sized levers with the query shown | Each lever sized | An analyst re-runs the key numbers | Analyst |
+| **M22. Time-use analyst** | Discover | Find where RM time goes | Salesforce activity and win/loss | Read-only queries | Time-use breakdown | Breakdown complete | PM confirms with RMs in person | PM |
+| **M23. Requirements drafter** | Define | Draft problem statement, user stories, acceptance criteria | Discover findings | Draft only | Draft brief and stories | Drafts delivered | Team and sponsor approve | PM |
+| **M24. Data contract checker** | Define | Check fields exist, are fresh and pass quality checks | Snowflake tables and their quality and access records | Read-only | Gap list | Every field checked in Define; after that, runs on every data refresh and alerts the data owner on failure | Data owner signs off | Data owner |
+| **M25. Risk intake assistant** | Define | Pre-fill the risk intake; flag likely high-risk areas | Bank policies, product brief | Draft only | Pre-filled intake | Intake drafted | Risk partner sets the rating | Risk partner |
+| **M26. Test grader** | Build | Score each version against the test set | Test set, product outputs | Read; score | Score report | Every test case scored | Experienced RMs grade a sample | PM |
+| **M27. Red-team agent** | Govern | Try to break the product (other RMs' clients, credit requests) | The product in test | Send test requests in the test environment only | Failure list | All attack types run | Risk reviews every failure | Risk partner |
+| **M28. Fairness monitor** | Govern | Check opportunities are spread fairly across segments and regions | Opportunity outputs, client segments | Read-only | Fairness report | Report complete; runs again monthly after launch | Compliance reviews results | Compliance |
+| **M29. Evidence pack assembler** | Govern | Compile results, data use and controls into review documents | Test results, data contract, controls | Draft only | Evidence pack | Pack drafted | PM and risk verify every claim | PM |
+| **M30. Feedback triage** | Release | Sort feedback into bugs, quality issues and ideas | Feedback logged in Salesforce | Read; tag; add to backlog | Tagged backlog items | All new feedback sorted | PM reviews a weekly sample | PM |
+| **M31. Impact analyst** | Measure | Report pipeline and revenue from AI insights against the comparison group | AI-tagged Salesforce opportunities; Snowflake | Read-only queries | Monthly impact figures | Report complete | Analytics validates before reporting | Analytics |
+| **M32. Quality watchdog** | Measure | Re-run the test set after every change; alert on drift | Test set, live outputs, feedback | Read; alert | Score trend and alerts | Each run complete | Alerts reviewed within [X] days | PM |
+| **M33. Improvement scout** | Measure | Propose next backlog items or the next lever | Dashboards, feedback, reviews | Draft only | Ranked suggestions | List delivered | PM and sponsor decide | PM |
 
 ---
 
@@ -657,7 +663,7 @@ B9 is the release routine behind them.
 
 **B1. Weekly opportunity list** (wave 1)
 - **Trigger:** every night (signals); every Monday morning (digest).
-- **Steps:** 1. A1 scans clients and writes signals. 2. A2 writes an insight for each. 3. Insights appear on the Salesforce client record. 4. A4 sends each RM their top [X]. 5. **Decision point:** the RM accepts, rejects (with a reason) or changes each insight. 6. On accept, the RM creates an opportunity in Salesforce, tagged "AI-sourced." 7. A17 sorts the feedback. 8. Managers review the list in the weekly pipeline meeting.
+- **Steps:** 1. A1 scans clients and writes signals. 2. A2 writes an insight for each. 3. Insights appear on the Salesforce client record. 4. A4 sends each RM their top [X]. 5. **Decision point:** the RM accepts, rejects (with a reason) or changes each insight. 6. On accept, the RM creates an opportunity in Salesforce, tagged "AI-sourced." 7. M30 sorts the feedback. 8. Managers review the list in the weekly pipeline meeting.
 - **Logged:** signals, insights, opens, decisions and reasons, opportunities created.
 - **Measures:** share of insights acted on; pipeline from AI-sourced opportunities.
 
@@ -706,6 +712,6 @@ B9 is the release routine behind them.
 
 **B9. Every release (every week or two)**
 - **Trigger:** any change to prompts, rules, data or models.
-- **Steps:** 1. A19 re-runs the test set. 2. If the score is below the quality bar, the release stops. 3. If the change is material, the risk partner is told before release. 4. Release; A19 watches live quality for [X] days.
+- **Steps:** 1. M32 re-runs the test set. 2. If the score is below the quality bar, the release stops. 3. If the change is material, the risk partner is told before release. 4. Release; M32 watches live quality for [X] days.
 - **Logged:** test scores, approvals, release notes.
 - **Measures:** quality trend; releases rolled back.

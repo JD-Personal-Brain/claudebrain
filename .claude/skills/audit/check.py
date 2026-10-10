@@ -104,11 +104,12 @@ SUB=sum(n_sub.values())
 ctl=open('playbook/controls.md').read()
 CTL=len(re.findall(r'^### K\d+\. ',ctl,re.M))
 UNCOV=sum(1 for b in re.split(r'^### K\d+\. ',ctl,flags=re.M)[1:] if 'not covered' in b)
-M=len(re.findall(r'^### M\d+\. ',open('playbook/agents.md').read(),re.M))
+MS=[int(x) for x in re.findall(r'^### M(\d+)\. ',open('playbook/agents.md').read(),re.M)]
+M=len(MS); MACH=sum(1 for x in MS if x<20)
 memo=open('memos/rm-analytics-framework.md').read()
 appa=memo.split('## Appendix A')[1].split('## Appendix B')[0]
 A=len(set(re.findall(r'\bA(\d+)\. ',appa)))
-TEAM=len(re.findall(r'^\| \*\*A\d+\. ',appa,re.M)); PROD=A-TEAM
+TEAM=M-MACH; PROD=A  # team agents (M20+) live in the agent library; Appendix A holds only the product's agents
 B=len(re.findall(r'^\*\*B\d+\. ',memo.split('## Appendix B')[1],re.M))
 lib=_json.load(open('designs/library.json'))
 want={'agents':f'{M+A} agents','steps':f'{SUB} sub-steps','controls':f'{CTL} controls','workflows':f'2 maps · {SUB+B} branches'}
@@ -123,9 +124,9 @@ for f in ['NOW.md','open-items.md','product-framework.md','playbook/README.md','
         before=t[max(0,m.start()-6):m.start()].lower(); after=t[m.end():m.end()+40].lower()
         if noun.startswith('agent'):
             if before.endswith('all '): ok={M+A}
-            elif 'machine' in mid+after: ok={M}
-            elif 'project' in mid+after or 'rm' in mid: ok={A,TEAM,PROD}
-            else: ok={M,A,M+A,TEAM,PROD}
+            elif 'machine' in mid+after: ok={M,MACH}
+            elif 'project' in mid+after or 'rm' in mid or 'product' in mid: ok={A,PROD}
+            else: ok={M,A,M+A,MACH,TEAM,PROD}
         elif noun=='sub-steps': ok={SUB}
         else: ok={CTL} | ({UNCOV} if after.startswith(' of the') or 'have a stage' in after or 'not covered' in after else set())
         if num not in ok: print(f,'says',repr(m.group(0)),'but the sources give',sorted(ok)); probs+=1

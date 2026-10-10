@@ -207,7 +207,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Why it matters:** nothing untested reaches bankers, and automated tests never run against live data.
 - **Set in:** 2.2
 - **Built in:** 2.2 (the path is written there)
-- **Proved in:** not covered in the playbook yet
+- **Proved in:** 4.5 (the frozen version reached test by the agreed path, the move to live is approved, and IT has approved every connection)
 - **Watched in:** 5.2
 - **Tool (guess):** Power Platform environments and the bank's release process
 - **Proof:** the written delivery path, and the approval recorded for each move
@@ -229,7 +229,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Why it matters:** they often block an idea outright, so they are checked before the platform is chosen.
 - **Set in:** 2.2
 - **Built in:** 2.2 (checked there, not built)
-- **Proved in:** not covered in the playbook yet
+- **Proved in:** 4.5 (the frozen version reached test by the agreed path, the move to live is approved, and IT has approved every connection)
 - **Watched in:** not covered in the playbook yet
 - **Tool (guess):** Power Platform data policies
 - **Proof:** IT's confirmation that every connection the product uses is allowed
@@ -256,4 +256,37 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Tool (guess):** rules in Snowflake, with the AI writing the explanation
 - **Proof:** for a sample of answers, the rule that fired and the data behind it
 
-_Last updated: 2026-10-09_
+### K23. Approved AI tools for the team's own work
+- **Group:** Data
+- **What it is:** the team uses only the AI tools the bank has approved for bank data, and no client data goes into any other tool, even for a quick test.
+- **Why it matters:** the team handles client data long before the product exists, in interviews, sizing and testing. A leak through an unapproved tool is still a leak.
+- **Set in:** 1.0 (the approved list is written in the project file)
+- **Built in:** 1.0
+- **Proved in:** not covered in the playbook yet
+- **Watched in:** not covered in the playbook yet
+- **Tool (guess):** the bank's list of approved AI tools
+- **Proof:** the approved list in the project file, and every agent's "Runs on" matching it
+
+### K24. Consent before recording
+- **Group:** Data
+- **What it is:** meetings are recorded only with consent under the bank's recording policy. Without a consented recording, the AI works from the user's own notes.
+- **Why it matters:** recording a client or colleague without consent breaks the bank's policy and, in some places, the law. ⚠️ Which rules apply is for the bank's legal and compliance teams to confirm.
+- **Set in:** 1.3 (for the team's own interviews), 2.4 (as a control requirement for the product)
+- **Built in:** 3.4
+- **Proved in:** 4.5
+- **Watched in:** not covered in the playbook yet
+- **Tool (guess):** Teams meeting settings and M365 Copilot recaps
+- **Proof:** a test showing no recap is drafted from a meeting without recorded consent
+
+### K25. Agents stop rather than guess
+- **Group:** Quality
+- **What it is:** if an agent's inputs are missing, stale or fail a check, it stops and alerts its owner instead of producing a weaker answer.
+- **Why it matters:** a confident answer built on bad data is worse than no answer, because people act on it.
+- **Set in:** 3.1
+- **Built in:** 3.1
+- **Proved in:** 4.5
+- **Watched in:** not covered in the playbook yet
+- **Tool (guess):** each agent's stop rule, with alerts through Power Automate
+- **Proof:** a test where an agent is given a missing or stale input on purpose and stops with an alert
+
+_Last updated: 2026-10-10_

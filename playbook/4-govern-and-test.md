@@ -33,7 +33,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Me**, with risk.
   - Note: what changed between the early rating and the formal one, and why.
-  - Agent: **A12 Risk intake assistant** (Appendix A) updates the intake from the latest brief. *Draft*.
+  - Agent: **M25 Risk intake assistant** (agent library) updates the intake from the latest brief. *Draft*.
 - **For RM analytics:** expect a lower rating while the product stays assistive and away from credit decisions ⚠️. Risk decides.
 
 ---
@@ -67,13 +67,13 @@ log (see `README.md`) for every sub-step.
   1. Re-run the full test set on the frozen version.
   2. Report accuracy, made-up answers ("hallucinations"), relevance and permissions against the quality bar.
   3. Red-team it: try to make it reveal other users' data, give a credit decision, or answer off-topic.
-  4. Record every failure, its fix and the re-test. Each fix creates a new frozen version: re-run the test set (A13) and the 4.5 control tests on it.
+  4. Record every failure, its fix and the re-test. Each fix creates a new frozen version: re-run the test set (M26) and the 4.5 control tests on it.
 - **Output:** the test report and the red-team report.
 - **Done when:** results meet the bar, and every red-team failure is fixed or accepted by risk.
 - **Automation watch:**
   - First time: **Draft**, with red-teaming partly **Auto**.
   - Note: which attacks found real problems. Keep them for every future project.
-  - Agents: **A13 Test grader** and **A14 Red-team agent** (Appendix A). Risk reviews every failure.
+  - Agents: **M26 Test grader** and **M27 Red-team agent** (agent library). Risk reviews every failure.
 - **For RM analytics:** "must refuse" cases include another RM's clients and credit decisions.
 
 ---
@@ -93,7 +93,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Draft**.
   - Note: the groups and thresholds compliance chose. Reuse them.
-  - Agent: **A15 Fairness monitor** (Appendix A). *Auto* report; compliance reviews. Its ongoing mode runs it again monthly after launch.
+  - Agent: **M28 Fairness monitor** (agent library). *Auto* report; compliance reviews. Its ongoing mode runs it again monthly after launch.
 - **For RM analytics:** check that opportunities, especially credit-related ones, are spread fairly across segments and regions.
 
 ---
@@ -107,7 +107,10 @@ log (see `README.md`) for every sub-step.
   1. Re-run every control test on the frozen version.
   2. Show the audit log for a sample of actions.
   3. Show that a user must approve before anything reaches a client or changes a record.
-  4. Update the controls checklist with fresh proof.
+  4. Feed an agent a missing or stale input on purpose, and show that it stops and alerts its owner instead of guessing.
+  5. Show that meeting recaps are drafted only where consent is recorded.
+  6. Confirm the frozen version reached test through the agreed build, test and live path, that the move to live is approved, and that IT has approved every connection the product uses (the data-sharing rules checked in 2.2).
+  7. Update the controls checklist with fresh proof.
 - **Output:** the updated controls checklist with proof.
 - **Done when:** every control has fresh proof.
 - **Automation watch:**
@@ -154,7 +157,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Draft** for the pack, **Me** for chasing.
   - Note: how long each signer took, and what they asked.
-  - Agents: **A16 Evidence pack assembler** (Appendix A), *Draft*. The **sign-off router** (spec M14) (Power Automate approvals) sends the requests and chases them, *Auto* ⚠️.
+  - Agents: **M29 Evidence pack assembler** (agent library), *Draft*. The **sign-off router** (spec M14) (Power Automate approvals) sends the requests and chases them, *Auto* ⚠️.
 - **For RM analytics:** risk, compliance (including fair lending), privacy and security.
 
 ---
@@ -174,7 +177,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Draft**.
   - Note: the thresholds chosen. Reuse them next time.
-  - Agent idea: a **monitoring plan template**, so the plan is drafted the same way every time. *Draft*. A19 Quality watchdog (Appendix A) then runs much of the plan in step 6.
+  - Agent idea: a **monitoring plan template**, so the plan is drafted the same way every time. *Draft*. M32 Quality watchdog (agent library) then runs much of the plan in step 6.
 - **For RM analytics:** re-test after every change, with alerts on drift.
 
 ---
@@ -193,13 +196,13 @@ log (see `README.md`) for every sub-step.
 
 | Sub-step | Agent | First time | Aim for | Already specified? |
 |---|---|---|---|---|
-| 4.1 | A12 Risk intake assistant | Me | Draft | Yes, Appendix A |
+| 4.1 | M25 Risk intake assistant | Me | Draft | Yes, M25 |
 | 4.2 | Data-use checker | Draft | Auto | Yes, M13 |
-| 4.3 | A13 Test grader, A14 Red-team agent | Draft | Auto | Yes, Appendix A |
-| 4.4 | A15 Fairness monitor | Draft | Auto | Yes, A15 (ongoing mode added) |
+| 4.3 | M26 Test grader, M27 Red-team agent | Draft | Auto | Yes, M26, M27 |
+| 4.4 | M28 Fairness monitor | Draft | Auto | Yes, M28 (ongoing mode) |
 | 4.5 | Controls checker (from 3.4) | Draft | Auto | Yes, M11 |
 | 4.6 | Approved vendors list (not an agent) | Me | Me | — |
-| 4.7 | A16 Evidence pack assembler | Draft | Draft | Yes, Appendix A |
+| 4.7 | M29 Evidence pack assembler | Draft | Draft | Yes, M29 |
 | 4.7 | Sign-off router | Me | Auto ⚠️ | Yes, M14 |
 | 4.8 | Monitoring plan template | Draft | Draft | Asset: agent library |
 

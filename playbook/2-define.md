@@ -29,7 +29,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Draft**.
   - Note: how many rewrites it took, and why.
-  - Agent: **A10 Requirements drafter** (memo Appendix A) drafts both sentences from the Discover findings. You edit, and the sponsor approves.
+  - Agent: **M23 Requirements drafter** (agent library) drafts both sentences from the Discover findings. You edit, and the sponsor approves.
 - **For RM analytics:** "RMs miss growth opportunities in their existing book because signals are scattered across systems," with the outcome tied to AI-sourced pipeline.
 
 ---
@@ -76,7 +76,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Draft**.
   - Note: how long the sign-off took, and which gaps came up. Expect the same gaps on the next project.
-  - Agent: **A11 Data contract checker** (Appendix A). It checks fields, freshness and quality read-only, and the data owner signs off.
+  - Agent: **M24 Data contract checker** (agent library). It checks fields, freshness and quality read-only, and the data owner signs off.
 - **For RM analytics:** balances, product holdings and trends from Snowflake; client records, pipeline and activity from Salesforce ⚠️ (where each lives is still to confirm).
 
 ---
@@ -94,13 +94,13 @@ Fill in the first-time log (see `README.md`) for every sub-step.
   2. Fill it in from the brief so far (2.1) and the Discover gate pack: what the product does, which data (the first field list from 2.3), who uses it, what it can change, and whether anything reaches a client.
   3. Say plainly what it does **not** do, for example "no credit decisions, no pricing."
   4. Submit it, then meet the risk partner to walk through it.
-  5. Write down the control requirements they give you (human approval, logging, guardrails, permissions) and copy them into the backlog as must-haves.
+  5. Write down the control requirements they give you (human approval, logging, guardrails, permissions, consent for any recorded meeting) and copy them into the backlog as must-haves.
 - **Output:** the submitted intake, an early rating, and a list of control requirements.
 - **Done when:** the risk partner has given an early rating and the control list.
 - **Automation watch:**
   - First time: **Draft**. You fill it in; risk rates it.
   - Note: which questions on the form were hard to answer. Next time, answer them earlier in Discover.
-  - Agent: **A12 Risk intake assistant** (Appendix A). It pre-fills the intake and flags likely high-risk areas, and the risk partner sets the rating.
+  - Agent: **M25 Risk intake assistant** (agent library). It pre-fills the intake and flags likely high-risk areas, and the risk partner sets the rating.
 - **For RM analytics:** any insight that suggests a credit product goes to compliance review, because fair-lending rules apply to business credit too.
 
 ---
@@ -121,7 +121,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Draft**.
   - Note: which story patterns repeat, such as permissions, logging and feedback. These become a story library for every project.
-  - Agent: **A10 Requirements drafter** (Appendix A).
+  - Agent: **M23 Requirements drafter** (agent library).
 - **For RM analytics:** "As an RM, each Monday I need my top 5 client opportunities, with the reason and a suggested next step, so I can plan my calls."
 
 ---
@@ -207,10 +207,10 @@ Fill in the first-time log (see `README.md`) for every sub-step.
 
 | Sub-step | Agent | First time | Aim for | Already specified? |
 |---|---|---|---|---|
-| 2.1, 2.5 | A10 Requirements drafter | Draft | Draft | Yes, Appendix A |
+| 2.1, 2.5 | M23 Requirements drafter | Draft | Draft | Yes, M23 |
 | 2.2 | Platform fit checker | Me | Draft | Yes, M7 |
-| 2.3 | A11 Data contract checker | Draft | Draft | Yes, Appendix A |
-| 2.4 | A12 Risk intake assistant | Draft | Draft | Yes, Appendix A |
+| 2.3 | M24 Data contract checker | Draft | Draft | Yes, M24 |
+| 2.4 | M25 Risk intake assistant | Draft | Draft | Yes, M25 |
 | 2.5 | Story library (reusable stories, not an agent) | Draft | Draft | Asset: agent library |
 | 2.6 | Decision log drafter | Me | Draft | Yes, M8 |
 | 2.6, 2.8 | None: priorities and scope stay with a person | Me | Me | — |

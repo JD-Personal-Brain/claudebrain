@@ -31,7 +31,7 @@
       "id": "controls",
       "name": "Controls Catalog",
       "what": "Every governance control in one place: the safeguards built into each product, and where each is set, built, proved and watched.",
-      "count": "22 controls",
+      "count": "25 controls",
       "status": "Reference",
       "url": "https://claude.ai/artifact/7GmH3iBG6jcDkdacUysUrQ",
       "source": "playbook/controls.md"
@@ -120,7 +120,7 @@
         {
           "id": "playbook",
           "name": "Delivery Playbook",
-          "what": "The field manual: how to run each of the 44 sub-steps the first time, plus the 19 agents that run the delivery machine. All 39 agents are on the Agent Library.",
+          "what": "The field manual: how to run each of the 44 sub-steps the first time, plus the 33 general agents that run the delivery machine. All 39 agents, including the RM product's own 6, are on the Agent Library.",
           "status": "Waiting for review",
           "url": "https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4",
           "source": "playbook/"

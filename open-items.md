@@ -13,7 +13,7 @@ every wrap-up: finished items move to "Closed" with the date, and new ones are a
 
 | Group | Open | What it is |
 |---|---|---|
-| 1. Decisions waiting on me | 3 | Things only I can decide |
+| 1. Decisions waiting on me | 1 | Things only I can decide |
 | 2. Reviews waiting on me | 6 | Pages Claude built that I haven't read yet (numbered V, for "review") |
 | 3. Work to do | 21 | Next pieces of real work, in rough order |
 | 4. To confirm at the bank | 27 | Questions the plans depend on, 7 of which I can ask Andy now |
@@ -40,8 +40,8 @@ every working file (this section replaces the separate Gap Review page).
 |---|---|---|---|
 | The six-step process for one product | Strong on paper | Steps, gates, 44 sub-steps, first-time logs and the automation check at every gate. Not yet tried on real work | V3, W20 |
 | RM plan (the first worked example) | Strong draft, not reviewed | Memo v8, with agent specs and workflows. I've read only the summary's opening and plan table | V1, V2 |
-| Governance and controls | Partial | 22 controls named. 11 have a stage the playbook doesn't cover yet, such as who proves that only approved AI models are used | W13 |
-| Automating the process | Partial | Every task is marked Auto, Draft or Me, and 39 agents are listed: the 19 that run the delivery machine are fully specified, and the RM project's 20 are in a shorter form. None is built or tested. How much can run alone depends on whether the bank lets automations message people ⚠️ | B22, W20 |
+| Governance and controls | Partial | 25 controls named. 13 have a stage the playbook doesn't cover yet, such as who proves that only approved AI models are used | W13 |
+| Automating the process | Partial | Every task is marked Auto, Draft or Me, and 39 agents are fully specified: 33 general agents that run the delivery machine, and the RM product's own 6. None is built or tested. How much can run alone depends on whether the bank lets automations message people ⚠️ | B22, W20 |
 | Ready-to-fill templates | Missing | The brief, data contract, risk intake, gate pack, evidence pack and monitoring plan are described, but none exists as a template yet. The Draft agents need these to fill in | W17 |
 | Task list design | Missing | The reminders, status notes and progress view all read from one task list, but its fields aren't written down, and we don't know the bank's tool yet | W18, B23 |
 | Approvals | Partial | Who decides is clear for every step. There's no map of who signs what, how long it takes, or who to go to when a sign-off is stuck | W19, B21 |
@@ -64,8 +64,6 @@ what exists, then the dry run, is the bottleneck.
 | # | Decision | Why it matters | Where it came from |
 |---|---|---|---|
 | D1 | Is the RM framework ready to copy to other use cases? My answer on 2026-10-09: not yet. The reviews in section 2 and the work in section 3 come first | Credit, the next use case, waits on this | My decision on 2026-10-09: RM first, credit second |
-| D2 | The 14 helper agents in the RM plan (A7 to A20, such as the test grader and the feedback sorter) are written for RM, but my product framework uses them for every project. Should Claude rewrite them as general agents in the delivery machine's library? Claude recommends yes: otherwise the next project (credit) has no sizing, testing, red-teaming or impact agents | Every project after RM reuses these | Alignment audit, 2026-10-10 |
-| D3 | Three safeguards in the RM plan have no control in the Controls Catalog: no client data in unapproved AI tools, client consent before recording a meeting, and agents stop rather than guess when their inputs are bad. Add them as new controls (with playbook lines), or fold each into an existing one? Claude recommends adding them. The same audit found that the playbook's control check (4.5) never mentions separate build, test and live spaces or IT's data-sharing rules, though the RM plan does; that's a playbook change under W13 | The controls must cover everything the plan promises | Alignment audit, 2026-10-10 |
 
 ## 2. Reviews waiting on me
 
@@ -96,7 +94,7 @@ If a review changes the six steps, the Product Framework page has to be updated 
 | W10 | Check the product details marked "(verify)" in the Tech Stack Guide: product names, prices, vendor terms and any update to the regulators' model-risk guidance. Eleven lines carry the mark | Claude | Nothing |
 | W11 | Fewer approval pop-ups (idea 2, approved): tell Claude which pop-ups I still see and in which app, so it can pre-approve the safe, read-only ones. Claude won't change my permission settings on a guess | Me, then Claude | Nothing |
 | W12 | Playbooks for my everyday tools (idea 3, approved): name two or three tasks I repeat in email, calendar or documents. Claude turns each into a step-by-step skill | Me, then Claude | Nothing |
-| W13 | Close the gaps the Controls Catalog found in my playbook: 11 of the 22 controls have a stage marked "not covered in the playbook yet", such as who proves that only approved AI models are used. Each needs a line added to the right playbook step, or a decision that it isn't needed | Claude, with my yes for each playbook change | Nothing |
+| W13 | Close the gaps the Controls Catalog found in my playbook: 13 of the 25 controls have a stage marked "not covered in the playbook yet", such as who proves that only approved AI models are used. Each needs a line added to the right playbook step, or a decision that it isn't needed | Claude, with my yes for each playbook change | Nothing |
 | W14 | Build an RM mock-up: clickable screens of the Monday opportunity list and the pre-meeting client brief, on made-up sample data, so Andy can see what an RM gets | Claude, with my review | My yes |
 | W15 | Build an "Andy edition" of the RM plan: two to three pages in his terms, no internal labels, with one line that credit comes next. Includes W9 | Claude, then me | V1, V2 and my yes |
 | W17 | Ready-to-fill templates: brief, data contract, risk intake, gate pack, decision log, evidence pack, monitoring plan, release-readiness checklist | Claude drafts, I review | My yes |
@@ -159,5 +157,7 @@ or the hiring team before I start. The rest need someone inside.
 | C3 | Was D2: bring in the unmerged work from my other session. Merged into this log's pull request, with both sides kept where they overlapped | 2026-10-09 |
 | C4 | Was D3: yes to four ideas. The shorthand check (idea 32) and the Steps and Controls catalogs (idea 34) are built. Fewer pop-ups (idea 2) and everyday playbooks (idea 3) need facts from me first: see W11 and W12 | 2026-10-09 |
 | C5 | Was D4: remove my safety rules (idea 16). The pop-up explanations and "Deny is safe" reminders are gone from the rule book, with the two pop-up rules and their tests | 2026-10-09 |
+| C6 | Was D2: yes to making the RM plan's 14 helper agents general. They are now M20 to M33 in the agent library, used by every project; the RM plan shows how it uses each one | 2026-10-10 |
+| C7 | Was D3: yes to three new controls. K23 (approved AI tools for the team's own work), K24 (consent before recording) and K25 (agents stop rather than guess) are in the Controls Catalog, backed by new playbook lines; the playbook's control check (4.5) now also confirms the build, test and live path and IT's approval of every connection | 2026-10-10 |
 
 _Last updated: 2026-10-10_

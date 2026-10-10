@@ -50,7 +50,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Draft**.
   - Note: the questions leaders asked about the numbers. Answer them in next month's note.
-  - Agent: **A18 Impact analyst** (Appendix A). Analytics validates before reporting. *Draft*.
+  - Agent: **M31 Impact analyst** (agent library). Analytics validates before reporting. *Draft*.
 - **For RM analytics:** AI-sourced pipeline and revenue, pilot RMs against similar RMs.
 
 ---
@@ -70,7 +70,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Draft**.
   - Note: what caused each drop.
-  - Agent: **A19 Quality watchdog** (Appendix A) re-runs the test set and alerts. The product manager decides whether to fix or roll back. Aim for **Auto**.
+  - Agent: **M32 Quality watchdog** (agent library) re-runs the test set and alerts. The product manager decides whether to fix or roll back. Aim for **Auto**.
 - **For RM analytics:** watch RM rejections of insights; a rising rate is the earliest warning.
 
 ---
@@ -110,7 +110,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Draft**.
   - Note: how much of Discover and Define you could skip or reuse.
-  - Agent: **A20 Improvement scout** (Appendix A) proposes and ranks candidates. The PM and the sponsor decide. *Draft*.
+  - Agent: **M33 Improvement scout** (agent library) proposes and ranks candidates. The PM and the sponsor decide. *Draft*.
 - **For RM analytics:** the next standard use cases, such as call notes saved to Salesforce in wave 2.
 
 ---
@@ -151,10 +151,10 @@ log (see `README.md`) for every sub-step.
 | Sub-step | Agent | First time | Aim for | Already specified? |
 |---|---|---|---|---|
 | 6.1 | Live dashboard (template) | Draft | Auto | Asset: agent library |
-| 6.2 | A18 Impact analyst | Draft | Draft | Yes, Appendix A |
-| 6.3 | A19 Quality watchdog | Draft | Auto | Yes, Appendix A |
+| 6.2 | M31 Impact analyst | Draft | Draft | Yes, M31 |
+| 6.3 | M32 Quality watchdog | Draft | Auto | Yes, M32 |
 | 6.4 | Monthly review pack drafter | Draft | Draft | Yes, M18 |
-| 6.5 | A20 Improvement scout | Draft | Draft | Yes, Appendix A |
+| 6.5 | M33 Improvement scout | Draft | Draft | Yes, M33 |
 | 6.6 | Log summarizer | Me | Draft | Yes, M19 |
 
 **First time** = how the task is done on the first project. **Aim for** = its kind in `product-framework.md`.

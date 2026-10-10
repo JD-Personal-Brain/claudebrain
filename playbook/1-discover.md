@@ -30,7 +30,8 @@ sub-step. At the end, run the automation review.
   5. Brief a model risk contact in 15 minutes: what the idea is, what data it might use, and that nothing touches clients yet. Ask what they'll need to see in Define.
   6. Start the decision log and the risk/issue list (both empty is fine).
   7. Create the project file: `memos/<project>.md`.
-- **Output:** a one-line project statement, the who-decides list, the tracker, the risk contact briefed, the decision log.
+  8. Confirm which AI tools the team may use with bank data, and write the list in the project file. No client data goes into any other tool, even for a quick test.
+- **Output:** a one-line project statement, the who-decides list, the tracker, the risk contact briefed, the decision log, and the list of AI tools the team may use.
 - **Done when:** the sponsor has confirmed their role, and every Discover task has an owner and a date.
 - **Automation watch:**
   - First time: **Me** (sponsor and risk conversations) and **Draft** (setting up the tracker and files).
@@ -83,7 +84,7 @@ sub-step. At the end, run the automation review.
 - **Automation watch:**
   - First time: **Draft**. AI can run first-pass questions; a person checks them.
   - Note: which questions you asked. They will repeat on every project with a revenue goal.
-  - Agent: **A8 Opportunity sizer** (memo Appendix A). It answers plain-English sizing questions read-only, on Snowflake Cortex Analyst. An analyst re-runs the key numbers.
+  - Agent: **M21 Opportunity sizer** (agent library). It answers plain-English sizing questions read-only, on Snowflake Cortex Analyst. An analyst re-runs the key numbers.
 - **For RM analytics:** size new clients (prospects that look like the best clients), growth (product gaps such as treasury management) and retention (falling balances). Use Salesforce pipeline and Snowflake balances.
 
 ---
@@ -110,7 +111,7 @@ sub-step. At the end, run the automation review.
   - First time: **Me** for the conversations and the scheduling. **Draft** for themes.
   - Note: how long scheduling took (it usually takes more time than you expect), and whether your guide changed after the first few interviews.
   - Agents:
-    - **A7 Interview synthesizer** (Appendix A): turns recaps into themes linked to their sources. You check every theme.
+    - **M20 Interview synthesizer** (agent library): turns recaps into themes linked to their sources. You check every theme.
     - New: an **interview scheduler** (spec M3) (Power Automate with Outlook) that sends invitations and reminders to nominated users. *Auto*, once the bank allows automations to message people ⚠️.
 - **For RM analytics:** talk to RMs, their sales managers, and treasury specialists and credit analysts. The key question: "How do you decide which client to call next?"
 
@@ -135,7 +136,7 @@ sub-step. At the end, run the automation review.
 - **Automation watch:**
   - First time: **Draft**.
   - Note: which data sources were useful, and which were empty or untrusted.
-  - Agent: **A9 Time-use analyst** (Appendix A). It reads Salesforce activity read-only. You confirm the results with users in person.
+  - Agent: **M22 Time-use analyst** (agent library). It reads activity data (for example, CRM activity) read-only. You confirm the results with users in person.
 - **For RM analytics:** the memo targets meeting prep, call notes and CRM updates as the admin to cut.
 
 ---
@@ -233,10 +234,10 @@ table in `product-framework.md`.
 |---|---|---|---|---|
 | 1.0 | Kickoff pack builder | Draft | Draft | Yes, M1 |
 | 1.1 | Outcome note drafter | Me | Draft | Yes, M2 |
-| 1.2 | A8 Opportunity sizer | Draft | Draft | Yes, Appendix A |
+| 1.2 | M21 Opportunity sizer | Draft | Draft | Yes, M21 |
 | 1.3 | Interview scheduler | Me | Auto ⚠️ | Yes, M3 |
-| 1.3 | A7 Interview synthesizer | Draft | Draft | Yes, Appendix A |
-| 1.4 | A9 Time-use analyst | Draft | Draft | Yes, Appendix A |
+| 1.3 | M20 Interview synthesizer | Draft | Draft | Yes, M20 |
+| 1.4 | M22 Time-use analyst | Draft | Draft | Yes, M22 |
 | 1.5 | None (stays with a person) | Me | Me | — |
 | 1.6 | Reaction summarizer | Me | Draft | Yes, M4 |
 | 1.7 | Baseline recorder | Me | Auto | Yes, M5 |
@@ -246,7 +247,7 @@ table in `product-framework.md`.
 
 **Rule for this table:** a new agent gets a full spec (mission, inputs,
 allowed actions, outputs, stop condition, proof it worked, person in charge)
-in the project memo's Appendix A before it's built, following "One job each"
+in the agent library (or, for an agent only one project needs, in that project memo's Appendix A) before it's built, following "One job each"
 in `product-framework.md`.
 
 _Last updated: 2026-10-09_

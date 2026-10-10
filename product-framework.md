@@ -72,13 +72,14 @@ bank allowing automations to message people.
 |---|---|---|---|---|
 | 1.0 | Agree the sponsor's role and who decides; brief a risk contact | Me | Meeting | Sponsor, risk |
 | 1.0 | Set up the tracker, decision log and project file | Draft | M1 Kickoff pack builder | Me |
+| 1.0 | Confirm the AI tools the team may use and record them in the project file | Me | Meeting with IT and risk | Project file |
 | 1.1 | Agree the outcome and measure | Me | Meeting | Sponsor |
 | 1.1 | Write the outcome note | Draft | M2 Outcome note drafter (M365 Copilot) | Sponsor confirms |
-| 1.2 | Size the opportunity | Draft | A8 Opportunity sizer (Snowflake Cortex Analyst, Power BI) | Analyst checks, then sponsor |
+| 1.2 | Size the opportunity | Draft | M21 Opportunity sizer (Snowflake Cortex Analyst, Power BI) | Analyst checks, then sponsor |
 | 1.3 | Schedule interviews and shadowing | Auto ⚠️ | M3 Interview scheduler (Outlook, Power Automate) | Users |
 | 1.3 | Interview and shadow users | Me | Teams, in person | — |
-| 1.3 | Pull themes from interview notes | Draft | A7 Interview synthesizer (M365 Copilot) | Me |
-| 1.4 | Map where users' time goes | Draft | A9 Time-use analyst (Snowflake Cortex, Power BI) | Users confirm |
+| 1.3 | Pull themes from interview notes | Draft | M20 Interview synthesizer (M365 Copilot) | Me |
+| 1.4 | Map where users' time goes | Draft | M22 Time-use analyst (Snowflake Cortex, Power BI) | Users confirm |
 | 1.5 | Learn how users are measured and rewarded | Me | Conversations | Sponsor, if there's a gap |
 | 1.6 | Build the mock-up and summarize reactions | Draft | Prototype skill, M4 Reaction summarizer | Me |
 | 1.6 | Run the reaction sessions | Me | In person, Teams | Users |
@@ -90,12 +91,12 @@ bank allowing automations to message people.
 **2. Define**
 | # | Task | Kind | Tool (guess) | Goes to |
 |---|---|---|---|---|
-| 2.1 | Write the problem and outcome | Draft | A10 Requirements drafter | Sponsor approves |
+| 2.1 | Write the problem and outcome | Draft | M23 Requirements drafter | Sponsor approves |
 | 2.2 | Score the platforms against the five criteria | Draft | M7 Platform fit checker | Me |
 | 2.2 | Choose the platform and delivery path | Me | Meetings with platform teams | Decision log |
-| 2.3 | Data contract (fields, freshness, checks) | Draft | A11 Data contract checker (Snowflake) | Data owner signs |
-| 2.4 | Risk intake and control requirements | Draft | A12 Risk intake assistant | Model risk rates it |
-| 2.5 | User stories and acceptance criteria | Draft | A10, story library | Me |
+| 2.3 | Data contract (fields, freshness, checks) | Draft | M24 Data contract checker (Snowflake) | Data owner signs |
+| 2.4 | Risk intake and control requirements | Draft | M25 Risk intake assistant | Model risk rates it |
+| 2.5 | User stories and acceptance criteria | Draft | M23, story library | Me |
 | 2.6 | Backlog priorities and trade-offs | Me | Backlog tool | Sponsor |
 | 2.6 | Decision log entries | Draft | M8 Decision log drafter (M365 Copilot) | Me |
 | 2.7 | Measures, quality bar and value model | Draft | M9 Measures sheet builder (Power BI) | Sponsor, Finance |
@@ -110,27 +111,27 @@ bank allowing automations to message people.
 | 3.1 | Design the solution | Me | With platform teams | Platform teams, risk |
 | 3.1 | Draft the agent specs | Draft | M10 Agent spec drafter | Me |
 | 3.2 | Prepare trusted data views | Me | With the data engineer (Snowflake) | — |
-| 3.2 | Run data quality checks on every refresh | Auto | Snowflake checks; A11 in ongoing mode | Data owner, on failure |
+| 3.2 | Run data quality checks on every refresh | Auto | Snowflake checks; M24 in ongoing mode | Data owner, on failure |
 | 3.3 | Build the rules and prompts | Draft | Bedrock or Prompt Builder | Users check |
 | 3.4 | Build in the controls | Me | Guardrails, Einstein Trust Layer | Risk |
 | 3.4 | Re-run the control tests on every release | Auto | M11 Controls checker (test environment only) | Me, on failure |
 | 3.5 | Deliver where users work, with sources and feedback | Me | Salesforce, Teams, Power Automate | Users |
 | 3.6 | Build the test set | Draft | M12 Test case generator | Users approve the answers |
-| 3.7 | Run the test set on every version | Auto | A13 Test grader | Me, on failure |
+| 3.7 | Run the test set on every version | Auto | M26 Test grader | Me, on failure |
 | 3.7 | Build the gate pack | Draft | M6 Gate pack drafter | Sponsor |
 | Gate | Go/no-go | Me | Meeting | Sponsor |
 
 **4. Govern and test**
 | # | Task | Kind | Tool (guess) | Goes to |
 |---|---|---|---|---|
-| 4.1 | Update the intake and register the product | Draft | A12 Risk intake assistant | Risk confirms the rating |
+| 4.1 | Update the intake and register the product | Draft | M25 Risk intake assistant | Risk confirms the rating |
 | 4.2 | Compare the data actually used with the contract | Auto | M13 Data-use checker | Privacy |
 | 4.2 | Walk privacy through it | Me | Meeting | Privacy |
-| 4.3 | Test and red-team the frozen version | Auto | A13 Test grader, A14 Red-team agent | Risk reviews every failure |
-| 4.4 | Check fairness | Auto | A15 Fairness monitor | Compliance reviews |
+| 4.3 | Test and red-team the frozen version | Auto | M26 Test grader, M27 Red-team agent | Risk reviews every failure |
+| 4.4 | Check fairness | Auto | M28 Fairness monitor | Compliance reviews |
 | 4.5 | Re-run the control tests | Auto | M11 Controls checker | Risk |
 | 4.6 | Confirm the vendor reviews | Me | Approved vendors list | Vendor risk |
-| 4.7 | Put together the evidence pack | Draft | A16 Evidence pack assembler | Me, then risk |
+| 4.7 | Put together the evidence pack | Draft | M29 Evidence pack assembler | Me, then risk |
 | 4.7 | Send sign-off requests and chase them | Auto ⚠️ | M14 Sign-off router (Power Automate approvals) | Risk, compliance, privacy, security |
 | 4.7 | The sign-offs themselves | Partner | — | Recorded in the tracker |
 | 4.7 | Unblock a stuck sign-off | Me | Meeting | — |
@@ -149,7 +150,7 @@ bank allowing automations to message people.
 | 5.4 | Answer "how do I…?" questions | Auto | A6 Onboarding coach | Users; the product team keeps content current |
 | 5.5 | Recruit champions | Me | A Teams channel | Champions |
 | 5.5 | Spot wins to celebrate | Draft | M17 Wins spotter | Me, then leaders |
-| 5.6 | Sort feedback into bugs, quality issues and ideas | Auto | A17 Feedback triage | Backlog; I check a weekly sample |
+| 5.6 | Sort feedback into bugs, quality issues and ideas | Auto | M30 Feedback triage | Backlog; I check a weekly sample |
 | 5.6 | Fix and tell users what changed | Me | Release notes | Users |
 | 5.7 | Confirm the long-term owner before scaling | Me | Meeting | Sponsor |
 | 5.7 | Write the scale recommendation | Draft | M6 Gate pack drafter | Sponsor |
@@ -159,11 +160,11 @@ bank allowing automations to message people.
 | # | Task | Kind | Tool (guess) | Goes to |
 |---|---|---|---|---|
 | 6.1 | Live dashboard for all five kinds of measures | Auto | Power BI | Sponsor |
-| 6.2 | Monthly impact note against baseline and comparison group | Draft | A18 Impact analyst | Analytics checks, then sponsor |
-| 6.3 | Re-test after every change; alert when quality slips | Auto | A19 Quality watchdog | Product manager, on alert |
+| 6.2 | Monthly impact note against baseline and comparison group | Draft | M31 Impact analyst | Analytics checks, then sponsor |
+| 6.3 | Re-test after every change; alert when quality slips | Auto | M32 Quality watchdog | Product manager, on alert |
 | 6.4 | Monthly keep/change/stop pack | Draft | M18 Monthly review pack drafter | Me |
 | 6.4 | Keep/change/stop decision | Me | Meeting | Sponsor |
-| 6.5 | Rank the candidates for the next wave | Draft | A20 Improvement scout | Me, then sponsor |
+| 6.5 | Rank the candidates for the next wave | Draft | M33 Improvement scout | Me, then sponsor |
 | 6.6 | Total time and waits from the first-time logs | Draft | M19 Log summarizer | Me |
 | 6.6 | Improve the machine: update this framework and the playbook | Me | — | — |
 | Gate | Keep, change or stop; invest more, adjust or stop | Me | Meeting | Sponsor, Finance |

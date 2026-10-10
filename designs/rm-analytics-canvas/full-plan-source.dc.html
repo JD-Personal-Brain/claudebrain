@@ -61,7 +61,7 @@ th,td{text-align:left;vertical-align:top}
 <span>A business sponsor, time with 6–10 RMs and their managers, named data owners, an early risk partner, and a willing pilot group.</span>
 </div>
 </div>
-<p style="margin: 0; max-width: 880px; color: #4A5466"><strong style="color: #14213D">How to use this plan.</strong> Sections 1–11 are the plan. <a href="#agents">Appendix A</a> specifies every agent and <a href="#workflows">Appendix B</a> sets out each RM workflow step by step, so the team can build directly from them.</p>
+<p style="margin: 0; max-width: 880px; color: #4A5466"><strong style="color: #14213D">How to use this plan.</strong> Sections 1–11 are the plan. <a href="#agents">Appendix A</a> specifies the product's agents in full and shows how the team uses the delivery machine's general agents (full specs in the agent library), and <a href="#workflows">Appendix B</a> sets out each RM workflow step by step, so the team can build directly from them.</p>
 </section>
 
 <section id="core" style="display: flex; flex-direction: column; gap: 22px">
@@ -533,7 +533,7 @@ th,td{text-align:left;vertical-align:top}
 <div style="display: flex; flex-direction: column; gap: 8px; border-top: 4px solid #14213D; padding-top: 24px">
 <span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; letter-spacing: 0.06em; color: #0F5F59">APPENDIX A · AGENT SPECS</span>
 <h2 style="margin: 0; font-family: 'IBM Plex Serif', Georgia, serif; font-size: 36px; line-height: 1.2; color: #14213D">Every agent, specified to build</h2>
-<p style="margin: 0; max-width: 880px">Each agent named in Steps 1–6, written so a platform team can build it and a risk partner can review it. [X] values are set in Define.</p>
+<p style="margin: 0; max-width: 880px">Each agent named in Steps 1–6. The product's agents (A1 to A6) are written so a platform team can build them and a risk partner can review them; the team's agents are the delivery machine's general agents, specified in full in the agent library. [X] values are set in Define.</p>
 </div>
 <div style="background: #14213D; color: #FFFFFF; border-radius: 12px; padding: 22px 24px; display: flex; flex-direction: column; gap: 12px">
 <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.06em; color: #9FD8D0">RULES FOR EVERY AGENT</span>
@@ -562,6 +562,7 @@ th,td{text-align:left;vertical-align:top}
 </sc-for>
 </div>
 <h3 style="margin: 0; font-size: 22px; color: #14213D">Agents the team uses</h3>
+<p style="margin: 0; max-width: 880px">These are the delivery machine's general agents (M20 to M33), specified in full in the agent library. The table shows how this project uses each one: its RM inputs, owners and checks.</p>
 <div style="overflow-x: auto; background: #FFFFFF; border: 1px solid #D9DEE5; border-radius: 12px">
 <table style="min-width: 1400px; font-size: 14px">
 <thead><tr style="background: #F0F3F6">
@@ -655,7 +656,7 @@ class Component extends DCLogic {
         ]),
         strategy: "Use AI to listen and size faster than a team could by hand. Nothing touches clients yet; a person checks every finding.",
         agents: [
-          agent("team", "Interview synthesizer", "Turns interview recaps into themes and quotes, linked to each source.", "M365 Copilot, Copilot Studio", "Teams transcripts, interview notes", "PM reviews every theme"),
+          agent("team", "Interview synthesizer", "Turns interview recaps into themes and quotes, linked to each source.", "M365 Copilot, Copilot Studio", "Teams transcripts (only with consent), interview notes", "PM reviews every theme"),
           agent("team", "Opportunity sizer", "Answers plain-English questions to size each lever.", "Snowflake Cortex Analyst", "Snowflake balances and products; Salesforce pipeline", "An analyst checks the numbers"),
           agent("team", "Time-use analyst", "Finds where RM time goes and which activities lead to won deals.", "Snowflake Cortex, Power BI", "Salesforce activity and win/loss", "PM confirms with RMs in person")
         ],
@@ -930,20 +931,20 @@ class Component extends DCLogic {
       return { id: id, name: name, step: step, job: job, inputs: inputs, allowed: allowed, outputs: outputs, stops: stops, proof: proof, owner: owner };
     }
     var teamSpecs = [
-      ts("A7", "Interview synthesizer", "Discover", "Turn interview recaps into themes and quotes", "Teams transcripts, interview notes", "Read; draft", "Themes, each linked to its source", "All interviews processed", "PM spot-checks every theme against the notes", "PM"),
-      ts("A8", "Opportunity sizer", "Discover", "Answer plain-English sizing questions", "Snowflake balances and products; Salesforce pipeline", "Read-only queries", "Sized levers with the query shown", "Each lever sized", "An analyst re-runs the key numbers", "Analyst"),
-      ts("A9", "Time-use analyst", "Discover", "Find where RM time goes", "Salesforce activity and win/loss", "Read-only queries", "Time-use breakdown", "Breakdown complete", "PM confirms with RMs in person", "PM"),
-      ts("A10", "Requirements drafter", "Define", "Draft problem statement, user stories, acceptance criteria", "Discover findings", "Draft only", "Draft brief and stories", "Drafts delivered", "Team and sponsor approve", "PM"),
-      ts("A11", "Data contract checker", "Define", "Check fields exist, are fresh and pass quality checks", "Snowflake tables and their quality and access records", "Read-only", "Gap list", "Every field checked in Define; after that, runs on every data refresh and alerts the data owner on failure", "Data owner signs off", "Data owner"),
-      ts("A12", "Risk intake assistant", "Define", "Pre-fill the risk intake; flag likely high-risk areas", "Bank policies, product brief", "Draft only", "Pre-filled intake", "Intake drafted", "Risk partner sets the rating", "Risk partner"),
-      ts("A13", "Test grader", "Build", "Score each version against the test set", "Test set, product outputs", "Read; score", "Score report", "Every test case scored", "Experienced RMs grade a sample", "PM"),
-      ts("A14", "Red-team agent", "Govern", "Try to break the product (other RMs' clients, credit requests)", "The product in test", "Test requests in the test environment only", "Failure list", "All attack types run", "Risk reviews every failure", "Risk partner"),
-      ts("A15", "Fairness monitor", "Govern", "Check opportunities are spread fairly across segments and regions", "Opportunity outputs, client segments", "Read-only", "Fairness report", "Report complete; runs again monthly after launch", "Compliance reviews results", "Compliance"),
-      ts("A16", "Evidence pack assembler", "Govern", "Compile results, data use and controls into review documents", "Test results, data contract, controls", "Draft only", "Evidence pack", "Pack drafted", "PM and risk verify every claim", "PM"),
-      ts("A17", "Feedback triage", "Release", "Sort feedback into bugs, quality issues and ideas", "Feedback logged in Salesforce", "Read; tag; add to backlog", "Tagged backlog items", "All new feedback sorted", "PM reviews a weekly sample", "PM"),
-      ts("A18", "Impact analyst", "Measure", "Report pipeline and revenue from AI insights against the comparison group", "AI-tagged Salesforce opportunities; Snowflake", "Read-only queries", "Monthly impact figures", "Report complete", "Analytics validates before reporting", "Analytics"),
-      ts("A19", "Quality watchdog", "Measure", "Re-run the test set after every change; alert on drift", "Test set, live outputs, feedback", "Read; alert", "Score trend and alerts", "Each run complete", "Alerts reviewed within [X] days", "PM"),
-      ts("A20", "Improvement scout", "Measure", "Propose next backlog items or the next lever", "Dashboards, feedback, reviews", "Draft only", "Ranked suggestions", "List delivered", "PM and sponsor decide", "PM")
+      ts("M20", "Interview synthesizer", "Discover", "Turn interview recaps into themes and quotes", "Teams transcripts (only with consent), interview notes", "Read; draft", "Themes, each linked to its source", "All interviews processed", "PM spot-checks every theme against the notes", "PM"),
+      ts("M21", "Opportunity sizer", "Discover", "Answer plain-English sizing questions", "Snowflake balances and products; Salesforce pipeline", "Read-only queries", "Sized levers with the query shown", "Each lever sized", "An analyst re-runs the key numbers", "Analyst"),
+      ts("M22", "Time-use analyst", "Discover", "Find where RM time goes", "Salesforce activity and win/loss", "Read-only queries", "Time-use breakdown", "Breakdown complete", "PM confirms with RMs in person", "PM"),
+      ts("M23", "Requirements drafter", "Define", "Draft problem statement, user stories, acceptance criteria", "Discover findings", "Draft only", "Draft brief and stories", "Drafts delivered", "Team and sponsor approve", "PM"),
+      ts("M24", "Data contract checker", "Define", "Check fields exist, are fresh and pass quality checks", "Snowflake tables and their quality and access records", "Read-only", "Gap list", "Every field checked in Define; after that, runs on every data refresh and alerts the data owner on failure", "Data owner signs off", "Data owner"),
+      ts("M25", "Risk intake assistant", "Define", "Pre-fill the risk intake; flag likely high-risk areas", "Bank policies, product brief", "Draft only", "Pre-filled intake", "Intake drafted", "Risk partner sets the rating", "Risk partner"),
+      ts("M26", "Test grader", "Build", "Score each version against the test set", "Test set, product outputs", "Read; score", "Score report", "Every test case scored", "Experienced RMs grade a sample", "PM"),
+      ts("M27", "Red-team agent", "Govern", "Try to break the product (other RMs' clients, credit requests)", "The product in test", "Test requests in the test environment only", "Failure list", "All attack types run", "Risk reviews every failure", "Risk partner"),
+      ts("M28", "Fairness monitor", "Govern", "Check opportunities are spread fairly across segments and regions", "Opportunity outputs, client segments", "Read-only", "Fairness report", "Report complete; runs again monthly after launch", "Compliance reviews results", "Compliance"),
+      ts("M29", "Evidence pack assembler", "Govern", "Compile results, data use and controls into review documents", "Test results, data contract, controls", "Draft only", "Evidence pack", "Pack drafted", "PM and risk verify every claim", "PM"),
+      ts("M30", "Feedback triage", "Release", "Sort feedback into bugs, quality issues and ideas", "Feedback logged in Salesforce", "Read; tag; add to backlog", "Tagged backlog items", "All new feedback sorted", "PM reviews a weekly sample", "PM"),
+      ts("M31", "Impact analyst", "Measure", "Report pipeline and revenue from AI insights against the comparison group", "AI-tagged Salesforce opportunities; Snowflake", "Read-only queries", "Monthly impact figures", "Report complete", "Analytics validates before reporting", "Analytics"),
+      ts("M32", "Quality watchdog", "Measure", "Re-run the test set after every change; alert on drift", "Test set, live outputs, feedback", "Read; alert", "Score trend and alerts", "Each run complete", "Alerts reviewed within [X] days", "PM"),
+      ts("M33", "Improvement scout", "Measure", "Propose next backlog items or the next lever", "Dashboards, feedback, reviews", "Draft only", "Ranked suggestions", "List delivered", "PM and sponsor decide", "PM")
     ];
     function flow(id, name, wave, color, trigger, steps, logged, measures) {
       return { id: id, name: name, wave: wave, color: color, trigger: trigger, logged: logged, measures: measures,
@@ -958,7 +959,7 @@ class Component extends DCLogic {
       flow("B1", "Weekly opportunity list", "Wave 1", w1, "Every night (signals); every Monday morning (digest).", [
         "A1 scans clients and writes signals.", "A2 writes an insight for each.", "Insights appear on the Salesforce client record.", "A4 sends each RM their top [X].",
         "DECIDE: the RM accepts, rejects (with a reason) or changes each insight.", "On accept, the RM creates an opportunity in Salesforce, tagged “AI-sourced.”",
-        "A17 sorts the feedback.", "Managers review the list in the weekly pipeline meeting."],
+        "M30 sorts the feedback.", "Managers review the list in the weekly pipeline meeting."],
         "Signals, insights, opens, decisions and reasons, opportunities created.", "Share of insights acted on; pipeline from AI-sourced opportunities."),
       flow("B2", "Pre-meeting client brief", "Wave 1", w1, "A client meeting on the RM's calendar, [X] hours before; or the RM asks.", [
         "A3 pulls the client record, open insights and recent activity.", "It drafts a one-page brief with sources.", "The brief reaches the RM in Teams or Outlook.",
@@ -985,8 +986,8 @@ class Component extends DCLogic {
         "Snowflake finds prospects that look like the bank's best clients, using agreed and explainable criteria.", "A2 explains each match.", "DECIDE: the RM decides whether to pursue each one."],
         "Prospects shown, pursued and won.", "New clients against the comparison group."),
       flow("B9", "Every release (every week or two)", "All waves", tm, "Any change to prompts, rules, data or models.", [
-        "A19 re-runs the test set.", "If the score is below the quality bar, the release stops.", "If the change is material, the risk partner is told before release.",
-        "Release; A19 watches live quality for [X] days."],
+        "M32 re-runs the test set.", "If the score is below the quality bar, the release stops.", "If the change is material, the risk partner is told before release.",
+        "Release; M32 watches live quality for [X] days."],
         "Test scores, approvals, release notes.", "Quality trend; releases rolled back.")
     ];
     function wk(week, what, owner, proof, isGate) {

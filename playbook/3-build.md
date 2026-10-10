@@ -24,9 +24,10 @@ log (see `README.md`) for every sub-step.
   - The AI principles in `product-framework.md`: assistive first, one job each, built where the work happens.
 - **First time, step by step:**
   1. Draw the flow on one page: data in → logic → AI writing → where the user sees it → feedback back in.
-  2. For each AI piece, write an agent spec: mission, inputs, allowed actions, outputs, stop condition, proof it worked, person in charge (memo Appendix A is the pattern).
+  2. For each AI piece, write an agent spec: mission, inputs, allowed actions, outputs, stop condition, proof it worked, person in charge (the agent library, `playbook/agents.md`, is the pattern).
   3. Keep every agent read-only unless a user clicks to approve an action.
-  4. Review the design with the platform team and the risk partner.
+  4. Give each agent a stop rule: if its inputs are missing, stale or fail a check, it stops and alerts its owner instead of guessing.
+  5. Review the design with the platform team and the risk partner.
 - **Output:** a one-page design and an agent spec for each agent.
 - **Done when:** the platform team and the risk partner have agreed the design.
 - **Automation watch:**
@@ -52,7 +53,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Me**, with the data engineer.
   - Note: which checks failed in the first week.
-  - Agent: the quality checks become **Auto** once they run on every refresh. A11 Data contract checker (Appendix A) watches them: its ongoing mode runs on every data refresh.
+  - Agent: the quality checks become **Auto** once they run on every refresh. M24 Data contract checker (agent library) watches them: its ongoing mode runs on every data refresh.
 - **For RM analytics:** signal views for balance trends, product gaps and activity.
 
 ---
@@ -73,7 +74,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Draft**. AI drafts prompts; you and users check.
   - Note: which prompt changes fixed which problems. Keep a prompt change log.
-  - Agent: none new. The checking becomes **A13 Test grader** (3.7).
+  - Agent: none new. The checking becomes **M26 Test grader** (3.7).
 - **For RM analytics:** A1 finds signals with explainable rules; A2 writes the reason and talking points.
 
 ---
@@ -88,7 +89,8 @@ log (see `README.md`) for every sub-step.
   2. Human approval: nothing reaches a client or changes a record without a user's click.
   3. Guardrails: block sensitive data and off-topic answers.
   4. Logging: every AI action recorded, with who, what and when.
-  5. Test each control on purpose, for example by trying to see another user's clients.
+  5. Recordings: meeting recaps come only from recordings made with consent under the bank's recording policy; otherwise the AI works from the user's own notes.
+  6. Test each control on purpose, for example by trying to see another user's clients.
 - **Output:** a controls checklist with proof for each one (a screenshot or a test result).
 - **Done when:** every control has proof.
 - **Automation watch:**
@@ -114,7 +116,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Me**, with platform teams.
   - Note: the feedback options users actually used.
-  - Agent: the feedback saved here feeds **A17 Feedback triage** in step 5.
+  - Agent: the feedback saved here feeds **M30 Feedback triage** in step 5.
 - **For RM analytics:** insights on the Salesforce client record, plus the Monday digest in Teams or Outlook.
 
 ---
@@ -155,7 +157,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Draft**.
   - Note: how long a full test run took by hand. That's the time the agent saves on every later change.
-  - Agent: **A13 Test grader** (Appendix A). It scores every version; users grade a sample. Aim for **Auto** on every new version.
+  - Agent: **M26 Test grader** (agent library). It scores every version; users grade a sample. Aim for **Auto** on every new version.
   - Agent idea: the **gate pack drafter** (spec M6) from Discover, reused for the Build gate pack. *Draft*.
 - **For RM analytics:** accuracy (numbers match the source), relevance and usefulness rated by RMs.
 
@@ -176,12 +178,12 @@ log (see `README.md`) for every sub-step.
 | Sub-step | Agent | First time | Aim for | Already specified? |
 |---|---|---|---|---|
 | 3.1 | Agent spec drafter | Me | Draft | Yes, M10 |
-| 3.2 | Data quality checks (A11 in an ongoing mode) | Me | Auto | Yes, A11 (ongoing mode added) |
-| 3.3 | None new (A13 checks the outputs) | Draft | Draft | — |
+| 3.2 | Data quality checks (M24 in an ongoing mode) | Me | Auto | Yes, M24 (ongoing mode) |
+| 3.3 | None new (M26 checks the outputs) | Draft | Draft | — |
 | 3.4 | Controls checker | Me | Auto (test only) | Yes, M11 |
-| 3.5 | None (its feedback feeds A17 in step 5) | Me | Me | — |
+| 3.5 | None (its feedback feeds M30 in step 5) | Me | Me | — |
 | 3.6 | Test case generator | Draft | Draft | Yes, M12 |
-| 3.7 | A13 Test grader | Draft | Auto | Yes, Appendix A |
+| 3.7 | M26 Test grader | Draft | Auto | Yes, M26 |
 | 3.7 | Gate pack drafter | Draft | Draft | Yes, M6 |
 
 **First time** = how the task is done on the first project. **Aim for** = its kind in `product-framework.md`.
