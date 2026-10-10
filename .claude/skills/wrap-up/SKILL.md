@@ -7,7 +7,7 @@ description: End a work session. Logs lessons, updates NOW.md, suggests improvem
 
 Keep every message short (see rule R2).
 
-0. **Audit first.** Run the **audit** skill on everything done this session, and on the Open Items log (`open-items.md`): every open item the session touched is checked and brought up to date. Fix every finding before going on. Wrap-up's own small edits (lessons, NOW.md, ideas) get the audit's mechanical checks again just before saving.
+0. **Audit first.** Run the **audit** skill on everything done this session, and on the Open Items log (`open-items.md`): every open item is checked, not only the ones the session touched, so the log is scrubbed at every wrap-up. Fix every finding before going on. Wrap-up's own small edits (lessons, NOW.md, ideas) get the audit's mechanical checks again just before saving.
 1. **Lessons.** Look back over the session for corrections or mistakes. Log each one with the **log-lesson** skill.
 2. **Profile.** If you learned something new about how the user likes to work, add it to `me/profile.md`.
 3. **NOW.md.** Update where things stand, what's next and any new agreements (each with its reason). Update the "Last updated" date.

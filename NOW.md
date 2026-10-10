@@ -1,6 +1,6 @@
 # NOW: start here
 
-_Last updated: 2026-10-10 · Last review: none yet (first one due around 2026-10-14)_
+_Last updated: 2026-10-09 · Last review: none yet (first one due around 2026-10-14)_
 
 ## Where things stand
 - The Claude brain is set up: rule book, profile, learning files, ideas list and eleven skills: log-lesson, wrap-up, designed-doc, write-prompt, run-tests, prototype, new-use-case, audit, make-skill, agent-spec and (new 2026-10-09) documents.
@@ -32,6 +32,10 @@ _Last updated: 2026-10-10 · Last review: none yet (first one due around 2026-10
 - **Bank Business Briefing** (2026-10-09): https://claude.ai/artifact/7ZVT7LtdqxwAma4UrBgTPX. How the bank earns money, the corporate segment in depth (its own results, from the Q2 2026 quarterly report), each revenue line, and a map from revenue lines to my RM plan and value model. Working copy: `memos/bank-business.md`. The prompt that built it is Example 5 in `prompting.md`: re-run it each quarter (Q3 2026 results are due October 22, 2026). Waiting for my review. The value model question ("costs saved" and "loan losses avoided") waits for the credit use case.
 - **Open Items log** (2026-10-09): https://claude.ai/artifact/NsW5AH5XFNHmDNYJvmVDMb, first in the Document Library. One list of everything still open, gathered from every file: decisions and reviews waiting on me, work to do, questions to confirm at the bank, and what's parked. Each item has a number that never changes. Working copy: `open-items.md`. Claude updates it at every wrap-up. "What's next" below stays the short ordered list for the start of a session; the log is the full picture.
 - **Order of use cases (decided 2026-10-09):** RM first, credit second. Andy wants AI to support both relationship managers and credit (portfolio managers, the credit people paired with RMs). I'm going deep on the RM framework until I'm confident in its structure, then copying that structure to credit. Don't start a credit plan until I say the RM framework is ready. Parked for then: the six credit processes AI could support (spreading financial statements, covenant checks, renewals, credit memos and annual reviews, early warning, risk ratings), franchise banking as a possible pilot (my guess, not confirmed), and adding "costs saved" and "loan losses avoided" to the value model.
+- **Two more building-block pages** (2026-10-09), both waiting for my review: the Steps Catalog (https://claude.ai/artifact/8UncWMYUq7hsJUhn5NSYEB), with all 44 sub-steps of my six-step process as cards I can search, and the Controls Catalog (https://claude.ai/artifact/7GmH3iBG6jcDkdacUysUrQ), with 16 governance controls (the safeguards built into each product) and where each is set, built, proved and watched. The controls were gathered from my own framework, not from the bank, and live in `playbook/controls.md`.
+- **Shorthand check** (2026-10-09): the audit checker now fails if a "What's next" item below uses a rule, test or lesson number without explaining it, or is too short to explain itself.
+- **My other session's work is merged in** (2026-10-09): the shorthand lesson, this file in plainer words, my "not yet" on sharing with Associated, and ideas 32 to 34.
+- **Safety rules removed** (2026-10-09): Claude no longer explains approval pop-ups or reminds me that Deny is safe. They were training wheels from when I was new. "Claude explains, I decide" still stands: plain English, a recommendation, and my yes before anything is merged into main.
 - First prototype made: a calculator (v1, then v2 with green buttons). It was practice and has nothing to do with the job. The prototyping process is under agreements below.
 
 ## What's next
@@ -41,10 +45,9 @@ _Last updated: 2026-10-10 · Last review: none yet (first one due around 2026-10
 4. Continue thinking through the Associated Bank job, Part 1 (finding the problems bankers face), with the saved prompt in `job-prompts.md`. Pick up where my notes (`job-notes.md`, also the Job Notes page) stop.
 5. Use Claude for real work, including prototypes for the new job, and say "wrap up" at the end of each session.
 6. Run the tests of Claude's rules that only work in a live session (short scenarios in `learning/tests.md` that check each rule still works; the full list is item W7 in the Open Items log), then try the new skills on real work: say "run the tests", "prototype X", "write a prompt for X" or "new use case: X".
-7. Remove my safety rules (approved 2026-10-07): the training-wheel habits from when I was new, where Claude explains every approval pop-up and reminds me "Deny is always safe". They live in my rule book (`CLAUDE.md`, section 1) and in the rule about pop-ups (R4). The wrap-up part is done. Earlier sessions couldn't edit `CLAUDE.md`; Claude tries next time I say go, and if it's blocked, I edit it in GitHub.
-8. Do the first weekly review around 2026-10-14.
-9. Later, once I say the RM framework is ready: plan the credit (portfolio management) use case with the same structure.
-10. Sharing with Associated: not yet (decided 2026-10-09). When I'm ready, Claude builds an "Associated edition" of the Document Library: only the pages meant for them, no internal labels or file names, plus a list of which pages I must share one by one from each page's Share menu (sharing the library doesn't share the pages it links to).
+7. Do the first weekly review around 2026-10-14: a 5-minute look at what's working, what's annoying and what to change.
+8. Later, once I say the RM framework is ready: plan the credit (portfolio management) use case with the same structure.
+9. Sharing with Associated: not yet (decided 2026-10-09). When I'm ready, Claude builds an "Associated edition" of the Document Library: only the pages meant for them, no internal labels or file names, plus a list of which pages I must share one by one from each page's Share menu (sharing the library doesn't share the pages it links to).
 
 ## Current agreements (and why)
 - **Claude explains, I decide.** Why: I'm not a developer and want to stay in control.

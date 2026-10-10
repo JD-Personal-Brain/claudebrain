@@ -41,7 +41,7 @@ for f in glob.glob('designs/*.html'):
     for m in re.findall(r'<(?:p|li|td)>_[^<]{0,40}|[^<]{0,40}_</(?:p|li|td)>',open(f).read()):
         print(f,"shows a stray underscore:",m); probs+=1
 # 3. pages built from working copies are up to date
-for page,builder in [('designs/delivery-machine.html','designs/delivery-machine-build.py'),('designs/playbook.html','designs/playbook-build.py'),('designs/product-framework.html','designs/md-page-build.py'),('designs/tech-stack.html','designs/md-page-build.py'),('designs/job-notes.html','designs/md-page-build.py'),('designs/job-description.html','designs/md-page-build.py'),('designs/prompting.html','designs/md-page-build.py'),('designs/bank-business.html','designs/md-page-build.py'),('designs/open-items.html','designs/md-page-build.py'),('designs/library.html','designs/library-build.py'),('designs/workflows.html','designs/workflows-build.py'),('designs/agents.html','designs/agents-build.py')]:
+for page,builder in [('designs/delivery-machine.html','designs/delivery-machine-build.py'),('designs/playbook.html','designs/playbook-build.py'),('designs/product-framework.html','designs/md-page-build.py'),('designs/tech-stack.html','designs/md-page-build.py'),('designs/job-notes.html','designs/md-page-build.py'),('designs/job-description.html','designs/md-page-build.py'),('designs/prompting.html','designs/md-page-build.py'),('designs/bank-business.html','designs/md-page-build.py'),('designs/open-items.html','designs/md-page-build.py'),('designs/library.html','designs/library-build.py'),('designs/workflows.html','designs/workflows-build.py'),('designs/agents.html','designs/agents-build.py'),('designs/steps.html','designs/catalogs-build.py'),('designs/controls.html','designs/catalogs-build.py')]:
     before=open(page).read()
     subprocess.run(['python3',builder],check=True)
     if open(page).read()!=before: print(page,"was out of date: rebuilt it, republish it"); probs+=1
@@ -71,4 +71,11 @@ for m in re.finditer(r'^\| (\d+) \|.*\| ([^|]+) \|$',open('ideas.md').read(),re.
 def upd(f):
     m=re.search(r'_Last updated: (\d{4}-\d{2}-\d{2})',open(f).read()); return m.group(1) if m else ''
 if upd('open-items.md')<upd('NOW.md'): print("open-items.md was last updated",upd('open-items.md'),"but NOW.md on",upd('NOW.md')+": review the open items"); probs+=1
+# 6. shorthand in NOW.md's "What's next" (idea 32, from L10d): every item must explain itself
+nxt=open('NOW.md').read().split("## What's next")[1].split("\n## ")[0]
+for item in re.findall(r'^\d+\. .+$',nxt,re.M):
+    bare=re.sub(r'\([^)]*\)|`[^`]*`','',item)
+    codes=re.findall(r'\b(?:[RTL]\d+[a-d]?|idea \d+)\b',bare)
+    if codes: print("NOW.md What's next uses",", ".join(codes),"without explaining it:",item[:60]); probs+=1
+    if len(item.split())<9: print("NOW.md What's next item is too short to explain itself:",item[:60]); probs+=1
 print("problems:",probs)

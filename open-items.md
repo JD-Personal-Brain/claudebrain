@@ -13,9 +13,9 @@ every wrap-up: finished items move to "Closed" with the date, and new ones are a
 
 | Group | Open | What it is |
 |---|---|---|
-| 1. Decisions waiting on me | 4 | Things only I can decide |
-| 2. Reviews waiting on me | 8 | Pages Claude built that I haven't read yet |
-| 3. Work to do | 10 | Next pieces of real work, in rough order |
+| 1. Decisions waiting on me | 1 | Things only I can decide |
+| 2. Reviews waiting on me | 10 | Pages Claude built that I haven't read yet |
+| 3. Work to do | 12 | Next pieces of real work, in rough order |
 | 4. To confirm at the bank | 27 | Questions the plans depend on, 7 of which I can ask Andy now |
 | 5. Parked on purpose | 3 | Not forgotten; waiting for a signal from me |
 
@@ -28,10 +28,7 @@ framework can't be called ready (D1) until I've read it, and credit (P1) waits o
 
 | # | Decision | Why it matters | Where it came from |
 |---|---|---|---|
-| D1 | Is the RM framework ready to copy to other use cases? What would make me confident it is? | Credit, the next use case, waits on this | My decision on 2026-10-09: RM first, credit second |
-| D2 | Bring in the unmerged work from my other session this evening (that session dated it 2026-10-10): a lesson about shorthand, NOW.md rewritten in plainer words, my "not yet" on sharing with Associated, and three new ideas. It sits on a side branch, a separate draft copy on GitHub named `claude/nifty-mccarthy-w71hpk`, and it was never proposed for merging. It now overlaps with the official copy ("main") in NOW.md | Work isn't safe for future sessions until it's in main | GitHub, checked 2026-10-09 |
-| D3 | Yes or no on four ideas: fewer approval pop-ups (idea 2), playbooks for my everyday tools (idea 3), an automatic shorthand check (idea 32) and catalogs of steps and controls (idea 34). Ideas 32 and 34 are on the unmerged branch in D2 | An idea with no answer never gets built | `ideas.md` |
-| D4 | Say "go" to remove my safety rules (idea 16): the pop-up explanations and "Deny is always safe" reminders. Approved on 2026-10-07; Claude tries the edit when I say go, and if it's blocked I edit the rule book in GitHub | They add words to every session and I no longer need them | NOW.md "What's next" 7 |
+| D1 | Is the RM framework ready to copy to other use cases? My answer on 2026-10-09: not yet. The reviews in section 2 and the work in section 3 come first | Credit, the next use case, waits on this | My decision on 2026-10-09: RM first, credit second |
 
 ## 2. Reviews waiting on me
 
@@ -45,6 +42,8 @@ framework can't be called ready (D1) until I've read it, and credit (P1) waits o
 | R6 | Workflow Maps | Both maps | Me |
 | R7 | Agent Library | All 39 agents | Me |
 | R8 | Six-Step Product Workflow | The one-page visual, still marked Draft | Me |
+| R9 | Steps Catalog | New on 2026-10-09: all 44 sub-steps as cards I can search | Me |
+| R10 | Controls Catalog | New on 2026-10-09: 16 governance controls. Claude gathered them from my own framework, so check they are the right ones | Me |
 
 If a review changes the six steps, the Product Framework page has to be updated to match.
 
@@ -58,10 +57,12 @@ If a review changes the six steps, the Product Framework page has to be updated 
 | W4 | Re-run the Bank Business Briefing after the bank's Q3 2026 results on October 22, 2026, using the saved prompt (Example 5 in the Prompting Guide). Read the full Q2 earnings call transcript at the same time; only a summary was available the first time | Claude | October 22, 2026 |
 | W5 | Loose ends in the Bank Business Briefing: check the exact wording of the bank's AI announcement before quoting it; replace the 2016 description of who the segment serves once the annual report for the 2025 financial year can be opened in full; and confirm two of my guesses, the RM headcount read from an unclear chart and that Omaha came with American National | Claude | Nothing |
 | W6 | First weekly review: what's working, what's annoying, what to change. Also re-check Anthropic's prompting guide for changes | Me, with Claude | Around 2026-10-14 |
-| W7 | Run the tests of Claude's rules that need a real session. Each test is a short scenario in `learning/tests.md` that checks one rule still works. Not yet run in a live session: T4, T7, T10, T13, T14, T15 and T17, and the second parts of T2, T3, T9 and T16. Never run at all: T18 to T22. Re-run T8 (does Claude label every suggestion Needed or Optional?), which failed on 2026-10-09 before its rule was tightened, and T5, whose first run wasn't a fair test | Claude, in a new session | Nothing |
+| W7 | Run the tests of Claude's rules that need a real session. Each test is a short scenario in `learning/tests.md` that checks one rule still works. Not yet run in a live session: T7, T10, T13, T14 and T17, and the second parts of T2, T3, T9 and T16. Never run at all: T18 to T22 and T24. Re-run T8 (does Claude label every suggestion Needed or Optional?), which failed on 2026-10-09 before its rule was tightened, and T5, whose first run wasn't a fair test | Claude, in a new session | Nothing |
 | W8 | Try the newer skills on real work: "prototype X", "write a prompt for X", "new use case: X" | Me | Nothing |
 | W9 | Add one line to the RM plan saying credit comes next on the same framework, because Andy named both | Claude | My yes |
 | W10 | Check the product details marked "(verify)" in the Tech Stack Guide: product names, prices, vendor terms and any update to the regulators' model-risk guidance. Eleven lines carry the mark | Claude | Nothing |
+| W11 | Fewer approval pop-ups (idea 2, approved): tell Claude which pop-ups I still see and in which app, so it can pre-approve the safe, read-only ones. Claude won't change my permission settings on a guess | Me, then Claude | Nothing |
+| W12 | Playbooks for my everyday tools (idea 3, approved): name two or three tasks I repeat in email, calendar or documents. Claude turns each into a step-by-step skill | Me, then Claude | Nothing |
 
 ## 4. To confirm at the bank
 
@@ -103,7 +104,7 @@ or the hiring team before I start. The rest need someone inside.
 | # | Item | Waiting for | Decided |
 |---|---|---|---|
 | P1 | The credit (portfolio management) use case. Ready for then: six credit processes AI could support, franchise banking as a possible pilot, and whether to add "costs saved" and "loan losses avoided" to the value model | Me saying the RM framework is ready (D1) | 2026-10-09 |
-| P2 | Sharing with Associated. When I'm ready, Claude builds an "Associated edition" of the Document Library: only the pages meant for them, with no internal labels | Me saying I'm ready to share | 2026-10-09, recorded on the unmerged work in D2 |
+| P2 | Sharing with Associated. When I'm ready, Claude builds an "Associated edition" of the Document Library (idea 33): only the pages meant for them, with no internal labels | Me saying I'm ready to share | 2026-10-09 |
 | P3 | A treasury and payments use case. The bank named it as a starting point for AI, and nothing has been planned yet | After credit, unless B3 changes the order | 2026-10-09 |
 
 ## 6. Closed
@@ -112,5 +113,8 @@ or the hiring team before I start. The rest need someone inside.
 |---|---|---|
 | C1 | Build the Bank Business Briefing and save its prompt (merged into main as pull request #54) | 2026-10-09 |
 | C2 | Decide the order of use cases: RM first, credit second | 2026-10-09 |
+| C3 | Was D2: bring in the unmerged work from my other session. Merged into this log's pull request, with both sides kept where they overlapped | 2026-10-09 |
+| C4 | Was D3: yes to four ideas. The shorthand check (idea 32) and the Steps and Controls catalogs (idea 34) are built. Fewer pop-ups (idea 2) and everyday playbooks (idea 3) need facts from me first: see W11 and W12 | 2026-10-09 |
+| C5 | Was D4: remove my safety rules (idea 16). The pop-up explanations and "Deny is safe" reminders are gone from the rule book, with rules R4 and R15 and their two tests | 2026-10-09 |
 
 _Last updated: 2026-10-09_

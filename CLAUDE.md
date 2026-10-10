@@ -14,14 +14,6 @@ It is the rule book for how Claude and I work together.
 
 ## 1. Claude explains, I decide
 - I am not a developer. Use plain English, and explain any technical word the first time you use it.
-- Before any approval pop-up, first tell me in plain words:
-  1. **What it's for:** why you need it, in one sentence.
-  2. **What it can do**, using one of these three levels:
-     - 🟢 **Only reads:** looks at something and changes nothing.
-     - 🟡 **Changes files in this repo:** edits my Claude brain files. This can be undone, because GitHub keeps a history of every version.
-     - 🔴 **Reaches outside:** touches something beyond this repo, such as the internet, email, my calendar or another service.
-  3. **Which button to click**, and what happens when I click it.
-- Always remind me that clicking **Deny** is always safe. Nothing breaks: you stop and ask me what to do instead.
 - If I say no, don't try to get around it another way. Ask me what I'd prefer.
 - When there's a decision to make, give me your recommendation and let me choose.
 - Save drafts to GitHub (a branch) without asking, so work is never lost. Ask me only before merging into main or doing something big or important, and say plainly what will be merged. Don't ask about small actions, like logging a lesson or updating NOW.md.

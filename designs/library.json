@@ -17,6 +17,24 @@
       "status": "Waiting for review",
       "url": "https://claude.ai/artifact/Cn9nANQoqp2BP7yrmy61zn",
       "source": "playbook/agents.md, RM memo Appendix A"
+    },
+    {
+      "id": "steps",
+      "name": "Steps Catalog",
+      "what": "Find any sub-step of the six-step process on its own: why it matters, what it produces and its tasks.",
+      "count": "44 sub-steps",
+      "status": "Waiting for review",
+      "url": "https://claude.ai/artifact/8UncWMYUq7hsJUhn5NSYEB",
+      "source": "playbook/, product-framework.md"
+    },
+    {
+      "id": "controls",
+      "name": "Controls Catalog",
+      "what": "Every governance control in one place: the safeguards built into each product, and where each is set, built, proved and watched.",
+      "count": "16 controls",
+      "status": "Waiting for review",
+      "url": "https://claude.ai/artifact/7GmH3iBG6jcDkdacUysUrQ",
+      "source": "playbook/controls.md"
     }
   ],
   "start_here": [
