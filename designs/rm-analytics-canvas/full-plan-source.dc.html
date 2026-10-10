@@ -61,7 +61,7 @@ th,td{text-align:left;vertical-align:top}
 <span>A business sponsor, time with 6–10 RMs and their managers, named data owners, an early risk partner, and a willing pilot group.</span>
 </div>
 </div>
-<p style="margin: 0; max-width: 880px; color: #4A5466"><strong style="color: #14213D">How to use this plan.</strong> Sections 1–11 are the plan. <a href="#agents">Appendix A</a> specifies every agent and <a href="#workflows">Appendix B</a> sets out each RM workflow step by step, so the team can build directly from them.</p>
+<p style="margin: 0; max-width: 880px; color: #4A5466"><strong style="color: #14213D">How to use this plan.</strong> Sections 1–11 are the plan. <a href="#agents">Appendix A</a> specifies the product's agents in full and shows how the team uses the delivery machine's general agents (full specs in the agent library), and <a href="#workflows">Appendix B</a> sets out each RM workflow step by step, so the team can build directly from them.</p>
 </section>
 
 <section id="core" style="display: flex; flex-direction: column; gap: 22px">
@@ -533,7 +533,7 @@ th,td{text-align:left;vertical-align:top}
 <div style="display: flex; flex-direction: column; gap: 8px; border-top: 4px solid #14213D; padding-top: 24px">
 <span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; letter-spacing: 0.06em; color: #0F5F59">APPENDIX A · AGENT SPECS</span>
 <h2 style="margin: 0; font-family: 'IBM Plex Serif', Georgia, serif; font-size: 36px; line-height: 1.2; color: #14213D">Every agent, specified to build</h2>
-<p style="margin: 0; max-width: 880px">Each agent named in Steps 1–6, written so a platform team can build it and a risk partner can review it. [X] values are set in Define.</p>
+<p style="margin: 0; max-width: 880px">Each agent named in Steps 1–6. The product's agents (A1 to A6) are written so a platform team can build them and a risk partner can review them; the team's agents are the delivery machine's general agents, specified in full in the agent library. [X] values are set in Define.</p>
 </div>
 <div style="background: #14213D; color: #FFFFFF; border-radius: 12px; padding: 22px 24px; display: flex; flex-direction: column; gap: 12px">
 <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.06em; color: #9FD8D0">RULES FOR EVERY AGENT</span>
@@ -656,7 +656,7 @@ class Component extends DCLogic {
         ]),
         strategy: "Use AI to listen and size faster than a team could by hand. Nothing touches clients yet; a person checks every finding.",
         agents: [
-          agent("team", "Interview synthesizer", "Turns interview recaps into themes and quotes, linked to each source.", "M365 Copilot, Copilot Studio", "Teams transcripts, interview notes", "PM reviews every theme"),
+          agent("team", "Interview synthesizer", "Turns interview recaps into themes and quotes, linked to each source.", "M365 Copilot, Copilot Studio", "Teams transcripts (only with consent), interview notes", "PM reviews every theme"),
           agent("team", "Opportunity sizer", "Answers plain-English questions to size each lever.", "Snowflake Cortex Analyst", "Snowflake balances and products; Salesforce pipeline", "An analyst checks the numbers"),
           agent("team", "Time-use analyst", "Finds where RM time goes and which activities lead to won deals.", "Snowflake Cortex, Power BI", "Salesforce activity and win/loss", "PM confirms with RMs in person")
         ],
@@ -931,7 +931,7 @@ class Component extends DCLogic {
       return { id: id, name: name, step: step, job: job, inputs: inputs, allowed: allowed, outputs: outputs, stops: stops, proof: proof, owner: owner };
     }
     var teamSpecs = [
-      ts("M20", "Interview synthesizer", "Discover", "Turn interview recaps into themes and quotes", "Teams transcripts, interview notes", "Read; draft", "Themes, each linked to its source", "All interviews processed", "PM spot-checks every theme against the notes", "PM"),
+      ts("M20", "Interview synthesizer", "Discover", "Turn interview recaps into themes and quotes", "Teams transcripts (only with consent), interview notes", "Read; draft", "Themes, each linked to its source", "All interviews processed", "PM spot-checks every theme against the notes", "PM"),
       ts("M21", "Opportunity sizer", "Discover", "Answer plain-English sizing questions", "Snowflake balances and products; Salesforce pipeline", "Read-only queries", "Sized levers with the query shown", "Each lever sized", "An analyst re-runs the key numbers", "Analyst"),
       ts("M22", "Time-use analyst", "Discover", "Find where RM time goes", "Salesforce activity and win/loss", "Read-only queries", "Time-use breakdown", "Breakdown complete", "PM confirms with RMs in person", "PM"),
       ts("M23", "Requirements drafter", "Define", "Draft problem statement, user stories, acceptance criteria", "Discover findings", "Draft only", "Draft brief and stories", "Drafts delivered", "Team and sponsor approve", "PM"),

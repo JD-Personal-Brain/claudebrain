@@ -207,7 +207,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Why it matters:** nothing untested reaches bankers, and automated tests never run against live data.
 - **Set in:** 2.2
 - **Built in:** 2.2 (the path is written there)
-- **Proved in:** 4.5 (the path followed and IT's approval of every connection are confirmed)
+- **Proved in:** 4.5 (the frozen version reached test by the agreed path, the move to live is approved, and IT has approved every connection)
 - **Watched in:** 5.2
 - **Tool (guess):** Power Platform environments and the bank's release process
 - **Proof:** the written delivery path, and the approval recorded for each move
@@ -229,7 +229,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Why it matters:** they often block an idea outright, so they are checked before the platform is chosen.
 - **Set in:** 2.2
 - **Built in:** 2.2 (checked there, not built)
-- **Proved in:** 4.5 (the path followed and IT's approval of every connection are confirmed)
+- **Proved in:** 4.5 (the frozen version reached test by the agreed path, the move to live is approved, and IT has approved every connection)
 - **Watched in:** not covered in the playbook yet
 - **Tool (guess):** Power Platform data policies
 - **Proof:** IT's confirmation that every connection the product uses is allowed
@@ -289,4 +289,4 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Tool (guess):** each agent's stop rule, with alerts through Power Automate
 - **Proof:** a test where an agent is given a missing or stale input on purpose and stops with an alert
 
-_Last updated: 2026-10-09_
+_Last updated: 2026-10-10_

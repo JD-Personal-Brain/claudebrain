@@ -387,7 +387,7 @@ listed actions, and those marked ⚠️ wait until the bank allows it.
 - **Proof it worked:** the team and the sponsor approve them.
 - **Person in charge:** product manager.
 - **Runs on (guess):** M365 Copilot in Word, or a Copilot Studio agent.
-- **To confirm:** None.
+- **To confirm:** none.
 
 ### M24. Data contract checker
 - **Used in:** 2.3, 3.2
@@ -499,7 +499,7 @@ listed actions, and those marked ⚠️ wait until the bank allows it.
 - **Proof it worked:** the product manager reviews a weekly sample.
 - **Person in charge:** product manager.
 - **Runs on (guess):** Power Automate with an approved AI model.
-- **To confirm:** None.
+- **To confirm:** none.
 
 ### M31. Impact analyst
 - **Used in:** 6.2
@@ -515,7 +515,7 @@ listed actions, and those marked ⚠️ wait until the bank allows it.
 - **Proof it worked:** analytics validates the numbers before reporting.
 - **Person in charge:** analytics.
 - **Runs on (guess):** Snowflake Cortex Analyst, Power BI.
-- **To confirm:** None.
+- **To confirm:** none.
 
 ### M32. Quality watchdog
 - **Used in:** 6.3
@@ -531,7 +531,7 @@ listed actions, and those marked ⚠️ wait until the bank allows it.
 - **Proof it worked:** alerts are reviewed within [X] days, and a drop introduced on purpose in testing triggers one.
 - **Person in charge:** product manager.
 - **Runs on (guess):** AWS Bedrock model evaluation, Power Automate.
-- **To confirm:** None.
+- **To confirm:** none.
 
 ### M33. Improvement scout
 - **Used in:** 6.5
@@ -547,7 +547,7 @@ listed actions, and those marked ⚠️ wait until the bank allows it.
 - **Proof it worked:** the product manager and the sponsor decide, and say which suggestions they used.
 - **Person in charge:** product manager.
 - **Runs on (guess):** M365 Copilot or a Copilot Studio agent.
-- **To confirm:** None.
+- **To confirm:** none.
 
 ## Not agents, but reusable assets
 These come up in the review tables but aren't agents. Each one is a template or
@@ -561,4 +561,4 @@ Two agents keep running after launch, not just once:
 - **M24 Data contract checker:** after Define, it runs on every data refresh (3.2) and alerts the data owner on failure.
 - **M28 Fairness monitor:** it runs again monthly after launch (4.4).
 
-_Last updated: 2026-10-09_
+_Last updated: 2026-10-10_

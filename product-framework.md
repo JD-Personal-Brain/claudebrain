@@ -72,6 +72,7 @@ bank allowing automations to message people.
 |---|---|---|---|---|
 | 1.0 | Agree the sponsor's role and who decides; brief a risk contact | Me | Meeting | Sponsor, risk |
 | 1.0 | Set up the tracker, decision log and project file | Draft | M1 Kickoff pack builder | Me |
+| 1.0 | Confirm the AI tools the team may use and record them in the project file | Me | Meeting with IT and risk | Project file |
 | 1.1 | Agree the outcome and measure | Me | Meeting | Sponsor |
 | 1.1 | Write the outcome note | Draft | M2 Outcome note drafter (M365 Copilot) | Sponsor confirms |
 | 1.2 | Size the opportunity | Draft | M21 Opportunity sizer (Snowflake Cortex Analyst, Power BI) | Analyst checks, then sponsor |

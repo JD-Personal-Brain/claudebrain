@@ -24,7 +24,7 @@ log (see `README.md`) for every sub-step.
   - The AI principles in `product-framework.md`: assistive first, one job each, built where the work happens.
 - **First time, step by step:**
   1. Draw the flow on one page: data in → logic → AI writing → where the user sees it → feedback back in.
-  2. For each AI piece, write an agent spec: mission, inputs, allowed actions, outputs, stop condition, proof it worked, person in charge (memo Appendix A is the pattern).
+  2. For each AI piece, write an agent spec: mission, inputs, allowed actions, outputs, stop condition, proof it worked, person in charge (the agent library, `playbook/agents.md`, is the pattern).
   3. Keep every agent read-only unless a user clicks to approve an action.
   4. Give each agent a stop rule: if its inputs are missing, stale or fail a check, it stops and alerts its owner instead of guessing.
   5. Review the design with the platform team and the risk partner.

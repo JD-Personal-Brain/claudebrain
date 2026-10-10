@@ -41,7 +41,7 @@ for fn in sorted(f for f in os.listdir(os.path.join(ROOT, "playbook")) if re.mat
             cells = [c.strip() for c in row.strip().strip("|").split("|")]
             if len(cells) >= 5 and num in [x.strip() for x in cells[0].split(",")]:
                 # only agents the row actually uses: the "Already specified?" cell names them ("Yes, M1",
-                # "Yes, A11 ..."); a mention like "None (feeds A17)" in the Agent cell is not a use
+                # "Yes, M24 ..."); a mention like "None (feeds M30)" in the Agent cell is not a use
                 if cells[4].lower().startswith("asset"):
                     assets.append(cells[1])
                 if cells[4].lower().startswith("yes"):

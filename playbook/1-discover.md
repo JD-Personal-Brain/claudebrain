@@ -136,7 +136,7 @@ sub-step. At the end, run the automation review.
 - **Automation watch:**
   - First time: **Draft**.
   - Note: which data sources were useful, and which were empty or untrusted.
-  - Agent: **M22 Time-use analyst** (agent library). It reads Salesforce activity read-only. You confirm the results with users in person.
+  - Agent: **M22 Time-use analyst** (agent library). It reads activity data (for example, CRM activity) read-only. You confirm the results with users in person.
 - **For RM analytics:** the memo targets meeting prep, call notes and CRM updates as the admin to cut.
 
 ---

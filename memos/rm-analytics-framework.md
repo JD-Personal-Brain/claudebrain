@@ -33,8 +33,9 @@ in review.
 partner, and a willing pilot group.
 
 **How to use this plan.** Sections 1–11 are the plan. Appendix A specifies
-every agent (job, inputs, allowed actions, outputs, when it stops and proof
-it worked), and Appendix B sets out each RM workflow step by step, so the
+the product's agents in full (job, inputs, allowed actions, outputs, when it
+stops and proof it worked) and shows how the team uses the delivery machine's
+general agents, whose full specs are in the agent library. Appendix B sets out each RM workflow step by step, so the
 team can build directly from them.
 
 ---
@@ -204,7 +205,7 @@ loop compounds over time and is a reason to build both goals together.
 
 | Agent | Type | Job | Runs on | Reads from | Person in charge |
 |---|---|---|---|---|---|
-| Interview synthesizer | For the team | Turns interview recaps into themes and quotes, linked to each source | M365 Copilot, Copilot Studio | Teams transcripts, interview notes | PM reviews every theme |
+| Interview synthesizer | For the team | Turns interview recaps into themes and quotes, linked to each source | M365 Copilot, Copilot Studio | Teams transcripts (only with consent), interview notes | PM reviews every theme |
 | Opportunity sizer | For the team | Answers plain-English questions to size each lever | Snowflake Cortex Analyst | Snowflake balances and products; Salesforce pipeline | An analyst checks the numbers |
 | Time-use analyst | For the team | Finds where RM time goes and which activities lead to won deals | Snowflake Cortex, Power BI | Salesforce activity and win/loss | PM confirms with RMs in person |
 
@@ -556,8 +557,10 @@ builds on them. I'd confirm early:
 
 ## Appendix A: Agent specs
 
-Each agent named in Steps 1–6, written so a platform team can build it and a
-risk partner can review it. **[X]** values are set in Define.
+Each agent named in Steps 1–6. The product's agents (A1 to A6) are written so a
+platform team can build them and a risk partner can review them; the team's
+agents are the delivery machine's general agents, specified in full in the
+agent library. **[X]** values are set in Define.
 
 **Rules for every agent:**
 - **One job.** If a request falls outside it, the agent says so and stops.
@@ -635,7 +638,7 @@ agent library. The table shows how this project uses each one: its RM inputs, ow
 
 | Agent | Step | Job | Inputs | Allowed actions | Outputs | Stops when | Proof it worked | Person in charge |
 |---|---|---|---|---|---|---|---|---|
-| **M20. Interview synthesizer** | Discover | Turn interview recaps into themes and quotes | Teams transcripts, interview notes | Read; draft | Themes, each linked to its source | All interviews processed | PM spot-checks every theme against the notes | PM |
+| **M20. Interview synthesizer** | Discover | Turn interview recaps into themes and quotes | Teams transcripts (only with consent), interview notes | Read; draft | Themes, each linked to its source | All interviews processed | PM spot-checks every theme against the notes | PM |
 | **M21. Opportunity sizer** | Discover | Answer plain-English sizing questions | Snowflake balances and products; Salesforce pipeline | Read-only queries | Sized levers with the query shown | Each lever sized | An analyst re-runs the key numbers | Analyst |
 | **M22. Time-use analyst** | Discover | Find where RM time goes | Salesforce activity and win/loss | Read-only queries | Time-use breakdown | Breakdown complete | PM confirms with RMs in person | PM |
 | **M23. Requirements drafter** | Define | Draft problem statement, user stories, acceptance criteria | Discover findings | Draft only | Draft brief and stories | Drafts delivered | Team and sponsor approve | PM |

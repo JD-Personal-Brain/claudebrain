@@ -109,7 +109,7 @@ log (see `README.md`) for every sub-step.
   3. Show that a user must approve before anything reaches a client or changes a record.
   4. Feed an agent a missing or stale input on purpose, and show that it stops and alerts its owner instead of guessing.
   5. Show that meeting recaps are drafted only where consent is recorded.
-  6. Confirm the product reached test and live through the agreed build, test and live path, and that IT has approved every connection it uses (the data-sharing rules checked in 2.2).
+  6. Confirm the frozen version reached test through the agreed build, test and live path, that the move to live is approved, and that IT has approved every connection the product uses (the data-sharing rules checked in 2.2).
   7. Update the controls checklist with fresh proof.
 - **Output:** the updated controls checklist with proof.
 - **Done when:** every control has fresh proof.
