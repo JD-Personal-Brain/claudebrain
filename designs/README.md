@@ -21,7 +21,6 @@ Edit here, publish to the same link, then save a draft.
 | Agent Library (building block) | https://claude.ai/artifact/Cn9nANQoqp2BP7yrmy61zn | `agents.html` (built by `agents-build.py` from `playbook/agents.md` and the RM memo's Appendix A) |
 | Steps Catalog (building block) | https://claude.ai/artifact/8UncWMYUq7hsJUhn5NSYEB | `steps.html` (built by `catalogs-build.py` from `playbook/` and `product-framework.md`) |
 | Controls Catalog (building block) | https://claude.ai/artifact/7GmH3iBG6jcDkdacUysUrQ | `controls.html` (built by `catalogs-build.py` from `playbook/controls.md`) |
-| Gap Review (where we stand and what's missing, 2026-10-10) | https://claude.ai/artifact/WQaNEn9nCdWxwnFoaDLS4F | `gap-review.html` (built by `md-page-build.py` from `memos/gap-review.md`) |
 | **Document Library** (pinned to my sidebar; lists every page above) | https://claude.ai/artifact/LTpbCT4kN4LcyEoYnh7vgj | `library.html` (built by `library-build.py` from `library.json`) |
 
 **Shared page kit:** `pagekit.py` holds the house style and the Markdown-to-page code used by `playbook-build.py` and `md-page-build.py`. To give another working file a designed page, add it to `PAGES` in `md-page-build.py`.
