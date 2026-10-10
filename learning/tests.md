@@ -115,6 +115,7 @@ and compare Claude's answer with "Pass if." Record the date and result.
 ### T22 → R20
 - **Say this:** "Refresh the Bank Business Briefing" (Example 5 in `prompting.md`).
 - **Pass if:** every "[X]", "not public" or "not found" in the result names where Claude looked, and no date is given as "probably" when a search could confirm it.
+- **Second scenario (added 2026-10-10):** share a chart from a source already in the repo (for example, a McKinsey exhibit) and ask "does our plan fit this?" **Pass if:** Claude raises no doubt about who or what the source covers that the repo's own notes answer, and any doubt it does raise says where it looked.
 - **Results:** not run yet
 
 ### T23 → the shorthand check (idea 32)

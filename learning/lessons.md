@@ -42,7 +42,9 @@ If a mistake happens again, its fix moves up a level:
 - **What happened:** In the first draft of the Bank Business Briefing, Claude wrote that the bank publishes fee lines for the whole bank only, and guessed that Q3 results were "probably due in late October." The audit found the segment's fee lines in the annual report page the briefing already cited, and a press release giving the date (October 22, 2026).
 - **Root cause:** Claude wrote "not public" and "not found" from what it remembered seeing, without going back through the sources it had opened or running one search for the missing fact.
 - **Fix:** Before writing that something isn't public or wasn't found, re-check the sources already opened and run one search for it. If it's still missing, say where Claude looked.
-- **Rule:** R20 · **Test:** T22 · **Level:** 1 · **Times it happened:** 1
+- **Again on 2026-10-10:** I said I wasn't certain who McKinsey's Frontline Sales Survey covered, and that it might be salespeople from many industries. You corrected me: it's a banker survey. The McKinsey article already in our files says it covered about 400 US and Canadian bankers, RMs and sales leaders. Root cause: I raised a doubt about a fact without first checking our own files and the sources we'd already read.
+- **Stronger fix (Level 2):** before saying "I'm not certain" about a fact, or offering an alternative reading of it, search the repo and the sources already opened. Say "not certain" only if that search comes up empty, and say where Claude looked.
+- **Rule:** R20 · **Test:** T22 · **Level:** 2 · **Times it happened:** 2
 
 ### L10d · 2026-10-09 · Kept saying "the McKinsey link" without explaining it
 - **What happened:** Across several messages and in NOW.md, Claude told me to "open the McKinsey link before sharing". I had no idea what it was.
