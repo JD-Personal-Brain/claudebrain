@@ -1,7 +1,7 @@
 # Associated Bank: the business behind the role
 
-_As of October 9, 2026, through Q2 2026 (the quarter that ended June 30, 2026).
-Built with Example 5 in `prompting.md`. Public information only._
+**As of October 9, 2026, through Q2 2026** (the quarter that ended June 30, 2026).
+Built with Example 5 in `prompting.md`. Public information only.
 
 > **How to read this.** Every number shows its period and a source tag such as
 > [S2], which links to the list in section 10. ⚠️ marks my own conclusion, not

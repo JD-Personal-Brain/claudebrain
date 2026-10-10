@@ -26,6 +26,20 @@
   ],
   "areas": [
     {
+      "id": "status",
+      "name": "Where things stand",
+      "why": "What's still open, so I can see at any moment what's waiting on me and what comes next.",
+      "parent": {
+        "id": "open-items",
+        "name": "Open Items",
+        "what": "Everything still open in one log: decisions and reviews waiting on me, work to do, questions for the bank, and what's parked.",
+        "status": "In use",
+        "url": "https://claude.ai/artifact/NsW5AH5XFNHmDNYJvmVDMb",
+        "source": "open-items.md"
+      },
+      "children": []
+    },
+    {
       "id": "job",
       "name": "The job",
       "why": "What Associated Bank needs, how its business earns money, the tools it runs on, and my thinking so far.",

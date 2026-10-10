@@ -17,6 +17,8 @@ PAGES = [
      "My answers so far, part by part, so any session can pick up where I stopped."),
     ("job-description.md", "job-description.html", "Job Description", "Associated Bank · the role",
      "The Principal Applied AI Product Manager posting: what the role owns, what it requires, and the tools it names."),
+    ("open-items.md", "open-items.html", "Open Items", "Where things stand",
+     "Everything still open in one log: decisions and reviews waiting on me, work to do, questions for the bank, and what's parked."),
     ("memos/bank-business.md", "bank-business.html", "Bank Business Briefing", "Associated Bank · the business",
      "How the bank earns money, the corporate segment in depth, and where AI work lines up with each revenue line."),
     ("prompting.md", "prompting.html", "Prompting Guide", "Working with Claude",

@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L7d · 2026-10-09 · Stray underscores at the top of two designed pages
+- **What happened:** The Bank Business Briefing went into main with its first line wrapped in underscores (Markdown for italics that the page builder doesn't handle across two lines). The new Open Items page had the same fault. Claude caught it only when it looked at the top of the Open Items page.
+- **Root cause:** For the briefing, Claude checked one screenshot from the middle of the page, never the top. Rule R7 already covers this, so the rule failed again.
+- **Fix:** An automatic check: the audit checker now fails if any built page shows a stray underscore at the start or end of a line. And the screenshot Claude looks at must include the top of the page.
+- **Rule:** R7 · **Test:** T7 · **Level:** 3 (automatic check added) · **Times it happened:** 4
+
 ### L16 · 2026-10-09 · Said a number wasn't public when a source I'd already opened had it
 - **What happened:** In the first draft of the Bank Business Briefing, Claude wrote that the bank publishes fee lines for the whole bank only, and guessed that Q3 results were "probably due in late October." The audit found the segment's fee lines in the annual report page the briefing already cited, and a press release giving the date (October 22, 2026).
 - **Root cause:** Claude wrote "not public" and "not found" from what it remembered seeing, without going back through the sources it had opened or running one search for the missing fact.
