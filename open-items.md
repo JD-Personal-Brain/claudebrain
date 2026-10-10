@@ -15,9 +15,9 @@ every wrap-up: finished items move to "Closed" with the date, and new ones are a
 |---|---|---|
 | 1. Decisions waiting on me | 1 | Things only I can decide |
 | 2. Reviews waiting on me | 11 | Pages Claude built that I haven't read yet (numbered V, for "review") |
-| 3. Work to do | 20 | Next pieces of real work, in rough order |
+| 3. Work to do | 19 | Next pieces of real work, in rough order |
 | 4. To confirm at the bank | 27 | Questions the plans depend on, 7 of which I can ask Andy now |
-| 5. Parked on purpose | 3 | Not forgotten; waiting for a signal from me |
+| 5. Parked on purpose | 4 | Not forgotten; waiting for a signal from me |
 
 "Andy" here is my main contact at the bank. ⚠️ Claude assumes this is Andy Miner, the bank's senior director of AI for Corporate & Commercial Banking.
 
@@ -44,7 +44,7 @@ framework can't be called ready (D1) until I've read it, and credit (P1) waits o
 | V8 | Six-Step Product Workflow | The one-page visual, still marked Draft | Me |
 | V9 | Steps Catalog | New on 2026-10-09: all 44 sub-steps as cards I can search | Me |
 | V10 | Controls Catalog | New on 2026-10-09: 22 governance controls. Claude gathered them from my own framework, so check they are the right ones | Me |
-| V11 | Gap Review | New on 2026-10-10: what's strong, what's missing before the RM plan goes to Andy, and what's needed to run many products at once. Items W14 to W20 below come from it | Me |
+| V11 | Gap Review | New on 2026-10-10: what's strong, what's missing before the RM plan goes to Andy, and what's needed to run many products at once. Items W14, W15 and W17 to W20 below, and parked item P4, come from it | Me |
 
 If a review changes the six steps, the Product Framework page has to be updated to match.
 
@@ -67,11 +67,10 @@ If a review changes the six steps, the Product Framework page has to be updated 
 | W13 | Close the gaps the Controls Catalog found in my playbook: 11 of the 22 controls have a stage marked "not covered in the playbook yet", such as who proves that only approved AI models are used. Each needs a line added to the right playbook step, or a decision that it isn't needed | Claude, with my yes for each playbook change | V10 |
 | W14 | Build an RM mock-up: clickable screens of the Monday opportunity list and the pre-meeting client brief, on made-up sample data, so Andy can see what an RM gets | Claude, with my review | My yes (Gap Review) |
 | W15 | Build an "Andy edition" of the RM plan: two to three pages in his terms, no internal labels, with one line that credit comes next. Includes W9 | Claude, then me | V1, V2 and my yes |
-| W16 | Portfolio layer: one intake form for new ideas, a scoring rule to rank them across products, a capacity rule, and a rule for retiring a product | Claude drafts, I review | My yes |
 | W17 | Ready-to-fill templates: brief, data contract, risk intake, gate pack, decision log, evidence pack, monitoring plan, release-readiness checklist | Claude drafts, I review | My yes |
 | W18 | Tracker design: the fields every task carries, written to work in any tool (bank question B23 is still open) | Claude drafts, I review | My yes |
 | W19 | Operating rhythm and approvals map: my week and month across products, a gate calendar, and who signs what, with typical turnaround and who to go to when stuck | Claude drafts, I review | My yes |
-| W20 | Dry run of the machine: take one small made-up product through all six steps with the templates and two or three agents built as Claude skills, and log where it breaks | Claude and me | W16 to W18 |
+| W20 | Dry run of the machine: take one small made-up product through all six steps with the templates and two or three agents built as Claude skills, and log where it breaks | Claude and me | W17 and W18, and my read of the pages (V1, V3) |
 
 ## 4. To confirm at the bank
 
@@ -115,6 +114,7 @@ or the hiring team before I start. The rest need someone inside.
 | P1 | The credit (portfolio management) use case. Ready for then: six credit processes AI could support, franchise banking as a possible pilot, and whether to add "costs saved" and "loan losses avoided" to the value model | Me saying the RM framework is ready (D1) | 2026-10-09 |
 | P2 | Sharing with Associated. When I'm ready, Claude builds an "Associated edition" of the Document Library (idea 33): only the pages meant for them, with no internal labels | Me saying I'm ready to share | 2026-10-09 |
 | P3 | A treasury and payments use case. The bank named it as a starting point for AI, and nothing has been planned yet | After credit, unless B3 changes the order | 2026-10-09 |
+| P4 | The portfolio layer (from the Gap Review): one intake form for new product ideas, a scoring rule to rank them against each other, a capacity rule for how many products I run at once, and a rule for retiring a product | The machine running one product well first | 2026-10-10 |
 
 ## 6. Closed
 

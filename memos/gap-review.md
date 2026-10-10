@@ -5,6 +5,12 @@ plan in front of Andy, and (2) let one product manager run many AI products,
 from first idea through live and improving. Written 2026-10-10 from the working
 files in the repo. ⚠️ marks a guess about the bank.
 
+## What I decided (2026-10-10)
+
+- **Focus stays on one product, end to end.** That was the goal of everything built so far.
+- **Next: read the pages, then do a dry run.** The short Andy edition and the RM mock-up stay on the list.
+- **The portfolio layer is parked.** Ranking new ideas against each other waits until the machine runs one product well. It's parked item P4 in Open Items.
+
 ## The short answer
 
 - **One product, end to end: strong on paper.** The six steps, their gates, all 44 sub-steps of the field manual, the Auto / Draft / Me marking on every task, 39 agent specs and 22 controls add up to a complete process for one product. Nothing in it has been tried on real work yet.
