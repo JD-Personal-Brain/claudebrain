@@ -5,7 +5,7 @@
       "name": "Workflow Maps",
       "what": "See the shape of the work: each main process left to right, with its sub-processes branching off. Click any box for details.",
       "count": "2 maps · 53 branches",
-      "status": "Waiting for review",
+      "status": "Reference",
       "url": "https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX",
       "source": "playbook/, product-framework.md, RM memo Appendix B"
     },
@@ -14,7 +14,7 @@
       "name": "Agent Library",
       "what": "Every agent in one place: what it does, what it may and may not do, and who's in charge. Filter by step or by who it serves.",
       "count": "39 agents",
-      "status": "Waiting for review",
+      "status": "Reference",
       "url": "https://claude.ai/artifact/Cn9nANQoqp2BP7yrmy61zn",
       "source": "playbook/agents.md, RM memo Appendix A"
     },
@@ -23,7 +23,7 @@
       "name": "Steps Catalog",
       "what": "Find any sub-step of the six-step process on its own: why it matters, what it produces and its tasks.",
       "count": "44 sub-steps",
-      "status": "Waiting for review",
+      "status": "Reference",
       "url": "https://claude.ai/artifact/8UncWMYUq7hsJUhn5NSYEB",
       "source": "playbook/, product-framework.md"
     },
@@ -32,7 +32,7 @@
       "name": "Controls Catalog",
       "what": "Every governance control in one place: the safeguards built into each product, and where each is set, built, proved and watched.",
       "count": "22 controls",
-      "status": "Waiting for review",
+      "status": "Reference",
       "url": "https://claude.ai/artifact/7GmH3iBG6jcDkdacUysUrQ",
       "source": "playbook/controls.md"
     }

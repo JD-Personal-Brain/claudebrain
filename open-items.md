@@ -14,8 +14,8 @@ every wrap-up: finished items move to "Closed" with the date, and new ones are a
 | Group | Open | What it is |
 |---|---|---|
 | 1. Decisions waiting on me | 1 | Things only I can decide |
-| 2. Reviews waiting on me | 10 | Pages Claude built that I haven't read yet (numbered V, for "review") |
-| 3. Work to do | 20 | Next pieces of real work, in rough order |
+| 2. Reviews waiting on me | 6 | Pages Claude built that I haven't read yet (numbered V, for "review") |
+| 3. Work to do | 21 | Next pieces of real work, in rough order |
 | 4. To confirm at the bank | 27 | Questions the plans depend on, 7 of which I can ask Andy now |
 | 5. Parked on purpose | 4 | Not forgotten; waiting for a signal from me |
 
@@ -40,8 +40,8 @@ every working file (this section replaces the separate Gap Review page).
 |---|---|---|---|
 | The six-step process for one product | Strong on paper | Steps, gates, 44 sub-steps, first-time logs and the automation check at every gate. Not yet tried on real work | V3, W20 |
 | RM plan (the first worked example) | Strong draft, not reviewed | Memo v8, with agent specs and workflows. I've read only the summary's opening and plan table | V1, V2 |
-| Governance and controls | Partial | 22 controls named. 11 have a stage the playbook doesn't cover yet, such as who checks that only approved AI models are used | V10, W13 |
-| Automating the process | Partial | Every task is marked Auto, Draft or Me, and 39 agents are specified. None is built or tested. How much can run alone depends on whether the bank lets automations message people ⚠️ | V7, B22, W20 |
+| Governance and controls | Partial | 22 controls named. 11 have a stage the playbook doesn't cover yet, such as who checks that only approved AI models are used | W13 |
+| Automating the process | Partial | Every task is marked Auto, Draft or Me, and 39 agents are specified. None is built or tested. How much can run alone depends on whether the bank lets automations message people ⚠️ | B22, W20 |
 | Ready-to-fill templates | Missing | The brief, data contract, risk intake, gate pack, evidence pack and monitoring plan are described, but none exists as a template yet. The Draft agents need these to fill in | W17 |
 | Task list design | Missing | The reminders, status notes and progress view all read from one task list, but its fields aren't written down, and we don't know the bank's tool yet | W18, B23 |
 | Approvals | Partial | Who decides is clear for every step. There's no map of who signs what, how long it takes, or who to go to when a sign-off is stuck | W19, B21 |
@@ -74,11 +74,7 @@ what exists, then the dry run, is the bottleneck.
 | V3 | Delivery Playbook | All six steps, plus the agent library at the end | Me |
 | V4 | The Delivery Machine | The page for leaders on how one product manager runs many projects | Me |
 | V5 | Bank Business Briefing | The whole page, new on 2026-10-09 | Me |
-| V6 | Workflow Maps | Both maps | Me |
-| V7 | Agent Library | All 39 agents | Me |
 | V8 | Six-Step Product Workflow | The one-page visual, still marked Draft | Me |
-| V9 | Steps Catalog | New on 2026-10-09: all 44 sub-steps as cards I can search | Me |
-| V10 | Controls Catalog | New on 2026-10-09: 22 governance controls. Claude gathered them from my own framework, so check they are the right ones | Me |
 
 If a review changes the six steps, the Product Framework page has to be updated to match.
 
@@ -98,7 +94,7 @@ If a review changes the six steps, the Product Framework page has to be updated 
 | W10 | Check the product details marked "(verify)" in the Tech Stack Guide: product names, prices, vendor terms and any update to the regulators' model-risk guidance. Eleven lines carry the mark | Claude | Nothing |
 | W11 | Fewer approval pop-ups (idea 2, approved): tell Claude which pop-ups I still see and in which app, so it can pre-approve the safe, read-only ones. Claude won't change my permission settings on a guess | Me, then Claude | Nothing |
 | W12 | Playbooks for my everyday tools (idea 3, approved): name two or three tasks I repeat in email, calendar or documents. Claude turns each into a step-by-step skill | Me, then Claude | Nothing |
-| W13 | Close the gaps the Controls Catalog found in my playbook: 11 of the 22 controls have a stage marked "not covered in the playbook yet", such as who proves that only approved AI models are used. Each needs a line added to the right playbook step, or a decision that it isn't needed | Claude, with my yes for each playbook change | V10 |
+| W13 | Close the gaps the Controls Catalog found in my playbook: 11 of the 22 controls have a stage marked "not covered in the playbook yet", such as who proves that only approved AI models are used. Each needs a line added to the right playbook step, or a decision that it isn't needed | Claude, with my yes for each playbook change | Nothing |
 | W14 | Build an RM mock-up: clickable screens of the Monday opportunity list and the pre-meeting client brief, on made-up sample data, so Andy can see what an RM gets | Claude, with my review | My yes |
 | W15 | Build an "Andy edition" of the RM plan: two to three pages in his terms, no internal labels, with one line that credit comes next. Includes W9 | Claude, then me | V1, V2 and my yes |
 | W17 | Ready-to-fill templates: brief, data contract, risk intake, gate pack, decision log, evidence pack, monitoring plan, release-readiness checklist | Claude drafts, I review | My yes |
@@ -106,6 +102,7 @@ If a review changes the six steps, the Product Framework page has to be updated 
 | W19 | Approvals map for one product: who signs what at each gate, typical turnaround ⚠️, and who to go to when a sign-off is stuck | Claude drafts, I review | My yes |
 | W20 | Dry run of the machine: take one small made-up product through all six steps with the templates and two or three agents built as Claude skills, and log where it breaks | Claude and me | W17 and W18, and my read of the pages (V1, V3) |
 | W21 | Support model and incident runbook for one product: who users call, how issues are logged and fixed, and the steps to pause or roll back the product | Claude drafts, I review | Before the first product goes live |
+| W22 | Keep the reference pages (Agent Library, Workflow Maps, Steps Catalog, Controls Catalog) in line with every working file: run the alignment audit and fix what it finds. These are never on my review list (lesson L18, 2026-10-10) | Claude | Nothing |
 
 ## 4. To confirm at the bank
 
