@@ -64,15 +64,16 @@ for u in sorted(lib_urls-readme_urls): print("designs/README.md is missing",u); 
 oi=open('open-items.md').read()
 nums=re.findall(r'^\| ([A-Z]\d+) \|',oi,re.M)
 for n in sorted({x for x in nums if nums.count(x)>1}): print("open-items.md uses the number",n,"twice"); probs+=1
-for label,pre in [('1. Decisions waiting on me','D'),('2. Reviews waiting on me','V'),('3. Work to do','W'),('4. To confirm at the bank','B'),('5. Parked on purpose','P')]:
-    m=re.search(r'^\| '+re.escape(label)+r' \| (\d+) \|',oi,re.M)
-    rows=len([x for x in nums if x[0]==pre])
-    if not m or int(m.group(1))!=rows: print("open-items.md 'At a glance' count for",label,"should be",rows); probs+=1
-if '## 2. Reviews' not in oi or '## 3. Work' not in oi or '## 6. Closed' not in oi: print("open-items.md is missing one of its section headings"); probs+=1
-oi_rev=oi.split('## 2. Reviews')[-1].split('## 3. Work')[0]    # pages waiting for review must be named in section 2
-oi_work=oi.split('## 2. Reviews')[-1].split('## 4. To confirm')[0]  # drafts and work in progress: section 2 or 3
-oi_live=oi.split('## 6. Closed')[0]                                # ideas must be named in an item that is still open
-where=lambda st: oi_rev if st=='Waiting for review' else oi_work
+# the log is organized by stage (agreed 2026-10-10): each "At a glance" count must match the rows in its section
+secs=re.split(r'^## ',oi,flags=re.M)
+for m in re.finditer(r'^\| ((?:Stage \d\. )?[A-Z][^|]+?) \| (\d+) \| [^|]+ \|$',oi.split('## At a glance')[1].split('\n## ')[0] if '## At a glance' in oi else '',re.M):
+    sec=[x for x in secs if x.startswith(m.group(1).strip()+'\n')]
+    rows=len(re.findall(r'^\| [A-Z]\d+ \|',sec[0],re.M)) if sec else -1
+    if rows!=int(m.group(2)): print("open-items.md 'At a glance' count for",m.group(1).strip(),"should be",rows if rows>=0 else '(no such section)'); probs+=1
+if '## At a glance' not in oi or '## Stage 1.' not in oi or '## Closed' not in oi: print("open-items.md is missing one of its section headings (At a glance, Stage 1, Closed)"); probs+=1
+oi_live=oi.split('## Closed')[0]                                   # everything still open
+oi_rev=oi_work=oi_live
+where=lambda st: oi_live
 for a in lib['areas']:
     for d in [a['parent']]+a['children']:
         if d['status'] in ('Waiting for review','Draft','In progress') and d['name'] not in where(d['status']): print("open-items.md doesn't mention the page",d['name'],"(status:",d['status']+")"); probs+=1
