@@ -142,7 +142,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
   - First time: **Me**. Trade-offs are judgment calls.
   - Note: which scoring questions actually changed the order.
   - Agent idea: a **decision log drafter** (spec M8) that writes log entries from meeting recaps (M365 Copilot). *Draft*.
-- **For RM analytics:** briefs, follow-ups and the opportunity list come first; call notes saved to Salesforce wait for wave 2.
+- **For RM analytics:** briefs, follow-ups, call notes saved to Salesforce and the opportunity list come first.
 
 ---
 

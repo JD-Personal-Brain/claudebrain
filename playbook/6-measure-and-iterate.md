@@ -111,7 +111,7 @@ log (see `README.md`) for every sub-step.
   - First time: **Draft**.
   - Note: how much of Discover and Define you could skip or reuse.
   - Agent: **M33 Improvement scout** (agent library) proposes and ranks candidates. The PM and the sponsor decide. *Draft*.
-- **For RM analytics:** the next standard use cases, such as call notes saved to Salesforce in wave 2.
+- **For RM analytics:** the next standard use cases, such as early warnings and referral prompts in wave 2.
 
 ---
 

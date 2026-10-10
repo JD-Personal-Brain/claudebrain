@@ -18,12 +18,12 @@ everything else is iterated and grown on top.
 
 **The approach, in three points:**
 1. **Deploy the standard base fast, aimed at revenue.** Build a working prototype in week 1, shape it with RMs, and get the first features live within weeks.
-2. **Pair insights with time.** RMs at many commercial banks spend only about 25–30% of their time with clients, according to McKinsey. Better opportunities only pay off if RMs have time to act on them, so the base includes time savers (briefs, meeting follow-ups) alongside revenue insights.
+2. **Pair insights with time.** RMs at many commercial banks spend only about 25–30% of their time with clients, according to McKinsey. Better opportunities only pay off if RMs have time to act on them, so the base includes time savers (briefs, meeting follow-ups, call notes) alongside revenue insights.
 3. **Govern from day one and prove it with evidence.** Risk partners are involved from the first week. Results are measured against RMs not yet using the tool, so revenue is never credited to AI by mistake.
 
 **The plan (estimate):** a working prototype in week 1, built alongside
-discovery. The meeting follow-up goes to pilot RMs in about weeks 2–4 and the
-insight features in about weeks 4–6, then small releases every week or two and
+discovery. The meeting follow-up goes to pilot RMs in about weeks 2–4, and call notes
+into Salesforce and the insight features in about weeks 4–6, then small releases every week or two and
 a new wave about every five weeks. The pace is set by data access and the
 bank's AI review, not by build time. A first read on closed revenue comes at
 about month 6. By day 90: wave 1 live for about two months, wave 2 live, wave 3
@@ -61,7 +61,7 @@ own targets are set from the bank's data in Define.
 
 | Core use case | RM problem | Our AI products under it | Return McKinsey reports (directional) | Our measure (target set in Define) |
 |---|---|---|---|---|
-| **Admin off the RM's plate** | Admin and CRM updates take more time than clients do (McKinsey's top problem) | Meeting follow-up (wave 1); call notes into Salesforce (wave 2) | Part of the 10 to 12 hours a week McKinsey expects back per banker, and about 40% better coverage | Hours saved per week; share of meetings logged [X] |
+| **Admin off the RM's plate** | Admin and CRM updates take more time than clients do (McKinsey's top problem) | Meeting follow-up and call notes into Salesforce (both wave 1) | Part of the 10 to 12 hours a week McKinsey expects back per banker, and about 40% better coverage | Hours saved per week; share of meetings logged [X] |
 | **Keep clients** | Clients drift away before anyone notices | Early warning: client may leave (wave 2) | No McKinsey figure; set from the bank's own retention data | Clients kept, against the comparison group [X] |
 
 **Overall:** McKinsey reports 3 to 15% higher revenue per RM and 20 to 40%
@@ -81,14 +81,19 @@ order it in Discover.
 
 | Wave (estimate) | AI product (its core use case is in the section above) | Revenue lever or goal | Built mainly on |
 |---|---|---|---|
-| **Wave 1** (live about weeks 2–6: follow-up about weeks 2–4, brief and opportunity list about weeks 4–6) | Pre-meeting client brief | Time; all levers | Salesforce, Snowflake, Agentforce or M365 Copilot |
+| **Wave 1** (live about weeks 2–6: follow-up about weeks 2–4; brief, opportunity list and call notes about weeks 4–6) | Pre-meeting client brief | Time; all levers | Salesforce, Snowflake, Agentforce or M365 Copilot |
 | | Meeting recap and follow-up draft | Time | M365 Copilot in Teams and Outlook |
 | | Weekly opportunity list (product gaps) | Grow existing clients | Snowflake signals, Power Automate digest |
-| **Wave 2** (live about week 10) | Early warning: client may leave | Keep clients | Snowflake signals, Salesforce |
 | | Call notes into Salesforce (RM approves) | Time; better data | Salesforce Agentforce |
+| **Wave 2** (live about week 10) | Early warning: client may leave | Keep clients | Snowflake signals, Salesforce |
 | | Referral prompts (for example, RM to treasury specialist) | Grow existing clients | Salesforce, Power Automate |
 | **Wave 3** (live about week 15) | RM assistant ("what should I know about this client?") | Time; all levers | Salesforce Agentforce or Copilot Studio |
 | | Prospect lookalikes | Win new clients | Snowflake, Salesforce |
+
+**Why call notes are in wave 1 (decided 2026-10-10):** in McKinsey's survey of
+about 400 bankers, admin is one of the top two problems at every stage of the
+sales funnel, and call notes reuse the recap the meeting follow-up already
+produces. They go live with the insights, once saving to Salesforce is signed off.
 
 **Why this works:** standard use cases on platforms the bank already runs
 need less build and fit existing approvals. Each wave is low-risk and
@@ -297,7 +302,7 @@ and Outlook).
 | 2. Find the opportunities | Simple, explainable rules and scores first. AI explains them; it doesn't invent them | Snowflake (Cortex), AWS Bedrock |
 | 3. Write the "why" and next step | An LLM turns each signal into a plain-English reason and talking points | Salesforce Prompt Builder or AWS Bedrock |
 | 4. Deliver it where RMs work | On the client record, plus a weekly digest in Teams or Outlook | Salesforce Agentforce, Power Automate |
-| 5. Free up RM time | Wave 1: pre-meeting briefs and meeting follow-ups. Wave 2: call notes into Salesforce, approved by the RM | M365 Copilot (Teams recaps), Salesforce Agentforce |
+| 5. Free up RM time | Wave 1: pre-meeting briefs, meeting follow-ups and call notes into Salesforce, approved by the RM | M365 Copilot (Teams recaps), Salesforce Agentforce |
 | 6. Show the source | Every insight links to the numbers behind it | Built into the design |
 | 7. Capture feedback | One click to accept, reject or change each insight, with a reason when rejected | Salesforce, Power Automate |
 | 8. Build the test set | Real client examples with known good answers, graded by experienced RMs | AWS Bedrock model evaluation |
@@ -308,12 +313,12 @@ and Outlook).
 |---|---|---|---|---|---|
 | Signal finder | For RMs | Scans each RM's clients overnight for opportunity signals using explainable rules and scores | Snowflake (Cortex) | Snowflake balances, products, trends | Business owns the rules; no client contact |
 | Insight writer | For RMs | Turns each signal into a plain-English reason and talking points, citing the numbers | Salesforce Prompt Builder or AWS Bedrock | Signal finder output; Salesforce client record | The RM decides whether to act |
-| Prep and follow-up assistant (waves 1–2) | For RMs | Drafts a pre-call brief, then call notes and follow-ups | Salesforce Agentforce or M365 Copilot | Salesforce client record; Teams meeting recap (with client consent where recorded) | The RM approves before anything is saved or sent |
+| Prep and follow-up assistant (wave 1) | For RMs | Drafts a pre-call brief, then call notes and follow-ups | Salesforce Agentforce or M365 Copilot | Salesforce client record; Teams meeting recap (with client consent where recorded) | The RM approves before anything is saved or sent |
 | RM assistant (wave 3) | For RMs | Answers "what should I know before my call with this client?" | Salesforce Agentforce or a Copilot Studio agent in Teams | Salesforce and Snowflake, read-only, only the RM's permitted clients | Any record update needs the RM's click |
 | Test grader | For the team | Scores every version against the test set and the quality bar | AWS Bedrock model evaluation | Test set, product outputs | Experienced RMs grade a sample |
 
 - **AI for the team:** drafting prompts and test questions; checking every version against the test set.
-- **AI for RMs:** wave 1: pre-meeting briefs, meeting follow-ups and the weekly opportunity list, with one-click feedback. Later waves add the next standard use cases. Assistive only.
+- **AI for RMs:** wave 1: pre-meeting briefs, meeting follow-ups, call notes into Salesforce and the weekly opportunity list, with one-click feedback. Later waves add the next standard use cases. Assistive only.
 - **Data:** live connections from Snowflake and Salesforce; each RM sees only clients they're already allowed to see.
 - **Output:** a working product in a test environment, the test results and an evidence pack started.
 - **Checks:** filters that block sensitive data and off-topic answers (Bedrock Guardrails, Salesforce Einstein Trust Layer); every AI action logged; client consent for any recorded meeting.
@@ -453,8 +458,8 @@ the first days.
 
 **Backup plan if data access or review runs long.** The meeting follow-up
 goes first: it runs in M365 Copilot on the RM's own meetings and email, so it
-needs the least new data and review. RMs keep shaping the brief and
-opportunity list in the test environment, so they're ready the day access and
+needs the least new data and review. RMs keep shaping the brief,
+opportunity list and call notes in the test environment, so they're ready the day access and
 sign-off land, by about week 10. Later waves move back by the same amount. The
 call is made at Gate 2 (week 2).
 
@@ -469,8 +474,8 @@ call is made at Gate 2 (week 2).
 | 2–3 | Meeting follow-up set up in M365 Copilot; reviewed and signed off for pilot use | Platform team, risk partner | Sign-off recorded |
 | About 2–4 | **Meeting follow-up live with pilot RMs** | PM | First weekly usage report |
 | 2–5 | Connect real data in the test environment; build the test set and evidence pack; risk partner reviews each version | Platform teams, PM | Test results against the quality bar |
-| 4–5 | Sign-offs for the insight features; release readiness (training, support, incident process, comparison group) | Risk, compliance, privacy, security, operations | Sign-offs recorded; readiness checklist complete |
-| About 4–6 | **Client brief and weekly opportunity list live with pilot RMs** | PM | Usage and act-on rates in Power BI |
+| 4–5 | Sign-offs for the insight features and call notes; release readiness (training, support, incident process, comparison group) | Risk, compliance, privacy, security, operations | Sign-offs recorded; readiness checklist complete |
+| About 4–6 | **Client brief, weekly opportunity list and call notes into Salesforce live with pilot RMs** | PM | Usage and act-on rates in Power BI; share of meetings logged |
 
 | Step | Weeks (estimate) | Ends with |
 |---|---|---|
@@ -478,7 +483,7 @@ call is made at Gate 2 (week 2).
 | **2. Define** | Weeks 1–2, alongside discovery | Gate 2 (week 2): data contract, risk rating, value model; split decision if needed |
 | **3. Build** | From day 1. Wave 1: weeks 1–5; wave 2: 7–9; wave 3: 11–14 | Gate 3: each feature meets the quality bar in testing, and every control has proof |
 | **4. Govern and test** | Risk partner reviews each version from week 1; sign-offs per feature | Gate 4: each feature approved for real RMs and real client data |
-| **5. Release and adopt** | Follow-up live about weeks 2–4; insights about weeks 4–6; releases every week or two | Gate 5: each wave meets its adoption targets; long-term owner confirmed before scaling |
+| **5. Release and adopt** | Follow-up live about weeks 2–4; insights and call notes about weeks 4–6; releases every week or two | Gate 5: each wave meets its adoption targets; long-term owner confirmed before scaling |
 | **6. Measure and iterate** | Leading measures from the first live week; closed revenue read about month 6 | Gate 6: keep, change or stop each use case monthly; invest more, adjust or stop each quarter |
 
 **By day 90 (about week 13):** wave 1 has been live with pilot RMs for about
@@ -621,8 +626,8 @@ agent library. **[X]** values are set in Define.
 - **Proof it worked:** test-set score meets the quality bar (accuracy, sources, relevance); every number traces to the source.
 - **Person in charge:** the RM decides whether to act; the product manager owns quality.
 
-**A3. Prep and follow-up assistant** · waves 1–2 · runs on Salesforce Agentforce or M365 Copilot
-- **Job:** before a client meeting, draft a one-page brief. After it, draft the recap, follow-up email and (wave 2) call notes for Salesforce.
+**A3. Prep and follow-up assistant** · wave 1 · runs on Salesforce Agentforce or M365 Copilot
+- **Job:** before a client meeting, draft a one-page brief. After it, draft the recap, follow-up email and call notes for Salesforce.
 - **Inputs:** the Salesforce client record; open insights; the RM's calendar; the Teams meeting recap (recorded only with client consent).
 - **Allowed actions:** read the inputs; create drafts for the RM.
 - **Not allowed:** sending anything to a client; saving to Salesforce without the RM's approval.
@@ -709,7 +714,7 @@ B9 is the release routine behind them.
 - **Logged:** drafts created; drafts sent after RM edits.
 - **Measures:** time to follow-up; drafts used; time saved.
 
-**B4. Call notes into Salesforce** (wave 2)
+**B4. Call notes into Salesforce** (wave 1; live with the insights about weeks 4–6)
 - **Trigger:** the B3 recap is ready.
 - **Steps:** 1. A3 drafts the Salesforce activity note and next steps. 2. **Decision point:** the RM approves or edits. 3. On approval, the note is saved to Salesforce, tagged "AI-drafted."
 - **Logged:** drafts, approvals and edits.

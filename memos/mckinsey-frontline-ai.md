@@ -47,7 +47,7 @@ coaching in late stage), and negotiation (4).
 | 5. Coaching | Not in the plan. The onboarding coach (A6) answers "how do I use this?" only | **Not covered** |
 
 **Also in our plan, not in McKinsey's five:** early warning when a client may
-leave (B5), and the meeting follow-up (B3) and call notes saved to the CRM (B4),
+leave (B5), and the meeting follow-up (B3) and call notes saved to the CRM (B4), both in wave 1,
 which tackle McKinsey's number one problem, excessive admin.
 
 **What this means:** wave 1 lines up with McKinsey's most-cited problem (meeting

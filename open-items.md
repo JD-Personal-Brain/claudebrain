@@ -183,5 +183,6 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C10 | Was D5: yes to ideas 35 and 36. The design canvas's runtime is kept in the repo so the render check always runs, and a check before every merge blocks it if the audit checker or render check finds a problem | 2026-10-10 |
 | C11 | Was V2: the McKinsey numbers in the RM plan are confirmed against the article's text (3–15% higher revenue per RM, 20–40% lower cost to serve, and RMs spending about 25–30% of their time with clients). The last one is now credited to McKinsey directly | 2026-10-10 |
 | C12 | Was D9: yes. The RM plan is now organized on McKinsey's five frontline use cases, with our AI products underneath each and a return profile for each (McKinsey benchmarks next to our own [X] targets). Admin and client retention sit "beyond McKinsey's five" | 2026-10-10 |
+| C13 | Call notes into Salesforce moved from wave 2 into wave 1, live with the insights about weeks 4–6, because McKinsey's banker survey ranks admin a top-two problem at every stage of the sales funnel | 2026-10-10 |
 
 _Last updated: 2026-10-10_
