@@ -1,9 +1,12 @@
 # Agent library: the agents that run the delivery machine
 
 These agents help the team run any project through the six steps. They're
-reused on every project, so they're specified once here. A project's own
-agents (the product users see, or agents only that project needs) go in its
-memo's Appendix A, like A1 to A20 in the RM memo.
+reused on every project, so they're specified once here: M1 to M19 run the
+machine's own paperwork and routing, and M20 to M33 do the team's analysis,
+testing and monitoring work (they started as the RM project's helpers and were
+made general on 2026-10-10). A project's own agents (the product users see, or
+agents only that project needs) go in its memo's Appendix A, like A1 to A6 in
+the RM memo.
 
 Written with the **agent-spec** skill. Every agent follows the AI principles in
 `product-framework.md`: assistive first, one job each, read-only or draft-only unless a named
@@ -322,6 +325,230 @@ listed actions, and those marked ⚠️ wait until the bank allows it.
 
 ---
 
+### M20. Interview synthesizer
+- **Used in:** 1.3
+- **For:** the team
+- **Kind:** Draft → Draft
+- **Job:** turn interview and shadowing notes into themes and quotes, each linked to its source.
+- **Starts when:** the product manager asks, after a round of interviews.
+- **Inputs:** interview recaps or transcripts (only where recording is allowed) and the product manager's notes.
+- **Allowed actions:** read the notes; write draft themes.
+- **Not allowed:** inventing quotes; naming interviewees outside the project team.
+- **Outputs:** a themes list, each theme with its quotes and the interviews behind it.
+- **Stops when:** every interview is processed.
+- **Proof it worked:** the product manager spot-checks every theme against the notes.
+- **Person in charge:** product manager.
+- **Runs on (guess):** M365 Copilot or a Copilot Studio agent.
+- **To confirm:** ⚠️ whether meeting recaps and transcripts are allowed for user interviews.
+
+### M21. Opportunity sizer
+- **Used in:** 1.2
+- **For:** the team
+- **Kind:** Draft → Draft
+- **Job:** answer plain-English sizing questions, so each lever gets a rough dollar range.
+- **Starts when:** the product manager writes the sizing questions.
+- **Inputs:** the questions; the data sources the data owner has approved for sizing.
+- **Allowed actions:** run read-only queries; save each query with its answer.
+- **Not allowed:** changing data; filling gaps with guesses (unknown numbers are [X]).
+- **Outputs:** sized levers, each with the query shown.
+- **Stops when:** every lever is sized.
+- **Proof it worked:** an analyst re-runs the key numbers.
+- **Person in charge:** an analyst; the product manager owns the questions.
+- **Runs on (guess):** Snowflake Cortex Analyst, Power BI.
+- **To confirm:** ⚠️ which data the team may query in Discover.
+
+### M22. Time-use analyst
+- **Used in:** 1.4
+- **For:** the team
+- **Kind:** Draft → Draft
+- **Job:** find where users' time goes, and which activities come before good results.
+- **Starts when:** the main activities are listed from shadowing (1.4).
+- **Inputs:** activity data (for example CRM activities and email or meeting reports).
+- **Allowed actions:** run read-only queries; write a draft time map.
+- **Not allowed:** reporting on named individuals beyond the project team.
+- **Outputs:** a time map: activity, hours per week, type and source (data or estimate).
+- **Stops when:** the map is complete.
+- **Proof it worked:** the product manager confirms it with users in person.
+- **Person in charge:** product manager.
+- **Runs on (guess):** Snowflake Cortex, Power BI.
+- **To confirm:** ⚠️ which activity and usage reports the bank has turned on.
+
+### M23. Requirements drafter
+- **Used in:** 2.1, 2.5
+- **For:** the team
+- **Kind:** Draft → Draft
+- **Job:** draft the problem statement, the outcome, user stories and acceptance criteria.
+- **Starts when:** the Discover gate is passed.
+- **Inputs:** the Discover gate pack; the control requirements from 2.4.
+- **Allowed actions:** read; write drafts.
+- **Not allowed:** approving anything; adding scope nobody asked for.
+- **Outputs:** a draft brief and draft stories with acceptance criteria.
+- **Stops when:** the drafts are delivered.
+- **Proof it worked:** the team and the sponsor approve them.
+- **Person in charge:** product manager.
+- **Runs on (guess):** M365 Copilot in Word, or a Copilot Studio agent.
+- **To confirm:** None.
+
+### M24. Data contract checker
+- **Used in:** 2.3, 3.2
+- **For:** the team
+- **Kind:** Draft → Draft (2.3); Me → Auto (3.2, ongoing mode)
+- **Job:** check that every field in the data contract exists, is fresh enough and passes its quality checks.
+- **Starts when:** the field list is drafted in 2.3; after that, on every data refresh.
+- **Inputs:** the data contract; the tables and their quality and access records.
+- **Allowed actions:** read-only checks; alert the data owner on failure.
+- **Not allowed:** changing data or access.
+- **Outputs:** a gap list in Define; after that, a pass or fail for each refresh.
+- **Stops when:** every field is checked. In its ongoing mode, it runs on every refresh until the product is retired.
+- **Proof it worked:** the data owner signs off the gap list; a field broken on purpose in testing gets flagged.
+- **Person in charge:** the data owner.
+- **Runs on (guess):** Snowflake Cortex and Snowflake data checks.
+- **To confirm:** ⚠️ how the bank certifies trusted tables.
+
+### M25. Risk intake assistant
+- **Used in:** 2.4, 4.1
+- **For:** the team
+- **Kind:** Draft → Draft (2.4); Me → Draft (4.1)
+- **Job:** pre-fill the bank's risk intake from the brief, and flag likely high-risk areas.
+- **Starts when:** the brief's first lines exist (2.1); again before the formal rating in 4.1.
+- **Inputs:** the bank's AI policies and intake form; the brief; the data field list.
+- **Allowed actions:** read; draft the intake.
+- **Not allowed:** setting the risk rating; submitting the intake.
+- **Outputs:** a pre-filled intake, with likely high-risk areas flagged.
+- **Stops when:** the intake is drafted.
+- **Proof it worked:** the risk partner sets the rating and confirms the draft was accurate.
+- **Person in charge:** the risk partner.
+- **Runs on (guess):** a Copilot Studio agent grounded in the bank's policies.
+- **To confirm:** ⚠️ the bank's intake form and process.
+
+### M26. Test grader
+- **Used in:** 3.7, 4.3
+- **For:** the team
+- **Kind:** Draft → Auto
+- **Job:** score every version of the product against the test set and the quality bar.
+- **Starts when:** a new version reaches the test environment.
+- **Inputs:** the test set; the product's outputs; the quality bar thresholds.
+- **Allowed actions:** run the test set in the test environment; score; report.
+- **Not allowed:** changing the test set or the thresholds; releasing anything.
+- **Outputs:** a score report against each part of the quality bar.
+- **Stops when:** every test case is scored. A score below the bar alerts the product manager.
+- **Proof it worked:** experienced users grade a sample, and their grades match.
+- **Person in charge:** product manager.
+- **Runs on (guess):** AWS Bedrock model evaluation.
+- **To confirm:** ⚠️ which test environments exist for each platform.
+
+### M27. Red-team agent
+- **Used in:** 4.3
+- **For:** the team
+- **Kind:** Draft → Auto
+- **Job:** try to break the product: ask for other users' data, a credit decision or off-topic answers.
+- **Starts when:** a frozen version is ready for review.
+- **Inputs:** the product in test; the attack list, including the must-refuse cases.
+- **Allowed actions:** send test requests in the test environment only.
+- **Not allowed:** anything in the live environment; using real client data outside what the test environment allows.
+- **Outputs:** a failure list.
+- **Stops when:** every attack type is run.
+- **Proof it worked:** risk reviews every failure.
+- **Person in charge:** the risk partner.
+- **Runs on (guess):** AWS Bedrock.
+- **To confirm:** ⚠️ whether risk runs its own red-teaming as well.
+
+### M28. Fairness monitor
+- **Used in:** 4.4
+- **For:** the team
+- **Kind:** Draft → Auto
+- **Job:** check that the product treats similar clients and users alike, across the groups compliance chose.
+- **Starts when:** compliance agrees the groups and thresholds in 4.4; after that, monthly after launch (its ongoing mode).
+- **Inputs:** the product's outputs; the group definitions and thresholds.
+- **Allowed actions:** read-only analysis; write a report.
+- **Not allowed:** changing the product; deciding whether a difference is acceptable.
+- **Outputs:** a fairness report.
+- **Stops when:** the report is complete; it runs again each month after launch.
+- **Proof it worked:** compliance reviews the results.
+- **Person in charge:** compliance.
+- **Runs on (guess):** Snowflake, Power BI.
+- **To confirm:** ⚠️ which groups compliance wants compared.
+
+### M29. Evidence pack assembler
+- **Used in:** 4.7
+- **For:** the team
+- **Kind:** Draft → Draft
+- **Job:** compile the test results, data use and controls into the evidence pack reviewers sign.
+- **Starts when:** 4.1 to 4.6 are done.
+- **Inputs:** the outputs of 4.1 to 4.6; the bank's template, if there is one.
+- **Allowed actions:** read; write a draft pack.
+- **Not allowed:** changing any result; sending the pack.
+- **Outputs:** a draft evidence pack.
+- **Stops when:** the pack is drafted, with anything missing listed.
+- **Proof it worked:** the product manager and risk verify every claim against its source.
+- **Person in charge:** product manager.
+- **Runs on (guess):** M365 Copilot in Word.
+- **To confirm:** ⚠️ whether the bank has an evidence pack template.
+
+### M30. Feedback triage
+- **Used in:** 5.6
+- **For:** the team
+- **Kind:** Me → Auto
+- **Job:** sort user feedback into bugs, quality issues and ideas, and add each to the backlog.
+- **Starts when:** new feedback arrives.
+- **Inputs:** feedback from the product's one-click buttons and comments.
+- **Allowed actions:** read; tag; add items to the backlog.
+- **Not allowed:** changing priorities; replying to users.
+- **Outputs:** tagged backlog items.
+- **Stops when:** all new feedback is sorted.
+- **Proof it worked:** the product manager reviews a weekly sample.
+- **Person in charge:** product manager.
+- **Runs on (guess):** Power Automate with an approved AI model.
+- **To confirm:** None.
+
+### M31. Impact analyst
+- **Used in:** 6.2
+- **For:** the team
+- **Kind:** Draft → Draft
+- **Job:** report the product's effect on the main measure, against the baseline and the comparison group.
+- **Starts when:** monthly.
+- **Inputs:** the tagged results data; the baseline; the method Finance agreed in 2.7.
+- **Allowed actions:** read-only queries; write a draft impact note.
+- **Not allowed:** changing the method; sharing figures before analytics checks them.
+- **Outputs:** monthly impact figures and a three-line note.
+- **Stops when:** the note is complete.
+- **Proof it worked:** analytics validates the numbers before reporting.
+- **Person in charge:** analytics.
+- **Runs on (guess):** Snowflake Cortex Analyst, Power BI.
+- **To confirm:** None.
+
+### M32. Quality watchdog
+- **Used in:** 6.3
+- **For:** the team
+- **Kind:** Draft → Auto
+- **Job:** re-run the test set after every change and at least monthly, and alert when quality slips ("drift").
+- **Starts when:** any change to prompts, rules, data or models; and monthly.
+- **Inputs:** the test set; live outputs; feedback; the monitoring plan's thresholds.
+- **Allowed actions:** run the test set; read live signals; alert.
+- **Not allowed:** fixing, rolling back or pausing the product (the product manager decides).
+- **Outputs:** the score trend and alerts.
+- **Stops when:** each run is complete.
+- **Proof it worked:** alerts are reviewed within [X] days, and a drop introduced on purpose in testing triggers one.
+- **Person in charge:** product manager.
+- **Runs on (guess):** AWS Bedrock model evaluation, Power Automate.
+- **To confirm:** None.
+
+### M33. Improvement scout
+- **Used in:** 6.5
+- **For:** the team
+- **Kind:** Draft → Draft
+- **Job:** propose and rank the next backlog items or the next lever, from usage and feedback.
+- **Starts when:** before each wave is planned.
+- **Inputs:** the dashboard; feedback themes; the monthly reviews.
+- **Allowed actions:** read; write a ranked list.
+- **Not allowed:** choosing the next wave.
+- **Outputs:** ranked suggestions, each with its evidence.
+- **Stops when:** the list is delivered.
+- **Proof it worked:** the product manager and the sponsor decide, and say which suggestions they used.
+- **Person in charge:** product manager.
+- **Runs on (guess):** M365 Copilot or a Copilot Studio agent.
+- **To confirm:** None.
+
 ## Not agents, but reusable assets
 These come up in the review tables but aren't agents. Each one is a template or
 a library, built once and reused.
@@ -329,12 +556,9 @@ a library, built once and reused.
 - **Monitoring plan template (4.8):** the standard plan, filled in for each product.
 - **Live dashboard template (6.1):** one Power BI template for the five kinds of measures.
 
-## Changes to project agents
-Two agents in the RM memo's Appendix A got an **ongoing mode**, because the
-playbook uses them after launch, not just once:
-- **A11 Data contract checker:** after Define, it runs on every data refresh (3.2) and alerts the data owner on failure.
-- **A15 Fairness monitor:** it runs again monthly after launch (4.4).
-
-Both changes are made in the memo and its designed pages (2026-10-09).
+## Agents with an ongoing mode
+Two agents keep running after launch, not just once:
+- **M24 Data contract checker:** after Define, it runs on every data refresh (3.2) and alerts the data owner on failure.
+- **M28 Fairness monitor:** it runs again monthly after launch (4.4).
 
 _Last updated: 2026-10-09_

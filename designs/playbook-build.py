@@ -88,11 +88,11 @@ def agent_library():
         rows = "".join(f"<div><dt>{k}</dt><dd>{inline(f[k][:1].upper() + f[k][1:])}</dd></div>" for k in ["Starts when", "Inputs", "Allowed actions", "Not allowed", "Outputs", "Stops when", "Proof it worked", "Person in charge", "Runs on (guess)", "To confirm"])
         cards.append(f'<article class="agent" id="{num.lower()}"><header><span class="num">{num}</span><h4>{inline(name)}</h4><span class="used">Used in {inline(f["Used in"])}</span></header><p class="job">{inline(f["Job"][:1].upper() + f["Job"][1:])}</p><div class="kindrow">{kinds}</div><dl class="spec">{rows}</dl></article>')
     tail = s.split("## Not agents, but reusable assets")[1].split("_Last updated")[0]
-    assets, changes = tail.split("## Changes to project agents")
+    assets, changes = tail.split("## Agents with an ongoing mode")
     return f'''<section id="agents"><div class="stephead"><span class="label">Agent library</span><h2>The agents that run the machine</h2></div>
 <div class="intro">{render_blocks(intro)}</div>
 <div class="agents">{"".join(cards)}</div>
-<div class="use"><div class="panel"><h5>Not agents, but reusable assets</h5>{render_blocks(assets)}</div><div class="panel"><h5>Changes to project agents</h5>{render_blocks(changes)}</div></div></section>'''
+<div class="use"><div class="panel"><h5>Not agents, but reusable assets</h5>{render_blocks(assets)}</div><div class="panel"><h5>Agents with an ongoing mode</h5>{render_blocks(changes)}</div></div></section>'''
 
 readme = open(os.path.join(PB, "README.md")).read()
 how = readme.split("## How every sub-step is written")[1].split("\n## ")[0]

@@ -131,7 +131,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Me**, reading everything yourself the first few weeks.
   - Note: how feedback splits between bugs, quality and ideas, and how long sorting took.
-  - Agent: **A17 Feedback triage** (Appendix A) sorts and routes it, and you review a weekly sample. Aim for **Auto**.
+  - Agent: **M30 Feedback triage** (agent library) sorts and routes it, and you review a weekly sample. Aim for **Auto**.
 - **For RM analytics:** feedback logged in Salesforce from the one-click buttons.
 
 ---
@@ -178,7 +178,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
 | 5.3 | None (stays with a person) | Me | Me | — |
 | 5.4 | A6 Onboarding coach | Me | Auto | Yes, Appendix A |
 | 5.5 | Wins spotter | Me | Draft | Yes, M17 |
-| 5.6 | A17 Feedback triage | Me | Auto | Yes, Appendix A |
+| 5.6 | M30 Feedback triage | Me | Auto | Yes, M30 |
 | 5.7 | None: confirming the long-term owner stays with a person | Me | Me | — |
 | 5.7 | Gate pack drafter (shared) | Draft | Draft | Yes, M6 |
 
