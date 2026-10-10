@@ -19,6 +19,16 @@ into main until it passes this audit. Keep the report to the user short (rule R2
 2. For each changed designed page: render it at 1280 and 400 pixels wide (design-canvas `.dc.html` files must be served through a local web server, `python3 -m http.server`, with the canvas runtime saved beside them as `support.js`: opened straight from disk, the runtime can't load itself and drops table rows, which is how the scrolling plan page lost its 12 tables) with Playwright (a browser tool Claude runs; Chromium is at `/opt/pw-browsers/chromium`), confirm nothing is empty, cut off or scrolling sideways, and look at one screenshot.
 3. For each published page: read it with the Artifact tool and confirm it matches the source in `designs/`. If it doesn't, find out why before changing anything.
 
+## 2b. Alignment sweep (always, across ALL core documents)
+The point of the audit is to keep every core document consistent, not only the
+files this session touched. A stale line in an untouched file is still drift
+(from L18: the library said the playbook had a "19-agent library" while the
+Agent Library showed 39, and no audit caught it because neither file changed).
+1. The four reference pages are the source of truth for their subject: the **Agent Library** (agents), **Workflow Maps** (processes and workflows), **Steps Catalog** (sub-steps and their tasks) and **Controls Catalog** (controls). Each is built from working files, so first confirm it's up to date (step 2.1).
+2. Start four read-only reviewers in parallel (Agent tool), one per reference page. Each builds the page's inventory from its sources, then checks **every** core document against it, changed or not: `product-framework.md`, `playbook/`, `memos/`, `NOW.md`, `open-items.md`, `tech-stack.md`, `designs/library.json`, `designs/README.md`, hard-coded text in `designs/*-build.py`, the hand-made pages (`designs/rm-analytics-canvas/`, `designs/rm-analytics-plan.html`, `designs/role-workflow.html`) and the skills. They look for wrong counts, names that differ, items in one place but missing from another, wrong cross-references (sub-step, agent or control numbers) and hand-made pages older than their working copy. Each finding needs file and line, a quote, and the fix.
+3. Ask each reviewer to finish within about 40 steps and always end with its written report, so a long sweep can't lose its results.
+4. Fix what they find (section 4). Anything the checker could catch automatically next time gets added to `check.py`.
+
 ## 3. First review: a fresh reviewer
 Start a separate reviewer (a second Claude helper that only reads, started with the Agent tool) with the changed files and
 this checklist. Ask for each finding's severity (Must fix, Should fix or Minor),
@@ -47,6 +57,8 @@ caused. Fix what it finds, then run the mechanical checks again.
 - Only after a clean audit: offer to merge into main.
 
 ## Rules
+- Never limit the audit to changed files. The alignment sweep (2b) covers every core document every time.
+- Never put reference pages on the user's review list (rule R22). Claude keeps them aligned.
 - Never skip the audit because a change looks small. Today's empty tables came from a "simple" rebuild.
 - Never say "clean" without proof: the checker's output, the reviewers' pass list and the screenshots.
 - If a reviewer and Claude disagree, check the source text and say who was right.
