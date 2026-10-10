@@ -189,7 +189,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
   - First time: **Me** for the scope, **Draft** for the pack.
   - Note: what you copied into the gate pack by hand.
   - Agent: **M6 Gate pack drafter** (agent library) from Discover, reused here. *Draft*.
-- **For RM analytics:** wave 1 = pre-meeting briefs, meeting follow-ups and the weekly opportunity list.
+- **For RM analytics:** wave 1 = pre-meeting briefs, meeting follow-ups, call notes into Salesforce and the weekly opportunity list.
 
 ---
 

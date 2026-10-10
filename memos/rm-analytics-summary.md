@@ -19,7 +19,7 @@ a product that pays for itself and then some.
 | Week 1 | A working prototype on sample data; RMs react to it in discovery interviews |
 | Weeks 1–2 | Shape it with RMs; agree data contract, risk rating and value model |
 | **Weeks 2–4** | **Meeting follow-up live with pilot RMs** |
-| **Weeks 4–6** | **Client brief, opportunity list and call notes live, once data and sign-off land** |
+| **Weeks 4–6** | **Brief, opportunity list and call notes live, once data access and sign-off land** |
 | About week 10 | Wave 2: early warnings, referral prompts |
 | About week 15 | Wave 3: an RM assistant, prospect lookalikes |
 | About month 6 | First read on closed revenue: invest more, adjust or stop |
