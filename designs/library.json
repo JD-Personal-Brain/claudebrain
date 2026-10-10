@@ -120,7 +120,7 @@
         {
           "id": "playbook",
           "name": "Delivery Playbook",
-          "what": "The field manual: how to run each of the 44 sub-steps the first time, plus the 19-agent library.",
+          "what": "The field manual: how to run each of the 44 sub-steps the first time, plus the 19 agents that run the delivery machine. All 39 agents are on the Agent Library.",
           "status": "Waiting for review",
           "url": "https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4",
           "source": "playbook/"

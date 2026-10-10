@@ -188,7 +188,7 @@ th,td{text-align:left;vertical-align:top}
 <div style="display: flex; flex-direction: column; gap: 8px; border-top: 4px solid #14213D; padding-top: 24px">
 <span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; letter-spacing: 0.06em; color: #0F5F59">4 · HOW THE WORK FLOWS</span>
 <h2 style="margin: 0; font-family: 'IBM Plex Serif', Georgia, serif; font-size: 36px; line-height: 1.2; color: #14213D">Six steps, each ending in a go/no-go gate</h2>
-<p style="margin: 0; max-width: 880px">The steps overlap rather than run in sequence: a working prototype exists in week 1, and the first features are live in weeks 3–6. After that, steps 3–6 repeat in cycles of a week or two, and each new wave takes a short pass through Discover and Define. Governance runs through every step; Step 4 is the formal approval gate. Each step is set out in full in Parts 2 and 3.</p>
+<p style="margin: 0; max-width: 880px">The steps overlap rather than run in sequence: a working prototype exists in week 1, and the first features are live in about weeks 2–6 (meeting follow-up about weeks 2–4, insights about weeks 4–6). After that, steps 3–6 repeat in cycles of a week or two, and each new wave takes a short pass through Discover and Define. Governance runs through every step; Step 4 is the formal approval gate. Each step is set out in full in Parts 2 and 3.</p>
 </div>
 <div style="display: flex; flex-direction: column; gap: 12px">
 <sc-for list="{{ steps }}" as="step" hint-placeholder-count="6">
@@ -627,7 +627,7 @@ th,td{text-align:left;vertical-align:top}
 <div style="display: flex; flex-direction: column; gap: 8px; border-top: 4px solid #14213D; padding-top: 24px">
 <span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; letter-spacing: 0.06em; color: #0F5F59">APPENDIX B · WORKFLOWS</span>
 <h2 style="margin: 0; font-family: 'IBM Plex Serif', Georgia, serif; font-size: 36px; line-height: 1.2; color: #14213D">Each use case, step by step</h2>
-<p style="margin: 0; max-width: 880px">Every flow has one decision point where the RM decides, and everything is logged.</p>
+<p style="margin: 0; max-width: 880px">Every RM-facing flow (B1–B8) has one decision point where the RM decides, and everything is logged. B9 is the release routine behind them.</p>
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(440px, 1fr)); gap: 14px">
 <sc-for list="{{ flows }}" as="fl" hint-placeholder-count="9">
@@ -724,14 +724,14 @@ class Component extends DCLogic {
           ["3. Define the data contract", "Exact fields, freshness and quality checks", "Snowflake, Salesforce"],
           ["4. Start the risk intake", "Describe the use case, get an early risk rating and list the control requirements", "The bank's governance process"],
           ["5. Write user stories and acceptance criteria", "Short “as an RM, I need…” statements, each with a test of done", "An approved LLM to draft; the team reviews"],
-          ["6. Set measures, quality bar and value model", "Revenue, capacity and adoption targets; quality thresholds; payback", "Power BI"],
+          ["6. Set the measures, quality bar and value model", "Revenue, capacity and adoption targets; quality thresholds; payback", "Power BI"],
           ["7. Agree attribution with Finance", "How AI-sourced revenue is tagged and compared", "Salesforce"],
           ["8. Prioritize and scope the first release", "Rank the backlog by value, effort and risk, and record the trade-offs; pick the smallest useful version and the pilot group", "—"]
         ]),
         strategy: "Use AI as a drafting partner, so the team spends its time on decisions rather than documents. Nothing is approved by an agent.",
         agents: [
           agent("team", "Requirements drafter", "Drafts the problem statement, user stories and acceptance criteria.", "M365 Copilot in Word, or Copilot Studio", "Discover findings", "PM edits; team and sponsor approve"),
-          agent("team", "Data contract checker", "Checks fields exist, are fresh and pass quality checks; flags gaps.", "Snowflake Cortex", "Snowflake tables and their quality and access records", "Data owner signs off"),
+          agent("team", "Data contract checker", "Checks fields exist, are fresh and pass quality checks; flags gaps. After Define, runs on every data refresh and alerts the data owner on failure.", "Snowflake Cortex", "Snowflake tables and their quality and access records", "Data owner signs off"),
           agent("team", "Risk intake assistant", "Pre-fills the risk intake and flags likely high-risk areas.", "Copilot Studio agent grounded in bank policies", "Policy documents, product brief", "A risk partner sets the rating")
         ],
         cards: cards([
@@ -747,7 +747,7 @@ class Component extends DCLogic {
         id: "build", num: "3", name: "Build", title: "Build",
         goal: "Build the smallest version that RMs will actually use and trust.",
         thread: "Controls built in; test set created",
-        gate: "Meets the quality bar in testing",
+        gate: "Meets the quality bar in testing; every control has proof",
         subs: subs([
           ["1. Prepare the data", "Trusted views of client signals: balance trends, product gaps, activity", "Snowflake; Fabric and Power BI to explore"],
           ["2. Find the opportunities", "Simple, explainable rules and scores first. AI explains them; it doesn't invent them", "Snowflake (Cortex), AWS Bedrock"],
@@ -772,7 +772,7 @@ class Component extends DCLogic {
           "Live connections from Snowflake and Salesforce; each RM sees only clients they're already allowed to see.",
           "A working product in a test environment, the test results and an evidence pack started.",
           "Filters that block sensitive data and off-topic answers (Bedrock Guardrails, Salesforce Einstein Trust Layer); every AI action logged; client consent for any recorded meeting.",
-          "Meets the quality bar in testing."
+          "Meets the quality bar in testing, and every control has proof."
         ])
       },
       {
@@ -792,7 +792,7 @@ class Component extends DCLogic {
         strategy: "Use AI to test harder and document faster, but never to approve. Risk partners make every call.",
         agents: [
           agent("team", "Red-team agent", "Generates thousands of tricky requests (another RM's clients, a credit decision) to try to break the product.", "AWS Bedrock", "The product in test", "Risk reviews every failure"),
-          agent("team", "Fairness monitor", "Checks opportunities are spread fairly across segments and regions.", "Snowflake, Power BI", "Opportunity outputs, client segments", "Compliance reviews results"),
+          agent("team", "Fairness monitor", "Checks opportunities are spread fairly across segments and regions; runs again monthly after launch.", "Snowflake, Power BI", "Opportunity outputs, client segments", "Compliance reviews results"),
           agent("team", "Evidence pack assembler", "Compiles test results, data use and controls into review documents.", "M365 Copilot in Word", "Test results, data contract, controls", "PM and risk verify every claim")
         ],
         cards: cards([
@@ -808,7 +808,7 @@ class Component extends DCLogic {
         id: "release", num: "5", name: "Release and adopt", title: "Release and adopt",
         goal: "Get RMs using it every week, starting with a pilot.",
         thread: "Live monitoring; incident process",
-        gate: "At least [X]% of pilot RMs active weekly, at least [X]% of insights acted on, no high-severity incidents",
+        gate: "At least [X]% of pilot RMs active weekly, at least [X]% of insights acted on, no high-severity incidents; long-term owner confirmed before scaling",
         subs: subs([
           ["1. Confirm release readiness", "Support model, incident process, training and communications ready; sign-offs in place", "Power Platform environments, Teams"],
           ["2. Launch the pilot", "A small group of RMs and their managers, alongside a comparison group", "Power Platform environments (test to live), Salesforce release"],
@@ -831,14 +831,14 @@ class Component extends DCLogic {
           "Usage, feedback and AI-sourced opportunities flowing into dashboards.",
           "Pilot results and a scale decision.",
           "Live monitoring; every issue has an owner and an escalation path.",
-          "At least [X]% of pilot RMs active weekly, at least [X]% of insights acted on, and no high-severity incidents."
+          "At least [X]% of pilot RMs active weekly, at least [X]% of insights acted on, and no high-severity incidents; the long-term owner is confirmed before scaling."
         ])
       },
       {
         id: "measure", num: "6", name: "Measure and iterate", title: "Measure and iterate",
         goal: "Prove it creates new revenue, and keep making it better.",
         thread: "Ongoing model monitoring",
-        gate: "Every wave: keep, change or stop each use case; quarterly: invest more, adjust or stop",
+        gate: "Each month (and at the end of each wave): keep, change or stop each use case; quarterly: invest more, adjust or stop",
         hasMeasures: true,
         measures: [
           { type: "Usage", text: "Insights opened and acted on; briefs and follow-ups used; new opportunities created from insights in Salesforce" },
@@ -867,7 +867,7 @@ class Component extends DCLogic {
           "AI-sourced opportunities tagged in Salesforce from day one.",
           "A monthly impact report and an updated backlog.",
           "Ongoing monitoring under the model risk framework.",
-          "Every wave: keep, change or stop each use case. Each quarter: invest more, adjust or stop, based on results against the comparison group."
+          "Each month (and at the end of each wave): keep, change or stop each use case. Each quarter: invest more, adjust or stop, based on results against the comparison group."
         ])
       }
     ];
@@ -934,7 +934,7 @@ class Component extends DCLogic {
         "Every signal has an insight, or a guardrail blocks one (logged and sent to the product manager).",
         "Test-set score meets the quality bar; every number traces to the source.",
         "The RM decides whether to act; the product manager owns quality."]),
-      spec("A3", "Prep and follow-up assistant", "Waves 1–2", "M365 Copilot and Salesforce Agentforce", [
+      spec("A3", "Prep and follow-up assistant", "Waves 1–2", "Salesforce Agentforce or M365 Copilot", [
         "Before a client meeting, draft a one-page brief. After it, draft the recap, follow-up email and (wave 2) call notes for Salesforce.",
         "The Salesforce client record; open insights; the RM's calendar; the Teams meeting recap (recorded only with client consent).",
         "Read the inputs; create drafts for the RM.",
@@ -1001,9 +1001,9 @@ class Component extends DCLogic {
     var w1 = "#0F766E", wl = "#7F90BE", tm = "#B45309";
     var flows = [
       flow("B1", "Weekly opportunity list", "Wave 1", w1, "Every night (signals); every Monday morning (digest).", [
-        "A1 scans clients and writes signals.", "A2 writes an insight for each, shown on the Salesforce client record.", "A4 sends each RM their top [X].",
-        "DECIDE: the RM accepts, rejects (with a reason) or changes each insight.", "On accept, the RM creates a Salesforce opportunity tagged “AI-sourced.”",
-        "A17 sorts the feedback; managers review the list in the weekly pipeline meeting."],
+        "A1 scans clients and writes signals.", "A2 writes an insight for each.", "Insights appear on the Salesforce client record.", "A4 sends each RM their top [X].",
+        "DECIDE: the RM accepts, rejects (with a reason) or changes each insight.", "On accept, the RM creates an opportunity in Salesforce, tagged “AI-sourced.”",
+        "A17 sorts the feedback.", "Managers review the list in the weekly pipeline meeting."],
         "Signals, insights, opens, decisions and reasons, opportunities created.", "Share of insights acted on; pipeline from AI-sourced opportunities."),
       flow("B2", "Pre-meeting client brief", "Wave 1", w1, "A client meeting on the RM's calendar, [X] hours before; or the RM asks.", [
         "A3 pulls the client record, open insights and recent activity.", "It drafts a one-page brief with sources.", "The brief reaches the RM in Teams or Outlook.",
@@ -1030,7 +1030,7 @@ class Component extends DCLogic {
         "Snowflake finds prospects that look like the bank's best clients, using agreed and explainable criteria.", "A2 explains each match.", "DECIDE: the RM decides whether to pursue each one."],
         "Prospects shown, pursued and won.", "New clients against the comparison group."),
       flow("B9", "Every release (every week or two)", "All waves", tm, "Any change to prompts, rules, data or models.", [
-        "A19 re-runs the test set.", "If the score is below the quality bar, the release stops.", "DECIDE: if the change is material, the risk partner is told before release.",
+        "A19 re-runs the test set.", "If the score is below the quality bar, the release stops.", "If the change is material, the risk partner is told before release.",
         "Release; A19 watches live quality for [X] days."],
         "Test scores, approvals, release notes.", "Quality trend; releases rolled back.")
     ];
@@ -1058,7 +1058,7 @@ class Component extends DCLogic {
       gantt: gantt,
       months: months,
       planRows: [
-        { step: "1. Discover", weeks: "Weeks 1\u20132, with a working prototype in week 1 (short sprints before later waves)", ends: "Gate 1 (end of week 1): wave 1 use cases, target lever, baseline" },
+        { step: "1. Discover", weeks: "Weeks 1\u20132, with a working prototype in week 1 (short sprints before later waves)", ends: "Gate 1 (end of week 1): wave 1 use cases, target lever, baseline; interviews and sizing continue in week 2" },
         { step: "2. Define", weeks: "Weeks 1\u20132, alongside discovery", ends: "Gate 2 (week 2): data contract, risk rating, value model; split decision if needed" },
         { step: "3. Build", weeks: "From day 1. Wave 1: weeks 1\u20135; wave 2: 7\u20139; wave 3: 11\u201314", ends: "Gate 3: each feature meets the quality bar in testing" },
         { step: "4. Govern and test", weeks: "Risk partner reviews each version from week 1; sign-offs per feature", ends: "Gate 4: each feature approved for real RMs and real client data" },
@@ -1066,12 +1066,12 @@ class Component extends DCLogic {
         { step: "6. Measure and iterate", weeks: "Leading measures from the first live week; closed revenue read about month 6", ends: "Gate 6: invest more, adjust or stop" }
       ],
       releases: [
-        { when: "LIVE ABOUT WEEKS 3–6", name: "Wave 1", what: "Pre-meeting client brief; meeting recap and follow-up draft; weekly opportunity list (product gaps).", why: "Standard, low-risk, and mostly built on tools the bank already runs. The meeting follow-up can go first.", color: "#0F766E" },
+        { when: "LIVE ABOUT WEEKS 2–6", name: "Wave 1", what: "Pre-meeting client brief; meeting recap and follow-up draft; weekly opportunity list (product gaps).", why: "Standard, low-risk, and mostly built on tools the bank already runs. The meeting follow-up can go first.", color: "#0F766E" },
         { when: "LIVE ABOUT WEEK 10", name: "Wave 2", what: "Early warning when a client may leave; call notes into Salesforce (RM approves); referral prompts.", why: "Builds on wave 1's data and feedback.", color: "#7F90BE" },
         { when: "LIVE ABOUT WEEK 15", name: "Wave 3", what: "RM assistant for client questions; prospect lookalikes for winning new clients.", why: "More tailored; benefits from everything learned so far.", color: "#7F90BE" }
       ],
       waves: [
-        { name: "Wave 1", when: "LIVE ABOUT WEEKS 3–6", color: "#0F766E", items: [
+        { name: "Wave 1", when: "LIVE ABOUT WEEKS 2–6", color: "#0F766E", items: [
           { name: "Pre-meeting client brief", lever: "Time; all levers", on: "Salesforce, Snowflake, Agentforce or M365 Copilot" },
           { name: "Meeting recap and follow-up draft", lever: "Time", on: "M365 Copilot in Teams and Outlook" },
           { name: "Weekly opportunity list (product gaps)", lever: "Grow existing clients", on: "Snowflake signals, Power Automate digest" } ] },

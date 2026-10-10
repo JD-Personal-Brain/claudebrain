@@ -156,6 +156,7 @@ log (see `README.md`) for every sub-step.
   - First time: **Draft**.
   - Note: how long a full test run took by hand. That's the time the agent saves on every later change.
   - Agent: **A13 Test grader** (Appendix A). It scores every version; users grade a sample. Aim for **Auto** on every new version.
+  - Agent idea: the **gate pack drafter** (spec M6) from Discover, reused for the Build gate pack. *Draft*.
 - **For RM analytics:** accuracy (numbers match the source), relevance and usefulness rated by RMs.
 
 ---
@@ -181,6 +182,7 @@ log (see `README.md`) for every sub-step.
 | 3.5 | None (its feedback feeds A17 in step 5) | Me | Me | — |
 | 3.6 | Test case generator | Draft | Draft | Yes, M12 |
 | 3.7 | A13 Test grader | Draft | Auto | Yes, Appendix A |
+| 3.7 | Gate pack drafter | Draft | Draft | Yes, M6 |
 
 **First time** = how the task is done on the first project. **Aim for** = its kind in `product-framework.md`.
 

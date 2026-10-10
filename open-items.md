@@ -13,7 +13,7 @@ every wrap-up: finished items move to "Closed" with the date, and new ones are a
 
 | Group | Open | What it is |
 |---|---|---|
-| 1. Decisions waiting on me | 1 | Things only I can decide |
+| 1. Decisions waiting on me | 3 | Things only I can decide |
 | 2. Reviews waiting on me | 6 | Pages Claude built that I haven't read yet (numbered V, for "review") |
 | 3. Work to do | 21 | Next pieces of real work, in rough order |
 | 4. To confirm at the bank | 27 | Questions the plans depend on, 7 of which I can ask Andy now |
@@ -40,8 +40,8 @@ every working file (this section replaces the separate Gap Review page).
 |---|---|---|---|
 | The six-step process for one product | Strong on paper | Steps, gates, 44 sub-steps, first-time logs and the automation check at every gate. Not yet tried on real work | V3, W20 |
 | RM plan (the first worked example) | Strong draft, not reviewed | Memo v8, with agent specs and workflows. I've read only the summary's opening and plan table | V1, V2 |
-| Governance and controls | Partial | 22 controls named. 11 have a stage the playbook doesn't cover yet, such as who checks that only approved AI models are used | W13 |
-| Automating the process | Partial | Every task is marked Auto, Draft or Me, and 39 agents are specified. None is built or tested. How much can run alone depends on whether the bank lets automations message people ⚠️ | B22, W20 |
+| Governance and controls | Partial | 22 controls named. 11 have a stage the playbook doesn't cover yet, such as who proves that only approved AI models are used | W13 |
+| Automating the process | Partial | Every task is marked Auto, Draft or Me, and 39 agents are listed: the 19 that run the delivery machine are fully specified, and the RM project's 20 are in a shorter form. None is built or tested. How much can run alone depends on whether the bank lets automations message people ⚠️ | B22, W20 |
 | Ready-to-fill templates | Missing | The brief, data contract, risk intake, gate pack, evidence pack and monitoring plan are described, but none exists as a template yet. The Draft agents need these to fill in | W17 |
 | Task list design | Missing | The reminders, status notes and progress view all read from one task list, but its fields aren't written down, and we don't know the bank's tool yet | W18, B23 |
 | Approvals | Partial | Who decides is clear for every step. There's no map of who signs what, how long it takes, or who to go to when a sign-off is stuck | W19, B21 |
@@ -64,6 +64,8 @@ what exists, then the dry run, is the bottleneck.
 | # | Decision | Why it matters | Where it came from |
 |---|---|---|---|
 | D1 | Is the RM framework ready to copy to other use cases? My answer on 2026-10-09: not yet. The reviews in section 2 and the work in section 3 come first | Credit, the next use case, waits on this | My decision on 2026-10-09: RM first, credit second |
+| D2 | The 14 helper agents in the RM plan (A7 to A20, such as the test grader and the feedback sorter) are written for RM, but my product framework uses them for every project. Should Claude rewrite them as general agents in the delivery machine's library? Claude recommends yes: otherwise the next project (credit) has no sizing, testing, red-teaming or impact agents | Every project after RM reuses these | Alignment audit, 2026-10-10 |
+| D3 | Three safeguards in the RM plan have no control in the Controls Catalog: no client data in unapproved AI tools, client consent before recording a meeting, and agents stop rather than guess when their inputs are bad. Add them as new controls (with playbook lines), or fold each into an existing one? Claude recommends adding them. The same audit found that the playbook's control check (4.5) never mentions separate build, test and live spaces or IT's data-sharing rules, though the RM plan does; that's a playbook change under W13 | The controls must cover everything the plan promises | Alignment audit, 2026-10-10 |
 
 ## 2. Reviews waiting on me
 
@@ -71,7 +73,7 @@ what exists, then the dry run, is the bottleneck.
 |---|---|---|---|
 | V1 | RM Analytics Plan (the long scrolling page) | Everything after the summary's opening and plan table: from "What lets us move this fast" on, then Parts 1 to 6. The RM Analytics Framework design page holds the same words | Me |
 | V2 | One outside source in the RM plan | Open the McKinsey article in a browser and check its numbers before sharing the plan. Cloud sessions can't open that site, so the numbers were checked through search summaries only | Me |
-| V3 | Delivery Playbook | All six steps, plus the agent library at the end | Me |
+| V3 | Delivery Playbook | All six steps (the agent list at the end is reference only) | Me |
 | V4 | The Delivery Machine | The page for leaders on how one product manager runs many projects | Me |
 | V5 | Bank Business Briefing | The whole page, new on 2026-10-09 | Me |
 | V8 | Six-Step Product Workflow | The one-page visual, still marked Draft | Me |
@@ -134,7 +136,7 @@ or the hiring team before I start. The rest need someone inside.
 | B21 | What does the AI governance process look like, and how long does a review usually take? | No | RM plan, section 11; Tech Stack Guide |
 | B22 | May automations message people or update trackers by themselves? This decides how much of the delivery machine can run on its own | No | Product Framework |
 | B23 | Which tracker tool does the bank use for projects? | No | Product Framework; agent library |
-| B24 | Eleven smaller permissions the delivery agents depend on, such as whether meeting recaps are allowed, which test environments exist and how sign-offs must be recorded. Each is listed under "To confirm" in the agent library, and one overlaps B22 | No | `playbook/agents.md` |
+| B24 | Eleven smaller permissions (twelve "To confirm" items, minus the tracker question in B23) the delivery agents depend on, such as whether meeting recaps are allowed, which test environments exist and how sign-offs must be recorded. Each is listed under "To confirm" in the agent library, and one overlaps B22 | No | `playbook/agents.md` |
 | B25 | Do RMs work mainly in Salesforce? This decides where the insights appear | No | RM plan, section 5 |
 | B26 | The numbers still shown as [X] in the RM plan and the Product Framework, such as payback months, weekly-use targets and how many projects I run at once, and the plan's week estimates. Each gets set with the bank's real figures | No | RM plan; Product Framework |
 | B27 | The 46 guesses about the bank marked ⚠️ across the six playbook steps. Each gets replaced with a fact as I learn it. Many overlap B15 to B23 | No | Delivery Playbook |

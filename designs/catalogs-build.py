@@ -166,11 +166,18 @@ for _, _, f in controls:
     if f["Group"] not in groups:
         groups.append(f["Group"])
 
+def stages(text):
+    # every sub-step number the field names (not just the first), and say so when part is missing
+    nums = list(dict.fromkeys(re.findall(r"\b\d\.\d\b", text)))
+    if not nums:
+        return "not covered yet"
+    return ", ".join(nums) + (" (partly not covered)" if "not covered" in text else "")
+
 def control_card(cid, name, f):
     spec = "".join(f"<div><dt>{E(k)}</dt><dd>{inline(cap(f[k]))}</dd></div>" for k in NEED[2:])
     return (f'<details class="ccard" data-group="{E(f["Group"])}" data-search="{E((cid + " " + name + " " + " ".join(f[k] for k in ["Group", "What it is", "Why it matters", "Tool (guess)", "Proof"])).lower())}">'
             f'<summary><span class="cid">{cid}</span><span class="cname">{inline(name)}</span>'
-            f'<span class="cwhat">{inline(cap(f["What it is"]))}</span><span class="cmeta">Set in {E(f["Set in"].split(" (")[0])} · proved in {E(f["Proved in"].split(" (")[0])}</span></summary>'
+            f'<span class="cwhat">{inline(cap(f["What it is"]))}</span><span class="cmeta">Set: {E(stages(f["Set in"]))} · Proved: {E(stages(f["Proved in"]))}</span></summary>'
             f'<dl class="spec">{spec}</dl><p class="csrc">Numbers such as 2.4 are playbook sub-steps: look them up in the Steps Catalog.</p></details>')
 
 sections = ""
