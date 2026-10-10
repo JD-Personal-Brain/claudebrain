@@ -1,6 +1,6 @@
 # NOW: start here
 
-_Last updated: 2026-10-09 · Last review: none yet (first one due around 2026-10-14)_
+_Last updated: 2026-10-10 · Last review: none yet (first one due around 2026-10-14)_
 
 ## Where things stand
 - The Claude brain is set up: rule book, profile, learning files, ideas list and eleven skills: log-lesson, wrap-up, designed-doc, write-prompt, run-tests, prototype, new-use-case, audit, make-skill, agent-spec and (new 2026-10-09) documents.
@@ -36,6 +36,7 @@ _Last updated: 2026-10-09 · Last review: none yet (first one due around 2026-10
 - **Shorthand check** (2026-10-09): the audit checker now fails if a "What's next" item below uses a rule, test or lesson number without explaining it, or is too short to explain itself.
 - **My other session's work is merged in** (2026-10-09): the shorthand lesson, this file in plainer words, my "not yet" on sharing with Associated, and ideas 32 to 34.
 - **Safety rules removed** (2026-10-09): Claude no longer explains approval pop-ups or reminds me that Deny is safe. They were training wheels from when I was new. "Claude explains, I decide" still stands: plain English, a recommendation, and my yes before anything is merged into main.
+- **Gap Review** (2026-10-10): https://claude.ai/artifact/WQaNEn9nCdWxwnFoaDLS4F. A full look at what's strong and what's missing. Verdict: the one-product process is strong on paper; not ready for Andy yet (needs my read, an RM mock-up and a short "Andy edition"); the layer for running many products (intake, ranking, templates, tracker, operating rhythm) is missing. Proposed work is W14 to W20 in the Open Items log, waiting for my yes. Working copy: `memos/gap-review.md`.
 - First prototype made: a calculator (v1, then v2 with green buttons). It was practice and has nothing to do with the job. The prototyping process is under agreements below.
 
 ## What's next

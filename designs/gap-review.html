@@ -1,0 +1,110 @@
+<title>Gap Review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
+<style>
+/* Layout: navy header band, a pill nav of the six steps, then one reading column; each sub-step is a card with a two-column body. */
+:root{--bg:#F4F6F8;--card:#FFFFFF;--line:#D9DEE5;--fg:#1B2433;--muted:#4D5868;--navy:#14213D;--onnavy:#FFFFFF;--onnavy-muted:#C9D3E3;--teal:#0F5F59;--teal-bg:#E1F0EE;--amber-bg:#FDF3E1;--amber:#8A4B00;--me:#14213D;--me-fg:#FFFFFF;--partner-bg:#E6E9EE;--partner:#3B4656;--label-on-navy:#8FD3CA;
+--serif:"IBM Plex Serif",Georgia,"Times New Roman",serif;--sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1420;--card:#161E2C;--line:#2A3446;--fg:#E6EAF0;--muted:#A3AEBF;--navy:#0A1830;--onnavy:#FFFFFF;--onnavy-muted:#B4C1D6;--teal:#5FC4B8;--teal-bg:#123A37;--amber-bg:#3A2A10;--amber:#F2C27A;--me:#C9D6F0;--me-fg:#0E1420;--partner-bg:#2A3446;--partner:#C6CFDC;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0E1420;--card:#161E2C;--line:#2A3446;--fg:#E6EAF0;--muted:#A3AEBF;--navy:#0A1830;--onnavy:#FFFFFF;--onnavy-muted:#B4C1D6;--teal:#5FC4B8;--teal-bg:#123A37;--amber-bg:#3A2A10;--amber:#F2C27A;--me:#C9D6F0;--me-fg:#0E1420;--partner-bg:#2A3446;--partner:#C6CFDC;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.55}
+a{color:var(--teal)}
+a:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+code{font-family:var(--mono);font-size:.88em;background:var(--teal-bg);color:var(--teal);padding:1px 5px;border-radius:4px}
+.band{background:var(--navy);color:var(--onnavy);padding-block:48px 36px;padding-inline:20px}
+.wrap{max-width:1080px;margin:0 auto}
+.label{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--teal)}
+.band .label{color:var(--label-on-navy)}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(32px,5vw,46px);line-height:1.15;margin:10px 0 12px;text-wrap:balance}
+.lede{font-size:18px;color:var(--onnavy-muted);max-width:66ch;margin:0}
+.stepnav{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.stepnav a{color:var(--onnavy);text-decoration:none;border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:7px 14px;font-size:14px;display:flex;gap:8px;align-items:center}
+.stepnav a:hover{background:rgba(255,255,255,.08)}
+.stepnav .num{color:var(--label-on-navy)}
+main.wrap{padding-block:32px 64px;padding-inline:20px;display:flex;flex-direction:column;gap:56px}
+h2{font-family:var(--serif);font-weight:600;font-size:34px;line-height:1.2;margin:6px 0 0;text-wrap:balance}
+h3{font-family:var(--serif);font-weight:600;font-size:22px;margin:0}
+h4{font-family:var(--serif);font-weight:600;font-size:20px;margin:0;text-wrap:balance}
+h5{font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+p{margin:0 0 8px;max-width:72ch}
+ul,ol{margin:0;padding-left:22px}
+li{margin:3px 0}
+.num{font-family:var(--mono);font-size:13px;color:var(--teal);font-variant-numeric:tabular-nums}
+section{display:flex;flex-direction:column;gap:18px}
+.use{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:20px;min-width:0}
+.stephead{border-top:4px solid var(--navy);padding-top:22px}
+.meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0 0}
+.meta div{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 14px;min-width:0}
+.meta dt{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:4px}
+.meta dd{margin:0;font-size:15px}
+.intro p{color:var(--muted)}
+.note{background:var(--amber-bg);border-radius:8px;padding:14px 18px;font-size:15px;max-width:none}
+.warn{font-size:.9em}
+.toc{display:flex;flex-wrap:wrap;gap:8px}
+.toc a{display:flex;gap:8px;align-items:baseline;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:14px;color:var(--fg);text-decoration:none}
+.toc a:hover{border-color:var(--teal)}
+.sub{background:var(--card);border:1px solid var(--line);border-radius:8px;overflow:hidden;scroll-margin-top:16px}
+.sub>header{display:flex;gap:14px;align-items:baseline;padding:16px 20px;border-bottom:1px solid var(--line)}
+.sub>header .num{font-size:15px}
+.subgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0}
+.col{padding:16px 20px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.col.steps{border-left:1px solid var(--line)}
+.col.steps ol{display:flex;flex-direction:column;gap:6px}
+.fld p,.fld li{font-size:15px}
+.auto{background:var(--teal-bg);padding:14px 20px;font-size:15px}
+.auto h5{color:var(--teal)}
+.rm{padding:12px 20px;font-size:14px;color:var(--muted);border-top:1px solid var(--line);display:flex;gap:10px;flex-wrap:wrap;align-items:baseline}
+.rm p{margin:0}
+.rmlabel{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);background:var(--amber-bg);padding:2px 8px;border-radius:4px;white-space:nowrap}
+.gate{background:var(--navy);color:var(--onnavy);border-radius:8px;padding:22px 24px;display:flex;flex-direction:column;gap:8px}
+.gate .label{color:var(--label-on-navy)}
+.gate h3{color:var(--onnavy)}
+.gate li{color:var(--onnavy-muted)}
+.gate strong{color:var(--onnavy)}
+.review{display:flex;flex-direction:column;gap:10px}
+.review>p{color:var(--muted);font-size:15px}
+.tw{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:8px}
+table{width:100%;border-collapse:collapse;font-size:15px;min-width:600px}
+th{text-align:left;font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:10px 16px;border-bottom:1px solid var(--line)}
+td{padding:10px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+.chip{display:inline-block;font-family:var(--mono);font-size:12px;padding:2px 9px;border-radius:999px;white-space:nowrap;font-weight:500;margin-right:4px}
+.k-auto{background:var(--teal-bg);color:var(--teal)}
+.k-draft{background:var(--amber-bg);color:var(--amber)}
+.k-me{background:var(--me);color:var(--me-fg)}
+.k-partner{background:var(--partner-bg);color:var(--partner)}
+.agents{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.agent{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:18px 20px;display:flex;flex-direction:column;gap:10px;min-width:0;scroll-margin-top:16px}
+.agent header{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline}
+.agent .used{font-family:var(--mono);font-size:12px;color:var(--muted);margin-left:auto}
+.agent .job{margin:0;font-size:16px}
+.kindrow{font-size:14px;color:var(--muted)}
+.spec{margin:0;display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding-top:10px}
+.spec div{display:grid;grid-template-columns:140px minmax(0,1fr);gap:10px}
+.spec dt{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.spec dd{margin:0;font-size:14px}
+pre.diagram{font-family:var(--mono);font-size:13px;line-height:1.5;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px 18px;overflow-x:auto;margin:0}
+.md-h{margin:8px 0 2px}
+footer{color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:760px){.subgrid,.use,.meta,.agents{grid-template-columns:1fr}.spec div{grid-template-columns:1fr;gap:2px}.col.steps{border-left:0;border-top:1px solid var(--line)}}
+
+.mdbody{display:flex;flex-direction:column;gap:12px}
+.mdbody>ul,.mdbody>ol{max-width:78ch}
+.mdbody li{margin:4px 0}
+.intro-block{display:flex;flex-direction:column;gap:12px}
+</style>
+<div class="band"><div class="wrap">
+<span class="label">Where things stand · 2026-10-10</span>
+<h1>Gap review: where we stand and what's missing</h1>
+<p class="lede">What&#x27;s strong, what&#x27;s missing before the RM plan goes to Andy, and what one product manager needs to run many AI products.</p>
+<nav class="stepnav" aria-label="Sections"><a href="#the-short-answer">The short answer</a><a href="#scorecard">Scorecard</a><a href="#for-andy-what-s-needed-before-sharing-th">For Andy: what's needed before sharing the RM plan</a><a href="#for-running-many-products-what-s-missing">For running many products: what's missing</a><a href="#prove-the-machine-works-a-dry-run">Prove the machine works: a dry run</a><a href="#what-we-don-t-need-more-of">What we don't need more of</a><a href="#recommended-order">Recommended order</a><a href="#how-this-was-checked">How this was checked</a></nav>
+</div></div>
+<main class="wrap">
+<div class="intro-block"><p>A full look at everything built so far, against two goals: (1) put the RM plan in front of Andy, and (2) let one product manager run many AI products, from first idea through live and improving. Written 2026-10-10 from the working files in the repo. <span class="warn" title="Guess about the bank: to confirm">⚠️</span> marks a guess about the bank.</p></div>
+<section id="the-short-answer"><div class="stephead"><h2>The short answer</h2></div><div class="mdbody"><ul><li><strong>One product, end to end: strong on paper.</strong> The six steps, their gates, all 44 sub-steps of the field manual, the Auto / Draft / Me marking on every task, 39 agent specs and 22 controls add up to a complete process for one product. Nothing in it has been tried on real work yet.</li><li><strong>Ready for Andy: not yet.</strong> Three things are missing: my own read of the plan, a short version written for him, and something that shows what an RM would actually see.</li><li><strong>Many products at once: the layer above the products is missing.</strong> The machine runs one product well. What's missing is how new ideas come in, how they're ranked against each other, how many I can run at once, and when a live product is retired.</li><li><strong>The biggest risk isn't a missing document.</strong> We've built faster than I've reviewed: 10 pages are still unread, and none of the 39 agents or the process itself has been run once. More pages won't fix that. Reading them and doing a dry run will.</li></ul></div></section><section id="scorecard"><div class="stephead"><h2>Scorecard</h2></div><div class="mdbody"><div class="tw"><table><thead><tr><th>Area</th><th>Rating</th><th>Where we are</th><th>Proof</th></tr></thead><tbody><tr><td>Six-step process for one product</td><td>Strong</td><td>Steps, gates, 44 sub-steps, first-time logs, automation check at every gate</td><td>Product Framework; Delivery Playbook</td></tr><tr><td>RM plan (the first worked example)</td><td>Strong draft, not reviewed</td><td>Memo v8 with agent specs and workflows. I've read only the summary's opening and plan table</td><td>RM Analytics Plan; review item V1 in Open Items</td></tr><tr><td>Governance and controls</td><td>Partial</td><td>22 controls named. 11 of them have a stage the playbook doesn't cover yet, such as who checks that only approved AI models are used</td><td>Controls Catalog; work item W13 in Open Items</td></tr><tr><td>Automating the process</td><td>Partial</td><td>Every task is marked Auto, Draft or Me, and 39 agents are specified. None is built or tested. How much can run alone depends on whether the bank lets automations message people <span class="warn" title="Guess about the bank: to confirm">⚠️</span></td><td>Agent Library; bank question B22 in Open Items</td></tr><tr><td>Showing what an RM sees</td><td>Missing</td><td>The plan promises a working prototype in week 1, but there's nothing to show yet. The only prototype so far is the practice calculator</td><td><code>prototypes/</code> holds only the calculator</td></tr><tr><td>A version written for Andy</td><td>Missing</td><td>The plan is written as my working plan, with internal labels. It doesn't say that credit comes next, though Andy named both</td><td>Work item W9; parked item P2 in Open Items</td></tr><tr><td>Portfolio layer (many products)</td><td>Missing</td><td>"Many projects at once" in the Product Framework is four short points with placeholder numbers. There's no intake, no ranking across products and no retirement rule</td><td>The word "portfolio" appears nowhere in the framework or playbook</td></tr><tr><td>Ready-to-fill templates</td><td>Missing</td><td>The brief, data contract, risk intake, gate pack, evidence pack and monitoring plan are described, but none exists as a template yet. The Draft agents need these to fill in</td><td>Agent Library, "reusable assets": three listed, none built</td></tr><tr><td>Operating rhythm and stakeholders</td><td>Partial</td><td>Who decides is clear for every step. There's no weekly or monthly calendar for me across products, no map of who approves what and how long it takes, and no plan for who hears what and how often</td><td>Not covered yet in the framework or playbook</td></tr><tr><td>Knowing the RM's real day</td><td>Partial</td><td>The Bank Business Briefing is done. My own notes on bankers' problems stopped at step 1</td><td>Job Notes</td></tr><tr><td>After launch: running and retiring</td><td>Partial</td><td>Incident steps exist (who to call, how to pause). There's no support model, no runbook and no rule for retiring a product</td><td>Playbook steps 4.8 and 5.1</td></tr></tbody></table></div></div></section><section id="for-andy-what-s-needed-before-sharing-th"><div class="stephead"><h2>For Andy: what's needed before sharing the RM plan</h2></div><div class="mdbody"><ol><li><strong>Needed: read the plan and check one source myself.</strong> Why: I can't defend a plan I haven't read, and the McKinsey numbers were checked only through search summaries. These are review items V1 and V2 in Open Items.</li><li><strong>Needed: an RM mock-up.</strong> Clickable screens of the Monday opportunity list and the pre-meeting client brief, on made-up sample data. Why: it turns "AI insights for RMs" into something Andy can see in 30 seconds, and it proves the "prototype in week 1" promise. The prototype skill builds it in one session.</li><li><strong>Needed: an "Andy edition" of the plan.</strong> Two to three pages in his terms: the problem, what RMs get, the 90-day plan, what I'd need from him, and one line that credit comes next on the same structure. No internal labels or file names. Why: the full plan is 700 lines written for me, and he'll read the first page. It's built from pages we already have.</li><li><strong>Optional: a worked value example.</strong> The value model filled in with clearly labeled sample numbers, to show how the payback is calculated. Why optional: our rule is never to invent numbers. If we do it, every number is marked "illustrative, not the bank's" or comes from the bank's public reports.</li><li><strong>Optional: questions for Andy on one page.</strong> The seven questions marked "Ask Andy now" in Open Items (B1 to B7). Why: sharing the plan with questions makes it a conversation rather than a pitch.</li></ol></div></section><section id="for-running-many-products-what-s-missing"><div class="stephead"><h2>For running many products: what's missing</h2></div><div class="mdbody"><ol><li><strong>Needed: the portfolio layer.</strong> One intake form for every new idea. A scoring rule that ranks ideas across products (value, effort, risk, data readiness). A capacity rule: how many products can be in the hands-on Discover and Define steps at once. A rule for when a live product moves to "run" mode or is retired. Why: without it, each product is managed well on its own, but nothing decides what gets my time next.</li><li><strong>Needed: ready-to-fill templates.</strong> The documents every product produces: one-page brief, data contract, risk intake, gate pack, decision log, evidence pack, monitoring plan and release-readiness checklist. Why: a Draft agent can only fill in a template that exists, and templates are how every product ends up looking the same. The bank may have its own for some of these <span class="warn" title="Guess about the bank: to confirm">⚠️</span>. Build ours now and swap in theirs when I see them.</li><li><strong>Needed: a tracker design.</strong> The fields every task carries (product, step, sub-step, kind, owner, due date, status, gate), written so it works in whatever tool the bank uses. Why: the reminders, the weekly status notes and the all-projects view all read from the tracker, and we don't know the bank's tool yet (bank question B23).</li><li><strong>Needed: an operating rhythm.</strong> My week and month across all products: which meetings I run, which reports arrive on their own, and a gate calendar so no two gates land in the same week. Plus an approvals map: who signs what, typical turnaround <span class="warn" title="Guess about the bank: to confirm">⚠️</span>, and who to go to when a sign-off is stuck. Why: with many products, the calendar is the machine. Sign-offs are where products stall.</li><li><strong>Needed before calling the RM framework ready: close the control gaps.</strong> The 11 controls with an uncovered stage (work item W13). Why: governance is the part the bank will check hardest.</li><li><strong>Optional for now: a stakeholder map and communications plan.</strong> For each partner: what they care about, how often they hear from me and which automatic report they get. Why optional: who decides is already clear. This adds how to keep them on side.</li><li><strong>Optional for now: run and retire.</strong> The support model, the incident runbook and the retirement rule. Why optional: needed before the first product goes live, not before Andy.</li></ol></div></section><section id="prove-the-machine-works-a-dry-run"><div class="stephead"><h2>Prove the machine works: a dry run</h2></div><div class="mdbody"><p><strong>Optional, but the best test we have.</strong> Take one small, made-up product through all six steps in a few sessions, using the templates, and with two or three agents (such as the gate pack drafter) built as Claude skills. Log where it breaks. Why: today the whole machine is a design. A dry run shows the weak spots before the bank does, and gives me a real story to tell: "I've run this end to end."</p></div></section><section id="what-we-don-t-need-more-of"><div class="stephead"><h2>What we don't need more of</h2></div><div class="mdbody"><ul><li><strong>More catalogs or building-block pages.</strong> We have 17 designed pages. Reading them is the bottleneck, not building more.</li><li><strong>Credit planning.</strong> It waits until I say the RM framework is ready, as decided on 2026-10-09.</li><li><strong>More bank facts from public sources</strong> before the Q3 results come out on October 22, 2026.</li></ul></div></section><section id="recommended-order"><div class="stephead"><h2>Recommended order</h2></div><div class="mdbody"><div class="tw"><table><thead><tr><th>#</th><th>What</th><th>Who</th><th>Size</th></tr></thead><tbody><tr><td>1</td><td>Read the RM plan and check the McKinsey numbers</td><td>Me</td><td>About 1 hour</td></tr><tr><td>2</td><td>Build the RM mock-up</td><td>Claude, with my review</td><td>One session</td></tr><tr><td>3</td><td>Build the Andy edition, then share it when I say</td><td>Claude, then me</td><td>One session</td></tr><tr><td>4</td><td>Portfolio layer, templates and tracker design</td><td>Claude drafts, I review</td><td>Two to three sessions</td></tr><tr><td>5</td><td>Operating rhythm and approvals map</td><td>Claude drafts, I review</td><td>One session</td></tr><tr><td>6</td><td>Close the control gaps</td><td>Claude, with my yes on each change</td><td>One session</td></tr><tr><td>7</td><td>Dry run of the machine</td><td>Claude and me</td><td>Three to four sessions</td></tr></tbody></table></div><p>Sizes are rough guesses from how long similar work took this week.</p></div></section><section id="how-this-was-checked"><div class="stephead"><h2>How this was checked</h2></div><div class="mdbody"><p>Read in full: the RM plan (memo v8), its one-page summary, Open Items, Job Notes and the playbook's overview. Skimmed: the headings of every playbook step, the agent library and the controls catalog, plus the ideas list. Searched every plan and playbook file for portfolio, intake, retirement, templates, runbook, rhythm and stakeholder words to confirm what's missing. Not checked: the designed pages themselves (this review used their working copies), and no fact about the bank was re-verified.</p></div></section>
+<footer>Built from the working copy <code>memos/gap-review.md</code> · last updated 2026-10-10. Lines marked ⚠️ are guesses to confirm; [X] marks numbers still to be set.</footer>
+</main>

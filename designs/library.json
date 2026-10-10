@@ -55,7 +55,16 @@
         "url": "https://claude.ai/artifact/NsW5AH5XFNHmDNYJvmVDMb",
         "source": "open-items.md"
       },
-      "children": []
+      "children": [
+        {
+          "id": "gap-review",
+          "name": "Gap Review",
+          "what": "What's strong, what's missing before the RM plan goes to Andy, and what's needed to run many products at once.",
+          "status": "Waiting for review",
+          "url": "https://claude.ai/artifact/WQaNEn9nCdWxwnFoaDLS4F",
+          "source": "memos/gap-review.md"
+        }
+      ]
     },
     {
       "id": "job",

@@ -23,6 +23,8 @@ PAGES = [
      "How the bank earns money, the corporate segment in depth, and where AI work lines up with each revenue line."),
     ("prompting.md", "prompting.html", "Prompting Guide", "Working with Claude",
      "How we write prompts: Anthropic's advice in plain English, a fill-in template, worked examples and a checklist."),
+    ("memos/gap-review.md", "gap-review.html", "Gap Review", "Where things stand · 2026-10-10",
+     "What's strong, what's missing before the RM plan goes to Andy, and what one product manager needs to run many AI products."),
 ]
 
 def slug(t):
