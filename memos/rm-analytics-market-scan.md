@@ -22,7 +22,7 @@ _2026-10-07 · Web scan to test `rm-analytics-framework.md` against what other b
 ## Industry figures (directional only)
 - **McKinsey (agentic AI, frontline):** banks that rewire one frontline area end to end report about 3–15% higher revenue per RM and 20–40% lower cost to serve. Based on a survey of about 400 US and Canadian bankers.
 - **RM time:** RMs at many commercial banks spend only about 25–30% of their time talking with clients (McKinsey, "Agentic AI is here. Is your bank's frontline team ready?"; checked against the article on 2026-10-10).
-- **Vendor claims:** 9% vs. 5% portfolio growth for RMs with AI workbenches, 10–12 hours a week saved, and 2× conversion on AI-generated lists. I couldn't trace these to a study.
+- **Vendor claims:** 9% vs. 5% portfolio growth for RMs with AI workbenches, 10–12 hours a week saved, and 2× conversion on AI-generated lists. The last two now appear in McKinsey's article (checked 2026-10-10); the 9% vs. 5% growth is still untraced.
 - **Adoption:** McKinsey notes that training is infrequent, adoption of new tools fades, and traditional training rarely sticks.
 
 ## What it means for our framework

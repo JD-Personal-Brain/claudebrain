@@ -541,7 +541,7 @@ listed actions, and those marked ⚠️ wait until the bank allows it.
 - **Starts when:** before each wave is planned.
 - **Inputs:** the dashboard; feedback themes; the monthly reviews.
 - **Allowed actions:** read; write a ranked list.
-- **Not allowed:** choosing the next wave.
+- **Not allowed:** choosing the next feature wave.
 - **Outputs:** ranked suggestions, each with its evidence.
 - **Stops when:** the list is delivered.
 - **Proof it worked:** the product manager and the sponsor decide, and say which suggestions they used.
@@ -557,8 +557,10 @@ a library, built once and reused.
 - **Live dashboard template (6.1):** one Power BI template for the five kinds of measures.
 
 ## Agents with an ongoing mode
-Two agents keep running after launch, not just once:
+Four agents keep running after launch, not just once:
+- **M13 Data-use checker:** it runs again monthly after launch (4.2) and alerts privacy on any difference.
 - **M24 Data contract checker:** after Define, it runs on every data refresh (3.2) and alerts the data owner on failure.
-- **M28 Fairness monitor:** it runs again monthly after launch (4.4).
+- **M28 Fairness monitor:** set up in 4.4; runs monthly in step 6 alongside the 6.3 checks.
+- **M32 Quality watchdog:** re-runs the test set on every change and at least monthly (6.3), and alerts the product manager when quality slips.
 
 _Last updated: 2026-10-10_

@@ -8,7 +8,7 @@ win new revenue, and free up the time they need to act on them. The goal is
 a product that pays for itself and then some.
 
 **The approach.**
-1. **Deploy a standard base fast, aimed at revenue.** Start with use cases most banks need: client briefs before meetings, meeting follow-ups, call notes into Salesforce and a weekly list of product-gap opportunities. They run on platforms the bank already uses: Salesforce, Microsoft 365 Copilot, Power Platform and Snowflake.
+1. **Deploy a standard base fast, aimed at revenue.** Start with AI products most banks need: client briefs before meetings, meeting follow-ups, call notes into Salesforce and a weekly list of product-gap opportunities. They run on platforms the bank already uses: Salesforce, Microsoft 365 Copilot, Power Platform and Snowflake. Each sits under one of seven core use cases (McKinsey's five frontline use cases plus admin off the RM's plate and keep clients), each with a return profile.
 2. **Pair insights with time.** RMs at many commercial banks spend only about 25–30% of their time with clients, according to McKinsey, so time savers ship alongside revenue insights.
 3. **Govern from day one.** A risk partner is involved from day one. The AI only suggests and drafts; the RM always decides. Results are measured against RMs not yet using the tool.
 

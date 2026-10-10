@@ -45,7 +45,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Proved in:** 3.7, 4.3
 - **Watched in:** 6.3 (the test set, with its must-refuse cases, is re-run)
 - **Tool (guess):** guardrail filters
-- **Proof:** a red-team test (someone trying to break it on purpose) showing it won't give a credit decision
+- **Proof:** a red-team test (someone trying to break it on purpose) showing it won't give a credit decision or a price
 
 ### K4. Users see only what they're allowed to see
 - **Group:** Data

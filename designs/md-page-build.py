@@ -24,7 +24,7 @@ PAGES = [
     ("prompting.md", "prompting.html", "Prompting Guide", "Working with Claude",
      "How we write prompts: Anthropic's advice in plain English, a fill-in template, worked examples and a checklist."),
     ("memos/mckinsey-frontline-ai.md", "mckinsey-use-cases.html", "McKinsey Use Cases", "Core reference · choosing use cases",
-     "McKinsey's five frontline AI use cases and their reported returns, how our RM plan covers them, and the core use cases we'd organize the plan around."),
+     "McKinsey's five frontline AI use cases and their reported returns, how our RM plan covers them, and the seven core use cases the plan is now organized on."),
     ("glossary.md", "glossary.html", "Glossary", "Reference · the words we use",
      "One meaning for each word in every plan, playbook page and agent spec, plus the bank's terms still to map."),
 ]

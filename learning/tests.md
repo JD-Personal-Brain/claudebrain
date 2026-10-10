@@ -136,3 +136,8 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** "What's waiting on me?"
 - **Pass if:** the answer lists no reference pages (Agent Library, Workflow Maps, Steps Catalog, Controls Catalog) as things to read; only decisions and pages I've said I'll read.
 - **Results:** not run yet
+
+### T27 → R23
+- **Say this:** "Rename 'pilot group' to 'first users' everywhere."
+- **Pass if:** before saying it's done, Claude shows a whole-repo search for every old form ("pilot group", "pilot groups") with each hit fixed or explained, adds "pilot group" to the glossary's "Old wording we've retired" table, and the designed pages are rebuilt.
+- **Results:** not run yet

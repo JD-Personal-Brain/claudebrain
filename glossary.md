@@ -18,7 +18,7 @@ documents against it.
 | **Sub-step** | A numbered piece of a step, from 1.0 to 6.6 (44 in all). Each has its own section in the playbook and its own card in the Steps Catalog. |
 | **Gate** | The go/no-go decision at the end of each step. A named person decides, and the decision goes in the decision log. |
 | **Governance thread** | The risk and control work that runs through every step, so that step 4 confirms what risk partners have already seen. |
-| **Core use case** | One of the seven lines the RM plan is organized on: McKinsey's five frontline use cases (prospecting, lead nurturing, account intelligence, deal scoring, coaching) plus two of our own (admin off the RM's plate, keeping clients). Each has an RM problem and a return profile. |
+| **Core use case** | One of the seven lines the RM plan is organized on: McKinsey's five frontline use cases (prospecting and next best opportunities, lead nurturing, account intelligence and meeting prep, deal scoring and pricing, AI sales coaching) plus two of our own (admin off the RM's plate, keep clients). Each has an RM problem and a return profile. |
 | **AI product** | A specific capability we build and release, such as the pre-meeting brief. Each sits under one core use case. |
 | **Wave** | Used two ways, so say which: a **feature wave** is a set of AI products released together, after a quick pass through Discover and Define; a **user wave** is the next group of users when a product scales (sub-step 5.7). |
 | **Pilot** | The first live use, by a small pilot group, alongside a comparison group. |
@@ -42,7 +42,7 @@ documents against it.
 | **Champion** | A respected user who shows peers how they use the product. |
 | **Kind** | Who does a task: **Auto** (runs on its own), **Draft** (AI drafts, a named person checks), **Me** (only a person) or **Partner** (a sign-off only a named partner can give). |
 | **Agent** | An AI helper with one job, a short list of allowed actions and a named person in charge. |
-| **Machine agent** | One of the 33 general agents (M1 to M33) that run the delivery machine on every project. Specified in the agent library. |
+| **General agent** | One of the 33 agents (M1 to M33) that run the delivery machine on every project, specified in the agent library: M1 to M19 handle the paperwork and routing, M20 to M33 do the team's analysis, testing and monitoring. |
 | **Product agent** | An agent inside the product that users see, numbered per project (A1 to A6 in the RM plan). Specified in that project's memo, Appendix A. |
 | **Agent spec** | An agent's written definition: its job, inputs, allowed and forbidden actions, outputs, when it stops, proof it worked and the person in charge. |
 | **Ongoing mode** | An agent that keeps running after launch, not just once (for example M24 on every data refresh). |
@@ -91,6 +91,26 @@ The audit flags these in the core documents. Use the word on the right.
 | stage gate | gate | One name for one idea. |
 | signoff | sign-off | One spelling. |
 | cohort | pilot group, or comparison group | Say which group. |
+
+## Old wording we've retired
+
+When we rename something or change a count, the old wording goes here. The
+audit checker fails on any of it left in a core document, a memo, NOW.md, the
+Document Library or a designed page, so a rename can't stop halfway. A line
+that also says the new wording (a note about the change) is allowed.
+
+| Retired wording | Use instead | Retired on |
+|---|---|---|
+| five core use cases | seven core use cases | 2026-10-10 |
+| stop each use case | stop each AI product | 2026-10-10 |
+| stop each feature | stop each AI product | 2026-10-10 |
+| wave 1 use cases | wave 1 AI products | 2026-10-10 |
+| Each use case, step by step | Each AI product, step by step | 2026-10-10 |
+| machine agent | general agent | 2026-10-10 |
+| Six-step workflow visual | Six-Step Product Workflow | 2026-10-10 |
+| Agent idea: | Agent: (with the agent's M number) | 2026-10-10 |
+| (spec M | (agent library) | 2026-10-10 |
+| 19-agent library | the agent library (33 general agents) | 2026-10-10 |
 
 ## Bank terms to map
 

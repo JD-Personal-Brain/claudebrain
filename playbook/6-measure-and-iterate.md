@@ -1,7 +1,7 @@
 # Step 6: Measure and iterate, the first time
 
 **The question:** is it delivering the outcome, and what comes next?
-**The gate:** each month (and at the end of each wave), keep, change or stop each feature; each quarter, invest more, adjust or stop overall.
+**The gate:** each month (and at the end of each feature wave), keep, change or stop each AI product; each quarter, invest more, adjust or stop overall.
 **Governance thread:** ongoing monitoring.
 
 This step never really ends: it runs every month for as long as the product
@@ -63,7 +63,7 @@ log (see `README.md`) for every sub-step.
 - **First time, step by step:**
   1. Re-run the full test set after every change, and at least monthly.
   2. Compare the score with the last run and with the quality bar.
-  3. Watch the live signals: rejection rate, guardrail blocks and user overrides.
+  3. Watch the live signals: rejection rate, guardrail blocks and user overrides. Each month, check the rule behind a sample of answers.
   4. If a threshold is crossed, follow the monitoring plan: fix, roll back or pause.
 - **Output:** the score trend and any alerts acted on.
 - **Done when:** this runs on every change without anyone remembering to do it.
@@ -90,12 +90,12 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Draft** for the pack, **Me** for the decision.
   - Note: what the sponsor looked at first. Put that at the top next time.
-  - Agent idea: a **monthly review pack drafter** (spec M18) built from the dashboard and the impact note. *Draft*.
-- **For RM analytics:** each wave's standard use cases reviewed separately.
+  - Agent: **M18 Monthly review pack drafter** (agent library) built from the dashboard and the impact note. *Draft*.
+- **For RM analytics:** each feature wave's AI products reviewed separately.
 
 ---
 
-## 6.5 Feed the next wave
+## 6.5 Feed the next feature wave
 
 - **Goal:** choose what comes next, and send it back through Discover and Define, quickly.
 - **Why it matters:** the first release is a start. The value comes from steady waves.
@@ -104,14 +104,14 @@ log (see `README.md`) for every sub-step.
   1. List the candidates: backlog items, ideas from users and the next lever from Discover.
   2. Rank them using the same scoring as 1.7.
   3. Take the top one through a **short** Discover and Define, reusing everything you already have.
-  4. Agree the next wave with the sponsor.
-- **Output:** the next wave, agreed.
-- **Done when:** the next wave has a scope and a date.
+  4. Agree the next feature wave with the sponsor.
+- **Output:** the next feature wave, agreed.
+- **Done when:** the next feature wave has a scope and a date.
 - **Automation watch:**
   - First time: **Draft**.
   - Note: how much of Discover and Define you could skip or reuse.
   - Agent: **M33 Improvement scout** (agent library) proposes and ranks candidates. The PM and the sponsor decide. *Draft*.
-- **For RM analytics:** the next standard use cases, such as early warnings and referral prompts in wave 2.
+- **For RM analytics:** the next standard AI products, such as early warnings and referral prompts in wave 2.
 
 ---
 
@@ -131,7 +131,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Me**.
   - Note: which agents you built, and how much time they saved on the next project.
-  - Agent idea: a **log summarizer** (spec M19) that totals time and waits from the first-time logs. *Draft*.
+  - Agent: **M19 Log summarizer** (agent library) that totals time and waits from the first-time logs. *Draft*.
 - **For RM analytics:** the RM project is the first run, so its logs set the starting point for every project after it.
 
 ---
@@ -139,8 +139,8 @@ log (see `README.md`) for every sub-step.
 ## The Measure and iterate gate
 
 - **Who decides:** the sponsor; Finance for the impact numbers.
-- **Bring:** the monthly pack (each wave) or a quarterly summary (overall).
-- **Each month (and at the end of each wave):** keep, change or stop each feature.
+- **Bring:** the monthly pack (each feature wave) or a quarterly summary (overall).
+- **Each month (and at the end of each feature wave):** keep, change or stop each AI product.
 - **Each quarter:** invest more, adjust or stop overall, based on results against the comparison group.
 - **Record:** the decisions in the decision log.
 

@@ -36,7 +36,7 @@ sub-step. At the end, run the automation review.
 - **Automation watch:**
   - First time: **Me** (sponsor and risk conversations) and **Draft** (setting up the tracker and files).
   - Note: how long setting up the tracker took, and what you copied by hand.
-  - Agent idea: a **kickoff pack builder** (spec M1) that creates the tracker, decision log, project file and who-decides template from one project statement. *Draft*: you check it.
+  - Agent: **M1 Kickoff pack builder** (agent library) that creates the tracker, decision log, project file and who-decides template from one project statement. *Draft*: you check it.
 - **For RM analytics:** sponsor = the commercial banking leader. The statement: "more new revenue from RMs, by finding opportunities and freeing time to act on them." The memo's "Who's involved" table (section 3) is the who-decides list.
 
 ---
@@ -59,7 +59,7 @@ sub-step. At the end, run the automation review.
 - **Automation watch:**
   - First time: **Me**. Agreeing a goal is a conversation.
   - Note: which questions got the most useful answers. They become a standard question list.
-  - Agent idea: an **outcome note drafter** (spec M2) that turns the meeting recap into the one-page note (M365 Copilot). *Draft*.
+  - Agent: **M2 Outcome note drafter** (agent library) that turns the meeting recap into the one-page note (M365 Copilot). *Draft*.
 - **For RM analytics:** two goals (more revenue opportunities, more time to act) and three levers (win new clients, grow existing clients, keep clients), as in memo section 1.
 
 ---
@@ -112,7 +112,7 @@ sub-step. At the end, run the automation review.
   - Note: how long scheduling took (it usually takes more time than you expect), and whether your guide changed after the first few interviews.
   - Agents:
     - **M20 Interview synthesizer** (agent library): turns recaps into themes linked to their sources. You check every theme.
-    - New: an **interview scheduler** (spec M3) (Power Automate with Outlook) that sends invitations and reminders to nominated users. *Auto*, once the bank allows automations to message people ⚠️.
+    - **M3 Interview scheduler** (agent library; Power Automate with Outlook) that sends invitations and reminders to nominated users. *Auto*, once the bank allows automations to message people ⚠️.
 - **For RM analytics:** talk to RMs, their sales managers, and treasury specialists and credit analysts. The key question: "How do you decide which client to call next?"
 
 ---
@@ -158,7 +158,7 @@ sub-step. At the end, run the automation review.
 - **Automation watch:**
   - First time: **Me**. These are sensitive conversations.
   - Note: who had the real answer. Next project, go to them first.
-  - Agent idea: none. This stays with a person.
+  - Agent: none. This stays with a person.
 - **For RM analytics:** if RMs are paid on closed revenue but not on referrals, cross-team referral insights will be ignored. Raise that early.
 
 ---
@@ -183,7 +183,7 @@ sub-step. At the end, run the automation review.
 - **Automation watch:**
   - First time: **Draft** for the mock-up (Claude builds it with the `prototype` skill). **Me** for running the sessions and summarizing reactions.
   - Note: how long each version took to build, and what feedback came up every time.
-  - Agent idea: a **reaction summarizer** (spec M4) that turns session notes into "what to change next". *Draft*.
+  - Agent: **M4 Reaction summarizer** (agent library) that turns session notes into "what to change next". *Draft*.
 - **For RM analytics:** a pre-meeting client brief and a weekly opportunity list, built on sample clients.
 
 ---
@@ -207,9 +207,9 @@ sub-step. At the end, run the automation review.
 - **Automation watch:**
   - First time: **Me** for the choice and for recording the baseline by hand. **Draft** for scoring and the gate pack.
   - Note: which parts of the gate pack you copied from earlier sub-steps. That copying can be automated.
-  - Agent ideas:
-    - A **baseline recorder** (spec M5) (Power BI) that snapshots the measure on a schedule from today on. *Auto*.
-    - A **gate pack drafter** (spec M6) that pulls each sub-step's outputs into one document. *Draft*.
+  - Agents:
+    - **M5 Baseline recorder** (agent library; Power BI) that snapshots the measure on a schedule from today on. *Auto*.
+    - **M6 Gate pack drafter** (agent library) pulls each sub-step's outputs into one document. *Draft*.
 - **For RM analytics:** wave 1 = pre-meeting briefs, meeting follow-ups and the weekly opportunity list (memo Step 1).
 
 ---

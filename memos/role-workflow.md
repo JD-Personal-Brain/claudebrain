@@ -14,7 +14,7 @@ quick pass through Discover and Define.
 | 3. Build | What's the smallest version users will use and trust? | Controls built in; test set created | Meets the quality bar in testing; every control has proof |
 | 4. Govern and test | Is it safe, fair and controlled? | Formal validation and sign-offs | All sign-offs recorded; monitoring plan agreed |
 | 5. Release and adopt | Will users use it every week? | Live monitoring; incident process | Weekly use and results hit targets; no serious incidents; long-term owner confirmed before scaling |
-| 6. Measure and iterate | Is it delivering the outcome, and what comes next? | Ongoing monitoring | Each month (and at the end of each wave): keep, change or stop each feature; each quarter: invest more, adjust or stop overall |
+| 6. Measure and iterate | Is it delivering the outcome, and what comes next? | Ongoing monitoring | Each month (and at the end of each feature wave): keep, change or stop each AI product; each quarter: invest more, adjust or stop overall |
 
 **Inside each step:** one item per playbook sub-step, as listed in `product-framework.md` ("What happens in each step").
 
