@@ -70,7 +70,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Me**. This is change management.
   - Note: which routine worked, and how managers phrased it. Reuse that for the next team.
-  - Agent: none. This stays with a person. The **A4 Weekly opportunity digest** (Appendix A) is a product feature that supports the routine, not an agent that runs it.
+  - Agent: none. This stays with a person. The product's **weekly opportunity digest** (A4 in the RM plan, Appendix A) is a product feature that supports the routine, not an agent that runs it.
 - **For RM analytics:** managers run weekly pipeline meetings from the insights.
 
 ---

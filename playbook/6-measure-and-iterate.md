@@ -139,7 +139,7 @@ log (see `README.md`) for every sub-step.
 ## The Measure and iterate gate
 
 - **Who decides:** the sponsor; Finance for the impact numbers.
-- **Bring:** the monthly pack (each wave) or a quarterly summary (overall).
+- **Bring:** the monthly pack (each feature wave) or a quarterly summary (overall).
 - **Each month (and at the end of each feature wave):** keep, change or stop each AI product.
 - **Each quarter:** invest more, adjust or stop overall, based on results against the comparison group.
 - **Record:** the decisions in the decision log.

@@ -116,7 +116,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Draft**.
   - Note: which control tests you ran by hand.
-  - Agent: the **controls checker** (spec M11) from 3.4. *Auto*, test environment only.
+  - Agent: **M11 Controls checker** (agent library) from 3.4. *Auto*, test environment only.
 - **For RM analytics:** RM approval before saving call notes or sending follow-ups.
 
 ---
@@ -157,7 +157,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Draft** for the pack, **Me** for chasing.
   - Note: how long each signer took, and what they asked.
-  - Agents: **M29 Evidence pack assembler** (agent library), *Draft*. The **sign-off router** (spec M14) (Power Automate approvals) sends the requests and chases them, *Auto* ⚠️.
+  - Agents: **M29 Evidence pack assembler** (agent library), *Draft*. **M14 Sign-off router** (agent library; Power Automate approvals) sends the requests and chases them, *Auto* ⚠️.
 - **For RM analytics:** risk, compliance (including fair lending), privacy and security.
 
 ---

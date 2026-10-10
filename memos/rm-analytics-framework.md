@@ -258,7 +258,7 @@ loop compounds over time and is a reason to build both goals together.
 | 1. Write the problem and outcome | One sentence each, with a measurable target | M365 Copilot in Word |
 | 2. Choose the platform and delivery path | Apply the five criteria; confirm the pilot platform and the release plan | Salesforce, Copilot Studio, Power Automate |
 | 3. Define the data contract | Exact fields, freshness and quality checks | Snowflake, Salesforce |
-| 4. Start the risk intake | Describe the use case, get an early risk rating and list the control requirements | The bank's governance process |
+| 4. Start the risk intake | Describe the AI product, get an early risk rating and list the control requirements | The bank's governance process |
 | 5. Write user stories and acceptance criteria | Short "as an RM, I need…" statements, each with a test of done | An approved LLM to draft; the team reviews |
 | 6. Set the measures, quality bar and value model | Revenue, capacity and adoption targets; quality thresholds; payback | Power BI |
 | 7. Agree attribution with Finance | How AI-sourced revenue is tagged and compared | Salesforce |

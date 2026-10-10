@@ -10,7 +10,7 @@ in by me on 2026-10-10.
 > Based on a survey of about 400 US and Canadian bankers, RMs and sales leaders.
 > McKinsey's numbers come from its own client work and early pilots, not
 > controlled studies, so treat them as directional. ⚠️ The page I pasted showed no
-> publication date; so the date is unconfirmed (an earlier draft said December 2025).
+> publication date, so the date is unconfirmed (an earlier draft said December 2025).
 
 ## The headline numbers
 
@@ -53,16 +53,15 @@ which tackle McKinsey's number one problem, excessive admin.
 **What this means:** wave 1 lines up with McKinsey's most-cited problem (meeting
 prep and admin). The gaps are coaching, which is low risk and could fit an early
 wave, and prospecting, which McKinsey rates highest for revenue and we have in
-wave 3. Lead nurturing and pricing are left out on purpose, for governance
+wave 3. Autonomous lead nurturing and pricing are left out on purpose, for governance
 reasons. Each open question is a decision in the Open Items log (D6 to D8).
 
 ## What it changed: the RM plan now uses McKinsey's framework (decided 2026-10-10)
 
 The RM plan is now organized on seven core use cases, with our AI products
 underneath each one and a return profile for each (the plan's "Core use cases"
-section): McKinsey's five, plus two of our own beyond McKinsey's five: admin
-off the RM's plate (McKinsey's top problem, which its five use cases don't
-name) and keep clients. Open questions:
+section): McKinsey's five plus two of our own, admin off the RM's plate
+(McKinsey's top problem, which its five use cases don't name) and keep clients. Open questions:
 - **Prospecting earlier?** (D7) McKinsey's biggest revenue numbers are in prospecting, and our prospect lookalikes come in wave 3. Outside prospect data may set the pace.
 - **Add coaching?** (D6) Low risk, uses call transcripts the meeting features already need, and McKinsey reports faster ramp-up for new bankers.
 - **Autonomous lead nurturing and pricing stay out for now?** (D8) An agent that writes to prospects on its own, or recommends prices, conflicts with "nothing reaches a client without the RM" and the fair-lending control (K3).

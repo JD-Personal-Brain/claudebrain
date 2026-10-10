@@ -112,7 +112,7 @@ sub-step. At the end, run the automation review.
   - Note: how long scheduling took (it usually takes more time than you expect), and whether your guide changed after the first few interviews.
   - Agents:
     - **M20 Interview synthesizer** (agent library): turns recaps into themes linked to their sources. You check every theme.
-    - New: an **interview scheduler** (spec M3) (Power Automate with Outlook) that sends invitations and reminders to nominated users. *Auto*, once the bank allows automations to message people ⚠️.
+    - **M3 Interview scheduler** (agent library; Power Automate with Outlook) that sends invitations and reminders to nominated users. *Auto*, once the bank allows automations to message people ⚠️.
 - **For RM analytics:** talk to RMs, their sales managers, and treasury specialists and credit analysts. The key question: "How do you decide which client to call next?"
 
 ---
@@ -207,9 +207,9 @@ sub-step. At the end, run the automation review.
 - **Automation watch:**
   - First time: **Me** for the choice and for recording the baseline by hand. **Draft** for scoring and the gate pack.
   - Note: which parts of the gate pack you copied from earlier sub-steps. That copying can be automated.
-  - Agent ideas:
-    - A **baseline recorder** (spec M5) (Power BI) that snapshots the measure on a schedule from today on. *Auto*.
-    - A **gate pack drafter** (spec M6) that pulls each sub-step's outputs into one document. *Draft*.
+  - Agents:
+    - **M5 Baseline recorder** (agent library; Power BI) that snapshots the measure on a schedule from today on. *Auto*.
+    - **M6 Gate pack drafter** (agent library) pulls each sub-step's outputs into one document. *Draft*.
 - **For RM analytics:** wave 1 = pre-meeting briefs, meeting follow-ups and the weekly opportunity list (memo Step 1).
 
 ---
