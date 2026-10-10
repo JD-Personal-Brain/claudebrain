@@ -31,7 +31,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Why it matters:** the more an agent can do, the more review it needs. ⚠️ I expect a short list to help keep the risk rating low.
 - **Set in:** 2.4 (confirmed there; it comes from the AI principles in my product framework)
 - **Built in:** 3.1
-- **Proved in:** 4.5
+- **Proved in:** 4.5 (the playbook doesn't name a test for this yet)
 - **Watched in:** not covered in the playbook yet
 - **Tool (guess):** the agent's permissions on each platform
 - **Proof:** the agent spec's "allowed" and "not allowed" lists, and a test that a blocked action fails
@@ -41,7 +41,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **What it is:** the intake says plainly what the product does not do, such as credit decisions or pricing. For RM analytics, any insight that suggests a credit product goes to compliance review.
 - **Why it matters:** fair-lending rules apply to business credit too, and they set a much higher bar.
 - **Set in:** 2.4
-- **Built in:** 3.4 (guardrails), 3.6 (test cases the product must refuse)
+- **Built in:** 3.6 (test cases the product must refuse). Guardrails for this are not covered in the playbook yet
 - **Proved in:** 3.7, 4.3
 - **Watched in:** 6.3 (the test set, with its must-refuse cases, is re-run)
 - **Tool (guess):** guardrail filters
@@ -86,7 +86,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Why it matters:** bankers can check the answer, and a made-up answer has nowhere to hide.
 - **Set in:** 2.7
 - **Built in:** 3.5
-- **Proved in:** 3.7, 4.3
+- **Proved in:** 3.7
 - **Watched in:** 6.3
 - **Tool (guess):** source links on the Salesforce record
 - **Proof:** the share of test answers that show a source, against the quality bar
@@ -206,8 +206,8 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **What it is:** the product moves from a build space to a test space to live use, and each move needs a named approval.
 - **Why it matters:** nothing untested reaches bankers, and automated tests never run against live data.
 - **Set in:** 2.2
-- **Built in:** 2.2
-- **Proved in:** 5.1
+- **Built in:** 2.2 (the path is written there)
+- **Proved in:** not covered in the playbook yet
 - **Watched in:** 5.2
 - **Tool (guess):** Power Platform environments and the bank's release process
 - **Proof:** the written delivery path, and the approval recorded for each move
@@ -216,9 +216,9 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Group:** Approvals
 - **What it is:** the product uses only the AI models the bank has approved, running where the bank has approved them.
 - **Why it matters:** a model the bank hasn't reviewed can't be relied on for bank data.
-- **Set in:** 2.2
+- **Set in:** 3.3 (which model is approved is checked there; the playbook has no earlier step for it yet)
 - **Built in:** 3.3
-- **Proved in:** 4.6
+- **Proved in:** 4.6 (the model's provider is confirmed as an approved vendor; a check against the bank's list of approved models is not covered in the playbook yet)
 - **Watched in:** not covered in the playbook yet
 - **Tool (guess):** AWS Bedrock's model list, and the models inside Microsoft and Salesforce
 - **Proof:** the model named in the design, matched to the bank's approved list
@@ -228,8 +228,8 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **What it is:** IT decides which systems an automation may connect, and which may pass data to which. These are often called DLP rules, for "data loss prevention".
 - **Why it matters:** they often block an idea outright, so they are checked before the platform is chosen.
 - **Set in:** 2.2
-- **Built in:** 2.2
-- **Proved in:** 4.2
+- **Built in:** 2.2 (checked there, not built)
+- **Proved in:** not covered in the playbook yet
 - **Watched in:** not covered in the playbook yet
 - **Tool (guess):** Power Platform data policies
 - **Proof:** IT's confirmation that every connection the product uses is allowed
@@ -241,7 +241,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Set in:** 2.8
 - **Built in:** 2.8
 - **Proved in:** 5.7
-- **Watched in:** 6.4
+- **Watched in:** not covered in the playbook yet
 - **Tool (guess):** the decision log
 - **Proof:** the owner's name recorded, or "to be decided" with a date
 
@@ -249,9 +249,9 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Group:** Quality
 - **What it is:** the logic that finds an insight is simple and explainable. The AI's job is to explain it in plain words, not to invent facts.
 - **Why it matters:** bankers and reviewers can both see why the product said what it said.
-- **Set in:** 2.1
+- **Set in:** 3.3 (not set any earlier in the playbook yet; it comes from the AI principles in my product framework)
 - **Built in:** 3.3
-- **Proved in:** 3.7
+- **Proved in:** 3.3 (outputs checked by hand with a user), 3.7
 - **Watched in:** 6.3
 - **Tool (guess):** rules in Snowflake, with the AI writing the explanation
 - **Proof:** for a sample of answers, the rule that fired and the data behind it

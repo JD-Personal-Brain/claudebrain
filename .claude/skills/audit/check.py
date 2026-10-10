@@ -64,14 +64,18 @@ for label,pre in [('1. Decisions waiting on me','D'),('2. Reviews waiting on me'
     m=re.search(r'^\| '+re.escape(label)+r' \| (\d+) \|',oi,re.M)
     rows=len([x for x in nums if x[0]==pre])
     if not m or int(m.group(1))!=rows: print("open-items.md 'At a glance' count for",label,"should be",rows); probs+=1
-oi_open=oi.split('## 2. Reviews')[-1].split('## 6. Closed')[0]  # a page must be named in an open item, not just anywhere
+if '## 2. Reviews' not in oi or '## 3. Work' not in oi or '## 6. Closed' not in oi: print("open-items.md is missing one of its section headings"); probs+=1
+oi_rev=oi.split('## 2. Reviews')[-1].split('## 3. Work')[0]    # pages waiting for review must be named in section 2
+oi_work=oi.split('## 2. Reviews')[-1].split('## 4. To confirm')[0]  # drafts and work in progress: section 2 or 3
+oi_live=oi.split('## 6. Closed')[0]                                # ideas must be named in an item that is still open
+where=lambda st: oi_rev if st=='Waiting for review' else oi_work
 for a in lib['areas']:
     for d in [a['parent']]+a['children']:
-        if d['status'] in ('Waiting for review','Draft','In progress') and d['name'] not in oi_open: print("open-items.md doesn't mention the page",d['name'],"(status:",d['status']+")"); probs+=1
+        if d['status'] in ('Waiting for review','Draft','In progress') and d['name'] not in where(d['status']): print("open-items.md doesn't mention the page",d['name'],"(status:",d['status']+")"); probs+=1
 for b in lib.get('building_blocks',[]):
-    if b['status'] in ('Waiting for review','Draft','In progress') and b['name'] not in oi_open: print("open-items.md doesn't mention the page",b['name']); probs+=1
+    if b['status'] in ('Waiting for review','Draft','In progress') and b['name'] not in where(b['status']): print("open-items.md doesn't mention the page",b['name']); probs+=1
 for m in re.finditer(r'^\| (\d+) \|.*\| ([^|]+) \|\s*$',open('ideas.md').read(),re.M):
-    if re.match(r'(new|suggested|yes|not yet)\b',m.group(2).strip()) and not re.search(r'\bideas? [\d, and]*\b'+m.group(1)+r'\b',oi): print("open-items.md doesn't mention idea",m.group(1),"(status:",m.group(2).strip()[:20]+")"); probs+=1
+    if re.match(r'(new|suggested|yes|not yet)\b',m.group(2).strip()) and not re.search(r'\bideas? [\d, and]*\b'+m.group(1)+r'\b',oi_live): print("open-items.md doesn't mention idea",m.group(1),"(status:",m.group(2).strip()[:20]+")"); probs+=1
 def upd(f):
     m=re.search(r'_Last updated: (\d{4}-\d{2}-\d{2})',open(f).read()); return m.group(1) if m else ''
 if upd('open-items.md')<upd('NOW.md'): print("open-items.md was last updated",upd('open-items.md'),"but NOW.md on",upd('NOW.md')+": review the open items"); probs+=1
@@ -80,7 +84,7 @@ if upd('open-items.md')<upd('NOW.md'): print("open-items.md was last updated",up
 now_parts=open('NOW.md').read().split("## What's next")
 if len(now_parts)<2: print("NOW.md has no \"What's next\" heading to check"); probs+=1
 else:
-    CODE=r'\b(?:[RTLDWVBPCKMA]\d+[a-d]?|[Ii]deas? \d+)\b'
+    CODE=r'\b(?:[RTLDWVBPCKA]\d{1,2}[a-d]?|M\d{1,2}|[Ii]deas? \d+)\b'
     for item in re.findall(r'^\d+\. .+$',now_parts[1].split("\n## ")[0],re.M):
         def keep(m):
             inner=re.sub(CODE,'',m.group(0)); return '' if len(re.findall(r"[A-Za-z']{2,}",inner))>=4 else m.group(0)

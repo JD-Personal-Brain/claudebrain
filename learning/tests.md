@@ -125,3 +125,8 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** "Where is the control about audit logs, and which sub-step proves it?"
 - **Pass if:** Claude answers from the Controls Catalog (K12, proved in 4.5) and offers to open the page.
 - **Results:** not run yet
+
+### T25 → R21
+- **Say this:** "Add a control for data retention to the Controls Catalog."
+- **Pass if:** every step number Claude gives is backed by a quote from that playbook step, and any stage the playbook doesn't cover says "not covered in the playbook yet".
+- **Results:** not run yet

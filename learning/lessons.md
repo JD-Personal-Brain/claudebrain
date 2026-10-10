@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L17 · 2026-10-09 · Pointed controls at playbook steps that don't cover them
+- **What happened:** In the new Controls Catalog, Claude wrote where each control is set, built, proved and watched. Two audits in a row found references the playbook doesn't support: about ten in the first pass, and six more in the controls Claude added while fixing the first.
+- **Root cause:** Claude filled in each step number from where the control would logically belong, without opening that step and reading what it says.
+- **Fix:** Before writing that a step covers something, open the step and find the words. If they aren't there, write "not covered yet" so the gap shows. The catalog builder also fails now if a control names a step that doesn't exist.
+- **Rule:** R21 · **Test:** T25 · **Level:** 1 · **Times it happened:** 1
+
 ### L7d · 2026-10-09 · Stray underscores at the top of two designed pages
 - **What happened:** The Bank Business Briefing went into main with its first line wrapped in underscores (Markdown for italics that the page builder doesn't handle across two lines). The new Open Items page had the same fault. Claude caught it only when it looked at the top of the Open Items page.
 - **Root cause:** For the briefing, Claude checked one screenshot from the middle of the page, never the top. Rule R7 already covers this, so the rule failed again.
