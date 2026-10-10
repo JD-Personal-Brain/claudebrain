@@ -53,7 +53,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Draft**.
   - Note: how much of the statement was copied from the data contract.
-  - Agent idea: a **data-use checker** (spec M13) that compares the fields actually read with the contract and flags differences. *Auto*, read-only.
+  - Agent idea: a **data-use checker** (spec M13) that compares the fields actually read with the contract and flags differences. *Auto*, read-only. It runs on each new frozen version, and again monthly after launch.
 - **For RM analytics:** each RM sees only clients they're already allowed to see.
 
 ---

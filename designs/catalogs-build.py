@@ -171,7 +171,7 @@ def stages(text):
     nums = list(dict.fromkeys(re.findall(r"\b\d\.\d\b", text)))
     if not nums:
         return "not covered yet"
-    return ", ".join(nums) + (" (partly not covered)" if "not covered" in text else "")
+    return ", ".join(nums) + (" (partly not covered)" if ("not covered" in text or "doesn't name" in text) else "")
 
 def control_card(cid, name, f):
     spec = "".join(f"<div><dt>{E(k)}</dt><dd>{inline(cap(f[k]))}</dd></div>" for k in NEED[2:])

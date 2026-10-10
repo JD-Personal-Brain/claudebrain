@@ -114,18 +114,27 @@ lib=_json.load(open('designs/library.json'))
 want={'agents':f'{M+A} agents','steps':f'{SUB} sub-steps','controls':f'{CTL} controls','workflows':f'2 maps · {SUB+B} branches'}
 for b in lib['building_blocks']:
     if b['id'] in want and b['count']!=want[b['id']]: print('designs/library.json count for',b['name'],'is',repr(b['count']),'but the sources give',repr(want[b['id']])); probs+=1
-ok={'agents':{M,A,M+A,TEAM,PROD},'sub-steps':{SUB},'controls':{CTL,UNCOV}}
+# Each count is read with up to one word in front of the noun ("22 governance controls"). A total is
+# checked against its own number: "all 39 agents" must be every agent, "19 ... machine" agents the machine's.
 for f in ['NOW.md','open-items.md','product-framework.md','playbook/README.md','designs/library.json','memos/role-workflow.md','tech-stack.md']:
     t=open(f).read()
-    for m in re.finditer(r'\b(\d+)[ -](agents?|sub-steps|controls)\b',t):
-        word=m.group(2).rstrip('s')+('s' if m.group(2)!='sub-steps' else '')
-        key='agents' if word.startswith('agent') else m.group(2)
-        if int(m.group(1)) not in ok[key]: print(f,'says',repr(m.group(0)),'but the sources give',sorted(ok[key])); probs+=1
+    for m in re.finditer(r'\b(\d+)[ -](?:([A-Za-z]+) )?(agents?|sub-steps|controls)\b',t):
+        num,mid,noun=int(m.group(1)),(m.group(2) or '').lower(),m.group(3)
+        before=t[max(0,m.start()-6):m.start()].lower(); after=t[m.end():m.end()+40].lower()
+        if noun.startswith('agent'):
+            if before.endswith('all '): ok={M+A}
+            elif 'machine' in mid+after: ok={M}
+            elif 'project' in mid+after or 'rm' in mid: ok={A,TEAM,PROD}
+            else: ok={M,A,M+A,TEAM,PROD}
+        elif noun=='sub-steps': ok={SUB}
+        else: ok={CTL} | ({UNCOV} if after.startswith(' of the') or 'have a stage' in after or 'not covered' in after else set())
+        if num not in ok: print(f,'says',repr(m.group(0)),'but the sources give',sorted(ok)); probs+=1
     if re.search(r'\b\d+-agent library',t): print(f,'says "N-agent library": say which agents (machine, project or all)'); probs+=1
 items={m.group(1):m.group(2).split(' · ') for m in re.finditer(r'^- \*\*(\d)\. [^:]+:\*\* (.+)$',fw,re.M)}
 for n,c in n_sub.items():
     if len(items.get(n,[]))!=c: print('product-framework.md "What happens" step',n,'has',len(items.get(n,[])),'items but the playbook has',c,'sub-steps'); probs+=1
 gates={m.group(1):m.group(2).strip() for m in re.finditer(r'^\| \*\*(\d)\. [^*]+\*\* \|[^|]+\|[^|]+\| ([^|]+) \|$',fw,re.M)}
+if len(gates)!=6: print('product-framework.md: could not read the six gates, so the gate checks did not run'); probs+=1
 rw=open('memos/role-workflow.md').read()
 for m in re.finditer(r'^\| (\d)\. [^|]+\|[^|]+\|[^|]+\| ([^|]+) \|$',rw,re.M):
     if m.group(2).strip()!=gates.get(m.group(1)): print('memos/role-workflow.md gate',m.group(1),'differs from product-framework.md'); probs+=1

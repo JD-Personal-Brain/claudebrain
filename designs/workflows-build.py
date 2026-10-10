@@ -100,7 +100,7 @@ def chips(ts):
 def delivery_detail(b):
     tasks = "".join(f"<li>{chipify(k)} {inline(t)}</li>" for t, k in b["tasks"])
     auto = any(kind.split()[0] in ("Auto", "Draft") for _, kind in b["tasks"])
-    ag = ", ".join(b["agents"] + [f"{a} (a reusable template)" for a in b["assets"]])
+    ag = ", ".join(b["agents"] + [f"{a.replace(' (template)', '')} (a reusable template)" for a in b["assets"]])
     if not ag:
         ag = "No named agent yet" if auto else "None: this stays with a person"
     return (f'<h4><span class="num">{b["num"]}</span> {inline(b["title"])}</h4>'
