@@ -71,8 +71,8 @@ every working file (this section replaces the separate Gap Review page).
 | V5 | Read the Bank Business Briefing: the whole page, new on 2026-10-09 | Me | Nothing |
 | V8 | Read the Six-Step Product Workflow: the one-page visual, still marked Draft | Me | Nothing |
 | V12 | Read the McKinsey Use Cases page: McKinsey's five frontline AI use cases and their returns, how the RM plan covers them, and the questions it raises | Me | Nothing |
-| D7 | Move prospecting (winning new clients) earlier than wave 3? McKinsey reports its biggest revenue numbers there; outside prospect data may set the pace | Me | V12 |
 | D6 | Add AI sales coaching (personal guidance from call transcripts) as a use case? Low risk, and McKinsey reports new bankers ramping up 20% faster | Me | V12 |
+| D7 | Move prospecting (winning new clients) earlier than wave 3? McKinsey reports its biggest revenue numbers there; outside prospect data may set the pace | Me | V12 |
 | D8 | Keep autonomous lead nurturing and pricing out for now, because they conflict with "nothing reaches a client without the RM" and the fair-lending control? Claude recommends yes, revisit later with evidence | Me | V12 |
 | D1 | Is the RM framework ready to copy to other use cases? My answer on 2026-10-09: not yet. The reviews in section 2 and the work in section 3 come first | Me | Credit, the next use case, waits on this |
 

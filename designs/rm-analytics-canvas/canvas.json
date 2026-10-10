@@ -22,9 +22,9 @@
       "x": 2256,
       "y": 0,
       "w": 1280,
-      "h": 6411,
+      "h": 7805,
       "expand": "fill",
-      "title": "Part 2 · Steps 1–3"
+      "title": "Part 2 · How we deploy AI, and steps 1–3"
     },
     "Steps-4-6.dc.html": {
       "x": 3616,
@@ -54,9 +54,9 @@
       "x": 7696,
       "y": 0,
       "w": 1280,
-      "h": 3908,
+      "h": 2539,
       "expand": "fill",
-      "title": "Part 6 · How we deploy AI, and workflows"
+      "title": "Part 6 · Workflows"
     }
   },
   "createdOnFiles": {

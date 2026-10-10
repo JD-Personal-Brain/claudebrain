@@ -42,13 +42,13 @@ coaching in late stage), and negotiation (4).
 |---|---|---|
 | 1. Prospecting | Wave 3: prospect lookalikes (B8). Wave 1's weekly opportunity list finds next best opportunities in existing clients | **Partly.** New-client prospecting comes late (wave 3), and McKinsey reports its biggest numbers here |
 | 2. Lead nurturing, including cross-sell | Wave 2: referral prompts (B6) for cross-sell between teams. Nothing contacts prospects on its own | **Partly, by design.** Our rule is that nothing reaches a client without the RM, so an agent that writes to prospects by itself is out of scope today |
-| 3. Account planning and meeting prep | Wave 1: pre-meeting client brief (B2) and meeting follow-up (B3). Wave 3: RM assistant (B7) | **Covered**, and first in line |
+| 3. Account planning and meeting prep | Wave 1: pre-meeting client brief (B2). Wave 3: RM assistant (B7) | **Covered**, and first in line |
 | 4. Deal structuring and pricing | Not in the plan. The plan keeps the AI away from pricing and credit decisions (control K3) | **Not covered, by design.** Pricing touches fair-lending rules, so it would need a much higher bar |
 | 5. Coaching | Not in the plan. The onboarding coach (A6) answers "how do I use this?" only | **Not covered** |
 
 **Also in our plan, not in McKinsey's five:** early warning when a client may
-leave (B5), and call notes saved to the CRM (B4), which tackles McKinsey's
-number one problem, excessive admin.
+leave (B5), and the meeting follow-up (B3) and call notes saved to the CRM (B4),
+which tackle McKinsey's number one problem, excessive admin.
 
 **What this means:** wave 1 lines up with McKinsey's most-cited problem (meeting
 prep and admin). The gaps are coaching, which is low risk and could fit an early

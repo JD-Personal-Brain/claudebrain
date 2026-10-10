@@ -32,7 +32,7 @@ in review.
 **What I'd need:** a business sponsor, time with 6–10 RMs and their managers, named data owners, an early risk
 partner, and a willing pilot group.
 
-**How to use this plan.** The AI products are organized under five core use cases on McKinsey's framework, each with a return profile (see "Core use cases"). Sections 1–11 are the plan. Appendix A specifies
+**How to use this plan.** The AI products are organized under seven core use cases (McKinsey's five plus two of our own), each with a return profile (see "Core use cases"). Sections 1–11 are the plan. Appendix A specifies
 the product's agents in full (job, inputs, allowed actions, outputs, when it
 stops and proof it worked) and shows how the team uses the delivery machine's
 general agents, whose full specs are in the agent library. Appendix B sets out each RM workflow step by step, so the
@@ -42,8 +42,8 @@ team can build directly from them.
 
 ## Core use cases, on McKinsey's framework
 
-The AI products in this plan sit under five core use cases, the ones McKinsey
-identifies for bank front lines ("Agentic AI is here. Is your bank's frontline
+The AI products in this plan sit under seven core use cases: the five McKinsey
+identifies for bank front lines, plus two of our own ("Agentic AI is here. Is your bank's frontline
 team ready?", checked against the article's text on 2026-10-10). Each has an RM
 problem it solves and a return profile. McKinsey's numbers come from its client
 work and early pilots, so they are outside benchmarks, never our targets: our
@@ -51,13 +51,13 @@ own targets are set from the bank's data in Define.
 
 | Core use case | RM problem | Our AI products under it | Return McKinsey reports (directional) | Our measure (target set in Define) |
 |---|---|---|---|---|
-| **1. Prospecting and next best opportunities** | Too few good leads; opportunities in the book go unnoticed | Weekly opportunity list (wave 1); prospect lookalikes (wave 3) | About 30% more pipeline and 10% more revenue; twice the conversion of traditional leads | AI-sourced pipeline and wins, against the comparison group [X] |
+| **1. Prospecting and next best opportunities** | Too few good leads; opportunities in the book go unnoticed | Weekly opportunity list (wave 1); prospect lookalikes (wave 3) | About 30% more pipeline and 10% more revenue; one bank saw twice the conversion of traditional leads | AI-sourced pipeline and wins, against the comparison group [X] |
 | **2. Lead nurturing, including cross-sell** | Leads and cross-sell needs get little or no follow-up | Referral prompts (wave 2). The RM does the outreach; no agent contacts clients on its own | Two to three times more qualified leads; 5% higher conversion (early pilots) | Referrals made and won [X] |
 | **3. Account intelligence and meeting prep** | Preparing for one meeting can take half a day; insights are scattered | Pre-meeting client brief (wave 1); RM assistant (wave 3) | About 25% less prep time; 10% more time with clients | Prep time per meeting; client-facing hours [X] |
-| **4. Deal scoring and pricing** | Pricing is slow and inconsistent | None: out of scope for now, because pricing touches fair-lending rules (control K3; decision D8) | 10% margin gains; quote turnaround cut from five days to two in one case | — |
+| **4. Deal scoring and pricing** | Pricing is slow and inconsistent | None: out of scope for now, because pricing touches fair-lending rules (control K3; decision D8) | 10% margin gains; deal turnaround cut from five days to two in one case | — |
 | **5. AI sales coaching** | Training rarely sticks; good practice doesn't spread | None yet (decision D6) | Customer satisfaction up seven points; new bankers up to speed 20% faster | — |
 
-**Beyond McKinsey's five**, two more of our products have their own lines:
+**Beyond McKinsey's five**, two core use cases of our own:
 
 | Core use case | RM problem | Our AI products under it | Return McKinsey reports (directional) | Our measure (target set in Define) |
 |---|---|---|---|---|
@@ -73,7 +73,7 @@ core use case becomes one line of the value model (section 2).
 
 ## The AI products, in delivery order: a standard base, then iterate
 
-Many RM use cases are standard across banks. Building these first, using
+Many RM AI products are standard across banks. Building these first, using
 features already in Salesforce, Microsoft 365 Copilot and Power Platform, gets
 value to RMs quickly and creates the base that later, more tailored use cases
 build on. The menu below is a starting point; the sponsor and RMs pick and
@@ -201,7 +201,7 @@ Teams or Outlook (Power Automate). Use one AI path for the pilot, and add AWS
 Bedrock only where custom AI work is needed beyond what's built into
 Salesforce. Every extra platform adds build work and another review.
 
-**What ships when:** in waves of standard use cases (see *Core assumption*),
+**What ships when:** in waves of AI products (see *The AI products, in delivery order*),
 with a release every week or two in between.
 
 **The data flywheel.** The time-saving features (call notes and CRM updates
@@ -532,7 +532,7 @@ controlled results, so treat them as directional.
 | CaixaBank | Uses Salesforce Agentforce and Data Cloud, and built an AI assistant with Salesforce's AI tools to guide product applications; a specialist always finalizes the contract | [CaixaBank][caixa] (2025) |
 
 **Industry figures (directional; checked against the article's text on 2026-10-10):**
-- McKinsey says banks that rework one frontline area end to end can see about 3–15% higher revenue per RM and 20–40% lower cost to serve ([McKinsey][mck], Dec 2025).
+- McKinsey says banks that rework one frontline area end to end can see about 3–15% higher revenue per RM and 20–40% lower cost to serve ([McKinsey][mck]; ⚠️ publication date not confirmed).
 - RMs at many commercial banks spend only about 25–30% of their time in client conversations ([McKinsey][mck], same article).
 
 **What this approach takes from it:** pair insights with freed-up time; track
@@ -687,7 +687,7 @@ agent library. The table shows how this project uses each one: its RM inputs, ow
 
 ## Appendix B: Workflows
 
-Each RM-facing use case as a step-by-step flow. Every RM-facing flow (B1–B8)
+Each RM-facing AI product as a step-by-step flow. Every RM-facing flow (B1–B8)
 has one **decision point** where the RM decides, and everything is logged.
 B9 is the release routine behind them.
 

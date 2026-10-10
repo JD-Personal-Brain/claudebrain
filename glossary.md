@@ -18,7 +18,7 @@ documents against it.
 | **Sub-step** | A numbered piece of a step, from 1.0 to 6.6 (44 in all). Each has its own section in the playbook and its own card in the Steps Catalog. |
 | **Gate** | The go/no-go decision at the end of each step. A named person decides, and the decision goes in the decision log. |
 | **Governance thread** | The risk and control work that runs through every step, so that step 4 confirms what risk partners have already seen. |
-| **Core use case** | One of the five frontline use cases the RM plan is organized on (McKinsey's framework: prospecting, lead nurturing, account intelligence, deal scoring, coaching), each with an RM problem and a return profile. |
+| **Core use case** | One of the seven lines the RM plan is organized on: McKinsey's five frontline use cases (prospecting, lead nurturing, account intelligence, deal scoring, coaching) plus two of our own (admin off the RM's plate, keeping clients). Each has an RM problem and a return profile. |
 | **AI product** | A specific capability we build and release, such as the pre-meeting brief. Each sits under one core use case. |
 | **Wave** | Used two ways, so say which: a **feature wave** is a set of AI products released together, after a quick pass through Discover and Define; a **user wave** is the next group of users when a product scales (sub-step 5.7). |
 | **Pilot** | The first live use, by a small pilot group, alongside a comparison group. |
