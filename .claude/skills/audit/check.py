@@ -11,6 +11,7 @@
    quoted anywhere match the sources; the framework's "What happens" lists have one item per playbook
    sub-step; the Six-Step Workflow memo and page carry the framework's gate wording.
 8. The glossary: no word from its "Words we don't use" table appears in the core documents.
+9. Retired wording: nothing from the glossary's "Old wording we've retired" table is left anywhere people read (idea 37).
 Prints each problem and a total. 0 problems means the mechanical checks pass."""
 import subprocess
 import re,glob
@@ -165,4 +166,22 @@ for f in core:
     for i,line in enumerate(open(f).read().split('\n'),1):
         for w in bad:
             if re.search(r'\b'+re.escape(w)+r'(s|es)?\b',line,re.I): print(f+':'+str(i),'uses',repr(w),'(see the glossary\'s "Words we don\'t use")'); probs+=1
+# 9. retired wording (idea 37): nothing from the glossary's "Old wording we've retired" table is left behind
+import html as _html
+if "## Old wording we've retired" not in gl: print('glossary.md has no "Old wording we\'ve retired" heading, so the retired-wording check did not run'); probs+=1
+else:
+    ret=[]
+    for row in gl.split("## Old wording we've retired")[1].split('\n## ')[0].split('\n'):
+        m=re.match(r'^\| ([^|]+?) \| ([^|]+?) \| \d{4}-\d\d-\d\d \|$',row)
+        if m and m.group(1)!='Retired wording': ret.append((m.group(1),m.group(2)))
+    if not ret: print('glossary.md: the "Old wording we\'ve retired" table is empty'); probs+=1
+    where=sorted(set(core+glob.glob('memos/*.md')+['NOW.md','designs/library.json','designs/README.md','designs/role-workflow.html','designs/rm-analytics-plan.html']+glob.glob('designs/*-build.py')+glob.glob('designs/rm-analytics-canvas/*.dc.html')+['glossary.md']))
+    for f in where:
+        txt=open(f).read()
+        if f=='glossary.md': txt=txt.split("## Old wording we've retired")[0]
+        for i,line in enumerate(txt.split('\n'),1):
+            plain=_html.unescape(line)
+            for old,new in ret:
+                if old.lower() in plain.lower() and new.split(' (')[0].lower() not in plain.lower():
+                    print(f+':'+str(i),'still says',repr(old),'(retired; use',repr(new)+')'); probs+=1
 print("problems:",probs)

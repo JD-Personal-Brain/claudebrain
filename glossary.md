@@ -92,6 +92,26 @@ The audit flags these in the core documents. Use the word on the right.
 | signoff | sign-off | One spelling. |
 | cohort | pilot group, or comparison group | Say which group. |
 
+## Old wording we've retired
+
+When we rename something or change a count, the old wording goes here. The
+audit checker fails on any of it left in a core document, a memo, NOW.md, the
+Document Library or a designed page, so a rename can't stop halfway. A line
+that also says the new wording (a note about the change) is allowed.
+
+| Retired wording | Use instead | Retired on |
+|---|---|---|
+| five core use cases | seven core use cases | 2026-10-10 |
+| stop each use case | stop each AI product | 2026-10-10 |
+| stop each feature | stop each AI product | 2026-10-10 |
+| wave 1 use cases | wave 1 AI products | 2026-10-10 |
+| Each use case, step by step | Each AI product, step by step | 2026-10-10 |
+| machine agent | general agent | 2026-10-10 |
+| Six-step workflow visual | Six-Step Product Workflow | 2026-10-10 |
+| Agent idea: | Agent: (with the agent's M number) | 2026-10-10 |
+| (spec M | (agent library) | 2026-10-10 |
+| 19-agent library | the agent library (33 general agents) | 2026-10-10 |
+
 ## Bank terms to map
 
 Our plans depend on these, but the definitions belong to the bank. Each stays
