@@ -20,6 +20,7 @@ in by me on 2026-10-10.
 | Time with clients | "In many commercial banks, relationship managers spend just 25 to 30 percent of their time in client dialogue" |
 | Time freed | "ten to 12 hours a week returned to each banker", improving the coverage ratio (clients per banker) by about 40 percent |
 | Top problems | Excessive admin, low-quality leads, and difficult meeting prep. 53 percent cite a shortage of high-quality leads as their biggest barrier |
+| Admin at every stage | In McKinsey's exhibit of the top challenges at each stage of the banking sales funnel (Frontline Sales Survey, October 2025, 406 respondents), admin ranks first or second at all six stages: prospecting 32% (second, after low-quality leads at 37%), outreach 33%, early conversation 31% (tied), late-stage conversation 35%, negotiation 33% and deal close 37%. Shared by me as a screenshot on 2026-10-10 |
 | Where banks go wrong | "Banks are moving fastest on the least valuable tools" |
 
 ## The five use cases
@@ -47,7 +48,7 @@ coaching in late stage), and negotiation (4).
 | 5. AI sales coaching | Not in the plan. The onboarding coach (A6) answers "how do I use this?" only | **Not covered** |
 
 **Also in our plan, not in McKinsey's five:** early warning when a client may
-leave (B5), and the meeting follow-up (B3) and call notes saved to the CRM (B4),
+leave (B5), and the meeting follow-up (B3) and call notes saved to the CRM (B4), both in wave 1,
 which tackle McKinsey's number one problem, excessive admin.
 
 **What this means:** wave 1 lines up with McKinsey's most-cited problem (meeting

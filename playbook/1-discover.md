@@ -210,7 +210,7 @@ sub-step. At the end, run the automation review.
   - Agents:
     - **M5 Baseline recorder** (agent library; Power BI) that snapshots the measure on a schedule from today on. *Auto*.
     - **M6 Gate pack drafter** (agent library) pulls each sub-step's outputs into one document. *Draft*.
-- **For RM analytics:** wave 1 = pre-meeting briefs, meeting follow-ups and the weekly opportunity list (memo Step 1).
+- **For RM analytics:** wave 1 = pre-meeting briefs, meeting follow-ups, call notes into Salesforce and the weekly opportunity list (memo Step 1).
 
 ---
 

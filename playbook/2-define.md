@@ -142,7 +142,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
   - First time: **Me**. Trade-offs are judgment calls.
   - Note: which scoring questions actually changed the order.
   - Agent: **M8 Decision log drafter** (agent library) that writes log entries from meeting recaps (M365 Copilot). *Draft*.
-- **For RM analytics:** briefs, follow-ups and the opportunity list come first; call notes saved to Salesforce wait for wave 2.
+- **For RM analytics:** briefs, follow-ups, call notes saved to Salesforce and the opportunity list come first.
 
 ---
 
@@ -189,7 +189,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
   - First time: **Me** for the scope, **Draft** for the pack.
   - Note: what you copied into the gate pack by hand.
   - Agent: **M6 Gate pack drafter** (agent library) from Discover, reused here. *Draft*.
-- **For RM analytics:** wave 1 = pre-meeting briefs, meeting follow-ups and the weekly opportunity list.
+- **For RM analytics:** wave 1 = pre-meeting briefs, meeting follow-ups, call notes into Salesforce and the weekly opportunity list.
 
 ---
 
