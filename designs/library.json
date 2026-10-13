@@ -88,6 +88,14 @@
           "source": "memos/bank-business.md"
         },
         {
+          "id": "credit-market-scan",
+          "name": "Credit Market Scan",
+          "what": "What banks and vendors are deploying in the commercial credit process, and how each credit use case lines up with the RM plan's seven core use cases.",
+          "status": "Waiting for review",
+          "url": "https://claude.ai/artifact/2tySJZL41pf72igzanYbaT",
+          "source": "memos/credit-market-scan.md"
+        },
+        {
           "id": "tech-stack",
           "name": "Tech Stack Guide",
           "what": "Every technology in the job: what it is, how the bank likely uses it, and what I need to know.",
