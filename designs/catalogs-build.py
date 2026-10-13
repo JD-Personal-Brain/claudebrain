@@ -133,7 +133,7 @@ def step_card(num, name, f):
 sections = ""
 for n, step in STEPS.items():
     mine = [x for x in subs if x[0][0] == n]
-    sections += (f'<section class="grp"><div class="ahead"><h2>{n}. {E(step)} <span class="gcount">{len(mine)}</span></h2></div>'
+    sections += (f'<section class="grp"><div class="ahead"><h2 id="step{n}">{n}. {E(step)} <span class="gcount">{len(mine)}</span></h2></div>'
                  f'<div class="clist">{"".join(step_card(*x) for x in mine)}</div></section>')
 howto = ('<div class="howto"><span>Each task is marked with who does it once the machine is running:</span>'
          '<span><span class="chip k-auto">Auto</span>runs on its own</span><span><span class="chip k-draft">Draft</span>AI drafts, a person checks</span>'
@@ -183,7 +183,7 @@ def control_card(cid, name, f):
 sections = ""
 for g in groups:
     mine = [c for c in controls if c[2]["Group"] == g]
-    sections += (f'<section class="grp"><div class="ahead"><h2>{E(g)} <span class="gcount">{len(mine)}</span></h2></div>'
+    sections += (f'<section class="grp"><div class="ahead"><h2 id="{E(re.sub(r'[^a-z]+','-',g.lower()).strip('-'))}">{E(g)} <span class="gcount">{len(mine)}</span></h2></div>'
                  f'<div class="clist">{"".join(control_card(*c) for c in mine)}</div></section>')
 howto = ('<div class="note"><span class="warn">⚠️</span> Gathered from my own framework and playbook, not from Associated Bank. '
          "The bank's own control list comes from its risk partner early in the Define step, and it replaces this one where they differ. "

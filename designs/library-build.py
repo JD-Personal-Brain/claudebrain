@@ -1,7 +1,7 @@
 """Builds designs/library.html, the Document Library, from designs/library.json.
 To add a document: add it to library.json (and designs/README.md), run this, republish.
 Run: python3 designs/library-build.py"""
-import json, os
+import html, json, os, re
 from pagekit import CSS, E
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -39,8 +39,46 @@ blocks = "".join(
     f'<a class="block" href="{E(b["url"])}" target="_blank" rel="noopener" data-search="{E((b["name"] + " " + b["what"]).lower())}">'
     f'<span class="bcount">{E(b["count"])}</span><span class="name">{E(b["name"])}</span><span class="what">{E(b["what"])}</span>'
     f'<span class="status {STATUS[b["status"]]}">{E(b["status"])}</span></a>' for b in lib["building_blocks"])
-nav = '<a href="#blocks">By building block</a><a href="#docs">By document</a>' + "".join(f'<a href="#{E(a["id"])}">{E(a["name"])}<span class="count">{1 + len(a["children"])}</span></a>' for a in lib["areas"])
+nav = '<a href="#index">Index</a><a href="#blocks">By building block</a><a href="#docs">By document</a>' + "".join(f'<a href="#{E(a["id"])}">{E(a["name"])}<span class="count">{1 + len(a["children"])}</span></a>' for a in lib["areas"])
 total = len(docs)
+
+# The index: every page and its sections, read from each page's own source so it can't drift.
+# A page's sections come from its own jump menu (first <nav> with # links), else its <h2 id> headings.
+# Pages with no section links (the RM design canvas) are listed by name only.
+PAGE_FILE = {"open-items": "open-items.html", "job-description": "job-description.html", "bank-business": "bank-business.html",
+             "tech-stack": "tech-stack.html", "job-notes": "job-notes.html", "framework": "product-framework.html",
+             "delivery-machine": "delivery-machine.html", "playbook": "playbook.html", "workflow": "role-workflow.html",
+             "rm-design": None, "rm-plan": "rm-analytics-plan.html", "mckinsey-use-cases": "mckinsey-use-cases.html",
+             "prompting": "prompting.html", "workflows": "workflows.html", "agents": "agents.html", "steps": "steps.html",
+             "controls": "controls.html", "glossary": "glossary.html"}
+
+def text(h):
+    h = re.sub(r'<span class="g?count">.*?</span>', "", h)  # drop item counts like "19"
+    return html.unescape(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", h)).replace(" ,", ",").strip())
+
+def sections(page_id):
+    if page_id not in PAGE_FILE:
+        raise SystemExit(f"library-build.py: add {page_id} to PAGE_FILE (its .html file, or None)")
+    f = PAGE_FILE[page_id]
+    if not f:
+        return []
+    src = open(os.path.join(ROOT, "designs", f)).read()
+    for nav in re.findall(r"<nav[^>]*>(.*?)</nav>", src, re.S):
+        links = re.findall(r'<a[^>]*href="#([^"]+)"[^>]*>(.*?)</a>', nav, re.S)
+        if links:
+            return [(i, text(t)) for i, t in links]
+    return [(i, text(t)) for i, t in re.findall(r'<h2[^>]*\sid="([^"]+)"[^>]*>(.*?)</h2>', src, re.S)]
+
+def ientry(d):
+    secs = sections(d["id"])
+    links = "".join(f'<li><a href="{E(d["url"])}#{E(i)}" target="_blank" rel="noopener" data-search="{E(t.lower())}">{E(t)}</a></li>' for i, t in secs)
+    return (f'<div class="ientry" data-search="{E(d["name"].lower())}"><a class="ipage" href="{E(d["url"])}" target="_blank" rel="noopener">{E(d["name"])}</a>'
+            + (f'<ul class="isecs">{links}</ul>' if links else f'<p class="inone">{E(d.get("index_note", "Opens at the top"))}</p>') + '</div>')
+
+igroups = [("Building blocks", lib["building_blocks"])] + [(a["name"], [a["parent"]] + a["children"]) for a in lib["areas"]]
+index = "".join(f'<div class="igroup"><h3>{E(n)}</h3>{"".join(ientry(d) for d in ds)}</div>' for n, ds in igroups)
+nsecs = sum(len(sections(d["id"])) for _, ds in igroups for d in ds)
+npages = sum(len(ds) for _, ds in igroups)
 
 page = f'''<title>Document Library</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -87,16 +125,28 @@ page = f'''<title>Document Library</title>
 .kids li::before{{content:"";position:absolute;left:0;top:28px;width:16px;border-top:2px solid var(--line)}}
 .legend{{display:flex;flex-wrap:wrap;gap:10px 18px;font-size:14px;color:var(--muted);align-items:center}}
 .empty{{color:var(--muted)}}
+/* Index: area groups flow in columns; each page name in bold, its sections as links on a thin rule. */
+.index{{columns:3 260px;column-gap:32px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:22px 26px}}
+.igroup{{break-inside:avoid-column;margin:0 0 18px}}
+.igroup h3{{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin:0 0 8px}}
+.ientry{{break-inside:avoid;margin:0 0 12px}}
+.ipage{{font-family:var(--serif);font-weight:600;font-size:17px;color:var(--fg);text-decoration:none}}
+.ipage:hover,.isecs a:hover{{text-decoration:underline;color:var(--teal)}}
+.isecs{{list-style:none;margin:4px 0 0;padding-left:12px;border-left:2px solid var(--line);font-size:14px;line-height:1.5}}
+.isecs li{{margin:1px 0}}
+.isecs a{{color:var(--muted);text-decoration:none}}
+.inone{{margin:2px 0 0;font-size:13px;color:var(--muted);font-style:italic}}
 @media (max-width:760px){{.starts,.blocks{{grid-template-columns:1fr}}.kids{{margin-left:10px}}.kids li{{padding-left:14px}}.kids li::before{{width:10px}}}}
 </style>
 <div class="band"><div class="wrap">
 <span class="label">Everything in my Claude brain</span>
 <h1>Document Library</h1>
-<p class="lede">Everything in one place, two ways in: by building block (workflows and agents) or by document, with each document under the one it belongs to. Click any card to open it.</p>
+<p class="lede">Everything in one place: an index of every page and its sections, then two ways in: by building block (workflows and agents) or by document, with each document under the one it belongs to. Click any card to open it.</p>
 <nav class="stepnav" aria-label="Areas">{nav}</nav>
 <div class="filter"><label for="q">Find a document</label><input id="q" type="search" placeholder="Type a word, like plan, agent or prompt" autocomplete="off"></div>
 </div></div>
 <main class="wrap">
+<section id="index"><span class="label">Index</span><h2 style="margin-top:4px">Every page and its sections</h2><p class="bintro">{npages} pages, {nsecs} sections. Click a page name to open it, or a section to jump straight to it.</p><div class="index">{index}</div></section>
 <section id="blocks"><span class="label">Browse by building block</span><p class="bintro">The things people look for, pulled out of the documents into their own pages.</p><div class="blocks">{blocks}</div></section>
 <section id="docs"><span class="label">By document</span><h2 style="margin-top:4px">Start here</h2><div class="starts">{start}</div></section>
 <div class="legend"><span>Status:</span><span class="status s-use">In use</span><span class="status s-review">Waiting for review</span><span class="status s-review">Draft</span><span class="status s-review">In progress</span><span class="status s-ref">Reference</span></div>
@@ -119,6 +169,12 @@ page = f'''<title>Document Library</title>
       }});
       sec.hidden=!any;
     }});
+    document.querySelectorAll('.ientry').forEach(function(e){{
+      var pageHit=!t||e.getAttribute('data-search').indexOf(t)>-1, any=false;
+      e.querySelectorAll('.isecs li').forEach(function(li){{var hit=pageHit||li.firstChild.getAttribute('data-search').indexOf(t)>-1;li.hidden=!hit;if(hit)any=true;}});
+      e.hidden=!(pageHit||any); if(!e.hidden)shown++;
+    }});
+    document.querySelectorAll('.igroup').forEach(function(g){{g.hidden=!g.querySelector('.ientry:not([hidden])');}});
     none.hidden=shown>0;
   }});
 }})();

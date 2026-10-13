@@ -154,7 +154,8 @@
         "what": "The design page: the one-page summary and the full plan in six parts, side by side.",
         "status": "Waiting for review",
         "url": "https://claude.ai/artifact/3c7ZxKjJcjWRyV7BbzKfhY",
-        "source": "memos/rm-analytics-framework.md"
+        "source": "memos/rm-analytics-framework.md",
+        "index_note": "Summary and the full plan in six parts, side by side. Its sections are listed under RM Analytics Plan."
       },
       "children": [
         {
