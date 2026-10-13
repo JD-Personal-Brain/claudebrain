@@ -1,6 +1,6 @@
 # NOW: start here
 
-_Last updated: 2026-10-10 · Last review: none yet (first one due around 2026-10-14)_
+_Last updated: 2026-10-13 · Last review: none yet (first one due around 2026-10-14)_
 
 ## Where things stand
 - The Claude brain is set up: rule book, profile, learning files, ideas list and eleven skills: log-lesson, wrap-up, designed-doc, write-prompt, run-tests, prototype, new-use-case, audit, make-skill, agent-spec and (new 2026-10-09) documents.
@@ -49,6 +49,7 @@ _Last updated: 2026-10-10 · Last review: none yet (first one due around 2026-10
 - **Call notes moved into the first release** (2026-10-10, merged into main as pull request #63; decision C14 in the Open Items log): the RM plan now puts "call notes into Salesforce" in wave 1, live with the client brief and opportunity list in about weeks 4–6, instead of wave 2. Why: McKinsey's survey of about 400 bankers ranks admin a top-two problem at every stage of the sales funnel. Updated in the plan, summary, design page, scrolling page, playbook and briefings. The same McKinsey survey also points to two areas the plan leaves out: pricing (decision D8: keep it out for now?) and AI sales coaching (decision D6: add it?).
 - **Two safeguards added** (2026-10-10, ideas 38 and 39): before editing any designed page, Claude checks that the live page isn't newer than its saved copy, so two sessions can't overwrite each other; and every outside chart I share is saved with its numbers and source in the matching memo (rule R24).
 - **Page links checked** (2026-10-10): I reported links landing in the wrong place or with the top cut off. Claude clicked about 150 jump links on every page, at desktop and phone width, and all landed correctly; it couldn't reproduce the problem from here. I said it's fine for now. If it comes back, note the page, the link and the app (desktop, Chrome or phone), ideally with a screenshot.
+- **Session 2026-10-13:** I tried a dark, terminal-style version of the delivery machine page (a style I'd seen on X) and didn't like it, so it was deleted and nothing was added to the library. The old `prompt-email-example` branch holds nothing new (all of it is in main); deleting it is item W25 in the Open Items log, because Claude's delete was blocked.
 - First prototype made: a calculator (v1, then v2 with green buttons). It was practice and has nothing to do with the job. The prototyping process is under agreements below.
 
 ## What's next
