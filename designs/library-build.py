@@ -70,10 +70,14 @@ def sections(page_id):
     return [(i, text(t)) for i, t in re.findall(r'<h2[^>]*\sid="([^"]+)"[^>]*>(.*?)</h2>', src, re.S)]
 
 def ientry(d):
+    # One row per page. Pages with sections are a twisty: click the row to open its sections; click the name to open the page.
     secs = sections(d["id"])
+    name = f'<a class="ipage" href="{E(d["url"])}" target="_blank" rel="noopener">{E(d["name"])}</a>'
+    if not secs:
+        return f'<div class="ientry plain" data-search="{E(d["name"].lower())}">{name}<span class="ic">{E(d.get("index_note", "Opens at the top"))}</span></div>'
     links = "".join(f'<li><a href="{E(d["url"])}#{E(i)}" target="_blank" rel="noopener" data-search="{E(t.lower())}">{E(t)}</a></li>' for i, t in secs)
-    return (f'<div class="ientry" data-search="{E(d["name"].lower())}"><a class="ipage" href="{E(d["url"])}" target="_blank" rel="noopener">{E(d["name"])}</a>'
-            + (f'<ul class="isecs">{links}</ul>' if links else f'<p class="inone">{E(d.get("index_note", "Opens at the top"))}</p>') + '</div>')
+    return (f'<details class="ientry" data-search="{E(d["name"].lower())}"><summary>{name}<span class="ic">{len(secs)} sections</span></summary>'
+            f'<ul class="isecs">{links}</ul></details>')
 
 igroups = [("Building blocks", lib["building_blocks"])] + [(a["name"], [a["parent"]] + a["children"]) for a in lib["areas"]]
 index = "".join(f'<div class="igroup"><h3>{E(n)}</h3>{"".join(ientry(d) for d in ds)}</div>' for n, ds in igroups)
@@ -126,16 +130,25 @@ page = f'''<title>Document Library</title>
 .legend{{display:flex;flex-wrap:wrap;gap:10px 18px;font-size:14px;color:var(--muted);align-items:center}}
 .empty{{color:var(--muted)}}
 /* Index: area groups flow in columns; each page name in bold, its sections as links on a thin rule. */
-.index{{columns:3 260px;column-gap:32px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:22px 26px}}
+.index{{columns:2 380px;column-gap:24px}}
 .igroup{{break-inside:avoid-column;margin:0 0 18px}}
-.igroup h3{{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin:0 0 8px}}
-.ientry{{break-inside:avoid;margin:0 0 12px}}
-.ipage{{font-family:var(--serif);font-weight:600;font-size:17px;color:var(--fg);text-decoration:none}}
-.ipage:hover,.isecs a:hover{{text-decoration:underline;color:var(--teal)}}
-.isecs{{list-style:none;margin:4px 0 0;padding-left:12px;border-left:2px solid var(--line);font-size:14px;line-height:1.5}}
-.isecs li{{margin:1px 0}}
-.isecs a{{color:var(--muted);text-decoration:none}}
-.inone{{margin:2px 0 0;font-size:13px;color:var(--muted);font-style:italic}}
+.igroup h3{{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin:0 0 6px}}
+.ientry{{background:var(--card);border:1px solid var(--line);border-radius:8px;margin:0 0 6px;break-inside:avoid}}
+.ientry>summary,.ientry.plain{{display:flex;align-items:baseline;gap:12px;padding:10px 16px}}
+.ientry>summary{{cursor:pointer;list-style:none}}
+.ientry>summary::-webkit-details-marker{{display:none}}
+.ientry>summary::before{{content:"\\25B8";color:var(--teal);width:12px;flex:none}}
+.ientry[open]>summary::before{{content:"\\25BE"}}
+.ientry>summary:focus-visible{{outline:2px solid var(--teal);outline-offset:2px;border-radius:8px}}
+.ientry[open]{{border-color:var(--teal)}}
+.ipage{{font-family:var(--serif);font-weight:600;font-size:17px;color:var(--fg);text-decoration:none;margin-right:auto}}
+.ipage:hover{{text-decoration:underline;color:var(--teal)}}
+.ic{{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap}}
+.ientry.plain{{flex-wrap:wrap;row-gap:2px}}
+.isecs{{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0 16px 12px}}
+.isecs li{{margin:0}}
+.isecs a{{display:block;font-size:13px;border:1px solid var(--line);border-radius:999px;padding:3px 10px;color:var(--fg);text-decoration:none}}
+.isecs a:hover{{border-color:var(--teal);color:var(--teal)}}
 @media (max-width:760px){{.starts,.blocks{{grid-template-columns:1fr}}.kids{{margin-left:10px}}.kids li{{padding-left:14px}}.kids li::before{{width:10px}}}}
 </style>
 <div class="band"><div class="wrap">
@@ -146,7 +159,7 @@ page = f'''<title>Document Library</title>
 <div class="filter"><label for="q">Find a document</label><input id="q" type="search" placeholder="Type a word, like plan, agent or prompt" autocomplete="off"></div>
 </div></div>
 <main class="wrap">
-<section id="index"><span class="label">Index</span><h2 style="margin-top:4px">Every page and its sections</h2><p class="bintro">{npages} pages, {nsecs} sections. Click a page name to open it, or a section to jump straight to it.</p><div class="index">{index}</div></section>
+<section id="index"><span class="label">Index</span><h2 style="margin-top:4px">Every page and its sections</h2><p class="bintro">{npages} pages, {nsecs} sections. Click the arrow (&#9656;) to see a page&#x27;s sections, then click one to jump to it. Click a page name to open the page.</p><div class="index">{index}</div></section>
 <section id="blocks"><span class="label">Browse by building block</span><p class="bintro">The things people look for, pulled out of the documents into their own pages.</p><div class="blocks">{blocks}</div></section>
 <section id="docs"><span class="label">By document</span><h2 style="margin-top:4px">Start here</h2><div class="starts">{start}</div></section>
 <div class="legend"><span>Status:</span><span class="status s-use">In use</span><span class="status s-review">Waiting for review</span><span class="status s-review">Draft</span><span class="status s-review">In progress</span><span class="status s-ref">Reference</span></div>
@@ -170,9 +183,11 @@ page = f'''<title>Document Library</title>
       sec.hidden=!any;
     }});
     document.querySelectorAll('.ientry').forEach(function(e){{
-      var pageHit=!t||e.getAttribute('data-search').indexOf(t)>-1, any=false;
-      e.querySelectorAll('.isecs li').forEach(function(li){{var hit=pageHit||li.firstChild.getAttribute('data-search').indexOf(t)>-1;li.hidden=!hit;if(hit)any=true;}});
-      e.hidden=!(pageHit||any); if(!e.hidden)shown++;
+      // A page shows if its name or any section matches; while searching, a twisty opens when one of its sections matches.
+      var pageHit=!t||e.getAttribute('data-search').indexOf(t)>-1, secHit=false;
+      e.querySelectorAll('.isecs a').forEach(function(a){{var hit=!!t&&a.getAttribute('data-search').indexOf(t)>-1;a.parentElement.hidden=!(pageHit||hit);if(hit)secHit=true;}});
+      e.hidden=!(pageHit||secHit); if(!e.hidden)shown++;
+      if(e.tagName==='DETAILS')e.open=secHit;
     }});
     document.querySelectorAll('.igroup').forEach(function(g){{g.hidden=!g.querySelector('.ientry:not([hidden])');}});
     none.hidden=shown>0;
