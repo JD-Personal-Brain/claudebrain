@@ -27,7 +27,7 @@ Claude updates it at every wrap-up: finished items move to "Closed" with the dat
 | Stage 2. Make the machine runnable | 4 | What Claude builds so a real run is possible |
 | Stage 3. Dry run and fix | 3 | Running the machine once and fixing it |
 | Stage 4. Get ready for Andy | 10 | What Andy sees, and what I ask him |
-| Alongside the path | 13 | Useful any time; doesn't block a stage. Dated items first |
+| Alongside the path | 12 | Useful any time; doesn't block a stage. Dated items first |
 | Inside the bank | 21 | Questions only someone at the bank can answer |
 | Parked on purpose | 3 | Not forgotten; waiting for a signal from me |
 
@@ -131,7 +131,6 @@ Useful any time; none of these blocks a stage. Dated ones first.
 | W8 | Try the newer skills on real work: "prototype X", "write a prompt for X", "new use case: X" | Me | Nothing |
 | W11 | Fewer approval pop-ups (idea 2, approved): tell Claude which pop-ups I still see and in which app, so it can pre-approve the safe, read-only ones. Claude won't change my permission settings on a guess | Me, then Claude | Nothing |
 | W12 | Playbooks for my everyday tools (idea 3, approved): name two or three tasks I repeat in email, calendar or documents. Claude turns each into a step-by-step skill | Me, then Claude | Nothing |
-| W25 | Delete the old `prompt-email-example` branch on GitHub. Everything on it is already in main; Claude's delete was blocked by a permission setting. Steps: GitHub → claudebrain → Branches → trash icon next to it | Me | Nothing |
 | W24 | Jump-link check (idea 40, suggested 2026-10-10): add a test to the page check that clicks every link that jumps within a page and fails if it lands in the wrong place. Waits on my yes or no | Me, then Claude | Nothing |
 
 ## Inside the bank
@@ -189,5 +188,6 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C13 | Was W23 (idea 37): yes. The audit checker now fails on any old wording left after a rename, from a new "Old wording we've retired" table in the glossary | 2026-10-10 |
 | C14 | Call notes into Salesforce moved from wave 2 into wave 1, live with the insights about weeks 4–6, because McKinsey's banker survey ranks admin a top-two problem at every stage of the sales funnel | 2026-10-10 |
 | C15 | Was D10: yes to ideas 38 and 39. Before editing a designed page, Claude now checks that the live page isn't newer than the repo copy (a step in the designed-doc skill), and every outside chart I share is saved with its numbers and source in the matching memo (rule R24) | 2026-10-10 |
+| C16 | Was W25: the old `prompt-email-example` branch is deleted. Everything on it was already in main | 2026-10-13 |
 
 _Last updated: 2026-10-13_
