@@ -1,6 +1,6 @@
 """Builds designs/workflows.html, the Workflow Maps: each main process as a
 left-to-right spine of stages, with its sub-processes branching underneath.
-Click a branch to see its details. Reads playbook/*.md, product-framework.md
+Click a branch to see its details. Reads playbook/*.md, delivery-machine.md
 and the RM memo's Appendix B, so the maps never drift from the documents.
 Run: python3 designs/workflows-build.py"""
 import os, re
@@ -12,7 +12,7 @@ PLAYBOOK_URL = "https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4"
 RM_PLAN_URL = "https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk"
 
 # ---------- Map 1: delivering a product (six steps -> 44 sub-steps) ----------
-fw = read("product-framework.md")
+fw = read("delivery-machine.md")
 kinds = {}
 for m in re.finditer(r"^\| (\d\.\d) \| ([^|]+) \| ([^|]+) \|", fw, re.M):
     kinds.setdefault(m.group(1), []).append((m.group(2).strip(), m.group(3).strip()))
@@ -214,7 +214,7 @@ page = f'''<title>Workflow Maps</title>
 <div class="howto"><span>Reading the maps:</span><span>Big navy box = a stage of the main process</span><span>Small box = a sub-process</span><span><span class="chip k-auto">Auto</span><span class="chip k-draft">Draft</span><span class="chip k-me">Me</span><span class="chip k-partner">Partner</span> = who does its tasks</span><span>◆ = a go/no-go gate</span></div>
 <section id="deliver" class="mapwrap">
 <div class="stephead"><span class="label">Map 1 · every product</span><h2>How we deliver a product</h2>
-<p class="intro" style="margin-top:6px;color:var(--muted)">The six steps of the product framework, each ending in a gate, with its {n_sub} sub-steps underneath. After the first pass, steps 3 to 6 repeat in short cycles.</p></div>
+<p class="intro" style="margin-top:6px;color:var(--muted)">The six steps of the Six-Step Product Workflow, each ending in a gate, with its {n_sub} sub-steps underneath. After the first pass, steps 3 to 6 repeat in short cycles.</p></div>
 {map1}
 </section>
 <section id="rm" class="mapwrap">
@@ -224,7 +224,7 @@ page = f'''<title>Workflow Maps</title>
 {map2}
 {loop}
 </section>
-<footer>Built from <code>playbook/</code>, <code>product-framework.md</code> and the RM memo's Appendix B by <code>designs/workflows-build.py</code>. Tasks marked ⚠️ depend on the bank allowing automations.</footer>
+<footer>Built from <code>playbook/</code>, <code>delivery-machine.md</code> and the RM memo's Appendix B by <code>designs/workflows-build.py</code>. Tasks marked ⚠️ depend on the bank allowing automations.</footer>
 </main>
 <script>
 (function(){{

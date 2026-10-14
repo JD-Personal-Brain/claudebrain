@@ -1,8 +1,11 @@
 # Playbook: the field manual under the delivery machine
 
-`product-framework.md` says **what** happens in each step and marks each task
-Auto, Draft or Me (or Partner, for sign-offs). This folder says **how to do it the first time**, sub-step
-by sub-step, and what to watch so the second time can be automated.
+Page 4 of the four "How we deliver" pages. The Six-Step Product Workflow
+(`memos/role-workflow.md`) shows the steps, the Product Framework
+(`product-framework.md`) sets the rules, and the Delivery Machine
+(`delivery-machine.md`) marks each task Auto, Draft, Me or Partner. This folder
+says **how to do it the first time**, sub-step by sub-step, and what to watch so
+the second time can be automated.
 
 **Read it as a designed page:** https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4 (built from these files by `designs/playbook-build.py`; edit the .md files here, then rebuild and republish).
 
@@ -18,7 +21,7 @@ in order, and fill in its **first-time log** as you go.
 | 4. Govern and test | `4-govern-and-test.md` | In use, reviewed 2026-10-14 |
 | 5. Release and adopt | `5-release-and-adopt.md` | In use, reviewed 2026-10-14 |
 | 6. Measure and iterate | `6-measure-and-iterate.md` | In use, reviewed 2026-10-14 |
-| Agent library | `agents.md` | 33 general agents (M1 to M33); shown on the Agent Library page |
+| Agent library | `agents.md` | 33 general agents (M1 to M33); a short list closes the playbook page, and the full specs are on the Agent Library page |
 | Controls | `controls.md` | 25 controls (K1 to K25); shown on the Controls Catalog page |
 
 ## How every sub-step is written
@@ -49,6 +52,6 @@ never wrote down.
 - **No client data in an AI tool the bank hasn't approved**, even for a quick test.
 - **Guesses about the bank are marked ⚠️** until confirmed. Replace them with facts as I learn them, and note the source.
 - **Numbers we don't have yet are [X].** Never invent them.
-- **At the gate,** run the automation check from `product-framework.md` on every Me and Draft task, and update the step's table there.
+- **At the gate,** run the automation check from `delivery-machine.md` on every Me and Draft task, and update the step's table there.
 
-_Last updated: 2026-10-09_
+_Last updated: 2026-10-14_

@@ -26,7 +26,7 @@ sub-step. At the end, run the automation review.
   1. Write one sentence about the project: "We want to [outcome] for [users], measured by [measure]."
   2. Meet the sponsor (30 minutes). Confirm that they own the outcome and the funding, and that they make the go/no-go call at each gate.
   3. Fill in "who's involved and who decides" (from `product-framework.md`) with real names. Mark gaps as [name needed].
-  4. Set up the tracker: copy the six steps' task tables from `product-framework.md`, then give every Discover task an owner and a date.
+  4. Set up the tracker: copy the six steps' task tables from `delivery-machine.md`, then give every Discover task an owner and a date.
   5. Brief a model risk contact in 15 minutes: what the idea is, what data it might use, and that nothing touches clients yet. Ask what they'll need to see in Define.
   6. Start the decision log and the risk/issue list (both empty is fine).
   7. Create the project file: `memos/<project>.md`.
@@ -228,7 +228,7 @@ sub-step. At the end, run the automation review.
 
 Run the three questions (Repeat? Stable? Safe alone?) on every Me and Draft
 task, using your first-time logs. Then update this shortlist and the Discover
-table in `product-framework.md`.
+table in `delivery-machine.md`.
 
 | Sub-step | Agent | First time | Aim for | Already specified? |
 |---|---|---|---|---|
@@ -243,7 +243,7 @@ table in `product-framework.md`.
 | 1.7 | Baseline recorder | Me | Auto | Yes, M5 |
 | 1.7 | Gate pack drafter | Draft | Draft | Yes, M6 |
 
-**First time** = how the task is done on the first project. **Aim for** = its kind in `product-framework.md`.
+**First time** = how the task is done on the first project. **Aim for** = its kind in `delivery-machine.md`.
 
 **Rule for this table:** a new agent gets a full spec (mission, inputs,
 allowed actions, outputs, stop condition, proof it worked, person in charge)

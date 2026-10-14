@@ -18,36 +18,36 @@
     {
       "id": "deliver",
       "name": "How we deliver",
-      "why": "The product process that takes every AI product from idea to adoption.",
+      "why": "The product process that takes every AI product from idea to adoption. Four pages, read in this order: the steps, the rules, the operating model, the field manual.",
       "items": [
-        {
-          "id": "framework",
-          "name": "Product Framework",
-          "what": "The six steps every product goes through, each with a go/no-go gate, and the rules that keep it governed.",
-          "status": "In use",
-          "url": "https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ",
-          "source": "product-framework.md"
-        },
         {
           "id": "workflow",
           "name": "Six-Step Product Workflow",
-          "what": "A one-page visual of the six steps for the role.",
+          "what": "Start here: the six steps every AI product goes through, what happens in each, and the go/no-go gate that ends each one.",
           "status": "In use",
           "url": "https://claude.ai/artifact/8Nm5fkdicn2Gu5VmNVTvYv",
           "source": "memos/role-workflow.md"
         },
         {
+          "id": "framework",
+          "name": "Product Framework",
+          "what": "The rules every product follows: who decides, the five kinds of measures, the quality bar, the AI principles and how each step is written up.",
+          "status": "In use",
+          "url": "https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ",
+          "source": "product-framework.md"
+        },
+        {
           "id": "delivery-machine",
           "name": "The Delivery Machine",
-          "what": "How one product manager runs many projects at once: every task marked Auto, Draft, Me or Partner.",
+          "what": "The operating model: every task in every step marked Auto, Draft, Me or Partner, the automation check, and how one product manager runs many projects at once.",
           "status": "In use",
           "url": "https://claude.ai/artifact/S8Wbygy24cjguTMxZsN2QF",
-          "source": "product-framework.md"
+          "source": "delivery-machine.md"
         },
         {
           "id": "playbook",
           "name": "Delivery Playbook",
-          "what": "The field manual: how to run each of the 44 sub-steps the first time, plus the 33 general agents that run the delivery machine. All 40 agents, including the RM product's own 6, are on the Agent Library.",
+          "what": "The field manual: how to run each of the 44 sub-steps the first time and what to log, plus a short list of the 33 general agents. Their full specs are on the Agent Library.",
           "status": "In use",
           "url": "https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4",
           "source": "playbook/"
@@ -148,7 +148,7 @@
           "count": "44 sub-steps",
           "status": "Reference",
           "url": "https://claude.ai/artifact/8UncWMYUq7hsJUhn5NSYEB",
-          "source": "playbook/, product-framework.md"
+          "source": "playbook/, delivery-machine.md"
         },
         {
           "id": "controls",
@@ -175,7 +175,7 @@
           "count": "2 maps · 53 branches",
           "status": "Reference",
           "url": "https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX",
-          "source": "playbook/, product-framework.md, RM memo Appendix B"
+          "source": "playbook/, delivery-machine.md, RM memo Appendix B"
         }
       ]
     },

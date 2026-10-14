@@ -152,13 +152,14 @@ Output:   A subject line, then the email: a one-line thank-you,
 ```
 
 ## Example 4: a full product memo (like the RM analytics memo)
-Builds a plan for a new use case from my saved files. The four files go in as
+Builds a plan for a new use case from my saved files. The five files go in as
 Inputs, in tags (tip 4), and the request comes last (tip 6). Step 4 is
 "draft, check, improve" (tip 9). Expect a strong first draft: the RM memo took
-7 rounds, so follow up with an audit against `product-framework.md`, then a fix round.
+7 rounds, so follow up with an audit against `memos/role-workflow.md` and `product-framework.md`, then a fix round.
 
 ```
 Inputs:   <job_description> [job-description.md] </job_description>
+          <workflow> [memos/role-workflow.md] </workflow>
           <framework> [product-framework.md] </framework>
           <tech_stack> [tech-stack.md] </tech_stack>
           <my_notes> [what the hiring leader told me] </my_notes>
@@ -172,8 +173,8 @@ Context:  The first use case is AI-powered analytics for relationship
           bank wants working versions quickly, so plan a standard base
           of use cases rolled out in waves, then iterate.
 
-Steps:    1. Organize the plan by the six steps in <framework>, using
-             its write-up layout for each step.
+Steps:    1. Organize the plan by the six steps in <workflow>, using
+             the write-up layout in <framework> for each step.
           2. Add a table showing where the plan covers each
              accountability in <job_description>.
           3. Use only tools named in <tech_stack>.
@@ -204,7 +205,6 @@ quarter when new results come out; the output is `memos/bank-business.md`.
 
 ```
 Inputs:   <job_description> [job-description.md] </job_description>
-          <framework> [product-framework.md] </framework>
           <value_model> [section 2, "The value model", of
           memos/rm-analytics-framework.md] </value_model>
           <tech_stack> [tech-stack.md] </tech_stack>
@@ -328,4 +328,4 @@ Add these to prompts written for me, when they fit:
 - [ ] Does each rule have a reason?
 - [ ] If the feel matters, is the tone specific (one main feel)?
 
-_Last updated: 2026-10-09_
+_Last updated: 2026-10-14_

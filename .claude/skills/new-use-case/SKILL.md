@@ -6,7 +6,8 @@ description: Draft a full product plan (memo) for a new AI use case at Associate
 # Plan a new use case
 
 This turns one line ("new use case: treasury management officers") into a memo
-organized by the six steps in `product-framework.md`, like the RM analytics
+organized by the six steps in `memos/role-workflow.md` and following the rules in
+`product-framework.md`, like the RM analytics
 memo (`memos/rm-analytics-framework.md`), which is the worked example.
 
 ## 1. Confirm the basics
@@ -19,7 +20,7 @@ Don't ask for anything already in the repo (rule R6).
 ## 2. Draft the memo
 Use Example 4 in `prompting.md` as the brief, with this use case's Context and
 user group swapped in. In short:
-- Organize by the six steps, each with the framework's write-up layout.
+- Organize by the six steps (`memos/role-workflow.md`), each with the write-up layout in `product-framework.md`.
 - Organize the AI products under the seven core use cases, as the RM plan does: for this user group, each core use case's counterpart (see `glossary.md`, and the Portfolio Manager Core Use Cases page for an example).
 - Use only tools named in `tech-stack.md`. Keep the AI assistive (AI suggests, a person decides).
 - Use [X] for numbers we don't have, never invented ones. Every outside fact gets a source, or is marked "I do not have a verified source for this."
@@ -27,7 +28,7 @@ user group swapped in. In short:
 - Aim for a first version of about 300 to 400 lines. Leave out the RM memo's appendices (agent specs, workflows) and market scan unless the user asks; offer them as a next step.
 
 ## 3. Audit it, then fix it
-Check the draft against `product-framework.md`, point by point (rule R11):
+Check the draft against `memos/role-workflow.md` and `product-framework.md`, point by point (rule R11):
 every step has a gate, governance runs through every step, all five kinds of
 measures are there, the quality bar is set, only `tech-stack.md` tools are named,
 unknown numbers are [X], and the accountability table is complete. List the gaps, fix them, and

@@ -30,7 +30,7 @@ Claude updates it at every wrap-up: finished items move to "Closed" with the dat
 | Stage 2. Make the machine runnable | 4 | What Claude builds so a real run is possible |
 | Stage 3. Dry run and fix | 3 | Running the machine once and fixing it |
 | Stage 4. Get ready for Andy | 9 | What Andy sees, and what I ask him |
-| Alongside the path | 14 | Useful any time; doesn't block a stage. Dated items first |
+| Alongside the path | 12 | Useful any time; doesn't block a stage. Dated items first |
 | Inside the bank | 21 | Questions only someone at the bank can answer |
 | Parked on purpose | 4 | Not forgotten; waiting for a signal from me |
 
@@ -141,8 +141,6 @@ Useful any time; none of these blocks a stage. Dated ones first.
 | W21 | Try the newer skills on real work: "prototype X", "write a prompt for X", "new use case: X" | Me | Nothing |
 | W22 | Fewer approval pop-ups (idea 2, approved): tell Claude which pop-ups I still see and in which app, so it can pre-approve the safe, read-only ones. Claude won't change my permission settings on a guess | Me, then Claude | Nothing |
 | W23 | Playbooks for my everyday tools (idea 3, approved): name two or three tasks I repeat in email, calendar or documents. Claude turns each into a step-by-step skill | Me, then Claude | Nothing |
-| W24 | Jump-link check (idea 40, suggested 2026-10-10): add a test to the page check that clicks every link that jumps within a page and fails if it lands in the wrong place. Waits on my yes or no | Me, then Claude | Nothing |
-| W25 | Scout run check (idea 45, suggested 2026-10-14): at the start of each session, Claude checks the bank news scout's last scheduled run and tells me if it failed or stalled. Waits on my yes or no | Me, then Claude | Nothing |
 
 ## Inside the bank
 
@@ -158,17 +156,17 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | B13 | What share of commercial clients use treasury management? (from: Bank Business Briefing, section 9) | The bank | Starting at the bank |
 | B14 | Does Finance accept costs saved and loan losses avoided as returns, as well as new revenue? (from: Bank Business Briefing, section 9) | The bank | Starting at the bank |
 | B15 | Who owns the client data in Snowflake and Salesforce, and which data lives where? (from: RM plan, section 11; playbook sub-step 2.3 (the data contract)) | The bank | Starting at the bank |
-| B16 | How is each platform set up for RMs today: which features, licenses and connections? Which Salesforce products does the bank own? Every tool named in the delivery machine's task tables is a guess until this is known (from: RM plan, section 11; Tech Stack Guide; Product Framework) | The bank | Starting at the bank |
+| B16 | How is each platform set up for RMs today: which features, licenses and connections? Which Salesforce products does the bank own? Every tool named in the delivery machine's task tables is a guess until this is known (from: RM plan, section 11; Tech Stack Guide; Delivery Machine) | The bank | Starting at the bank |
 | B17 | Why does the bank have both Snowflake and Fabric, and which holds what? (from: Tech Stack Guide) | The bank | Starting at the bank |
 | B18 | Which AI models are approved, and where do they run? (from: Tech Stack Guide) | The bank | Starting at the bank |
 | B19 | Has the American National systems conversion happened, and are the acquired clients in Salesforce and Snowflake? (from: Bank Business Briefing, section 9) | The bank | Starting at the bank |
 | B20 | Who builds: my team, IT, or business staff using click-to-build tools such as Power Platform? (from: Tech Stack Guide) | The bank | Starting at the bank |
 | B21 | What does the AI governance process look like, and how long does a review usually take? (from: RM plan, section 11; Tech Stack Guide) | The bank | Starting at the bank |
-| B22 | May automations message people or update trackers by themselves? This decides how much of the delivery machine can run on its own (from: Product Framework) | The bank | Starting at the bank |
-| B23 | Which tracker tool does the bank use for projects? (from: Product Framework; agent library) | The bank | Starting at the bank |
+| B22 | May automations message people or update trackers by themselves? This decides how much of the delivery machine can run on its own (from: Delivery Machine) | The bank | Starting at the bank |
+| B23 | Which tracker tool does the bank use for projects? (from: Delivery Machine; agent library) | The bank | Starting at the bank |
 | B24 | Twenty smaller permissions (twenty-one "To confirm" items, minus the tracker question in B23) the delivery agents depend on, such as whether meeting recaps are allowed, which test environments exist and how sign-offs must be recorded. Each is listed under "To confirm" in the agent library, and one overlaps B22 (from: `playbook/agents.md`) | The bank | Starting at the bank |
 | B25 | Do RMs work mainly in Salesforce? This decides where the insights appear (from: RM plan, section 5) | The bank | Starting at the bank |
-| B26 | The numbers still shown as [X] in the RM plan and the Product Framework, such as payback months, weekly-use targets and how many projects I run at once, and the plan's week estimates. Each gets set with the bank's real figures (from: RM plan; Product Framework) | The bank | Starting at the bank |
+| B26 | The numbers still shown as [X] in the RM plan, the Six-Step Product Workflow, the Product Framework and the Delivery Machine, such as payback months, weekly-use targets and how many projects I run at once, and the plan's week estimates. Each gets set with the bank's real figures (from: RM plan; Six-Step Product Workflow; Product Framework; Delivery Machine) | The bank | Starting at the bank |
 | B27 | The 46 guesses about the bank marked ⚠️ across the six playbook steps. Each gets replaced with a fact as I learn it. Many overlap B15 to B23 (from: Delivery Playbook) | The bank | Starting at the bank |
 | B28 | The 20 bank terms listed at the end of the Glossary (such as "AI-sourced opportunity", "qualified opportunity" and "win rate"). Each is marked ⚠️ until the bank's own definition is recorded there, with its source. Many overlap B9 and B10 (from: Glossary) | The bank | Starting at the bank |
 
@@ -208,5 +206,6 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C21 | I read the Product Framework, the Six-Step Product Workflow, The Delivery Machine and the Delivery Playbook. All four are good to go and now marked In use | 2026-10-14 |
 | C22 | Rename the credit pages to match the library's "Portfolio managers" section (idea 44): yes. They're now the Portfolio Manager Core Use Cases page, the portfolio manager user workflow and the portfolio manager plan | 2026-10-14 |
 | C23 | Lock the Bank Business Briefing: audited; it now names both user groups, RMs and PMs, with a "which bankers" column, a section on PMs and a section on how the page stays current. The bank news scout is agent H1 in the Agent Library. "PM" now means portfolio manager everywhere, and "product manager" is spelled out | 2026-10-14 |
+| C24 | Ideas 40 and 45: yes. The page check now clicks every jump link on every page and fails if one lands in the wrong place, and Claude checks the bank news scout's last run at the start of each session | 2026-10-14 |
 
 _Last updated: 2026-10-14_

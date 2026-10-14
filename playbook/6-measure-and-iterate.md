@@ -124,9 +124,9 @@ log (see `README.md`) for every sub-step.
   1. Read back through the first-time logs from steps 1 to 6.
   2. Total the time per step, and mark where you waited longest.
   3. For each agent idea that passed the three-question check, decide: build it now, later, or never.
-  4. Update the task tables in `product-framework.md` (Auto, Draft or Me) and this playbook with what you learned.
+  4. Update the task tables in `delivery-machine.md` (Auto, Draft or Me) and this playbook with what you learned.
   5. Write a one-page "what I'd do differently" note for the next project.
-- **Output:** an updated framework and playbook, a build list of agents, and the lessons note.
+- **Output:** updated Delivery Machine task tables, Product Framework and playbook, a build list of agents, and the lessons note.
 - **Done when:** the next project can start from the updated files.
 - **Automation watch:**
   - First time: **Me**.
@@ -157,6 +157,6 @@ log (see `README.md`) for every sub-step.
 | 6.5 | M33 Improvement scout | Draft | Draft | Yes, M33 |
 | 6.6 | Log summarizer | Me | Draft | Yes, M19 |
 
-**First time** = how the task is done on the first project. **Aim for** = its kind in `product-framework.md`.
+**First time** = how the task is done on the first project. **Aim for** = its kind in `delivery-machine.md`.
 
 _Last updated: 2026-10-09_

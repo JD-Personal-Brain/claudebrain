@@ -1,233 +1,109 @@
-# Product framework: how I organize product work
+# Product framework: the rules every product follows
 
-Claude loads this every session. Whenever we plan or work on a product, we
-organize it by these six steps.
+Claude loads this every session and applies these rules whenever we plan or
+work on a product.
 
-> **Source.** Taken from my RM analytics memo (`memos/rm-analytics-framework.md`,
-> memo v6, 2026-10-08) with the RM details removed. Memo v8 (2026-10-09) follows
-> the same six steps and gates and is the full worked example, with agent specs
-> and workflows in its appendices. Its sub-steps are tailored to RM work and
-> aren't yet numbered like the playbook's 44; that's part of applying the
-> delivery machine to the RM memo (work item W8 in the Open Items log). It's still waiting for my review, so update this page if the review
-> changes the steps.
+Page 2 of the four "How we deliver" pages, read in this order:
+1. **Six-Step Product Workflow** (`memos/role-workflow.md`): the six steps (Discover, Define, Build, Govern and test, Release and adopt, Measure and iterate), what happens in each, and their go/no-go gates.
+2. **Product Framework** (this page): the rules every product follows.
+3. **Delivery Machine** (`delivery-machine.md`): every task in every step, marked Auto, Draft, Me or Partner, and how one product manager runs many projects at once.
+4. **Delivery Playbook** (`playbook/`): how to do each of the 44 sub-steps the first time.
 
-## The six steps at a glance
-Each step ends in a **go/no-go gate**. The first pass through all six is fast.
-After that, steps 3 to 6 repeat in short cycles, and each new set of features
-takes a quick pass through Discover and Define. **Governance runs through every
-step.** Step 4 is the formal approval, not the first time risk partners see the product.
+## Who's involved and who decides
+Agree this at the start of Discover (sub-step 1.0), with real names. Gaps are
+written as [name needed] until they're filled.
 
-| Step | Question it answers | Governance thread | Gate (go/no-go) |
-|---|---|---|---|
-| **1. Discover** | Which problem or opportunity is worth solving first? | Risk partners briefed on the idea | Sponsor agrees on the target, the measure and today's baseline |
-| **2. Define** | What exactly do we build first, and how will we know it worked? | Risk intake and early rating; data use approved | Brief, data contract and risk rating agreed; value model shows payback within [X] months |
-| **3. Build** | What's the smallest version users will use and trust? | Controls built in; test set created | Meets the quality bar in testing; every control has proof |
-| **4. Govern and test** | Is it safe, fair and controlled? | Formal validation and sign-offs | All sign-offs recorded; monitoring plan agreed |
-| **5. Release and adopt** | Will users use it every week? | Live monitoring; incident process | Weekly use and results hit targets; no serious incidents; long-term owner confirmed before scaling |
-| **6. Measure and iterate** | Is it delivering the outcome, and what comes next? | Ongoing monitoring | Each month (and at the end of each feature wave): keep, change or stop each AI product; each quarter: invest more, adjust or stop overall |
+| Who | What they decide or do | Where they come in |
+|---|---|---|
+| Sponsor | The outcome, the funding and the go/no-go at every gate | Every gate; the step 4 gate together with risk |
+| User leaders and pilot users | How the work is done today, and feedback on the product | Discover (interviews, mock-up), Release and adopt (pilot) |
+| Product manager (this role) | Scope, priorities and trade-offs; owns the product until a long-term owner is named | Every step |
+| Long-term owner | Holds the product after launch, for example someone in a revenue line; identified during the project | Named in Define if known (2.8), confirmed before scaling (5.7) |
+| Data owners | What data may be used; they sign the data contract | Define (2.3), Build (3.2) |
+| Platform teams | The technical design | Define (2.2), Build |
+| Model risk | The risk rating and the approval | Briefed in Discover (1.0), rating in Define (2.4), approval in Govern and test |
+| Compliance, privacy and security | The controls and their sign-off | Govern and test (4.2 to 4.7) |
+| Operations | Running the product day to day | The monitoring plan (4.8), then after launch |
 
-## What happens in each step
-One item per playbook sub-step, in the same order (1.0 to 6.6).
-- **1. Discover:** kick off the project (sponsor, who decides, tracker, risk briefing) · frame the outcome with the sponsor · size the opportunity with real data · interview and shadow users · map where their time goes · understand how they're measured and rewarded · test a rough mock-up · pick the first target and record today's numbers.
-- **2. Define:** write the problem and the outcome (one sentence each, measurable) · choose the platform and delivery path · define the data contract (exact fields, freshness, quality checks) · start the risk intake and list the control requirements · write user stories and acceptance criteria · set priorities and record the trade-offs · set the measures (the five kinds, below), quality bar and value model · scope the first release and the pilot group.
-- **3. Build:** design the solution and choose the AI capabilities (agents, retrieval with sources, data flows, workflow automations or system integrations) · prepare trusted data · build the logic: simple rules first, AI explains (it doesn't invent) · build in the controls · deliver it where users work, with the source behind every answer and one-click feedback · build the test set (real examples with known good answers) · test against the quality bar.
-- **4. Govern and test:** confirm the risk rating and register the product · review data and privacy · gather the testing evidence (accuracy, made-up answers, red-teaming) · check fairness · confirm the controls work (human approval, guardrails, audit logs) · confirm the vendor reviews · assemble the evidence pack and get sign-offs from risk, compliance, privacy and security · agree the monitoring plan.
-- **5. Release and adopt:** confirm release readiness · launch the pilot, with a comparison group · build it into routines (the core of adoption) · train users on their own work · recruit champions and celebrate wins · fix fast · scale in user waves after a go/no-go check.
-- **6. Measure and iterate:** track the measures on a live dashboard · compare with the baseline and the comparison group · re-test after every change, and watch for quality slipping ("drift") · hold the monthly keep / change / stop review · feed the next feature wave · improve the machine itself.
+**Decisions and trade-offs:** record each one in the decision log, with the
+options, who decided and why, so partners stay aligned.
 
-## Running the work (every step)
-- **Who's involved and who decides:** sponsor (outcome, funding, go/no-go) · user leaders and pilot users (workflow, feedback) · product manager (scope, priorities, trade-offs; owns the product until a long-term owner is named) · long-term owner (to be identified during the project, for example someone in a revenue line; named in Define if known, confirmed before scaling) · data owners (what data may be used) · platform teams (technical design) · model risk (risk rating, approval) · compliance, privacy and security (controls, sign-off) · operations (running it day to day). Agree this at the start of Discover.
-- **Decisions and trade-offs:** record each one with who decided and why, so partners stay aligned.
-- **Dependencies, risks and issues:** one list, each item with an owner and a date; review it weekly.
+**Dependencies, risks and issues:** one list, each item with an owner and a
+date, reviewed weekly.
 
-## The delivery machine: running many projects with one product manager
-I'm one person running several projects at once, so the framework has to run
-mostly by itself. Automation does the routine work and pushes tasks to people
-against the timeline, so my time goes only where a person is needed.
-Every project uses the same steps, tracker and templates, so they all run the
-same way side by side. *(Added 2026-10-09. Tool choices are guesses until I see
-the bank's setup: verify each one.)*
+## The five kinds of measures
+Set in Define (sub-step 2.7) and tracked in Measure and iterate. These are the
+five the job description names. Pick one or two of each per product, and
+define each one exactly (source, formula, owner) so the dashboard can be built
+from it.
 
-### Three kinds of work, plus partner sign-offs
-Every task in every step is marked as one of these:
-- **Auto (runs on its own):** a workflow or agent does it and tells the right person. No one has to remember it.
-- **Draft (AI drafts, a person checks):** AI does the first version, and a named person approves it.
-- **Me (only a person):** decisions, agreement between people, relationships and trade-offs. This is where my hours go.
-- **Partner:** a decision only a named partner can make, such as a risk or compliance sign-off. Never automated.
+| Kind | What it tells us | Example measures |
+|---|---|---|
+| Usage | Whether people use what it gives them | Answers or insights opened and acted on; drafts and briefs used |
+| Quality | Whether its answers are right and useful | Accuracy on the test set, % of answers with sources, thumbs up or down |
+| Business impact | Whether it moves the outcome the sponsor cares about | Hours saved per user, more client meetings, pipeline created, revenue won |
+| Adoption | Whether it has become part of the routine | Weekly active users, % of target users, repeat use week after week, use inside the routines managers run |
+| Risk and controls | Whether it stays safe | Incidents, human overrides, guardrail blocks, review findings |
 
-**Not sure yet:** whether the bank lets automations message people or update
-trackers by themselves. Confirm this at the first project, because it decides
-how much can be **Auto**.
+Leading measures show up within weeks (use, insights acted on, pipeline
+created); lagging ones take months (closed revenue). Report both, so a good
+start isn't mistaken for a result.
 
-### Each step's tasks, by kind
-One row per task, numbered to match the sub-steps in `playbook/`. **Kind** is the
-target once the machine is running. The first time through, many tasks are
-done one kind closer to a person, so the work can be logged before it's
-automated; each playbook step's review table shows both. The gate check below
-moves tasks toward **Auto** over time. ⚠️ marks an Auto task that depends on the
-bank allowing automations to message people.
+## The quality bar
+How good is good enough. Thresholds are set in Define (2.7) as [X] until
+agreed, the test set checks them in Build (3.6 and 3.7), and step 4 confirms
+them on the frozen version.
 
-**1. Discover**
-| # | Task | Kind | Tool (guess) | Goes to |
-|---|---|---|---|---|
-| 1.0 | Agree the sponsor's role and who decides; brief a risk contact | Me | Meeting | Sponsor, risk |
-| 1.0 | Set up the tracker, decision log and project file | Draft | M1 Kickoff pack builder | Me |
-| 1.0 | Confirm the AI tools the team may use and record them in the project file | Me | Meeting with IT and risk | Project file |
-| 1.1 | Agree the outcome and measure | Me | Meeting | Sponsor |
-| 1.1 | Write the outcome note | Draft | M2 Outcome note drafter (M365 Copilot) | Sponsor confirms |
-| 1.2 | Size the opportunity | Draft | M21 Opportunity sizer (Snowflake Cortex Analyst, Power BI) | Analyst checks, then sponsor |
-| 1.3 | Schedule interviews and shadowing | Auto ⚠️ | M3 Interview scheduler (Outlook, Power Automate) | Users |
-| 1.3 | Interview and shadow users | Me | Teams, in person | — |
-| 1.3 | Pull themes from interview notes | Draft | M20 Interview synthesizer (M365 Copilot) | Me |
-| 1.4 | Map where users' time goes | Draft | M22 Time-use analyst (Snowflake Cortex, Power BI) | Users confirm |
-| 1.5 | Learn how users are measured and rewarded | Me | Conversations | Sponsor, if there's a gap |
-| 1.6 | Build the mock-up and summarize reactions | Draft | Prototype skill, M4 Reaction summarizer | Me |
-| 1.6 | Run the reaction sessions | Me | In person, Teams | Users |
-| 1.7 | Choose the first target | Me | Meeting | Sponsor |
-| 1.7 | Record the baseline, once the measure is set | Auto | M5 Baseline recorder (Power BI) | Sponsor |
-| 1.7 | Build the gate pack | Draft | M6 Gate pack drafter | Sponsor |
-| Gate | Go/no-go | Me | Meeting | Sponsor, risk |
+| Test | What it means | Threshold |
+|---|---|---|
+| Accuracy | Numbers and facts match the source | [X] |
+| Sources shown | Every answer links to where it came from | [X] |
+| Relevance | Users rate it relevant to their work | [X] |
+| Usefulness | Users would act on it | [X] |
+| Permissions | No one sees data they shouldn't | Zero tolerance |
 
-**2. Define**
-| # | Task | Kind | Tool (guess) | Goes to |
-|---|---|---|---|---|
-| 2.1 | Write the problem and outcome | Draft | M23 Requirements drafter | Sponsor approves |
-| 2.2 | Score the platforms against the five criteria | Draft | M7 Platform fit checker | Me |
-| 2.2 | Choose the platform and delivery path | Me | Meetings with platform teams | Decision log |
-| 2.3 | Data contract (fields, freshness, checks) | Draft | M24 Data contract checker (Snowflake) | Data owner signs |
-| 2.4 | Risk intake and control requirements | Draft | M25 Risk intake assistant | Model risk rates it |
-| 2.5 | User stories and acceptance criteria | Draft | M23, story library | Me |
-| 2.6 | Backlog priorities and trade-offs | Me | Backlog tool | Sponsor |
-| 2.6 | Decision log entries | Draft | M8 Decision log drafter (M365 Copilot) | Me |
-| 2.7 | Measures, quality bar and value model | Draft | M9 Measures sheet builder (Power BI) | Sponsor, Finance |
-| 2.8 | Scope release 1 and the pilot group | Me | Backlog tool | Sponsor |
-| 2.8 | Record the long-term owner, or "to be decided" with a date to decide by | Me | Meeting | Sponsor |
-| 2.8 | Complete the brief and the gate pack | Draft | M6 Gate pack drafter | Sponsor |
-| Gate | Go/no-go | Me | Meeting | Sponsor, risk, data owner |
-
-**3. Build**
-| # | Task | Kind | Tool (guess) | Goes to |
-|---|---|---|---|---|
-| 3.1 | Design the solution | Me | With platform teams | Platform teams, risk |
-| 3.1 | Draft the agent specs | Draft | M10 Agent spec drafter | Me |
-| 3.2 | Prepare trusted data views | Me | With the data engineer (Snowflake) | — |
-| 3.2 | Run data quality checks on every refresh | Auto | Snowflake checks; M24 in ongoing mode | Data owner, on failure |
-| 3.3 | Build the rules and prompts | Draft | Bedrock or Prompt Builder | Users check |
-| 3.4 | Build in the controls | Me | Guardrails, Einstein Trust Layer | Risk |
-| 3.4 | Re-run the control tests on every release | Auto | M11 Controls checker (test environment only) | Me, on failure |
-| 3.5 | Deliver where users work, with sources and feedback | Me | Salesforce, Teams, Power Automate | Users |
-| 3.6 | Build the test set | Draft | M12 Test case generator | Users approve the answers |
-| 3.7 | Run the test set on every version | Auto | M26 Test grader | Me, on failure |
-| 3.7 | Build the gate pack | Draft | M6 Gate pack drafter | Sponsor |
-| Gate | Go/no-go | Me | Meeting | Sponsor |
-
-**4. Govern and test**
-| # | Task | Kind | Tool (guess) | Goes to |
-|---|---|---|---|---|
-| 4.1 | Update the intake and register the product | Draft | M25 Risk intake assistant | Risk confirms the rating |
-| 4.2 | Compare the data actually used with the contract | Auto | M13 Data-use checker | Privacy |
-| 4.2 | Walk privacy through it | Me | Meeting | Privacy |
-| 4.3 | Test and red-team the frozen version | Auto | M26 Test grader, M27 Red-team agent | Risk reviews every failure |
-| 4.4 | Check fairness | Auto | M28 Fairness monitor | Compliance reviews |
-| 4.5 | Re-run the control tests | Auto | M11 Controls checker | Risk |
-| 4.6 | Confirm the vendor reviews | Me | Approved vendors list | Vendor risk |
-| 4.7 | Put together the evidence pack | Draft | M29 Evidence pack assembler | Me, then risk |
-| 4.7 | Send sign-off requests and chase them | Auto ⚠️ | M14 Sign-off router (Power Automate approvals) | Risk, compliance, privacy, security |
-| 4.7 | The sign-offs themselves | Partner | — | Recorded in the tracker |
-| 4.7 | Unblock a stuck sign-off | Me | Meeting | — |
-| 4.8 | Draft the monitoring plan | Draft | Monitoring plan template | Risk, operations |
-| Gate | Go/no-go | Partner | Meeting | Risk, sponsor |
-
-**5. Release and adopt**
-| # | Task | Kind | Tool (guess) | Goes to |
-|---|---|---|---|---|
-| 5.1 | Track the readiness checklist | Auto | M15 Readiness tracker | Me |
-| 5.1 | Build the pilot dashboard | Draft | Power BI, from the 2.7 measures sheet | Sponsor |
-| 5.2 | Move the product from test to live | Auto ⚠️ | M16 Release automation (the platform's release tools) | Platform team |
-| 5.2 | Weekly usage report | Auto | Power BI | Sponsor, user leaders |
-| 5.3 | Build it into a routine managers already run | Me | Meetings | Managers |
-| 5.4 | Train users on their own work | Me | Teams, in person | Pilot users |
-| 5.4 | Answer "how do I…?" questions | Auto | The product's onboarding coach (A6 in the RM plan) | Users; the product team keeps content current |
-| 5.5 | Recruit champions | Me | A Teams channel | Champions |
-| 5.5 | Spot wins to celebrate | Draft | M17 Wins spotter | Me, then leaders |
-| 5.6 | Sort feedback into bugs, quality issues and ideas | Auto | M30 Feedback triage | Backlog; I check a weekly sample |
-| 5.6 | Fix and tell users what changed | Me | Release notes | Users |
-| 5.7 | Confirm the long-term owner before scaling | Me | Meeting | Sponsor |
-| 5.7 | Write the scale recommendation | Draft | M6 Gate pack drafter | Sponsor |
-| Gate | Go/no-go to scale | Me | Meeting | Sponsor, user leaders |
-
-**6. Measure and iterate**
-| # | Task | Kind | Tool (guess) | Goes to |
-|---|---|---|---|---|
-| 6.1 | Live dashboard for all five kinds of measures | Auto | Power BI | Sponsor |
-| 6.2 | Monthly impact note against baseline and comparison group | Draft | M31 Impact analyst | Analytics checks, then sponsor |
-| 6.3 | Re-test after every change; alert when quality slips | Auto | M32 Quality watchdog | Product manager, on alert |
-| 6.4 | Monthly keep/change/stop pack | Draft | M18 Monthly review pack drafter | Me |
-| 6.4 | Keep/change/stop decision | Me | Meeting | Sponsor |
-| 6.5 | Rank the candidates for the next feature wave | Draft | M33 Improvement scout | Me, then sponsor |
-| 6.6 | Total time and waits from the first-time logs | Draft | M19 Log summarizer | Me |
-| 6.6 | Improve the machine: update this framework and the playbook | Me | — | — |
-| Gate | Keep, change or stop; invest more, adjust or stop | Me | Meeting | Sponsor, Finance |
-
-### Across every project (the running layer)
-| # | Task | Kind | Tool (guess) | Goes to |
-|---|---|---|---|---|
-| All | One tracker for all projects: task, owner, date, status (I set it up once) | Auto | A shared tracker (tool to confirm) | Everyone on the project |
-| All | Remind owners before a due date; tell me when something is late | Auto ⚠️ | Power Automate | Owners, then me |
-| All | Weekly status note for each project, from the tracker | Draft | M365 Copilot | Me, then stakeholders |
-| All | Decision log and risk/issue list, from meeting notes | Draft | M8 Decision log drafter (M365 Copilot) | Me |
-| All | One view of all projects: step, late items, measures | Auto | Power BI | Sponsors and leaders |
-
-### The automation check at every gate
-At each gate, before go/no-go, ask of every **Me** and **Draft** task:
-1. **Did it repeat?** Will it come up again, in this project or the next one?
-2. **Is it stable?** Did we do it the same way at least twice?
-3. **Is it safe alone?** It makes no decision, nothing reaches a client, and the bank's rules allow it.
-
-All three yes → move it one kind toward **Auto** before the next project, and
-update the table above. The reverse also applies: if an **Auto** task went
-wrong, move it back to a person until it's fixed.
-
-### Many projects at once
-- **Same machine for every project:** the same steps, tables and tracker, so any project can be compared with any other.
-- **Limit the Me-heavy steps.** Discover and Define need the most of my time, so at most [X] projects are in them at once. Steps 3 to 6 are mostly Auto and Draft, so more projects can be there.
-- **Stagger the gates** so that no two gate meetings land in the same week.
-- **My week, planned:** [X] hours on decisions and gates, [X] on users, [X] on partners and sign-offs, [X] checking drafts. If **Me** work runs over, the automation check comes first.
-
-## The five kinds of measures (set in Define, tracked in Measure)
-Usage · Quality · Business impact · Adoption · Risk and controls. These are the five the job description names.
+## AI principles
+These apply to every agent and every AI product, in every step.
+- **Two kinds of agents.** Some help the team do the work (the general agents in the Agent Library); others are the product users see (a project's own agents, in its memo's Appendix A).
+- **Assistive first.** AI drafts or suggests, and a named person decides. Autonomy grows only with evidence, through the automation check in the Delivery Machine.
+- **One job each.** Every agent has a clear job, a short list of allowed actions, read-only by default, and every action logged. Each one is written up as an agent spec before it's built.
+- **Built where the work happens.** Use the tools people already work in (Outlook, Teams, Salesforce), and add a new platform only when it's needed.
 
 ## How each step is written up
-Every step uses the same layout, so plans are easy to compare:
-**Goal · Work** (sub-steps and tools) **· AI strategy** (the agents) **· AI for the team · AI for users · Data · Output · Checks · Gate**
+Every project plan writes each step the same way, so plans are easy to compare.
+The RM plan (`memos/rm-analytics-framework.md`) is the worked example.
 
-## AI principles (every step)
-- **Two kinds of agents:** some help the team do the work; others are the product users see.
-- **Assistive first:** AI drafts or suggests, and a named person decides. Autonomy grows only with evidence.
-- **One job each:** a clear job, a short list of allowed actions, read-only by default, and every action logged.
-- **Built where the work happens:** use the tools people already work in, and add a new platform only when it's needed.
-
-## The quality bar (thresholds set in Define)
-Accuracy (numbers match the source) · Sources shown · Relevance (users rate it relevant) · Usefulness (users would act on it) · Permissions (no one sees data they shouldn't, with zero tolerance).
+| Heading | What goes there |
+|---|---|
+| Goal | The question this step answers for this product |
+| Work | The sub-steps, and the tools that help with each |
+| AI strategy | How AI is used in this step, and the agents that do it |
+| AI for the team | What the agents do for the project team |
+| AI for users | What users see of the product in this step |
+| Data | The data this step uses, and who owns it |
+| Output | What the step produces |
+| Checks | The safeguards that must hold during the step |
+| Gate | What the go/no-go decision needs |
 
 ## How the job description maps to this framework
-| Job accountability (from `job-description.md`) | Where it lives here |
+| Job accountability (from `job-description.md`) | Where it lives |
 |---|---|
 | Own products from discovery through governed release, adoption and improvement | All six steps |
 | Work with bankers to find needs; turn them into clear products | Discover → Define |
 | User stories, acceptance criteria, backlog priorities, release scope, success measures, control requirements, trade-offs | Define |
 | Configure AI capabilities (agents, retrieval, data flows, automations, integrations) in tools bankers use | Build |
-| Governed delivery: risk, controls, privacy, responsible AI and regulation built in from the start | Governance thread in every step; formal approval in Govern and test |
-| Lead with limited oversight: priorities, decisions, dependencies, testing, controls, release readiness, issues | Running the work; Build to Release gates |
+| Governed delivery: risk, controls, privacy, responsible AI and regulation built in from the start | Governance thread in every step (Six-Step Product Workflow); formal approval in Govern and test; the quality bar; AI principles |
+| Lead with limited oversight: priorities, decisions, dependencies, testing, controls, release readiness, issues | Who decides; decision log; the Delivery Machine; Build to Release gates |
 | Drive adoption and change in a regulated environment | Release and adopt |
 | Define and monitor usage, quality, impact, adoption, and risk and control measures | The five kinds of measures; Define and Measure and iterate |
-| Align business, technology, data, risk, compliance and operations partners | Running the work: who decides, decision log |
+| Align business, technology, data, risk, compliance and operations partners | Who decides; decision log |
 
-## Starting a new project with this framework
+## Starting a new project
 1. Name the outcome and the sponsor.
-2. Fill in the table above for this project: its question, governance thread and gate for each step.
-3. Copy the delivery machine's task tables into the shared tracker, with an owner and a date for each task.
-4. Work through Discover first, using the write-up layout and the field manual in `playbook/` (how to do each sub-step the first time, and what to log so it can be automated).
-5. Keep the plan in `memos/<project>.md`, as the RM memo does.
+2. Fill in the six steps for this project (from the Six-Step Product Workflow): its question, governance thread and gate for each step.
+3. Fill in who's involved and who decides, above, with real names.
+4. Copy the task tables from the Delivery Machine into the shared tracker, with an owner and a date for each task.
+5. Work through Discover first, using the write-up layout above and the Delivery Playbook (how to do each sub-step the first time, and what to log so it can be automated).
+6. Keep the plan in `memos/<project>.md`, as the RM memo does.
 
-_Last updated: 2026-10-09_
+_Last updated: 2026-10-14_

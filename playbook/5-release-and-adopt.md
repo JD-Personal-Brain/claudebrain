@@ -182,7 +182,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
 | 5.7 | None: confirming the long-term owner stays with a person | Me | Me | — |
 | 5.7 | Gate pack drafter (shared) | Draft | Draft | Yes, M6 |
 
-**First time** = how the task is done on the first project. **Aim for** = its kind in `product-framework.md`.
+**First time** = how the task is done on the first project. **Aim for** = its kind in `delivery-machine.md`.
 
 **Stays with a person:** working with managers on routines (5.3) and recruiting champions (5.5).
 

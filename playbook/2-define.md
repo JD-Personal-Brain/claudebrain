@@ -218,6 +218,6 @@ Fill in the first-time log (see `README.md`) for every sub-step.
 | 2.8 | None: recording the long-term owner stays with a person | Me | Me | — |
 | 2.8 | Gate pack drafter (shared with Discover) | Draft | Draft | Yes, M6 |
 
-**First time** = how the task is done on the first project. **Aim for** = its kind in `product-framework.md`.
+**First time** = how the task is done on the first project. **Aim for** = its kind in `delivery-machine.md`.
 
 _Last updated: 2026-10-09_

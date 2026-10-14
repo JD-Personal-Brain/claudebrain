@@ -28,7 +28,7 @@ documents against it.
 | **Comparison group** | Similar users who don't get the product yet, so its effect can be told apart from everything else that changed. |
 | **Baseline** | A measure's value before the product, recorded with its date, source and exact definition (sub-step 1.7). |
 | **Frozen version** | The exact version reviewers test and approve in step 4. Every fix creates a new frozen version, which is tested again. |
-| **Delivery machine** | The whole system for running products: the six steps, the task tables in the product framework, the agents and the tracker. |
+| **Delivery machine** | The whole system for running products: the six steps, the task tables (in `delivery-machine.md`, shown on the Delivery Machine page), the agents and the tracker. |
 | **Playbook** | The field manual: how to do each sub-step the first time, and what to log so it can be automated later. |
 | **First-time log** | The notes kept while doing a sub-step for the first time: time spent, waits, inputs and what repeated. |
 | **Automation check** | Three questions asked of every Me and Draft task at each gate: did it repeat, is it stable, is it safe alone? Three yeses move it one kind toward Auto. |

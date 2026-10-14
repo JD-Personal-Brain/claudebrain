@@ -3,7 +3,7 @@ filterable, each opening to its full spec. Reads playbook/agents.md (M1-M33,
 the delivery machine's general agents) and the RM memo's Appendix A (A1-A6,
 the product RMs use). Run: python3 designs/agents-build.py"""
 import os, re
-from pagekit import CSS, E, inline, chipify
+from pagekit import CSS, E, inline, chipify, render_blocks
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 read = lambda p: open(os.path.join(ROOT, p)).read()
@@ -26,10 +26,10 @@ for block in re.split(r"\n### ", read("playbook/agents.md"))[1:]:
                    "fields": [(k, f[k]) for k in ["Starts when", "Inputs", "Allowed actions", "Not allowed", "Outputs", "Stops when", "Proof it worked", "Person in charge", "Runs on (guess)", "To confirm"]],
                    "source": "Delivery Playbook · agent library"})
 
-# Where each project agent (A#) is used in the delivery process: the framework task tables
+# Where each project agent (A#) is used in the delivery process: the Delivery Machine task tables
 # tool column and the playbook review tables, so an agent used in several steps shows under each.
 used = {}
-for row in re.findall(r"^\| (\d\.\d) \|[^|]+\|[^|]+\|([^|]+)\|", read("product-framework.md"), re.M):
+for row in re.findall(r"^\| (\d\.\d) \|[^|]+\|[^|]+\|([^|]+)\|", read("delivery-machine.md"), re.M):
     for aid in re.findall(r"\bA\d+\b", row[1]):
         used.setdefault(aid, set()).add(row[0])
 import glob
@@ -86,6 +86,15 @@ for g, name, why in GROUPS:
     cards = "".join(card(a) for a in agents if a["group"] == g)
     sections += f'<section class="grp" data-group="{g}"><div class="ahead"><h2 id="{g}">{E(name)} <span class="gcount">{counts[g]}</span></h2><p>{E(why)}</p></div><div class="aglist">{cards}</div></section>'
 
+# The notes at the end of playbook/agents.md: agents that keep running after launch, and reusable assets that aren't agents
+_tail = read("playbook/agents.md").split("## Not agents, but reusable assets")[1].split("_Last updated")[0]
+_assets, _ongoing = _tail.split("## Agents with an ongoing mode")
+# The intro of playbook/agents.md: what the agents are, how they behave and how far to trust them
+agents_intro = render_blocks(read("playbook/agents.md").split("\n### ")[0].split("\n", 1)[1].split("\n---")[0])
+notes = (f'<section class="notesec" id="notes"><div class="ahead"><h2>Two notes on the agents</h2></div><div class="notes">'
+         f'<div class="note"><h3>Agents with an ongoing mode</h3>{render_blocks(_ongoing)}</div>'
+         f'<div class="note"><h3>Not agents, but reusable assets</h3>{render_blocks(_assets)}</div></div></section>')
+
 step_opts = "".join(f'<option value="{E(s)}">{E(s)}</option>' for s in list(STEPS.values()) + ["Used by RMs", "My research helpers"])
 page = f'''<title>Agent Library</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -120,6 +129,12 @@ page = f'''<title>Agent Library</title>
 .agcard .spec dd{{margin:0;font-size:14px}}
 .asrc{{margin:0;padding:0 16px 14px;font-size:12px;color:var(--muted)}}
 .empty{{color:var(--muted)}}
+.notesec{{gap:14px}}
+.notes{{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
+.note{{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:18px;display:flex;flex-direction:column;gap:8px;font-size:15px}}
+.note h3{{font-size:18px;margin:0}}
+.note ul{{margin:0;padding-left:18px}}
+@media (max-width:760px){{.notes{{grid-template-columns:1fr}}}}
 @media (max-width:760px){{.aglist{{grid-template-columns:1fr}}.agcard .spec div{{grid-template-columns:1fr;gap:2px}}}}
 </style>
 <div class="band"><div class="wrap">
@@ -133,9 +148,11 @@ page = f'''<title>Agent Library</title>
 </div>
 </div></div>
 <main class="wrap">
+<div class="intro-block" style="display:flex;flex-direction:column;gap:12px">{agents_intro}</div>
 <div class="howto" style="display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--muted);align-items:center"><span>The chip shows what each general agent aims to become:</span><span class="chip k-auto">Auto</span> runs on its own <span class="chip k-draft">Draft</span> drafts for a person to check</div>
 {sections}
 <p class="empty" id="none" hidden>No agents match. Try another word or clear the filters.</p>
+{notes}
 <footer>Built from <code>playbook/agents.md</code> and the RM memo's Appendix A by <code>designs/agents-build.py</code>. "Runs on" tools are guesses until confirmed at the bank.</footer>
 </main>
 <script>

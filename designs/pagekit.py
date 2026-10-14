@@ -180,3 +180,36 @@ pre.diagram{font-family:var(--mono);font-size:13px;line-height:1.5;background:va
 footer{color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:16px}
 @media (max-width:760px){.subgrid,.use,.meta,.agents{grid-template-columns:1fr}.spec div{grid-template-columns:1fr;gap:2px}.col.steps{border-left:0;border-top:1px solid var(--line)}}
 """
+
+
+# ---------- The four "How we deliver" pages, in reading order ----------
+# Each of the four pages shows this strip in its header, so they read as one set.
+SERIES = [
+    ("workflow", "Six-Step Product Workflow", "The steps and their gates", "https://claude.ai/artifact/8Nm5fkdicn2Gu5VmNVTvYv"),
+    ("framework", "Product Framework", "The rules every product follows", "https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ"),
+    ("machine", "The Delivery Machine", "Every task, marked by who does it", "https://claude.ai/artifact/S8Wbygy24cjguTMxZsN2QF"),
+    ("playbook", "Delivery Playbook", "How to do each sub-step", "https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4"),
+]
+SERIES_CSS = """
+.series{margin-top:22px;display:flex;flex-direction:column;gap:8px}
+.series .stitle{font-family:var(--mono,monospace);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.series ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.series li a,.series li span.here{display:flex;flex-direction:column;gap:2px;height:100%;box-sizing:border-box;padding:10px 12px;border-radius:6px;border:1px solid rgba(255,255,255,.28);color:#fff;text-decoration:none;font-size:14px;line-height:1.3}
+.series li a:hover{background:rgba(255,255,255,.1)}
+.series li span.here{background:#fff;color:#14213D;border-color:#fff}
+.series b{font-weight:600}
+.series small{font-size:12.5px;opacity:.8}
+.series .sn{font-family:var(--mono,monospace);font-size:12px;opacity:.75}
+@media (max-width:720px){.series ol{grid-template-columns:repeat(2,minmax(0,1fr))}}
+"""
+
+def series(current):
+    """The 'How we deliver' strip: four numbered tiles, the current page highlighted."""
+    items = []
+    for i, (key, name, what, url) in enumerate(SERIES, 1):
+        inner = f'<span class="sn">{i} of 4</span><b>{E(name)}</b><small>{E(what)}</small>'
+        if key == current:
+            items.append(f'<li><span class="here" aria-current="page">{inner}</span></li>')
+        else:
+            items.append(f'<li><a href="{url}" target="_blank" rel="noopener">{inner}</a></li>')
+    return f'<nav class="series" aria-label="How we deliver, in reading order"><span class="stitle">How we deliver · read in this order</span><ol>{"".join(items)}</ol></nav>'
