@@ -122,7 +122,7 @@
     {
       "id": "reference",
       "name": "Reference",
-      "why": "Look things up: words, tools, steps, controls and agents. Claude keeps the catalogs and the glossary in line with the plans.",
+      "why": "Look things up: words, tools, steps, controls and agents, plus the job description and how we write prompts. Claude keeps the catalogs and the glossary in line with the plans.",
       "items": [
         {
           "id": "glossary",
@@ -176,6 +176,22 @@
           "status": "Reference",
           "url": "https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX",
           "source": "playbook/, product-machine.md, RM memo Appendix B"
+        },
+        {
+          "id": "job-description",
+          "name": "Job Description",
+          "what": "The Principal Applied AI Product Manager posting: what the role owns, what it requires and the tools it names.",
+          "status": "In use",
+          "url": "https://claude.ai/artifact/9CUyQt1EDbmu1R7DVRyvkM",
+          "source": "job-description.md"
+        },
+        {
+          "id": "prompting",
+          "name": "Prompting Guide",
+          "what": "Anthropic's prompting advice in plain English, a fill-in template, five worked examples and a checklist.",
+          "status": "In use",
+          "url": "https://claude.ai/artifact/Secfj5fBtpVA1veroUU7A7",
+          "source": "prompting.md"
         }
       ]
     },
@@ -193,28 +209,12 @@
           "source": "open-items.md"
         },
         {
-          "id": "job-description",
-          "name": "Job Description",
-          "what": "The Principal Applied AI Product Manager posting: what the role owns, what it requires and the tools it names.",
-          "status": "In use",
-          "url": "https://claude.ai/artifact/9CUyQt1EDbmu1R7DVRyvkM",
-          "source": "job-description.md"
-        },
-        {
           "id": "job-notes",
           "name": "Job Notes",
           "what": "My answers so far on how I'd do the job, part by part.",
           "status": "In progress",
           "url": "https://claude.ai/artifact/SpcnPMbMEgyxZSoYVsRdES",
           "source": "job-notes.md"
-        },
-        {
-          "id": "prompting",
-          "name": "Prompting Guide",
-          "what": "Anthropic's prompting advice in plain English, a fill-in template, five worked examples and a checklist.",
-          "status": "In use",
-          "url": "https://claude.ai/artifact/Secfj5fBtpVA1veroUU7A7",
-          "source": "prompting.md"
         }
       ]
     }

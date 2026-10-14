@@ -139,7 +139,7 @@ howto = ('<div class="howto"><span>Each task is marked with who does it once the
          '<span><span class="chip k-auto">Auto</span>runs on its own</span><span><span class="chip k-draft">Draft</span>AI drafts, a person checks</span>'
          '<span><span class="chip k-me">Me</span>only a person</span><span><span class="chip k-partner">Partner</span>a partner\'s sign-off</span></div>')
 page("Steps Catalog", "Reference · steps",
-     f"All {len(subs)} sub-steps of the six-step Product Workflow in one place. Open any card to see why it matters, what it produces and its tasks.",
+     f"All {len(subs)} sub-steps of the Product Workflow, across its six steps, in one place. Open any card to see why it matters, what it produces and its tasks.",
      "Step", list(STEPS.values()), sections, howto,
      "Built from the Product Playbook and the task tables in the Product Machine, so it always matches them. Tools and task kinds are guesses until confirmed at the bank.",
      "Like sign-off or pilot", "steps.html")
