@@ -1,4 +1,3 @@
-import glob
 """Mechanical audit checks. Run from the repo root: python3 .claude/skills/audit/check.py
 1. Framework task tables and playbook sub-steps match (every sub-step has rows, every
    review-table "Aim for" kind matches the framework, every sub-step has all 8 fields).
@@ -13,7 +12,10 @@ import glob
    sub-step; the Six-Step Workflow memo and page carry the framework's gate wording.
 8. The glossary: no word from its "Words we don't use" table appears in the core documents.
 9. Retired wording: nothing from the glossary's "Old wording we've retired" table is left anywhere people read (idea 37).
-Prints each problem and a total. 0 problems means the mechanical checks pass."""
+Prints each problem and a total. 0 problems means the mechanical checks pass.
+5b. Every V/D/W/P item number cited in the working files is a live open item in open-items.md
+    (it can't tell whether a reference points to the RIGHT item: after a renumbering, re-read each one).
+"""
 import subprocess
 import re,glob
 fw=open('product-framework.md').read()
@@ -73,7 +75,8 @@ for k in 'VDWBP':
     if seq!=list(range(1,len(seq)+1)): print("open-items.md: the",k,"items aren't numbered 1, 2, 3... in order down the page:",' '.join(k+str(n) for n in seq)); probs+=1
 # numbers change with priorities, so every item number cited elsewhere must still be a live item (L22)
 live=set(nums)
-for f in ['NOW.md','ideas.md','product-framework.md','glossary.md','tech-stack.md','open-items.md']+sorted(glob.glob('memos/*.md'))+sorted(glob.glob('playbook/*.md')):
+# it only checks that a cited number exists; after a renumbering, re-read each reference to confirm it names the right item
+for f in ['NOW.md','ideas.md','product-framework.md','glossary.md','tech-stack.md','open-items.md']+sorted(glob.glob('memos/*.md'))+sorted(glob.glob('playbook/*.md'))+sorted(glob.glob('learning/*.md'))+sorted(glob.glob('.claude/skills/*/SKILL.md'))+sorted(glob.glob('designs/rm-analytics-canvas/*.dc.html')):
     t=open(f).read()
     if f=='open-items.md': t='\n'.join(re.sub(r'^\| [A-Z]\d+ \|','|',l) for l in t.split('\n'))
     for m in re.finditer(r'\b([VDWP]\d{1,2})\b(?! Labs)',t):
