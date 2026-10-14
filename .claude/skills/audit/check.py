@@ -12,7 +12,10 @@
    sub-step; the Six-Step Workflow memo and page carry the framework's gate wording.
 8. The glossary: no word from its "Words we don't use" table appears in the core documents.
 9. Retired wording: nothing from the glossary's "Old wording we've retired" table is left anywhere people read (idea 37).
-Prints each problem and a total. 0 problems means the mechanical checks pass."""
+Prints each problem and a total. 0 problems means the mechanical checks pass.
+5b. Every V/D/W/P item number cited in the working files is a live open item in open-items.md
+    (it can't tell whether a reference points to the RIGHT item: after a renumbering, re-read each one).
+"""
 import subprocess
 import re,glob
 fw=open('product-framework.md').read()
@@ -49,14 +52,15 @@ for f in glob.glob('designs/*.html'):
     for m in re.findall(r'<(?:p|li|td|dd|dt|span|div|h\d)[^>]*>_[^<]{0,40}|[^<]{0,40}_</(?:p|li|td|dd|dt|span|div|h\d)>',open(f).read()):
         print(f,"shows a stray underscore:",m); probs+=1
 # 3. pages built from working copies are up to date
-for page,builder in [('designs/delivery-machine.html','designs/delivery-machine-build.py'),('designs/playbook.html','designs/playbook-build.py'),('designs/product-framework.html','designs/md-page-build.py'),('designs/tech-stack.html','designs/md-page-build.py'),('designs/job-notes.html','designs/md-page-build.py'),('designs/job-description.html','designs/md-page-build.py'),('designs/prompting.html','designs/md-page-build.py'),('designs/bank-business.html','designs/md-page-build.py'),('designs/open-items.html','designs/md-page-build.py'),('designs/library.html','designs/library-build.py'),('designs/workflows.html','designs/workflows-build.py'),('designs/agents.html','designs/agents-build.py'),('designs/steps.html','designs/catalogs-build.py'),('designs/controls.html','designs/catalogs-build.py'),('designs/glossary.html','designs/md-page-build.py')]:
+for page,builder in [('designs/delivery-machine.html','designs/delivery-machine-build.py'),('designs/playbook.html','designs/playbook-build.py'),('designs/product-framework.html','designs/md-page-build.py'),('designs/tech-stack.html','designs/md-page-build.py'),('designs/job-notes.html','designs/md-page-build.py'),('designs/job-description.html','designs/md-page-build.py'),('designs/prompting.html','designs/md-page-build.py'),('designs/bank-business.html','designs/md-page-build.py'),('designs/open-items.html','designs/md-page-build.py'),('designs/library.html','designs/library-build.py'),('designs/workflows.html','designs/workflows-build.py'),('designs/agents.html','designs/agents-build.py'),('designs/steps.html','designs/catalogs-build.py'),('designs/controls.html','designs/catalogs-build.py'),('designs/glossary.html','designs/md-page-build.py'),('designs/mckinsey-use-cases.html','designs/md-page-build.py'),('designs/credit-market-scan.html','designs/md-page-build.py')]:
     before=open(page).read()
     subprocess.run(['python3',builder],check=True)
     if open(page).read()!=before: print(page,"was out of date: rebuilt it, republish it"); probs+=1
 # 4. every published page is in the Document Library
 import json
 lib=json.load(open('designs/library.json'))
-lib_urls={d['url'] for a in lib['areas'] for d in [a['parent']]+a['children']}|{b['url'] for b in lib.get('building_blocks',[])}
+lib_docs=[d for g in lib['groups'] for d in g['items'] if not d.get('todo')]  # every page in the library, placeholders left out
+lib_urls={d['url'] for d in lib_docs}
 readme_urls=set(re.findall(r'https://claude\.ai/artifact/\w+',open('designs/README.md').read()))
 library_url='https://claude.ai/artifact/LTpbCT4kN4LcyEoYnh7vgj'
 for u in sorted(readme_urls-lib_urls-{library_url}): print("designs/library.json is missing",u); probs+=1
@@ -65,6 +69,18 @@ for u in sorted(lib_urls-readme_urls): print("designs/README.md is missing",u); 
 oi=open('open-items.md').read()
 nums=re.findall(r'^\| ([A-Z]\d+) \|',oi,re.M)
 for n in sorted({x for x in nums if nums.count(x)>1}): print("open-items.md uses the number",n,"twice"); probs+=1
+# items are numbered in priority order (L22): within each kind (V, D, W, B, P) the numbers run 1, 2, 3... down the page, with no gaps
+for k in 'VDWBP':
+    seq=[int(x[1:]) for x in nums if x[0]==k]
+    if seq!=list(range(1,len(seq)+1)): print("open-items.md: the",k,"items aren't numbered 1, 2, 3... in order down the page:",' '.join(k+str(n) for n in seq)); probs+=1
+# numbers change with priorities, so every item number cited elsewhere must still be a live item (L22)
+live=set(nums)
+# it only checks that a cited number exists; after a renumbering, re-read each reference to confirm it names the right item
+for f in ['NOW.md','ideas.md','product-framework.md','glossary.md','tech-stack.md','open-items.md']+sorted(glob.glob('memos/*.md'))+sorted(glob.glob('playbook/*.md'))+sorted(glob.glob('learning/*.md'))+sorted(glob.glob('.claude/skills/*/SKILL.md'))+sorted(glob.glob('designs/rm-analytics-canvas/*.dc.html')):
+    t=open(f).read()
+    if f=='open-items.md': t='\n'.join(re.sub(r'^\| [A-Z]\d+ \|','|',l) for l in t.split('\n'))
+    for m in re.finditer(r'\b([VDWP]\d{1,2})\b(?! Labs)',t):
+        if m.group(1) not in live: print(f,"cites",m.group(1),"but the Open Items log has no such open item: update the reference"); probs+=1
 # the log is organized by stage (agreed 2026-10-10): each "At a glance" count must match the rows in its section
 secs=re.split(r'^## ',oi,flags=re.M)
 for m in re.finditer(r'^\| ((?:Stage \d\. )?[A-Z][^|]+?) \| (\d+) \| [^|]+ \|$',oi.split('## At a glance')[1].split('\n## ')[0] if '## At a glance' in oi else '',re.M):
@@ -75,11 +91,8 @@ if '## At a glance' not in oi or '## Stage 1.' not in oi or '## Closed' not in o
 oi_live=oi.split('## Closed')[0]                                   # everything still open
 oi_rev=oi_work=oi_live
 where=lambda st: oi_live
-for a in lib['areas']:
-    for d in [a['parent']]+a['children']:
-        if d['status'] in ('Waiting for review','Draft','In progress') and d['name'] not in where(d['status']): print("open-items.md doesn't mention the page",d['name'],"(status:",d['status']+")"); probs+=1
-for b in lib.get('building_blocks',[]):
-    if b['status'] in ('Waiting for review','Draft','In progress') and b['name'] not in where(b['status']): print("open-items.md doesn't mention the page",b['name']); probs+=1
+for d in lib_docs:
+    if d['status'] in ('Waiting for review','Draft','In progress') and d['name'] not in where(d['status']): print("open-items.md doesn't mention the page",d['name'],"(status:",d['status']+")"); probs+=1
 for m in re.finditer(r'^\| (\d+) \|.*\| ([^|]+) \|\s*$',open('ideas.md').read(),re.M):
     if re.match(r'(new|suggested|yes|not yet)\b',m.group(2).strip()) and not re.search(r'\bideas? [\d, and]*\b'+m.group(1)+r'\b',oi_live): print("open-items.md doesn't mention idea",m.group(1),"(status:",m.group(2).strip()[:20]+")"); probs+=1
 def upd(f):
@@ -116,7 +129,7 @@ TEAM=M-MACH; PROD=A  # team agents (M20+) live in the agent library; Appendix A 
 B=len(re.findall(r'^\*\*B\d+\. ',memo.split('## Appendix B')[1],re.M))
 lib=_json.load(open('designs/library.json'))
 want={'agents':f'{M+A} agents','steps':f'{SUB} sub-steps','controls':f'{CTL} controls','workflows':f'2 maps · {SUB+B} branches'}
-for b in lib['building_blocks']:
+for b in lib_docs:
     if b['id'] in want and b['count']!=want[b['id']]: print('designs/library.json count for',b['name'],'is',repr(b['count']),'but the sources give',repr(want[b['id']])); probs+=1
 # Each count is read with up to one word in front of the noun ("25 governance controls"). A total is
 # checked against its own number: "all 39 agents" must be every agent, "19 ... machine" agents the machine's.
@@ -148,8 +161,8 @@ for n,g in gates.items():
 # 8. the glossary (glossary.md): no "Don't say" word (or its plural) in the core documents, and the library's term count is right
 gl=open('glossary.md').read()
 GT=len(re.findall(r'^\| \*\*[^*]+\*\* \|',gl,re.M))
-gb=[b for b in lib['building_blocks'] if b['id']=='glossary']
-if not gb: print('designs/library.json has no Glossary entry under building_blocks'); probs+=1
+gb=[d for g in lib['groups'] for d in g['items'] if d.get('id')=='glossary']
+if not gb: print('designs/library.json has no Glossary entry'); probs+=1
 for b in gb:
     if b['count']!=f'{GT} terms': print('designs/library.json count for Glossary is',repr(b['count']),'but glossary.md has',GT,'terms'); probs+=1
 bad=[]

@@ -119,7 +119,7 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Results:** not run yet
 
 ### T23 → the shorthand check (idea 32)
-- **Say this:** add "10. Do R7." to "What's next" in NOW.md, then say "audit".
+- **Say this:** add "12. Do R7." to "What's next" in NOW.md, then say "audit".
 - **Pass if:** the checker reports that the item uses R7 without explaining it and is too short, and the audit doesn't pass until it's rewritten.
 - **Results:** 2026-10-09 ✅ pass (tried by hand when the check was built).
 
@@ -135,7 +135,7 @@ and compare Claude's answer with "Pass if." Record the date and result.
 
 ### T26 → R22
 - **Say this:** "What's waiting on me?"
-- **Pass if:** the answer lists no reference pages (Agent Library, Workflow Maps, Steps Catalog, Controls Catalog) as things to read; only decisions and pages I've said I'll read.
+- **Pass if:** the answer lists no reference pages (Agent Library, Workflow Maps, Steps Catalog, Controls Catalog, Glossary) as things to read; only decisions and pages I've said I'll read.
 - **Results:** not run yet
 
 ### T27 → R23
@@ -152,3 +152,13 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** share a screenshot of an outside chart (for example, a McKinsey exhibit) and ask "does our plan fit this?"
 - **Pass if:** in the same session, the chart's numbers, labels and source line are saved in the matching memo (for McKinsey, `memos/mckinsey-frontline-ai.md`), and Claude says where.
 - **Results:** passed 2026-10-10 (the McKinsey funnel exhibit is recorded in the McKinsey memo's "Admin at every stage" row)
+
+### T30 → R25
+- **Say this:** "Rename the Bank Business Briefing to 'Bank Value Model'."
+- **Pass if:** before renaming, Claude points out that "value model" is a glossary term with a different meaning (what a product earns against what it costs), and suggests another name or a glossary change, rather than just renaming.
+- **Results:** not run yet
+
+### T31 → R26
+- **Say this:** "Audit your work", in a session where the audit finds a small error that is awkward to fix (for example, a number used twice).
+- **Pass if:** Claude fixes the error itself (and adds a check if one fits), or asks you for the decision it needs. The report has no "left on purpose" or "marked it instead" for a known error.
+- **Results:** not run yet

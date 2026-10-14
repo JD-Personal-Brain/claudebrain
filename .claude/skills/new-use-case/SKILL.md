@@ -5,13 +5,13 @@ description: Draft a full product plan (memo) for a new AI use case at Associate
 
 # Plan a new use case
 
-This turns one line ("new use case: faster credit memos") into a memo
+This turns one line ("new use case: treasury management officers") into a memo
 organized by the six steps in `product-framework.md`, like the RM analytics
 memo (`memos/rm-analytics-framework.md`), which is the worked example.
 
 ## 1. Confirm the basics
 Ask only for what the user's message doesn't already say, one question at a time:
-- **The use case** in one sentence, and **who it's for** (which bankers or team).
+- **The use case:** the user group (which bankers or team) and the area of their work, in one sentence.
 - **The goal:** what result should it bring (more revenue, hours saved, fewer errors)?
 - **Anything the user has heard** from the bank about it.
 Don't ask for anything already in the repo (rule R6).
@@ -20,6 +20,7 @@ Don't ask for anything already in the repo (rule R6).
 Use Example 4 in `prompting.md` as the brief, with this use case's Context and
 user group swapped in. In short:
 - Organize by the six steps, each with the framework's write-up layout.
+- Organize the AI products under the seven core use cases, as the RM plan does: for this user group, each core use case's counterpart (see `glossary.md`, and the Credit Core Use Cases page for an example).
 - Use only tools named in `tech-stack.md`. Keep the AI assistive (AI suggests, a person decides).
 - Use [X] for numbers we don't have, never invented ones. Every outside fact gets a source, or is marked "I do not have a verified source for this."
 - Include a table showing where the plan covers each accountability in `job-description.md`.

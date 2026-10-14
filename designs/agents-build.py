@@ -71,7 +71,7 @@ def card(a):
 sections = ""
 for g, name, why in GROUPS:
     cards = "".join(card(a) for a in agents if a["group"] == g)
-    sections += f'<section class="grp" data-group="{g}"><div class="ahead"><h2>{E(name)} <span class="gcount">{counts[g]}</span></h2><p>{E(why)}</p></div><div class="aglist">{cards}</div></section>'
+    sections += f'<section class="grp" data-group="{g}"><div class="ahead"><h2 id="{g}">{E(name)} <span class="gcount">{counts[g]}</span></h2><p>{E(why)}</p></div><div class="aglist">{cards}</div></section>'
 
 step_opts = "".join(f'<option value="{E(s)}">{E(s)}</option>' for s in list(STEPS.values()) + ["Used by RMs"])
 page = f'''<title>Agent Library</title>
@@ -110,7 +110,7 @@ page = f'''<title>Agent Library</title>
 @media (max-width:760px){{.aglist{{grid-template-columns:1fr}}.agcard .spec div{{grid-template-columns:1fr;gap:2px}}}}
 </style>
 <div class="band"><div class="wrap">
-<span class="label">Building block · agents</span>
+<span class="label">Reference · agents</span>
 <h1>Agent Library</h1>
 <p class="lede">All {len(agents)} agents in one place. Each one has a single job, a short list of things it may do, and a named person in charge. Open any card to see its full spec.</p>
 <div class="filters">

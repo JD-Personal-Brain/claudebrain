@@ -560,7 +560,7 @@ a library, built once and reused.
 Four agents keep running after launch, not just once:
 - **M13 Data-use checker:** it runs again monthly after launch (4.2) and alerts privacy on any difference.
 - **M24 Data contract checker:** after Define, it runs on every data refresh (3.2) and alerts the data owner on failure.
-- **M28 Fairness monitor:** set up in 4.4; runs monthly in step 6 alongside the 6.3 checks.
+- **M28 Fairness monitor:** set up in 4.4; its ongoing mode re-runs the check monthly after launch (4.4), and fairness is in the monitoring plan (4.8).
 - **M32 Quality watchdog:** re-runs the test set on every change and at least monthly (6.3), and alerts the product manager when quality slips.
 
 _Last updated: 2026-10-10_

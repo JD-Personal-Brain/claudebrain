@@ -116,7 +116,7 @@ footer{{color:var(--muted);font-size:14px;border-top:1px solid var(--line);paddi
 <main class="wrap">
 <section style="padding-top:32px">
 <p class="label">The idea</p>
-<h2>Three kinds of work, plus partner sign-offs</h2>
+<h2 id="kinds">Three kinds of work, plus partner sign-offs</h2>
 <p>Each project moves through the same six steps. Every task in every step is marked by who does it. Each project leaves the machine more automated than it found it.</p>
 <div class="kinds">
 <div class="kind">{chip("auto")}<h3>Runs on its own</h3><p>A workflow or agent does it and tells the right person. No one has to remember it.</p></div>
@@ -127,21 +127,21 @@ footer{{color:var(--muted);font-size:14px;border-top:1px solid var(--line);paddi
 </section>
 <section>
 <p class="label">Where the PM's time goes</p>
-<h2>Early steps need people; later steps run themselves</h2>
+<h2 id="mix">Early steps need people; later steps run themselves</h2>
 <p>Number of tasks of each kind once the machine is running, by step, gate decisions included. Discover and Define carry the most person-only work, because that is where judgment matters most.</p>
 <div class="mix">{bars}
 <div class="legend">{chip("me")} Only a person {chip("draft")} AI drafts {chip("auto")} Runs on its own {chip("partner")} Partner sign-off</div></div>
 </section>
 <section>
 <p class="label">The six steps</p>
-<h2>Each step's tasks, by kind</h2>
+<h2 id="tasks">Each step's tasks, by kind</h2>
 <p>One row per task, numbered to match the field manual. Kind is the target once the machine is running; the first time through, many tasks are done by hand so they can be logged before they are automated. Tools are first guesses until we confirm the bank's setup.</p>
 <div class="note"><strong>To confirm first:</strong> whether bank policy lets automations message people or update trackers on their own. Tasks marked ⚠️ depend on it.</div>
 <div class="steps">{stepsec}</div>
 </section>
 <section class="check">
 <p class="label">At every gate</p>
-<h2>The automation check</h2>
+<h2 id="check">The automation check</h2>
 <p>Before each go/no-go, ask three questions of every task done by a person or drafted by AI:</p>
 <ol>
 <li><b>Did it repeat?</b><span>Will it come up again, in this project or the next one?</span></li>
@@ -152,13 +152,13 @@ footer{{color:var(--muted);font-size:14px;border-top:1px solid var(--line);paddi
 </section>
 <section>
 <p class="label">Across every project</p>
-<h2>The running layer</h2>
+<h2 id="running">The running layer</h2>
 <p>One set of automations keeps all projects on schedule, so nothing depends on the PM remembering to chase.</p>
 <div class="step">{table(running)}</div>
 </section>
 <section>
 <p class="label">Many projects at once</p>
-<h2>Four rules for running them side by side</h2>
+<h2 id="rules">Four rules for running them side by side</h2>
 <div class="rules">
 <div class="rule"><h3>One machine for every project</h3><p>The same steps, tables and tracker, so any project can be compared with any other.</p></div>
 <div class="rule"><h3>Limit the person-heavy steps</h3><p>At most [X] projects in Discover or Define at once. Steps 3 to 6 are mostly automated, so more projects can sit there.</p></div>

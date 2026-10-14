@@ -16,12 +16,13 @@ Edit here, publish to the same link, then save a draft.
 | Job Description | https://claude.ai/artifact/9CUyQt1EDbmu1R7DVRyvkM | `job-description.html` (built by `md-page-build.py` from `job-description.md`) |
 | Open Items (the one log of everything still open) | https://claude.ai/artifact/NsW5AH5XFNHmDNYJvmVDMb | `open-items.html` (built by `md-page-build.py` from `open-items.md`; updated at every wrap-up) |
 | Bank Business Briefing (how the bank earns money, the corporate segment, and where AI work lines up) | https://claude.ai/artifact/7ZVT7LtdqxwAma4UrBgTPX | `bank-business.html` (built by `md-page-build.py` from `memos/bank-business.md`; re-run Example 5 in `prompting.md` each quarter to refresh the words) |
+| Credit Core Use Cases (what banks deploy in credit, lined up with the RM core use cases; was "Credit Market Scan") | https://claude.ai/artifact/2tySJZL41pf72igzanYbaT | `credit-market-scan.html` (built by `md-page-build.py` from `memos/credit-market-scan.md`) |
 | Prompting Guide | https://claude.ai/artifact/Secfj5fBtpVA1veroUU7A7 | `prompting.html` (built by `md-page-build.py` from `prompting.md`) |
-| Workflow Maps (building block) | https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX | `workflows.html` (built by `workflows-build.py` from `playbook/`, `product-framework.md` and the RM memo's Appendix B) |
-| Agent Library (building block) | https://claude.ai/artifact/Cn9nANQoqp2BP7yrmy61zn | `agents.html` (built by `agents-build.py` from `playbook/agents.md` and the RM memo's Appendix A) |
-| Steps Catalog (building block) | https://claude.ai/artifact/8UncWMYUq7hsJUhn5NSYEB | `steps.html` (built by `catalogs-build.py` from `playbook/` and `product-framework.md`) |
-| Controls Catalog (building block) | https://claude.ai/artifact/7GmH3iBG6jcDkdacUysUrQ | `controls.html` (built by `catalogs-build.py` from `playbook/controls.md`) |
-| McKinsey Use Cases (core reference for choosing use cases) | https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X | `mckinsey-use-cases.html` (built by `md-page-build.py` from `memos/mckinsey-frontline-ai.md`) |
+| Workflow Maps (reference page) | https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX | `workflows.html` (built by `workflows-build.py` from `playbook/`, `product-framework.md` and the RM memo's Appendix B) |
+| Agent Library (reference page) | https://claude.ai/artifact/Cn9nANQoqp2BP7yrmy61zn | `agents.html` (built by `agents-build.py` from `playbook/agents.md` and the RM memo's Appendix A) |
+| Steps Catalog (reference page) | https://claude.ai/artifact/8UncWMYUq7hsJUhn5NSYEB | `steps.html` (built by `catalogs-build.py` from `playbook/` and `product-framework.md`) |
+| Controls Catalog (reference page) | https://claude.ai/artifact/7GmH3iBG6jcDkdacUysUrQ | `controls.html` (built by `catalogs-build.py` from `playbook/controls.md`) |
+| RM Core Use Cases (McKinsey's five frontline use cases and the RM plan's seven; was "McKinsey Use Cases") | https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X | `mckinsey-use-cases.html` (built by `md-page-build.py` from `memos/mckinsey-frontline-ai.md`) |
 | Glossary (reference: the words we use) | https://claude.ai/artifact/LRQHSz65beh9XewB6qsQvQ | `glossary.html` (built by `md-page-build.py` from `glossary.md`) |
 | **Document Library** (pinned to my sidebar; lists every page above) | https://claude.ai/artifact/LTpbCT4kN4LcyEoYnh7vgj | `library.html` (built by `library-build.py` from `library.json`) |
 

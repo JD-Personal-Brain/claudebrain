@@ -1,4 +1,4 @@
-# How I'd run the work: the six-step workflow
+# How I'd run the work: the Six-Step Product Workflow
 
 _Working copy of the designed page. Source: `product-framework.md`._
 

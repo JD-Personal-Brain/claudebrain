@@ -8,6 +8,18 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L22 · 2026-10-14 · Kept a rule you never set, then worked around it
+- **What happened:** The audit found three numbers used twice in the Open Items log under the old numbering (one for an open item and a closed item's history note; two others each in two closed items' history notes). I "marked" the problem instead of fixing it, citing the log's promise that a number never changes. You corrected me twice: when something is wrong we fix it right, and you never asked for fixed numbers. You want the items listed by priority, with numbers that can be swapped and added.
+- **Root cause:** I wrote "every item keeps a number that never changes" into the log myself when I built it (2026-10-09), then treated my own design choice as your rule. Because nobody checked the numbering, it had drifted out of order and been reused.
+- **Fix:** the log is renumbered in priority order within each kind (V1 is the first thing to read, W1 the first piece of work, D1 the first decision), with a new "Now" section at the top. Every file that points to an item was updated. The "never changes" wording is gone from the log, NOW.md and the glossary. The audit checker now fails if a kind's numbers don't run 1, 2, 3 in order down the page.
+- **Rule:** R26 · **Test:** T31 · **Level:** 1 · **Times it happened:** 1
+
+### L21 · 2026-10-14 · A new page name used a glossary word with a new meaning
+- **What happened:** While reorganizing the Document Library, I renamed "Credit Market Scan" to "Credit Core Use Cases". The glossary defines "core use case" as one of the RM plan's seven lines, so the new name gave the word a second meaning. The audit's alignment sweep caught it as a Must fix.
+- **Root cause:** rule R23 makes me sweep for old wording after a rename, but nothing made me check that the words in a new name mean what the glossary says. I picked the name for how it read, not against our definitions.
+- **Fix:** before naming or renaming a page, section or item, check each key word against `glossary.md`. If the new use differs, either pick another word or update the glossary definition in the same change. This time the glossary now says core use cases cover RM and credit (through each one's credit counterpart), and adds "credit counterpart", "use case" and "user workflow".
+- **Rule:** R25 · **Test:** T30 · **Level:** 1 · **Times it happened:** 1
+
 ### L20 · 2026-10-10 · A rename reached only the files I was editing
 - **What happened:** We decided the RM plan has seven core use cases, with AI products under them. The deep audit still found "five core use cases" in the Document Library, the McKinsey page and the Open Items log, about 40 places where "use case" or "feature" still meant one AI product, and a memo line saying each core use case "becomes one line of the value model" when the value model has no such lines.
 - **Root cause:** I changed the words where I was working and never searched every file for the old forms. I also wrote what a section would contain without opening it (rule R21).

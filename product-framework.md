@@ -8,7 +8,7 @@ organize it by these six steps.
 > the same six steps and gates and is the full worked example, with agent specs
 > and workflows in its appendices. Its sub-steps are tailored to RM work and
 > aren't yet numbered like the playbook's 44; that's part of applying the
-> delivery machine to the RM memo (work item W1 in the Open Items log). It's still waiting for my review, so update this page if the review
+> delivery machine to the RM memo (work item W7 in the Open Items log). It's still waiting for my review, so update this page if the review
 > changes the steps.
 
 ## The six steps at a glance

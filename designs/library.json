@@ -1,84 +1,10 @@
 {
-  "building_blocks": [
+  "groups": [
     {
-      "id": "workflows",
-      "name": "Workflow Maps",
-      "what": "See the shape of the work: each main process left to right, with its sub-processes branching off. Click any box for details.",
-      "count": "2 maps · 53 branches",
-      "status": "Reference",
-      "url": "https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX",
-      "source": "playbook/, product-framework.md, RM memo Appendix B"
-    },
-    {
-      "id": "agents",
-      "name": "Agent Library",
-      "what": "Every agent in one place: what it does, what it may and may not do, and who's in charge. Filter by step or by who it serves.",
-      "count": "39 agents",
-      "status": "Reference",
-      "url": "https://claude.ai/artifact/Cn9nANQoqp2BP7yrmy61zn",
-      "source": "playbook/agents.md, RM memo Appendix A"
-    },
-    {
-      "id": "steps",
-      "name": "Steps Catalog",
-      "what": "Find any sub-step of the six-step process on its own: why it matters, what it produces and its tasks.",
-      "count": "44 sub-steps",
-      "status": "Reference",
-      "url": "https://claude.ai/artifact/8UncWMYUq7hsJUhn5NSYEB",
-      "source": "playbook/, product-framework.md"
-    },
-    {
-      "id": "controls",
-      "name": "Controls Catalog",
-      "what": "Every governance control in one place: the safeguards built into each product, and where each is set, built, proved and watched.",
-      "count": "25 controls",
-      "status": "Reference",
-      "url": "https://claude.ai/artifact/7GmH3iBG6jcDkdacUysUrQ",
-      "source": "playbook/controls.md"
-    },
-    {
-      "id": "glossary",
-      "name": "Glossary",
-      "what": "The words we use, one meaning each, so every plan says the same thing, plus the old wording we've retired (the audit fails on any left behind). Ends with the bank's terms still to map.",
-      "count": "54 terms",
-      "status": "Reference",
-      "url": "https://claude.ai/artifact/LRQHSz65beh9XewB6qsQvQ",
-      "source": "glossary.md"
-    }
-  ],
-  "start_here": [
-    "playbook",
-    "rm-plan",
-    "job-description"
-  ],
-  "areas": [
-    {
-      "id": "status",
-      "name": "Where things stand",
-      "why": "What's still open, so I can see at any moment what's waiting on me and what comes next.",
-      "parent": {
-        "id": "open-items",
-        "name": "Open Items",
-        "what": "Everything still open in one log: decisions and reviews waiting on me, work to do, questions for the bank, and what's parked.",
-        "status": "In use",
-        "url": "https://claude.ai/artifact/NsW5AH5XFNHmDNYJvmVDMb",
-        "source": "open-items.md"
-      },
-      "children": []
-    },
-    {
-      "id": "job",
-      "name": "The job",
-      "why": "What Associated Bank needs, how its business earns money, the tools it runs on, and my thinking so far.",
-      "parent": {
-        "id": "job-description",
-        "name": "Job Description",
-        "what": "The Principal Applied AI Product Manager posting: what the role owns, what it requires and the tools it names.",
-        "status": "Reference",
-        "url": "https://claude.ai/artifact/9CUyQt1EDbmu1R7DVRyvkM",
-        "source": "job-description.md"
-      },
-      "children": [
+      "id": "bank",
+      "name": "The bank",
+      "why": "How the bank earns money, and where AI work can move it.",
+      "items": [
         {
           "id": "bank-business",
           "name": "Bank Business Briefing",
@@ -86,38 +12,95 @@
           "status": "Waiting for review",
           "url": "https://claude.ai/artifact/7ZVT7LtdqxwAma4UrBgTPX",
           "source": "memos/bank-business.md"
+        }
+      ]
+    },
+    {
+      "id": "rm",
+      "name": "Relationship managers",
+      "why": "The bankers who own business client relationships and bring in new deals.",
+      "items": [
+        {
+          "todo": true,
+          "name": "RM user workflow: today and with AI",
+          "what": "How an RM works today, where each AI product fits, and how the work changes.",
+          "status": "To build"
         },
         {
-          "id": "tech-stack",
-          "name": "Tech Stack Guide",
-          "what": "Every technology in the job: what it is, how the bank likely uses it, and what I need to know.",
-          "status": "In use",
-          "url": "https://claude.ai/artifact/DDmD65zw7LjnP5v2nHDFW2",
-          "source": "tech-stack.md"
+          "id": "mckinsey-use-cases",
+          "name": "RM Core Use Cases",
+          "what": "Core reference for choosing core use cases and AI products: McKinsey's five frontline AI use cases and their returns, how the RM plan covers them, and the seven core use cases the RM plan is organized on (McKinsey's five plus admin off the RM's plate and keep clients).",
+          "status": "Waiting for review",
+          "url": "https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X",
+          "source": "memos/mckinsey-frontline-ai.md"
         },
         {
-          "id": "job-notes",
-          "name": "Job Notes",
-          "what": "My answers so far on how I'd do the job, part by part.",
-          "status": "In progress",
-          "url": "https://claude.ai/artifact/SpcnPMbMEgyxZSoYVsRdES",
-          "source": "job-notes.md"
+          "id": "rm-plan",
+          "name": "RM Analytics Plan",
+          "what": "The full RM plan as one continuous scrolling page: the easiest way to read it start to finish (same words as the RM Analytics Framework design page).",
+          "status": "Waiting for review",
+          "url": "https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk",
+          "source": "memos/rm-analytics-framework.md"
+        },
+        {
+          "id": "rm-design",
+          "name": "RM Analytics Framework",
+          "what": "The design page: the one-page summary and the full plan in six parts, side by side.",
+          "status": "Waiting for review",
+          "url": "https://claude.ai/artifact/3c7ZxKjJcjWRyV7BbzKfhY",
+          "source": "memos/rm-analytics-framework.md",
+          "index_note": "Sections: see RM Analytics Plan"
+        }
+      ]
+    },
+    {
+      "id": "credit",
+      "name": "Credit",
+      "why": "The credit partners paired with RMs: portfolio managers and the credit team.",
+      "items": [
+        {
+          "todo": true,
+          "name": "Credit user workflow: today and with AI",
+          "what": "How the credit team works today, where each AI product fits, and how the work changes.",
+          "status": "To build"
+        },
+        {
+          "id": "credit-market-scan",
+          "name": "Credit Core Use Cases",
+          "what": "What banks are deploying in commercial credit, and the credit counterpart of each of the seven core use cases. A proposal, not yet agreed.",
+          "status": "Waiting for review",
+          "url": "https://claude.ai/artifact/2tySJZL41pf72igzanYbaT",
+          "source": "memos/credit-market-scan.md"
+        },
+        {
+          "todo": true,
+          "name": "Credit plan",
+          "what": "The credit plan, built on the same structure as the RM plan.",
+          "status": "Later"
         }
       ]
     },
     {
       "id": "deliver",
-      "name": "How I deliver",
-      "why": "The operating model I'd bring to every AI product: the steps, the machine that runs them, and the manual for doing it.",
-      "parent": {
-        "id": "framework",
-        "name": "Product Framework",
-        "what": "The six steps every product goes through, each with a go/no-go gate, and the rules that keep it governed.",
-        "status": "In use",
-        "url": "https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ",
-        "source": "product-framework.md"
-      },
-      "children": [
+      "name": "How we deliver",
+      "why": "The product process that takes every AI product from idea to adoption.",
+      "items": [
+        {
+          "id": "framework",
+          "name": "Product Framework",
+          "what": "The six steps every product goes through, each with a go/no-go gate, and the rules that keep it governed.",
+          "status": "In use",
+          "url": "https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ",
+          "source": "product-framework.md"
+        },
+        {
+          "id": "workflow",
+          "name": "Six-Step Product Workflow",
+          "what": "A one-page visual of the six steps for the role.",
+          "status": "Draft",
+          "url": "https://claude.ai/artifact/8Nm5fkdicn2Gu5VmNVTvYv",
+          "source": "memos/role-workflow.md"
+        },
         {
           "id": "delivery-machine",
           "name": "The Delivery Machine",
@@ -133,61 +116,107 @@
           "status": "Waiting for review",
           "url": "https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4",
           "source": "playbook/"
-        },
-        {
-          "id": "workflow",
-          "name": "Six-Step Product Workflow",
-          "what": "A one-page visual of the six steps for the role.",
-          "status": "Draft",
-          "url": "https://claude.ai/artifact/8Nm5fkdicn2Gu5VmNVTvYv",
-          "source": "memos/role-workflow.md"
         }
       ]
     },
     {
-      "id": "projects",
-      "name": "Projects",
-      "why": "Real plans built on the framework. The first is AI-powered analytics for relationship managers.",
-      "parent": {
-        "id": "rm-design",
-        "name": "RM Analytics Framework",
-        "what": "The design page: the one-page summary and the full plan in six parts, side by side.",
-        "status": "Waiting for review",
-        "url": "https://claude.ai/artifact/3c7ZxKjJcjWRyV7BbzKfhY",
-        "source": "memos/rm-analytics-framework.md"
-      },
-      "children": [
+      "id": "reference",
+      "name": "Reference",
+      "why": "Look things up: words, tools, steps, controls and agents. Claude keeps the catalogs and the glossary in line with the plans.",
+      "items": [
         {
-          "id": "rm-plan",
-          "name": "RM Analytics Plan",
-          "what": "The same full plan as one continuous scrolling page: the easiest way to read it start to finish.",
-          "status": "Waiting for review",
-          "url": "https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk",
-          "source": "memos/rm-analytics-framework.md"
+          "id": "glossary",
+          "name": "Glossary",
+          "what": "The words we use, one meaning each, so every plan says the same thing, plus the old wording we've retired (the audit fails on any left behind). Ends with the bank's terms still to map.",
+          "count": "57 terms",
+          "status": "Reference",
+          "url": "https://claude.ai/artifact/LRQHSz65beh9XewB6qsQvQ",
+          "source": "glossary.md"
         },
         {
-          "id": "mckinsey-use-cases",
-          "name": "McKinsey Use Cases",
-          "what": "Core reference for choosing use cases: McKinsey's five frontline AI use cases and their returns, how the RM plan covers them, and the seven core use cases the RM plan is organized on (McKinsey's five plus admin off the RM's plate and keep clients).",
-          "status": "Waiting for review",
-          "url": "https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X",
-          "source": "memos/mckinsey-frontline-ai.md"
+          "id": "tech-stack",
+          "name": "Tech Stack Guide",
+          "what": "Every technology in the job: what it is, how the bank likely uses it, and what I need to know.",
+          "status": "In use",
+          "url": "https://claude.ai/artifact/DDmD65zw7LjnP5v2nHDFW2",
+          "source": "tech-stack.md"
+        },
+        {
+          "id": "steps",
+          "name": "Steps Catalog",
+          "what": "Find any sub-step of the six-step process on its own: why it matters, what it produces and its tasks.",
+          "count": "44 sub-steps",
+          "status": "Reference",
+          "url": "https://claude.ai/artifact/8UncWMYUq7hsJUhn5NSYEB",
+          "source": "playbook/, product-framework.md"
+        },
+        {
+          "id": "controls",
+          "name": "Controls Catalog",
+          "what": "Every governance control in one place: the safeguards built into each product, and where each is set, built, proved and watched.",
+          "count": "25 controls",
+          "status": "Reference",
+          "url": "https://claude.ai/artifact/7GmH3iBG6jcDkdacUysUrQ",
+          "source": "playbook/controls.md"
+        },
+        {
+          "id": "agents",
+          "name": "Agent Library",
+          "what": "Every agent in one place: what it does, what it may and may not do, and who's in charge. Filter by step or by who it serves.",
+          "count": "39 agents",
+          "status": "Reference",
+          "url": "https://claude.ai/artifact/Cn9nANQoqp2BP7yrmy61zn",
+          "source": "playbook/agents.md, RM memo Appendix A"
+        },
+        {
+          "id": "workflows",
+          "name": "Workflow Maps",
+          "what": "See the shape of the work: each main process left to right, with its sub-processes branching off. Click any box for details.",
+          "count": "2 maps · 53 branches",
+          "status": "Reference",
+          "url": "https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX",
+          "source": "playbook/, product-framework.md, RM memo Appendix B"
         }
       ]
     },
     {
-      "id": "claude",
-      "name": "Working with Claude",
-      "why": "How I get the best out of Claude.",
-      "parent": {
-        "id": "prompting",
-        "name": "Prompting Guide",
-        "what": "Anthropic's prompting advice in plain English, a fill-in template, five worked examples and a checklist.",
-        "status": "In use",
-        "url": "https://claude.ai/artifact/Secfj5fBtpVA1veroUU7A7",
-        "source": "prompting.md"
-      },
-      "children": []
+      "id": "workspace",
+      "name": "My workspace",
+      "why": "For me only; never shared with the bank.",
+      "items": [
+        {
+          "id": "open-items",
+          "name": "Open Items",
+          "what": "Everything still open in one log: decisions and reviews waiting on me, work to do, questions for the bank, and what's parked.",
+          "status": "In use",
+          "url": "https://claude.ai/artifact/NsW5AH5XFNHmDNYJvmVDMb",
+          "source": "open-items.md"
+        },
+        {
+          "id": "job-description",
+          "name": "Job Description",
+          "what": "The Principal Applied AI Product Manager posting: what the role owns, what it requires and the tools it names.",
+          "status": "In use",
+          "url": "https://claude.ai/artifact/9CUyQt1EDbmu1R7DVRyvkM",
+          "source": "job-description.md"
+        },
+        {
+          "id": "job-notes",
+          "name": "Job Notes",
+          "what": "My answers so far on how I'd do the job, part by part.",
+          "status": "In progress",
+          "url": "https://claude.ai/artifact/SpcnPMbMEgyxZSoYVsRdES",
+          "source": "job-notes.md"
+        },
+        {
+          "id": "prompting",
+          "name": "Prompting Guide",
+          "what": "Anthropic's prompting advice in plain English, a fill-in template, five worked examples and a checklist.",
+          "status": "In use",
+          "url": "https://claude.ai/artifact/Secfj5fBtpVA1veroUU7A7",
+          "source": "prompting.md"
+        }
+      ]
     }
   ]
 }

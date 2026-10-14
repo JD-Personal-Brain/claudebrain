@@ -18,6 +18,8 @@ in order, and fill in its **first-time log** as you go.
 | 4. Govern and test | `4-govern-and-test.md` | Draft, 2026-10-09, waiting for my review |
 | 5. Release and adopt | `5-release-and-adopt.md` | Draft, 2026-10-09, waiting for my review |
 | 6. Measure and iterate | `6-measure-and-iterate.md` | Draft, 2026-10-09, waiting for my review |
+| Agent library | `agents.md` | 33 general agents (M1 to M33); shown on the Agent Library page |
+| Controls | `controls.md` | 25 controls (K1 to K25); shown on the Controls Catalog page |
 
 ## How every sub-step is written
 - **Goal:** what this sub-step is for, in one line.
