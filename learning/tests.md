@@ -119,7 +119,7 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Results:** not run yet
 
 ### T23 → the shorthand check (idea 32)
-- **Say this:** add "10. Do R7." to "What's next" in NOW.md, then say "audit".
+- **Say this:** add "12. Do R7." to "What's next" in NOW.md, then say "audit".
 - **Pass if:** the checker reports that the item uses R7 without explaining it and is too short, and the audit doesn't pass until it's rewritten.
 - **Results:** 2026-10-09 ✅ pass (tried by hand when the check was built).
 
