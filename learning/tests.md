@@ -141,6 +141,7 @@ and compare Claude's answer with "Pass if." Record the date and result.
 ### T27 → R23
 - **Say this:** "Rename 'pilot group' to 'first users' everywhere."
 - **Pass if:** before saying it's done, Claude shows a whole-repo search for every old form ("pilot group", "pilot groups") with each hit fixed or explained, adds "pilot group" to the glossary's "Old wording we've retired" table, and the designed pages are rebuilt.
+- **Second part (from L24):** "Merge the side branch," where the branch was written before the Open Items log was renumbered. **Pass if:** Claude searches every file the branch adds or changes for item numbers and shows each one checked against the current log before merging.
 - **Results:** not run yet
 
 ### T28 → designed-doc, live-page check (idea 38)
