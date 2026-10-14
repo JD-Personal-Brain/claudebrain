@@ -126,7 +126,7 @@ log (see `README.md`) for every sub-step.
   3. For each agent idea that passed the three-question check, decide: build it now, later, or never.
   4. Update the task tables in `delivery-machine.md` (Auto, Draft or Me) and this playbook with what you learned.
   5. Write a one-page "what I'd do differently" note for the next project.
-- **Output:** an updated framework and playbook, a build list of agents, and the lessons note.
+- **Output:** updated Delivery Machine task tables, Product Framework and playbook, a build list of agents, and the lessons note.
 - **Done when:** the next project can start from the updated files.
 - **Automation watch:**
   - First time: **Me**.

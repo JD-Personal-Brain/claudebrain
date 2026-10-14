@@ -9,7 +9,7 @@ Delivery Playbook (`playbook/`) says how to do each sub-step the first time.
 Designed page: https://claude.ai/artifact/S8Wbygy24cjguTMxZsN2QF (built from this
 file by `designs/delivery-machine-build.py`).
 
-I'm one person running several projects at once, so the framework has to run
+I'm one person running several projects at once, so the machine has to run
 mostly by itself. Automation does the routine work and pushes tasks to people
 against the timeline, so my time goes only where a person is needed.
 Every project uses the same steps, tracker and templates, so they all run the
@@ -134,7 +134,7 @@ bank allowing automations to message people.
 | 6.4 | Keep/change/stop decision | Me | Meeting | Sponsor |
 | 6.5 | Rank the candidates for the next feature wave | Draft | M33 Improvement scout | Me, then sponsor |
 | 6.6 | Total time and waits from the first-time logs | Draft | M19 Log summarizer | Me |
-| 6.6 | Improve the machine: update this framework and the playbook | Me | — | — |
+| 6.6 | Improve the machine: update the Delivery Machine, the Product Framework and the playbook | Me | — | — |
 | Gate | Keep, change or stop; invest more, adjust or stop | Me | Meeting | Sponsor, Finance |
 
 ## Across every project (the running layer)
@@ -153,7 +153,7 @@ At each gate, before go/no-go, ask of every **Me** and **Draft** task:
 3. **Is it safe alone?** It makes no decision, nothing reaches a client, and the bank's rules allow it.
 
 All three yes → move it one kind toward **Auto** before the next project, and
-update the task table in this file. The reverse also applies: if an **Auto** task went
+update that step's task table above. The reverse also applies: if an **Auto** task went
 wrong, move it back to a person until it's fixed.
 
 ## Many projects at once

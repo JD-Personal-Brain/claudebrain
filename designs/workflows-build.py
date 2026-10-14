@@ -214,7 +214,7 @@ page = f'''<title>Workflow Maps</title>
 <div class="howto"><span>Reading the maps:</span><span>Big navy box = a stage of the main process</span><span>Small box = a sub-process</span><span><span class="chip k-auto">Auto</span><span class="chip k-draft">Draft</span><span class="chip k-me">Me</span><span class="chip k-partner">Partner</span> = who does its tasks</span><span>◆ = a go/no-go gate</span></div>
 <section id="deliver" class="mapwrap">
 <div class="stephead"><span class="label">Map 1 · every product</span><h2>How we deliver a product</h2>
-<p class="intro" style="margin-top:6px;color:var(--muted)">The six steps of the product framework, each ending in a gate, with its {n_sub} sub-steps underneath. After the first pass, steps 3 to 6 repeat in short cycles.</p></div>
+<p class="intro" style="margin-top:6px;color:var(--muted)">The six steps of the Six-Step Product Workflow, each ending in a gate, with its {n_sub} sub-steps underneath. After the first pass, steps 3 to 6 repeat in short cycles.</p></div>
 {map1}
 </section>
 <section id="rm" class="mapwrap">

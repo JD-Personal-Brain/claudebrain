@@ -205,7 +205,6 @@ quarter when new results come out; the output is `memos/bank-business.md`.
 
 ```
 Inputs:   <job_description> [job-description.md] </job_description>
-          <framework> [product-framework.md] </framework>
           <value_model> [section 2, "The value model", of
           memos/rm-analytics-framework.md] </value_model>
           <tech_stack> [tech-stack.md] </tech_stack>

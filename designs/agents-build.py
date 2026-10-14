@@ -89,6 +89,8 @@ for g, name, why in GROUPS:
 # The notes at the end of playbook/agents.md: agents that keep running after launch, and reusable assets that aren't agents
 _tail = read("playbook/agents.md").split("## Not agents, but reusable assets")[1].split("_Last updated")[0]
 _assets, _ongoing = _tail.split("## Agents with an ongoing mode")
+# The intro of playbook/agents.md: what the agents are, how they behave and how far to trust them
+agents_intro = render_blocks(read("playbook/agents.md").split("\n### ")[0].split("\n", 1)[1].split("\n---")[0])
 notes = (f'<section class="notesec" id="notes"><div class="ahead"><h2>Two notes on the agents</h2></div><div class="notes">'
          f'<div class="note"><h3>Agents with an ongoing mode</h3>{render_blocks(_ongoing)}</div>'
          f'<div class="note"><h3>Not agents, but reusable assets</h3>{render_blocks(_assets)}</div></div></section>')
@@ -146,6 +148,7 @@ page = f'''<title>Agent Library</title>
 </div>
 </div></div>
 <main class="wrap">
+<div class="intro-block" style="display:flex;flex-direction:column;gap:12px">{agents_intro}</div>
 <div class="howto" style="display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--muted);align-items:center"><span>The chip shows what each general agent aims to become:</span><span class="chip k-auto">Auto</span> runs on its own <span class="chip k-draft">Draft</span> drafts for a person to check</div>
 {sections}
 <p class="empty" id="none" hidden>No agents match. Try another word or clear the filters.</p>

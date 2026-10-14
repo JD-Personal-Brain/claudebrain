@@ -6,7 +6,7 @@ machine's own paperwork and routing, and M20 to M33 do the team's analysis,
 testing and monitoring work (they started as the RM project's helpers and were
 made general on 2026-10-10). A project's own agents (the product users see, or
 agents only that project needs) go in its memo's Appendix A, like A1 to A6 in
-the RM memo. H1 and on are my own research helpers (see "Research helpers" near the end):
+the RM memo. H1 and on are my own research helpers (see "My research helpers" near the end of the Agent Library page):
 they keep my reference pages current and are not part of the delivery machine.
 
 Written with the **agent-spec** skill. Every agent follows the AI principles in

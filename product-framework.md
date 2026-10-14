@@ -18,7 +18,7 @@ written as [name needed] until they're filled.
 | Sponsor | The outcome, the funding and the go/no-go at every gate | Every gate; the step 4 gate together with risk |
 | User leaders and pilot users | How the work is done today, and feedback on the product | Discover (interviews, mock-up), Release and adopt (pilot) |
 | Product manager (this role) | Scope, priorities and trade-offs; owns the product until a long-term owner is named | Every step |
-| Long-term owner | Holds the product after launch, for example someone in a revenue line | Named in Define if known (2.8), confirmed before scaling (5.7) |
+| Long-term owner | Holds the product after launch, for example someone in a revenue line; identified during the project | Named in Define if known (2.8), confirmed before scaling (5.7) |
 | Data owners | What data may be used; they sign the data contract | Define (2.3), Build (3.2) |
 | Platform teams | The technical design | Define (2.2), Build |
 | Model risk | The risk rating and the approval | Briefed in Discover (1.0), rating in Define (2.4), approval in Govern and test |
@@ -39,10 +39,10 @@ from it.
 
 | Kind | What it tells us | Example measures |
 |---|---|---|
-| Usage | Whether people open it at all | Weekly active users, % of target users |
+| Usage | Whether people use what it gives them | Answers or insights opened and acted on; drafts and briefs used |
 | Quality | Whether its answers are right and useful | Accuracy on the test set, % of answers with sources, thumbs up or down |
 | Business impact | Whether it moves the outcome the sponsor cares about | Hours saved per user, more client meetings, pipeline created, revenue won |
-| Adoption | Whether it has become part of the routine | Repeat use week after week, use inside the routines managers run |
+| Adoption | Whether it has become part of the routine | Weekly active users, % of target users, repeat use week after week, use inside the routines managers run |
 | Risk and controls | Whether it stays safe | Incidents, human overrides, guardrail blocks, review findings |
 
 Leading measures show up within weeks (use, insights acted on, pipeline

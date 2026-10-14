@@ -12,7 +12,8 @@ Page 1 of the four "How we deliver" pages, read in this order:
 
 > **Source.** Taken from my RM analytics memo (`memos/rm-analytics-framework.md`,
 > memo v6, 2026-10-08) with the RM details removed. Memo v8 (2026-10-09) follows
-> the same six steps and gates and is the full worked example. Its sub-steps are
+> the same six steps and gates and is the full worked example, with agent specs
+> and workflows in its appendices. Its sub-steps are
 > tailored to RM work and aren't yet numbered like the playbook's 44; that's part
 > of applying the delivery machine to the RM memo (work item W8 in the Open Items log).
 
