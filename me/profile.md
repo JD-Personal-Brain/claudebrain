@@ -21,6 +21,10 @@ when it learns something new.
 - My audits must keep every core document consistent with every other and every page fully rendered, not just the files that changed. I shouldn't be asked to proofread reference pages.
 - Build the machine for one product end to end first; many products come later.
 - I didn't like a dark, terminal-style page (2026-10-13). Keep the house style unless I ask for something else, and show a small sample before building a whole page in a new look.
+- The program is organized around the two groups I serve: relationship managers and credit (each with its own core use cases). Organize plans and pages by who they serve, not by my process. (2026-10-14)
+- Meet users where they are: start from how RMs and credit people work today, then show where each AI product fits and how their work changes. My product process matters to me and my boss, not to them. (2026-10-14)
+- Long lists of pages should use collapsible rows (twisties) I click to open. (2026-10-14)
+- Open items are listed by priority; numbers follow the priority and can change. (2026-10-14)
 - I push for speed: plans should be paced by what really blocks us (data access, approvals), not traditional phases.
 
 ## Tools I use
@@ -35,4 +39,4 @@ when it learns something new.
 - Learning to write good prompts (see `prompting.md`), and working through a "Claude Mastery" course I bought.
 - (more to add)
 
-_Last updated: 2026-10-13_
+_Last updated: 2026-10-14_
