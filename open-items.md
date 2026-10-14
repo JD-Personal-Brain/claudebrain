@@ -204,7 +204,7 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C18 | Number open items by priority: yes. Each kind runs 1, 2, 3 in priority order, numbers change when priorities change, and closed items keep theirs | 2026-10-14 |
 | C19 | I read the Bank Business Briefing. It's fine as is, no changes | 2026-10-14 |
 | C20 | Idea 43 (quieter startup warning): yes. The startup check now fetches more history before comparing an old branch and stays quiet when its changes are already in main; the two empty old branches that kept being flagged are gone from GitHub | 2026-10-14 |
-| C21 | I read the Product Framework, the Product Workflow, Product Machine and Product Playbook. All four are good to go and now marked In use | 2026-10-14 |
+| C21 | I read the Product Framework, Product Workflow, Product Machine and Product Playbook. All four are good to go and now marked In use | 2026-10-14 |
 | C22 | Rename the credit pages to match the library's "Portfolio managers" section (idea 44): yes. They're now the Portfolio Manager Core Use Cases page, the portfolio manager user workflow and the portfolio manager plan | 2026-10-14 |
 | C23 | Lock the Bank Business Briefing: audited; it now names both user groups, RMs and PMs, with a "which bankers" column, a section on PMs and a section on how the page stays current. The bank news scout is agent H1 in the Agent Library. "PM" now means portfolio manager everywhere, and "product manager" is spelled out | 2026-10-14 |
 | C24 | Ideas 40 and 45: yes. The page check now clicks every jump link on every page and fails if one lands in the wrong place, and Claude checks the bank news scout's last run at the start of each session | 2026-10-14 |

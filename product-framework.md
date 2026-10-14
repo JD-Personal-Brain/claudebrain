@@ -103,7 +103,7 @@ The RM plan (`memos/rm-analytics-framework.md`) is the worked example.
 2. Fill in the six steps for this project (from the Product Workflow): its question, governance thread and gate for each step.
 3. Fill in who's involved and who decides, above, with real names.
 4. Copy the task tables from the Product Machine into the shared tracker, with an owner and a date for each task.
-5. Work through Discover first, using the write-up layout above and Product Playbook (how to do each sub-step the first time, and what to log so it can be automated).
+5. Work through Discover first, using the write-up layout above and the Product Playbook (how to do each sub-step the first time, and what to log so it can be automated).
 6. Keep the plan in `memos/<project>.md`, as the RM memo does.
 
 _Last updated: 2026-10-14_

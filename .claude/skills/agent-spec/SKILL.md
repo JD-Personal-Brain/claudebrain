@@ -1,6 +1,6 @@
 ---
 name: agent-spec
-description: Turn an agent idea into a full, buildable spec. Use when the user says "spec this agent", "write the agent spec", "turn the agent ideas into specs", when a playbook review table or project memo lists an agent marked "New" or "Partly", or at playbook sub-step 3.1 (design the solution). Works for product-machine agents (the agent library) and for a project's own agents (the project memo's Appendix A).
+description: Turn an agent idea into a full, buildable spec. Use when the user says "spec this agent", "write the agent spec", "turn the agent ideas into specs", when a playbook review table or project memo lists an agent marked "New" or "Partly", or at playbook sub-step 3.1 (design the solution). Works for general agents (the agent library) and for a project's own agents (the project memo's Appendix A).
 ---
 
 # Write an agent spec
@@ -42,7 +42,7 @@ assistive first, one job each, read-only by default, every action logged.
 ## 4. Update the references
 - In the playbook review table, change "Already specified?" from "New" to "Yes, M#" (or "Yes, A#").
 - If the agent changes how a task is done, update that task row's tool in `product-machine.md`.
-- Rebuild and republish the designed pages: the playbook page (`python3 designs/playbook-build.py`; it shows the product-machine agents) and the Agent Library (`python3 designs/agents-build.py`). For a project agent in a memo's Appendix A, also update that project's design page first, then rebuild its scrolling page. Then run `python3 .claude/skills/audit/check.py`.
+- Rebuild and republish the designed pages: the playbook page (`python3 designs/playbook-build.py`; it lists the general agents) and the Agent Library (`python3 designs/agents-build.py`). For a project agent in a memo's Appendix A, also update that project's design page first, then rebuild its scrolling page. Then run `python3 .claude/skills/audit/check.py`.
 
 ## 5. Audit, then merge
 Run the **audit** skill (rule R18) before offering to merge.
