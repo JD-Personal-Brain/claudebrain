@@ -1,4 +1,4 @@
-# McKinsey's frontline AI use cases, and how our RM plan covers them
+# RM core use cases: McKinsey's frontline AI use cases, and how our plan covers them
 
 A core reference for choosing which use cases to build, and the basis for the RM plan's seven core use cases. It summarizes McKinsey's
 article "Agentic AI is here. Is your bank's frontline team ready?" and checks the

@@ -112,6 +112,8 @@ that also says the new wording (a note about the change) is allowed.
 | Agent idea: | Agent: (with the agent's M number) | 2026-10-10 |
 | (spec M | (agent library) | 2026-10-10 |
 | 19-agent library | the agent library (33 general agents) | 2026-10-10 |
+| McKinsey Use Cases | RM Core Use Cases (the page name) | 2026-10-14 |
+| Credit Market Scan | Credit Core Use Cases (the page name) | 2026-10-14 |
 
 ## Bank terms to map
 

@@ -1,4 +1,4 @@
-# Market scan: AI in the commercial credit process
+# Credit core use cases: what banks are deploying in commercial credit
 
 As of 2026-10-13. A web scan of what banks are deploying in credit, lined up with the seven core use cases in the RM plan.
 

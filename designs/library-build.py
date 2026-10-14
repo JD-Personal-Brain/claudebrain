@@ -1,6 +1,8 @@
 """Builds designs/library.html, the Document Library, from designs/library.json.
-The page is one index: every designed page, grouped by area, one row each. A row shows
-the page's status; its twisty opens a one-line description and the page's sections.
+The page is one index in six numbered sections (the bank, relationship managers, credit,
+how we deliver, reference, my workspace), one row per page. A row shows the page's status;
+its twisty opens a one-line description and the page's sections. Placeholder rows mark
+pages still to build.
 To add a document: add it to library.json (and designs/README.md) and to PAGE_FILE below,
 run this, republish.
 Run: python3 designs/library-build.py"""
@@ -11,9 +13,10 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 lib = json.load(open(os.path.join(ROOT, "designs", "library.json")))
 
 STATUS = {"In use": "s-use", "Waiting for review": "s-review", "Draft": "s-review", "In progress": "s-review", "Reference": "s-ref"}
-# Groups in page order: the building blocks first, then each area (its parent page, then the pages under it).
-groups = [("Building blocks", lib["building_blocks"])] + [(a["name"], [a["parent"]] + a["children"]) for a in lib["areas"]]
-for _, ds in groups:
+# Sections in page order, from library.json. An item is a page, or a placeholder ("todo") for one still to build.
+STATUS.update({"To build": "s-todo", "Later": "s-todo"})
+groups = [(g["name"], g["why"], g["items"]) for g in lib["groups"]]
+for _, _, ds in groups:
     for d in ds:
         if d["status"] not in STATUS:
             raise SystemExit(f"Unknown status for {d['name']}: {d['status']}")
@@ -49,6 +52,8 @@ def chip(d):
     return f'<span class="status {STATUS[d["status"]]}">{E(d["status"])}</span>'
 
 def entry(d):
+    if d.get("todo"):
+        return f'<div class="ientry plain todo" data-search="{E((d["name"] + " " + d["what"]).lower())}"><span class="ipage">{E(d["name"])}</span>{chip(d)}<p class="idesc">{E(d["what"])}</p></div>'
     # Pages with sections are a twisty: click the row to open it; click the name to open the page.
     secs = sections(d["id"])
     search = E((d["name"] + " " + d["what"]).lower())
@@ -60,16 +65,16 @@ def entry(d):
     return (f'<details class="ientry" data-search="{search}"><summary>{name}{chip(d)}<span class="ic" title="Sections">{len(secs)}</span></summary>'
             f'<p class="idesc">{E(d["what"])}</p><ul class="isecs">{links}</ul></details>')
 
-index = "".join(f'<div class="igroup" id="g{i}"><h3>{E(n)}</h3>{"".join(entry(d) for d in ds)}</div>' for i, (n, ds) in enumerate(groups))
-nav = "".join(f'<a href="#g{i}">{E(n)}<span class="count">{len(ds)}</span></a>' for i, (n, ds) in enumerate(groups))
-npages = sum(len(ds) for _, ds in groups)
+index = "".join(f'<div class="igroup" id="g{i}"><h3><span class="gnum">{i+1}</span>{E(n)}</h3><p class="gwhy">{E(why)}</p>{"".join(entry(d) for d in ds)}</div>' for i, (n, why, ds) in enumerate(groups))
+nav = "".join(f'<a href="#g{i}"><span class="num">{i+1}</span>{E(n)}</a>' for i, (n, _, ds) in enumerate(groups))
+npages = sum(1 for _, _, ds in groups for d in ds if not d.get("todo"))
 
 page = f'''<title>Document Library</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
 <style>{CSS}
 [hidden]{{display:none!important}}
-/* Layout: navy band with area pills and a filter; then the index, area groups flowing in two columns, one row per page. */
+/* Layout: navy band with numbered section pills and a filter; then one column of numbered sections, one row per page. */
 .count{{font-family:var(--mono);font-size:12px;color:var(--label-on-navy);margin-left:8px}}
 .filter{{margin-top:20px;max-width:420px}}
 .filter label{{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--label-on-navy);margin-bottom:6px}}
@@ -81,9 +86,15 @@ page = f'''<title>Document Library</title>
 .s-use{{background:var(--teal-bg);color:var(--teal)}}
 .s-review{{background:var(--amber-bg);color:var(--amber)}}
 .s-ref{{background:var(--partner-bg);color:var(--partner)}}
-.index{{columns:2 380px;column-gap:24px}}
+.index{{max-width:760px}}
 .igroup{{break-inside:avoid-column;margin:0 0 18px;scroll-margin-top:16px}}
-.igroup h3{{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin:0 0 6px}}
+.igroup{{margin:0 0 28px}}
+.igroup h3{{font-family:var(--serif);font-size:22px;font-weight:600;margin:0;display:flex;gap:12px;align-items:baseline}}
+.gnum{{font-family:var(--mono);font-size:14px;color:var(--teal)}}
+.gwhy{{color:var(--muted);font-size:15px;margin:2px 0 10px}}
+.s-todo{{background:transparent;border:1px dashed var(--line);color:var(--muted)}}
+.ientry.todo{{background:transparent;border-style:dashed}}
+.ientry.todo .ipage{{color:var(--muted)}}
 .ientry{{background:var(--card);border:1px solid var(--line);border-radius:8px;margin:0 0 6px;break-inside:avoid}}
 .ientry>summary,.ientry.plain{{display:flex;align-items:baseline;gap:12px;padding:10px 16px}}
 .ientry>summary{{cursor:pointer;list-style:none}}
@@ -105,9 +116,9 @@ page = f'''<title>Document Library</title>
 .empty{{color:var(--muted)}}
 </style>
 <div class="band"><div class="wrap">
-<span class="label">Everything in my Claude brain</span>
+<span class="label">The program</span>
 <h1>Document Library</h1>
-<p class="lede">Every page I read, grouped by area. Open any row to see what the page is for and jump straight to a section.</p>
+<p class="lede">The AI program for Associated Bank&#x27;s relationship managers and credit team: the bank, each group&#x27;s work and use cases, how we deliver, and reference.</p>
 <nav class="stepnav" aria-label="Areas">{nav}</nav>
 <div class="filter"><label for="q">Find a document</label><input id="q" type="search" placeholder="Type a word, like plan, agent or prompt" autocomplete="off"></div>
 </div></div>

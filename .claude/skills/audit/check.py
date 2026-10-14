@@ -56,7 +56,9 @@ for page,builder in [('designs/delivery-machine.html','designs/delivery-machine-
 # 4. every published page is in the Document Library
 import json
 lib=json.load(open('designs/library.json'))
-lib_urls={d['url'] for a in lib['areas'] for d in [a['parent']]+a['children']}|{b['url'] for b in lib.get('building_blocks',[])}
+lib_docs=[d for g in lib['groups'] for d in g['items'] if not d.get('todo')]  # every page in the library, placeholders left out
+lib_docs_by_id={d['id']:d for d in lib_docs}
+lib_urls={d['url'] for d in lib_docs}
 readme_urls=set(re.findall(r'https://claude\.ai/artifact/\w+',open('designs/README.md').read()))
 library_url='https://claude.ai/artifact/LTpbCT4kN4LcyEoYnh7vgj'
 for u in sorted(readme_urls-lib_urls-{library_url}): print("designs/library.json is missing",u); probs+=1
@@ -75,11 +77,8 @@ if '## At a glance' not in oi or '## Stage 1.' not in oi or '## Closed' not in o
 oi_live=oi.split('## Closed')[0]                                   # everything still open
 oi_rev=oi_work=oi_live
 where=lambda st: oi_live
-for a in lib['areas']:
-    for d in [a['parent']]+a['children']:
-        if d['status'] in ('Waiting for review','Draft','In progress') and d['name'] not in where(d['status']): print("open-items.md doesn't mention the page",d['name'],"(status:",d['status']+")"); probs+=1
-for b in lib.get('building_blocks',[]):
-    if b['status'] in ('Waiting for review','Draft','In progress') and b['name'] not in where(b['status']): print("open-items.md doesn't mention the page",b['name']); probs+=1
+for d in lib_docs:
+    if d['status'] in ('Waiting for review','Draft','In progress') and d['name'] not in where(d['status']): print("open-items.md doesn't mention the page",d['name'],"(status:",d['status']+")"); probs+=1
 for m in re.finditer(r'^\| (\d+) \|.*\| ([^|]+) \|\s*$',open('ideas.md').read(),re.M):
     if re.match(r'(new|suggested|yes|not yet)\b',m.group(2).strip()) and not re.search(r'\bideas? [\d, and]*\b'+m.group(1)+r'\b',oi_live): print("open-items.md doesn't mention idea",m.group(1),"(status:",m.group(2).strip()[:20]+")"); probs+=1
 def upd(f):
@@ -116,7 +115,7 @@ TEAM=M-MACH; PROD=A  # team agents (M20+) live in the agent library; Appendix A 
 B=len(re.findall(r'^\*\*B\d+\. ',memo.split('## Appendix B')[1],re.M))
 lib=_json.load(open('designs/library.json'))
 want={'agents':f'{M+A} agents','steps':f'{SUB} sub-steps','controls':f'{CTL} controls','workflows':f'2 maps · {SUB+B} branches'}
-for b in lib['building_blocks']:
+for b in [d for g in lib['groups'] for d in g['items'] if not d.get('todo')]:
     if b['id'] in want and b['count']!=want[b['id']]: print('designs/library.json count for',b['name'],'is',repr(b['count']),'but the sources give',repr(want[b['id']])); probs+=1
 # Each count is read with up to one word in front of the noun ("25 governance controls"). A total is
 # checked against its own number: "all 39 agents" must be every agent, "19 ... machine" agents the machine's.
@@ -148,8 +147,8 @@ for n,g in gates.items():
 # 8. the glossary (glossary.md): no "Don't say" word (or its plural) in the core documents, and the library's term count is right
 gl=open('glossary.md').read()
 GT=len(re.findall(r'^\| \*\*[^*]+\*\* \|',gl,re.M))
-gb=[b for b in lib['building_blocks'] if b['id']=='glossary']
-if not gb: print('designs/library.json has no Glossary entry under building_blocks'); probs+=1
+gb=[d for g in lib['groups'] for d in g['items'] if d.get('id')=='glossary']
+if not gb: print('designs/library.json has no Glossary entry'); probs+=1
 for b in gb:
     if b['count']!=f'{GT} terms': print('designs/library.json count for Glossary is',repr(b['count']),'but glossary.md has',GT,'terms'); probs+=1
 bad=[]
