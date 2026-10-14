@@ -64,7 +64,7 @@ every working file (this section replaces the separate Gap Review page).
 
 ## Now
 
-What we're working on first: a quick check on the bank news scout, then the user workflow maps, which feed both the RM and the credit work.
+What we're working on first: a quick check on the bank news scout, then the user workflow maps, which feed both the RM and the credit work. Date to work toward: on Tuesday October 20, 2026 I talk with the credit lead and the RM lead, so I'm going down this log from the top before then (said 2026-10-14).
 
 | # | Item | Who | Waits on |
 |---|---|---|---|
