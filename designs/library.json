@@ -16,6 +16,45 @@
       ]
     },
     {
+      "id": "deliver",
+      "name": "How we deliver",
+      "why": "The product process that takes every AI product from idea to adoption.",
+      "items": [
+        {
+          "id": "framework",
+          "name": "Product Framework",
+          "what": "The six steps every product goes through, each with a go/no-go gate, and the rules that keep it governed.",
+          "status": "In use",
+          "url": "https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ",
+          "source": "product-framework.md"
+        },
+        {
+          "id": "workflow",
+          "name": "Six-Step Product Workflow",
+          "what": "A one-page visual of the six steps for the role.",
+          "status": "In use",
+          "url": "https://claude.ai/artifact/8Nm5fkdicn2Gu5VmNVTvYv",
+          "source": "memos/role-workflow.md"
+        },
+        {
+          "id": "delivery-machine",
+          "name": "The Delivery Machine",
+          "what": "How one product manager runs many projects at once: every task marked Auto, Draft, Me or Partner.",
+          "status": "In use",
+          "url": "https://claude.ai/artifact/S8Wbygy24cjguTMxZsN2QF",
+          "source": "product-framework.md"
+        },
+        {
+          "id": "playbook",
+          "name": "Delivery Playbook",
+          "what": "The field manual: how to run each of the 44 sub-steps the first time, plus the 33 general agents that run the delivery machine. All 39 agents, including the RM product's own 6, are on the Agent Library.",
+          "status": "In use",
+          "url": "https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4",
+          "source": "playbook/"
+        }
+      ]
+    },
+    {
       "id": "rm",
       "name": "Relationship managers",
       "why": "The bankers who own business client relationships and bring in new deals.",
@@ -55,13 +94,13 @@
     },
     {
       "id": "credit",
-      "name": "Credit",
-      "why": "The credit partners paired with RMs: portfolio managers and the credit team.",
+      "name": "Credit: portfolio managers",
+      "why": "Portfolio managers, the bank's credit people paired with RMs, and the credit team around them.",
       "items": [
         {
           "todo": true,
           "name": "Credit user workflow: today and with AI",
-          "what": "How the credit team works today, where each AI product fits, and how the work changes.",
+          "what": "How portfolio managers work today, where each AI product fits, and how the work changes.",
           "status": "To build"
         },
         {
@@ -77,45 +116,6 @@
           "name": "Credit plan",
           "what": "The credit plan, built on the same structure as the RM plan.",
           "status": "Later"
-        }
-      ]
-    },
-    {
-      "id": "deliver",
-      "name": "How we deliver",
-      "why": "The product process that takes every AI product from idea to adoption.",
-      "items": [
-        {
-          "id": "framework",
-          "name": "Product Framework",
-          "what": "The six steps every product goes through, each with a go/no-go gate, and the rules that keep it governed.",
-          "status": "In use",
-          "url": "https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ",
-          "source": "product-framework.md"
-        },
-        {
-          "id": "workflow",
-          "name": "Six-Step Product Workflow",
-          "what": "A one-page visual of the six steps for the role.",
-          "status": "In use",
-          "url": "https://claude.ai/artifact/8Nm5fkdicn2Gu5VmNVTvYv",
-          "source": "memos/role-workflow.md"
-        },
-        {
-          "id": "delivery-machine",
-          "name": "The Delivery Machine",
-          "what": "How one product manager runs many projects at once: every task marked Auto, Draft, Me or Partner.",
-          "status": "In use",
-          "url": "https://claude.ai/artifact/S8Wbygy24cjguTMxZsN2QF",
-          "source": "product-framework.md"
-        },
-        {
-          "id": "playbook",
-          "name": "Delivery Playbook",
-          "what": "The field manual: how to run each of the 44 sub-steps the first time, plus the 33 general agents that run the delivery machine. All 39 agents, including the RM product's own 6, are on the Agent Library.",
-          "status": "In use",
-          "url": "https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4",
-          "source": "playbook/"
         }
       ]
     },
