@@ -1,6 +1,6 @@
 """Mechanical audit checks. Run from the repo root: python3 .claude/skills/audit/check.py
-1. Framework task tables and playbook sub-steps match (every sub-step has rows, every
-   review-table "Aim for" kind matches the framework, every sub-step has all 8 fields).
+1. Delivery Machine task tables (delivery-machine.md) and playbook sub-steps match (every sub-step has rows, every
+   review-table "Aim for" kind matches the Delivery Machine, every sub-step has all 8 fields).
 2. Designed-page sources in designs/ have no empty tables.
 3. Every page built from a working copy is up to date.
 2b. No built page shows a stray underscore left over from Markdown.
@@ -8,8 +8,8 @@
 5. The Open Items log (open-items.md): no number used twice, counts match, pages and ideas still open are listed, not out of date.
 6. NOW.md's "What's next" has no unexplained shorthand.
 7. Alignment across documents (from L18): counts of agents, sub-steps, controls and workflow branches
-   quoted anywhere match the sources; the framework's "What happens" lists have one item per playbook
-   sub-step; the Six-Step Workflow memo and page carry the framework's gate wording.
+   quoted anywhere match the sources; the Six-Step Workflow's "What happens" lists (memos/role-workflow.md) have one item per
+   playbook sub-step; the Six-Step Workflow page carries the memo's gate wording.
 8. The glossary: no word from its "Words we don't use" table appears in the core documents.
 9. Retired wording: nothing from the glossary's "Old wording we've retired" table is left anywhere people read (idea 37).
 Prints each problem and a total. 0 problems means the mechanical checks pass.
@@ -18,7 +18,8 @@ Prints each problem and a total. 0 problems means the mechanical checks pass.
 """
 import subprocess
 import re,glob
-fw=open('product-framework.md').read()
+fw=open('delivery-machine.md').read()  # the task tables
+rw=open('memos/role-workflow.md').read()  # the six steps, their gates and "What happens"
 fwk={}
 for m in re.finditer(r'^\| (\d\.\d) \| [^|]+ \| ([^|]+) \|',fw,re.M):
     fwk.setdefault(m.group(1),set()).add(m.group(2).strip().split()[0].lower())
@@ -28,7 +29,7 @@ for f in sorted(glob.glob('playbook/[1-6]-*.md')):
     s=open(f).read()
     subs=re.findall(r'^## (\d\.\d) ',s,re.M)
     for n in subs:
-        if n not in fwk: print(f,n,"no framework row"); probs+=1
+        if n not in fwk: print(f,n,"no Delivery Machine row"); probs+=1
         body=s.split(f"## {n} ")[1].split("\n## ")[0]
         for fl in fields:
             if fl not in body: print(f,n,"missing field",fl); probs+=1
@@ -38,11 +39,11 @@ for f in sorted(glob.glob('playbook/[1-6]-*.md')):
         aim=m.group(3).strip().split()[0].lower()
         for n in [x.strip() for x in m.group(1).split(",")]:
             covered.add(n)
-            if aim not in fwk.get(n,set()): print(f,n,"aim",aim,"not in framework kinds",fwk.get(n)); probs+=1
+            if aim not in fwk.get(n,set()): print(f,n,"aim",aim,"not in Delivery Machine kinds",fwk.get(n)); probs+=1
     for n in subs:
         if n not in covered: print(f,n,"not in review table"); probs+=1
 for n in fwk:
-    if not any(re.search(rf'^## {re.escape(n)} ',open(f).read(),re.M) for f in glob.glob('playbook/[1-6]-*.md')): print("framework",n,"no playbook sub-step"); probs+=1
+    if not any(re.search(rf'^## {re.escape(n)} ',open(f).read(),re.M) for f in glob.glob('playbook/[1-6]-*.md')): print("delivery-machine.md",n,"no playbook sub-step"); probs+=1
 # 2. empty tables in designed pages
 for f in glob.glob('designs/*.html'):
     for body in re.findall(r'<tbody>([\s\S]*?)</tbody>',open(f).read()):
@@ -76,7 +77,7 @@ for k in 'VDWBP':
 # numbers change with priorities, so every item number cited elsewhere must still be a live item (L22)
 live=set(nums)
 # it only checks that a cited number exists; after a renumbering, re-read each reference to confirm it names the right item
-for f in ['NOW.md','ideas.md','product-framework.md','glossary.md','tech-stack.md','open-items.md']+sorted(glob.glob('memos/*.md'))+sorted(glob.glob('playbook/*.md'))+sorted(glob.glob('learning/*.md'))+sorted(glob.glob('.claude/skills/*/SKILL.md'))+sorted(glob.glob('designs/rm-analytics-canvas/*.dc.html')):
+for f in ['NOW.md','ideas.md','product-framework.md','delivery-machine.md','glossary.md','tech-stack.md','open-items.md']+sorted(glob.glob('memos/*.md'))+sorted(glob.glob('playbook/*.md'))+sorted(glob.glob('learning/*.md'))+sorted(glob.glob('.claude/skills/*/SKILL.md'))+sorted(glob.glob('designs/rm-analytics-canvas/*.dc.html')):
     t=open(f).read()
     if f=='open-items.md': t='\n'.join(re.sub(r'^\| [A-Z]\d+ \|','|',l) for l in t.split('\n'))
     for m in re.finditer(r'\b([VDWP]\d{1,2})\b(?! Labs)',t):
@@ -134,7 +135,7 @@ for b in lib_docs:
     if b['id'] in want and b['count']!=want[b['id']]: print('designs/library.json count for',b['name'],'is',repr(b['count']),'but the sources give',repr(want[b['id']])); probs+=1
 # Each count is read with up to one word in front of the noun ("25 governance controls"). A total is
 # checked against its own number: "all 39 agents" must be every agent, "19 ... machine" agents the machine's.
-for f in ['NOW.md','open-items.md','product-framework.md','playbook/README.md','designs/library.json','memos/role-workflow.md','tech-stack.md']:
+for f in ['NOW.md','open-items.md','product-framework.md','delivery-machine.md','playbook/README.md','designs/library.json','memos/role-workflow.md','tech-stack.md']:
     t=open(f).read()
     for m in re.finditer(r'\b(\d+)[ -](?:([A-Za-z]+) )?(agents?|sub-steps|controls)\b',t):
         num,mid,noun=int(m.group(1)),(m.group(2) or '').lower(),m.group(3)
@@ -148,17 +149,14 @@ for f in ['NOW.md','open-items.md','product-framework.md','playbook/README.md','
         else: ok={CTL} | ({UNCOV} if after.startswith(' of the') or 'have a stage' in after or 'not covered' in after else set())
         if num not in ok: print(f,'says',repr(m.group(0)),'but the sources give',sorted(ok)); probs+=1
     if re.search(r'\b\d+-agent library',t): print(f,'says "N-agent library": say which agents (general, project or all)'); probs+=1
-items={m.group(1):m.group(2).split(' · ') for m in re.finditer(r'^- \*\*(\d)\. [^:]+:\*\* (.+)$',fw,re.M)}
+items={m.group(1):m.group(2).split(' · ') for m in re.finditer(r'^- \*\*(\d)\. [^:]+:\*\* (.+)$',rw,re.M)}
 for n,c in n_sub.items():
-    if len(items.get(n,[]))!=c: print('product-framework.md "What happens" step',n,'has',len(items.get(n,[])),'items but the playbook has',c,'sub-steps'); probs+=1
-gates={m.group(1):m.group(2).strip() for m in re.finditer(r'^\| \*\*(\d)\. [^*]+\*\* \|[^|]+\|[^|]+\| ([^|]+) \|$',fw,re.M)}
-if len(gates)!=6: print('product-framework.md: could not read the six gates, so the gate checks did not run'); probs+=1
-rw=open('memos/role-workflow.md').read()
-for m in re.finditer(r'^\| (\d)\. [^|]+\|[^|]+\|[^|]+\| ([^|]+) \|$',rw,re.M):
-    if m.group(2).strip()!=gates.get(m.group(1)): print('memos/role-workflow.md gate',m.group(1),'differs from product-framework.md'); probs+=1
+    if len(items.get(n,[]))!=c: print('memos/role-workflow.md "What happens" step',n,'has',len(items.get(n,[])),'items but the playbook has',c,'sub-steps'); probs+=1
+gates={m.group(1):m.group(2).strip() for m in re.finditer(r'^\| (\d)\. [^|]+\|[^|]+\|[^|]+\| ([^|]+) \|$',rw,re.M)}
+if len(gates)!=6: print('memos/role-workflow.md: could not read the six gates, so the gate checks did not run'); probs+=1
 rh=_html.unescape(open('designs/role-workflow.html').read())
 for n,g in gates.items():
-    if f'<b>Gate {n}</b><span>{g[0].upper()+g[1:]}</span>' not in rh: print('designs/role-workflow.html gate',n,'differs from product-framework.md'); probs+=1
+    if f'<b>Gate {n}</b><span>{g[0].upper()+g[1:]}</span>' not in rh: print('designs/role-workflow.html gate',n,'differs from memos/role-workflow.md'); probs+=1
 # 8. the glossary (glossary.md): no "Don't say" word (or its plural) in the core documents, and the library's term count is right
 gl=open('glossary.md').read()
 GT=len(re.findall(r'^\| \*\*[^*]+\*\* \|',gl,re.M))
@@ -175,7 +173,7 @@ else:
         if m: bad.append(m.group(1).strip())
         else: print('glossary.md: could not read this "Words we don\'t use" row:',row[:60]); probs+=1
     if not bad: print('glossary.md: the "Words we don\'t use" table is empty'); probs+=1
-core=['product-framework.md','open-items.md','tech-stack.md','memos/rm-analytics-framework.md','memos/rm-analytics-summary.md','memos/role-workflow.md']+sorted(glob.glob('playbook/*.md'))
+core=['product-framework.md','delivery-machine.md','open-items.md','tech-stack.md','memos/rm-analytics-framework.md','memos/rm-analytics-summary.md','memos/role-workflow.md']+sorted(glob.glob('playbook/*.md'))
 for f in core:
     for i,line in enumerate(open(f).read().split('\n'),1):
         for w in bad:

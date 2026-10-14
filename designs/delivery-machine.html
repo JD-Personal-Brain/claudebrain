@@ -63,12 +63,25 @@ td:nth-child(3),td:nth-child(4){color:var(--muted)}
 .rule h3{font-size:18px}
 .rule p{color:var(--muted);font-size:15px}
 footer{color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:16px}
+
+.series{margin-top:22px;display:flex;flex-direction:column;gap:8px}
+.series .stitle{font-family:var(--mono,monospace);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.series ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.series li a,.series li span.here{display:flex;flex-direction:column;gap:2px;height:100%;box-sizing:border-box;padding:10px 12px;border-radius:6px;border:1px solid rgba(255,255,255,.28);color:#fff;text-decoration:none;font-size:14px;line-height:1.3}
+.series li a:hover{background:rgba(255,255,255,.1)}
+.series li span.here{background:#fff;color:#14213D;border-color:#fff}
+.series b{font-weight:600}
+.series small{font-size:12.5px;opacity:.8}
+.series .sn{font-family:var(--mono,monospace);font-size:12px;opacity:.75}
+@media (max-width:720px){.series ol{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
 @media (max-width:560px){.kinds{grid-template-columns:1fr}.rules{grid-template-columns:1fr}.mixrow{grid-template-columns:1fr;gap:6px}.check{padding:20px}}
 </style>
 <div class="band"><div class="wrap">
 <p class="label">Operating model · AI product delivery</p>
 <h1>The Delivery Machine</h1>
 <p class="lede">How one product manager runs many AI projects at once: routine work runs on its own and pushes tasks to people on time, so the product manager's hours go to decisions and people.</p>
+<nav class="series" aria-label="How we deliver, in reading order"><span class="stitle">How we deliver · read in this order</span><ol><li><a href="https://claude.ai/artifact/8Nm5fkdicn2Gu5VmNVTvYv" target="_blank" rel="noopener"><span class="sn">1 of 4</span><b>Six-Step Product Workflow</b><small>The steps and their gates</small></a></li><li><a href="https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ" target="_blank" rel="noopener"><span class="sn">2 of 4</span><b>Product Framework</b><small>The rules every product follows</small></a></li><li><span class="here" aria-current="page"><span class="sn">3 of 4</span><b>The Delivery Machine</b><small>Every task, marked by who does it</small></span></li><li><a href="https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4" target="_blank" rel="noopener"><span class="sn">4 of 4</span><b>Delivery Playbook</b><small>How to do each sub-step</small></a></li></ol></nav>
 </div></div>
 <main class="wrap">
 <section style="padding-top:32px">

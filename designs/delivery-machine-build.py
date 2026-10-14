@@ -1,9 +1,12 @@
 import html
 E=html.escape
 import re, os
-# Reads the task tables straight from product-framework.md, so the page can't drift from the framework.
+from pagekit import series, SERIES_CSS
+# Reads the task tables straight from delivery-machine.md, and each step's question from the
+# Six-Step Product Workflow (memos/role-workflow.md), so the page can't drift from its working copies.
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-FW=open(os.path.join(ROOT,"product-framework.md")).read()
+FW=open(os.path.join(ROOT,"delivery-machine.md")).read()
+RW=open(os.path.join(ROOT,"memos","role-workflow.md")).read()
 def kind_of(k):
     k=k.lower()
     for name in ["partner","auto","draft","me"]:
@@ -21,10 +24,10 @@ def rows_after(header):
         out.append((c[1],kind_of(c[2]),c[3],c[4],c[0],"⚠️" in c[2]))
     return out
 questions={}
-for m in re.finditer(r"\| \*\*(\d)\. ([^*]+)\*\* \| ([^|]+) \|",FW):
+for m in re.finditer(r"^\| (\d)\. ([^|]+?) \| ([^|]+) \|",RW,re.M):
     questions[m.group(1)]=(m.group(2),m.group(3).strip())
 steps=[(questions[n][0],questions[n][1],rows_after(f"**{n}. {questions[n][0]}**\n")) for n in "123456"]
-running=rows_after("### Across every project (the running layer)")
+running=rows_after("## Across every project (the running layer)")
 LBL={"auto":"Auto","draft":"Draft","me":"Me","partner":"Partner"}
 def chip(k): return f'<span class="chip k-{k}">{LBL[k]}</span>'
 def table(rows,head="Task"):
@@ -106,12 +109,14 @@ td:nth-child(3),td:nth-child(4){{color:var(--muted)}}
 .rule h3{{font-size:18px}}
 .rule p{{color:var(--muted);font-size:15px}}
 footer{{color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:16px}}
+{SERIES_CSS}
 @media (max-width:560px){{.kinds{{grid-template-columns:1fr}}.rules{{grid-template-columns:1fr}}.mixrow{{grid-template-columns:1fr;gap:6px}}.check{{padding:20px}}}}
 </style>
 <div class="band"><div class="wrap">
 <p class="label">Operating model · AI product delivery</p>
 <h1>The Delivery Machine</h1>
 <p class="lede">How one product manager runs many AI projects at once: routine work runs on its own and pushes tasks to people on time, so the product manager's hours go to decisions and people.</p>
+{series("machine")}
 </div></div>
 <main class="wrap">
 <section style="padding-top:32px">

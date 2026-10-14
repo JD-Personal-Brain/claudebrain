@@ -79,6 +79,16 @@ td:last-child{color:var(--teal)}
 .principles div{display:flex;flex-direction:column;gap:4px;font-size:15px;color:var(--on-navy)}
 .principles b{color:#fff;font-size:16px}
 footer{font-size:14px;color:var(--muted);padding-block:0 48px}
+.series{margin-top:22px;display:flex;flex-direction:column;gap:8px}
+.series .stitle{font-family:var(--mono,monospace);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.series ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.series li a,.series li span.here{display:flex;flex-direction:column;gap:2px;height:100%;box-sizing:border-box;padding:10px 12px;border-radius:6px;border:1px solid rgba(255,255,255,.28);color:#fff;text-decoration:none;font-size:14px;line-height:1.3}
+.series li a:hover{background:rgba(255,255,255,.1)}
+.series li span.here{background:#fff;color:#14213D;border-color:#fff}
+.series b{font-weight:600}
+.series small{font-size:12.5px;opacity:.8}
+.series .sn{font-family:var(--mono,monospace);font-size:12px;opacity:.75}
+@media (max-width:720px){.series ol{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 
 <header>
@@ -86,6 +96,7 @@ footer{font-size:14px;color:var(--muted);padding-block:0 48px}
     <div class="label">Principal Applied AI Product Manager · Associated Bank</div>
     <h1>How I'd run the work: six steps, each with a go/no-go gate</h1>
     <p>Every AI product goes from Discover to Measure and iterate. Governance runs through every step, and building starts on day one.</p>
+    <nav class="series" aria-label="How we deliver, in reading order"><span class="stitle">How we deliver · read in this order</span><ol><li><span class="here" aria-current="page"><span class="sn">1 of 4</span><b>Six-Step Product Workflow</b><small>The steps and their gates</small></span></li><li><a href="https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ" target="_blank" rel="noopener"><span class="sn">2 of 4</span><b>Product Framework</b><small>The rules every product follows</small></a></li><li><a href="https://claude.ai/artifact/S8Wbygy24cjguTMxZsN2QF" target="_blank" rel="noopener"><span class="sn">3 of 4</span><b>The Delivery Machine</b><small>Every task, marked by who does it</small></a></li><li><a href="https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4" target="_blank" rel="noopener"><span class="sn">4 of 4</span><b>Delivery Playbook</b><small>How to do each sub-step</small></a></li></ol></nav>
   </div>
 </header>
 
@@ -146,7 +157,7 @@ footer{font-size:14px;color:var(--muted);padding-block:0 48px}
         <ul><li>Kick off the project (sponsor, who decides, tracker, risk briefing)</li><li>Frame the outcome with the sponsor</li><li>Size the opportunity with real data</li><li>Interview and shadow users</li><li>Map where their time goes</li><li>Understand how they're measured and rewarded</li><li>Test a rough mock-up</li><li>Pick the first target and record today's numbers</li></ul>
         <div class="g"><strong>Gate:</strong> sponsor agrees on the target, the measure and today's baseline.</div></div>
       <div class="card"><span class="label">Step 2</span><h3>Define</h3>
-        <ul><li>Write the problem and the outcome (one sentence each, measurable)</li><li>Choose the platform and delivery path</li><li>Define the data contract (exact fields, freshness, quality checks)</li><li>Start the risk intake and list the control requirements</li><li>Write user stories and acceptance criteria</li><li>Set priorities and record the trade-offs</li><li>Set the measures (the five kinds, below), quality bar and value model</li><li>Scope the first release and the pilot group</li></ul>
+        <ul><li>Write the problem and the outcome (one sentence each, measurable)</li><li>Choose the platform and delivery path</li><li>Define the data contract (exact fields, freshness, quality checks)</li><li>Start the risk intake and list the control requirements</li><li>Write user stories and acceptance criteria</li><li>Set priorities and record the trade-offs</li><li>Set the measures (the five kinds, in the Product Framework), quality bar and value model</li><li>Scope the first release and the pilot group</li></ul>
         <div class="g"><strong>Gate:</strong> brief, data contract and risk rating agreed; value model shows payback within [X] months.</div></div>
       <div class="card"><span class="label">Step 3</span><h3>Build</h3>
         <ul><li>Design the solution and choose the AI capabilities (agents, retrieval with sources, data flows, workflow automations or system integrations)</li><li>Prepare trusted data</li><li>Build the logic: simple rules first, AI explains (it doesn't invent)</li><li>Build in the controls</li><li>Deliver it where users work, with the source behind every answer and one-click feedback</li><li>Build the test set (real examples with known good answers)</li><li>Test against the quality bar</li></ul>
@@ -160,57 +171,6 @@ footer{font-size:14px;color:var(--muted);padding-block:0 48px}
       <div class="card"><span class="label">Step 6</span><h3>Measure and iterate</h3>
         <ul><li>Track the measures on a live dashboard</li><li>Compare with the baseline and the comparison group</li><li>Re-test after every change, and watch for quality slipping ("drift")</li><li>Hold the monthly keep / change / stop review</li><li>Feed the next feature wave</li><li>Improve the machine itself</li></ul>
         <div class="g"><strong>Gate:</strong> each month (and at the end of each feature wave): keep, change or stop each AI product; each quarter: invest more, adjust or stop overall.</div></div>
-    </div>
-  </section>
-
-  <section aria-labelledby="who-h">
-    <div class="sec-head">
-      <span class="label">Running the work</span>
-      <h2 id="who-h">Who's involved and who decides</h2>
-      <p>Agreed at the start of Discover. Every decision goes in a decision log, and dependencies, risks and issues sit in one list with an owner and a date, reviewed weekly.</p>
-    </div>
-    <div class="tbox">
-      <table>
-        <thead><tr><th style="width:38%">Who</th><th>Decides</th></tr></thead>
-        <tbody>
-          <tr><td>Sponsor</td><td>Outcome, funding, go/no-go at each gate</td></tr>
-          <tr><td>User leaders and pilot users</td><td>Workflow and feedback</td></tr>
-          <tr><td>Product manager (this role)</td><td>Scope, priorities, trade-offs; owns the product until a long-term owner is named</td></tr>
-          <tr><td>Long-term owner</td><td>Identified during the project (for example, someone in a revenue line); named in Define if known, confirmed before scaling</td></tr>
-          <tr><td>Data owners</td><td>What data may be used</td></tr>
-          <tr><td>Platform teams</td><td>Technical design</td></tr>
-          <tr><td>Model risk</td><td>Risk rating and approval</td></tr>
-          <tr><td>Compliance, privacy and security</td><td>Controls and sign-off</td></tr>
-          <tr><td>Operations</td><td>Running it day to day</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section aria-labelledby="measure-h">
-    <div class="sec-head">
-      <span class="label">How we judge it</span>
-      <h2 id="measure-h">Measures and AI principles</h2>
-    </div>
-    <div class="pair">
-      <div class="dark">
-        <span class="label">The five measures · set in Define, tracked in Measure</span>
-        <div class="chips"><span>Usage</span><span>Quality</span><span>Business impact</span><span>Adoption</span><span>Risk and controls</span></div>
-        <span style="font-size:15px;color:var(--on-navy)">These are the five the job description names.</span>
-      </div>
-      <div class="dark">
-        <span class="label">The quality bar · thresholds set in Define</span>
-        <div class="chips"><span>Accuracy</span><span>Sources shown</span><span>Relevance</span><span>Usefulness</span><span>Permissions: zero tolerance</span></div>
-      </div>
-    </div>
-    <div class="dark">
-      <span class="label">AI principles · every step</span>
-      <div class="principles">
-        <div><b>Two kinds of agents</b>Some help the team do the work; others are the product users see.</div>
-        <div><b>Assistive first</b>AI drafts or suggests, and a named person decides. Autonomy grows only with evidence.</div>
-        <div><b>One job each</b>A clear job, a short list of allowed actions, read-only by default, every action logged.</div>
-        <div><b>Built where the work happens</b>Use the tools people already work in; add a platform only when it's needed.</div>
-      </div>
     </div>
   </section>
 </main>

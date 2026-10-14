@@ -26,12 +26,12 @@ listed actions, and those marked ⚠️ wait until the bank allows it.
 - **Kind:** Draft → Draft
 - **Job:** create a new project's starting files from its one-line project statement.
 - **Starts when:** the product manager writes the project statement.
-- **Inputs:** the project statement; the task tables in `product-framework.md`; the who-decides list.
+- **Inputs:** the project statement; the task tables in `delivery-machine.md`; the who-decides list in `product-framework.md`.
 - **Allowed actions:** create draft files: the tracker with every task listed, the decision log, the risk and issue list and the project file.
 - **Not allowed:** assigning owners or dates; contacting anyone.
 - **Outputs:** a draft project pack, ready for owners and dates.
 - **Stops when:** every file exists. If the statement is missing, it asks for it and creates nothing.
-- **Proof it worked:** the tracker has one row for every task in the framework tables.
+- **Proof it worked:** the tracker has one row for every task in the Delivery Machine's task tables.
 - **Person in charge:** product manager.
 - **Runs on (guess):** Power Automate with Microsoft Lists or Planner.
 - **To confirm:** ⚠️ which tracker the bank uses.

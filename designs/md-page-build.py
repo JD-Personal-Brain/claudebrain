@@ -3,14 +3,17 @@ page always matches its file (rule R16). Run: python3 designs/md-page-build.py
 To add a page: add a line to PAGES, run this, publish the new .html, and list
 it in designs/README.md."""
 import os, re
-from pagekit import CSS, E, inline, render_blocks
+from pagekit import CSS, E, inline, render_blocks, series, SERIES_CSS
+
+# Pages that are one of the four "How we deliver" pages get the reading-order strip.
+SERIES_KEY = {"product-framework.md": "framework"}
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # source file, output page, page name, eyebrow label, one-line summary
 PAGES = [
-    ("product-framework.md", "product-framework.html", "Product Framework", "How I organize product work",
-     "The six steps every product goes through, the delivery machine that runs them, and the rules that keep it governed."),
+    ("product-framework.md", "product-framework.html", "Product Framework", "How we deliver · the rules",
+     "The rules every product follows: who decides, how success is measured, how good is good enough, how we use AI, and how each step is written up."),
     ("tech-stack.md", "tech-stack.html", "Tech Stack Guide", "Associated Bank · technology guide",
      "Each technology in the job: what it is, how the bank likely uses it, and what I need to know."),
     ("job-notes.md", "job-notes.html", "Job Notes", "Associated Bank · thinking through the job",
@@ -42,6 +45,15 @@ def build(src, out, name, label, lede):
     body = s.split("\n", 1)[1]
     parts = re.split(r"\n## ", "\n" + body)
     intro, sections = parts[0], parts[1:]
+    key = SERIES_KEY.get(src)
+    if key:  # the strip in the header replaces the working copy's "Page N of the four" list
+        lines, keep, skipping = intro.split("\n"), [], False
+        for ln in lines:
+            if re.match(r"Page \d of the four", ln): skipping = True; continue
+            if skipping and (re.match(r"\d\. ", ln) or not ln.strip() and not keep[-1:] == [""]):
+                continue
+            skipping = False; keep.append(ln)
+        intro = "\n".join(keep).strip()
     nav, secs = [], []
     for sec in sections:
         head, _, text = sec.partition("\n")
@@ -56,13 +68,13 @@ def build(src, out, name, label, lede):
 .mdbody{{display:flex;flex-direction:column;gap:12px}}
 .mdbody>ul,.mdbody>ol{{max-width:78ch}}
 .mdbody li{{margin:4px 0}}
-.intro-block{{display:flex;flex-direction:column;gap:12px}}
+.intro-block{{display:flex;flex-direction:column;gap:12px}}{SERIES_CSS if key else ""}
 </style>
 <div class="band"><div class="wrap">
 <span class="label">{E(label)}</span>
 <h1>{inline(title)}</h1>
 <p class="lede">{E(lede)}</p>
-<nav class="stepnav" aria-label="Sections">{"".join(nav)}</nav>
+<nav class="stepnav" aria-label="Sections">{"".join(nav)}</nav>{series(key) if key else ""}
 </div></div>
 <main class="wrap">
 <div class="intro-block">{render_blocks(intro, kinds=True)}</div>
