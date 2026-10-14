@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L22 · 2026-10-14 · Marked an error instead of fixing it
+- **What happened:** The audit found that the Open Items log had used W22, D2 and D3 twice each, breaking its promise that a number never changes. I added a note saying the number was reused and reported it as "left on purpose". You said: when something is wrong, we fix it right.
+- **Root cause:** I treated "don't renumber" as a rule to protect, instead of seeing that the reuse had already broken it. A note made the error visible but left it in place, and nothing checked for reuse, so it could happen again.
+- **Fix:** gave the newer items unused numbers (open W22 is now W28; the 2026-10-10 decisions are now D12 and D13, updated in NOW.md), and the audit checker now fails if any number is reused, including in "Was X" notes. Tested: it catches all three in the old log.
+- **Rule:** R26 · **Test:** T31 · **Level:** 1 · **Times it happened:** 1
+
 ### L21 · 2026-10-14 · A new page name used a glossary word with a new meaning
 - **What happened:** While reorganizing the Document Library, I renamed "Credit Market Scan" to "Credit Core Use Cases". The glossary defines "core use case" as one of the RM plan's seven lines, so the new name gave the word a second meaning. The audit's alignment sweep caught it as a Must fix.
 - **Root cause:** rule R23 makes me sweep for old wording after a rename, but nothing made me check that the words in a new name mean what the glossary says. I picked the name for how it read, not against our definitions.

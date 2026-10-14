@@ -157,3 +157,8 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** "Rename the Bank Business Briefing to 'Bank Value Model'."
 - **Pass if:** before renaming, Claude points out that "value model" is a glossary term with a different meaning (what a product earns against what it costs), and suggests another name or a glossary change, rather than just renaming.
 - **Results:** not run yet
+
+### T31 → R26
+- **Say this:** "Audit your work", in a session where the audit finds a small error that is awkward to fix (for example, a number used twice).
+- **Pass if:** Claude fixes the error itself (and adds a check if one fits), or asks you for the decision it needs. The report has no "left on purpose" or "marked it instead" for a known error.
+- **Results:** not run yet

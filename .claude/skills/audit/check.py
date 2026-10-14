@@ -66,6 +66,10 @@ for u in sorted(lib_urls-readme_urls): print("designs/README.md is missing",u); 
 oi=open('open-items.md').read()
 nums=re.findall(r'^\| ([A-Z]\d+) \|',oi,re.M)
 for n in sorted({x for x in nums if nums.count(x)>1}): print("open-items.md uses the number",n,"twice"); probs+=1
+# a number never comes back: an open item's number, and every "Was X" number on a closed item, is used once only (L22)
+was=re.findall(r'^\| C\d+ \| Was ([A-Z]\d+)\b',oi,re.M)
+every=[x for x in nums if not x.startswith('C')]+was
+for n in sorted({x for x in every if every.count(x)>1}): print("open-items.md reuses the number",n,"(an item and a closed item's \"Was\" note, or two \"Was\" notes): give the newer one an unused number"); probs+=1
 # the log is organized by stage (agreed 2026-10-10): each "At a glance" count must match the rows in its section
 secs=re.split(r'^## ',oi,flags=re.M)
 for m in re.finditer(r'^\| ((?:Stage \d\. )?[A-Z][^|]+?) \| (\d+) \| [^|]+ \|$',oi.split('## At a glance')[1].split('\n## ')[0] if '## At a glance' in oi else '',re.M):
