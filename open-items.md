@@ -30,7 +30,7 @@ Claude updates it at every wrap-up: finished items move to "Closed" with the dat
 | Stage 2. Make the machine runnable | 4 | What Claude builds so a real run is possible |
 | Stage 3. Dry run and fix | 3 | Running the machine once and fixing it |
 | Stage 4. Get ready for Andy | 9 | What Andy sees, and what I ask him |
-| Alongside the path | 14 | Useful any time; doesn't block a stage. Dated items first |
+| Alongside the path | 12 | Useful any time; doesn't block a stage. Dated items first |
 | Inside the bank | 21 | Questions only someone at the bank can answer |
 | Parked on purpose | 4 | Not forgotten; waiting for a signal from me |
 
@@ -141,8 +141,6 @@ Useful any time; none of these blocks a stage. Dated ones first.
 | W21 | Try the newer skills on real work: "prototype X", "write a prompt for X", "new use case: X" | Me | Nothing |
 | W22 | Fewer approval pop-ups (idea 2, approved): tell Claude which pop-ups I still see and in which app, so it can pre-approve the safe, read-only ones. Claude won't change my permission settings on a guess | Me, then Claude | Nothing |
 | W23 | Playbooks for my everyday tools (idea 3, approved): name two or three tasks I repeat in email, calendar or documents. Claude turns each into a step-by-step skill | Me, then Claude | Nothing |
-| W24 | Jump-link check (idea 40, suggested 2026-10-10): add a test to the page check that clicks every link that jumps within a page and fails if it lands in the wrong place. Waits on my yes or no | Me, then Claude | Nothing |
-| W25 | Scout run check (idea 45, suggested 2026-10-14): at the start of each session, Claude checks the bank news scout's last scheduled run and tells me if it failed or stalled. Waits on my yes or no | Me, then Claude | Nothing |
 
 ## Inside the bank
 
@@ -208,5 +206,6 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C21 | I read the Product Framework, the Six-Step Product Workflow, The Delivery Machine and the Delivery Playbook. All four are good to go and now marked In use | 2026-10-14 |
 | C22 | Rename the credit pages to match the library's "Portfolio managers" section (idea 44): yes. They're now the Portfolio Manager Core Use Cases page, the portfolio manager user workflow and the portfolio manager plan | 2026-10-14 |
 | C23 | Lock the Bank Business Briefing: audited; it now names both user groups, RMs and PMs, with a "which bankers" column, a section on PMs and a section on how the page stays current. The bank news scout is agent H1 in the Agent Library. "PM" now means portfolio manager everywhere, and "product manager" is spelled out | 2026-10-14 |
+| C24 | Ideas 40 and 45: yes. The page check now clicks every jump link on every page and fails if one lands in the wrong place, and Claude checks the bank news scout's last run at the start of each session | 2026-10-14 |
 
 _Last updated: 2026-10-14_

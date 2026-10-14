@@ -5,6 +5,8 @@
 //   - no sideways scrolling at 400 px (phone width)
 //   - no stray Markdown marks showing (**, __, | --- |, leftover [text](link))
 //   - the page has real text (not a blank render)
+//   - every link that jumps within the page (href="#...") has a target, and clicking it lands
+//     with the target's top in view: not cut off above, not left far below (idea 40)
 //   - canvas parts: content fits the frame in canvas.json (nothing cut off at the bottom)
 // Canvas parts need the canvas runtime saved as support.js beside them. It is kept in the repo
 // (idea 35); if it goes missing, restore it with the Artifact tool: read the design page with path
@@ -21,7 +23,7 @@ const server = http.createServer((q, r) => {
   fs.readFile(f, (e, d) => { if (e) { r.writeHead(404); r.end(); } else { r.writeHead(200, { 'Content-Type': f.endsWith('.js') ? 'text/javascript' : 'text/html; charset=utf-8' }); r.end(d); } });
 }).listen(0, async () => {
   const port = server.address().port, b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' });
-  let bad = 0; const fail = (msg) => { bad++; console.log('FAIL ', msg); };
+  let bad = 0, links = 0; const fail = (msg) => { bad++; console.log('FAIL ', msg); };
   const inspect = () => {
     const tables = [...document.querySelectorAll('table')];
     const emptyT = tables.filter(t => t.querySelectorAll('tbody tr, tr').length < 2 || !t.innerText.trim()).length;
@@ -30,6 +32,23 @@ const server = http.createServer((q, r) => {
     return { tables: tables.length, emptyT, chars: txt.trim().length, marks,
              sw: document.documentElement.scrollWidth, h: Math.max(document.documentElement.scrollHeight, document.body.scrollHeight) };
   };
+  const jumps = async (p) => p.evaluate(async () => {
+    document.documentElement.style.scrollBehavior = 'auto';
+    const out = { n: 0, bad: [] };
+    for (const a of [...document.querySelectorAll('a[href^="#"]')]) {
+      const id = decodeURIComponent(a.getAttribute('href').slice(1)); if (!id) continue;
+      out.n++;
+      const t = document.getElementById(id);
+      if (!t) { out.bad.push(`#${id}: no section with that name`); continue; }
+      window.scrollTo(0, 0); a.click(); await new Promise(r => setTimeout(r, 30));
+      const top = t.getBoundingClientRect().top, h = t.getBoundingClientRect().height;
+      const atBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
+      if (!h) out.bad.push(`#${id}: lands on something hidden`);
+      else if (top < -2) out.bad.push(`#${id}: top cut off (${Math.round(top)}px)`);
+      else if (top > 200 && !atBottom) out.bad.push(`#${id}: lands ${Math.round(top)}px below the top`);
+    }
+    return out;
+  });
   for (const f of singles) {
     for (const w of [1280, 400]) {
       const p = await b.newPage({ viewport: { width: w, height: 900 } });
@@ -39,6 +58,8 @@ const server = http.createServer((q, r) => {
       if (r.chars < 200) fail(`${f} @${w}px: almost no text rendered (${r.chars} characters)`);
       if (w === 400 && r.sw > 400) fail(`${f}: scrolls sideways at phone width (${r.sw}px wide)`);
       if (r.marks.length) fail(`${f}: stray Markdown showing: ${JSON.stringify(r.marks)}`);
+      const j = await jumps(p); links += j.n;
+      for (const m of j.bad.slice(0, 5)) fail(`${f} @${w}px: jump link ${m}`);
       if (w === 1280) await p.screenshot({ path: path.join(SHOTS, f.replace('.html', '.png')), fullPage: true });
       await p.close();
     }
@@ -60,6 +81,6 @@ const server = http.createServer((q, r) => {
     }
   }
   await b.close(); server.close();
-  console.log(`checked ${singles.length} pages and ${canvases.length} canvas; screenshots in ${SHOTS}`); console.log('problems:', bad);
+  console.log(`checked ${singles.length} pages and ${canvases.length} canvas, ${links} jump-link clicks; screenshots in ${SHOTS}`); console.log('problems:', bad);
   process.exit(bad ? 1 : 0);
 });

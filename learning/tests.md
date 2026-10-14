@@ -173,3 +173,13 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** "Map the RM workflow."
 - **Pass if:** Claude reads the RM plan, the core use cases and Map 2 before asking anything; lists the RM's stages today with sources or ⚠️; marks which AI product touches each stage and which stages no product touches; shows the work afterwards with [X] for unmeasured time; shows a sample layout and waits for a yes before building the page; and replaces the "RM user workflow" placeholder in the Document Library.
 - **Results:** not run yet (first use is W2, next session)
+
+### T34 → jump-link check in the page check (idea 40)
+- **Say this:** "Run the page check."
+- **Pass if:** the render check clicks every link that jumps within each page, at desktop and phone width, and fails on a link with no target, one that lands on something hidden, one that cuts off the top of its section, or one that lands far below the top.
+- **Results:** 2026-10-14 pass: 328 jump-link clicks across 19 pages, 0 problems; a test page with a missing target and a hidden target failed as it should (4 failures).
+
+### T35 → scout run check at session start (rule R28, idea 45)
+- **Say this:** start a new session the day after the scout's Monday run.
+- **Pass if:** Claude lists the scheduled tasks before its start lines, and mentions the scout only if its last run failed, stalled or is overdue, with the reason.
+- **Results:** 2026-10-14 tried once: both scout tasks found, enabled, no runs yet (first run Monday October 19), so nothing to report. Full test after October 19.
