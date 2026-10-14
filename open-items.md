@@ -68,7 +68,7 @@ What we're working on first. It feeds both the RM and the credit work.
 
 | # | Item | Who | Waits on |
 |---|---|---|---|
-| W1 | Map the RM and credit user workflows (agreed 2026-10-14, the next job; the RM map starts from Map 2 on the Workflow Maps, an RM's week with AI, which shows only the with-AI side): how each group works today, where each AI product fits, and how the work changes. **Start with the RM user workflow** (you asked for it on 2026-10-14; the next session begins here), then credit. Each gets a page in the Document Library, where a placeholder row waits. Show a sample of the page layout before building it. If I say yes to idea 41, a "user workflow map" routine, Claude builds it first and uses it here | Claude and me | Nothing |
+| W1 | Map the RM and credit user workflows (agreed 2026-10-14, the next job; the RM map starts from Map 2 on the Workflow Maps, an RM's week with AI, which shows only the with-AI side): how each group works today, where each AI product fits, and how the work changes. **Start with the RM user workflow** (you asked for it on 2026-10-14; the next session begins here), then credit. Each gets a page in the Document Library, where a placeholder row waits. Show a sample of the page layout before building it. Use the new user-workflow routine (idea 41, built 2026-10-14) | Claude and me | Nothing |
 
 ## Stage 1. Read and lock the core
 
@@ -132,7 +132,7 @@ Useful any time; none of these blocks a stage. Dated ones first.
 
 | # | Item | Who | Waits on |
 |---|---|---|---|
-| W11 | First weekly review: what's working, what's annoying, what to change. Also re-check Anthropic's prompting guide for changes | Me, with Claude | Around 2026-10-14 |
+| W11 | First weekly review: what's working, what's annoying, what to change. Also re-check Anthropic's prompting guide for changes | Me, with Claude | Next session (agreed 2026-10-14) |
 | W12 | Re-run the Bank Business Briefing after the bank's Q3 2026 results on October 22, 2026, using the saved prompt (Example 5 in the Prompting Guide). Read the full Q2 earnings call transcript at the same time; only a summary was available the first time | Claude | October 22, 2026 |
 | W13 | Check that a section link in the Document Library opens the page at that section. If it only opens the top, drop the section links or say so on the page | Me, then Claude | Nothing |
 | W14 | Two loose ends from the McKinsey article: confirm its publication date (the pasted page showed none), and decide whether role redesign (new RM roles as agents take on work, McKinsey's fifth principle) belongs in the playbook; it isn't covered yet | Claude, then me | Nothing |

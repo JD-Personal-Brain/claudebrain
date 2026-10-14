@@ -3,7 +3,7 @@
 _Last updated: 2026-10-14 · Last review: none yet (first one due around 2026-10-14)_
 
 ## Where things stand
-- The Claude brain is set up: rule book, profile, learning files, ideas list and eleven skills: log-lesson, wrap-up, designed-doc, write-prompt, run-tests, prototype, new-use-case, audit, make-skill, agent-spec and (new 2026-10-09) documents.
+- The Claude brain is set up: rule book, profile, learning files, ideas list and twelve skills: log-lesson, wrap-up, designed-doc, write-prompt, run-tests, prototype, new-use-case, audit, make-skill, agent-spec, documents (new 2026-10-09) and user-workflow (new 2026-10-14: maps a user group's work today, where each AI product fits, and the work afterwards; say "map the RM workflow").
 - An official "main" copy now exists on GitHub, and it is now GitHub's default branch, so every new session starts from it. Future work is proposed as pull requests against it.
 - A startup check runs at the start of every session and pulls in the latest main automatically, so Claude never works from an old copy. Tested and working.
 - The startup check now also warns about work saved on a side branch that never reached main (added 2026-10-09, after my RM framework was found stranded).
@@ -56,7 +56,7 @@ _Last updated: 2026-10-14 · Last review: none yet (first one due around 2026-10
 - First prototype made: a calculator (v1, then v2 with green buttons). It was practice and has nothing to do with the job. The prototyping process is under agreements below.
 
 ## What's next
-1. **Next up (agreed 2026-10-14):** map the RM and credit user workflows (item W1 in the Open Items log): how each works today, where each AI product fits, and how the work changes. **Start with the RM user workflow**, then credit. The library already has a placeholder row for each; show a sample layout before building the page.
+1. **Next up (agreed 2026-10-14):** map the RM and credit user workflows (item W1 in the Open Items log): how each works today, where each AI product fits, and how the work changes. **Start with the RM user workflow** (say "map the RM workflow" to run the new user-workflow routine), then credit. The library already has a placeholder row for each; show a sample layout before building the page.
 2. **Stage 1, read and lock the core (me):** read the RM plan on the long scrolling page (https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk) from "What lets us move this fast" on. Then the RM and Credit Core Use Cases pages, then the playbook (https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4); its agent list is reference only. (Items V1 to V4 in the Open Items log.)
 3. **Stage 2, make the machine runnable (Claude, alongside stage 1):** build the ready-to-fill templates and the task list design first, then the approvals map and the control gaps (items W2, W3, W4 and W5 in the Open Items log, which is now organized by these stages).
 4. **Stage 3, dry run and fix:** take one small made-up product through all six steps, log where it breaks and fix the machine; then apply it to the RM plan. **Stage 4, get ready for Andy:** the RM mock-up, the short Andy edition and my questions for him, shared only when I say.
@@ -64,7 +64,7 @@ _Last updated: 2026-10-14 · Last review: none yet (first one due around 2026-10
 6. Continue thinking through the Associated Bank job, Part 1 (finding the problems bankers face), with the saved prompt in `job-prompts.md`. Pick up where my notes (`job-notes.md`, also the Job Notes page) stop.
 7. Use Claude for real work, including prototypes for the new job, and say "wrap up" at the end of each session.
 8. Run the tests of Claude's rules that only work in a live session (short scenarios in `learning/tests.md` that check each rule still works; the full list is item W16 in the Open Items log), then try the new skills on real work: say "run the tests", "prototype X", "write a prompt for X" or "new use case: X".
-9. Do the first weekly review around 2026-10-14: a 5-minute look at what's working, what's annoying and what to change.
+9. Do the first weekly review at the start of the next session (agreed 2026-10-14): a 5-minute look at what's working, what's annoying and what to change.
 10. Later, once I say the RM framework is ready: plan the credit (portfolio management) use case with the same structure.
 11. Sharing with Associated: not yet (decided 2026-10-09). When I'm ready, Claude builds an "Associated edition" of the Document Library: only the pages meant for them, no internal labels or file names, plus a list of which pages I must share one by one from each page's Share menu (sharing the library doesn't share the pages it links to).
 

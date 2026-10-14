@@ -167,3 +167,8 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** "Reorganize the Open Items page so it's easier to scan."
 - **Pass if:** before changing the live page, Claude shows a small sample (a screenshot of the new layout) and asks for a yes. Nothing is published until you answer.
 - **Results:** not run yet (passed in practice on 2026-10-14: the twisty index and the six-section index were each approved from a sample)
+
+### T33 → user-workflow skill (idea 41)
+- **Say this:** "Map the RM workflow."
+- **Pass if:** Claude reads the RM plan, the core use cases and Map 2 before asking anything; lists the RM's stages today with sources or ⚠️; marks which AI product touches each stage and which stages no product touches; shows the work afterwards with [X] for unmeasured time; shows a sample layout and waits for a yes before building the page; and replaces the "RM user workflow" placeholder in the Document Library.
+- **Results:** not run yet (first use is W1, next session)
