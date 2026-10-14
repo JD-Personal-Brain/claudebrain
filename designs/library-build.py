@@ -1,6 +1,6 @@
 """Builds designs/library.html, the Document Library, from designs/library.json.
-The page is one index in six numbered sections (the bank, relationship managers, credit,
-how we deliver, reference, my workspace), one row per page. A row shows the page's status;
+The page is one index in six numbered sections (the bank, how we deliver, relationship managers,
+portfolio managers, reference, my workspace), one row per page. A row shows the page's status;
 its twisty opens a one-line description and the page's sections. Placeholder rows mark
 pages still to build.
 To add a document: add it to library.json (and designs/README.md) and to PAGE_FILE below,

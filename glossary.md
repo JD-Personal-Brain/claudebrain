@@ -126,7 +126,7 @@ Our plans depend on these, but the definitions belong to the bank. Each stays
 | Term | How our plans use it today | Bank definition |
 |---|---|---|
 | Relationship manager (RM) | The banker who owns business client relationships and brings in new deals | ⚠️ to map |
-| Portfolio manager | The credit partner paired with an RM | ⚠️ to map |
+| Portfolio manager | The credit partner paired with an RM. Associated's own job postings use this title (AVP to SVP) for the role that underwrites, monitors credit and partners closely with RMs (seen on job boards, 2026-10-14) | ⚠️ to map |
 | Treasury management officer | The specialist an RM refers clients to for payments and cash management | ⚠️ to map |
 | Client, relationship | A business client and everything the bank does with it | ⚠️ to map |
 | Segment and market | How clients and bankers are grouped (for example, by size or region) | ⚠️ to map |

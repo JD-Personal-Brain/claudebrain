@@ -12,12 +12,12 @@ in order, and fill in its **first-time log** as you go.
 ## The files
 | Step | File | Status |
 |---|---|---|
-| 1. Discover | `1-discover.md` | Draft, 2026-10-09, waiting for my review |
-| 2. Define | `2-define.md` | Draft, 2026-10-09, waiting for my review |
-| 3. Build | `3-build.md` | Draft, 2026-10-09, waiting for my review |
-| 4. Govern and test | `4-govern-and-test.md` | Draft, 2026-10-09, waiting for my review |
-| 5. Release and adopt | `5-release-and-adopt.md` | Draft, 2026-10-09, waiting for my review |
-| 6. Measure and iterate | `6-measure-and-iterate.md` | Draft, 2026-10-09, waiting for my review |
+| 1. Discover | `1-discover.md` | In use, reviewed 2026-10-14 |
+| 2. Define | `2-define.md` | In use, reviewed 2026-10-14 |
+| 3. Build | `3-build.md` | In use, reviewed 2026-10-14 |
+| 4. Govern and test | `4-govern-and-test.md` | In use, reviewed 2026-10-14 |
+| 5. Release and adopt | `5-release-and-adopt.md` | In use, reviewed 2026-10-14 |
+| 6. Measure and iterate | `6-measure-and-iterate.md` | In use, reviewed 2026-10-14 |
 | Agent library | `agents.md` | 33 general agents (M1 to M33); shown on the Agent Library page |
 | Controls | `controls.md` | 25 controls (K1 to K25); shown on the Controls Catalog page |
 

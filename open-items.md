@@ -26,7 +26,7 @@ Claude updates it at every wrap-up: finished items move to "Closed" with the dat
 | Stage | Open | What it is |
 |---|---|---|
 | Now | 2 | What we're working on first |
-| Stage 1. Read and lock the core | 11 | What I read, then the decision on the RM framework |
+| Stage 1. Read and lock the core | 8 | What I read, then the decision on the RM framework |
 | Stage 2. Make the machine runnable | 4 | What Claude builds so a real run is possible |
 | Stage 3. Dry run and fix | 3 | Running the machine once and fixing it |
 | Stage 4. Get ready for Andy | 9 | What Andy sees, and what I ask him |
@@ -50,7 +50,7 @@ every working file (this section replaces the separate Gap Review page).
 
 | Area | Rating | Where we are | Open items |
 |---|---|---|---|
-| The six-step process for one product | Strong on paper | Steps, gates, 44 sub-steps, first-time logs and the automation check at every gate. Not yet tried on real work | V4, W7 |
+| The six-step process for one product | Strong on paper | Steps, gates, 44 sub-steps, first-time logs and the automation check at every gate. Not yet tried on real work | W7 |
 | RM plan (the first worked example) | Strong draft, not reviewed | Memo v8, with agent specs and workflows. I've read only the summary's opening and plan table. Now organized on seven core use cases | V1, D1 to D3 |
 | Governance and controls | Partial | 25 controls named. 13 have a stage the playbook doesn't cover yet, such as who proves that only approved AI models are used | W6 |
 | Automating the process | Partial | Every task is marked Auto, Draft or Me, and 39 agents are fully specified: 33 general agents that run the delivery machine, and the RM product's own 6. None is built or tested. How much can run alone depends on whether the bank lets automations message people ⚠️ | B22, W7 |
@@ -64,7 +64,7 @@ every working file (this section replaces the separate Gap Review page).
 
 ## Now
 
-What we're working on first: a quick check on the bank news scout, then the user workflow maps, which feed both the RM and the credit work.
+What we're working on first: a quick check on the bank news scout, then the user workflow maps, which feed both the RM and the credit work. Date to work toward: on Tuesday October 20, 2026 I talk with the credit lead and the RM lead, so I'm going down this log from the top before then (said 2026-10-14).
 
 | # | Item | Who | Waits on |
 |---|---|---|---|
@@ -80,9 +80,6 @@ What we're working on first: a quick check on the bank news scout, then the user
 | V1 | Read the RM Analytics Plan (the long scrolling page): everything after the summary's opening and plan table: from "What lets us move this fast" on, then Parts 1 to 6. The RM Analytics Framework design page holds the same words | Me | Nothing |
 | V2 | Read the RM Core Use Cases page: McKinsey's five frontline AI use cases and their returns, how the RM plan covers them, and the questions it raises | Me | Nothing |
 | V3 | Read the Credit Core Use Cases page: what banks are deploying in commercial credit, and the credit counterpart proposed for each of the seven core use cases | Me | Nothing |
-| V4 | Read the Delivery Playbook: all six steps (the agent list at the end is reference only) | Me | Nothing |
-| V5 | Read The Delivery Machine: the page for leaders on how one product manager runs many projects | Me | Nothing |
-| V6 | Read the Six-Step Product Workflow: the one-page visual, still marked Draft | Me | Nothing |
 | D1 | Add an AI product under core use case 5, AI sales coaching (personal guidance from call transcripts)? Low risk, and McKinsey reports new bankers ramping up 20% faster | Me | V2 |
 | D2 | Move prospecting (winning new clients) earlier than wave 3? McKinsey reports its biggest revenue numbers there; outside prospect data may set the pace | Me | V2 |
 | D3 | Keep autonomous lead nurturing and pricing out for now, because they conflict with "nothing reaches a client without the RM" and the fair-lending control? Claude recommends yes, revisit later with evidence | Me | V2 |
@@ -106,8 +103,8 @@ What we're working on first: a quick check on the bank news scout, then the user
 
 | # | Item | Who | Waits on |
 |---|---|---|---|
-| W7 | Dry run of the machine: take one small made-up product through all six steps with the templates and two or three agents built as Claude skills, and log where it breaks | Claude and me | W3 and W4, and my read of the pages (V1, V4) |
-| W8 | Apply the delivery machine to the RM plan as the first worked example: mark every RM task Auto, Draft or Me | Claude, with me | V1, V4 and W7 |
+| W7 | Dry run of the machine: take one small made-up product through all six steps with the templates and two or three agents built as Claude skills, and log where it breaks | Claude and me | W3 and W4, and my read of the pages (V1) |
+| W8 | Apply the delivery machine to the RM plan as the first worked example: mark every RM task Auto, Draft or Me | Claude, with me | V1 and W7 |
 | W9 | Support model and incident runbook for one product: who users call, how issues are logged and fixed, and the steps to pause or roll back the product | Claude drafts, I review | W7 (the dry run shows what support is needed) |
 
 ## Stage 4. Get ready for Andy
@@ -205,7 +202,8 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C16 | The old `prompt-email-example` branch is deleted. Everything on it was already in main | 2026-10-13 |
 | C17 | Organize the Document Library around the two groups we serve: yes. It's one index in six sections (the bank, relationship managers, credit, how we deliver, reference, my workspace), with the two core use case pages renamed to match | 2026-10-14 |
 | C18 | Number open items by priority: yes. Each kind runs 1, 2, 3 in priority order, numbers change when priorities change, and closed items keep theirs | 2026-10-14 |
-| C19 | Was V6: I read the Bank Business Briefing. It's fine as is, no changes | 2026-10-14 |
+| C19 | I read the Bank Business Briefing. It's fine as is, no changes | 2026-10-14 |
 | C20 | Idea 43 (quieter startup warning): yes. The startup check now fetches more history before comparing an old branch and stays quiet when its changes are already in main; the two empty old branches that kept being flagged are gone from GitHub | 2026-10-14 |
+| C21 | I read the Product Framework, the Six-Step Product Workflow, The Delivery Machine and the Delivery Playbook. All four are good to go and now marked In use | 2026-10-14 |
 
 _Last updated: 2026-10-14_
