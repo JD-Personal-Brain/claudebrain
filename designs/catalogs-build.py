@@ -128,7 +128,7 @@ def step_card(num, name, f):
             f'<summary><span class="cid">{num}</span><span class="cname">{inline(name)}</span>'
             f'<span class="cwhat">{inline(cap(f.get("Goal", "")))}</span><span class="cmeta">{E(step)} step · {len(tasks.get(num, []))} task{"" if len(tasks.get(num, [])) == 1 else "s"}</span></summary>'
             f'<dl class="spec">{spec}</dl><ul class="tasks" aria-label="Tasks in {num}">{rows}</ul>'
-            f'<p class="csrc">How to do it the first time: Delivery Playbook, step {num[0]}, sub-step {num}</p></details>')
+            f'<p class="csrc">How to do it the first time: The Delivery Playbook, step {num[0]}, sub-step {num}</p></details>')
 
 sections = ""
 for n, step in STEPS.items():

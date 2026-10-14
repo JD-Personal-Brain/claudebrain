@@ -188,7 +188,7 @@ SERIES = [
     ("workflow", "Six-Step Product Workflow", "The steps and their gates", "https://claude.ai/artifact/8Nm5fkdicn2Gu5VmNVTvYv"),
     ("framework", "Product Framework", "The rules every product follows", "https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ"),
     ("machine", "The Delivery Machine", "Every task, marked by who does it", "https://claude.ai/artifact/S8Wbygy24cjguTMxZsN2QF"),
-    ("playbook", "Delivery Playbook", "How to do each sub-step", "https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4"),
+    ("playbook", "The Delivery Playbook", "How to do each sub-step", "https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4"),
 ]
 SERIES_CSS = """
 .series{margin-top:22px;display:flex;flex-direction:column;gap:8px}

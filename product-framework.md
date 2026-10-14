@@ -7,7 +7,7 @@ Page 2 of the four "How we deliver" pages, read in this order:
 1. **Six-Step Product Workflow** (`memos/role-workflow.md`): the six steps (Discover, Define, Build, Govern and test, Release and adopt, Measure and iterate), what happens in each, and their go/no-go gates.
 2. **Product Framework** (this page): the rules every product follows.
 3. **Delivery Machine** (`delivery-machine.md`): every task in every step, marked Auto, Draft, Me or Partner, and how one product manager runs many projects at once.
-4. **Delivery Playbook** (`playbook/`): how to do each of the 44 sub-steps the first time.
+4. **The Delivery Playbook** (`playbook/`): how to do each of the 44 sub-steps the first time.
 
 ## Who's involved and who decides
 Agree this at the start of Discover (sub-step 1.0), with real names. Gaps are

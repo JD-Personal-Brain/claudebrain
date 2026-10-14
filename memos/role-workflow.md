@@ -8,7 +8,7 @@ Page 1 of the four "How we deliver" pages, read in this order:
 1. **Six-Step Product Workflow** (this page): the steps and their go/no-go gates.
 2. **Product Framework** (`product-framework.md`): the rules every product follows.
 3. **Delivery Machine** (`delivery-machine.md`): every task, marked by who does it.
-4. **Delivery Playbook** (`playbook/`): how to do each sub-step the first time.
+4. **The Delivery Playbook** (`playbook/`): how to do each sub-step the first time.
 
 > **Source.** Taken from my RM analytics memo (`memos/rm-analytics-framework.md`,
 > memo v6, 2026-10-08) with the RM details removed. Memo v8 (2026-10-09) follows
