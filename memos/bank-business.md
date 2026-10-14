@@ -1,6 +1,6 @@
 # Associated Bank: the business behind the role
 
-**As of October 9, 2026, through Q2 2026** (the quarter that ended June 30, 2026).
+**As of October 9, 2026, through Q2 2026** (the quarter that ended June 30, 2026). News checked through October 14, 2026 by the bank news scout.
 Built with Example 5 in `prompting.md`. Public information only.
 
 > **How to read this.** Every number shows its period and a source tag such as
@@ -139,6 +139,9 @@ Products, from the bank's commercial web pages on October 9, 2026 [S7](https://w
 | Andy Miner | Senior director, AI for Corporate & Commercial Banking (hire announced June 30, 2026). Reports to Phillip Trier | [S8](https://investor.associatedbank.com/news/news-details/2026/Associated-Bank-Hires-Andy-Miner-as-senior-director-AI-for-Corporate--Commercial-Banking) |
 | John Utz | Executive vice president, head of Specialized Industries | [S10](https://www.equipmentfa.com/news/41338/associated-bank-accelerates-commercial-growth-with-new-franchise-banking-vertical) |
 | Eric Lien | Director of Treasury Management, since September 2025 | [S9](https://finviz.com/news/355666/associated-bank-expands-commercial-banking-presence-in-dallas) |
+| Jason Hansen | Nebraska and Western Iowa market president, and business segment leader for Commercial Banking, since April 16, 2026. Reports to Phillip Trier. Previously led American National Bank | [S16](https://investor.associatedbank.com/news/news-details/2026/Associated-Bank-names-Jason-Hansen-Nebraska-and-Western-Iowa-market-president/default.aspx) |
+| Brandon White | Senior vice president, Dallas market leader, corporate and commercial banking (hire announced May 19, 2026) | [S9](https://finviz.com/news/355666/associated-bank-expands-commercial-banking-presence-in-dallas) |
+| Shaun Coard | Senior vice president, business segment leader, Franchise Banking (announced April 2026) | [S10](https://www.equipmentfa.com/news/41338/associated-bank-accelerates-commercial-growth-with-new-franchise-banking-vertical) |
 | Head of commercial real estate | [X] | Not found |
 
 **Relationship managers (RMs)**, the bankers who own client relationships:
@@ -196,7 +199,7 @@ Each revenue line, the job outcome it serves, and the part of my value model it 
 
 - **The stated strategy has three parts:** grow customer households, invest in talent to drive commercial growth, and speed up growth in major metro markets [S13](https://www.sec.gov/Archives/edgar/data/7789/000000778926000050/asb1q2026investorpresent.htm).
 - **The C&I target was reached early.** The bank reached its full-year target for organic C&I growth (9% to 10%) by June 30, 2026 [S12](https://finance.yahoo.com/markets/stocks/articles/associated-banc-corp-asb-q2-050044339.html). Management expects some C&I loans to be paid down in the second half.
-- **New markets:** a Kansas City commercial office opened in 2025 and doubled its team in March 2026 (from three bankers to six in its first year, per [S9](https://finviz.com/news/355666/associated-bank-expands-commercial-banking-presence-in-dallas)); a Dallas commercial office launched in May 2026; and Omaha is listed as a major growth market [S3](https://www.sec.gov/Archives/edgar/data/7789/000000778926000191/asb2q2026earningspresent.htm). ⚠️ I assume Omaha came with American National, which is based there.
+- **New markets:** a Kansas City commercial office opened in 2025 and doubled its team in March 2026 (from three bankers to six in its first year, per [S9](https://finviz.com/news/355666/associated-bank-expands-commercial-banking-presence-in-dallas)); a Dallas commercial office launched in May 2026; and Omaha is listed as a major growth market [S3](https://www.sec.gov/Archives/edgar/data/7789/000000778926000191/asb2q2026earningspresent.htm). ⚠️ I assume Omaha came with American National, which is based there. The bank named American National's former leader, Jason Hansen, as its Nebraska and Western Iowa market president on April 16, 2026, and he leads commercial banking there [S16](https://investor.associatedbank.com/news/news-details/2026/Associated-Bank-names-Jason-Hansen-Nebraska-and-Western-Iowa-market-president/default.aspx), which supports this.
 - **American National:** the deal closed on April 1, 2026. At March 31, 2026 American National had $5.2 billion of assets, $3.8 billion of loans and $4.5 billion of deposits, with 33 branches in Nebraska, Minnesota and Iowa [S11](https://www.sec.gov/Archives/edgar/data/7789/000000778926000202/R25.htm). Systems, branches and accounts were due to convert in October 2026, and the cost-savings target is 30% of American National's expenses [S3](https://www.sec.gov/Archives/edgar/data/7789/000000778926000191/asb2q2026earningspresent.htm). Whether the conversion has happened: [X].
 - **Next results:** Q3 2026 results and the earnings call are set for October 22, 2026 [S15](https://finviz.com/news/398114/associated-banc-corp-to-announce-third-quarter-2026-earnings-and-hold-conference-call-on-october-22-2026). Re-run this briefing after that.
 
@@ -216,7 +219,7 @@ Each revenue line, the job outcome it serves, and the part of my value model it 
 - The split of fee lines between segments is public only once a year (FY2025, [S5](https://www.sec.gov/Archives/edgar/data/7789/000000778926000071/R29.htm)), and capital markets and loan fees are not split out at all.
 - The FY2025 annual report was too long to open in full. Its segment description and segment tables came through cut off, so I used the Q2 2026 quarterly report for segment figures and the bank's website for products.
 - Three sources are news summaries, not the bank's own documents: [S9], [S10] and [S12]. One news summary of the Q2 slides gave fee figures that disagreed with the earnings release, so I used the release and left that summary out.
-- The Q2 2026 earnings call transcript was not available to me, only a summary.
+- The Q2 2026 earnings call transcript was not available to me, only a summary. As of October 14, 2026, third-party sites list a transcript, but the pages could not be opened from Claude's workspace.
 
 ## 9. To confirm inside the bank
 
@@ -233,7 +236,7 @@ Each revenue line, the job outcome it serves, and the part of my value model it 
 
 ## 10. Sources
 
-All opened on October 9, 2026.
+All opened on October 9, 2026, except S16 (see its row). The Brandon White and Shaun Coard rows in section 4 were added on October 14, 2026 from search results that cite S9 and S10; the pages themselves could not be opened that day.
 
 | Tag | Source | Date |
 |---|---|---|
@@ -252,5 +255,6 @@ All opened on October 9, 2026.
 | S13 | [Q1 2026 investor presentation](https://www.sec.gov/Archives/edgar/data/7789/000000778926000050/asb1q2026investorpresent.htm), filed with the SEC | February 9, 2026 |
 | S14 | [FY2016 annual report](https://www.sec.gov/Archives/edgar/data/0000007789/000000778917000009/asb12312016form10-k.htm), for the older segment description only | Year ended December 31, 2016 |
 | S15 | [Press release setting the Q3 2026 earnings date](https://finviz.com/news/398114/associated-banc-corp-to-announce-third-quarter-2026-earnings-and-hold-conference-call-on-october-22-2026), as republished by a news site | October 1, 2026 |
+| S16 | [Associated Bank press release naming Jason Hansen Nebraska and Western Iowa market president](https://investor.associatedbank.com/news/news-details/2026/Associated-Bank-names-Jason-Hansen-Nebraska-and-Western-Iowa-market-president/default.aspx). Found by web search on October 14, 2026; the page itself could not be opened | April 16, 2026 |
 
-_Last updated: 2026-10-09_
+_Last updated: 2026-10-14_

@@ -9,7 +9,7 @@
           "id": "bank-business",
           "name": "Bank Business Briefing",
           "what": "How the bank earns money, the corporate segment in depth, and where AI work lines up with each revenue line.",
-          "status": "Waiting for review",
+          "status": "In use",
           "url": "https://claude.ai/artifact/7ZVT7LtdqxwAma4UrBgTPX",
           "source": "memos/bank-business.md"
         }

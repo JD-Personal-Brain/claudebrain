@@ -26,11 +26,11 @@ Claude updates it at every wrap-up: finished items move to "Closed" with the dat
 | Stage | Open | What it is |
 |---|---|---|
 | Now | 1 | What we're working on first |
-| Stage 1. Read and lock the core | 12 | What I read, then the decision on the RM framework |
+| Stage 1. Read and lock the core | 11 | What I read, then the decision on the RM framework |
 | Stage 2. Make the machine runnable | 4 | What Claude builds so a real run is possible |
 | Stage 3. Dry run and fix | 3 | Running the machine once and fixing it |
 | Stage 4. Get ready for Andy | 9 | What Andy sees, and what I ask him |
-| Alongside the path | 13 | Useful any time; doesn't block a stage. Dated items first |
+| Alongside the path | 14 | Useful any time; doesn't block a stage. Dated items first |
 | Inside the bank | 21 | Questions only someone at the bank can answer |
 | Parked on purpose | 4 | Not forgotten; waiting for a signal from me |
 
@@ -59,7 +59,7 @@ every working file (this section replaces the separate Gap Review page).
 | Approvals | Partial | Who decides is clear for every step. There's no map of who signs what, how long it takes, or who to go to when a sign-off is stuck | W4, B21 |
 | Showing what an RM sees | Missing | The plan promises a working prototype in week 1, but there's nothing to show yet | W9 |
 | A version written for Andy | Missing | The plan is written as my working plan, with internal labels, and doesn't say credit comes next | W10 |
-| Knowing the RM's real day | Partial | The Bank Business Briefing is done. My own notes on bankers' problems stopped at step 1 | V6, W18 |
+| Knowing the RM's real day | Partial | The Bank Business Briefing is done and read. My own notes on bankers' problems stopped at step 1 | W19 |
 | After launch: support and incidents | Partial | Incident steps exist (who to call, how to pause). No support model or runbook yet. Needed before the first product goes live, not before Andy | W8 |
 
 ## Now
@@ -81,8 +81,7 @@ What we're working on first. It feeds both the RM and the credit work.
 | V3 | Read the Credit Core Use Cases page: what banks are deploying in commercial credit, and the credit counterpart proposed for each of the seven core use cases | Me | Nothing |
 | V4 | Read the Delivery Playbook: all six steps (the agent list at the end is reference only) | Me | Nothing |
 | V5 | Read The Delivery Machine: the page for leaders on how one product manager runs many projects | Me | Nothing |
-| V6 | Read the Bank Business Briefing: the whole page, new on 2026-10-09 | Me | Nothing |
-| V7 | Read the Six-Step Product Workflow: the one-page visual, still marked Draft | Me | Nothing |
+| V6 | Read the Six-Step Product Workflow: the one-page visual, still marked Draft | Me | Nothing |
 | D1 | Add an AI product under core use case 5, AI sales coaching (personal guidance from call transcripts)? Low risk, and McKinsey reports new bankers ramping up 20% faster | Me | V2 |
 | D2 | Move prospecting (winning new clients) earlier than wave 3? McKinsey reports its biggest revenue numbers there; outside prospect data may set the pace | Me | V2 |
 | D3 | Keep autonomous lead nurturing and pricing out for now, because they conflict with "nothing reaches a client without the RM" and the fair-lending control? Claude recommends yes, revisit later with evidence | Me | V2 |
@@ -133,18 +132,19 @@ Useful any time; none of these blocks a stage. Dated ones first.
 | # | Item | Who | Waits on |
 |---|---|---|---|
 | W11 | First weekly review: what's working, what's annoying, what to change. Also re-check Anthropic's prompting guide for changes | Me, with Claude | Next session (agreed 2026-10-14) |
-| W12 | Re-run the Bank Business Briefing after the bank's Q3 2026 results on October 22, 2026, using the saved prompt (Example 5 in the Prompting Guide). Read the full Q2 earnings call transcript at the same time; only a summary was available the first time | Claude | October 22, 2026 |
-| W13 | Check that a section link in the Document Library opens the page at that section. If it only opens the top, drop the section links or say so on the page | Me, then Claude | Nothing |
-| W14 | Two loose ends from the McKinsey article: confirm its publication date (the pasted page showed none), and decide whether role redesign (new RM roles as agents take on work, McKinsey's fifth principle) belongs in the playbook; it isn't covered yet | Claude, then me | Nothing |
-| W15 | Loose ends in the Bank Business Briefing: check the exact wording of the bank's AI announcement before quoting it; replace the 2016 description of who the segment serves once the annual report for the 2025 financial year can be opened in full; and confirm two of my guesses, the RM headcount read from an unclear chart and that Omaha came with American National | Claude | Nothing |
-| W16 | Run the tests of Claude's rules that need a real session. Each test is a short scenario in `learning/tests.md` that checks one rule still works. Not yet run in a live session: T7, T10, T13, T14 and T17, and the second parts of T2, T3, T9 and T16. Never run at all: T18 to T22, T24 and T25. Re-run T8 (does Claude label every suggestion Needed or Optional?), which failed on 2026-10-09 before its rule was tightened, and T5, whose first run wasn't a fair test | Claude, in a new session | Nothing |
-| W17 | Check the product details marked "(verify)" in the Tech Stack Guide: product names, prices, vendor terms and any update to the regulators' model-risk guidance. Eleven lines carry the mark. New lead (2026-10-13, Credit Core Use Cases page): SR 26-2, issued 17 April 2026, reportedly replaces SR 11-7, which our files cite; sources disagree on whether it covers generative AI, so read the Fed's own text before changing anything | Claude | Nothing |
-| W18 | Thinking through the job, Part 1 (finding problems), kept on the Job Notes page: answer the open question in step 1 ("Have I worked with bankers or salespeople before?"), then steps 2 to 4. Parts 2 to 4 aren't started | Me, with Claude | Nothing |
-| W19 | Claude Mastery course: paste in the next page (Module 3: Projects, Connectors and Skills). Claude starts a course notes file when it arrives (idea 14, approved) | Me, then Claude | Nothing |
-| W20 | Try the newer skills on real work: "prototype X", "write a prompt for X", "new use case: X" | Me | Nothing |
-| W21 | Fewer approval pop-ups (idea 2, approved): tell Claude which pop-ups I still see and in which app, so it can pre-approve the safe, read-only ones. Claude won't change my permission settings on a guess | Me, then Claude | Nothing |
-| W22 | Playbooks for my everyday tools (idea 3, approved): name two or three tasks I repeat in email, calendar or documents. Claude turns each into a step-by-step skill | Me, then Claude | Nothing |
-| W23 | Jump-link check (idea 40, suggested 2026-10-10): add a test to the page check that clicks every link that jumps within a page and fails if it lands in the wrong place. Waits on my yes or no | Me, then Claude | Nothing |
+| W12 | Let the bank news scout's scheduled runs email me and open the bank's pages: (1) at claude.ai, open the two "Bank news scout" scheduled tasks and add the Gmail connector (Claude can't add it from a session); (2) optionally, in the cloud environment's Network access settings, allow sec.gov, investor.associatedbank.com and associatedbank.com. Until (1) is done, a scheduled run saves its draft and sends a phone notification, but no email | Me | Before October 19, 2026 (first weekly run) |
+| W13 | Re-run the Bank Business Briefing after the bank's Q3 2026 results on October 22, 2026, using the saved prompt (Example 5 in the Prompting Guide). Read the full Q2 earnings call transcript at the same time; only a summary was available the first time. The bank news scout's scheduled run on October 23 does the re-run as a draft | Claude | October 22, 2026 |
+| W14 | Check that a section link in the Document Library opens the page at that section. If it only opens the top, drop the section links or say so on the page | Me, then Claude | Nothing |
+| W15 | Two loose ends from the McKinsey article: confirm its publication date (the pasted page showed none), and decide whether role redesign (new RM roles as agents take on work, McKinsey's fifth principle) belongs in the playbook; it isn't covered yet | Claude, then me | Nothing |
+| W16 | Loose ends in the Bank Business Briefing: check the exact wording of the bank's AI announcement before quoting it; replace the 2016 description of who the segment serves once the annual report for the 2025 financial year can be opened in full; and confirm two of my guesses, the RM headcount read from an unclear chart and that Omaha came with American National | Claude | Nothing |
+| W17 | Run the tests of Claude's rules that need a real session. Each test is a short scenario in `learning/tests.md` that checks one rule still works. Not yet run in a live session: T7, T10, T13, T14 and T17, and the second parts of T2, T3, T9 and T16. Never run at all: T18 to T22, T24 and T25. Re-run T8 (does Claude label every suggestion Needed or Optional?), which failed on 2026-10-09 before its rule was tightened, and T5, whose first run wasn't a fair test | Claude, in a new session | Nothing |
+| W18 | Check the product details marked "(verify)" in the Tech Stack Guide: product names, prices, vendor terms and any update to the regulators' model-risk guidance. Eleven lines carry the mark. New lead (2026-10-13, Credit Core Use Cases page): SR 26-2, issued 17 April 2026, reportedly replaces SR 11-7, which our files cite; sources disagree on whether it covers generative AI, so read the Fed's own text before changing anything | Claude | Nothing |
+| W19 | Thinking through the job, Part 1 (finding problems), kept on the Job Notes page: answer the open question in step 1 ("Have I worked with bankers or salespeople before?"), then steps 2 to 4. Parts 2 to 4 aren't started | Me, with Claude | Nothing |
+| W20 | Claude Mastery course: paste in the next page (Module 3: Projects, Connectors and Skills). Claude starts a course notes file when it arrives (idea 14, approved) | Me, then Claude | Nothing |
+| W21 | Try the newer skills on real work: "prototype X", "write a prompt for X", "new use case: X" | Me | Nothing |
+| W22 | Fewer approval pop-ups (idea 2, approved): tell Claude which pop-ups I still see and in which app, so it can pre-approve the safe, read-only ones. Claude won't change my permission settings on a guess | Me, then Claude | Nothing |
+| W23 | Playbooks for my everyday tools (idea 3, approved): name two or three tasks I repeat in email, calendar or documents. Claude turns each into a step-by-step skill | Me, then Claude | Nothing |
+| W24 | Jump-link check (idea 40, suggested 2026-10-10): add a test to the page check that clicks every link that jumps within a page and fails if it lands in the wrong place. Waits on my yes or no | Me, then Claude | Nothing |
 
 ## Inside the bank
 
@@ -205,5 +205,6 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C16 | The old `prompt-email-example` branch is deleted. Everything on it was already in main | 2026-10-13 |
 | C17 | Organize the Document Library around the two groups we serve: yes. It's one index in six sections (the bank, relationship managers, credit, how we deliver, reference, my workspace), with the two core use case pages renamed to match | 2026-10-14 |
 | C18 | Number open items by priority: yes. Each kind runs 1, 2, 3 in priority order, numbers change when priorities change, and closed items keep theirs | 2026-10-14 |
+| C19 | Was V6: I read the Bank Business Briefing. It's fine as is, no changes | 2026-10-14 |
 
 _Last updated: 2026-10-14_
