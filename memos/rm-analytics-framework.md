@@ -147,7 +147,7 @@ one. Finance agrees the method before the pilot starts.
 | **Business sponsor** (commercial banking leader) | Owns the outcome and the funding | Target lever, go/no-go at each gate |
 | **RM leaders and market managers** | Shape the workflow; run the weekly routine | Pilot group, how insights are used in pipeline meetings |
 | **Pilot RMs** | Co-design and test | Whether each insight is useful (their feedback steers the backlog) |
-| **Product manager (PM)** (this role) | Owns discovery through adoption; owns the product until a long-term owner is named | Scope, priorities, trade-offs |
+| **Product manager** (this role) | Owns discovery through adoption; owns the product until a long-term owner is named | Scope, priorities, trade-offs |
 | **Data owners** (Snowflake, Salesforce) | Provide and certify data | What data may be used, and how |
 | **Platform teams** (Salesforce, Microsoft, AWS, data engineering) | Build and run | Technical design within bank standards |
 | **Model risk management** | Validates the AI | Risk rating; approval to launch |
@@ -241,9 +241,9 @@ loop compounds over time and is a reason to build both goals together.
 
 | Agent | Type | Job | Runs on | Reads from | Person in charge |
 |---|---|---|---|---|---|
-| M20 Interview synthesizer | For the team | Turns interview recaps into themes and quotes, linked to each source | M365 Copilot, Copilot Studio | Teams transcripts (only with consent), interview notes | PM reviews every theme |
+| M20 Interview synthesizer | For the team | Turns interview recaps into themes and quotes, linked to each source | M365 Copilot, Copilot Studio | Teams transcripts (only with consent), interview notes | Product manager reviews every theme |
 | M21 Opportunity sizer | For the team | Answers plain-English questions to size each lever | Snowflake Cortex Analyst | Snowflake balances and products; Salesforce pipeline | An analyst checks the numbers |
-| M22 Time-use analyst | For the team | Finds where RM time goes and which activities lead to won deals | Snowflake Cortex, Power BI | Salesforce activity and win/loss | PM confirms with RMs in person |
+| M22 Time-use analyst | For the team | Finds where RM time goes and which activities lead to won deals | Snowflake Cortex, Power BI | Salesforce activity and win/loss | Product manager checks with RMs |
 
 - **AI for the team:** themes from interviews; a first pass over pipeline and activity data.
 - **AI for RMs:** a working prototype on sample data, so RMs react to something real.
@@ -273,7 +273,7 @@ loop compounds over time and is a reason to build both goals together.
 
 | Agent | Type | Job | Runs on | Reads from | Person in charge |
 |---|---|---|---|---|---|
-| M23 Requirements drafter | For the team | Drafts the problem statement, user stories and acceptance criteria | M365 Copilot in Word, or Copilot Studio | Discover findings | PM edits; team and sponsor approve |
+| M23 Requirements drafter | For the team | Drafts the problem statement, user stories and acceptance criteria | M365 Copilot in Word, or Copilot Studio | Discover findings | Product manager edits; team and sponsor approve |
 | M24 Data contract checker | For the team | Checks fields exist, are fresh and pass quality checks; flags gaps. After Define, runs on every data refresh and alerts the data owner on failure | Snowflake Cortex | Snowflake tables and their quality and access records | Data owner signs off |
 | M25 Risk intake assistant | For the team | Pre-fills the risk intake and flags likely high-risk areas | Copilot Studio agent grounded in bank policies | Policy documents, product brief | A risk partner sets the rating |
 
@@ -346,7 +346,7 @@ and Outlook).
 |---|---|---|---|---|---|
 | M27 Red-team agent | For the team | Generates thousands of tricky requests (another RM's clients, a credit decision) to try to break the product | AWS Bedrock | The product in test | Risk reviews every failure |
 | M28 Fairness monitor | For the team | Checks opportunities are spread fairly across segments and regions; runs again monthly after launch | Snowflake, Power BI | Opportunity outputs, client segments | Compliance reviews results |
-| M29 Evidence pack assembler | For the team | Compiles test results, data use and controls into review documents | M365 Copilot in Word | Test results, data contract, controls | PM and risk verify every claim |
+| M29 Evidence pack assembler | For the team | Compiles test results, data use and controls into review documents | M365 Copilot in Word | Test results, data contract, controls | Product manager and risk verify every claim |
 
 - **AI for the team:** red-teaming at scale; assembling the evidence pack.
 - **AI for RMs:** no change; the product is frozen for review.
@@ -378,7 +378,7 @@ and Outlook).
 |---|---|---|---|---|---|
 | A6 Onboarding coach | For RMs | Answers "how do I use this?" inside Teams | Copilot Studio agent in Teams | Training guides, FAQs | Product team keeps content current |
 | A4 Weekly opportunity digest | For RMs | Sends each RM their top opportunities every Monday | Power Automate with the insight writer | Signal finder and insight writer outputs | The RM decides what to pursue |
-| M30 Feedback triage | For the team | Sorts feedback into bugs, quality issues and ideas, and routes it to the backlog | Power Automate with an approved LLM | Feedback logged in Salesforce | PM sets priorities |
+| M30 Feedback triage | For the team | Sorts feedback into bugs, quality issues and ideas, and routes it to the backlog | Power Automate with an approved LLM | Feedback logged in Salesforce | Product manager sets priorities |
 
 - **AI for the team:** summarizing pilot feedback and spotting patterns.
 - **AI for RMs:** the live product, still assistive.
@@ -425,8 +425,8 @@ goal is a product that pays for itself.
 | Agent | Type | Job | Runs on | Reads from | Person in charge |
 |---|---|---|---|---|---|
 | M31 Impact analyst | For the team | Answers "how much pipeline came from AI insights this month?" against the comparison group | Snowflake Cortex Analyst, Power BI | AI-tagged Salesforce opportunities; Snowflake | Analytics validates before reporting |
-| M32 Quality watchdog | For the team | Re-runs the test set after every change and alerts on drift | AWS Bedrock model evaluation, Power Automate | Test set, live outputs, feedback | PM decides to fix or roll back |
-| M33 Improvement scout | For the team | Proposes the next backlog items or next lever from usage and feedback | M365 Copilot or Copilot Studio | Dashboards, feedback, reviews | PM and sponsor decide |
+| M32 Quality watchdog | For the team | Re-runs the test set after every change and alerts on drift | AWS Bedrock model evaluation, Power Automate | Test set, live outputs, feedback | Product manager decides to fix or roll back |
+| M33 Improvement scout | For the team | Proposes the next backlog items or next lever from usage and feedback | M365 Copilot or Copilot Studio | Dashboards, feedback, reviews | Product manager and sponsor decide |
 
 - **AI for the team:** impact analysis, quality monitoring and improvement ideas.
 - **AI for RMs:** a better product with each release.
@@ -449,10 +449,10 @@ the first days.
 
 | Condition | Why it matters | Checked by |
 |---|---|---|
-| **1. Build from day one** | A working prototype on sample data in week 1; no real client data is needed until it's tested. | PM and platform team, week 1 |
-| **2. Standard features only** | Wave 1 configures features already in Salesforce, M365 Copilot and Power Platform, which already have bank approval. | PM and platform teams, week 1 |
+| **1. Build from day one** | A working prototype on sample data in week 1; no real client data is needed until it's tested. | Product manager, platform team, week 1 |
+| **2. Standard features only** | Wave 1 configures features already in Salesforce, M365 Copilot and Power Platform, which already have bank approval. | Product manager, platform teams, week 1 |
 | **3. Low risk by design** | Internal only, assistive, read-only by default, nothing near credit decisions or pricing. Should earn a low risk rating. | Risk partner gives an early rating, week 2 |
-| **4. Review as we go** | The risk partner sees each version as it's built, so sign-off confirms what they already know. | PM and risk partner, every week |
+| **4. Review as we go** | The risk partner sees each version as it's built, so sign-off confirms what they already know. | Product manager and risk partner, every week |
 | **5. Data access on day one** | Requests go in on day one and wave 1 uses only certified data, because access is often the slowest step. | Data owners sign the data contract, week 2 |
 | **6. Fast decisions** | The sponsor makes each gate call within days, because waiting for decisions adds weeks. | Sponsor, at each gate |
 
@@ -467,15 +467,15 @@ call is made at Gate 2 (week 2).
 
 | Week | What gets done | Owner | Proof it's done |
 |---|---|---|---|
-| Days 1–5 | Sponsor kickoff; risk partner briefed; data access and test environments requested; working prototype built on sample data | PM, platform team | Prototype shown to the sponsor |
+| Days 1–5 | Sponsor kickoff; risk partner briefed; data access and test environments requested; working prototype built on sample data | Product manager, platform team | Prototype shown to the sponsor |
 | 1 | **Gate 1:** sponsor sees the prototype and picks wave 1, the target lever and the baseline | Sponsor | Decision log entry |
-| 1–2 | RM interviews and shadowing using the prototype; improve it every few days; levers sized | PM, pilot RMs, analyst | RM feedback log; sized levers |
+| 1–2 | RM interviews and shadowing using the prototype; improve it every few days; levers sized | Product manager, pilot RMs, analyst | RM feedback log; sized levers |
 | 2 | **Gate 2:** data contract, early risk rating, value model, Finance attribution method; split decision if needed | Sponsor, data owners, risk partner | Signed data contract; early risk rating |
 | 2–3 | Meeting follow-up set up in M365 Copilot; reviewed and signed off for pilot use | Platform team, risk partner | Sign-off recorded |
-| About 2–4 | **Meeting follow-up live with pilot RMs** | PM | First weekly usage report |
-| 2–5 | Connect real data in the test environment; build the test set and evidence pack; risk partner reviews each version | Platform teams, PM | Test results against the quality bar |
+| About 2–4 | **Meeting follow-up live with pilot RMs** | Product manager | First weekly usage report |
+| 2–5 | Connect real data in the test environment; build the test set and evidence pack; risk partner reviews each version | Platform teams, product manager | Test results against the quality bar |
 | 4–5 | Sign-offs for the insight features and call notes; release readiness (training, support, incident process, comparison group) | Risk, compliance, privacy, security, operations | Sign-offs recorded; readiness checklist complete |
-| About 4–6 | **Client brief, weekly opportunity list and call notes into Salesforce live with pilot RMs** | PM | Usage and act-on rates in Power BI; share of meetings logged |
+| About 4–6 | **Client brief, weekly opportunity list and call notes into Salesforce live with pilot RMs** | Product manager | Usage and act-on rates in Power BI; share of meetings logged |
 
 | Step | Weeks (estimate) | Ends with |
 |---|---|---|
@@ -673,20 +673,20 @@ agent library. The table shows how this project uses each one: its RM inputs, ow
 
 | Agent | Step | Job | Inputs | Allowed actions | Outputs | Stops when | Proof it worked | Person in charge |
 |---|---|---|---|---|---|---|---|---|
-| **M20. Interview synthesizer** | Discover | Turn interview recaps into themes and quotes | Teams transcripts (only with consent), interview notes | Read; draft | Themes, each linked to its source | All interviews processed | PM spot-checks every theme against the notes | PM |
+| **M20. Interview synthesizer** | Discover | Turn interview recaps into themes and quotes | Teams transcripts (only with consent), interview notes | Read; draft | Themes, each linked to its source | All interviews processed | Product manager spot-checks each theme | Product manager |
 | **M21. Opportunity sizer** | Discover | Answer plain-English sizing questions | Snowflake balances and products; Salesforce pipeline | Read-only queries | Sized levers with the query shown | Each lever sized | An analyst re-runs the key numbers | Analyst |
-| **M22. Time-use analyst** | Discover | Find where RM time goes | Salesforce activity and win/loss | Read-only queries | Time-use breakdown | Breakdown complete | PM confirms with RMs in person | PM |
-| **M23. Requirements drafter** | Define | Draft problem statement, user stories, acceptance criteria | Discover findings | Draft only | Draft brief and stories | Drafts delivered | Team and sponsor approve | PM |
+| **M22. Time-use analyst** | Discover | Find where RM time goes | Salesforce activity and win/loss | Read-only queries | Time-use breakdown | Breakdown complete | Product manager checks with RMs | Product manager |
+| **M23. Requirements drafter** | Define | Draft problem statement, user stories, acceptance criteria | Discover findings | Draft only | Draft brief and stories | Drafts delivered | Team and sponsor approve | Product manager |
 | **M24. Data contract checker** | Define | Check fields exist, are fresh and pass quality checks | Snowflake tables and their quality and access records | Read-only | Gap list | Every field checked in Define; after that, runs on every data refresh and alerts the data owner on failure | Data owner signs off | Data owner |
 | **M25. Risk intake assistant** | Define | Pre-fill the risk intake; flag likely high-risk areas | Bank policies, product brief | Draft only | Pre-filled intake | Intake drafted | Risk partner sets the rating | Risk partner |
-| **M26. Test grader** | Build | Score each version against the test set | Test set, product outputs | Read; score | Score report | Every test case scored | Experienced RMs grade a sample | PM |
+| **M26. Test grader** | Build | Score each version against the test set | Test set, product outputs | Read; score | Score report | Every test case scored | Experienced RMs grade a sample | Product manager |
 | **M27. Red-team agent** | Govern | Try to break the product (other RMs' clients, credit requests) | The product in test | Send test requests in the test environment only | Failure list | All attack types run | Risk reviews every failure | Risk partner |
 | **M28. Fairness monitor** | Govern | Check opportunities are spread fairly across segments and regions | Opportunity outputs, client segments | Read-only | Fairness report | Report complete; runs again monthly after launch | Compliance reviews results | Compliance |
-| **M29. Evidence pack assembler** | Govern | Compile results, data use and controls into review documents | Test results, data contract, controls | Draft only | Evidence pack | Pack drafted | PM and risk verify every claim | PM |
-| **M30. Feedback triage** | Release | Sort feedback into bugs, quality issues and ideas | Feedback logged in Salesforce | Read; tag; add to backlog | Tagged backlog items | All new feedback sorted | PM reviews a weekly sample | PM |
+| **M29. Evidence pack assembler** | Govern | Compile results, data use and controls into review documents | Test results, data contract, controls | Draft only | Evidence pack | Pack drafted | Product manager and risk verify every claim | Product manager |
+| **M30. Feedback triage** | Release | Sort feedback into bugs, quality issues and ideas | Feedback logged in Salesforce | Read; tag; add to backlog | Tagged backlog items | All new feedback sorted | Product manager reviews a weekly sample | Product manager |
 | **M31. Impact analyst** | Measure | Report pipeline and revenue from AI insights against the comparison group | AI-tagged Salesforce opportunities; Snowflake | Read-only queries | Monthly impact figures | Report complete | Analytics validates before reporting | Analytics |
-| **M32. Quality watchdog** | Measure | Re-run the test set after every change; alert on drift | Test set, live outputs, feedback | Read; alert | Score trend and alerts | Each run complete | Alerts reviewed within [X] days | PM |
-| **M33. Improvement scout** | Measure | Propose next backlog items or the next lever | Dashboards, feedback, reviews | Draft only | Ranked suggestions | List delivered | PM and sponsor decide | PM |
+| **M32. Quality watchdog** | Measure | Re-run the test set after every change; alert on drift | Test set, live outputs, feedback | Read; alert | Score trend and alerts | Each run complete | Alerts reviewed within [X] days | Product manager |
+| **M33. Improvement scout** | Measure | Propose next backlog items or the next lever | Dashboards, feedback, reviews | Draft only | Ranked suggestions | List delivered | Product manager and sponsor decide | Product manager |
 
 ---
 

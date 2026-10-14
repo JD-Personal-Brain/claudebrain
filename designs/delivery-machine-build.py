@@ -111,7 +111,7 @@ footer{{color:var(--muted);font-size:14px;border-top:1px solid var(--line);paddi
 <div class="band"><div class="wrap">
 <p class="label">Operating model · AI product delivery</p>
 <h1>The Delivery Machine</h1>
-<p class="lede">How one product manager runs many AI projects at once: routine work runs on its own and pushes tasks to people on time, so the PM's hours go to decisions and people.</p>
+<p class="lede">How one product manager runs many AI projects at once: routine work runs on its own and pushes tasks to people on time, so the product manager's hours go to decisions and people.</p>
 </div></div>
 <main class="wrap">
 <section style="padding-top:32px">
@@ -121,12 +121,12 @@ footer{{color:var(--muted);font-size:14px;border-top:1px solid var(--line);paddi
 <div class="kinds">
 <div class="kind">{chip("auto")}<h3>Runs on its own</h3><p>A workflow or agent does it and tells the right person. No one has to remember it.</p></div>
 <div class="kind">{chip("draft")}<h3>AI drafts, a person checks</h3><p>AI does the first version, and a named person approves it.</p></div>
-<div class="kind">{chip("me")}<h3>Only a person</h3><p>Decisions, agreement between people, relationships and trade-offs. This is where the PM's hours go.</p></div>
+<div class="kind">{chip("me")}<h3>Only a person</h3><p>Decisions, agreement between people, relationships and trade-offs. This is where the product manager's hours go.</p></div>
 <div class="kind">{chip("partner")}<h3>Partner sign-off</h3><p>A decision only a named partner can make, such as risk or compliance. Never automated.</p></div>
 </div>
 </section>
 <section>
-<p class="label">Where the PM's time goes</p>
+<p class="label">Where the product manager's time goes</p>
 <h2 id="mix">Early steps need people; later steps run themselves</h2>
 <p>Number of tasks of each kind once the machine is running, by step, gate decisions included. Discover and Define carry the most person-only work, because that is where judgment matters most.</p>
 <div class="mix">{bars}
@@ -153,7 +153,7 @@ footer{{color:var(--muted);font-size:14px;border-top:1px solid var(--line);paddi
 <section>
 <p class="label">Across every project</p>
 <h2 id="running">The running layer</h2>
-<p>One set of automations keeps all projects on schedule, so nothing depends on the PM remembering to chase.</p>
+<p>One set of automations keeps all projects on schedule, so nothing depends on the product manager remembering to chase.</p>
 <div class="step">{table(running)}</div>
 </section>
 <section>
@@ -163,7 +163,7 @@ footer{{color:var(--muted);font-size:14px;border-top:1px solid var(--line);paddi
 <div class="rule"><h3>One machine for every project</h3><p>The same steps, tables and tracker, so any project can be compared with any other.</p></div>
 <div class="rule"><h3>Limit the person-heavy steps</h3><p>At most [X] projects in Discover or Define at once. Steps 3 to 6 are mostly automated, so more projects can sit there.</p></div>
 <div class="rule"><h3>Stagger the gates</h3><p>No two gate meetings in the same week.</p></div>
-<div class="rule"><h3>Plan the PM's week</h3><p>[X] hours on decisions and gates, [X] on users, [X] on partners and sign-offs, [X] checking drafts. If person-only work runs over, the automation check comes first.</p></div>
+<div class="rule"><h3>Plan the product manager's week</h3><p>[X] hours on decisions and gates, [X] on users, [X] on partners and sign-offs, [X] checking drafts. If person-only work runs over, the automation check comes first.</p></div>
 </div>
 </section>
 <footer>In use: reviewed 2026-10-14. Tool choices are guesses until confirmed against the bank's setup. [X] marks numbers still to be set. The RM analytics plan is the first project to run through this machine.</footer>

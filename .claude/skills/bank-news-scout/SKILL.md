@@ -8,7 +8,8 @@ description: Check public sources for new information about Associated Bank, kee
 Keeps the Bank Business Briefing (`memos/bank-business.md`, designed page
 https://claude.ai/artifact/7ZVT7LtdqxwAma4UrBgTPX) current, so the user never
 works from stale facts. It's the user's own research helper, not a delivery-machine
-agent, so it lives here and not in the agent library (`playbook/agents.md`).
+agent: its spec is H1 in the agent library (`playbook/agents.md`, "my research helpers"),
+and the briefing's section 11 says how it keeps the page current. Keep all three in line.
 
 ## The spec
 
@@ -19,7 +20,7 @@ agent, so it lives here and not in the agent library (`playbook/agents.md`).
 | **Kind** | Draft: it drafts the edits; the user decides what goes into main |
 | **Job** | Find new public facts about Associated Bank that change the briefing, and draft the edits. |
 | **Starts when** | Every Monday morning (scheduled task), on October 23, 2026 (the day after Q3 2026 results), or when the user asks |
-| **Inputs** | `memos/bank-business.md` (its "As of" date, sections 1 to 9 and the sources list in section 10); `memos/bank-news-log.md` (what earlier runs already reported); public web pages |
+| **Inputs** | `memos/bank-business.md` (its "As of" date, sections 1 to 9, the sources list in section 10 and section 11); `memos/bank-news-log.md` (what earlier runs already reported); public web pages |
 | **Allowed actions** | Search the web and open public pages (if pages won't open because the workspace blocks them, work from search results, say so in the summary and label each item "from search results"); edit `memos/bank-business.md`, rebuild its designed page source and append to `memos/bank-news-log.md` on the session's draft branch; push that branch; end with **one** summary as the final message |
 | **Not allowed** | Merge into main or open a pull request; republish the live designed page (that happens after the user's yes); send email with any connector (the summary reaches the user only through the scheduled task's notice); use non-public information; write a number without its period and source; fill a gap from memory |
 | **Outputs** | Draft edits on the session's draft branch, one log entry, one summary |

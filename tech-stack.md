@@ -114,7 +114,7 @@ The same technologies, sorted by the six steps I'll use in this job.
   - **Model evaluation:** compare models on your own test questions.
 - **How the bank likely uses it (guess):** the "engine room" for custom AI products the off-the-shelf tools can't handle, such as document-heavy work (financial statements, credit files) or AI built into internal apps.
 - **Why banks like it:** data stays inside the bank's own cloud setup, and AWS says customer data isn't used to train the models **(verify current terms)**.
-- **What I need to know:** which models are approved for use, what Guardrails are required, and cost per use. Engineers build here; the PM defines the requirements and quality bar.
+- **What I need to know:** which models are approved for use, what Guardrails are required, and cost per use. Engineers build here; the product manager defines the requirements and quality bar.
 
 ### Snowflake
 - **What it is:** a cloud "data warehouse": one large, organized home for a company's data that many teams can query (ask questions of).

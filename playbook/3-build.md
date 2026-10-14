@@ -10,7 +10,7 @@ log (see `README.md`) for every sub-step.
 
 > ⚠️ **How much to trust this.** Written 2026-10-09 from my framework, the RM
 > memo and general practice, not from Associated Bank. In this step platform
-> teams or engineers do much of the building; the PM sets requirements, checks
+> teams or engineers do much of the building; the product manager sets requirements, checks
 > quality and makes the calls. Lines marked ⚠️ are guesses about the bank.
 
 ---

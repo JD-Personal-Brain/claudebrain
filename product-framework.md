@@ -40,7 +40,7 @@ One item per playbook sub-step, in the same order (1.0 to 6.6).
 - **Decisions and trade-offs:** record each one with who decided and why, so partners stay aligned.
 - **Dependencies, risks and issues:** one list, each item with an owner and a date; review it weekly.
 
-## The delivery machine: running many projects with one PM
+## The delivery machine: running many projects with one product manager
 I'm one person running several projects at once, so the framework has to run
 mostly by itself. Automation does the routine work and pushes tasks to people
 against the timeline, so my time goes only where a person is needed.
