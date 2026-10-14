@@ -113,7 +113,7 @@ footer{{color:var(--muted);font-size:14px;border-top:1px solid var(--line);paddi
 @media (max-width:560px){{.kinds{{grid-template-columns:1fr}}.rules{{grid-template-columns:1fr}}.mixrow{{grid-template-columns:1fr;gap:6px}}.check{{padding:20px}}}}
 </style>
 <div class="band"><div class="wrap">
-<p class="label">Operating model · AI product delivery</p>
+<p class="label">How we deliver</p>
 <h1>Product Machine</h1>
 <p class="lede">How one product manager runs many AI projects at once: routine work runs on its own and pushes tasks to people on time, so the product manager's hours go to decisions and people.</p>
 {series("machine")}

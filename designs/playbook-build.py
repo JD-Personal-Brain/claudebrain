@@ -116,7 +116,7 @@ page = f'''<title>Product Playbook</title>
 @media (max-width:720px){{.agroups{{grid-template-columns:1fr}}}}
 </style>
 <div class="band"><div class="wrap">
-<span class="label">Field manual · AI product delivery</span>
+<span class="label">How we deliver</span>
 <h1>Product Playbook</h1>
 <p class="lede">How to run each of the six steps the first time, sub-step by sub-step, and what to watch so the second time can be automated. The Product Workflow says what happens, the Product Machine says who does each task; this page says how. A short list of the agents closes the page; their full specs are on the Agent Library.</p>
 <nav class="stepnav" aria-label="Steps">{nav}</nav>

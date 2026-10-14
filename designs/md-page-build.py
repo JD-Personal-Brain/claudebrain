@@ -12,7 +12,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # source file, output page, page name, eyebrow label, one-line summary
 PAGES = [
-    ("product-framework.md", "product-framework.html", "Product Framework", "How we deliver · the rules",
+    ("product-framework.md", "product-framework.html", "Product Framework", "How we deliver",
      "The rules every product follows: who decides, how success is measured, how good is good enough, how we use AI, and how each step is written up."),
     ("tech-stack.md", "tech-stack.html", "Tech Stack Guide", "Associated Bank · technology guide",
      "Each technology in the job: what it is, how the bank likely uses it, and what I need to know."),
