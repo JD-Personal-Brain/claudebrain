@@ -110,7 +110,7 @@ page = f'''<title>Agent Library</title>
 @media (max-width:760px){{.aglist{{grid-template-columns:1fr}}.agcard .spec div{{grid-template-columns:1fr;gap:2px}}}}
 </style>
 <div class="band"><div class="wrap">
-<span class="label">Building block · agents</span>
+<span class="label">Reference · agents</span>
 <h1>Agent Library</h1>
 <p class="lede">All {len(agents)} agents in one place. Each one has a single job, a short list of things it may do, and a named person in charge. Open any card to see its full spec.</p>
 <div class="filters">

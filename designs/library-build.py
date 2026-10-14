@@ -12,9 +12,9 @@ from pagekit import CSS, E
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 lib = json.load(open(os.path.join(ROOT, "designs", "library.json")))
 
-STATUS = {"In use": "s-use", "Waiting for review": "s-review", "Draft": "s-review", "In progress": "s-review", "Reference": "s-ref"}
+STATUS = {"In use": "s-use", "Waiting for review": "s-review", "Draft": "s-review", "In progress": "s-review", "Reference": "s-ref",
+          "To build": "s-todo", "Later": "s-todo"}
 # Sections in page order, from library.json. An item is a page, or a placeholder ("todo") for one still to build.
-STATUS.update({"To build": "s-todo", "Later": "s-todo"})
 groups = [(g["name"], g["why"], g["items"]) for g in lib["groups"]]
 for _, _, ds in groups:
     for d in ds:
@@ -87,15 +87,14 @@ page = f'''<title>Document Library</title>
 .s-review{{background:var(--amber-bg);color:var(--amber)}}
 .s-ref{{background:var(--partner-bg);color:var(--partner)}}
 .index{{max-width:760px}}
-.igroup{{break-inside:avoid-column;margin:0 0 18px;scroll-margin-top:16px}}
-.igroup{{margin:0 0 28px}}
+.igroup{{margin:0 0 28px;scroll-margin-top:16px}}
 .igroup h3{{font-family:var(--serif);font-size:22px;font-weight:600;margin:0;display:flex;gap:12px;align-items:baseline}}
 .gnum{{font-family:var(--mono);font-size:14px;color:var(--teal)}}
 .gwhy{{color:var(--muted);font-size:15px;margin:2px 0 10px}}
 .s-todo{{background:transparent;border:1px dashed var(--line);color:var(--muted)}}
 .ientry.todo{{background:transparent;border-style:dashed}}
 .ientry.todo .ipage{{color:var(--muted)}}
-.ientry{{background:var(--card);border:1px solid var(--line);border-radius:8px;margin:0 0 6px;break-inside:avoid}}
+.ientry{{background:var(--card);border:1px solid var(--line);border-radius:8px;margin:0 0 6px}}
 .ientry>summary,.ientry.plain{{display:flex;align-items:baseline;gap:12px;padding:10px 16px}}
 .ientry>summary{{cursor:pointer;list-style:none}}
 .ientry>summary::-webkit-details-marker{{display:none}}
@@ -119,11 +118,11 @@ page = f'''<title>Document Library</title>
 <span class="label">The program</span>
 <h1>Document Library</h1>
 <p class="lede">The AI program for Associated Bank&#x27;s relationship managers and credit team: the bank, each group&#x27;s work and use cases, how we deliver, and reference.</p>
-<nav class="stepnav" aria-label="Areas">{nav}</nav>
+<nav class="stepnav" aria-label="Sections">{nav}</nav>
 <div class="filter"><label for="q">Find a document</label><input id="q" type="search" placeholder="Type a word, like plan, agent or prompt" autocomplete="off"></div>
 </div></div>
 <main class="wrap">
-<section id="index"><div class="legend"><span>{npages} pages. Click &#9656; for a page&#x27;s summary and sections; click its name to open it. The number is how many sections it has.</span><span class="status s-use">In use</span><span class="status s-review">Waiting for review</span><span class="status s-ref">Reference</span></div><div class="index">{index}</div></section>
+<section id="index"><div class="legend"><span>{npages} pages. Click &#9656; for a page&#x27;s summary and sections; click its name to open it. The number is how many sections it has.</span><span class="status s-use">In use</span><span class="status s-review">Waiting for review, draft or in progress</span><span class="status s-ref">Reference</span><span class="status s-todo">To build</span></div><div class="index">{index}</div></section>
 <p class="empty" id="none" hidden>No documents match that word.</p>
 <footer>Built from <code>designs/library.json</code>. Say <strong>/documents</strong> to Claude to refresh it. Every page is private until you share it from its Share menu.</footer>
 </main>

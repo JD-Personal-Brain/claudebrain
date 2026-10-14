@@ -138,7 +138,7 @@ for n, step in STEPS.items():
 howto = ('<div class="howto"><span>Each task is marked with who does it once the machine is running:</span>'
          '<span><span class="chip k-auto">Auto</span>runs on its own</span><span><span class="chip k-draft">Draft</span>AI drafts, a person checks</span>'
          '<span><span class="chip k-me">Me</span>only a person</span><span><span class="chip k-partner">Partner</span>a partner\'s sign-off</span></div>')
-page("Steps Catalog", "Building block · steps",
+page("Steps Catalog", "Reference · steps",
      f"All {len(subs)} sub-steps of the six-step delivery process in one place. Open any card to see why it matters, what it produces and its tasks.",
      "Step", list(STEPS.values()), sections, howto,
      "Built from the Delivery Playbook and the task tables in the Product Framework, so it always matches them. Tools and task kinds are guesses until confirmed at the bank.",
@@ -188,7 +188,7 @@ for g in groups:
 howto = ('<div class="note"><span class="warn">⚠️</span> Gathered from my own framework and playbook, not from Associated Bank. '
          "The bank's own control list comes from its risk partner early in the Define step, and it replaces this one where they differ. "
          "Numbers such as 2.4 are sub-steps of my six-step process: look them up in the Steps Catalog.</div>")
-page("Controls Catalog", "Building block · controls",
+page("Controls Catalog", "Reference · controls",
      f"All {len(controls)} governance controls in one place: the safeguards built into every AI product, with where each is set, built, proved and watched.",
      "Kind of control", groups, sections, howto,
      "Built from my controls list (kept with the playbook). \"Tool\" lines are guesses until confirmed at the bank.",

@@ -37,7 +37,7 @@
         {
           "id": "rm-plan",
           "name": "RM Analytics Plan",
-          "what": "The same full plan as one continuous scrolling page: the easiest way to read it start to finish.",
+          "what": "The full RM plan as one continuous scrolling page: the easiest way to read it start to finish (same words as the RM Analytics Framework design page).",
           "status": "Waiting for review",
           "url": "https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk",
           "source": "memos/rm-analytics-framework.md"
@@ -67,7 +67,7 @@
         {
           "id": "credit-market-scan",
           "name": "Credit Core Use Cases",
-          "what": "What banks and vendors are deploying in the commercial credit process, and how each credit use case lines up with the RM plan's seven core use cases.",
+          "what": "What banks are deploying in commercial credit, and the credit counterpart of each of the seven core use cases. A proposal, not yet agreed.",
           "status": "Waiting for review",
           "url": "https://claude.ai/artifact/2tySJZL41pf72igzanYbaT",
           "source": "memos/credit-market-scan.md"
@@ -122,13 +122,13 @@
     {
       "id": "reference",
       "name": "Reference",
-      "why": "Look things up: words, tools, steps, controls and agents.",
+      "why": "Look things up: words, tools, steps, controls and agents. Claude keeps the catalogs and the glossary in line with the plans.",
       "items": [
         {
           "id": "glossary",
           "name": "Glossary",
           "what": "The words we use, one meaning each, so every plan says the same thing, plus the old wording we've retired (the audit fails on any left behind). Ends with the bank's terms still to map.",
-          "count": "54 terms",
+          "count": "57 terms",
           "status": "Reference",
           "url": "https://claude.ai/artifact/LRQHSz65beh9XewB6qsQvQ",
           "source": "glossary.md"
@@ -182,7 +182,7 @@
     {
       "id": "workspace",
       "name": "My workspace",
-      "why": "For me only; left out of anything shared with the bank.",
+      "why": "For me only; never shared with the bank.",
       "items": [
         {
           "id": "open-items",
@@ -196,7 +196,7 @@
           "id": "job-description",
           "name": "Job Description",
           "what": "The Principal Applied AI Product Manager posting: what the role owns, what it requires and the tools it names.",
-          "status": "Reference",
+          "status": "In use",
           "url": "https://claude.ai/artifact/9CUyQt1EDbmu1R7DVRyvkM",
           "source": "job-description.md"
         },

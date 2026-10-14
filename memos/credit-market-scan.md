@@ -42,11 +42,11 @@ As of 2026-10-13. A web scan of what banks are deploying in credit, lined up wit
 - **Early warning:** one vendor page claims 12–25% fewer non-performing loans; no primary source given. Treat as unsupported.
 - **Budgets:** a 2026 Celent study, commissioned by Zest AI, found 83% of lenders plan to increase generative AI budgets this year.
 
-## Credit use cases, lined up with the RM plan's seven core use cases
+## Credit core use cases: each RM core use case and its credit counterpart
 
 The RM plan is organized on seven core use cases. Each has a natural credit
-counterpart, often built on the same client data, so an RM product and a credit
-product can share a data contract and agents. ⚠️ The pairing is my own
+counterpart, often built on the same client data, so an RM AI product and a credit
+AI product can share a data contract and agents. ⚠️ The pairing is my own
 proposal, not something a source says.
 
 | RM core use case | Credit counterpart (user: portfolio manager or credit analyst) | Parked credit process it covers | What the market shows |
@@ -57,7 +57,7 @@ proposal, not something a source says.
 | **4. Deal scoring and pricing** | **Risk rating support:** AI drafts the rationale and checks it against policy; a person sets the rating | Risk ratings | Little public evidence; it is the closest to a credit decision, so fair-lending rules apply (the same reason pricing is out of the RM plan, decision D8) |
 | **5. AI sales coaching** | **Credit policy Q&A and coaching for analysts:** answers from the bank's credit policy, with the page cited | New (not on our list) | nCino Banking Advisor answers policy questions; American Banker reports AI helps newer bankers most |
 | **Admin off the RM's plate** | **Spreading, document intake and covenant tracking:** read financial statements into the bank's spread, file documents, test covenants and chase compliance certificates | Spreading financial statements; covenant checks | Vendor case studies (Evalueserve, nCino); widely sold |
-| **Keep clients** | **Early warning on credit quality:** signals that a borrower is weakening (late statements, falling deposits, news) | Early warning | McKinsey's most-pursued area (about 60%); Moody's live at a large Asian bank. Shares signals with the RM plan's "client may leave" product |
+| **Keep clients** | **Early warning on credit quality:** signals that a borrower is weakening (late statements, falling deposits, news) | Early warning | McKinsey's most-pursued area (about 60%); Moody's live at a large Asian bank. Shares signals with the RM plan's "Early warning: client may leave" AI product |
 
 **What this shows:** all six parked processes are covered, and two new ones
 appear (deal screening, and policy Q&A and coaching). The evidence is strongest
@@ -76,7 +76,7 @@ six steps and the same agents.
 
 **For decision (my recommendation, not yet agreed):**
 1. **Start with credit memo and annual review drafts.** It has the strongest evidence, it reuses the RM plan's client brief data, and the person stays the decider.
-2. **Put early warning second.** It's where most banks are working, and it shares signals with the RM plan's "client may leave" product.
+2. **Put early warning second.** It's where most banks are working, and it shares signals with the RM plan's "Early warning: client may leave" AI product.
 3. **Keep risk ratings out of the first waves**, for the same reason pricing is out of the RM plan.
 
 ## Sources

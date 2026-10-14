@@ -17,17 +17,17 @@ Claude updates it at every wrap-up: finished items move to "Closed" with the dat
 3. **Dry run and fix** (both): one made-up product through all six steps; fix what breaks.
 4. **Get ready for Andy** (Claude builds, I decide): the RM mock-up, the Andy edition and my questions for him.
 
-**Next up:** stage 1 (V1, the RM plan) and, at the same time, stage 2 (W17 and W18). Neither waits on the other.
+**Next up (agreed 2026-10-14):** map the RM and credit workflows (W26). Stage 1 (V1, the RM plan) and stage 2 (W17 and W18) carry on alongside; none waits on another.
 
 ## At a glance
 
 | Stage | Open | What it is |
 |---|---|---|
-| Stage 1. Read and lock the core | 10 | What I read, then the decision on the RM framework |
+| Stage 1. Read and lock the core | 12 | What I read, then the decision on the RM framework |
 | Stage 2. Make the machine runnable | 4 | What Claude builds so a real run is possible |
 | Stage 3. Dry run and fix | 3 | Running the machine once and fixing it |
 | Stage 4. Get ready for Andy | 10 | What Andy sees, and what I ask him |
-| Alongside the path | 12 | Useful any time; doesn't block a stage. Dated items first |
+| Alongside the path | 14 | Useful any time; doesn't block a stage. Dated items first |
 | Inside the bank | 21 | Questions only someone at the bank can answer |
 | Parked on purpose | 3 | Not forgotten; waiting for a signal from me |
 
@@ -71,6 +71,8 @@ every working file (this section replaces the separate Gap Review page).
 | V5 | Read the Bank Business Briefing: the whole page, new on 2026-10-09 | Me | Nothing |
 | V8 | Read the Six-Step Product Workflow: the one-page visual, still marked Draft | Me | Nothing |
 | V12 | Read the RM Core Use Cases page: McKinsey's five frontline AI use cases and their returns, how the RM plan covers them, and the questions it raises | Me | Nothing |
+| V13 | Read the Credit Core Use Cases page: what banks are deploying in commercial credit, and the credit counterpart proposed for each of the seven core use cases | Me | Nothing |
+| D11 | Agree the credit order the Credit Core Use Cases page proposes: credit memo and annual review drafts first, early warning second, risk ratings kept out of the first waves? | Me | V13 |
 | D6 | Add an AI product under core use case 5, AI sales coaching (personal guidance from call transcripts)? Low risk, and McKinsey reports new bankers ramping up 20% faster | Me | V12 |
 | D7 | Move prospecting (winning new clients) earlier than wave 3? McKinsey reports its biggest revenue numbers there; outside prospect data may set the pace | Me | V12 |
 | D8 | Keep autonomous lead nurturing and pricing out for now, because they conflict with "nothing reaches a client without the RM" and the fair-lending control? Claude recommends yes, revisit later with evidence | Me | V12 |
@@ -120,6 +122,8 @@ Useful any time; none of these blocks a stage. Dated ones first.
 
 | # | Item | Who | Waits on |
 |---|---|---|---|
+| W26 | Map the RM and credit workflows (agreed 2026-10-14, the next job): how each group works today, where each AI product fits, and how the work changes. Each gets a page in the Document Library, where a placeholder row waits | Claude and me | Nothing |
+| W27 | Check that a section link in the Document Library opens the page at that section. If it only opens the top, drop the section links or say so on the page | Me, then Claude | Nothing |
 | W6 | First weekly review: what's working, what's annoying, what to change. Also re-check Anthropic's prompting guide for changes | Me, with Claude | Around 2026-10-14 |
 | W4 | Re-run the Bank Business Briefing after the bank's Q3 2026 results on October 22, 2026, using the saved prompt (Example 5 in the Prompting Guide). Read the full Q2 earnings call transcript at the same time; only a summary was available the first time | Claude | October 22, 2026 |
 | W22 | Two loose ends from the McKinsey article: confirm its publication date (the pasted page showed none), and decide whether role redesign (new RM roles as agents take on work, McKinsey's fifth principle) belongs in the playbook; it isn't covered yet | Claude, then me | Nothing |
@@ -165,7 +169,7 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 
 | # | Item | Who | Waits on |
 |---|---|---|---|
-| P1 | The credit (portfolio management) use case. Ready for then: six credit processes AI could support, franchise banking as a possible pilot, and whether to add "costs saved" and "loan losses avoided" to the value model | Me | Me saying the RM framework is ready (D1) |
+| P1 | The credit (portfolio management) plan. Started at my request on 2026-10-13 with the Credit Core Use Cases page (the six parked credit processes plus two new ones, each lined up with a core use case); the credit workflow map is part of W26. The plan itself still waits. Ready for then: franchise banking as a possible pilot, and whether to add "costs saved" and "loan losses avoided" to the value model | Me | Me saying the RM framework is ready (D1) |
 | P3 | A treasury and payments use case. The bank named it as a starting point for AI, and nothing has been planned yet | Me | After credit, unless B3 changes the order |
 | P4 | **Featured: running many products at once.** One intake form for new product ideas, a scoring rule to rank them against each other, how many products I can run at once, my week and month across products, and when a live product is retired | Me | The machine running one product well first |
 
@@ -190,4 +194,4 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C15 | Was D10: yes to ideas 38 and 39. Before editing a designed page, Claude now checks that the live page isn't newer than the repo copy (a step in the designed-doc skill), and every outside chart I share is saved with its numbers and source in the matching memo (rule R24) | 2026-10-10 |
 | C16 | Was W25: the old `prompt-email-example` branch is deleted. Everything on it was already in main | 2026-10-13 |
 
-_Last updated: 2026-10-13_
+_Last updated: 2026-10-14_
