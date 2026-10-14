@@ -1,6 +1,6 @@
 """Builds two building-block pages, so any sub-step or control can be found on its own:
 - designs/steps.html, the Steps Catalog: every playbook sub-step (from playbook/[1-6]-*.md),
-  with its tasks and their kinds from the tables in delivery-machine.md.
+  with its tasks and their kinds from the tables in product-machine.md.
 - designs/controls.html, the Controls Catalog: every governance control (from playbook/controls.md).
 Run: python3 designs/catalogs-build.py"""
 import glob, os, re
@@ -106,7 +106,7 @@ def fields_of(body):
     return out
 
 # ---------- Steps Catalog ----------
-fw = read("delivery-machine.md")
+fw = read("product-machine.md")
 tasks = {}
 for m in re.finditer(r"^\| (\d\.\d) \| ([^|]+) \| ([^|]+) \| [^|]* \| ([^|]+) \|", fw, re.M):
     tasks.setdefault(m.group(1), []).append((m.group(2).strip(), m.group(3).strip(), m.group(4).strip()))
@@ -128,7 +128,7 @@ def step_card(num, name, f):
             f'<summary><span class="cid">{num}</span><span class="cname">{inline(name)}</span>'
             f'<span class="cwhat">{inline(cap(f.get("Goal", "")))}</span><span class="cmeta">{E(step)} step · {len(tasks.get(num, []))} task{"" if len(tasks.get(num, [])) == 1 else "s"}</span></summary>'
             f'<dl class="spec">{spec}</dl><ul class="tasks" aria-label="Tasks in {num}">{rows}</ul>'
-            f'<p class="csrc">How to do it the first time: The Delivery Playbook, step {num[0]}, sub-step {num}</p></details>')
+            f'<p class="csrc">How to do it the first time: Product Playbook, step {num[0]}, sub-step {num}</p></details>')
 
 sections = ""
 for n, step in STEPS.items():
@@ -141,7 +141,7 @@ howto = ('<div class="howto"><span>Each task is marked with who does it once the
 page("Steps Catalog", "Reference · steps",
      f"All {len(subs)} sub-steps of the six-step delivery process in one place. Open any card to see why it matters, what it produces and its tasks.",
      "Step", list(STEPS.values()), sections, howto,
-     "Built from The Delivery Playbook and the task tables in the Delivery Machine, so it always matches them. Tools and task kinds are guesses until confirmed at the bank.",
+     "Built from Product Playbook and the task tables in the Product Machine, so it always matches them. Tools and task kinds are guesses until confirmed at the bank.",
      "Like sign-off or pilot", "steps.html")
 
 # ---------- Controls Catalog ----------

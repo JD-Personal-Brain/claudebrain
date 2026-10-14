@@ -186,6 +186,6 @@ log (see `README.md`) for every sub-step.
 | 3.7 | M26 Test grader | Draft | Auto | Yes, M26 |
 | 3.7 | Gate pack drafter | Draft | Draft | Yes, M6 |
 
-**First time** = how the task is done on the first project. **Aim for** = its kind in `delivery-machine.md`.
+**First time** = how the task is done on the first project. **Aim for** = its kind in `product-machine.md`.
 
 _Last updated: 2026-10-09_

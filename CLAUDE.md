@@ -12,7 +12,7 @@ It is the rule book for how Claude and I work together.
 @prompting.md
 @memos/role-workflow.md
 @product-framework.md
-@delivery-machine.md
+@product-machine.md
 @glossary.md
 
 ## 1. Claude explains, I decide
@@ -36,7 +36,7 @@ Everything about how I work with Claude is kept here, not just in chat history. 
 | `tech-stack.md` | Each technology in that job: what it is and how the bank likely uses it |
 | `memos/role-workflow.md` | The six steps every product goes through, what happens in each, and their gates (How we deliver, page 1) |
 | `product-framework.md` | The rules every product follows: who decides, measures, quality bar, AI principles, write-up layout (page 2) |
-| `delivery-machine.md` | The operating model: every task marked Auto, Draft, Me or Partner, and running many projects (page 3) |
+| `product-machine.md` | The operating model: every task marked Auto, Draft, Me or Partner, and running many projects (page 3) |
 | `glossary.md` | The words we use, one meaning each, and the bank's terms still to map |
 | `memos/` | Memos about how I'd do the job, such as the RM analytics framework |
 | `playbook/` | The field manual: how to do each sub-step the first time, the agents and the controls (page 4) |

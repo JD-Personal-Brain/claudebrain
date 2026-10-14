@@ -1,13 +1,13 @@
-# The Delivery Machine: how one product manager runs many projects
+# Product Machine: how one product manager runs many projects
 
 Claude loads this every session. It is the operating model: every task in
 every step, marked by who does it, and how the work moves toward automation.
 Page 3 of the four "How we deliver" pages: the Product Workflow
 (`memos/role-workflow.md`) shows the steps, the Product Framework
 (`product-framework.md`) sets the rules, this page runs the work, and the
-The Delivery Playbook (`playbook/`) says how to do each sub-step the first time.
+Product Playbook (`playbook/`) says how to do each sub-step the first time.
 Designed page: https://claude.ai/artifact/S8Wbygy24cjguTMxZsN2QF (built from this
-file by `designs/delivery-machine-build.py`).
+file by `designs/product-machine-build.py`).
 
 I'm one person running several projects at once, so the machine has to run
 mostly by itself. Automation does the routine work and pushes tasks to people
@@ -134,7 +134,7 @@ bank allowing automations to message people.
 | 6.4 | Keep/change/stop decision | Me | Meeting | Sponsor |
 | 6.5 | Rank the candidates for the next feature wave | Draft | M33 Improvement scout | Me, then sponsor |
 | 6.6 | Total time and waits from the first-time logs | Draft | M19 Log summarizer | Me |
-| 6.6 | Improve the machine: update the Delivery Machine, the Product Framework and the playbook | Me | — | — |
+| 6.6 | Improve the machine: update the Product Machine, the Product Framework and the playbook | Me | — | — |
 | Gate | Keep, change or stop; invest more, adjust or stop | Me | Meeting | Sponsor, Finance |
 
 ## Across every project (the running layer)

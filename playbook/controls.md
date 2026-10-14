@@ -1,6 +1,6 @@
 # Controls catalog
 
-Every governance control the delivery machine uses, in one place. A control is
+Every governance control the product machine uses, in one place. A control is
 a safeguard built into a product so the bank can trust it: who must approve,
 what the AI may not do, and how we prove it.
 

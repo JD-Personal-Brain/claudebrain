@@ -206,7 +206,7 @@ log (see `README.md`) for every sub-step.
 | 4.7 | Sign-off router | Me | Auto ⚠️ | Yes, M14 |
 | 4.8 | Monitoring plan template | Draft | Draft | Asset: agent library |
 
-**First time** = how the task is done on the first project. **Aim for** = its kind in `delivery-machine.md`.
+**First time** = how the task is done on the first project. **Aim for** = its kind in `product-machine.md`.
 
 **Never automated:** the sign-offs themselves. Risk partners make every call.
 

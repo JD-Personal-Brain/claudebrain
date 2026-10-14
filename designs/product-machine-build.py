@@ -2,10 +2,10 @@ import html
 E=html.escape
 import re, os
 from pagekit import series, SERIES_CSS
-# Reads the task tables straight from delivery-machine.md, and each step's question from the
+# Reads the task tables straight from product-machine.md, and each step's question from the
 # Product Workflow (memos/role-workflow.md), so the page can't drift from its working copies.
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-FW=open(os.path.join(ROOT,"delivery-machine.md")).read()
+FW=open(os.path.join(ROOT,"product-machine.md")).read()
 RW=open(os.path.join(ROOT,"memos","role-workflow.md")).read()
 def kind_of(k):
     k=k.lower()
@@ -44,7 +44,7 @@ for i,(name,q,rows) in enumerate(steps,1):
 stepsec=""
 for i,(name,q,rows) in enumerate(steps,1):
     stepsec+=f'<article class="step"><header><span class="num big">{i}</span><div><h3>{E(name)}</h3><p class="q">{E(q)}</p></div></header>{table(rows)}</article>'
-page=f'''<title>The Delivery Machine</title>
+page=f'''<title>Product Machine</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
 <style>
@@ -114,7 +114,7 @@ footer{{color:var(--muted);font-size:14px;border-top:1px solid var(--line);paddi
 </style>
 <div class="band"><div class="wrap">
 <p class="label">Operating model · AI product delivery</p>
-<h1>The Delivery Machine</h1>
+<h1>Product Machine</h1>
 <p class="lede">How one product manager runs many AI projects at once: routine work runs on its own and pushes tasks to people on time, so the product manager's hours go to decisions and people.</p>
 {series("machine")}
 </div></div>
@@ -174,4 +174,4 @@ footer{{color:var(--muted);font-size:14px;border-top:1px solid var(--line);paddi
 <footer>In use: reviewed 2026-10-14. Tool choices are guesses until confirmed against the bank's setup. [X] marks numbers still to be set. The RM analytics plan is the first project to run through this machine.</footer>
 </main>
 '''
-open(os.path.join(ROOT,'designs','delivery-machine.html'),'w').write(page)
+open(os.path.join(ROOT,'designs','product-machine.html'),'w').write(page)

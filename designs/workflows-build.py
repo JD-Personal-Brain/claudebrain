@@ -1,6 +1,6 @@
 """Builds designs/workflows.html, the Workflow Maps: each main process as a
 left-to-right spine of stages, with its sub-processes branching underneath.
-Click a branch to see its details. Reads playbook/*.md, delivery-machine.md
+Click a branch to see its details. Reads playbook/*.md, product-machine.md
 and the RM memo's Appendix B, so the maps never drift from the documents.
 Run: python3 designs/workflows-build.py"""
 import os, re
@@ -12,7 +12,7 @@ PLAYBOOK_URL = "https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4"
 RM_PLAN_URL = "https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk"
 
 # ---------- Map 1: delivering a product (six steps -> 44 sub-steps) ----------
-fw = read("delivery-machine.md")
+fw = read("product-machine.md")
 kinds = {}
 for m in re.finditer(r"^\| (\d\.\d) \| ([^|]+) \| ([^|]+) \|", fw, re.M):
     kinds.setdefault(m.group(1), []).append((m.group(2).strip(), m.group(3).strip()))
@@ -224,7 +224,7 @@ page = f'''<title>Workflow Maps</title>
 {map2}
 {loop}
 </section>
-<footer>Built from <code>playbook/</code>, <code>delivery-machine.md</code> and the RM memo's Appendix B by <code>designs/workflows-build.py</code>. Tasks marked ⚠️ depend on the bank allowing automations.</footer>
+<footer>Built from <code>playbook/</code>, <code>product-machine.md</code> and the RM memo's Appendix B by <code>designs/workflows-build.py</code>. Tasks marked ⚠️ depend on the bank allowing automations.</footer>
 </main>
 <script>
 (function(){{

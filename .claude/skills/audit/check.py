@@ -1,6 +1,6 @@
 """Mechanical audit checks. Run from the repo root: python3 .claude/skills/audit/check.py
-1. Delivery Machine task tables (delivery-machine.md) and playbook sub-steps match (every sub-step has rows, every
-   review-table "Aim for" kind matches the Delivery Machine, every sub-step has all 8 fields).
+1. Product Machine task tables (product-machine.md) and playbook sub-steps match (every sub-step has rows, every
+   review-table "Aim for" kind matches the Product Machine, every sub-step has all 8 fields).
 2. Designed-page sources in designs/ have no empty tables.
 3. Every page built from a working copy is up to date.
 2b. No built page shows a stray underscore left over from Markdown.
@@ -12,14 +12,16 @@
    playbook sub-step; the Product Workflow page carries the memo's gate wording.
 8. The glossary: no word from its "Words we don't use" table appears in the core documents.
 9. Retired wording: nothing from the glossary's "Old wording we've retired" table is left anywhere people read (idea 37).
- 11. The field manual is always called "The Delivery Playbook" (capital T), as the user set it.
+ 11. The four "How we deliver" pages keep the names the user set: Product Workflow, Product Framework,
+    Product Machine, Product Playbook. No old name (Six-Step Product Workflow, Delivery Machine, Delivery Playbook)
+    appears anywhere, built pages included, outside the glossary's retired-wording table and history files.
 Prints each problem and a total. 0 problems means the mechanical checks pass.
 5b. Every V/D/W/P item number cited in the working files is a live open item in open-items.md
     (it can't tell whether a reference points to the RIGHT item: after a renumbering, re-read each one).
 """
 import subprocess
 import re,glob
-fw=open('delivery-machine.md').read()  # the task tables
+fw=open('product-machine.md').read()  # the task tables
 rw=open('memos/role-workflow.md').read()  # the six steps, their gates and "What happens"
 fwk={}
 for m in re.finditer(r'^\| (\d\.\d) \| [^|]+ \| ([^|]+) \|',fw,re.M):
@@ -30,7 +32,7 @@ for f in sorted(glob.glob('playbook/[1-6]-*.md')):
     s=open(f).read()
     subs=re.findall(r'^## (\d\.\d) ',s,re.M)
     for n in subs:
-        if n not in fwk: print(f,n,"no Delivery Machine row"); probs+=1
+        if n not in fwk: print(f,n,"no Product Machine row"); probs+=1
         body=s.split(f"## {n} ")[1].split("\n## ")[0]
         for fl in fields:
             if fl not in body: print(f,n,"missing field",fl); probs+=1
@@ -40,11 +42,11 @@ for f in sorted(glob.glob('playbook/[1-6]-*.md')):
         aim=m.group(3).strip().split()[0].lower()
         for n in [x.strip() for x in m.group(1).split(",")]:
             covered.add(n)
-            if aim not in fwk.get(n,set()): print(f,n,"aim",aim,"not in Delivery Machine kinds",fwk.get(n)); probs+=1
+            if aim not in fwk.get(n,set()): print(f,n,"aim",aim,"not in Product Machine kinds",fwk.get(n)); probs+=1
     for n in subs:
         if n not in covered: print(f,n,"not in review table"); probs+=1
 for n in fwk:
-    if not any(re.search(rf'^## {re.escape(n)} ',open(f).read(),re.M) for f in glob.glob('playbook/[1-6]-*.md')): print("delivery-machine.md",n,"no playbook sub-step"); probs+=1
+    if not any(re.search(rf'^## {re.escape(n)} ',open(f).read(),re.M) for f in glob.glob('playbook/[1-6]-*.md')): print("product-machine.md",n,"no playbook sub-step"); probs+=1
 # 2. empty tables in designed pages
 for f in glob.glob('designs/*.html'):
     for body in re.findall(r'<tbody>([\s\S]*?)</tbody>',open(f).read()):
@@ -54,7 +56,7 @@ for f in glob.glob('designs/*.html'):
     for m in re.findall(r'<(?:p|li|td|dd|dt|span|div|h\d)[^>]*>_[^<]{0,40}|[^<]{0,40}_</(?:p|li|td|dd|dt|span|div|h\d)>',open(f).read()):
         print(f,"shows a stray underscore:",m); probs+=1
 # 3. pages built from working copies are up to date
-for page,builder in [('designs/delivery-machine.html','designs/delivery-machine-build.py'),('designs/playbook.html','designs/playbook-build.py'),('designs/product-framework.html','designs/md-page-build.py'),('designs/tech-stack.html','designs/md-page-build.py'),('designs/job-notes.html','designs/md-page-build.py'),('designs/job-description.html','designs/md-page-build.py'),('designs/prompting.html','designs/md-page-build.py'),('designs/bank-business.html','designs/md-page-build.py'),('designs/open-items.html','designs/md-page-build.py'),('designs/library.html','designs/library-build.py'),('designs/workflows.html','designs/workflows-build.py'),('designs/agents.html','designs/agents-build.py'),('designs/steps.html','designs/catalogs-build.py'),('designs/controls.html','designs/catalogs-build.py'),('designs/glossary.html','designs/md-page-build.py'),('designs/mckinsey-use-cases.html','designs/md-page-build.py'),('designs/credit-market-scan.html','designs/md-page-build.py')]:
+for page,builder in [('designs/product-machine.html','designs/product-machine-build.py'),('designs/playbook.html','designs/playbook-build.py'),('designs/product-framework.html','designs/md-page-build.py'),('designs/tech-stack.html','designs/md-page-build.py'),('designs/job-notes.html','designs/md-page-build.py'),('designs/job-description.html','designs/md-page-build.py'),('designs/prompting.html','designs/md-page-build.py'),('designs/bank-business.html','designs/md-page-build.py'),('designs/open-items.html','designs/md-page-build.py'),('designs/library.html','designs/library-build.py'),('designs/workflows.html','designs/workflows-build.py'),('designs/agents.html','designs/agents-build.py'),('designs/steps.html','designs/catalogs-build.py'),('designs/controls.html','designs/catalogs-build.py'),('designs/glossary.html','designs/md-page-build.py'),('designs/mckinsey-use-cases.html','designs/md-page-build.py'),('designs/credit-market-scan.html','designs/md-page-build.py')]:
     before=open(page).read()
     subprocess.run(['python3',builder],check=True)
     if open(page).read()!=before: print(page,"was out of date: rebuilt it, republish it"); probs+=1
@@ -78,7 +80,7 @@ for k in 'VDWBP':
 # numbers change with priorities, so every item number cited elsewhere must still be a live item (L22)
 live=set(nums)
 # it only checks that a cited number exists; after a renumbering, re-read each reference to confirm it names the right item
-for f in ['NOW.md','ideas.md','product-framework.md','delivery-machine.md','glossary.md','tech-stack.md','open-items.md']+sorted(glob.glob('memos/*.md'))+sorted(glob.glob('playbook/*.md'))+sorted(glob.glob('learning/*.md'))+sorted(glob.glob('.claude/skills/*/SKILL.md'))+sorted(glob.glob('designs/rm-analytics-canvas/*.dc.html')):
+for f in ['NOW.md','ideas.md','product-framework.md','product-machine.md','glossary.md','tech-stack.md','open-items.md']+sorted(glob.glob('memos/*.md'))+sorted(glob.glob('playbook/*.md'))+sorted(glob.glob('learning/*.md'))+sorted(glob.glob('.claude/skills/*/SKILL.md'))+sorted(glob.glob('designs/rm-analytics-canvas/*.dc.html')):
     t=open(f).read()
     if f=='open-items.md': t='\n'.join(re.sub(r'^\| [A-Z]\d+ \|','|',l) for l in t.split('\n'))
     for m in re.finditer(r'\b([VDWP]\d{1,2})\b(?! Labs)',t):
@@ -136,7 +138,7 @@ for b in lib_docs:
     if b['id'] in want and b['count']!=want[b['id']]: print('designs/library.json count for',b['name'],'is',repr(b['count']),'but the sources give',repr(want[b['id']])); probs+=1
 # Each count is read with up to one word in front of the noun ("25 governance controls"). A total is
 # checked against its own number: "all 39 agents" must be every agent, "19 ... machine" agents the machine's.
-for f in ['NOW.md','open-items.md','product-framework.md','delivery-machine.md','playbook/README.md','designs/library.json','memos/role-workflow.md','tech-stack.md']:
+for f in ['NOW.md','open-items.md','product-framework.md','product-machine.md','playbook/README.md','designs/library.json','memos/role-workflow.md','tech-stack.md']:
     t=open(f).read()
     for m in re.finditer(r'\b(\d+)[ -](?:([A-Za-z]+) )?(agents?|sub-steps|controls)\b',t):
         num,mid,noun=int(m.group(1)),(m.group(2) or '').lower(),m.group(3)
@@ -174,7 +176,7 @@ else:
         if m: bad.append(m.group(1).strip())
         else: print('glossary.md: could not read this "Words we don\'t use" row:',row[:60]); probs+=1
     if not bad: print('glossary.md: the "Words we don\'t use" table is empty'); probs+=1
-core=['product-framework.md','delivery-machine.md','open-items.md','tech-stack.md','memos/rm-analytics-framework.md','memos/rm-analytics-summary.md','memos/role-workflow.md']+sorted(glob.glob('playbook/*.md'))
+core=['product-framework.md','product-machine.md','open-items.md','tech-stack.md','memos/rm-analytics-framework.md','memos/rm-analytics-summary.md','memos/role-workflow.md']+sorted(glob.glob('playbook/*.md'))
 for f in core:
     for i,line in enumerate(open(f).read().split('\n'),1):
         for w in bad:
@@ -211,13 +213,18 @@ else:
 for f in sorted(set(core+glob.glob('memos/*.md')+['NOW.md','glossary.md','open-items.md','designs/library.json','designs/rm-analytics-plan.html']+glob.glob('designs/*-build.py')+glob.glob('designs/*.html')+glob.glob('designs/rm-analytics-canvas/*.dc.html'))):
     for m in re.finditer(r"(?<![\w/.#-])(Rms|rms|Pms|pms|R\.M\.s?|P\.M\.s?)(?![\w])",re.sub(r'data-search="[^"]*"','',open(f).read())):  # lowercase search indexes are fine
         print(f,'writes',repr(m.group(1)),'- write RMs or PMs'); probs+=1
-# 11. page names the user set (2026-10-14): the field manual is always "The Delivery Playbook", with a capital T,
-# never "Delivery Playbook" or "the Delivery Playbook" (lesson L26). Built pages are checked as plain text.
+# 11. page names the user set (2026-10-14, lesson L26): Product Workflow, Product Framework, Product Machine,
+# Product Playbook. Every old name fails, in any case, in the working files and on the built pages (checked as plain text).
 import html as _h2
-_named=['NOW.md','open-items.md','product-framework.md','delivery-machine.md','glossary.md','prompting.md','designs/library.json','designs/README.md']+glob.glob('memos/*.md')+glob.glob('playbook/*.md')+glob.glob('designs/*.py')+glob.glob('designs/*.html')+glob.glob('.claude/skills/*/SKILL.md')
-for f in _named:
+OLD_NAMES=['six-step product workflow','six-step workflow','delivery machine','delivery playbook']
+_named=['NOW.md','CLAUDE.md','open-items.md','product-framework.md','product-machine.md','tech-stack.md','prompting.md','designs/library.json','designs/README.md']+glob.glob('memos/*.md')+glob.glob('playbook/*.md')+glob.glob('learning/rules.md')+glob.glob('learning/tests.md')+glob.glob('designs/*.py')+glob.glob('designs/*.html')+glob.glob('designs/rm-analytics-canvas/*.dc.html')+glob.glob('.claude/skills/*/SKILL.md')
+for f in _named+['glossary.md']:
     t=open(f).read()
+    if f=='glossary.md': t=t.split("## Old wording we've retired")[0]
     if f.endswith('.html'): t=re.sub(r'\s+',' ',_h2.unescape(re.sub(r'<[^>]+>',' ',t)))
-    for m in re.finditer(r'(?<!The )Delivery Playbook',t):
-        print(f,'says',repr(t[max(0,m.start()-20):m.end()]),'— the name is "The Delivery Playbook"'); probs+=1
+    if f=='designs/glossary.html' and "Old wording we've retired" in t:  # the retired-wording table lists old names on purpose
+        head,_,rest=t.rpartition("Old wording we've retired"); t=head+rest.split('Bank terms to map',1)[-1]
+    for old in OLD_NAMES:
+        for m in re.finditer(re.escape(old),t,re.I):
+            print(f,'says',repr(t[max(0,m.start()-20):m.end()]),'- use the new name (Product Workflow, Product Machine or Product Playbook)'); probs+=1
 print("problems:",probs)

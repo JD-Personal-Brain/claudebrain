@@ -1,4 +1,4 @@
-# Agent library: the agents that run the delivery machine, and my research helpers
+# Agent library: the agents that run the product machine, and my research helpers
 
 These agents help the team run any project through the six steps. They're
 reused on every project, so they're specified once here: M1 to M19 run the
@@ -7,7 +7,7 @@ testing and monitoring work (they started as the RM project's helpers and were
 made general on 2026-10-10). A project's own agents (the product users see, or
 agents only that project needs) go in its memo's Appendix A, like A1 to A6 in
 the RM memo. H1 and on are my own research helpers (see "My research helpers" near the end of the Agent Library page):
-they keep my reference pages current and are not part of the delivery machine.
+they keep my reference pages current and are not part of the product machine.
 
 Written with the **agent-spec** skill. Every agent follows the AI principles in
 `product-framework.md`: assistive first, one job each, read-only or draft-only unless a named
@@ -26,12 +26,12 @@ listed actions, and those marked ⚠️ wait until the bank allows it.
 - **Kind:** Draft → Draft
 - **Job:** create a new project's starting files from its one-line project statement.
 - **Starts when:** the product manager writes the project statement.
-- **Inputs:** the project statement; the task tables in `delivery-machine.md`; the who-decides list in `product-framework.md`.
+- **Inputs:** the project statement; the task tables in `product-machine.md`; the who-decides list in `product-framework.md`.
 - **Allowed actions:** create draft files: the tracker with every task listed, the decision log, the risk and issue list and the project file.
 - **Not allowed:** assigning owners or dates; contacting anyone.
 - **Outputs:** a draft project pack, ready for owners and dates.
 - **Stops when:** every file exists. If the statement is missing, it asks for it and creates nothing.
-- **Proof it worked:** the tracker has one row for every task in the Delivery Machine's task tables.
+- **Proof it worked:** the tracker has one row for every task in the Product Machine's task tables.
 - **Person in charge:** product manager.
 - **Runs on (guess):** Power Automate with Microsoft Lists or Planner.
 - **To confirm:** ⚠️ which tracker the bank uses.
@@ -551,7 +551,7 @@ listed actions, and those marked ⚠️ wait until the bank allows it.
 - **To confirm:** none.
 
 ## Research helpers: agents that keep my own pages current
-These aren't part of the delivery machine and don't belong to any project. They
+These aren't part of the product machine and don't belong to any project. They
 keep the reference material I plan from up to date. Each runs as a Claude Code
 scheduled task, from a skill in this repo.
 

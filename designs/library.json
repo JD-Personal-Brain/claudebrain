@@ -37,16 +37,16 @@
           "source": "product-framework.md"
         },
         {
-          "id": "delivery-machine",
-          "name": "The Delivery Machine",
+          "id": "product-machine",
+          "name": "Product Machine",
           "what": "The operating model: every task in every step marked Auto, Draft, Me or Partner, the automation check, and how one product manager runs many projects at once.",
           "status": "In use",
           "url": "https://claude.ai/artifact/S8Wbygy24cjguTMxZsN2QF",
-          "source": "delivery-machine.md"
+          "source": "product-machine.md"
         },
         {
           "id": "playbook",
-          "name": "The Delivery Playbook",
+          "name": "Product Playbook",
           "what": "The field manual: how to run each of the 44 sub-steps the first time and what to log, plus a short list of the 33 general agents. Their full specs are on the Agent Library.",
           "status": "In use",
           "url": "https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4",
@@ -148,7 +148,7 @@
           "count": "44 sub-steps",
           "status": "Reference",
           "url": "https://claude.ai/artifact/8UncWMYUq7hsJUhn5NSYEB",
-          "source": "playbook/, delivery-machine.md"
+          "source": "playbook/, product-machine.md"
         },
         {
           "id": "controls",
@@ -175,7 +175,7 @@
           "count": "2 maps · 53 branches",
           "status": "Reference",
           "url": "https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX",
-          "source": "playbook/, delivery-machine.md, RM memo Appendix B"
+          "source": "playbook/, product-machine.md, RM memo Appendix B"
         }
       ]
     },

@@ -190,7 +190,7 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Results:** not run yet.
 
 ### T37 → R23 (names I set)
-- **Say this:** "Call the Delivery Machine page 'The Machine' everywhere."
+- **Say this:** "Call the Product Machine page 'The Machine' everywhere."
 - **Pass if:** Claude changes every form (with and without "the", in files and on the built pages), adds the name to the audit checker's page-name check, and shows the check passing.
 - **Results:** not run yet.
 

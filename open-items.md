@@ -53,7 +53,7 @@ every working file (this section replaces the separate Gap Review page).
 | The six-step process for one product | Strong on paper | Steps, gates, 44 sub-steps, first-time logs and the automation check at every gate. Not yet tried on real work | W7 |
 | RM plan (the first worked example) | Strong draft, not reviewed | Memo v8, with agent specs and workflows. I've read only the summary's opening and plan table. Now organized on seven core use cases | V1, D1 to D3 |
 | Governance and controls | Partial | 25 controls named. 13 have a stage the playbook doesn't cover yet, such as who proves that only approved AI models are used | W6 |
-| Automating the process | Partial | Every task is marked Auto, Draft or Me, and 40 agents are fully specified: 33 general agents that run the delivery machine, the RM product's own 6, and my research helper H1 (the bank news scout). None of the 39 delivery agents is built or tested; H1 is set up and running. How much can run alone depends on whether the bank lets automations message people ⚠️ | B22, W7 |
+| Automating the process | Partial | Every task is marked Auto, Draft or Me, and 40 agents are fully specified: 33 general agents that run the product machine, the RM product's own 6, and my research helper H1 (the bank news scout). None of the 39 delivery agents is built or tested; H1 is set up and running. How much can run alone depends on whether the bank lets automations message people ⚠️ | B22, W7 |
 | Ready-to-fill templates | Missing | The brief, data contract, risk intake, gate pack, evidence pack and monitoring plan are described, but none exists as a template yet. The Draft agents need these to fill in | W3 |
 | Task list design | Missing | The reminders, status notes and progress view all read from one task list, but its fields aren't written down, and we don't know the bank's tool yet | W4, B23 |
 | Approvals | Partial | Who decides is clear for every step. There's no map of who signs what, how long it takes, or who to go to when a sign-off is stuck | W5, B21 |
@@ -104,7 +104,7 @@ What we're working on first: a quick check on the bank news scout, then the user
 | # | Item | Who | Waits on |
 |---|---|---|---|
 | W7 | Dry run of the machine: take one small made-up product through all six steps with the templates and two or three agents built as Claude skills, and log where it breaks | Claude and me | W3 and W4, and my read of the pages (V1) |
-| W8 | Apply the delivery machine to the RM plan as the first worked example: mark every RM task Auto, Draft or Me | Claude, with me | V1 and W7 |
+| W8 | Apply the product machine to the RM plan as the first worked example: mark every RM task Auto, Draft or Me | Claude, with me | V1 and W7 |
 | W9 | Support model and incident runbook for one product: who users call, how issues are logged and fixed, and the steps to pause or roll back the product | Claude drafts, I review | W7 (the dry run shows what support is needed) |
 
 ## Stage 4. Get ready for Andy
@@ -157,18 +157,18 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | B13 | What share of commercial clients use treasury management? (from: Bank Business Briefing, section 9) | The bank | Starting at the bank |
 | B14 | Does Finance accept costs saved and loan losses avoided as returns, as well as new revenue? (from: Bank Business Briefing, section 9) | The bank | Starting at the bank |
 | B15 | Who owns the client data in Snowflake and Salesforce, and which data lives where? (from: RM plan, section 11; playbook sub-step 2.3 (the data contract)) | The bank | Starting at the bank |
-| B16 | How is each platform set up for RMs today: which features, licenses and connections? Which Salesforce products does the bank own? Every tool named in the delivery machine's task tables is a guess until this is known (from: RM plan, section 11; Tech Stack Guide; Delivery Machine) | The bank | Starting at the bank |
+| B16 | How is each platform set up for RMs today: which features, licenses and connections? Which Salesforce products does the bank own? Every tool named in the product machine's task tables is a guess until this is known (from: RM plan, section 11; Tech Stack Guide; Product Machine) | The bank | Starting at the bank |
 | B17 | Why does the bank have both Snowflake and Fabric, and which holds what? (from: Tech Stack Guide) | The bank | Starting at the bank |
 | B18 | Which AI models are approved, and where do they run? (from: Tech Stack Guide) | The bank | Starting at the bank |
 | B19 | Has the American National systems conversion happened, and are the acquired clients in Salesforce and Snowflake? (from: Bank Business Briefing, section 9) | The bank | Starting at the bank |
 | B20 | Who builds: my team, IT, or business staff using click-to-build tools such as Power Platform? (from: Tech Stack Guide) | The bank | Starting at the bank |
 | B21 | What does the AI governance process look like, and how long does a review usually take? (from: RM plan, section 11; Tech Stack Guide) | The bank | Starting at the bank |
-| B22 | May automations message people or update trackers by themselves? This decides how much of the delivery machine can run on its own (from: Delivery Machine) | The bank | Starting at the bank |
-| B23 | Which tracker tool does the bank use for projects? (from: Delivery Machine; agent library) | The bank | Starting at the bank |
+| B22 | May automations message people or update trackers by themselves? This decides how much of the product machine can run on its own (from: Product Machine) | The bank | Starting at the bank |
+| B23 | Which tracker tool does the bank use for projects? (from: Product Machine; agent library) | The bank | Starting at the bank |
 | B24 | Twenty smaller permissions (twenty-one "To confirm" items, minus the tracker question in B23) the delivery agents depend on, such as whether meeting recaps are allowed, which test environments exist and how sign-offs must be recorded. Each is listed under "To confirm" in the agent library, and one overlaps B22 (from: `playbook/agents.md`) | The bank | Starting at the bank |
 | B25 | Do RMs work mainly in Salesforce? This decides where the insights appear (from: RM plan, section 5) | The bank | Starting at the bank |
-| B26 | The numbers still shown as [X] in the RM plan, the Product Workflow, the Product Framework and the Delivery Machine, such as payback months, weekly-use targets and how many projects I run at once, and the plan's week estimates. Each gets set with the bank's real figures (from: RM plan; Product Workflow; Product Framework; Delivery Machine) | The bank | Starting at the bank |
-| B27 | The 46 guesses about the bank marked ⚠️ across the six playbook steps. Each gets replaced with a fact as I learn it. Many overlap B15 to B23 (from: The Delivery Playbook) | The bank | Starting at the bank |
+| B26 | The numbers still shown as [X] in the RM plan, the Product Workflow, the Product Framework and the Product Machine, such as payback months, weekly-use targets and how many projects I run at once, and the plan's week estimates. Each gets set with the bank's real figures (from: RM plan; Product Workflow; Product Framework; Product Machine) | The bank | Starting at the bank |
+| B27 | The 46 guesses about the bank marked ⚠️ across the six playbook steps. Each gets replaced with a fact as I learn it. Many overlap B15 to B23 (from: Product Playbook) | The bank | Starting at the bank |
 | B28 | The 20 bank terms listed at the end of the Glossary (such as "AI-sourced opportunity", "qualified opportunity" and "win rate"). Each is marked ⚠️ until the bank's own definition is recorded there, with its source. Many overlap B9 and B10 (from: Glossary) | The bank | Starting at the bank |
 
 ## Parked on purpose
@@ -204,10 +204,10 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C18 | Number open items by priority: yes. Each kind runs 1, 2, 3 in priority order, numbers change when priorities change, and closed items keep theirs | 2026-10-14 |
 | C19 | I read the Bank Business Briefing. It's fine as is, no changes | 2026-10-14 |
 | C20 | Idea 43 (quieter startup warning): yes. The startup check now fetches more history before comparing an old branch and stays quiet when its changes are already in main; the two empty old branches that kept being flagged are gone from GitHub | 2026-10-14 |
-| C21 | I read the Product Framework, the Product Workflow, The Delivery Machine and The Delivery Playbook. All four are good to go and now marked In use | 2026-10-14 |
+| C21 | I read the Product Framework, the Product Workflow, Product Machine and Product Playbook. All four are good to go and now marked In use | 2026-10-14 |
 | C22 | Rename the credit pages to match the library's "Portfolio managers" section (idea 44): yes. They're now the Portfolio Manager Core Use Cases page, the portfolio manager user workflow and the portfolio manager plan | 2026-10-14 |
 | C23 | Lock the Bank Business Briefing: audited; it now names both user groups, RMs and PMs, with a "which bankers" column, a section on PMs and a section on how the page stays current. The bank news scout is agent H1 in the Agent Library. "PM" now means portfolio manager everywhere, and "product manager" is spelled out | 2026-10-14 |
 | C24 | Ideas 40 and 45: yes. The page check now clicks every jump link on every page and fails if one lands in the wrong place, and Claude checks the bank news scout's last run at the start of each session | 2026-10-14 |
-| C25 | Reorganize the "How we deliver" pages so each has one job, read in order: Product Workflow (the steps), Product Framework (the rules), Delivery Machine (who does each task), The Delivery Playbook (how to do each sub-step, with a short agent list linking to the Agent Library). Merged into main as pull request #80 | 2026-10-14 |
+| C25 | Reorganize the "How we deliver" pages so each has one job, read in order: Product Workflow (the steps), Product Framework (the rules), Product Machine (who does each task), Product Playbook (how to do each sub-step, with a short agent list linking to the Agent Library). Merged into main as pull request #80 | 2026-10-14 |
 
 _Last updated: 2026-10-14_

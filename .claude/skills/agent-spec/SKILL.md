@@ -1,6 +1,6 @@
 ---
 name: agent-spec
-description: Turn an agent idea into a full, buildable spec. Use when the user says "spec this agent", "write the agent spec", "turn the agent ideas into specs", when a playbook review table or project memo lists an agent marked "New" or "Partly", or at playbook sub-step 3.1 (design the solution). Works for delivery-machine agents (the agent library) and for a project's own agents (the project memo's Appendix A).
+description: Turn an agent idea into a full, buildable spec. Use when the user says "spec this agent", "write the agent spec", "turn the agent ideas into specs", when a playbook review table or project memo lists an agent marked "New" or "Partly", or at playbook sub-step 3.1 (design the solution). Works for product-machine agents (the agent library) and for a project's own agents (the project memo's Appendix A).
 ---
 
 # Write an agent spec
@@ -10,7 +10,7 @@ approved the same way. It follows the AI principles in `product-framework.md`:
 assistive first, one job each, read-only by default, every action logged.
 
 ## 1. Decide where it goes
-- **Runs the delivery machine on any project** (it helps the team do the work): the **agent library**, `playbook/agents.md`, numbered M1, M2 and so on.
+- **Runs the product machine on any project** (it helps the team do the work): the **agent library**, `playbook/agents.md`, numbered M1, M2 and so on.
 - **Part of one project's product, or only useful to that project:** that project memo's **Appendix A**, numbered A1, A2 and so on.
 
 ## 2. Fill in every field
@@ -35,14 +35,14 @@ assistive first, one job each, read-only by default, every action logged.
 ## 3. Check it
 1. **One job:** if the Job sentence needs "and", split it into two agents.
 2. **Safe:** nothing reaches a client, changes a record or decides credit without a person's click. Sign-offs are never automated.
-3. **Matches its sub-step:** its Kind matches the playbook review table and the Delivery Machine task table (`delivery-machine.md`), and its inputs exist by then (no circles).
+3. **Matches its sub-step:** its Kind matches the playbook review table and the Product Machine task table (`product-machine.md`), and its inputs exist by then (no circles).
 4. **Provable:** "Proof it worked" can actually be checked by a person.
 5. **No invented facts:** unknown numbers are [X], bank guesses are ⚠️.
 
 ## 4. Update the references
 - In the playbook review table, change "Already specified?" from "New" to "Yes, M#" (or "Yes, A#").
-- If the agent changes how a task is done, update that task row's tool in `delivery-machine.md`.
-- Rebuild and republish the designed pages: the playbook page (`python3 designs/playbook-build.py`; it shows the delivery-machine agents) and the Agent Library (`python3 designs/agents-build.py`). For a project agent in a memo's Appendix A, also update that project's design page first, then rebuild its scrolling page. Then run `python3 .claude/skills/audit/check.py`.
+- If the agent changes how a task is done, update that task row's tool in `product-machine.md`.
+- Rebuild and republish the designed pages: the playbook page (`python3 designs/playbook-build.py`; it shows the product-machine agents) and the Agent Library (`python3 designs/agents-build.py`). For a project agent in a memo's Appendix A, also update that project's design page first, then rebuild its scrolling page. Then run `python3 .claude/skills/audit/check.py`.
 
 ## 5. Audit, then merge
 Run the **audit** skill (rule R18) before offering to merge.

@@ -34,7 +34,7 @@ partner, and a willing pilot group.
 
 **How to use this plan.** The AI products are organized under seven core use cases (McKinsey's five plus two of our own), each with a return profile (see "Core use cases"). Sections 1–11 are the plan. Appendix A specifies
 the product's agents in full (job, inputs, allowed actions, outputs, when it
-stops and proof it worked) and shows how the team uses the delivery machine's
+stops and proof it worked) and shows how the team uses the product machine's
 general agents, whose full specs are in the agent library. Appendix B sets out each of the plan's workflows (B1 to B9) step by step, so the
 team can build directly from them.
 
@@ -594,7 +594,7 @@ builds on them. I'd confirm early:
 
 Each agent named in Steps 1–6. The product's agents (A1 to A6) are written so a
 platform team can build them and a risk partner can review them; the team's
-agents are the delivery machine's general agents, specified in full in the
+agents are the product machine's general agents, specified in full in the
 agent library. **[X]** values are set in Define.
 
 **Rules for every agent:**
@@ -668,7 +668,7 @@ agent library. **[X]** values are set in Define.
 
 ### Agents the team uses
 
-These are the delivery machine's general agents (M20 to M33), specified in full in the
+These are the product machine's general agents (M20 to M33), specified in full in the
 agent library. The table shows how this project uses each one: its RM inputs, owners and checks.
 
 | Agent | Step | Job | Inputs | Allowed actions | Outputs | Stops when | Proof it worked | Person in charge |

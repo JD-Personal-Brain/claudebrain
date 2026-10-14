@@ -1,6 +1,6 @@
 """Builds designs/agents.html, the Agent Library: every agent in one place,
 filterable, each opening to its full spec. Reads playbook/agents.md (M1-M33,
-the delivery machine's general agents) and the RM memo's Appendix A (A1-A6,
+the product machine's general agents) and the RM memo's Appendix A (A1-A6,
 the product RMs use). Run: python3 designs/agents-build.py"""
 import os, re
 from pagekit import CSS, E, inline, chipify, render_blocks
@@ -12,7 +12,7 @@ SHORT = {"Discover": "Discover", "Define": "Define", "Build": "Build", "Govern":
 cap = lambda t: t[:1].upper() + t[1:] if t else t
 agents = []
 
-# M1-M33: the delivery machine (M1-M19 run its paperwork and routing; M20-M33 do the team's analysis, testing and monitoring)
+# M1-M33: the product machine (M1-M19 run its paperwork and routing; M20-M33 do the team's analysis, testing and monitoring)
 for block in re.split(r"\n### ", read("playbook/agents.md"))[1:]:
     head, _, body = block.partition("\n")
     m = re.match(r"(M\d+)\. (.+)", head)
@@ -24,12 +24,12 @@ for block in re.split(r"\n### ", read("playbook/agents.md"))[1:]:
     agents.append({"id": m.group(1), "name": m.group(2), "group": "team" if int(m.group(1)[1:]) >= 20 else "machine", "steps": steps, "aim": kind_aim,
                    "job": f["Job"], "meta": f"Used in {f['Used in']} · {f['Kind']}",
                    "fields": [(k, f[k]) for k in ["Starts when", "Inputs", "Allowed actions", "Not allowed", "Outputs", "Stops when", "Proof it worked", "Person in charge", "Runs on (guess)", "To confirm"]],
-                   "source": "The Delivery Playbook · agent library"})
+                   "source": "Product Playbook · agent library"})
 
-# Where each project agent (A#) is used in the delivery process: the Delivery Machine task tables
+# Where each project agent (A#) is used in the delivery process: the Product Machine task tables
 # tool column and the playbook review tables, so an agent used in several steps shows under each.
 used = {}
-for row in re.findall(r"^\| (\d\.\d) \|[^|]+\|[^|]+\|([^|]+)\|", read("delivery-machine.md"), re.M):
+for row in re.findall(r"^\| (\d\.\d) \|[^|]+\|[^|]+\|([^|]+)\|", read("product-machine.md"), re.M):
     for aid in re.findall(r"\bA\d+\b", row[1]):
         used.setdefault(aid, set()).add(row[0])
 import glob
@@ -41,7 +41,7 @@ for f in sorted(glob.glob(os.path.join(ROOT, "playbook", "[1-6]-*.md"))):
 order = lambda nums: sorted(nums, key=lambda n: tuple(map(int, n.split("."))))
 steps_of = lambda nums: sorted({STEPS[n[0]] for n in nums}, key=list(STEPS.values()).index)
 
-# H1 and on: my research helpers (not part of the delivery machine)
+# H1 and on: my research helpers (not part of the product machine)
 for block in re.split(r"\n### ", read("playbook/agents.md"))[1:]:
     head, _, body = block.partition("\n")
     m = re.match(r"(H\d+)\. (.+)", head)
@@ -51,7 +51,7 @@ for block in re.split(r"\n### ", read("playbook/agents.md"))[1:]:
     agents.append({"id": m.group(1), "name": m.group(2), "group": "helpers", "steps": ["My research helpers"], "aim": f["Kind"].split("→")[-1].strip().split()[0],
                    "job": f["Job"], "meta": f"Runs on a schedule · {f['Kind']}",
                    "fields": [(k, f[k]) for k in ["Starts when", "Inputs", "Allowed actions", "Not allowed", "Outputs", "Stops when", "Proof it worked", "Person in charge", "Runs on (guess)", "To confirm"]],
-                   "source": "The Delivery Playbook · agent library"})
+                   "source": "Product Playbook · agent library"})
 
 memo = read("memos/rm-analytics-framework.md")
 appa = memo.split("## Appendix A: Agent specs")[1].split("## Appendix B")[0]
@@ -66,10 +66,10 @@ for block in re.split(r"\n\*\*(?=A\d+\. )", appa.split("### Agents the team uses
                    "fields": [(k, f[k]) for k in ["Inputs", "Allowed actions", "Not allowed", "Outputs", "Stops when", "Proof it worked", "Person in charge"] if k in f],
                    "source": "RM Analytics plan · Appendix A"})
 
-GROUPS = [("machine", "Run the delivery machine", "Handle the paperwork and routing that move any project through the six steps: kickoff, notes, gate packs, sign-offs and releases. Reused on every project."),
+GROUPS = [("machine", "Run the product machine", "Handle the paperwork and routing that move any project through the six steps: kickoff, notes, gate packs, sign-offs and releases. Reused on every project."),
           ("team", "Do the team's analysis, testing and monitoring", "General agents for every project: sizing, research, requirements, data checks, testing, red-teaming, fairness, evidence, feedback and impact. The RM plan shows how it uses each one."),
           ("product", "The product RMs use", "The agents inside RM Analytics. Nothing reaches a client without the RM. Insights and alerts are shown to the RM and their manager; anything saved as the RM's own work, like a call note or an opportunity, needs the RM's approval."),
-          ("helpers", "My research helpers", "Agents that keep my own reference pages current, such as the Bank Business Briefing. Not part of the delivery machine. Each runs on a schedule and only drafts: I decide what goes into main.")]
+          ("helpers", "My research helpers", "Agents that keep my own reference pages current, such as the Bank Business Briefing. Not part of the product machine. Each runs on a schedule and only drafts: I decide what goes into main.")]
 counts = {g: sum(a["group"] == g for a in agents) for g, *_ in GROUPS}
 
 def card(a):

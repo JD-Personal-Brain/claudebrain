@@ -7,7 +7,7 @@ description: Check public sources for new information about Associated Bank, kee
 
 Keeps the Bank Business Briefing (`memos/bank-business.md`, designed page
 https://claude.ai/artifact/7ZVT7LtdqxwAma4UrBgTPX) current, so the user never
-works from stale facts. It's the user's own research helper, not a delivery-machine
+works from stale facts. It's the user's own research helper, not a product-machine
 agent: its spec is H1 in the agent library (`playbook/agents.md`, "my research helpers"),
 and the briefing's section 11 says how it keeps the page current. Keep all three in line.
 
