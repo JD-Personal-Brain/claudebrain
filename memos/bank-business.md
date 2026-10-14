@@ -236,7 +236,7 @@ Each revenue line, the job outcome it serves, and the part of my value model it 
 
 ## 10. Sources
 
-All opened on October 9, 2026, except S16 (see its row).
+All opened on October 9, 2026, except S16 (see its row). The Brandon White and Shaun Coard rows in section 4 were added on October 14, 2026 from search results that cite S9 and S10; the pages themselves could not be opened that day.
 
 | Tag | Source | Date |
 |---|---|---|

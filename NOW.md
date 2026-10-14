@@ -3,7 +3,7 @@
 _Last updated: 2026-10-14 · Last review: none yet (first one due around 2026-10-14)_
 
 ## Where things stand
-- The Claude brain is set up: rule book, profile, learning files, ideas list and thirteen skills: log-lesson, wrap-up, designed-doc, write-prompt, run-tests, prototype, new-use-case, audit, make-skill, agent-spec, documents (new 2026-10-09) and user-workflow (new 2026-10-14: maps a user group's work today, where each AI product fits, and the work afterwards; say "map the RM workflow") and bank-news-scout (new 2026-10-14: checks public news on the bank and drafts updates to the Bank Business Briefing).
+- The Claude brain is set up: rule book, profile, learning files, ideas list and thirteen skills: log-lesson, wrap-up, designed-doc, write-prompt, run-tests, prototype, new-use-case, audit, make-skill, agent-spec, documents (new 2026-10-09), user-workflow (new 2026-10-14: maps a user group's work today, where each AI product fits, and the work afterwards; say "map the RM workflow") and bank-news-scout (new 2026-10-14: checks public news on the bank and drafts updates to the Bank Business Briefing).
 - An official "main" copy now exists on GitHub, and it is now GitHub's default branch, so every new session starts from it. Future work is proposed as pull requests against it.
 - A startup check runs at the start of every session and pulls in the latest main automatically, so Claude never works from an old copy. Tested and working.
 - The startup check now also warns about work saved on a side branch that never reached main (added 2026-10-09, after my RM framework was found stranded).

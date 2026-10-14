@@ -59,18 +59,18 @@ Rate each kept item **High** (changes a number or a decision in my plans), **Med
 - Append one entry to `memos/bank-news-log.md`: date, what was searched, each kept item (one line, rating, source) and anything that wouldn't open.
 - Save a draft: commit and push to the session's draft branch.
 
-## 5. Email the user
+## 5. Check before sending
+- Every number in the email matches its source page.
+- Nothing was reported in an earlier log entry.
+- The draft branch is pushed and its name is in the email.
+
+## 6. Email the user
 One email, sent with the Gmail connector's send tool (not a draft), to the address above.
 - **Subject:** `Bank news scout: [N] updates for the briefing ([date])`, or `Bank news scout: nothing new ([date])`.
 - **Body (HTML):** in plain English, highest rating first:
   1. One line: what changed overall and whether anything needs the user's decision.
   2. One block per kept item: the rating, what's new, which briefing section it changes (old → new wording) and the source link.
   3. Pages that wouldn't open.
-  4. Next step: "The edits are saved on draft branch `[branch]`. Say 'merge the news scout update' in a Claude session to bring them into main and republish the page."
+  4. Next step: "The edits are saved on draft branch `[branch]`. Say 'merge the news scout update' in a Claude session: Claude runs the audit skill (rule R18), shows what will be merged, and merges into main and republishes the page only after your yes."
 - **No Gmail tool in this session** (a scheduled run without the connector): still push the draft branch, and end with the same summary as the final message, so the phone notification carries it. Say in it that the email couldn't be sent.
 - Keep it short enough to read in 2 minutes. Never put a guess forward as a fact.
-
-## 6. Check before sending
-- Every number in the email matches its source page.
-- Nothing was reported in an earlier log entry.
-- The draft branch is pushed and its name is in the email.
