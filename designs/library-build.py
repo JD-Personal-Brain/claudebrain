@@ -26,7 +26,7 @@ for _, _, ds in groups:
 # Pages with no section links (the RM design canvas) are listed by name only.
 PAGE_FILE = {"open-items": "open-items.html", "job-description": "job-description.html", "bank-business": "bank-business.html",
              "tech-stack": "tech-stack.html", "job-notes": "job-notes.html", "framework": "product-framework.html",
-             "delivery-machine": "delivery-machine.html", "playbook": "playbook.html", "workflow": "role-workflow.html",
+             "product-machine": "product-machine.html", "playbook": "playbook.html", "workflow": "role-workflow.html",
              "rm-design": None, "rm-plan": "rm-analytics-plan.html", "mckinsey-use-cases": "mckinsey-use-cases.html",
              "prompting": "prompting.html", "credit-market-scan": "credit-market-scan.html", "workflows": "workflows.html", "agents": "agents.html", "steps": "steps.html",
              "controls": "controls.html", "glossary": "glossary.html"}

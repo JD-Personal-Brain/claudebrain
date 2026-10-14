@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L26 · 2026-10-14 · A name I asked for wasn't applied everywhere
+- **What happened:** I asked for the field manual to be called "The Delivery Playbook" (my first message hinted at it too). Claude changed only the places with no "the" in front, so pages still said "the Delivery Playbook", and I had to ask again.
+- **Root cause:** Claude treated the rename as a narrow find-and-replace on one spelling and checked only that spelling, not every form a reader would see on the pages. Rule R23 (search every old form when a term changes) already covered this, so the rule failed: a repeat of L20 and L24.
+- **Fix:** rule R23 moves to Level 3. When I set a name, Claude adds it to the audit checker's page-name check (check 11), which fails on any other form in the working files and on the built pages, and confirms on the rendered pages before saying it's done. The checker now does this for "The Delivery Playbook".
+- **Rule:** R23 · **Test:** T37 · **Level:** 3 · **Times it happened:** 3 (with L20, L24)
+
 ### L25 · 2026-10-14 · Moving content between pages dropped some of it
 - **What happened:** while reorganizing the four "How we deliver" pages, I shrank the playbook's agent section and the agents' intro (including the note that none of them is built yet) stopped showing on any page. I also put the Usage and Adoption examples under the wrong measures. The audit's first reviewer caught both before anything was merged.
 - **Root cause:** I checked the new pages for duplication and broken links, but never compared every removed line with where it landed. Moving content was treated like rewriting it.

@@ -28,8 +28,8 @@ documents against it.
 | **Comparison group** | Similar users who don't get the product yet, so its effect can be told apart from everything else that changed. |
 | **Baseline** | A measure's value before the product, recorded with its date, source and exact definition (sub-step 1.7). |
 | **Frozen version** | The exact version reviewers test and approve in step 4. Every fix creates a new frozen version, which is tested again. |
-| **Delivery machine** | The whole system for running products: the six steps, the task tables (in `delivery-machine.md`, shown on the Delivery Machine page), the agents and the tracker. |
-| **Playbook** | The field manual: how to do each sub-step the first time, and what to log so it can be automated later. |
+| **Product machine** | The whole system for running products: the six steps, the task tables (in `product-machine.md`, shown on the Product Machine page), the agents and the tracker. |
+| **Playbook** | The Product Playbook, the field manual: how to do each sub-step the first time, and what to log so it can be automated later. |
 | **First-time log** | The notes kept while doing a sub-step for the first time: time spent, waits, inputs and what repeated. |
 | **Automation check** | Three questions asked of every Me and Draft task at each gate: did it repeat, is it stable, is it safe alone? Three yeses move it one kind toward Auto. |
 
@@ -46,8 +46,8 @@ documents against it.
 | **Champion** | A respected user who shows peers how they use the product. |
 | **Kind** | Who does a task: **Auto** (runs on its own), **Draft** (AI drafts, a named person checks), **Me** (only a person) or **Partner** (a sign-off only a named partner can give). |
 | **Agent** | An AI helper with one job, a short list of allowed actions and a named person in charge. |
-| **Research helper** | An agent that keeps my own reference pages current, such as H1, the bank news scout. Numbered H1 and on, listed in the Agent Library, and not part of the delivery machine. |
-| **General agent** | One of the 33 agents (M1 to M33) that run the delivery machine on every project, specified in the agent library: M1 to M19 handle the paperwork and routing, M20 to M33 do the team's analysis, testing and monitoring. |
+| **Research helper** | An agent that keeps my own reference pages current, such as H1, the bank news scout. Numbered H1 and on, listed in the Agent Library, and not part of the product machine. |
+| **General agent** | One of the 33 agents (M1 to M33) that run the product machine on every project, specified in the agent library: M1 to M19 handle the paperwork and routing, M20 to M33 do the team's analysis, testing and monitoring. |
 | **Product agent** | An agent inside the product that users see, numbered per project (A1 to A6 in the RM plan). Specified in that project's memo, Appendix A. |
 | **Agent spec** | An agent's written definition: its job, inputs, allowed and forbidden actions, outputs, when it stops, proof it worked and the person in charge. |
 | **Ongoing mode** | An agent that keeps running after launch, not just once (for example M24 on every data refresh). |
@@ -77,7 +77,7 @@ documents against it.
 |---|---|
 | **Designed page** | A branded page a person reads. Everything a person reads is one. |
 | **Working copy** | The Markdown file behind a designed page. Claude edits it; people read the page. |
-| **Reference page** | A page built to look things up: the Agent Library, Workflow Maps, Steps Catalog, Controls Catalog and this glossary (the Document Library's Reference section also lists the Tech Stack Guide, a guide I read). Claude keeps them aligned; they're never on the review list. |
+| **Reference page** | A page built to look things up: the Agent Library, Workflow Maps, Steps Catalog, Controls Catalog and this glossary (the Document Library's Reference section also lists the Tech Stack Guide, the Job Description and the Prompting Guide, pages I read). Claude keeps them aligned; they're never on the review list. |
 | **Gate pack** | Everything the decider needs at a gate, put together in one document. |
 | **Evidence pack** | Everything reviewers sign in step 4: the outputs of 4.1 to 4.6 (risk rating, data and privacy review, test and red-team results, fairness, controls and vendor reviews). |
 | **Decision log** | The record of each decision: what was decided, the options, who decided and why. |
@@ -113,7 +113,10 @@ that also says the new wording (a note about the change) is allowed.
 | wave 1 use cases | wave 1 AI products | 2026-10-10 |
 | Each use case, step by step | Each AI product, step by step | 2026-10-10 |
 | machine agent | general agent | 2026-10-10 |
-| Six-step workflow visual | Six-Step Product Workflow | 2026-10-10 |
+| Six-step workflow visual | Product Workflow | 2026-10-10 |
+| Six-Step Product Workflow | Product Workflow (the page name) | 2026-10-14 |
+| Delivery Machine | Product Machine (the page name; "product machine" for the whole system) | 2026-10-14 |
+| Delivery Playbook | Product Playbook (the page name) | 2026-10-14 |
 | Agent idea: | Agent: (with the agent's M number) | 2026-10-10 |
 | (spec M | (agent library) | 2026-10-10 |
 | 19-agent library | the agent library (33 general agents) | 2026-10-10 |

@@ -1,9 +1,9 @@
-# Playbook: the field manual under the delivery machine
+# Playbook: the field manual under the product machine
 
-Page 4 of the four "How we deliver" pages. The Six-Step Product Workflow
+Page 4 of the four "How we deliver" pages. The Product Workflow
 (`memos/role-workflow.md`) shows the steps, the Product Framework
-(`product-framework.md`) sets the rules, and the Delivery Machine
-(`delivery-machine.md`) marks each task Auto, Draft, Me or Partner. This folder
+(`product-framework.md`) sets the rules, and the Product Machine
+(`product-machine.md`) marks each task Auto, Draft, Me or Partner. This folder
 says **how to do it the first time**, sub-step by sub-step, and what to watch so
 the second time can be automated.
 
@@ -52,6 +52,6 @@ never wrote down.
 - **No client data in an AI tool the bank hasn't approved**, even for a quick test.
 - **Guesses about the bank are marked ⚠️** until confirmed. Replace them with facts as I learn them, and note the source.
 - **Numbers we don't have yet are [X].** Never invent them.
-- **At the gate,** run the automation check from `delivery-machine.md` on every Me and Draft task, and update the step's table there.
+- **At the gate,** run the automation check from `product-machine.md` on every Me and Draft task, and update the step's table there.
 
 _Last updated: 2026-10-14_

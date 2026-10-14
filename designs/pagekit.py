@@ -185,10 +185,10 @@ footer{color:var(--muted);font-size:14px;border-top:1px solid var(--line);paddin
 # ---------- The four "How we deliver" pages, in reading order ----------
 # Each of the four pages shows this strip in its header, so they read as one set.
 SERIES = [
-    ("workflow", "Six-Step Product Workflow", "The steps and their gates", "https://claude.ai/artifact/8Nm5fkdicn2Gu5VmNVTvYv"),
+    ("workflow", "Product Workflow", "The steps and their gates", "https://claude.ai/artifact/8Nm5fkdicn2Gu5VmNVTvYv"),
     ("framework", "Product Framework", "The rules every product follows", "https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ"),
-    ("machine", "The Delivery Machine", "Every task, marked by who does it", "https://claude.ai/artifact/S8Wbygy24cjguTMxZsN2QF"),
-    ("playbook", "The Delivery Playbook", "How to do each sub-step", "https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4"),
+    ("machine", "Product Machine", "Every task, marked by who does it", "https://claude.ai/artifact/S8Wbygy24cjguTMxZsN2QF"),
+    ("playbook", "Product Playbook", "How to do each sub-step", "https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4"),
 ]
 SERIES_CSS = """
 .series{margin-top:22px;display:flex;flex-direction:column;gap:8px}

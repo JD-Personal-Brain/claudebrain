@@ -1,21 +1,21 @@
-# Six-Step Product Workflow: how every AI product moves from idea to adoption
+# Product Workflow: how every AI product moves from idea to adoption
 
 _Working copy of the designed page (https://claude.ai/artifact/8Nm5fkdicn2Gu5VmNVTvYv).
 Claude loads this every session. It is the one home of the six steps, their
 questions, governance threads and gates, and what happens in each step._
 
 Page 1 of the four "How we deliver" pages, read in this order:
-1. **Six-Step Product Workflow** (this page): the steps and their go/no-go gates.
+1. **Product Workflow** (this page): the steps and their go/no-go gates.
 2. **Product Framework** (`product-framework.md`): the rules every product follows.
-3. **Delivery Machine** (`delivery-machine.md`): every task, marked by who does it.
-4. **The Delivery Playbook** (`playbook/`): how to do each sub-step the first time.
+3. **Product Machine** (`product-machine.md`): every task, marked by who does it.
+4. **Product Playbook** (`playbook/`): how to do each sub-step the first time.
 
 > **Source.** Taken from my RM analytics memo (`memos/rm-analytics-framework.md`,
 > memo v6, 2026-10-08) with the RM details removed. Memo v8 (2026-10-09) follows
 > the same six steps and gates and is the full worked example, with agent specs
 > and workflows in its appendices. Its sub-steps are
 > tailored to RM work and aren't yet numbered like the playbook's 44; that's part
-> of applying the delivery machine to the RM memo (work item W8 in the Open Items log).
+> of applying the product machine to the RM memo (work item W8 in the Open Items log).
 
 ## The six steps at a glance
 Every AI product goes through six steps, each ending in a **go/no-go gate**. The
