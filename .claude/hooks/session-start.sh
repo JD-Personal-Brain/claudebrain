@@ -48,7 +48,20 @@ found=no
 for b in $(git for-each-ref --format='%(refname:short)' refs/remotes/origin); do
   case "$b" in origin/main|origin/HEAD|origin) continue ;; esac
   merged_tree=$(git merge-tree --write-tree origin/main "$b" 2>/dev/null | head -1)
+  # This workspace only downloads recent history, so an old branch can't always be
+  # compared with main. Fetch more history and try again before deciding (idea 43).
+  if [ -z "$merged_tree" ]; then
+    git fetch -q --deepen=500 origin main "${b#origin/}" 2>/dev/null
+    merged_tree=$(git merge-tree --write-tree origin/main "$b" 2>/dev/null | head -1)
+  fi
   [ "$merged_tree" = "$main_tree" ] && continue
+  # Still no comparison (for example, histories that don't connect): stay quiet when
+  # every change on the branch is already in main, otherwise say it couldn't be checked.
+  if [ -z "$merged_tree" ] || ! git cat-file -e "$merged_tree^{tree}" 2>/dev/null; then
+    git cherry origin/main "$b" 2>/dev/null | grep -q '^+' || continue
+    echo "⚠️ COULD NOT CHECK branch ${b#origin/} against main (its history doesn't connect). Look at it before deleting."
+    continue
+  fi
   if [ "$found" = no ]; then
     echo "⚠️ UNMERGED WORK FOUND: these branches have saved work that is NOT in main,"
     echo "so new sessions can't see it. Tell the user first, in plain words, and offer to"

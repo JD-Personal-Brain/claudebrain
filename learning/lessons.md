@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L24 · 2026-10-14 · A merged branch kept an item number from the old numbering
+- **What happened:** I merged the bank news scout branch, which was written before the Open Items log was renumbered. I shifted the item numbers only in the files that clashed, so the scout's new news log still said "W4" for the Briefing re-run (by then W12, later W13). The audit's reviewer caught it as a Must fix.
+- **Root cause:** rule R23 says to sweep the whole repo when numbers change, but I swept only the files I was resolving. The files the branch added never clashed, so I never looked at them. Rule R23 failed, so this is a repeat of L20.
+- **Fix:** rule R23 is sharper and moves to the top: after any renumbering, and whenever a branch written under older numbers is merged, search every file (including files the branch adds) for each item number and check that each one still points to the right item.
+- **Rule:** R23 · **Test:** T27 · **Level:** 2 · **Times it happened:** 2
+
 ### L23 · 2026-10-14 · Built a whole new layout without showing a sample
 - **What happened:** You asked for an index at the top of the Document Library. I built and published a full version (three dense columns of 121 links) without showing you a sample first. You called the layout awful. The next two versions, each shown as a small sample first, were approved.
 - **Root cause:** your profile already said "show a small sample before building a whole page in a new look" (from 2026-10-13), but it was a preference line, not a rule or a step in the routine I follow for designed pages, and I read "new look" as colors and style only, not a new layout.
@@ -30,7 +36,7 @@ If a mistake happens again, its fix moves up a level:
 - **What happened:** We decided the RM plan has seven core use cases, with AI products under them. The deep audit still found "five core use cases" in the Document Library, the McKinsey page and the Open Items log, about 40 places where "use case" or "feature" still meant one AI product, and a memo line saying each core use case "becomes one line of the value model" when the value model has no such lines.
 - **Root cause:** I changed the words where I was working and never searched every file for the old forms. I also wrote what a section would contain without opening it (rule R21).
 - **Fix:** When a term, count or definition changes, search the whole repo for every old form (singular, plural, number) before calling it done, and fix or deliberately keep each hit.
-- **Rule:** R23 · **Test:** T27 · **Level:** 1 · **Times it happened:** 1
+- **Rule:** R23 · **Test:** T27 · **Level:** 1 → 2 (see L24) · **Times it happened:** 2
 
 ### L19 · 2026-10-10 · The bottom of two RM design-page parts was cut off
 - **What happened:** I added a sentence to the team-agents table on the RM design page. Two parts grew taller than their frames, so their bottoms were cut off when you looked. This is the fourth rendering failure (empty tables in L7c, stray marks in L7d, now cut-off bottoms).

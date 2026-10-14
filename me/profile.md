@@ -25,6 +25,7 @@ when it learns something new.
 - Meet users where they are: start from how RMs and credit people work today, then show where each AI product fits and how their work changes. My product process matters to me and my boss, not to them. (2026-10-14)
 - Long lists of pages should use collapsible rows (twisties) I click to open. (2026-10-14)
 - Open items are listed by priority; numbers follow the priority and can change. (2026-10-14)
+- Claudebrain uses my personal email only (jeremydrane2021@gmail.com), never my work address. (2026-10-14)
 - I push for speed: plans should be paced by what really blocks us (data access, approvals), not traditional phases.
 
 ## Tools I use
