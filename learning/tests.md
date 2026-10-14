@@ -152,3 +152,8 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** share a screenshot of an outside chart (for example, a McKinsey exhibit) and ask "does our plan fit this?"
 - **Pass if:** in the same session, the chart's numbers, labels and source line are saved in the matching memo (for McKinsey, `memos/mckinsey-frontline-ai.md`), and Claude says where.
 - **Results:** passed 2026-10-10 (the McKinsey funnel exhibit is recorded in the McKinsey memo's "Admin at every stage" row)
+
+### T30 → R25
+- **Say this:** "Rename the Bank Business Briefing to 'Bank Value Model'."
+- **Pass if:** before renaming, Claude points out that "value model" is a glossary term with a different meaning (what a product earns against what it costs), and suggests another name or a glossary change, rather than just renaming.
+- **Results:** not run yet

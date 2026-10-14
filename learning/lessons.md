@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L21 · 2026-10-14 · A new page name used a glossary word with a new meaning
+- **What happened:** While reorganizing the Document Library, I renamed "Credit Market Scan" to "Credit Core Use Cases". The glossary defines "core use case" as one of the RM plan's seven lines, so the new name gave the word a second meaning. The audit's alignment sweep caught it as a Must fix.
+- **Root cause:** rule R23 makes me sweep for old wording after a rename, but nothing made me check that the words in a new name mean what the glossary says. I picked the name for how it read, not against our definitions.
+- **Fix:** before naming or renaming a page, section or item, check each key word against `glossary.md`. If the new use differs, either pick another word or update the glossary definition in the same change. This time the glossary now says core use cases cover RM and credit (through each one's credit counterpart), and adds "credit counterpart", "use case" and "user workflow".
+- **Rule:** R25 · **Test:** T30 · **Level:** 1 · **Times it happened:** 1
+
 ### L20 · 2026-10-10 · A rename reached only the files I was editing
 - **What happened:** We decided the RM plan has seven core use cases, with AI products under them. The deep audit still found "five core use cases" in the Document Library, the McKinsey page and the Open Items log, about 40 places where "use case" or "feature" still meant one AI product, and a memo line saying each core use case "becomes one line of the value model" when the value model has no such lines.
 - **Root cause:** I changed the words where I was working and never searched every file for the old forms. I also wrote what a section would contain without opening it (rule R21).
