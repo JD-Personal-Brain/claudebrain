@@ -11,7 +11,7 @@ If a mistake happens again, its fix moves up a level:
 ### L26 · 2026-10-14 · A name I asked for wasn't applied everywhere
 - **What happened:** I asked for the field manual to be called "The Delivery Playbook" (my first message hinted at it too). Claude changed only the places with no "the" in front, so pages still said "the Delivery Playbook", and I had to ask again.
 - **Root cause:** Claude treated the rename as a narrow find-and-replace on one spelling and checked only that spelling, not every form a reader would see on the pages. Rule R23 (search every old form when a term changes) already covered this, so the rule failed: a repeat of L20 and L24.
-- **Fix:** rule R23 moves to Level 3. When I set a name, Claude adds it to the audit checker's page-name check (check 11), which fails on any other form in the working files and on the built pages, and confirms on the rendered pages before saying it's done. The checker now does this for "The Delivery Playbook".
+- **Fix:** rule R23 moves to Level 3. When I set a name, Claude adds it to the audit checker's page-name check (check 11), which fails on any other form in the working files and on the built pages, and confirms on the rendered pages before saying it's done. The checker now does this for every old page name. Same day, the Document Library still described the pages with synonyms ("the steps, the rules, the operating model, the field manual") instead of their names, and I had to point it out: after any rename, reread every description of the renamed pages, not only the names.
 - **Rule:** R23 · **Test:** T37 · **Level:** 3 · **Times it happened:** 3 (with L20, L24)
 
 ### L25 · 2026-10-14 · Moving content between pages dropped some of it

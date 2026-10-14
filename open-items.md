@@ -30,7 +30,7 @@ Claude updates it at every wrap-up: finished items move to "Closed" with the dat
 | Stage 2. Make the machine runnable | 4 | What Claude builds so a real run is possible |
 | Stage 3. Dry run and fix | 3 | Running the machine once and fixing it |
 | Stage 4. Get ready for Andy | 9 | What Andy sees, and what I ask him |
-| Alongside the path | 13 | Useful any time; doesn't block a stage. Dated items first |
+| Alongside the path | 12 | Useful any time; doesn't block a stage. Dated items first |
 | Inside the bank | 21 | Questions only someone at the bank can answer |
 | Parked on purpose | 4 | Not forgotten; waiting for a signal from me |
 
@@ -59,7 +59,7 @@ every working file (this section replaces the separate Gap Review page).
 | Approvals | Partial | Who decides is clear for every step. There's no map of who signs what, how long it takes, or who to go to when a sign-off is stuck | W5, B21 |
 | Showing what an RM sees | Missing | The plan promises a working prototype in week 1, but there's nothing to show yet | W10 |
 | A version written for Andy | Missing | The plan is written as my working plan, with internal labels, and doesn't say credit comes next | W11 |
-| Knowing the RM's real day | Partial | The Bank Business Briefing is done and read. My own notes on bankers' problems stopped at step 1 | W19 |
+| Knowing the RM's real day | Partial | The Bank Business Briefing is done and read. The user workflow maps will show how RMs and PMs work today (Job Notes dropped as not required, 2026-10-14) | W2 |
 | After launch: support and incidents | Partial | Incident steps exist (who to call, how to pause). No support model or runbook yet. Needed before the first product goes live, not before Andy | W9 |
 
 ## Now
@@ -137,11 +137,10 @@ Useful any time; none of these blocks a stage. Dated ones first.
 | W16 | Loose ends in the Bank Business Briefing: check the exact wording of the bank's AI announcement before quoting it; replace the 2016 description of who the segment serves once the annual report for the 2025 financial year can be opened in full; and confirm two of my guesses, the RM headcount read from an unclear chart and that Omaha came with American National | Claude | Nothing |
 | W17 | Run the tests of Claude's rules that need a real session. Each test is a short scenario in `learning/tests.md` that checks one rule still works. Not yet run in a live session: T7, T10, T13, T14 and T17, and the second parts of T2, T3, T9 and T16. Never run at all: T18 to T22, T24 to T27 (including T27's new second part, from 2026-10-14) and T30 to T33. Re-run T8 (does Claude label every suggestion Needed or Optional?), which failed on 2026-10-09 before its rule was tightened, and T5, whose first run wasn't a fair test | Claude, in a new session | Nothing |
 | W18 | Check the product details marked "(verify)" in the Tech Stack Guide: product names, prices, vendor terms and any update to the regulators' model-risk guidance. Eleven lines carry the mark. New lead (2026-10-13, Portfolio Manager Core Use Cases page): SR 26-2, issued 17 April 2026, reportedly replaces SR 11-7, which our files cite; sources disagree on whether it covers generative AI, so read the Fed's own text before changing anything | Claude | Nothing |
-| W19 | Thinking through the job, Part 1 (finding problems), kept on the Job Notes page: answer the open question in step 1 ("Have I worked with bankers or salespeople before?"), then steps 2 to 4. Parts 2 to 4 aren't started | Me, with Claude | Nothing |
-| W20 | Claude Mastery course: paste in the next page (Module 3: Projects, Connectors and Skills). Claude starts a course notes file when it arrives (idea 14, approved) | Me, then Claude | Nothing |
-| W21 | Try the newer skills on real work: "prototype X", "write a prompt for X", "new use case: X" | Me | Nothing |
-| W22 | Fewer approval pop-ups (idea 2, approved): tell Claude which pop-ups I still see and in which app, so it can pre-approve the safe, read-only ones. Claude won't change my permission settings on a guess | Me, then Claude | Nothing |
-| W23 | Playbooks for my everyday tools (idea 3, approved): name two or three tasks I repeat in email, calendar or documents. Claude turns each into a step-by-step skill | Me, then Claude | Nothing |
+| W19 | Claude Mastery course: paste in the next page (Module 3: Projects, Connectors and Skills). Claude starts a course notes file when it arrives (idea 14, approved) | Me, then Claude | Nothing |
+| W20 | Try the newer skills on real work: "prototype X", "write a prompt for X", "new use case: X" | Me | Nothing |
+| W21 | Fewer approval pop-ups (idea 2, approved): tell Claude which pop-ups I still see and in which app, so it can pre-approve the safe, read-only ones. Claude won't change my permission settings on a guess | Me, then Claude | Nothing |
+| W22 | Playbooks for my everyday tools (idea 3, approved): name two or three tasks I repeat in email, calendar or documents. Claude turns each into a step-by-step skill | Me, then Claude | Nothing |
 
 ## Inside the bank
 
@@ -209,5 +208,6 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C23 | Lock the Bank Business Briefing: audited; it now names both user groups, RMs and PMs, with a "which bankers" column, a section on PMs and a section on how the page stays current. The bank news scout is agent H1 in the Agent Library. "PM" now means portfolio manager everywhere, and "product manager" is spelled out | 2026-10-14 |
 | C24 | Ideas 40 and 45: yes. The page check now clicks every jump link on every page and fails if one lands in the wrong place, and Claude checks the bank news scout's last run at the start of each session | 2026-10-14 |
 | C25 | Reorganize the "How we deliver" pages so each has one job, read in order: Product Workflow (the steps), Product Framework (the rules), Product Machine (who does each task), Product Playbook (how to do each sub-step, with a short agent list linking to the Agent Library). Merged into main as pull request #80 | 2026-10-14 |
+| C26 | Thinking through the job, Part 1 (the Job Notes page): not required, so it's off the Document Library and no longer an open item. The working file `job-notes.md` stays for reference | 2026-10-14 |
 
 _Last updated: 2026-10-14_

@@ -77,7 +77,7 @@ documents against it.
 |---|---|
 | **Designed page** | A branded page a person reads. Everything a person reads is one. |
 | **Working copy** | The Markdown file behind a designed page. Claude edits it; people read the page. |
-| **Reference page** | A page built to look things up: the Agent Library, Workflow Maps, Steps Catalog, Controls Catalog and this glossary (the Document Library's Reference section also lists the Tech Stack Guide, the Job Description and the Prompting Guide, pages I read). Claude keeps them aligned; they're never on the review list. |
+| **Reference page** | A page built to look things up: the Agent Library, Workflow Maps, Steps Catalog, Controls Catalog and this glossary (the Document Library's Reference section also lists Open Items, the Tech Stack Guide, the Job Description and the Prompting Guide, pages I read or act on). Claude keeps them aligned; they're never on the review list. |
 | **Gate pack** | Everything the decider needs at a gate, put together in one document. |
 | **Evidence pack** | Everything reviewers sign in step 4: the outputs of 4.1 to 4.6 (risk rating, data and privacy review, test and red-team results, fairness, controls and vendor reviews). |
 | **Decision log** | The record of each decision: what was decided, the options, who decided and why. |

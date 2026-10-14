@@ -122,8 +122,16 @@
     {
       "id": "reference",
       "name": "Reference",
-      "why": "Pages to look things up in. Claude keeps them in line with the plans.",
+      "why": "Pages to look things up in: what's still open, our words, the process catalogs, the job and how we write prompts. Claude keeps the catalogs and the glossary in line with the plans.",
       "items": [
+        {
+          "id": "open-items",
+          "name": "Open Items",
+          "what": "Everything still open in one list: decisions and reading waiting on me, work to do, questions for the bank, and what's parked. For me only.",
+          "status": "In use",
+          "url": "https://claude.ai/artifact/NsW5AH5XFNHmDNYJvmVDMb",
+          "source": "open-items.md"
+        },
         {
           "id": "glossary",
           "name": "Glossary",
@@ -132,14 +140,6 @@
           "status": "Reference",
           "url": "https://claude.ai/artifact/LRQHSz65beh9XewB6qsQvQ",
           "source": "glossary.md"
-        },
-        {
-          "id": "tech-stack",
-          "name": "Tech Stack Guide",
-          "what": "Every technology named in the job: what it is, how the bank likely uses it, and what I need to know.",
-          "status": "In use",
-          "url": "https://claude.ai/artifact/DDmD65zw7LjnP5v2nHDFW2",
-          "source": "tech-stack.md"
         },
         {
           "id": "steps",
@@ -151,13 +151,13 @@
           "source": "playbook/, product-machine.md"
         },
         {
-          "id": "controls",
-          "name": "Controls Catalog",
-          "what": "All 25 controls, the safeguards built into each product, and where each is set, built, proved and watched.",
-          "count": "25 controls",
+          "id": "workflows",
+          "name": "Workflow Maps",
+          "what": "Each process drawn left to right, with its sub-processes branching off. Click any box for details.",
+          "count": "2 maps · 53 branches",
           "status": "Reference",
-          "url": "https://claude.ai/artifact/7GmH3iBG6jcDkdacUysUrQ",
-          "source": "playbook/controls.md"
+          "url": "https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX",
+          "source": "playbook/, product-machine.md, RM memo Appendix B"
         },
         {
           "id": "agents",
@@ -169,13 +169,21 @@
           "source": "playbook/agents.md, RM memo Appendix A"
         },
         {
-          "id": "workflows",
-          "name": "Workflow Maps",
-          "what": "Each process drawn left to right, with its sub-processes branching off. Click any box for details.",
-          "count": "2 maps · 53 branches",
+          "id": "controls",
+          "name": "Controls Catalog",
+          "what": "All 25 controls, the safeguards built into each product, and where each is set, built, proved and watched.",
+          "count": "25 controls",
           "status": "Reference",
-          "url": "https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX",
-          "source": "playbook/, product-machine.md, RM memo Appendix B"
+          "url": "https://claude.ai/artifact/7GmH3iBG6jcDkdacUysUrQ",
+          "source": "playbook/controls.md"
+        },
+        {
+          "id": "tech-stack",
+          "name": "Tech Stack Guide",
+          "what": "Every technology named in the job: what it is, how the bank likely uses it, and what I need to know.",
+          "status": "In use",
+          "url": "https://claude.ai/artifact/DDmD65zw7LjnP5v2nHDFW2",
+          "source": "tech-stack.md"
         },
         {
           "id": "job-description",
@@ -192,29 +200,6 @@
           "status": "In use",
           "url": "https://claude.ai/artifact/Secfj5fBtpVA1veroUU7A7",
           "source": "prompting.md"
-        }
-      ]
-    },
-    {
-      "id": "workspace",
-      "name": "My workspace",
-      "why": "Just for me, never shared with the bank.",
-      "items": [
-        {
-          "id": "open-items",
-          "name": "Open Items",
-          "what": "Everything still open in one list: decisions and reading waiting on me, work to do, questions for the bank, and what's parked.",
-          "status": "In use",
-          "url": "https://claude.ai/artifact/NsW5AH5XFNHmDNYJvmVDMb",
-          "source": "open-items.md"
-        },
-        {
-          "id": "job-notes",
-          "name": "Job Notes",
-          "what": "My answers so far on how I'd do the job, part by part.",
-          "status": "In progress",
-          "url": "https://claude.ai/artifact/SpcnPMbMEgyxZSoYVsRdES",
-          "source": "job-notes.md"
         }
       ]
     }

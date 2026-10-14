@@ -1,6 +1,6 @@
 """Builds designs/library.html, the Document Library, from designs/library.json.
-The page is one index in six numbered sections (the bank, how we deliver, relationship managers,
-portfolio managers, reference, my workspace), one row per page. A row shows the page's status;
+The page is one index in five numbered sections (the bank, how we deliver, relationship managers,
+portfolio managers, reference), one row per page. A row shows the page's status;
 its twisty opens a one-line description and the page's sections. Placeholder rows mark
 pages still to build.
 To add a document: add it to library.json (and designs/README.md) and to PAGE_FILE below,
@@ -25,7 +25,7 @@ for _, _, ds in groups:
 # A page's sections come from its own jump menu (first <nav> with # links), else its <h2 id> headings.
 # Pages with no section links (the RM design canvas) are listed by name only.
 PAGE_FILE = {"open-items": "open-items.html", "job-description": "job-description.html", "bank-business": "bank-business.html",
-             "tech-stack": "tech-stack.html", "job-notes": "job-notes.html", "framework": "product-framework.html",
+             "tech-stack": "tech-stack.html", "framework": "product-framework.html",
              "product-machine": "product-machine.html", "playbook": "playbook.html", "workflow": "role-workflow.html",
              "rm-design": None, "rm-plan": "rm-analytics-plan.html", "mckinsey-use-cases": "mckinsey-use-cases.html",
              "prompting": "prompting.html", "credit-market-scan": "credit-market-scan.html", "workflows": "workflows.html", "agents": "agents.html", "steps": "steps.html",
