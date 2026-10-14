@@ -97,7 +97,7 @@
           "id": "workflow",
           "name": "Six-Step Product Workflow",
           "what": "A one-page visual of the six steps for the role.",
-          "status": "Draft",
+          "status": "In use",
           "url": "https://claude.ai/artifact/8Nm5fkdicn2Gu5VmNVTvYv",
           "source": "memos/role-workflow.md"
         },
@@ -105,7 +105,7 @@
           "id": "delivery-machine",
           "name": "The Delivery Machine",
           "what": "How one product manager runs many projects at once: every task marked Auto, Draft, Me or Partner.",
-          "status": "Waiting for review",
+          "status": "In use",
           "url": "https://claude.ai/artifact/S8Wbygy24cjguTMxZsN2QF",
           "source": "product-framework.md"
         },
@@ -113,7 +113,7 @@
           "id": "playbook",
           "name": "Delivery Playbook",
           "what": "The field manual: how to run each of the 44 sub-steps the first time, plus the 33 general agents that run the delivery machine. All 39 agents, including the RM product's own 6, are on the Agent Library.",
-          "status": "Waiting for review",
+          "status": "In use",
           "url": "https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4",
           "source": "playbook/"
         }

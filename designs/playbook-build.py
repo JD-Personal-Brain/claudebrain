@@ -127,7 +127,7 @@ page = f'''<title>Delivery Playbook</title>
 </section>
 {"".join(h for _, _, h in steps)}
 {agent_library()}
-<footer>Draft, 2026-10-09: all six steps are waiting for review. Built from the working copy in <code>playbook/</code>; lines marked ⚠️ are guesses about the bank, and [X] marks numbers still to be set. Kinds: <span class="chip k-auto">Auto</span> runs on its own · <span class="chip k-draft">Draft</span> AI drafts, a person checks · <span class="chip k-me">Me</span> only a person · <span class="chip k-partner">Partner</span> a named partner's sign-off.</footer>
+<footer>In use: all six steps reviewed 2026-10-14. Built from the working copy in <code>playbook/</code>; lines marked ⚠️ are guesses about the bank, and [X] marks numbers still to be set. Kinds: <span class="chip k-auto">Auto</span> runs on its own · <span class="chip k-draft">Draft</span> AI drafts, a person checks · <span class="chip k-me">Me</span> only a person · <span class="chip k-partner">Partner</span> a named partner's sign-off.</footer>
 </main>
 '''
 open(os.path.join(ROOT, "designs", "playbook.html"), "w").write(page)
