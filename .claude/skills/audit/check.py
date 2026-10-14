@@ -122,13 +122,14 @@ CTL=len(re.findall(r'^### K\d+\. ',ctl,re.M))
 UNCOV=sum(1 for b in re.split(r'^### K\d+\. ',ctl,flags=re.M)[1:] if 'not covered' in b)
 MS=[int(x) for x in re.findall(r'^### M(\d+)\. ',open('playbook/agents.md').read(),re.M)]
 M=len(MS); MACH=sum(1 for x in MS if x<20)
+H=len(re.findall(r'^### H\d+\. ',open('playbook/agents.md').read(),re.M))  # my research helpers
 memo=open('memos/rm-analytics-framework.md').read()
 appa=memo.split('## Appendix A')[1].split('## Appendix B')[0]
 A=len(set(re.findall(r'\bA(\d+)\. ',appa)))
 TEAM=M-MACH; PROD=A  # team agents (M20+) live in the agent library; Appendix A holds only the product's agents
 B=len(re.findall(r'^\*\*B\d+\. ',memo.split('## Appendix B')[1],re.M))
 lib=_json.load(open('designs/library.json'))
-want={'agents':f'{M+A} agents','steps':f'{SUB} sub-steps','controls':f'{CTL} controls','workflows':f'2 maps · {SUB+B} branches'}
+want={'agents':f'{M+A+H} agents','steps':f'{SUB} sub-steps','controls':f'{CTL} controls','workflows':f'2 maps · {SUB+B} branches'}
 for b in lib_docs:
     if b['id'] in want and b['count']!=want[b['id']]: print('designs/library.json count for',b['name'],'is',repr(b['count']),'but the sources give',repr(want[b['id']])); probs+=1
 # Each count is read with up to one word in front of the noun ("25 governance controls"). A total is
@@ -139,10 +140,10 @@ for f in ['NOW.md','open-items.md','product-framework.md','playbook/README.md','
         num,mid,noun=int(m.group(1)),(m.group(2) or '').lower(),m.group(3)
         before=t[max(0,m.start()-6):m.start()].lower(); after=t[m.end():m.end()+40].lower()
         if noun.startswith('agent'):
-            if before.endswith('all '): ok={M+A}
+            if before.endswith('all '): ok={M+A+H}
             elif 'machine' in mid+after: ok={M,MACH}
             elif 'project' in mid+after or 'rm' in mid or 'product' in mid: ok={A,PROD}
-            else: ok={M,A,M+A,MACH,TEAM,PROD}
+            else: ok={M,A,M+A,M+A+H,MACH,TEAM,PROD}
         elif noun=='sub-steps': ok={SUB}
         else: ok={CTL} | ({UNCOV} if after.startswith(' of the') or 'have a stage' in after or 'not covered' in after else set())
         if num not in ok: print(f,'says',repr(m.group(0)),'but the sources give',sorted(ok)); probs+=1
@@ -207,4 +208,8 @@ else:
             for m in re.finditer(r'(?<!\w)'+re.escape(old.lower())+r'(?!\w)',low):
                 if nw in low[max(0,m.start()-150):m.end()+150]: continue
                 print(f,'still says',repr(old),'(retired; use',repr(new)+'), near:',repr(plain[max(0,m.start()-40):m.end()+40])); probs+=1
+# 10. the two user groups are always written RM, RMs, PM, PMs (said 2026-10-14): no "Rms", "rms", "RMS" and so on (an apostrophe for ownership, "the RM's", is fine)
+for f in sorted(set(core+glob.glob('memos/*.md')+['NOW.md','glossary.md','open-items.md'])):
+    for m in re.finditer(r"(?<![\w/.#-])(Rms|rms|Pms|pms|RMS|PMS|R\.M\.s?|P\.M\.s?)(?![\w])",open(f).read()):
+        print(f,'writes',repr(m.group(1)),'- write RMs or PMs'); probs+=1
 print("problems:",probs)

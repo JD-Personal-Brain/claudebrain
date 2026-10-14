@@ -1,4 +1,4 @@
-# Agent library: the agents that run the delivery machine
+# Agent library: the agents that run the delivery machine, and my research helpers
 
 These agents help the team run any project through the six steps. They're
 reused on every project, so they're specified once here: M1 to M19 run the
@@ -548,6 +548,27 @@ listed actions, and those marked ⚠️ wait until the bank allows it.
 - **Person in charge:** product manager.
 - **Runs on (guess):** M365 Copilot or a Copilot Studio agent.
 - **To confirm:** none.
+
+## Research helpers: agents that keep my own pages current
+These aren't part of the delivery machine and don't belong to any project. They
+keep the reference material I plan from up to date. Each runs as a Claude Code
+scheduled task, from a skill in this repo.
+
+### H1. Bank news scout
+- **Used in:** none (keeps the Bank Business Briefing current)
+- **For:** me
+- **Kind:** Draft → Draft
+- **Job:** find new public facts about Associated Bank that change the Bank Business Briefing, and draft the edits.
+- **Starts when:** every Monday at 7:46 am Central (a scheduled task), once on October 23, 2026 after the Q3 results, or when I say "run the news scout".
+- **Inputs:** the briefing (`memos/bank-business.md`); the scout's own log (`memos/bank-news-log.md`), so nothing is reported twice; public web pages and search results.
+- **Allowed actions:** search the web and open public pages; edit the briefing, rebuild its page source and add to the log on a draft branch; save that branch to GitHub; write one summary.
+- **Not allowed:** merging into main or opening a pull request; republishing the live page; sending email with any connector; using my work email; using non-public information; writing a number without its period and source.
+- **Outputs:** draft edits on a draft branch, one log entry and one summary.
+- **Stops when:** the summary is written, including a short "nothing new" summary when nothing changed. A page that won't open is named in the summary and left as a gap.
+- **Proof it worked:** the scheduled task's email notice in my personal inbox, the log entry and the draft branch.
+- **Person in charge:** me.
+- **Runs on (guess):** a Claude Code scheduled task, from the `bank-news-scout` skill. Not a guess: it is set up and running.
+- **To confirm:** that the first weekly notice (Monday October 19) reaches my personal inbox, and that its runs don't stop to wait for an approval (open item W1).
 
 ## Not agents, but reusable assets
 These come up in the review tables but aren't agents. Each one is a template or

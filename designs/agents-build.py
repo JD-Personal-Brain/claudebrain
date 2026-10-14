@@ -41,6 +41,18 @@ for f in sorted(glob.glob(os.path.join(ROOT, "playbook", "[1-6]-*.md"))):
 order = lambda nums: sorted(nums, key=lambda n: tuple(map(int, n.split("."))))
 steps_of = lambda nums: sorted({STEPS[n[0]] for n in nums}, key=list(STEPS.values()).index)
 
+# H1 and on: my research helpers (not part of the delivery machine)
+for block in re.split(r"\n### ", read("playbook/agents.md"))[1:]:
+    head, _, body = block.partition("\n")
+    m = re.match(r"(H\d+)\. (.+)", head)
+    if not m:
+        continue
+    f = dict(re.findall(r"^- \*\*([^*]+):\*\*\s*(.*)$", body.split("\n## ")[0], re.M))
+    agents.append({"id": m.group(1), "name": m.group(2), "group": "helpers", "steps": ["My research helpers"], "aim": f["Kind"].split("→")[-1].strip().split()[0],
+                   "job": f["Job"], "meta": f"Runs on a schedule · {f['Kind']}",
+                   "fields": [(k, f[k]) for k in ["Starts when", "Inputs", "Allowed actions", "Not allowed", "Outputs", "Stops when", "Proof it worked", "Person in charge", "Runs on (guess)", "To confirm"]],
+                   "source": "Delivery Playbook · agent library"})
+
 memo = read("memos/rm-analytics-framework.md")
 appa = memo.split("## Appendix A: Agent specs")[1].split("## Appendix B")[0]
 # A1-A6: the product RMs use
@@ -56,7 +68,8 @@ for block in re.split(r"\n\*\*(?=A\d+\. )", appa.split("### Agents the team uses
 
 GROUPS = [("machine", "Run the delivery machine", "Handle the paperwork and routing that move any project through the six steps: kickoff, notes, gate packs, sign-offs and releases. Reused on every project."),
           ("team", "Do the team's analysis, testing and monitoring", "General agents for every project: sizing, research, requirements, data checks, testing, red-teaming, fairness, evidence, feedback and impact. The RM plan shows how it uses each one."),
-          ("product", "The product RMs use", "The agents inside RM Analytics. Nothing reaches a client without the RM. Insights and alerts are shown to the RM and their manager; anything saved as the RM's own work, like a call note or an opportunity, needs the RM's approval.")]
+          ("product", "The product RMs use", "The agents inside RM Analytics. Nothing reaches a client without the RM. Insights and alerts are shown to the RM and their manager; anything saved as the RM's own work, like a call note or an opportunity, needs the RM's approval."),
+          ("helpers", "My research helpers", "Agents that keep my own reference pages current, such as the Bank Business Briefing. Not part of the delivery machine. Each runs on a schedule and only drafts: I decide what goes into main.")]
 counts = {g: sum(a["group"] == g for a in agents) for g, *_ in GROUPS}
 
 def card(a):
@@ -73,7 +86,7 @@ for g, name, why in GROUPS:
     cards = "".join(card(a) for a in agents if a["group"] == g)
     sections += f'<section class="grp" data-group="{g}"><div class="ahead"><h2 id="{g}">{E(name)} <span class="gcount">{counts[g]}</span></h2><p>{E(why)}</p></div><div class="aglist">{cards}</div></section>'
 
-step_opts = "".join(f'<option value="{E(s)}">{E(s)}</option>' for s in list(STEPS.values()) + ["Used by RMs"])
+step_opts = "".join(f'<option value="{E(s)}">{E(s)}</option>' for s in list(STEPS.values()) + ["Used by RMs", "My research helpers"])
 page = f'''<title>Agent Library</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">

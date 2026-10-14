@@ -38,13 +38,15 @@ documents against it.
 | Term | What it means |
 |---|---|
 | **Sponsor** | The business leader who owns the outcome and the funding, and makes the call at each gate (together with risk at the step 4 gate). |
-| **Product manager** | The person who owns scope, priorities and trade-offs, and owns the product until a long-term owner is named. |
+| **Product manager** | The person who owns scope, priorities and trade-offs, and owns the product until a long-term owner is named. Always spelled out: "PM" means portfolio manager. |
+| **RMs and PMs** | The two user groups the work serves, always written this way: **RM, RMs** for relationship managers and **PM, PMs** for portfolio managers. Spell each out with its short form the first time on a page. An apostrophe shows ownership only ("the RM's own work"). (Decided 2026-10-14.) |
 | **Long-term owner** | The person who holds the product after launch, for example someone in a revenue line. Named in Define if known, confirmed before scaling (sub-steps 2.8 and 5.7). |
 | **Risk partner** | The model risk contact who rates the product and works with the team from day one. **Risk partners** (plural) means everyone who signs off in step 4: model risk, compliance, privacy and security. |
 | **Data owner** | The person who decides what data may be used, and signs the data contract. |
 | **Champion** | A respected user who shows peers how they use the product. |
 | **Kind** | Who does a task: **Auto** (runs on its own), **Draft** (AI drafts, a named person checks), **Me** (only a person) or **Partner** (a sign-off only a named partner can give). |
 | **Agent** | An AI helper with one job, a short list of allowed actions and a named person in charge. |
+| **Research helper** | An agent that keeps my own reference pages current, such as H1, the bank news scout. Numbered H1 and on, listed in the Agent Library, and not part of the delivery machine. |
 | **General agent** | One of the 33 agents (M1 to M33) that run the delivery machine on every project, specified in the agent library: M1 to M19 handle the paperwork and routing, M20 to M33 do the team's analysis, testing and monitoring. |
 | **Product agent** | An agent inside the product that users see, numbered per project (A1 to A6 in the RM plan). Specified in that project's memo, Appendix A. |
 | **Agent spec** | An agent's written definition: its job, inputs, allowed and forbidden actions, outputs, when it stops, proof it worked and the person in charge. |
@@ -117,6 +119,8 @@ that also says the new wording (a note about the change) is allowed.
 | 19-agent library | the agent library (33 general agents) | 2026-10-10 |
 | McKinsey Use Cases | RM Core Use Cases (the page name) | 2026-10-14 |
 | Credit Market Scan | Credit Core Use Cases (the page name) | 2026-10-14 |
+| Product manager (PM | product manager (spelled out; PM means portfolio manager) | 2026-10-14 |
+| one PM runs | one product manager runs | 2026-10-14 |
 
 ## Bank terms to map
 
@@ -126,7 +130,7 @@ Our plans depend on these, but the definitions belong to the bank. Each stays
 | Term | How our plans use it today | Bank definition |
 |---|---|---|
 | Relationship manager (RM) | The banker who owns business client relationships and brings in new deals | ⚠️ to map |
-| Portfolio manager | The credit partner paired with an RM. Associated's own job postings use this title (AVP to SVP) for the role that underwrites, monitors credit and partners closely with RMs (seen on job boards, 2026-10-14) | ⚠️ to map |
+| Portfolio manager (PM) | The credit partner paired with an RM. Associated's own job postings use this title (AVP to SVP) for the role that underwrites, monitors credit and partners closely with RMs (seen on job boards, 2026-10-14) | ⚠️ to map |
 | Treasury management officer | The specialist an RM refers clients to for payments and cash management | ⚠️ to map |
 | Client, relationship | A business client and everything the bank does with it | ⚠️ to map |
 | Segment and market | How clients and bankers are grouped (for example, by size or region) | ⚠️ to map |

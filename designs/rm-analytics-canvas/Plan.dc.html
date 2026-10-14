@@ -713,9 +713,9 @@ class Component extends DCLogic {
         ]),
         strategy: "Use AI to listen and size faster than a team could by hand. Nothing touches clients yet; a person checks every finding.",
         agents: [
-          agent("team", "M20 Interview synthesizer", "Turns interview recaps into themes and quotes, linked to each source.", "M365 Copilot, Copilot Studio", "Teams transcripts (only with consent), interview notes", "PM reviews every theme"),
+          agent("team", "M20 Interview synthesizer", "Turns interview recaps into themes and quotes, linked to each source.", "M365 Copilot, Copilot Studio", "Teams transcripts (only with consent), interview notes", "Product manager reviews every theme"),
           agent("team", "M21 Opportunity sizer", "Answers plain-English questions to size each lever.", "Snowflake Cortex Analyst", "Snowflake balances and products; Salesforce pipeline", "An analyst checks the numbers"),
-          agent("team", "M22 Time-use analyst", "Finds where RM time goes and which activities lead to won deals.", "Snowflake Cortex, Power BI", "Salesforce activity and win/loss", "PM confirms with RMs in person")
+          agent("team", "M22 Time-use analyst", "Finds where RM time goes and which activities lead to won deals.", "Snowflake Cortex, Power BI", "Salesforce activity and win/loss", "Product manager checks with RMs")
         ],
         cards: cards([
           "Themes from interviews; a first pass over pipeline and activity data.",
@@ -743,7 +743,7 @@ class Component extends DCLogic {
         ]),
         strategy: "Use AI as a drafting partner, so the team spends its time on decisions rather than documents. Nothing is approved by an agent.",
         agents: [
-          agent("team", "M23 Requirements drafter", "Drafts the problem statement, user stories and acceptance criteria.", "M365 Copilot in Word, or Copilot Studio", "Discover findings", "PM edits; team and sponsor approve"),
+          agent("team", "M23 Requirements drafter", "Drafts the problem statement, user stories and acceptance criteria.", "M365 Copilot in Word, or Copilot Studio", "Discover findings", "Product manager edits; team and sponsor approve"),
           agent("team", "M24 Data contract checker", "Checks fields exist, are fresh and pass quality checks; flags gaps. After Define, runs on every data refresh and alerts the data owner on failure.", "Snowflake Cortex", "Snowflake tables and their quality and access records", "Data owner signs off"),
           agent("team", "M25 Risk intake assistant", "Pre-fills the risk intake and flags likely high-risk areas.", "Copilot Studio agent grounded in bank policies", "Policy documents, product brief", "A risk partner sets the rating")
         ],
@@ -806,7 +806,7 @@ class Component extends DCLogic {
         agents: [
           agent("team", "M27 Red-team agent", "Generates thousands of tricky requests (another RM's clients, a credit decision) to try to break the product.", "AWS Bedrock", "The product in test", "Risk reviews every failure"),
           agent("team", "M28 Fairness monitor", "Checks opportunities are spread fairly across segments and regions; runs again monthly after launch.", "Snowflake, Power BI", "Opportunity outputs, client segments", "Compliance reviews results"),
-          agent("team", "M29 Evidence pack assembler", "Compiles test results, data use and controls into review documents.", "M365 Copilot in Word", "Test results, data contract, controls", "PM and risk verify every claim")
+          agent("team", "M29 Evidence pack assembler", "Compiles test results, data use and controls into review documents.", "M365 Copilot in Word", "Test results, data contract, controls", "Product manager and risk verify every claim")
         ],
         cards: cards([
           "Red-teaming at scale; assembling the evidence pack.",
@@ -836,7 +836,7 @@ class Component extends DCLogic {
         agents: [
           agent("rm", "A6 Onboarding coach", "Answers “how do I use this?” inside Teams.", "Copilot Studio agent in Teams", "Training guides, FAQs", "Product team keeps content current"),
           agent("rm", "A4 Weekly opportunity digest", "Sends each RM their top opportunities every Monday.", "Power Automate with the insight writer", "Signal finder and insight writer outputs", "The RM decides what to pursue"),
-          agent("team", "M30 Feedback triage", "Sorts feedback into bugs, quality issues and ideas, and routes it to the backlog.", "Power Automate with an approved LLM", "Feedback logged in Salesforce", "PM sets priorities")
+          agent("team", "M30 Feedback triage", "Sorts feedback into bugs, quality issues and ideas, and routes it to the backlog.", "Power Automate with an approved LLM", "Feedback logged in Salesforce", "Product manager sets priorities")
         ],
         cards: cards([
           "Summarizing pilot feedback and spotting patterns.",
@@ -871,8 +871,8 @@ class Component extends DCLogic {
         strategy: "Use AI to watch the product continuously and explain results in plain English, so decisions rest on evidence.",
         agents: [
           agent("team", "M31 Impact analyst", "Answers “how much pipeline came from AI insights this month?” against the comparison group.", "Snowflake Cortex Analyst, Power BI", "AI-tagged Salesforce opportunities; Snowflake", "Analytics validates before reporting"),
-          agent("team", "M32 Quality watchdog", "Re-runs the test set after every change and alerts on drift.", "AWS Bedrock model evaluation, Power Automate", "Test set, live outputs, feedback", "PM decides to fix or roll back"),
-          agent("team", "M33 Improvement scout", "Proposes the next backlog items or next lever from usage and feedback.", "M365 Copilot or Copilot Studio", "Dashboards, feedback, reviews", "PM and sponsor decide")
+          agent("team", "M32 Quality watchdog", "Re-runs the test set after every change and alerts on drift.", "AWS Bedrock model evaluation, Power Automate", "Test set, live outputs, feedback", "Product manager decides to fix or roll back"),
+          agent("team", "M33 Improvement scout", "Proposes the next backlog items or next lever from usage and feedback.", "M365 Copilot or Copilot Studio", "Dashboards, feedback, reviews", "Product manager and sponsor decide")
         ],
         cards: cards([
           "Impact analysis, quality monitoring and improvement ideas.",
@@ -988,20 +988,20 @@ class Component extends DCLogic {
       return { id: id, name: name, step: step, job: job, inputs: inputs, allowed: allowed, outputs: outputs, stops: stops, proof: proof, owner: owner };
     }
     var teamSpecs = [
-      ts("M20", "Interview synthesizer", "Discover", "Turn interview recaps into themes and quotes", "Teams transcripts (only with consent), interview notes", "Read; draft", "Themes, each linked to its source", "All interviews processed", "PM spot-checks every theme against the notes", "PM"),
+      ts("M20", "Interview synthesizer", "Discover", "Turn interview recaps into themes and quotes", "Teams transcripts (only with consent), interview notes", "Read; draft", "Themes, each linked to its source", "All interviews processed", "Product manager spot-checks each theme", "Product manager"),
       ts("M21", "Opportunity sizer", "Discover", "Answer plain-English sizing questions", "Snowflake balances and products; Salesforce pipeline", "Read-only queries", "Sized levers with the query shown", "Each lever sized", "An analyst re-runs the key numbers", "Analyst"),
-      ts("M22", "Time-use analyst", "Discover", "Find where RM time goes", "Salesforce activity and win/loss", "Read-only queries", "Time-use breakdown", "Breakdown complete", "PM confirms with RMs in person", "PM"),
-      ts("M23", "Requirements drafter", "Define", "Draft problem statement, user stories, acceptance criteria", "Discover findings", "Draft only", "Draft brief and stories", "Drafts delivered", "Team and sponsor approve", "PM"),
+      ts("M22", "Time-use analyst", "Discover", "Find where RM time goes", "Salesforce activity and win/loss", "Read-only queries", "Time-use breakdown", "Breakdown complete", "Product manager checks with RMs", "Product manager"),
+      ts("M23", "Requirements drafter", "Define", "Draft problem statement, user stories, acceptance criteria", "Discover findings", "Draft only", "Draft brief and stories", "Drafts delivered", "Team and sponsor approve", "Product manager"),
       ts("M24", "Data contract checker", "Define", "Check fields exist, are fresh and pass quality checks", "Snowflake tables and their quality and access records", "Read-only", "Gap list", "Every field checked in Define; after that, runs on every data refresh and alerts the data owner on failure", "Data owner signs off", "Data owner"),
       ts("M25", "Risk intake assistant", "Define", "Pre-fill the risk intake; flag likely high-risk areas", "Bank policies, product brief", "Draft only", "Pre-filled intake", "Intake drafted", "Risk partner sets the rating", "Risk partner"),
-      ts("M26", "Test grader", "Build", "Score each version against the test set", "Test set, product outputs", "Read; score", "Score report", "Every test case scored", "Experienced RMs grade a sample", "PM"),
+      ts("M26", "Test grader", "Build", "Score each version against the test set", "Test set, product outputs", "Read; score", "Score report", "Every test case scored", "Experienced RMs grade a sample", "Product manager"),
       ts("M27", "Red-team agent", "Govern", "Try to break the product (other RMs' clients, credit requests)", "The product in test", "Send test requests in the test environment only", "Failure list", "All attack types run", "Risk reviews every failure", "Risk partner"),
       ts("M28", "Fairness monitor", "Govern", "Check opportunities are spread fairly across segments and regions", "Opportunity outputs, client segments", "Read-only", "Fairness report", "Report complete; runs again monthly after launch", "Compliance reviews results", "Compliance"),
-      ts("M29", "Evidence pack assembler", "Govern", "Compile results, data use and controls into review documents", "Test results, data contract, controls", "Draft only", "Evidence pack", "Pack drafted", "PM and risk verify every claim", "PM"),
-      ts("M30", "Feedback triage", "Release", "Sort feedback into bugs, quality issues and ideas", "Feedback logged in Salesforce", "Read; tag; add to backlog", "Tagged backlog items", "All new feedback sorted", "PM reviews a weekly sample", "PM"),
+      ts("M29", "Evidence pack assembler", "Govern", "Compile results, data use and controls into review documents", "Test results, data contract, controls", "Draft only", "Evidence pack", "Pack drafted", "Product manager and risk verify every claim", "Product manager"),
+      ts("M30", "Feedback triage", "Release", "Sort feedback into bugs, quality issues and ideas", "Feedback logged in Salesforce", "Read; tag; add to backlog", "Tagged backlog items", "All new feedback sorted", "Product manager reviews a weekly sample", "Product manager"),
       ts("M31", "Impact analyst", "Measure", "Report pipeline and revenue from AI insights against the comparison group", "AI-tagged Salesforce opportunities; Snowflake", "Read-only queries", "Monthly impact figures", "Report complete", "Analytics validates before reporting", "Analytics"),
-      ts("M32", "Quality watchdog", "Measure", "Re-run the test set after every change; alert on drift", "Test set, live outputs, feedback", "Read; alert", "Score trend and alerts", "Each run complete", "Alerts reviewed within [X] days", "PM"),
-      ts("M33", "Improvement scout", "Measure", "Propose next backlog items or the next lever", "Dashboards, feedback, reviews", "Draft only", "Ranked suggestions", "List delivered", "PM and sponsor decide", "PM")
+      ts("M32", "Quality watchdog", "Measure", "Re-run the test set after every change; alert on drift", "Test set, live outputs, feedback", "Read; alert", "Score trend and alerts", "Each run complete", "Alerts reviewed within [X] days", "Product manager"),
+      ts("M33", "Improvement scout", "Measure", "Propose next backlog items or the next lever", "Dashboards, feedback, reviews", "Draft only", "Ranked suggestions", "List delivered", "Product manager and sponsor decide", "Product manager")
     ];
     function flow(id, name, wave, color, trigger, steps, logged, measures) {
       return { id: id, name: name, wave: wave, color: color, trigger: trigger, logged: logged, measures: measures,
@@ -1051,15 +1051,15 @@ class Component extends DCLogic {
       return { week: week, what: what, owner: owner, proof: proof, bg: isGate ? "#E6F2F0" : "#FFFFFF", weight: isGate ? "600" : "400" };
     }
     var weekRows = [
-      wk("Days 1\u20135", "Sponsor kickoff; risk partner briefed; data access and test environments requested; working prototype built on sample data", "PM, platform team", "Prototype shown to the sponsor"),
+      wk("Days 1\u20135", "Sponsor kickoff; risk partner briefed; data access and test environments requested; working prototype built on sample data", "Product manager, platform team", "Prototype shown to the sponsor"),
       wk("1", "Gate 1: sponsor sees the prototype and picks wave 1, the target lever and the baseline", "Sponsor", "Decision log entry", true),
-      wk("1\u20132", "RM interviews and shadowing using the prototype; improve it every few days; levers sized", "PM, pilot RMs, analyst", "RM feedback log; sized levers"),
+      wk("1\u20132", "RM interviews and shadowing using the prototype; improve it every few days; levers sized", "Product manager, pilot RMs, analyst", "RM feedback log; sized levers"),
       wk("2", "Gate 2: data contract, early risk rating, value model, Finance attribution method; split decision if needed", "Sponsor, data owners, risk partner", "Signed data contract; early risk rating", true),
       wk("2\u20133", "Meeting follow-up set up in M365 Copilot; reviewed and signed off for pilot use", "Platform team, risk partner", "Sign-off recorded"),
-      wk("About 2\u20134", "Meeting follow-up live with pilot RMs", "PM", "First weekly usage report", true),
-      wk("2\u20135", "Connect real data in the test environment; build the test set and evidence pack; risk partner reviews each version", "Platform teams, PM", "Test results against the quality bar"),
+      wk("About 2\u20134", "Meeting follow-up live with pilot RMs", "Product manager", "First weekly usage report", true),
+      wk("2\u20135", "Connect real data in the test environment; build the test set and evidence pack; risk partner reviews each version", "Platform teams, product manager", "Test results against the quality bar"),
       wk("4\u20135", "Sign-offs for the insight features and call notes; release readiness (training, support, incident process, comparison group)", "Risk, compliance, privacy, security, operations", "Sign-offs recorded; readiness checklist complete"),
-      wk("About 4\u20136", "Client brief, weekly opportunity list and call notes into Salesforce live with pilot RMs", "PM", "Usage and act-on rates in Power BI; share of meetings logged", true)
+      wk("About 4\u20136", "Client brief, weekly opportunity list and call notes into Salesforce live with pilot RMs", "Product manager", "Usage and act-on rates in Power BI; share of meetings logged", true)
     ];
     var PART = { show: {"summary": false, "core": false, "outcome": false, "value": false, "people": false, "flow": false, "ai": false, "plan": true, "risks": true, "reuse": true, "evidence": true, "role": false, "confirm": false, "agents": false, "workflows": false}, stepIds: [], partTitle: "Part 4 · Project plan, risks and evidence", parts: [{"label": "1 · Overview", "href": "Main.dc.html", "bg": "transparent", "border": "#3A4E7A"}, {"label": "2 · AI and steps 1–3", "href": "Steps-1-3.dc.html", "bg": "transparent", "border": "#3A4E7A"}, {"label": "3 · Steps 4–6", "href": "Steps-4-6.dc.html", "bg": "transparent", "border": "#3A4E7A"}, {"label": "4 · Plan and risks", "href": "Plan.dc.html", "bg": "#2A3C66", "border": "#9FD8D0"}, {"label": "5 · Role and agents", "href": "Role-and-agents.dc.html", "bg": "transparent", "border": "#3A4E7A"}, {"label": "6 · Workflows", "href": "Workflows.dc.html", "bg": "transparent", "border": "#3A4E7A"}], isFirst: false };
     var months = [];
@@ -1122,7 +1122,7 @@ class Component extends DCLogic {
         { who: "Business sponsor (commercial banking leader)", role: "Owns the outcome and the funding", decides: "Target lever; go/no-go at each gate" },
         { who: "RM leaders and market managers", role: "Shape the workflow; run the weekly routine", decides: "Pilot group; how insights are used in pipeline meetings" },
         { who: "Pilot RMs", role: "Co-design and test", decides: "Whether each insight is useful (their feedback steers the backlog)" },
-        { who: "Product manager (PM, this role)", role: "Owns discovery through adoption; owns the product until a long-term owner is named", decides: "Scope, priorities, trade-offs" },
+        { who: "Product manager (this role)", role: "Owns discovery through adoption; owns the product until a long-term owner is named", decides: "Scope, priorities, trade-offs" },
         { who: "Data owners (Snowflake, Salesforce)", role: "Provide and certify data", decides: "What data may be used, and how" },
         { who: "Platform teams (Salesforce, Microsoft, AWS, data engineering)", role: "Build and run", decides: "Technical design within bank standards" },
         { who: "Model risk management", role: "Validates the AI", decides: "Risk rating; approval to launch" },
@@ -1176,10 +1176,10 @@ class Component extends DCLogic {
         { who: "CaixaBank", what: "Uses Salesforce Agentforce and Data Cloud, and built an AI assistant with Salesforce's AI tools to guide product applications; a specialist always finalizes the contract", src: "CaixaBank, 2025", url: "https://www.caixabank.com/en/headlines/news/caixabank-and-salesforce-collaborate-to-personalise-customer-experience-in-banking-services-through-ai" }
       ],
       conditions: [
-        { num: "01", name: "Build from day one", why: "A working prototype on sample data in week 1. No real client data is needed until it's tested.", who: "PM and platform team, week 1" },
-        { num: "02", name: "Standard features only", why: "Wave 1 configures features already in Salesforce, M365 Copilot and Power Platform, which already have bank approval.", who: "PM and platform teams, week 1" },
+        { num: "01", name: "Build from day one", why: "A working prototype on sample data in week 1. No real client data is needed until it's tested.", who: "Product manager, platform team, week 1" },
+        { num: "02", name: "Standard features only", why: "Wave 1 configures features already in Salesforce, M365 Copilot and Power Platform, which already have bank approval.", who: "Product manager, platform teams, week 1" },
         { num: "03", name: "Low risk by design", why: "Internal only, assistive, read-only by default, nothing near credit decisions or pricing. Should earn a low risk rating.", who: "Risk partner gives an early rating, week 2" },
-        { num: "04", name: "Review as we go", why: "The risk partner sees each version as it's built, so sign-off confirms what they already know.", who: "PM and risk partner, every week" },
+        { num: "04", name: "Review as we go", why: "The risk partner sees each version as it's built, so sign-off confirms what they already know.", who: "Product manager and risk partner, every week" },
         { num: "05", name: "Data access on day one", why: "Requests go in on day one and wave 1 uses only certified data, because access is often the slowest step.", who: "Data owners sign the data contract, week 2" },
         { num: "06", name: "Fast decisions", why: "The sponsor makes each gate call within days, because waiting for decisions adds weeks.", who: "Sponsor, at each gate" }
       ],

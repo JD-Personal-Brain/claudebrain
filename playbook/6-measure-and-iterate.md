@@ -110,7 +110,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Draft**.
   - Note: how much of Discover and Define you could skip or reuse.
-  - Agent: **M33 Improvement scout** (agent library) proposes and ranks candidates. The PM and the sponsor decide. *Draft*.
+  - Agent: **M33 Improvement scout** (agent library) proposes and ranks candidates. The product manager and the sponsor decide. *Draft*.
 - **For RM analytics:** the next standard AI products, such as early warnings and referral prompts in wave 2.
 
 ---
@@ -118,7 +118,7 @@ log (see `README.md`) for every sub-step.
 ## 6.6 Improve the machine itself
 
 - **Goal:** make the next project faster and more automated than this one.
-- **Why it matters:** this is how one PM ends up running many projects: each one leaves the machine better.
+- **Why it matters:** this is how one product manager ends up running many projects: each one leaves the machine better.
 - **Know first:** the first-time logs from every step, and the automation review tables at the end of each playbook file.
 - **First time, step by step:**
   1. Read back through the first-time logs from steps 1 to 6.
