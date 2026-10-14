@@ -26,7 +26,7 @@ Claude updates it at every wrap-up: finished items move to "Closed" with the dat
 | Stage | Open | What it is |
 |---|---|---|
 | Now | 2 | What we're working on first |
-| Stage 1. Read and lock the core | 8 | What I read, then the decision on the RM framework |
+| Stage 1. Read and lock the core | 9 | What I read, then the decision on the RM framework |
 | Stage 2. Make the machine runnable | 4 | What Claude builds so a real run is possible |
 | Stage 3. Dry run and fix | 3 | Running the machine once and fixing it |
 | Stage 4. Get ready for Andy | 9 | What Andy sees, and what I ask him |
@@ -73,7 +73,7 @@ What we're working on first: a quick check on the bank news scout, then the user
 
 ## Stage 1. Read and lock the core
 
-**Who:** Me. You read the plan and the manual the whole framework rests on, then decide whether the RM framework is ready (D5). Nothing in stage 2 needs to wait for this, but the dry run and Andy do.
+**Who:** Me. You read the plan and the manual the whole framework rests on, then decide whether the RM framework is ready (D6). Nothing in stage 2 needs to wait for this, but the dry run and Andy do.
 
 | # | Item | Who | Waits on |
 |---|---|---|---|
@@ -84,7 +84,8 @@ What we're working on first: a quick check on the bank news scout, then the user
 | D2 | Move prospecting (winning new clients) earlier than wave 3? McKinsey reports its biggest revenue numbers there; outside prospect data may set the pace | Me | V2 |
 | D3 | Keep autonomous lead nurturing and pricing out for now, because they conflict with "nothing reaches a client without the RM" and the fair-lending control? Claude recommends yes, revisit later with evidence | Me | V2 |
 | D4 | Agree the credit order the Credit Core Use Cases page proposes: credit memo and annual review drafts first, early warning second, risk ratings kept out of the first waves? | Me | V3 |
-| D5 | Is the RM framework ready to copy to other use cases? My answer on 2026-10-09: not yet. The reading in stage 1 and the work in stages 2 and 3 come first | Me | Credit, the next use case, waits on this |
+| D5 | Rename the credit pages to match the library's "Portfolio managers" section (idea 44)? For example, "Portfolio Manager Core Use Cases" instead of "Credit Core Use Cases" | Me | Nothing |
+| D6 | Is the RM framework ready to copy to other use cases? My answer on 2026-10-09: not yet. The reading in stage 1 and the work in stages 2 and 3 come first | Me | Credit, the next use case, waits on this |
 
 ## Stage 2. Make the machine runnable
 
@@ -175,7 +176,7 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 
 | # | Item | Who | Waits on |
 |---|---|---|---|
-| P1 | The credit (portfolio management) plan. Started at my request on 2026-10-13 with the Credit Core Use Cases page (the six parked credit processes plus two new ones, each lined up with a core use case); the credit user workflow map is part of W2. The plan itself still waits. Ready for then: franchise banking as a possible pilot, and whether to add "costs saved" and "loan losses avoided" to the value model | Me | Me saying the RM framework is ready (D5) |
+| P1 | The credit (portfolio management) plan. Started at my request on 2026-10-13 with the Credit Core Use Cases page (the six parked credit processes plus two new ones, each lined up with a core use case); the credit user workflow map is part of W2. The plan itself still waits. Ready for then: franchise banking as a possible pilot, and whether to add "costs saved" and "loan losses avoided" to the value model | Me | Me saying the RM framework is ready (D6) |
 | P2 | Sharing with Associated. When I'm ready, Claude builds an "Associated edition" of the Document Library (idea 33): only the pages meant for them, with no internal labels | Me | Me saying I'm ready to share |
 | P3 | A treasury and payments use case. The bank named it as a starting point for AI, and nothing has been planned yet | Me | After credit, unless B3 changes the order |
 | P4 | **Featured: running many products at once.** One intake form for new product ideas, a scoring rule to rank them against each other, how many products I can run at once, my week and month across products, and when a live product is retired | Me | The machine running one product well first |
