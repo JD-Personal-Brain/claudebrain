@@ -24,7 +24,7 @@ for block in re.split(r"\n### ", read("playbook/agents.md"))[1:]:
     agents.append({"id": m.group(1), "name": m.group(2), "group": "team" if int(m.group(1)[1:]) >= 20 else "machine", "steps": steps, "aim": kind_aim,
                    "job": f["Job"], "meta": f"Used in {f['Used in']} · {f['Kind']}",
                    "fields": [(k, f[k]) for k in ["Starts when", "Inputs", "Allowed actions", "Not allowed", "Outputs", "Stops when", "Proof it worked", "Person in charge", "Runs on (guess)", "To confirm"]],
-                   "source": "Delivery Playbook · agent library"})
+                   "source": "The Delivery Playbook · agent library"})
 
 # Where each project agent (A#) is used in the delivery process: the Delivery Machine task tables
 # tool column and the playbook review tables, so an agent used in several steps shows under each.
@@ -51,7 +51,7 @@ for block in re.split(r"\n### ", read("playbook/agents.md"))[1:]:
     agents.append({"id": m.group(1), "name": m.group(2), "group": "helpers", "steps": ["My research helpers"], "aim": f["Kind"].split("→")[-1].strip().split()[0],
                    "job": f["Job"], "meta": f"Runs on a schedule · {f['Kind']}",
                    "fields": [(k, f[k]) for k in ["Starts when", "Inputs", "Allowed actions", "Not allowed", "Outputs", "Stops when", "Proof it worked", "Person in charge", "Runs on (guess)", "To confirm"]],
-                   "source": "Delivery Playbook · agent library"})
+                   "source": "The Delivery Playbook · agent library"})
 
 memo = read("memos/rm-analytics-framework.md")
 appa = memo.split("## Appendix A: Agent specs")[1].split("## Appendix B")[0]

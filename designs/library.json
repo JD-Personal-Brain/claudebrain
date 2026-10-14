@@ -46,7 +46,7 @@
         },
         {
           "id": "playbook",
-          "name": "Delivery Playbook",
+          "name": "The Delivery Playbook",
           "what": "The field manual: how to run each of the 44 sub-steps the first time and what to log, plus a short list of the 33 general agents. Their full specs are on the Agent Library.",
           "status": "In use",
           "url": "https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4",

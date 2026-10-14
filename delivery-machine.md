@@ -5,7 +5,7 @@ every step, marked by who does it, and how the work moves toward automation.
 Page 3 of the four "How we deliver" pages: the Six-Step Product Workflow
 (`memos/role-workflow.md`) shows the steps, the Product Framework
 (`product-framework.md`) sets the rules, this page runs the work, and the
-Delivery Playbook (`playbook/`) says how to do each sub-step the first time.
+The Delivery Playbook (`playbook/`) says how to do each sub-step the first time.
 Designed page: https://claude.ai/artifact/S8Wbygy24cjguTMxZsN2QF (built from this
 file by `designs/delivery-machine-build.py`).
 

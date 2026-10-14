@@ -100,7 +100,7 @@ nav = '<a href="#use">How to use it</a>' + "".join(f'<a href="#step{n}"><span cl
 from pagekit import CSS, series, SERIES_CSS
 
 
-page = f'''<title>Delivery Playbook</title>
+page = f'''<title>The Delivery Playbook</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
 <style>{CSS}{SERIES_CSS}
@@ -117,7 +117,7 @@ page = f'''<title>Delivery Playbook</title>
 </style>
 <div class="band"><div class="wrap">
 <span class="label">Field manual · AI product delivery</span>
-<h1>Delivery Playbook</h1>
+<h1>The Delivery Playbook</h1>
 <p class="lede">How to run each of the six steps the first time, sub-step by sub-step, and what to watch so the second time can be automated. The Six-Step Product Workflow says what happens, the Delivery Machine says who does each task; this page says how. A short list of the agents closes the page; their full specs are on the Agent Library.</p>
 <nav class="stepnav" aria-label="Steps">{nav}</nav>
 {series("playbook")}
