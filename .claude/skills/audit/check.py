@@ -1,3 +1,4 @@
+import glob
 """Mechanical audit checks. Run from the repo root: python3 .claude/skills/audit/check.py
 1. Framework task tables and playbook sub-steps match (every sub-step has rows, every
    review-table "Aim for" kind matches the framework, every sub-step has all 8 fields).
@@ -70,6 +71,13 @@ for n in sorted({x for x in nums if nums.count(x)>1}): print("open-items.md uses
 for k in 'VDWBP':
     seq=[int(x[1:]) for x in nums if x[0]==k]
     if seq!=list(range(1,len(seq)+1)): print("open-items.md: the",k,"items aren't numbered 1, 2, 3... in order down the page:",' '.join(k+str(n) for n in seq)); probs+=1
+# numbers change with priorities, so every item number cited elsewhere must still be a live item (L22)
+live=set(nums)
+for f in ['NOW.md','ideas.md','product-framework.md','glossary.md','tech-stack.md','open-items.md']+sorted(glob.glob('memos/*.md'))+sorted(glob.glob('playbook/*.md')):
+    t=open(f).read()
+    if f=='open-items.md': t='\n'.join(re.sub(r'^\| [A-Z]\d+ \|','|',l) for l in t.split('\n'))
+    for m in re.finditer(r'\b([VDWP]\d{1,2})\b(?! Labs)',t):
+        if m.group(1) not in live: print(f,"cites",m.group(1),"but the Open Items log has no such open item: update the reference"); probs+=1
 # the log is organized by stage (agreed 2026-10-10): each "At a glance" count must match the rows in its section
 secs=re.split(r'^## ',oi,flags=re.M)
 for m in re.finditer(r'^\| ((?:Stage \d\. )?[A-Z][^|]+?) \| (\d+) \| [^|]+ \|$',oi.split('## At a glance')[1].split('\n## ')[0] if '## At a glance' in oi else '',re.M):

@@ -22,14 +22,14 @@
       "items": [
         {
           "todo": true,
-          "name": "RM workflow: today and with AI",
+          "name": "RM user workflow: today and with AI",
           "what": "How an RM works today, where each AI product fits, and how the work changes.",
           "status": "To build"
         },
         {
           "id": "mckinsey-use-cases",
           "name": "RM Core Use Cases",
-          "what": "Core reference for choosing use cases: McKinsey's five frontline AI use cases and their returns, how the RM plan covers them, and the seven core use cases the RM plan is organized on (McKinsey's five plus admin off the RM's plate and keep clients).",
+          "what": "Core reference for choosing core use cases and AI products: McKinsey's five frontline AI use cases and their returns, how the RM plan covers them, and the seven core use cases the RM plan is organized on (McKinsey's five plus admin off the RM's plate and keep clients).",
           "status": "Waiting for review",
           "url": "https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X",
           "source": "memos/mckinsey-frontline-ai.md"
@@ -60,7 +60,7 @@
       "items": [
         {
           "todo": true,
-          "name": "Credit workflow: today and with AI",
+          "name": "Credit user workflow: today and with AI",
           "what": "How the credit team works today, where each AI product fits, and how the work changes.",
           "status": "To build"
         },

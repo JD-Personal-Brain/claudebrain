@@ -117,7 +117,7 @@ page = f'''<title>Document Library</title>
 <div class="band"><div class="wrap">
 <span class="label">The program</span>
 <h1>Document Library</h1>
-<p class="lede">The AI program for Associated Bank&#x27;s relationship managers and credit team: the bank, each group&#x27;s work and use cases, how we deliver, and reference.</p>
+<p class="lede">The AI program for Associated Bank&#x27;s relationship managers and credit team: the bank, each group&#x27;s work and core use cases, how we deliver, and reference.</p>
 <nav class="stepnav" aria-label="Sections">{nav}</nav>
 <div class="filter"><label for="q">Find a document</label><input id="q" type="search" placeholder="Type a word, like plan, agent or prompt" autocomplete="off"></div>
 </div></div>

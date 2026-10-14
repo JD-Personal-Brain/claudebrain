@@ -135,7 +135,7 @@ and compare Claude's answer with "Pass if." Record the date and result.
 
 ### T26 → R22
 - **Say this:** "What's waiting on me?"
-- **Pass if:** the answer lists no reference pages (Agent Library, Workflow Maps, Steps Catalog, Controls Catalog) as things to read; only decisions and pages I've said I'll read.
+- **Pass if:** the answer lists no reference pages (Agent Library, Workflow Maps, Steps Catalog, Controls Catalog, Glossary) as things to read; only decisions and pages I've said I'll read.
 - **Results:** not run yet
 
 ### T27 → R23

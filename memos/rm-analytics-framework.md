@@ -35,7 +35,7 @@ partner, and a willing pilot group.
 **How to use this plan.** The AI products are organized under seven core use cases (McKinsey's five plus two of our own), each with a return profile (see "Core use cases"). Sections 1–11 are the plan. Appendix A specifies
 the product's agents in full (job, inputs, allowed actions, outputs, when it
 stops and proof it worked) and shows how the team uses the delivery machine's
-general agents, whose full specs are in the agent library. Appendix B sets out each RM workflow step by step, so the
+general agents, whose full specs are in the agent library. Appendix B sets out each of the plan's workflows (B1 to B9) step by step, so the
 team can build directly from them.
 
 ---
@@ -54,8 +54,8 @@ own targets are set from the bank's data in Define.
 | **1. Prospecting and next best opportunities** | Too few good leads; opportunities in the book go unnoticed | Weekly opportunity list (wave 1); prospect lookalikes (wave 3) | About 30% more pipeline and 10% more revenue; one bank saw twice the conversion of traditional leads (for McKinsey's full version; ours is narrower) | AI-sourced pipeline and wins, against the comparison group [X] |
 | **2. Lead nurturing, including cross-sell** | Leads and cross-sell needs get little or no follow-up | Referral prompts (wave 2). The RM does the outreach; no agent contacts clients on its own | Two to three times more qualified leads; 5% higher conversion (early pilots; for McKinsey's full version, an agent that contacts prospects, which we rule out) | Referrals made and won [X] |
 | **3. Account intelligence and meeting prep** | Meeting prep is slow and insights are scattered (a top problem in McKinsey's survey) | Pre-meeting client brief (wave 1); RM assistant (wave 3) | About 25% less prep time; 10% more time with clients | Prep time per meeting; client-facing hours [X] |
-| **4. Deal scoring and pricing** | Pricing and approvals can be slow (one bank took five days, per McKinsey) | None: out of scope for now, because pricing touches fair-lending rules (control K3; decision D3) | 10% margin gains; deal turnaround cut from five days to two in one case | — |
-| **5. AI sales coaching** | Training rarely sticks; good practice doesn't spread | None yet (decision D1) | Customer satisfaction up seven points; new bankers up to speed 20% faster | — |
+| **4. Deal scoring and pricing** | Pricing and approvals can be slow (one bank took five days, per McKinsey) | None: out of scope for now, because pricing touches fair-lending rules (control K3; an open decision) | 10% margin gains; deal turnaround cut from five days to two in one case | — |
+| **5. AI sales coaching** | Training rarely sticks; good practice doesn't spread | None yet (an open decision) | Customer satisfaction up seven points; new bankers up to speed 20% faster | — |
 
 **Beyond McKinsey's five**, two core use cases of our own:
 

@@ -4,11 +4,11 @@ Everything still open, organized as the path we agreed to operationalize the
 framework: read the core, make it runnable, run it once, then get ready for Andy.
 Claude updates it at every wrap-up: finished items move to "Closed" with the date.
 
-> **How to read this.** Work top to bottom: each stage builds on the one before.
+> **How to read this.** Work top to bottom: "Now" first, then the stages (stage 2 runs alongside stage 1).
 > Items are numbered in priority order within each kind: V1 is the first thing
 > to read, W1 the first piece of work, D1 the first decision. When priorities
 > change, the numbers change with them, so the top of each list is always
-> what's next. Say "close V1" or "what's W4?". The letter says what kind of item it is: **D** a decision,
+> what's next. Closed items (C) keep their number. Say "close V1" or "what's W4?". The letter says what kind of item it is: **D** a decision,
 > **V** something to read, **W** work, **B** a question for the bank (not the RM plan's workflows B1 to B9), **P** parked, **C** closed.
 > **Who** says who moves it next. ⚠️ marks a guess.
 
@@ -19,7 +19,7 @@ Claude updates it at every wrap-up: finished items move to "Closed" with the dat
 3. **Dry run and fix** (both): one made-up product through all six steps; fix what breaks.
 4. **Get ready for Andy** (Claude builds, I decide): the RM mock-up, the Andy edition and my questions for him.
 
-**Next up (agreed 2026-10-14):** map the RM and credit workflows (W1, under "Now" below). Stage 1 (V1, the RM plan) and stage 2 (W2 and W3) carry on alongside; none waits on another.
+**Next up (agreed 2026-10-14):** map the RM and credit user workflows (W1, under "Now" below). Stage 1 (V1, the RM plan) and stage 2 (W2 and W3) carry on alongside; none waits on another.
 
 ## At a glance
 
@@ -29,10 +29,10 @@ Claude updates it at every wrap-up: finished items move to "Closed" with the dat
 | Stage 1. Read and lock the core | 12 | What I read, then the decision on the RM framework |
 | Stage 2. Make the machine runnable | 4 | What Claude builds so a real run is possible |
 | Stage 3. Dry run and fix | 3 | Running the machine once and fixing it |
-| Stage 4. Get ready for Andy | 10 | What Andy sees, and what I ask him |
+| Stage 4. Get ready for Andy | 9 | What Andy sees, and what I ask him |
 | Alongside the path | 13 | Useful any time; doesn't block a stage. Dated items first |
 | Inside the bank | 21 | Questions only someone at the bank can answer |
-| Parked on purpose | 3 | Not forgotten; waiting for a signal from me |
+| Parked on purpose | 4 | Not forgotten; waiting for a signal from me |
 
 "Andy" here is my main contact at the bank. ⚠️ Claude assumes this is Andy Miner, the bank's senior director of AI for Corporate & Commercial Banking.
 
@@ -68,7 +68,7 @@ What we're working on first. It feeds both the RM and the credit work.
 
 | # | Item | Who | Waits on |
 |---|---|---|---|
-| W1 | Map the RM and credit workflows (agreed 2026-10-14, the next job): how each group works today, where each AI product fits, and how the work changes. Each gets a page in the Document Library, where a placeholder row waits | Claude and me | Nothing |
+| W1 | Map the RM and credit user workflows (agreed 2026-10-14, the next job; the RM map starts from Map 2 on the Workflow Maps, an RM's week with AI, which shows only the with-AI side): how each group works today, where each AI product fits, and how the work changes. Each gets a page in the Document Library, where a placeholder row waits | Claude and me | Nothing |
 
 ## Stage 1. Read and lock the core
 
@@ -125,7 +125,6 @@ What we're working on first. It feeds both the RM and the credit work.
 | B5 | Does "Corporate & Commercial Banking" include commercial real estate and the specialty industries, and where does the role sit? (from: Bank Business Briefing, section 9) | Me, with Andy | Nothing |
 | B6 | What team and budget are available for the pilot? (from: RM plan, section 11) | Me, with Andy | Nothing |
 | B7 | Which RM teams would make a good pilot group? (from: RM plan, section 11) | Me, with Andy | Nothing |
-| P1 | Sharing with Associated. When I'm ready, Claude builds an "Associated edition" of the Document Library (idea 33): only the pages meant for them, with no internal labels | Me | Me saying I'm ready to share |
 
 ## Alongside the path
 
@@ -179,7 +178,8 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 
 | # | Item | Who | Waits on |
 |---|---|---|---|
-| P2 | The credit (portfolio management) plan. Started at my request on 2026-10-13 with the Credit Core Use Cases page (the six parked credit processes plus two new ones, each lined up with a core use case); the credit workflow map is part of W1. The plan itself still waits. Ready for then: franchise banking as a possible pilot, and whether to add "costs saved" and "loan losses avoided" to the value model | Me | Me saying the RM framework is ready (D5) |
+| P1 | The credit (portfolio management) plan. Started at my request on 2026-10-13 with the Credit Core Use Cases page (the six parked credit processes plus two new ones, each lined up with a core use case); the credit workflow map is part of W1. The plan itself still waits. Ready for then: franchise banking as a possible pilot, and whether to add "costs saved" and "loan losses avoided" to the value model | Me | Me saying the RM framework is ready (D5) |
+| P2 | Sharing with Associated. When I'm ready, Claude builds an "Associated edition" of the Document Library (idea 33): only the pages meant for them, with no internal labels | Me | Me saying I'm ready to share |
 | P3 | A treasury and payments use case. The bank named it as a starting point for AI, and nothing has been planned yet | Me | After credit, unless B3 changes the order |
 | P4 | **Featured: running many products at once.** One intake form for new product ideas, a scoring rule to rank them against each other, how many products I can run at once, my week and month across products, and when a live product is retired | Me | The machine running one product well first |
 
@@ -189,19 +189,19 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 |---|---|---|
 | C1 | Build the Bank Business Briefing and save its prompt (merged into main as pull request #54) | 2026-10-09 |
 | C2 | Decide the order of use cases: RM first, credit second | 2026-10-09 |
-| C3 | bring in the unmerged work from my other session. Merged into this log's pull request, with both sides kept where they overlapped | 2026-10-09 |
-| C4 | yes to four ideas. The shorthand check (idea 32) and the Steps and Controls catalogs (idea 34) are built. Fewer pop-ups (idea 2) and everyday playbooks (idea 3) need facts from me first: see W21 and W22 | 2026-10-09 |
-| C5 | remove my safety rules (idea 16). The pop-up explanations and "Deny is safe" reminders are gone from the rule book, with the two pop-up rules and their tests | 2026-10-09 |
-| C6 | yes to making the RM plan's 14 helper agents general. They are now M20 to M33 in the agent library, used by every project; the RM plan shows how it uses each one | 2026-10-10 |
-| C7 | yes to three new controls. K23 (approved AI tools for the team's own work), K24 (consent before recording) and K25 (agents stop rather than guess) are in the Controls Catalog, set and built in the playbook (proving K23 and watching all three are still gaps, W5); the playbook's control check (4.5) now also confirms the build, test and live path and IT's approval of every connection | 2026-10-10 |
-| C8 | the line saying credit comes next is now part of W10, the Andy edition | 2026-10-10 |
-| C9 | keeping the reference pages in line is now built into every audit (the alignment sweep and its automatic checks), and the Glossary was added as a fifth reference page | 2026-10-10 |
-| C10 | yes to ideas 35 and 36. The design canvas's runtime is kept in the repo so the render check always runs, and a check before every merge blocks it if the audit checker or render check finds a problem | 2026-10-10 |
-| C11 | the McKinsey numbers in the RM plan are confirmed against the article's text (3–15% higher revenue per RM, 20–40% lower cost to serve, and RMs spending about 25–30% of their time with clients). The last one is now credited to McKinsey directly | 2026-10-10 |
-| C12 | yes. The RM plan is now organized on seven core use cases: McKinsey's five frontline use cases plus two of our own (admin off the RM's plate, keep clients), with our AI products underneath each and a return profile for each (McKinsey benchmarks next to our own [X] targets) | 2026-10-10 |
-| C13 | yes. The audit checker now fails on any old wording left after a rename, from a new "Old wording we've retired" table in the glossary | 2026-10-10 |
+| C3 | Bring in the unmerged work from my other session. Merged into this log's pull request, with both sides kept where they overlapped | 2026-10-09 |
+| C4 | Four ideas: yes. The shorthand check (idea 32) and the Steps and Controls catalogs (idea 34) are built. Fewer pop-ups (idea 2) and everyday playbooks (idea 3) need facts from me first: see the pop-ups and everyday-playbooks items | 2026-10-09 |
+| C5 | Remove my safety rules (idea 16). The pop-up explanations and "Deny is safe" reminders are gone from the rule book, with the two pop-up rules and their tests | 2026-10-09 |
+| C6 | Make the RM plan's helper agents general: yes. Done by making the RM plan's 14 helper agents general. They are now M20 to M33 in the agent library, used by every project; the RM plan shows how it uses each one | 2026-10-10 |
+| C7 | Three new controls: yes. K23 (approved AI tools for the team's own work), K24 (consent before recording) and K25 (agents stop rather than guess) are in the Controls Catalog, set and built in the playbook (proving K23 and watching all three are still gaps, in the control-gaps item); the playbook's control check (4.5) now also confirms the build, test and live path and IT's approval of every connection | 2026-10-10 |
+| C8 | The line saying credit comes next is now part of the Andy edition item | 2026-10-10 |
+| C9 | Keeping the reference pages in line is now built into every audit (the alignment sweep and its automatic checks), and the Glossary was added as a fifth reference page | 2026-10-10 |
+| C10 | Ideas 35 and 36: yes. The design canvas's runtime is kept in the repo so the render check always runs, and a check before every merge blocks it if the audit checker or render check finds a problem | 2026-10-10 |
+| C11 | The McKinsey numbers in the RM plan are confirmed against the article's text (3–15% higher revenue per RM, 20–40% lower cost to serve, and RMs spending about 25–30% of their time with clients). The last one is now credited to McKinsey directly | 2026-10-10 |
+| C12 | Organize the RM plan on seven core use cases: yes. The RM plan is now organized on seven core use cases: McKinsey's five frontline use cases plus two of our own (admin off the RM's plate, keep clients), with our AI products underneath each and a return profile for each (McKinsey benchmarks next to our own [X] targets) | 2026-10-10 |
+| C13 | Idea 37 (check for old wording after a rename): yes. The audit checker now fails on any old wording left after a rename, from a new "Old wording we've retired" table in the glossary | 2026-10-10 |
 | C14 | Call notes into Salesforce moved from wave 2 into wave 1, live with the insights about weeks 4–6, because McKinsey's banker survey ranks admin a top-two problem at every stage of the sales funnel | 2026-10-10 |
-| C15 | yes to ideas 38 and 39. Before editing a designed page, Claude now checks that the live page isn't newer than the repo copy (a step in the designed-doc skill), and every outside chart I share is saved with its numbers and source in the matching memo (rule R24) | 2026-10-10 |
-| C16 | the old `prompt-email-example` branch is deleted. Everything on it was already in main | 2026-10-13 |
+| C15 | Ideas 38 and 39: yes. Before editing a designed page, Claude now checks that the live page isn't newer than the repo copy (a step in the designed-doc skill), and every outside chart I share is saved with its numbers and source in the matching memo (rule R24) | 2026-10-10 |
+| C16 | The old `prompt-email-example` branch is deleted. Everything on it was already in main | 2026-10-13 |
 
 _Last updated: 2026-10-14_
