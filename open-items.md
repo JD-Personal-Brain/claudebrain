@@ -19,7 +19,7 @@ Claude updates it at every wrap-up: finished items move to "Closed" with the dat
 3. **Dry run and fix** (both): one made-up product through all six steps; fix what breaks.
 4. **Get ready for Andy** (Claude builds, I decide): the RM mock-up, the Andy edition and my questions for him.
 
-**First, high priority:** add Gmail to the bank news scout before its first weekly run on October 19 (W1, under "Now" below). **Next up (agreed 2026-10-14):** map the RM and credit user workflows (W2). Stage 1 (V1, the RM plan) and stage 2 (W3 and W4) carry on alongside; none waits on another.
+**First, high priority:** on October 19, check that the bank news scout's first notice reached my personal email (W1, under "Now" below). **Next up (agreed 2026-10-14):** map the RM and credit user workflows (W2). Stage 1 (V1, the RM plan) and stage 2 (W3 and W4) carry on alongside; none waits on another.
 
 ## At a glance
 
@@ -64,11 +64,11 @@ every working file (this section replaces the separate Gap Review page).
 
 ## Now
 
-What we're working on first: a quick setup step for the bank news scout, then the user workflow maps, which feed both the RM and the credit work.
+What we're working on first: a quick check on the bank news scout, then the user workflow maps, which feed both the RM and the credit work.
 
 | # | Item | Who | Waits on |
 |---|---|---|---|
-| W1 | **High priority.** Let the bank news scout's scheduled runs email me and open the bank's pages: (1) at claude.ai, open the two "Bank news scout" scheduled tasks and add the Gmail connector (Claude can't add it from a session); (2) optionally, in the cloud environment's Network access settings, allow sec.gov, investor.associatedbank.com and associatedbank.com. Until (1) is done, a scheduled run saves its draft and sends a phone notification, but no email | Me | Before October 19, 2026 (first weekly run) |
+| W1 | **High priority.** Check that the bank news scout's first weekly run (Monday October 19) reached my personal email, jeremydrane2021@gmail.com. The scout no longer uses Gmail or my work address: its summary arrives as the scheduled task's own notice (email and phone). If the notice goes somewhere else, tell Claude. Optionally, allow sec.gov, investor.associatedbank.com and associatedbank.com in the cloud environment's Network access settings, so the scout can open the bank's pages | Me | Monday October 19, 2026 (first weekly run) |
 | W2 | Map the RM and credit user workflows (agreed 2026-10-14, the next job; the RM map starts from Map 2 on the Workflow Maps, an RM's week with AI, which shows only the with-AI side): how each group works today, where each AI product fits, and how the work changes. **Start with the RM user workflow** (you asked for it on 2026-10-14; the next session begins here), then credit. Each gets a page in the Document Library, where a placeholder row waits. Show a sample of the page layout before building it. Use the new user-workflow routine (idea 41, built 2026-10-14) | Claude and me | Nothing |
 
 ## Stage 1. Read and lock the core
