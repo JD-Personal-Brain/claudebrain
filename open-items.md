@@ -26,7 +26,7 @@ Claude updates it at every wrap-up: finished items move to "Closed" with the dat
 | Stage | Open | What it is |
 |---|---|---|
 | Now | 1 | What we're working on first |
-| Stage 1. Read and lock the core | 12 | What I read, then the decision on the RM framework |
+| Stage 1. Read and lock the core | 11 | What I read, then the decision on the RM framework |
 | Stage 2. Make the machine runnable | 4 | What Claude builds so a real run is possible |
 | Stage 3. Dry run and fix | 3 | Running the machine once and fixing it |
 | Stage 4. Get ready for Andy | 9 | What Andy sees, and what I ask him |
@@ -59,7 +59,7 @@ every working file (this section replaces the separate Gap Review page).
 | Approvals | Partial | Who decides is clear for every step. There's no map of who signs what, how long it takes, or who to go to when a sign-off is stuck | W4, B21 |
 | Showing what an RM sees | Missing | The plan promises a working prototype in week 1, but there's nothing to show yet | W9 |
 | A version written for Andy | Missing | The plan is written as my working plan, with internal labels, and doesn't say credit comes next | W10 |
-| Knowing the RM's real day | Partial | The Bank Business Briefing is done. My own notes on bankers' problems stopped at step 1 | V6, W18 |
+| Knowing the RM's real day | Partial | The Bank Business Briefing is done and read. My own notes on bankers' problems stopped at step 1 | W18 |
 | After launch: support and incidents | Partial | Incident steps exist (who to call, how to pause). No support model or runbook yet. Needed before the first product goes live, not before Andy | W8 |
 
 ## Now
@@ -81,8 +81,7 @@ What we're working on first. It feeds both the RM and the credit work.
 | V3 | Read the Credit Core Use Cases page: what banks are deploying in commercial credit, and the credit counterpart proposed for each of the seven core use cases | Me | Nothing |
 | V4 | Read the Delivery Playbook: all six steps (the agent list at the end is reference only) | Me | Nothing |
 | V5 | Read The Delivery Machine: the page for leaders on how one product manager runs many projects | Me | Nothing |
-| V6 | Read the Bank Business Briefing: the whole page, new on 2026-10-09 | Me | Nothing |
-| V7 | Read the Six-Step Product Workflow: the one-page visual, still marked Draft | Me | Nothing |
+| V6 | Read the Six-Step Product Workflow: the one-page visual, still marked Draft | Me | Nothing |
 | D1 | Add an AI product under core use case 5, AI sales coaching (personal guidance from call transcripts)? Low risk, and McKinsey reports new bankers ramping up 20% faster | Me | V2 |
 | D2 | Move prospecting (winning new clients) earlier than wave 3? McKinsey reports its biggest revenue numbers there; outside prospect data may set the pace | Me | V2 |
 | D3 | Keep autonomous lead nurturing and pricing out for now, because they conflict with "nothing reaches a client without the RM" and the fair-lending control? Claude recommends yes, revisit later with evidence | Me | V2 |
@@ -205,5 +204,6 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C16 | The old `prompt-email-example` branch is deleted. Everything on it was already in main | 2026-10-13 |
 | C17 | Organize the Document Library around the two groups we serve: yes. It's one index in six sections (the bank, relationship managers, credit, how we deliver, reference, my workspace), with the two core use case pages renamed to match | 2026-10-14 |
 | C18 | Number open items by priority: yes. Each kind runs 1, 2, 3 in priority order, numbers change when priorities change, and closed items keep theirs | 2026-10-14 |
+| C19 | Was V6: I read the Bank Business Briefing. It's fine as is, no changes | 2026-10-14 |
 
 _Last updated: 2026-10-14_
