@@ -30,7 +30,7 @@ Claude updates it at every wrap-up: finished items move to "Closed" with the dat
 | Stage 2. Make the machine runnable | 4 | What Claude builds so a real run is possible |
 | Stage 3. Dry run and fix | 3 | Running the machine once and fixing it |
 | Stage 4. Get ready for Andy | 9 | What Andy sees, and what I ask him |
-| Alongside the path | 12 | Useful any time; doesn't block a stage. Dated items first |
+| Alongside the path | 13 | Useful any time; doesn't block a stage. Dated items first |
 | Inside the bank | 21 | Questions only someone at the bank can answer |
 | Parked on purpose | 4 | Not forgotten; waiting for a signal from me |
 
@@ -129,6 +129,7 @@ Useful any time; none of these blocks a stage. Dated ones first.
 
 | # | Item | Who | Waits on |
 |---|---|---|---|
+| D6 | Build idea 46, an automatic "nothing lost" check when pages are reorganized (the audit checker lists every sentence that disappeared). Yes or no? | Me | Nothing |
 | W12 | First weekly review: what's working, what's annoying, what to change. Also re-check Anthropic's prompting guide for changes | Me, with Claude | Next session (agreed 2026-10-14) |
 | W13 | Re-run the Bank Business Briefing after the bank's Q3 2026 results on October 22, 2026, using the saved prompt (Example 5 in the Prompting Guide). Read the full Q2 earnings call transcript at the same time; only a summary was available the first time. The bank news scout's scheduled run on October 23 does the re-run as a draft | Claude | October 22, 2026 |
 | W14 | Check that a section link in the Document Library opens the page at that section. If it only opens the top, drop the section links or say so on the page | Me, then Claude | Nothing |
@@ -207,5 +208,6 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C22 | Rename the credit pages to match the library's "Portfolio managers" section (idea 44): yes. They're now the Portfolio Manager Core Use Cases page, the portfolio manager user workflow and the portfolio manager plan | 2026-10-14 |
 | C23 | Lock the Bank Business Briefing: audited; it now names both user groups, RMs and PMs, with a "which bankers" column, a section on PMs and a section on how the page stays current. The bank news scout is agent H1 in the Agent Library. "PM" now means portfolio manager everywhere, and "product manager" is spelled out | 2026-10-14 |
 | C24 | Ideas 40 and 45: yes. The page check now clicks every jump link on every page and fails if one lands in the wrong place, and Claude checks the bank news scout's last run at the start of each session | 2026-10-14 |
+| C25 | Reorganize the "How we deliver" pages so each has one job, read in order: Six-Step Product Workflow (the steps), Product Framework (the rules), Delivery Machine (who does each task), Delivery Playbook (how to do each sub-step, with a short agent list linking to the Agent Library). Merged into main as pull request #80 | 2026-10-14 |
 
 _Last updated: 2026-10-14_

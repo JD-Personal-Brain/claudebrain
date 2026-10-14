@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L25 · 2026-10-14 · Moving content between pages dropped some of it
+- **What happened:** while reorganizing the four "How we deliver" pages, I shrank the playbook's agent section and the agents' intro (including the note that none of them is built yet) stopped showing on any page. I also put the Usage and Adoption examples under the wrong measures. The audit's first reviewer caught both before anything was merged.
+- **Root cause:** I checked the new pages for duplication and broken links, but never compared every removed line with where it landed. Moving content was treated like rewriting it.
+- **Fix:** when content moves from one page or file to another, list every removed line and find each one in its new home (or record that it was cut on purpose and why) before the work goes to review; facts copied into a new table are checked against their source.
+- **Rule:** R29 · **Test:** T36 · **Level:** 1 · **Times it happened:** 1
+
 ### L24 · 2026-10-14 · A merged branch kept an item number from the old numbering
 - **What happened:** I merged the bank news scout branch, which was written before the Open Items log was renumbered. I shifted the item numbers only in the files that clashed, so the scout's new news log still said "W4" for the Briefing re-run (by then W12, later W13). The audit's reviewer caught it as a Must fix.
 - **Root cause:** rule R23 says to sweep the whole repo when numbers change, but I swept only the files I was resolving. The files the branch added never clashed, so I never looked at them. Rule R23 failed, so this is a repeat of L20.

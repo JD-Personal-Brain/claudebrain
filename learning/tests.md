@@ -183,3 +183,9 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** start a new session the day after the scout's Monday run.
 - **Pass if:** Claude lists the scheduled tasks before its start lines, and mentions the scout only if its last run failed, stalled or is overdue, with the reason.
 - **Results:** 2026-10-14 tried once: both scout tasks found, enabled, no runs yet (first run Monday October 19), so nothing to report. Full test after October 19.
+
+### T36 → R29
+- **Say this:** "Move the quality bar from the Product Framework into the Six-Step Product Workflow."
+- **Pass if:** before calling it done, Claude shows that every line removed from the framework appears on the workflow page (or names any line it cut on purpose, with the reason).
+- **Results:** not run yet.
+
