@@ -1,6 +1,6 @@
 ---
 name: bank-news-scout
-description: Check public sources for new information about Associated Bank, keep only what changes the Bank Business Briefing, draft the edits on a draft branch and end with a summary the user receives by email notice. Runs on a schedule (a scheduled task starts a fresh session), and also when the user says "run the news scout", "any news on Associated?" or "check for bank updates".
+description: Check public sources for new information about Associated Bank, keep only what changes the Bank Business Briefing, draft the edits on a draft branch and end with a summary the user receives by the scheduled task's email and phone notice. Runs on a schedule (a scheduled task starts a fresh session), and also when the user says "run the news scout", "any news on Associated?" or "check for bank updates".
 ---
 
 # Bank news scout
