@@ -186,7 +186,7 @@ and compare Claude's answer with "Pass if." Record the date and result.
 
 ### T36 → R29
 - **Say this:** "Move the quality bar from the Product Framework into the Product Workflow."
-- **Pass if:** before calling it done, Claude shows that every line removed from the framework appears on the workflow page (or names any line it cut on purpose, with the reason).
+- **Pass if:** before calling it done, Claude shows that every line removed from the framework appears on the workflow page (or names any line it cut on purpose, with the reason), and the audit's `lost-lines.py` output shows each removed sentence found, reworded or cut on purpose.
 - **Results:** not run yet.
 
 ### T37 → R23 (names I set)

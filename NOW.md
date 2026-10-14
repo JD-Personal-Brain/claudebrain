@@ -1,6 +1,6 @@
 # NOW: start here
 
-_Last updated: 2026-10-14 · Last review: none yet (first one due around 2026-10-14)_
+_Last updated: 2026-10-14 · Last review: none yet (first one due around 2026-10-21; I said not yet on 2026-10-14)_
 
 ## Where things stand
 - The Claude brain is set up: rule book, profile, learning files, ideas list and thirteen skills: log-lesson, wrap-up, designed-doc, write-prompt, run-tests, prototype, new-use-case, audit, make-skill, agent-spec, documents (new 2026-10-09), user-workflow (new 2026-10-14: maps a user group's work today, where each AI product fits, and the work afterwards; say "map the RM workflow") and bank-news-scout (new 2026-10-14: checks public news on the bank and drafts updates to the Bank Business Briefing).
@@ -61,6 +61,7 @@ _Last updated: 2026-10-14 · Last review: none yet (first one due around 2026-10
 - **"How we deliver" reorganized** (2026-10-14, merged into main): the four pages were built separately and repeated each other. Now each has one job and they link to each other in reading order (a strip at the top of each): 1. Product Workflow (the steps and gates; "who decides" and the measures moved out), 2. Product Framework (the rules, now explained properly instead of a few words each; the step overview and task tables moved out), 3. Product Machine (the only home of the task tables), 4. Product Playbook (its agent section is now a short list; full specs, the ongoing-mode and reusable-asset notes are on the Agent Library). The library lists them in that order.
 - **Page names set by me** (2026-10-14): the four "How we deliver" pages are the **Product Workflow**, **Product Framework**, **Product Machine** and **Product Playbook** ("product machine" also names the whole system). Old names are listed in the glossary's retired-wording table, and the audit checker fails on any of them (lesson L26).
 - **Library change** (2026-10-14): the library has five sections now (the bank, how we deliver, relationship managers, portfolio managers, reference). Reference runs: Open Items, Glossary, Steps Catalog, Workflow Maps, Agent Library, Controls Catalog, Tech Stack Guide, Job Description, Prompting Guide. Job Notes was dropped as not required (closed C26); "My workspace" is gone. Every description now uses the page names.
+- **Nothing-lost check** (2026-10-14, idea 46, closed C27): every audit now lists each sentence that disappeared from the working files (`lost-lines.py`), and each must be put back or explained.
 - First prototype made: a calculator (v1, then v2 with green buttons). It was practice and has nothing to do with the job. The prototyping process is under agreements below.
 
 ## What's next
@@ -73,7 +74,7 @@ _Date to work toward: on Tuesday October 20, 2026 I talk with the credit lead an
 6. Keep working through the Claude Mastery course: paste in the next page (after "The Claude Prompt Formula"; next up is the course's Module 3, which covers Projects, Connectors and Skills).
 7. Use Claude for real work, including prototypes for the new job, and say "wrap up" at the end of each session.
 8. Run the tests of Claude's rules that only work in a live session (short scenarios in `learning/tests.md` that check each rule still works; the full list is item W17 in the Open Items log), then try the new skills on real work: say "run the tests", "prototype X", "write a prompt for X" or "new use case: X".
-9. Do the first weekly review at the start of the next session (agreed 2026-10-14): a 5-minute look at what's working, what's annoying and what to change.
+9. First weekly review around 2026-10-21 (I said not yet on 2026-10-14): a 5-minute look at what's working, what's annoying and what to change.
 10. Later, once I say the RM framework is ready: plan the credit (portfolio management) use case with the same structure.
 11. Sharing with Associated: not yet (decided 2026-10-09). Open Items stays out of any shared edition (it's for me only). When I'm ready, Claude builds an "Associated edition" of the Document Library: only the pages meant for them, no internal labels or file names, plus a list of which pages I must share one by one from each page's Share menu (sharing the library doesn't share the pages it links to).
 
