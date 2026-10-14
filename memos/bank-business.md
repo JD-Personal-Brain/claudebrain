@@ -17,7 +17,7 @@ Built with Example 5 in `prompting.md`. Public information only.
 - **The corporate segment** (the bank reports it as "Corporate and Commercial Specialty") made $177.3 million of revenue and $80.1 million of net income in Q2 2026, on $21.7 billion of loans, which is 60% of the bank's loans [S2](https://www.sec.gov/Archives/edgar/data/7789/000000778926000202/R23.htm).
 - **Its revenue lines:** loan interest (general commercial lending, commercial real estate and specialty industries), deposits, treasury management fees, commercial cards, capital markets fees and loan fees. Fees were only $15.6 million, about 9% of segment revenue, in Q2 2026 [S2](https://www.sec.gov/Archives/edgar/data/7789/000000778926000202/R23.htm).
 - ⚠️ **Where AI work has the most room:** selling treasury management and deposits to clients who only borrow, and giving a fast-growing team of RMs more selling time. Both fit the first wave of my RM analytics plan.
-- **Watch:** the bank's own announcement says its AI work in this business starts with portfolio management and treasury and payments [S8](https://investor.associatedbank.com/news/news-details/2026/Associated-Bank-Hires-Andy-Miner-as-senior-director-AI-for-Corporate--Commercial-Banking). My value model has no line yet for costs saved or credit losses avoided.
+- **Watch:** the bank's own announcement says its AI work in this business starts with portfolio management and treasury and payments [S8](https://investor.associatedbank.com/news/news-details/2026/Associated-Bank-Hires-Andy-Miner-as-senior-director-AI-for-Corporate--Commercial-Banking). My value model has no line yet for costs saved or loan losses avoided.
 
 ## 2. The bank at a glance
 
@@ -153,7 +153,7 @@ Products, from the bank's commercial web pages on October 9, 2026 [S7](https://w
 
 **PMs**, the credit partners paired with RMs:
 
-- The bank uses the title: its new Franchise Banking team was announced with a portfolio manager working alongside a relationship manager [S10](https://www.equipmentfa.com/news/41338/associated-bank-accelerates-commercial-growth-with-new-franchise-banking-vertical).
+- The bank uses the title: its new Franchise Banking team was announced with a portfolio manager (Phil Davis, senior vice president) working alongside a relationship manager [S10](https://www.equipmentfa.com/news/41338/associated-bank-accelerates-commercial-growth-with-new-franchise-banking-vertical).
 - ⚠️ Job postings seen on job boards (2026-10-14) describe the role as underwriting loans, monitoring credit and partnering closely with RMs, at levels from assistant vice president to senior vice president. I have not seen the bank define the role itself.
 - How many PMs there are, and how many RMs each one supports: [X].
 
@@ -183,15 +183,15 @@ Three notes on the table:
 
 ## 6. Alignment map
 
-Each revenue line, who it serves (RMs or PMs), the job outcome it serves, and the part of my value model it feeds (section 2 of `memos/rm-analytics-framework.md`). The four job outcomes are from `job-description.md`: revenue workflows, banker capacity, operating efficiency and adoption. Everything in this table is ⚠️ my judgment. The value model's own inputs (win rate, revenue per win, hours saved) are internal, so they stay [X].
+Each revenue line, which bankers it helps (RMs or PMs), the job outcome it serves, and the part of my value model it feeds (section 2 of `memos/rm-analytics-framework.md`). The four job outcomes are from `job-description.md`: revenue workflows, banker capacity, operating efficiency and adoption. Everything in this table is ⚠️ my judgment. The value model's own inputs (win rate, revenue per win, hours saved) are internal, so they stay [X].
 
-| Revenue line | Who it serves | Job outcome | Value model part | AI work that could move it | Room to move ⚠️ |
+| Revenue line | Which bankers | Job outcome | Value model part | AI work that could move it | Room to move ⚠️ |
 |---|---|---|---|---|---|
 | **Treasury management and deposits** | RMs | Revenue workflows | Revenue from insights | The weekly product-gap list: borrowers with no treasury services or with their main accounts elsewhere (wave 1). Referral prompts from RM to treasury officer (wave 2) | **Highest.** Fees are 9% of segment revenue, and service charges alone were $12.9 million in FY2025 [S5](https://www.sec.gov/Archives/edgar/data/7789/000000778926000071/R29.htm), roughly 2% of segment revenue (my arithmetic, a rough comparison across two periods). The segment also looks short of deposits |
-| **General commercial (C&I) lending** | RMs, with PMs on credit speed | Banker capacity; revenue workflows | Revenue from freed-up time; revenue from insights | Client briefs, meeting follow-ups and call notes into Salesforce (wave 1), prospect lookalikes (wave 3) | **High.** Many new RMs in new markets need to become productive quickly |
+| **General commercial (C&I) lending** | RMs | Banker capacity; revenue workflows | Revenue from freed-up time; revenue from insights | Client briefs, meeting follow-ups and call notes into Salesforce (wave 1), prospect lookalikes (wave 3) | **High.** Many new RMs in new markets need to become productive quickly |
 | **Capital markets** | RMs | Revenue workflows | Revenue from insights | Product-gap list: borrowers whose loan rate moves with the market and who have no hedge, or foreign sales and no foreign exchange service | **Medium.** Small bank-wide ($7.5 million in Q2 2026) and growing. Its size inside the segment is [X] |
 | **Specialty industries** | RMs | Revenue workflows | Revenue from insights | Prospect lookalikes within one industry, where clients resemble each other | **Medium.** Fewer bankers, but the pattern repeats nationally |
-| **Commercial real estate lending** | PMs | Operating efficiency | Not in the model today | Help with portfolio reviews and loan monitoring | **Medium.** Growth is capped by concentration limits, so the gain is cost and time |
+| **Commercial real estate lending** | PMs (real estate RMs sell it) | Operating efficiency | Not in the model today | Help with portfolio reviews and loan monitoring | **Medium.** Growth is capped by concentration limits, so the gain is cost and time |
 | **Credit quality** (the $21.3 million quarterly provision) | PMs | Operating efficiency | Not in the model today | A credit early-warning signal for PMs. This is not in my RM plan today: the plan's wave 2 early warning flags clients who may leave, not loans that may go bad | **Unknown.** Potentially large, but hard to prove and higher risk to govern |
 | **All lines** | RMs and PMs | Adoption | Every part: nothing counts until RMs and PMs use it weekly | Onboarding coach, usage reporting | Decides whether any of the above shows up |
 
@@ -243,7 +243,7 @@ Each revenue line, who it serves (RMs or PMs), the job outcome it serves, and th
 
 ## 10. Sources
 
-All opened on October 9, 2026, except S16 (see its row). The Brandon White and Shaun Coard rows in section 4 were added on October 14, 2026 from search results that cite S9 and S10; the pages themselves could not be opened that day.
+All opened on October 9, 2026, except S16 (see its row). The Brandon White and Shaun Coard rows and the first PMs bullet in section 4 were added on October 14, 2026 from search results that cite S9 and S10; the pages themselves could not be opened that day.
 
 | Tag | Source | Date |
 |---|---|---|
@@ -270,7 +270,7 @@ Three things keep this briefing up to date. None of them changes main on its own
 
 | What | When | What it does | What I get |
 |---|---|---|---|
-| **H1 Bank news scout**, an agent in the Agent Library | Every Monday at 7:46 am Central (6:46 am after clocks change on November 1), and once on Friday October 23, 2026, the morning after the Q3 results | Searches public sources for new facts about the bank, keeps only what changes this page, drafts the edits on a draft branch and logs what it found | An email and phone notice from the scheduled task, at my personal address, with a 2-minute summary. Then I say "merge the news scout update" in a session |
+| **H1 Bank news scout**, an agent in the Agent Library | Every Monday at 7:46 am Central (6:46 am after clocks change on November 1), and once on Friday October 23, 2026, the morning after the Q3 results (that run swaps in the Q3 figures throughout, using the briefing prompt) | Searches public sources for new facts about the bank, keeps only what changes this page, drafts the edits on a draft branch and logs what it found | An email and phone notice from the scheduled task, at my personal address, with a 2-minute summary. Then I say "merge the news scout update" in a session |
 | **The briefing prompt** (Example 5 in the Prompting Guide) | Each quarter, after new results | Rebuilds the whole briefing from the latest filings, with every number from one period | A full refresh, audited before it goes into main |
 | **The audit** | Before every merge | Checks every number has a source, the page renders fully, and the names match the glossary | Nothing reaches main with a known error |
 

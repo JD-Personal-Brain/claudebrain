@@ -206,10 +206,10 @@ else:
         for old,new in ret:
             nw=new.split(' (')[0].lower() if not new.startswith('(') else new.lower()
             for m in re.finditer(r'(?<!\w)'+re.escape(old.lower())+r'(?!\w)',low):
-                if nw in low[max(0,m.start()-150):m.end()+150]: continue
+                if nw in low[max(0,m.start()-150):m.start()]+low[m.end():m.end()+150]: continue  # the new wording must sit outside the match itself
                 print(f,'still says',repr(old),'(retired; use',repr(new)+'), near:',repr(plain[max(0,m.start()-40):m.end()+40])); probs+=1
-# 10. the two user groups are always written RM, RMs, PM, PMs (said 2026-10-14): no "Rms", "rms", "RMS" and so on (an apostrophe for ownership, "the RM's", is fine)
-for f in sorted(set(core+glob.glob('memos/*.md')+['NOW.md','glossary.md','open-items.md'])):
-    for m in re.finditer(r"(?<![\w/.#-])(Rms|rms|Pms|pms|RMS|PMS|R\.M\.s?|P\.M\.s?)(?![\w])",open(f).read()):
+# 10. the two user groups are always written RM, RMs, PM, PMs (said 2026-10-14): no "Rms", "rms" and so on (an apostrophe for ownership, "the RM's", is fine, and so are all-capital labels such as "FOR RMS")
+for f in sorted(set(core+glob.glob('memos/*.md')+['NOW.md','glossary.md','open-items.md','designs/library.json','designs/rm-analytics-plan.html']+glob.glob('designs/*-build.py')+glob.glob('designs/rm-analytics-canvas/*.dc.html'))):
+    for m in re.finditer(r"(?<![\w/.#-])(Rms|rms|Pms|pms|R\.M\.s?|P\.M\.s?)(?![\w])",open(f).read()):
         print(f,'writes',repr(m.group(1)),'- write RMs or PMs'); probs+=1
 print("problems:",probs)

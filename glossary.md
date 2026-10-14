@@ -121,6 +121,10 @@ that also says the new wording (a note about the change) is allowed.
 | Credit Market Scan | Credit Core Use Cases (the page name) | 2026-10-14 |
 | Product manager (PM | product manager (spelled out; PM means portfolio manager) | 2026-10-14 |
 | one PM runs | one product manager runs | 2026-10-14 |
+| PM and sponsor | product manager and sponsor | 2026-10-14 |
+| PM sets priorities | product manager sets priorities | 2026-10-14 |
+| PM and platform team | product manager and platform team | 2026-10-14 |
+| the PM's hours | the product manager's hours | 2026-10-14 |
 
 ## Bank terms to map
 
