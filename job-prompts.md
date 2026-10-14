@@ -1,7 +1,7 @@
 # Job prompts: thinking through the Associated Bank role
 
 Paste one of these into a new session. Do them in order, or pick the part you need.
-Claude saves my answers as we go in `job-notes.md`. Start by reading it to see where I stopped.
+Claude saves my answers as we go in `job-notes.md` (kept for reference; this work was dropped as not required on 2026-10-14, closed item C26). Start by reading it to see where I stopped.
 The job is Principal Applied AI Product Manager at Associated Bank (I'm interviewing for it).
 
 ## Part 1: Finding problems
