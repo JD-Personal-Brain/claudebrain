@@ -1,4 +1,4 @@
-# Credit core use cases: what banks are deploying in commercial credit
+# Portfolio manager core use cases: what banks are deploying in commercial credit
 
 As of 2026-10-13. A web scan of what banks are deploying in credit, lined up with the seven core use cases in the RM plan.
 
@@ -42,7 +42,7 @@ As of 2026-10-13. A web scan of what banks are deploying in credit, lined up wit
 - **Early warning:** one vendor page claims 12–25% fewer non-performing loans; no primary source given. Treat as unsupported.
 - **Budgets:** a 2026 Celent study, commissioned by Zest AI, found 83% of lenders plan to increase generative AI budgets this year.
 
-## Credit core use cases: each RM core use case and its credit counterpart
+## Portfolio manager core use cases: each RM core use case and its credit counterpart
 
 The RM plan is organized on seven core use cases. Each has a natural credit
 counterpart, often built on the same client data, so an RM AI product and a credit
