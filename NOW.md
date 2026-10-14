@@ -1,9 +1,9 @@
 # NOW: start here
 
-_Last updated: 2026-10-13 · Last review: none yet (first one due around 2026-10-14)_
+_Last updated: 2026-10-14 · Last review: none yet (first one due around 2026-10-14)_
 
 ## Where things stand
-- The Claude brain is set up: rule book, profile, learning files, ideas list and eleven skills: log-lesson, wrap-up, designed-doc, write-prompt, run-tests, prototype, new-use-case, audit, make-skill, agent-spec and (new 2026-10-09) documents.
+- The Claude brain is set up: rule book, profile, learning files, ideas list and twelve skills: log-lesson, wrap-up, designed-doc, write-prompt, run-tests, prototype, new-use-case, audit, make-skill, agent-spec, documents and (new 2026-10-14) bank-news-scout.
 - An official "main" copy now exists on GitHub, and it is now GitHub's default branch, so every new session starts from it. Future work is proposed as pull requests against it.
 - A startup check runs at the start of every session and pulls in the latest main automatically, so Claude never works from an old copy. Tested and working.
 - The startup check now also warns about work saved on a side branch that never reached main (added 2026-10-09, after my RM framework was found stranded).
@@ -50,6 +50,7 @@ _Last updated: 2026-10-13 · Last review: none yet (first one due around 2026-10
 - **Two safeguards added** (2026-10-10, ideas 38 and 39): before editing any designed page, Claude checks that the live page isn't newer than its saved copy, so two sessions can't overwrite each other; and every outside chart I share is saved with its numbers and source in the matching memo (rule R24).
 - **Page links checked** (2026-10-10): I reported links landing in the wrong place or with the top cut off. Claude clicked about 150 jump links on every page, at desktop and phone width, and all landed correctly; it couldn't reproduce the problem from here. I said it's fine for now. If it comes back, note the page, the link and the app (desktop, Chrome or phone), ideally with a screenshot.
 - **Session 2026-10-13:** I tried a dark, terminal-style version of the delivery machine page (a style I'd seen on X) and didn't like it, so it was deleted and nothing was added to the library. The old `prompt-email-example` branch holds nothing new (all of it is in main); I deleted it on GitHub the same day (C16 in the Open Items log).
+- **Bank news scout** (2026-10-14, idea 41): a skill that checks public news on Associated Bank, drafts edits to the Bank Business Briefing on a draft branch and emails me a summary at jeremy@audiopool.io. It runs every Monday, plus once on October 23 after the Q3 results. The first run, done by hand, emailed me 3 leader updates the briefing had missed. Scheduled runs can't email until I add Gmail to the scheduled tasks (item W26 in the Open Items log). The bank's pages are blocked from Claude's workspace, so the scout works from search results.
 - First prototype made: a calculator (v1, then v2 with green buttons). It was practice and has nothing to do with the job. The prototyping process is under agreements below.
 
 ## What's next

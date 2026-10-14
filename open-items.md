@@ -27,7 +27,7 @@ Claude updates it at every wrap-up: finished items move to "Closed" with the dat
 | Stage 2. Make the machine runnable | 4 | What Claude builds so a real run is possible |
 | Stage 3. Dry run and fix | 3 | Running the machine once and fixing it |
 | Stage 4. Get ready for Andy | 10 | What Andy sees, and what I ask him |
-| Alongside the path | 12 | Useful any time; doesn't block a stage. Dated items first |
+| Alongside the path | 13 | Useful any time; doesn't block a stage. Dated items first |
 | Inside the bank | 21 | Questions only someone at the bank can answer |
 | Parked on purpose | 3 | Not forgotten; waiting for a signal from me |
 
@@ -121,7 +121,8 @@ Useful any time; none of these blocks a stage. Dated ones first.
 | # | Item | Who | Waits on |
 |---|---|---|---|
 | W6 | First weekly review: what's working, what's annoying, what to change. Also re-check Anthropic's prompting guide for changes | Me, with Claude | Around 2026-10-14 |
-| W4 | Re-run the Bank Business Briefing after the bank's Q3 2026 results on October 22, 2026, using the saved prompt (Example 5 in the Prompting Guide). Read the full Q2 earnings call transcript at the same time; only a summary was available the first time | Claude | October 22, 2026 |
+| W4 | Re-run the Bank Business Briefing after the bank's Q3 2026 results on October 22, 2026, using the saved prompt (Example 5 in the Prompting Guide). Read the full Q2 earnings call transcript at the same time; only a summary was available the first time. The bank news scout's scheduled run on October 23 does the re-run as a draft | Claude | October 22, 2026 |
+| W26 | Let the bank news scout's scheduled runs email me and open the bank's pages: (1) at claude.ai, open the two "Bank news scout" scheduled tasks and add the Gmail connector (Claude can't add it from a session); (2) optionally, in the cloud environment's Network access settings, allow sec.gov, investor.associatedbank.com and associatedbank.com. Until (1) is done, a scheduled run saves its draft and sends a phone notification, but no email | Me | Before October 19, 2026 (first weekly run) |
 | W22 | Two loose ends from the McKinsey article: confirm its publication date (the pasted page showed none), and decide whether role redesign (new RM roles as agents take on work, McKinsey's fifth principle) belongs in the playbook; it isn't covered yet | Claude, then me | Nothing |
 | W5 | Loose ends in the Bank Business Briefing: check the exact wording of the bank's AI announcement before quoting it; replace the 2016 description of who the segment serves once the annual report for the 2025 financial year can be opened in full; and confirm two of my guesses, the RM headcount read from an unclear chart and that Omaha came with American National | Claude | Nothing |
 | W7 | Run the tests of Claude's rules that need a real session. Each test is a short scenario in `learning/tests.md` that checks one rule still works. Not yet run in a live session: T7, T10, T13, T14 and T17, and the second parts of T2, T3, T9 and T16. Never run at all: T18 to T22, T24 and T25. Re-run T8 (does Claude label every suggestion Needed or Optional?), which failed on 2026-10-09 before its rule was tightened, and T5, whose first run wasn't a fair test | Claude, in a new session | Nothing |
@@ -190,4 +191,4 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C15 | Was D10: yes to ideas 38 and 39. Before editing a designed page, Claude now checks that the live page isn't newer than the repo copy (a step in the designed-doc skill), and every outside chart I share is saved with its numbers and source in the matching memo (rule R24) | 2026-10-10 |
 | C16 | Was W25: the old `prompt-email-example` branch is deleted. Everything on it was already in main | 2026-10-13 |
 
-_Last updated: 2026-10-13_
+_Last updated: 2026-10-14_

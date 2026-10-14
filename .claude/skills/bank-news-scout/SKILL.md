@@ -67,6 +67,7 @@ One email, sent with the Gmail connector's send tool (not a draft), to the addre
   2. One block per kept item: the rating, what's new, which briefing section it changes (old → new wording) and the source link.
   3. Pages that wouldn't open.
   4. Next step: "The edits are saved on draft branch `[branch]`. Say 'merge the news scout update' in a Claude session to bring them into main and republish the page."
+- **No Gmail tool in this session** (a scheduled run without the connector): still push the draft branch, and end with the same summary as the final message, so the phone notification carries it. Say in it that the email couldn't be sent.
 - Keep it short enough to read in 2 minutes. Never put a guess forward as a fact.
 
 ## 6. Check before sending
