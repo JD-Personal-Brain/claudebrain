@@ -1,4 +1,4 @@
-# Product framework: the rules every product follows
+# Product Framework: the rules every product follows
 
 Claude loads this every session and applies these rules whenever we plan or
 work on a product.
