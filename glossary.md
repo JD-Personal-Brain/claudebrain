@@ -80,7 +80,7 @@ documents against it.
 | **Evidence pack** | Everything reviewers sign in step 4: the outputs of 4.1 to 4.6 (risk rating, data and privacy review, test and red-team results, fairness, controls and vendor reviews). |
 | **Decision log** | The record of each decision: what was decided, the options, who decided and why. |
 | **Tracker** | The one task list for a project: each task with its owner, date and status. |
-| **Open item** | Anything unfinished, kept in the Open Items log with a number that never changes. |
+| **Open item** | Anything unfinished, kept in the Open Items log and numbered in priority order within its kind (W1 is the first piece of work). Numbers change when priorities change. |
 
 ## Words we don't use
 
