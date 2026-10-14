@@ -113,7 +113,8 @@ that also says the new wording (a note about the change) is allowed.
 | wave 1 use cases | wave 1 AI products | 2026-10-10 |
 | Each use case, step by step | Each AI product, step by step | 2026-10-10 |
 | machine agent | general agent | 2026-10-10 |
-| Six-step workflow visual | Six-Step Product Workflow | 2026-10-10 |
+| Six-step workflow visual | Product Workflow | 2026-10-10 |
+| Six-Step Product Workflow | Product Workflow (the page name) | 2026-10-14 |
 | Agent idea: | Agent: (with the agent's M number) | 2026-10-10 |
 | (spec M | (agent library) | 2026-10-10 |
 | 19-agent library | the agent library (33 general agents) | 2026-10-10 |

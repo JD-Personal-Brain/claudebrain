@@ -22,7 +22,7 @@
       "items": [
         {
           "id": "workflow",
-          "name": "Six-Step Product Workflow",
+          "name": "Product Workflow",
           "what": "Start here: the six steps every AI product goes through, what happens in each, and the go/no-go gate that ends each one.",
           "status": "In use",
           "url": "https://claude.ai/artifact/8Nm5fkdicn2Gu5VmNVTvYv",

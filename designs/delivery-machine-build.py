@@ -3,7 +3,7 @@ E=html.escape
 import re, os
 from pagekit import series, SERIES_CSS
 # Reads the task tables straight from delivery-machine.md, and each step's question from the
-# Six-Step Product Workflow (memos/role-workflow.md), so the page can't drift from its working copies.
+# Product Workflow (memos/role-workflow.md), so the page can't drift from its working copies.
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FW=open(os.path.join(ROOT,"delivery-machine.md")).read()
 RW=open(os.path.join(ROOT,"memos","role-workflow.md")).read()

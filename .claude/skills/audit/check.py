@@ -8,10 +8,11 @@
 5. The Open Items log (open-items.md): no number used twice, counts match, pages and ideas still open are listed, not out of date.
 6. NOW.md's "What's next" has no unexplained shorthand.
 7. Alignment across documents (from L18): counts of agents, sub-steps, controls and workflow branches
-   quoted anywhere match the sources; the Six-Step Workflow's "What happens" lists (memos/role-workflow.md) have one item per
-   playbook sub-step; the Six-Step Workflow page carries the memo's gate wording.
+   quoted anywhere match the sources; the Product Workflow's "What happens" lists (memos/role-workflow.md) have one item per
+   playbook sub-step; the Product Workflow page carries the memo's gate wording.
 8. The glossary: no word from its "Words we don't use" table appears in the core documents.
 9. Retired wording: nothing from the glossary's "Old wording we've retired" table is left anywhere people read (idea 37).
+ 11. The field manual is always called "The Delivery Playbook" (capital T), as the user set it.
 Prints each problem and a total. 0 problems means the mechanical checks pass.
 5b. Every V/D/W/P item number cited in the working files is a live open item in open-items.md
     (it can't tell whether a reference points to the RIGHT item: after a renumbering, re-read each one).
@@ -210,4 +211,13 @@ else:
 for f in sorted(set(core+glob.glob('memos/*.md')+['NOW.md','glossary.md','open-items.md','designs/library.json','designs/rm-analytics-plan.html']+glob.glob('designs/*-build.py')+glob.glob('designs/*.html')+glob.glob('designs/rm-analytics-canvas/*.dc.html'))):
     for m in re.finditer(r"(?<![\w/.#-])(Rms|rms|Pms|pms|R\.M\.s?|P\.M\.s?)(?![\w])",re.sub(r'data-search="[^"]*"','',open(f).read())):  # lowercase search indexes are fine
         print(f,'writes',repr(m.group(1)),'- write RMs or PMs'); probs+=1
+# 11. page names the user set (2026-10-14): the field manual is always "The Delivery Playbook", with a capital T,
+# never "Delivery Playbook" or "the Delivery Playbook" (lesson L26). Built pages are checked as plain text.
+import html as _h2
+_named=['NOW.md','open-items.md','product-framework.md','delivery-machine.md','glossary.md','prompting.md','designs/library.json','designs/README.md']+glob.glob('memos/*.md')+glob.glob('playbook/*.md')+glob.glob('designs/*.py')+glob.glob('designs/*.html')+glob.glob('.claude/skills/*/SKILL.md')
+for f in _named:
+    t=open(f).read()
+    if f.endswith('.html'): t=re.sub(r'\s+',' ',_h2.unescape(re.sub(r'<[^>]+>',' ',t)))
+    for m in re.finditer(r'(?<!The )Delivery Playbook',t):
+        print(f,'says',repr(t[max(0,m.start()-20):m.end()]),'— the name is "The Delivery Playbook"'); probs+=1
 print("problems:",probs)

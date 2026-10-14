@@ -141,7 +141,7 @@ howto = ('<div class="howto"><span>Each task is marked with who does it once the
 page("Steps Catalog", "Reference · steps",
      f"All {len(subs)} sub-steps of the six-step delivery process in one place. Open any card to see why it matters, what it produces and its tasks.",
      "Step", list(STEPS.values()), sections, howto,
-     "Built from the Delivery Playbook and the task tables in the Delivery Machine, so it always matches them. Tools and task kinds are guesses until confirmed at the bank.",
+     "Built from The Delivery Playbook and the task tables in the Delivery Machine, so it always matches them. Tools and task kinds are guesses until confirmed at the bank.",
      "Like sign-off or pilot", "steps.html")
 
 # ---------- Controls Catalog ----------

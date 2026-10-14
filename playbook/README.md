@@ -1,6 +1,6 @@
 # Playbook: the field manual under the delivery machine
 
-Page 4 of the four "How we deliver" pages. The Six-Step Product Workflow
+Page 4 of the four "How we deliver" pages. The Product Workflow
 (`memos/role-workflow.md`) shows the steps, the Product Framework
 (`product-framework.md`) sets the rules, and the Delivery Machine
 (`delivery-machine.md`) marks each task Auto, Draft, Me or Partner. This folder

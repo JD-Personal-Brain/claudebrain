@@ -2,7 +2,7 @@
 
 Claude loads this every session. It is the operating model: every task in
 every step, marked by who does it, and how the work moves toward automation.
-Page 3 of the four "How we deliver" pages: the Six-Step Product Workflow
+Page 3 of the four "How we deliver" pages: the Product Workflow
 (`memos/role-workflow.md`) shows the steps, the Product Framework
 (`product-framework.md`) sets the rules, this page runs the work, and the
 The Delivery Playbook (`playbook/`) says how to do each sub-step the first time.
