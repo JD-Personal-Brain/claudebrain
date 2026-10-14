@@ -19,7 +19,7 @@ Claude updates it at every wrap-up: finished items move to "Closed" with the dat
 3. **Dry run and fix** (both): one made-up product through all six steps; fix what breaks.
 4. **Get ready for Andy** (Claude builds, I decide): the RM mock-up, the Andy edition and my questions for him.
 
-**First, high priority:** on October 19, check that the bank news scout's first notice reached my personal email (W1, under "Now" below). **Next up (agreed 2026-10-14):** map the RM and credit user workflows (W2). Stage 1 (V1, the RM plan) and stage 2 (W3 and W4) carry on alongside; none waits on another.
+**First, high priority:** on October 19, check that the bank news scout's first notice reached my personal email (W1, under "Now" below). **Next up (agreed 2026-10-14):** map the RM and portfolio manager user workflows (W2). Stage 1 (V1, the RM plan) and stage 2 (W3 and W4) carry on alongside; none waits on another.
 
 ## At a glance
 
@@ -69,7 +69,7 @@ What we're working on first: a quick check on the bank news scout, then the user
 | # | Item | Who | Waits on |
 |---|---|---|---|
 | W1 | **High priority.** Check that the bank news scout's first weekly run (Monday October 19) reached my personal email, jeremydrane2021@gmail.com. The scout no longer uses Gmail or my work address: its summary arrives as the scheduled task's own notice (email and phone). If the notice goes somewhere else, tell Claude. Optionally, allow sec.gov, investor.associatedbank.com and associatedbank.com in the cloud environment's Network access settings, so the scout can open the bank's pages. **Also turn on automatic approval:** both scout tasks ("Bank news scout (weekly)" and "(after Q3 results)") are set to stop and wait whenever a step needs approval, and nobody is there to approve on a Monday morning, so the run could stall without sending anything. In the Claude app, open each scheduled task's settings and switch on "Automatically approve" (Claude can't turn this on itself). | Me | Monday October 19, 2026 (first weekly run) |
-| W2 | Map the RM and credit user workflows (agreed 2026-10-14, the next job; the RM map starts from Map 2 on the Workflow Maps, an RM's week with AI, which shows only the with-AI side): how each group works today, where each AI product fits, and how the work changes. **Start with the RM user workflow** (you asked for it on 2026-10-14; the next session begins here), then credit. Each gets a page in the Document Library, where a placeholder row waits. Show a sample of the page layout before building it. Use the new user-workflow routine (idea 41, built 2026-10-14) | Claude and me | Nothing |
+| W2 | Map the RM and portfolio manager user workflows (agreed 2026-10-14, the next job; the RM map starts from Map 2 on the Workflow Maps, an RM's week with AI, which shows only the with-AI side): how each group works today, where each AI product fits, and how the work changes. **Start with the RM user workflow** (you asked for it on 2026-10-14; the next session begins here), then credit. Each gets a page in the Document Library, where a placeholder row waits. Show a sample of the page layout before building it. Use the new user-workflow routine (idea 41, built 2026-10-14) | Claude and me | Nothing |
 
 ## Stage 1. Read and lock the core
 
@@ -79,11 +79,11 @@ What we're working on first: a quick check on the bank news scout, then the user
 |---|---|---|---|
 | V1 | Read the RM Analytics Plan (the long scrolling page): everything after the summary's opening and plan table: from "What lets us move this fast" on, then Parts 1 to 6. The RM Analytics Framework design page holds the same words | Me | Nothing |
 | V2 | Read the RM Core Use Cases page: McKinsey's five frontline AI use cases and their returns, how the RM plan covers them, and the questions it raises | Me | Nothing |
-| V3 | Read the Credit Core Use Cases page: what banks are deploying in commercial credit, and the credit counterpart proposed for each of the seven core use cases | Me | Nothing |
+| V3 | Read the Portfolio Manager Core Use Cases page: what banks are deploying in commercial credit, and the credit counterpart proposed for each of the seven core use cases | Me | Nothing |
 | D1 | Add an AI product under core use case 5, AI sales coaching (personal guidance from call transcripts)? Low risk, and McKinsey reports new bankers ramping up 20% faster | Me | V2 |
 | D2 | Move prospecting (winning new clients) earlier than wave 3? McKinsey reports its biggest revenue numbers there; outside prospect data may set the pace | Me | V2 |
 | D3 | Keep autonomous lead nurturing and pricing out for now, because they conflict with "nothing reaches a client without the RM" and the fair-lending control? Claude recommends yes, revisit later with evidence | Me | V2 |
-| D4 | Agree the credit order the Credit Core Use Cases page proposes: credit memo and annual review drafts first, early warning second, risk ratings kept out of the first waves? | Me | V3 |
+| D4 | Agree the credit order the Portfolio Manager Core Use Cases page proposes: credit memo and annual review drafts first, early warning second, risk ratings kept out of the first waves? | Me | V3 |
 | D5 | Is the RM framework ready to copy to other use cases? My answer on 2026-10-09: not yet. The reading in stage 1 and the work in stages 2 and 3 come first | Me | Credit, the next use case, waits on this |
 
 ## Stage 2. Make the machine runnable
@@ -135,7 +135,7 @@ Useful any time; none of these blocks a stage. Dated ones first.
 | W15 | Two loose ends from the McKinsey article: confirm its publication date (the pasted page showed none), and decide whether role redesign (new RM roles as agents take on work, McKinsey's fifth principle) belongs in the playbook; it isn't covered yet | Claude, then me | Nothing |
 | W16 | Loose ends in the Bank Business Briefing: check the exact wording of the bank's AI announcement before quoting it; replace the 2016 description of who the segment serves once the annual report for the 2025 financial year can be opened in full; and confirm two of my guesses, the RM headcount read from an unclear chart and that Omaha came with American National | Claude | Nothing |
 | W17 | Run the tests of Claude's rules that need a real session. Each test is a short scenario in `learning/tests.md` that checks one rule still works. Not yet run in a live session: T7, T10, T13, T14 and T17, and the second parts of T2, T3, T9 and T16. Never run at all: T18 to T22, T24 to T27 (including T27's new second part, from 2026-10-14) and T30 to T33. Re-run T8 (does Claude label every suggestion Needed or Optional?), which failed on 2026-10-09 before its rule was tightened, and T5, whose first run wasn't a fair test | Claude, in a new session | Nothing |
-| W18 | Check the product details marked "(verify)" in the Tech Stack Guide: product names, prices, vendor terms and any update to the regulators' model-risk guidance. Eleven lines carry the mark. New lead (2026-10-13, Credit Core Use Cases page): SR 26-2, issued 17 April 2026, reportedly replaces SR 11-7, which our files cite; sources disagree on whether it covers generative AI, so read the Fed's own text before changing anything | Claude | Nothing |
+| W18 | Check the product details marked "(verify)" in the Tech Stack Guide: product names, prices, vendor terms and any update to the regulators' model-risk guidance. Eleven lines carry the mark. New lead (2026-10-13, Portfolio Manager Core Use Cases page): SR 26-2, issued 17 April 2026, reportedly replaces SR 11-7, which our files cite; sources disagree on whether it covers generative AI, so read the Fed's own text before changing anything | Claude | Nothing |
 | W19 | Thinking through the job, Part 1 (finding problems), kept on the Job Notes page: answer the open question in step 1 ("Have I worked with bankers or salespeople before?"), then steps 2 to 4. Parts 2 to 4 aren't started | Me, with Claude | Nothing |
 | W20 | Claude Mastery course: paste in the next page (Module 3: Projects, Connectors and Skills). Claude starts a course notes file when it arrives (idea 14, approved) | Me, then Claude | Nothing |
 | W21 | Try the newer skills on real work: "prototype X", "write a prompt for X", "new use case: X" | Me | Nothing |
@@ -175,7 +175,7 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 
 | # | Item | Who | Waits on |
 |---|---|---|---|
-| P1 | The credit (portfolio management) plan. Started at my request on 2026-10-13 with the Credit Core Use Cases page (the six parked credit processes plus two new ones, each lined up with a core use case); the credit user workflow map is part of W2. The plan itself still waits. Ready for then: franchise banking as a possible pilot, and whether to add "costs saved" and "loan losses avoided" to the value model | Me | Me saying the RM framework is ready (D5) |
+| P1 | The credit (portfolio management) plan. Started at my request on 2026-10-13 with the Portfolio Manager Core Use Cases page (the six parked credit processes plus two new ones, each lined up with a core use case); the portfolio manager user workflow map is part of W2. The plan itself still waits. Ready for then: franchise banking as a possible pilot, and whether to add "costs saved" and "loan losses avoided" to the value model | Me | Me saying the RM framework is ready (D5) |
 | P2 | Sharing with Associated. When I'm ready, Claude builds an "Associated edition" of the Document Library (idea 33): only the pages meant for them, with no internal labels | Me | Me saying I'm ready to share |
 | P3 | A treasury and payments use case. The bank named it as a starting point for AI, and nothing has been planned yet | Me | After credit, unless B3 changes the order |
 | P4 | **Featured: running many products at once.** One intake form for new product ideas, a scoring rule to rank them against each other, how many products I can run at once, my week and month across products, and when a live product is retired | Me | The machine running one product well first |
@@ -205,6 +205,7 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C19 | I read the Bank Business Briefing. It's fine as is, no changes | 2026-10-14 |
 | C20 | Idea 43 (quieter startup warning): yes. The startup check now fetches more history before comparing an old branch and stays quiet when its changes are already in main; the two empty old branches that kept being flagged are gone from GitHub | 2026-10-14 |
 | C21 | I read the Product Framework, the Six-Step Product Workflow, The Delivery Machine and the Delivery Playbook. All four are good to go and now marked In use | 2026-10-14 |
-| C22 | Lock the Bank Business Briefing: audited; it now names both user groups, RMs and PMs, with a "which bankers" column, a section on PMs and a section on how the page stays current. The bank news scout is agent H1 in the Agent Library. "PM" now means portfolio manager everywhere, and "product manager" is spelled out | 2026-10-14 |
+| C22 | Rename the credit pages to match the library's "Portfolio managers" section (idea 44): yes. They're now the Portfolio Manager Core Use Cases page, the portfolio manager user workflow and the portfolio manager plan | 2026-10-14 |
+| C23 | Lock the Bank Business Briefing: audited; it now names both user groups, RMs and PMs, with a "which bankers" column, a section on PMs and a section on how the page stays current. The bank news scout is agent H1 in the Agent Library. "PM" now means portfolio manager everywhere, and "product manager" is spelled out | 2026-10-14 |
 
 _Last updated: 2026-10-14_

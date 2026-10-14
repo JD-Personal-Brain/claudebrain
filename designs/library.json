@@ -99,13 +99,13 @@
       "items": [
         {
           "todo": true,
-          "name": "Credit user workflow: today and with AI",
+          "name": "Portfolio manager user workflow: today and with AI",
           "what": "How portfolio managers work today, where each AI product fits, and how the work changes.",
           "status": "To build"
         },
         {
           "id": "credit-market-scan",
-          "name": "Credit Core Use Cases",
+          "name": "Portfolio Manager Core Use Cases",
           "what": "What banks are deploying in commercial credit, and the credit counterpart of each of the seven core use cases. A proposal, not yet agreed.",
           "status": "Waiting for review",
           "url": "https://claude.ai/artifact/2tySJZL41pf72igzanYbaT",
@@ -113,8 +113,8 @@
         },
         {
           "todo": true,
-          "name": "Credit plan",
-          "what": "The credit plan, built on the same structure as the RM plan.",
+          "name": "Portfolio manager plan",
+          "what": "The portfolio manager plan, built on the same structure as the RM plan.",
           "status": "Later"
         }
       ]
