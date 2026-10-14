@@ -46,11 +46,6 @@
       "source": "glossary.md"
     }
   ],
-  "start_here": [
-    "playbook",
-    "rm-plan",
-    "job-description"
-  ],
   "areas": [
     {
       "id": "status",

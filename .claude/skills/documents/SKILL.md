@@ -1,13 +1,13 @@
 ---
 name: documents
-description: Show the Document Library, the one page listing every designed document in this repo, grouped by area with each document under its parent. Use when the user says "/documents", "show me my documents", "open the document library", "what documents do we have", "the library" or "where's the X page".
+description: Show the Document Library, the one page listing every designed document in this repo, grouped by area, one row each, with its status and sections. Use when the user says "/documents", "show me my documents", "open the document library", "what documents do we have", "the library" or "where's the X page".
 ---
 
 # Show the Document Library
 
 The library lives at https://claude.ai/artifact/LTpbCT4kN4LcyEoYnh7vgj and is
 pinned to the user's claude.ai sidebar. It's built from `designs/library.json`.
-At the top is the **Index**: every page and its sections, each linked. It's read
+The page is one **index**: every page, one row each with its status; the arrow opens a one-line description and the page's sections, each linked. It's read
 from each page's own jump menu (or its section headings), so it updates itself
 when the library is rebuilt. A new page must be added to `PAGE_FILE` in
 `designs/library-build.py`, or the build stops and says so.
