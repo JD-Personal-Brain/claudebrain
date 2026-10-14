@@ -171,4 +171,4 @@ and compare Claude's answer with "Pass if." Record the date and result.
 ### T33 → user-workflow skill (idea 41)
 - **Say this:** "Map the RM workflow."
 - **Pass if:** Claude reads the RM plan, the core use cases and Map 2 before asking anything; lists the RM's stages today with sources or ⚠️; marks which AI product touches each stage and which stages no product touches; shows the work afterwards with [X] for unmeasured time; shows a sample layout and waits for a yes before building the page; and replaces the "RM user workflow" placeholder in the Document Library.
-- **Results:** not run yet (first use is W1, next session)
+- **Results:** not run yet (first use is W2, next session)
