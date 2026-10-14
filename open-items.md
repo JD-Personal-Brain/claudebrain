@@ -68,7 +68,7 @@ What we're working on first. It feeds both the RM and the credit work.
 
 | # | Item | Who | Waits on |
 |---|---|---|---|
-| W1 | Map the RM and credit user workflows (agreed 2026-10-14, the next job; the RM map starts from Map 2 on the Workflow Maps, an RM's week with AI, which shows only the with-AI side): how each group works today, where each AI product fits, and how the work changes. Each gets a page in the Document Library, where a placeholder row waits | Claude and me | Nothing |
+| W1 | Map the RM and credit user workflows (agreed 2026-10-14, the next job; the RM map starts from Map 2 on the Workflow Maps, an RM's week with AI, which shows only the with-AI side): how each group works today, where each AI product fits, and how the work changes. **Start with the RM user workflow** (you asked for it on 2026-10-14; the next session begins here), then credit. Each gets a page in the Document Library, where a placeholder row waits. Show a sample of the page layout before building it. If I say yes to idea 41, a "user workflow map" routine, Claude builds it first and uses it here | Claude and me | Nothing |
 
 ## Stage 1. Read and lock the core
 
@@ -203,5 +203,7 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C14 | Call notes into Salesforce moved from wave 2 into wave 1, live with the insights about weeks 4–6, because McKinsey's banker survey ranks admin a top-two problem at every stage of the sales funnel | 2026-10-10 |
 | C15 | Ideas 38 and 39: yes. Before editing a designed page, Claude now checks that the live page isn't newer than the repo copy (a step in the designed-doc skill), and every outside chart I share is saved with its numbers and source in the matching memo (rule R24) | 2026-10-10 |
 | C16 | The old `prompt-email-example` branch is deleted. Everything on it was already in main | 2026-10-13 |
+| C17 | Organize the Document Library around the two groups we serve: yes. It's one index in six sections (the bank, relationship managers, credit, how we deliver, reference, my workspace), with the two core use case pages renamed to match | 2026-10-14 |
+| C18 | Number open items by priority: yes. Each kind runs 1, 2, 3 in priority order, numbers change when priorities change, and closed items keep theirs | 2026-10-14 |
 
 _Last updated: 2026-10-14_

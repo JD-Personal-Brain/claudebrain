@@ -3,6 +3,7 @@
 One line each. Claude follows these every session.
 Rules at Level 2 or higher go at the top.
 
+- **R27 (Level 2).** Before building or publishing a new layout, look or structure for any page (including reorganizing an existing one), show a small sample, such as a screenshot, and get my yes. Small fixes to an approved layout don't need one. *(from L23)*
 - **R18 (Level 3).** Nothing is offered for merging into main until it passes the **audit** skill: checker, fresh reviewer, fixes, second reviewer. The audit is step 0 of every wrap-up. *(from L15)*
 - **R7 (Level 3, automatic).** Check every change the way I will see it before saying it's done: for files, look at where the edit landed; for designed pages, run the render check on every page (`designs/render-check.js`: no empty tables, nothing cut off, no sideways scrolling, no stray marks) and look at screenshots that include the top and the bottom of each changed page. *(from L7, L7b, L7c, L7d, L19)*
 - **R6 (Level 3).** Never ask me for something already saved in the repo. The startup hook updates this copy from main automatically; if it warns, tell me first. Before ever saying a file is missing, check origin/main. *(from L6, L6b)*

@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L23 · 2026-10-14 · Built a whole new layout without showing a sample
+- **What happened:** You asked for an index at the top of the Document Library. I built and published a full version (three dense columns of 121 links) without showing you a sample first. You called the layout awful. The next two versions, each shown as a small sample first, were approved.
+- **Root cause:** your profile already said "show a small sample before building a whole page in a new look" (from 2026-10-13), but it was a preference line, not a rule or a step in the routine I follow for designed pages, and I read "new look" as colors and style only, not a new layout.
+- **Fix:** rule R27, at the top of the rules: any new layout, look or structure for a page gets a small sample (a screenshot) and your yes before it's built or published. The designed-page routine (the designed-doc skill) now has this as a required step.
+- **Rule:** R27 · **Test:** T32 · **Level:** 2 (the profile line already failed once) · **Times it happened:** 1
+
 ### L22 · 2026-10-14 · Kept a rule you never set, then worked around it
 - **What happened:** The audit found three numbers used twice in the Open Items log under the old numbering (one for an open item and a closed item's history note; two others each in two closed items' history notes). I "marked" the problem instead of fixing it, citing the log's promise that a number never changes. You corrected me twice: when something is wrong we fix it right, and you never asked for fixed numbers. You want the items listed by priority, with numbers that can be swapped and added.
 - **Root cause:** I wrote "every item keeps a number that never changes" into the log myself when I built it (2026-10-09), then treated my own design choice as your rule. Because nobody checked the numbering, it had drifted out of order and been reused.
