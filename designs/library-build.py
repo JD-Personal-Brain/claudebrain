@@ -67,7 +67,6 @@ def entry(d):
 
 index = "".join(f'<div class="igroup" id="g{i}"><h3><span class="gnum">{i+1}</span>{E(n)}</h3><p class="gwhy">{E(why)}</p>{"".join(entry(d) for d in ds)}</div>' for i, (n, why, ds) in enumerate(groups))
 nav = "".join(f'<a href="#g{i}"><span class="num">{i+1}</span>{E(n)}</a>' for i, (n, _, ds) in enumerate(groups))
-npages = sum(1 for _, _, ds in groups for d in ds if not d.get("todo"))
 
 page = f'''<title>Document Library</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -81,7 +80,6 @@ page = f'''<title>Document Library</title>
 .filter input{{width:100%;font:inherit;font-size:16px;padding:10px 14px;border-radius:8px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:var(--onnavy)}}
 .filter input::placeholder{{color:var(--onnavy-muted)}}
 .filter input:focus-visible{{outline:2px solid var(--label-on-navy);outline-offset:2px}}
-.legend{{display:flex;flex-wrap:wrap;gap:10px 14px;font-size:14px;color:var(--muted);align-items:center}}
 .status{{font-family:var(--mono);font-size:11px;letter-spacing:.04em;padding:3px 9px;border-radius:999px;white-space:nowrap;flex:none}}
 .s-use{{background:var(--teal-bg);color:var(--teal)}}
 .s-review{{background:var(--amber-bg);color:var(--amber)}}
@@ -122,7 +120,7 @@ page = f'''<title>Document Library</title>
 <div class="filter"><label for="q">Find a document</label><input id="q" type="search" placeholder="Type a word, like plan, agent or prompt" autocomplete="off"></div>
 </div></div>
 <main class="wrap">
-<section id="index"><div class="legend"><span>{npages} pages. Click &#9656; for a page&#x27;s summary and sections; click its name to open it. The number is how many sections it has.</span><span class="status s-use">In use</span><span class="status s-review">Waiting for review, draft or in progress</span><span class="status s-ref">Reference</span><span class="status s-todo">To build</span></div><div class="index">{index}</div></section>
+<section id="index"><div class="index">{index}</div></section>
 <p class="empty" id="none" hidden>No documents match that word.</p>
 <footer>Built from <code>designs/library.json</code>. Say <strong>/documents</strong> to Claude to refresh it. Every page is private until you share it from its Share menu.</footer>
 </main>

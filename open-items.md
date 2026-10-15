@@ -210,4 +210,4 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C26 | Thinking through the job, Part 1 (the Job Notes page): not required, so it's off the Document Library and no longer an open item. The working file `job-notes.md` stays for reference | 2026-10-14 |
 | C27 | Idea 46: yes. Every audit now runs a "nothing lost" check (`lost-lines.py`) that lists each sentence that disappeared from the working files, and each one must be put back or explained | 2026-10-14 |
 
-_Last updated: 2026-10-14_
+_Last updated: 2026-10-15_

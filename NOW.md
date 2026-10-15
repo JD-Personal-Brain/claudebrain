@@ -1,6 +1,6 @@
 # NOW: start here
 
-_Last updated: 2026-10-14 · Last review: none yet (first one due around 2026-10-21; I said not yet on 2026-10-14)_
+_Last updated: 2026-10-15 · Last review: none yet (first one due around 2026-10-21; I said not yet on 2026-10-14)_
 
 ## Where things stand
 - The Claude brain is set up: rule book, profile, learning files, ideas list and thirteen skills: log-lesson, wrap-up, designed-doc, write-prompt, run-tests, prototype, new-use-case, audit, make-skill, agent-spec, documents (new 2026-10-09), user-workflow (new 2026-10-14: maps a user group's work today, where each AI product fits, and the work afterwards; say "map the RM workflow") and bank-news-scout (new 2026-10-14: checks public news on the bank and drafts updates to the Bank Business Briefing).
@@ -62,6 +62,7 @@ _Last updated: 2026-10-14 · Last review: none yet (first one due around 2026-10
 - **Page names set by me** (2026-10-14): the four "How we deliver" pages are the **Product Workflow**, **Product Framework**, **Product Machine** and **Product Playbook** ("product machine" also names the whole system). Old names are listed in the glossary's retired-wording table, and the audit checker fails on any of them (lesson L26).
 - **Library change** (2026-10-14): the library has five sections now (the bank, how we deliver, relationship managers, portfolio managers, reference). Reference runs: Open Items, Glossary, Steps Catalog, Workflow Maps, Agent Library, Controls Catalog, Tech Stack Guide, Job Description, Prompting Guide. Job Notes was dropped as not required (closed C26); "My workspace" is gone. Every description now uses the page names.
 - **Nothing-lost check** (2026-10-14, idea 46, closed C27): every audit now lists each sentence that disappeared from the working files (`lost-lines.py`), and each must be put back or explained.
+- **Session 2026-10-15:** the Document Library lost its legend line, the strip above the list that gave the page count, the click hints and a key to the four status tags. I said readers get it without one; each row still shows its own status tag.
 - First prototype made: a calculator (v1, then v2 with green buttons). It was practice and has nothing to do with the job. The prototyping process is under agreements below.
 
 ## What's next
