@@ -45,7 +45,7 @@ for fn in sorted(f for f in os.listdir(os.path.join(ROOT, "playbook")) if re.mat
                 if cells[4].lower().startswith("asset"):
                     assets.append(cells[1])
                 if cells[4].lower().startswith("yes"):
-                    agents |= set(re.findall(r"\b[MA]\d+\b", cells[1] + " " + cells[4]))
+                    agents |= set(re.findall(r"\b(?:A\d|M\d{1,2})\b", cells[1] + " " + cells[4]))
         agents = sorted(agents, key=lambda a: (a[0], int(a[1:])))
         branches.append({
             "id": f"d{num.replace('.', '-')}", "num": num, "title": title,
