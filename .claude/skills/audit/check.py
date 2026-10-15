@@ -9,7 +9,7 @@
 6. NOW.md's "What's next" has no unexplained shorthand.
 7. Alignment across documents (from L18): counts of agents, sub-steps, controls and workflow branches
    quoted anywhere match the sources; the Product Workflow's "What happens" lists (memos/role-workflow.md) have one item per
-   playbook sub-step; the Product Workflow page carries the memo's gate wording.
+   playbook sub-step; the Product Workflow page and each playbook step carry the memo's question and gate wording.
 8. The glossary: no word from its "Words we don't use" table appears in the core documents.
 9. Retired wording: nothing from the glossary's "Old wording we've retired" table is left anywhere people read (idea 37).
  11. The four "How we deliver" pages keep the names the user set: Product Workflow, Product Framework,
@@ -160,6 +160,14 @@ if len(gates)!=6: print('memos/role-workflow.md: could not read the six gates, s
 rh=_html.unescape(open('designs/role-workflow.html').read())
 for n,g in gates.items():
     if f'<b>Gate {n}</b><span>{g[0].upper()+g[1:]}</span>' not in rh: print('designs/role-workflow.html gate',n,'differs from memos/role-workflow.md'); probs+=1
+# each playbook step repeats its question and gate: they must match the Product Workflow word for word (idea from 2026-10-15)
+qs={m.group(1):m.group(2).strip() for m in re.finditer(r'^\| (\d)\. [^|]+\| ([^|]+) \|[^|]+\|[^|]+\|$',rw,re.M)}
+lc=lambda t:t[:1].lower()+t[1:]
+for f in sorted(glob.glob('playbook/[1-6]-*.md')):
+    n=f.split('/')[-1][0]; t=open(f).read()
+    pq=re.search(r'^\*\*The question:\*\* (.+)$',t,re.M); pg=re.search(r'^\*\*The gate:\*\* (.+)$',t,re.M)
+    if not pq or pq.group(1).strip()!=lc(qs.get(n,'')): print(f,'"The question" differs from step',n,'in memos/role-workflow.md'); probs+=1
+    if not pg or pg.group(1).strip()!=lc(gates.get(n,''))+'.': print(f,'"The gate" differs from gate',n,'in memos/role-workflow.md'); probs+=1
 # 8. the glossary (glossary.md): no "Don't say" word (or its plural) in the core documents, and the library's term count is right
 gl=open('glossary.md').read()
 GT=len(re.findall(r'^\| \*\*[^*]+\*\* \|',gl,re.M))

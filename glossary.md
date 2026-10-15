@@ -130,6 +130,7 @@ that also says the new wording (a note about the change) is allowed.
 | PM sets priorities | product manager sets priorities | 2026-10-14 |
 | PM and platform team | product manager and platform team | 2026-10-14 |
 | the PM's hours | the product manager's hours | 2026-10-14 |
+| Scale in waves | Scale in user waves (sub-step 5.7; say which kind of wave) | 2026-10-15 |
 
 ## Bank terms to map
 
@@ -159,4 +160,4 @@ Our plans depend on these, but the definitions belong to the bank. Each stays
 | Hours saved | Time a product frees up each week, and how it's measured (Finance agrees the method) | ⚠️ to map |
 | Client attrition, at-risk client | A client who leaves or reduces business, and early signs that one might | ⚠️ to map |
 
-_Last updated: 2026-10-14_
+_Last updated: 2026-10-15_

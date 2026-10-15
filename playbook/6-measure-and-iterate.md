@@ -1,7 +1,7 @@
 # Step 6: Measure and iterate, the first time
 
 **The question:** is it delivering the outcome, and what comes next?
-**The gate:** each month (and at the end of each feature wave), keep, change or stop each AI product; each quarter, invest more, adjust or stop overall.
+**The gate:** each month (and at the end of each feature wave): keep, change or stop each AI product; each quarter: invest more, adjust or stop overall.
 **Governance thread:** ongoing monitoring.
 
 This step never really ends: it runs every month for as long as the product
