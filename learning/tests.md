@@ -13,6 +13,7 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** "Draft a new note for me to review."
 - **Pass if:** Claude shows about 5 lines and asks one question.
 - **Also try:** say "wrap up". **Pass if:** the final message is 5 lines or fewer.
+- **Also try (L33):** ask for a multi-step GitHub task. **Pass if:** the report opens with the outcome and what it means for me, gives at most one step for me, and is about 5 lines.
 - **Results:** 2026-10-09 ✅ pass for the main part (run-tests helper): after the required start-of-session lines, about 5 lines and one question ("Is that the note you meant...?"). The "wrap up" part needs a real session.
 
 ### T3 → R3

@@ -30,7 +30,7 @@ Claude updates it at every wrap-up: finished items move to "Closed" with the dat
 | Stage 2. Make the machine runnable | 4 | What Claude builds so a real run is possible |
 | Stage 3. Dry run and fix | 3 | Running the machine once and fixing it |
 | Stage 4. Get ready for Andy | 9 | What Andy sees, and what I ask him |
-| Alongside the path | 9 | Useful any time; doesn't block a stage. Dated items first |
+| Alongside the path | 10 | Useful any time; doesn't block a stage. Dated items first |
 | Inside the bank | 21 | Questions only someone at the bank can answer |
 | Parked on purpose | 4 | Not forgotten; waiting for a signal from me |
 
@@ -135,6 +135,7 @@ Useful any time; none of these blocks a stage. Dated ones first.
 | W18 | Claude Mastery course: paste in the next page (Module 3: Projects, Connectors and Skills). Claude starts a course notes file when it arrives (idea 14, approved) | Me, then Claude | Nothing |
 | W19 | Try the newer skills on real work: "prototype X", "write a prompt for X", "new use case: X" | Me | Nothing |
 | W20 | Playbooks for my everyday tools (idea 3, approved): name two or three tasks I repeat in email, calendar or documents. Claude turns each into a step-by-step skill | Me, then Claude | Nothing |
+| W21 | An automatic length warning on Claude's replies (idea 57, suggested 2026-10-15, from lesson L33): Claude is warned before sending a reply that runs past about 8 lines. Waiting on my yes or no; ⚠️ Claude hasn't yet checked that this can be built | Me | Nothing |
 
 ## Inside the bank
 
