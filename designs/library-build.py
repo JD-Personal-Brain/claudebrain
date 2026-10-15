@@ -1,7 +1,7 @@
 """Builds designs/library.html, the Document Library, from designs/library.json.
 The page is one index in six numbered sections (the bank, how we deliver, relationship managers,
 portfolio managers, reference, research), one row per page. A row shows the page's status;
-in most sections its twisty opens a one-line description and the page's sections. Placeholder rows mark
+in the relationship manager and portfolio manager sections its twisty opens a one-line description and the page's sections. Placeholder rows mark
 pages still to build. A section marked "numbered" in library.json (the bank, how we deliver) shows
 plain numbered rows instead, read in order: click the name to open the page. A section
 marked "bulleted" (reference, research) shows the same plain rows with a dot instead of a number.
