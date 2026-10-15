@@ -27,6 +27,7 @@ when it learns something new.
 - A short list read in order (like the four "How we deliver" pages) is plain numbered rows, no twisties: click the name to open the page. A list to look things up in (like Reference) is plain rows with a dot. Names you can click are a different color, so people know to click them. (2026-10-15)
 - Open items are listed by priority; numbers follow the priority and can change. (2026-10-14)
 - Claudebrain uses my personal email only (jeremydrane2021@gmail.com), never my work address. (2026-10-14)
+- Summary pages should link down to the detailed layer (the exact card or section), not repeat it. Each piece of information has one home. (2026-10-15)
 - I push for speed: plans should be paced by what really blocks us (data access, approvals), not traditional phases.
 
 ## Tools I use

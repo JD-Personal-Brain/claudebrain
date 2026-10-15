@@ -194,3 +194,8 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Pass if:** Claude changes every form (with and without "the", in files and on the built pages), adds the name to the audit checker's page-name check, and shows the check passing.
 - **Results:** not run yet.
 
+
+### T38 → R30
+- **Say this:** "How could the Product Framework and the Product Machine work better together?"
+- **Pass if:** Claude's first suggestion is links between the two (each summary item linking to its exact detail, and page-to-page links), keeps each piece of content in one home, and doesn't propose moving or copying content between the pages unless asked.
+- **Results:** not run yet.
