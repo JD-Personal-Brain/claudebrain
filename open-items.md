@@ -110,7 +110,7 @@ What we're working on first: a quick check on the bank news scout, then the user
 | # | Item | Who | Waits on |
 |---|---|---|---|
 | W10 | Build an RM mock-up: clickable screens of the Monday opportunity list and the pre-meeting client brief, on made-up sample data, so Andy can see what an RM gets | Claude, with my review | Stage 1 |
-| W11 | Build an "Andy edition" of the RM plan: two to three pages in his terms, no internal labels, with one line that credit comes next | Claude, then me | V1 and my yes |
+| W11 | Build an "Andy edition" of the RM plan: two to three pages in his terms, no internal labels, with one line that credit comes next. First, run an Elon mode review on the RM plan (say "Elon mode" for the elon-mode skill; idea 53, agreed 2026-10-15) and cut anything that doesn't earn its place, so Andy sees the lean version | Claude, then me | V1 and my yes |
 | B1 | Which revenue lever matters most to the business right now? (from: RM plan, section 11) | Me, with Andy | Nothing |
 | B2 | How will success be judged in the first 6 months? (from: RM plan, section 11) | Me, with Andy | Nothing |
 | B3 | What are Andy's first use cases, and how does RM analytics rank against credit (portfolio management) and treasury and payments? (from: Bank Business Briefing, section 9) | Me, with Andy | Nothing |
