@@ -4,7 +4,7 @@ Lists every sentence that was in a working file at <base> and is now gone from t
 not in that file, and not moved to any other working file or designed page. Each one printed
 must be either put back, or named in the audit report as "cut on purpose" with the reason.
 Sentences that were only reworded show up too; say so in the report.
-Prints "lost: N" at the end. 0 means nothing disappeared."""
+Ends with a count per file (to group the lines by reason in the Audit Log entry) and "lost: N". 0 means nothing disappeared."""
 import subprocess, re, sys, glob, html
 
 base = sys.argv[1] if len(sys.argv) > 1 else "origin/main"
@@ -40,6 +40,7 @@ changed = [f for f in git("diff", "--name-only", base, "--", *WORK).split() if f
 renamed = [l.split("\t")[1] for l in git("diff", "--name-status", "-M", base).splitlines()
            if l.startswith("R") and l.split("\t")[1].endswith((".md", ".json")) and l.split("\t")[1] not in SKIP]
 lost = 0
+printed = []
 for f in sorted(set(changed + renamed)):
     old = git("show", f"{base}:{f}")
     if not old:
@@ -47,5 +48,11 @@ for f in sorted(set(changed + renamed)):
     for s in sentences(old):
         if norm(s) and norm(s) not in corpus:
             print(f"{f}: {s[:160]}")
+            printed.append(f"{f}: {s[:160]}")
             lost += 1
+# a count per file, so the audit entry can group them by reason (Audit Log improvement 6)
+from collections import Counter
+per = Counter(l.split(":")[0] for l in printed)
+for f, n in sorted(per.items(), key=lambda x: -x[1]):
+    print(f"  {n:4d}  {f}")
 print("lost:", lost)

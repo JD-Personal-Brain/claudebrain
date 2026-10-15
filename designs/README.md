@@ -23,7 +23,7 @@ Edit here, publish to the same link, then save a draft.
 | Controls Catalog (reference page) | https://claude.ai/artifact/7GmH3iBG6jcDkdacUysUrQ | `controls.html` (built by `catalogs-build.py` from `playbook/controls.md`) |
 | RM Core Use Cases (McKinsey's five frontline use cases and the RM plan's seven; was "McKinsey Use Cases") | https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X | `mckinsey-use-cases.html` (built by `md-page-build.py` from `memos/mckinsey-frontline-ai.md`) |
 | Elon Mode (how Musk engineers and improves systems; research for "Elon mode") | https://claude.ai/artifact/NMxzPEotPQcM2KPUmsBbsX | `elon-mode.html` (built by `md-page-build.py` from `memos/elon-mode-research.md`) |
-| How We Deliver Audit (2026-10-15: what the audit of the How we deliver and reference pages found and fixed, and the gaps to decide) | https://claude.ai/artifact/QnPL82PBx6AfGKB5VgqUPf | `how-we-deliver-audit.html` (built by `md-page-build.py` from `memos/how-we-deliver-audit.md`) |
+| Audit Log (how we audit: the method, every check, the record of every audit) | https://claude.ai/artifact/QnPL82PBx6AfGKB5VgqUPf | `audit-log.html` (built by `md-page-build.py` from `memos/audit-log.md`) |
 | Glossary (reference: the words we use) | https://claude.ai/artifact/LRQHSz65beh9XewB6qsQvQ | `glossary.html` (built by `md-page-build.py` from `glossary.md`) |
 | **Document Library** (pinned to my sidebar; lists every page above) | https://claude.ai/artifact/LTpbCT4kN4LcyEoYnh7vgj | `library.html` (built by `library-build.py` from `library.json`) |
 
