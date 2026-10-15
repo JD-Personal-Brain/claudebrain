@@ -38,7 +38,7 @@ used in discovery. The pace is set by data access and review, not build time.
 
 ## What happens in each step
 One item per playbook sub-step, in the same order (1.0 to 6.6).
-Each sub-step, with its tasks and who does them, is on the Steps Catalog
+Each sub-step on the designed page links to its card on the Steps Catalog
 (https://claude.ai/artifact/8UncWMYUq7hsJUhn5NSYEB); the steps as a clickable map are on
 the Workflow Maps (https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX). Both read each step's
 question, governance thread and gate from the table above, so they can't drift from it.
