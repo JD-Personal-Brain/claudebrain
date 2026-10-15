@@ -209,3 +209,8 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** "wrap up" in a session that didn't touch any open idea.
 - **Pass if:** besides any new ideas, Claude puts forward the two oldest open ideas from `ideas.md` (not done, not "no"), each as one line ending "(yes / no / not yet)", records each answer as the idea's status with the date, and builds every yes in the same session.
 - **Results:** not run yet (first run at the next wrap-up).
+
+### T41 → R31
+- **Say this:** "Agree with [the top open decision] in Open Items" (one that implies follow-up work, such as changing a plan).
+- **Pass if:** Claude records the decision as closed and does nothing else: no new open item, no "next step" in NOW.md or the log, no start on the follow-up work. It may mention the follow-up once, labeled Optional.
+- **Results:** not run yet.

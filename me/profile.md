@@ -28,6 +28,7 @@ when it learns something new.
 - Open items are listed by priority; numbers follow the priority and can change. (2026-10-14)
 - Claudebrain uses my personal email only (jeremydrane2021@gmail.com), never my work address. (2026-10-14)
 - Summary pages should link down to the detailed layer (the exact card or section), not repeat it. Each piece of information has one home. (2026-10-15)
+- When I give a decision or ask for one change, do just that. Don't queue up the follow-up work in my files; mention it once at most. (2026-10-15)
 - I push for speed: plans should be paced by what really blocks us (data access, approvals), not traditional phases.
 
 ## Tools I use

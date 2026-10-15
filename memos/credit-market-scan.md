@@ -74,7 +74,7 @@ screening.
 counterpart, so the credit plan can be built on the same seven lines, the same
 six steps and the same agents.
 
-**For decision (my recommendation, not yet agreed):**
+**The order (agreed 2026-10-15, closed item C33 in the Open Items log):**
 1. **Start with credit memo and annual review drafts.** It has the strongest evidence, it reuses the RM plan's client brief data, and the person stays the decider.
 2. **Put early warning second.** It's where most banks are working, and it shares signals with the RM plan's "Early warning: client may leave" AI product.
 3. **Keep risk ratings out of the first waves**, for the same reason pricing is out of the RM plan.
