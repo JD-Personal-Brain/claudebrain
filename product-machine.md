@@ -106,7 +106,7 @@ system, so it depends on the bank allowing that.
 | 4.7 | Send sign-off requests and chase them | Auto ⚠️ | M14 Sign-off router (Power Automate approvals) | Risk, compliance, privacy, security |
 | 4.7 | The sign-offs themselves | Partner | — | Recorded in the tracker |
 | 4.7 | Unblock a stuck sign-off | Me | Meeting | — |
-| 4.8 | Draft the monitoring plan | Draft | Monitoring plan template | Risk, operations |
+| 4.8 | Draft the monitoring plan alongside 4.5 (it goes into the evidence pack), then finalise it | Draft | Monitoring plan template | Risk, operations |
 | Gate | Go/no-go | Partner | In writing; a meeting only if contested | Risk, sponsor |
 
 The step 4 gate is a Partner decision: the risk partner's approval can't be overruled; the sponsor approves the signed evidence pack.
@@ -142,7 +142,7 @@ The step 4 gate is a Partner decision: the risk partner's approval can't be over
 | 6.4 | Keep/change/stop decision | Me | In writing; a meeting only if contested | Sponsor |
 | 6.4 | Quarterly summary for invest more, adjust or stop | Draft | M18 Monthly review pack drafter | Sponsor, Finance |
 | 6.5 | Rank the candidates for the next feature wave | Draft | M33 Improvement scout | Me, then sponsor |
-| 6.6 | Total time and waits from the first-time logs | Draft | M19 Log summarizer | Me |
+| 6.6 | Total time and waits from the sub-step logs (the first-time log on the first project) | Draft | M19 Log summarizer | Me |
 | 6.6 | Record the machine's measures for this project | Draft | M19 Log summarizer | Me |
 | 6.6 | Improve the machine: update the Product Machine, the Product Framework and the playbook | Me | — | — |
 | Gate | Keep, change or stop; invest more, adjust or stop | Me | In writing; a meeting only if contested | Sponsor, Finance |
