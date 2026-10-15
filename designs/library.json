@@ -205,6 +205,22 @@
         }
       ],
       "bulleted": true
+    },
+    {
+      "id": "research",
+      "name": "Research",
+      "why": "Outside thinking we study and borrow from, to sharpen how we work.",
+      "bulleted": true,
+      "items": [
+        {
+          "id": "elon-mode",
+          "name": "Elon Mode Research",
+          "what": "How Elon Musk engineers and improves systems: his five-rule algorithm, eight thinking habits, where the method went wrong, and suggestions for our own system.",
+          "status": "Waiting for review",
+          "url": "https://claude.ai/artifact/NMxzPEotPQcM2KPUmsBbsX",
+          "source": "memos/elon-mode-research.md"
+        }
+      ]
     }
   ]
 }

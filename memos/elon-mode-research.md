@@ -1,6 +1,6 @@
 # Elon mode: how Musk engineers a system and keeps improving it
 
-As of 2026-10-15. Research only: the main ideas Elon Musk is known for in business, engineering and improving a process, organized into one model. How we use it on our product plan comes next.
+As of 2026-10-15. Research only: the main ideas Elon Musk is known for in business, engineering and improving a process, organized into one model, then suggestions for how his lessons could improve our own system (the four "How we deliver" pages). The suggestions are proposals: nothing in our framework has changed yet.
 
 > ⚠️ **How much to trust this.** The web search worked, but the pages behind
 > it would not open from this session (lexfridman.com, corporate-rebels.com and
@@ -17,6 +17,7 @@ As of 2026-10-15. Research only: the main ideas Elon Musk is known for in busine
 - **Around it sit eight thinking habits:** reason from first principles, measure waste with the "idiot index", attack the limiting factor, treat the process as the product, iterate fast, act with urgency, cut bureaucracy, and seek negative feedback.
 - **His own record shows the limits:** too much automation at Tesla in 2018 (he said so himself), timelines that slip year after year ("Elon time"), and deep cuts at Twitter that broke things.
 - **Our read:** Musk treats a system as something to be stripped down before it is sped up, with the slowest part always getting the attention. The method is strong; the risks are speed without care and promises without dates that hold.
+- **For us:** our machine already automates last and paces work by what blocks it. What Musk adds is subtraction: question and delete before automating, tag every requirement with where it comes from, and measure the machine itself. Eight suggestions below.
 
 ## The core: "the algorithm" (five rules, in order)
 Isaacson's biography describes this as Musk's method for cutting waste at Tesla and SpaceX; Musk also walked through it on camera on a 2021 tour of SpaceX's Starbase with the YouTuber Everyday Astronaut (Tim Dodd). The order matters: each rule assumes the one before it is done.
@@ -66,6 +67,41 @@ Pulled together from the above. This is our interpretation, not his words.
 6. **Shorten every loop.** More tries, faster, each one learning from the last, with failure in testing expected.
 7. **Automate only what is lean and stable.** Automating a bad process locks in the waste; he learned this himself in 2018.
 8. **Keep the feedback honest.** The loop works only if people can say what's wrong. His record at Twitter shows what happens when that breaks.
+
+## What it means for our system: suggestions
+Our product machine (the Product Workflow, Product Framework, Product Machine and Product Playbook) already shares much of Musk's thinking. Its biggest gap, in his terms: it has a strong way to **add** (44 sub-steps, 33 general agents, 25 controls, an automation check that only moves work toward Auto) and no step that **deletes**. These suggestions are ours, not Musk's.
+
+**Where we already think like him**
+
+| Musk idea | Where it already lives in our system |
+|---|---|
+| Automate last (rule 5) | The automation check at every gate: a task moves toward Auto only when it repeats, is stable and is safe alone (Product Machine). |
+| Attack the limiting factor | "The pace is set by data access and review, not build time" (Product Workflow); plans paced by what really blocks us (my profile). |
+| Iterate fast | A working prototype in week 1; steps 3 to 6 repeat in short cycles (Product Workflow). |
+| The process is the product | Sub-step 6.6, "Improve the machine itself" (Product Playbook). |
+| Seek negative feedback | The audit before every merge, the lessons log, and one-click feedback in every AI product. |
+| His own 2018 lesson on automation | Assistive first: AI drafts, a named person decides (Product Framework, AI principles). |
+| Hands-on leaders | The product manager builds prototypes and runs reaction sessions (sub-step 1.6). |
+
+**Eight suggestions, strongest first**
+
+| # | Suggestion | Musk idea | What changes | What it would let us do |
+|---|---|---|---|---|
+| 1 | **Delete before you automate.** Put Musk's order in front of the automation check: does this task need to exist, and who required it? Can it be deleted? Simplified? Made faster? Only then: repeat, stable, safe alone, move toward Auto. | The algorithm, rules 1 to 5 | The automation check (Product Machine), each step's automation review table and sub-step 6.6 (Product Playbook) | Stop automating work that shouldn't exist, so the machine gets smaller as well as faster. |
+| 2 | **Every requirement says where it comes from.** Tag each control (K1 to K25), each gate criterion and each sub-step: **law or regulator**, **bank policy**, or **our choice**. Law and bank policy are our "physics": fixed. "Our choice" items are recommendations anyone may challenge. | Named owner for every requirement; only physics is fixed | Controls Catalog, Product Workflow gate table, Steps Catalog | See at a glance what we can cut and what we must never touch, and answer "why do we do this?" with a name. |
+| 3 | **A deletion pass in the dry run.** When we take the made-up product through all six steps (stage 3 in the Open Items log), mark every sub-step, agent and control: did it change a decision or catch a problem? Delete what didn't, until about 1 in 10 has to come back. Law and bank-policy items are never cut. | Delete; add back about 10% | The dry run's checklist | A leaner machine before it meets the bank, instead of 44 sub-steps nobody has tested. |
+| 4 | **Name the limiting factor.** Each project's tracker and weekly status note opens with the one thing holding the project back right now (for example the data contract signature) and its owner. My time goes there first. | Attack the limiting factor | The running layer (Product Machine) | Put my hours where they move the date, and give the sponsor one honest answer to "what's holding us up?" |
+| 5 | **A wait index (our idiot index).** For each sub-step: days from start to finish divided by hours of real work, from the first-time logs. A high number means waiting, not working. Fix the highest first. | Idiot index | Sub-step 6.6 and agent M19 (Log summarizer), which already totals time and waits | Rank where the machine wastes time with one number, so improvement isn't guesswork. |
+| 6 | **Measure the machine itself.** Add three measures for the machine, not just the products: days from kickoff to pilot, days spent at each gate, and releases per month during the pilot. | The process is the product; rate of iteration | Sub-step 6.6, and the one view of all projects (Product Machine) | Show the machine getting faster from one project to the next: proof for Andy that the system works, not just one product. |
+| 7 | **Elon mode as a review.** A reviewer that runs suggestions 1 to 5 against any plan or step before its gate, with the guardrails below built in. | All of the above | A new skill, or a step in the audit | Make "what would Musk cut?" a routine question instead of a one-off exercise. |
+| 8 | **Gates decided in writing when they're clean.** When every gate criterion is met, the sponsor approves the gate pack in writing; the gate meeting happens only when something is contested. Partner sign-offs don't change. | No meeting unless it adds value (2018 email) | Gate rows in the Product Machine | Fewer meetings; my hours go to the contested decisions. ⚠️ Whether the bank's culture accepts this is a guess. |
+
+**Where Musk's method doesn't fit a bank** (guardrails for every suggestion above)
+- **Law and the bank's policies are our physics.** Questioning a requirement never means removing a legal or policy control; suggestion 2 exists so those are marked and protected.
+- **Know what a part does before you delete it.** Twitter lost two-factor sign-in that way. Every deletion goes in the decision log with what the part did and who agreed.
+- **Fail in testing, never with clients.** Red-teaming and the test set are where failure is welcome; anything a client sees stays assistive first.
+- **Urgency without "Elon time."** Give sponsors dates only when the limiting factor allows them, and keep unknown numbers as [X] instead of hopeful guesses.
+- **A pace one person can keep.** The machine exists so I don't work 80-hour weeks; "hardcore" is the wrong lesson.
 
 ## To check before quoting
 - The exact wording of the five rules and the add-back number (10% or 20%): check Isaacson's book, chapter "The Algorithm."
