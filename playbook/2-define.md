@@ -73,6 +73,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
   4. Agree with the data owner how each gap is fixed or worked around.
   5. Get the data owner's sign-off, in writing.
   6. After 2.5, add any new fields and get the data owner to re-confirm in writing.
+  7. **If the product works from documents** (credit memos, financial statements, call notes), write the contract for documents instead of fields: each source (library or folder), its content owner, how often it is re-indexed, who may see each document, and the check that every answer cites the document it came from.
 - **Output:** the data contract table and a gap list.
 - **Done when:** every field is either confirmed or has an agreed fix, and the data owner has signed the final field list.
 - **Automation watch:**
@@ -94,7 +95,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
 - **First time, step by step:**
   1. Get the intake form and ask the risk partner how long a review usually takes.
   2. Fill it in from the brief so far (2.1) and the Discover gate pack: what the product does, which data (the first field list from 2.3), who uses it, what it can change, and whether anything reaches a client.
-  3. Say plainly what it does **not** do, for example "no credit decisions, no pricing."
+  3. Say plainly what it does **not** do, for example "no credit decisions, no pricing" (control K3). If its output informs a credit decision (a credit memo draft, an early-warning flag), mark it for the **higher-risk path** in step 4: a fairness check agreed with compliance (4.4), must-refuse cases in the test set (3.6), and a sign-off from the credit policy owner as well (4.7) ⚠️ the bank's model risk policy may add more.
   4. Submit it, then meet the risk partner to walk through it.
   5. Write down the control requirements they give you (human approval, logging, guardrails, permissions, consent for any recorded meeting) and copy them into the backlog as must-haves.
   6. Share the control requirements list with compliance, privacy and security, so nothing in step 4 is a surprise.

@@ -51,7 +51,7 @@ saved history, so their counts are approximate.
 | 2026-10-15 | After the move to JD-Personal-Brain: pull request #98 (the steps for the required check), the required-check test, old account name | Quick: checker, render check, nothing-lost | 0 findings; no file still names the old account; the required-check test showed GitHub does not yet block a red pull request (it was switched on later the same day: C38); lost lines: 3, all reworded (the required-check item went from "suggested" to "yes") | Merged |
 | 2026-10-15 | Wrap-up: the settings-file repair and lesson L32 | Quick: checker, render check, nothing-lost | 1 Must fix (the settings file couldn't be read, found by reading it back); lost lines: a few, all reworded | Fixed in pull request #96; check 16 added so it can't recur |
 | 2026-10-15 | The Audit Log itself and its six improvements | Deep by step 0's rule (a rename across pages and new audit rules), run as scripts plus one reviewer, because a deep audit of the same pages had run hours before | 1 Must fix, 6 Should fix, 7 Minor; lost lines: 10, all reworded or renamed | All fixed; merged |
-| 2026-10-15 | How we deliver and the reference pages, top to bottom (details below) | 7 reviewers, a made-up product walked through all 44 sub-steps, 4 editors, a second reviewer | About 110 (8 Must fix), plus about 25 from the second review | All fixed; 12 pages republished; 6 gaps to decide (D1); pull request #94 |
+| 2026-10-15 | How we deliver and the reference pages, top to bottom (details below) | 7 reviewers, a made-up product walked through all 44 sub-steps, 4 editors, a second reviewer | About 110 (8 Must fix), plus about 25 from the second review | All fixed; 12 pages republished; 6 gaps to decide (all approved and written in the same day: closed item C39); pull request #94 |
 | 2026-10-15 | Requirement sources check (idea 52) and the Elon mode changes | Checker, reviewer, second reviewer | A handful (approximately) | Fixed; merged |
 | 2026-10-15 | Product Workflow links to the Steps Catalog and Workflow Maps | 5 reviewers | Not counted | Passed; pull request #87 |
 | 2026-10-14 | The How we deliver reorganization and the Document Library | Two full audits | Not counted | Fixed; merged |
@@ -93,7 +93,7 @@ What this review of our own audit found, and what closed each one:
 - **The structure is sound.** All 44 sub-steps have every field, every agent name and kind matches across files, every gate's wording matches the Product Workflow, and the built pages were all up to date.
 - **The pages disagreed on details that matter in real use:** who decides at each gate, what "proof" means at the Build gate, and whether a sponsor could waive the zero-tolerance permissions test. These are fixed.
 - **Several things the pages promised had no task behind them**, such as the incident dry run (proof of a legally required control) and the guardrail test in step 4. These are fixed.
-- **Six gaps remain that need my decision** before the RM and PM work. They are rules we never wrote, not mistakes, so Claude didn't invent them. They're listed below with Claude's recommendation.
+- **Six gaps needed my decision** (all approved and written in on 2026-10-15, closed item C39) before the RM and PM work. They are rules we never wrote, not mistakes, so Claude didn't invent them. They're listed below with Claude's recommendation.
 
 ### What was found and fixed
 
@@ -116,7 +116,7 @@ About 110 findings: 8 Must fix, about 55 Should fix, the rest Minor. All are fix
 
 ### Decisions for me: gaps to close before the RM and PM work
 
-Each is a rule the machine needs and doesn't have. My recommendation is in the last column.
+Each is a rule the machine needs and doesn't have. My recommendation is in the last column. **Decided 2026-10-15:** I approved the recommendations for gaps 1 to 6 and they are written into the How we deliver pages (closed item C39 in the Open Items log); gaps 7 to 9 stay optional.
 
 | # | Gap | Why it matters for the RM and PM work | Label | My recommendation |
 |---|---|---|---|---|

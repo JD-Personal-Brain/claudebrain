@@ -65,6 +65,7 @@ log (see `README.md`) for every sub-step.
   2. Compare the score with the last run and with the quality bar.
   3. Watch the live signals: rejection rate, guardrail blocks and user overrides. Each month, check the rule behind a sample of answers.
   4. If a threshold is crossed, follow the monitoring plan: fix, roll back or pause.
+  5. Before any change goes live, decide whether it is a **material change** (Product Framework): if so, it goes back through step 4 first; if not, re-test, log it in the release notes and tell the risk partner.
 - **Output:** the score trend and any alerts acted on.
 - **Done when:** this runs on every change without anyone remembering to do it.
 - **Automation watch:**
@@ -105,7 +106,7 @@ log (see `README.md`) for every sub-step.
 - **First time, step by step:**
   1. List the candidates: backlog items, ideas from users and the next lever from Discover.
   2. Rank them using the same scoring as 1.7.
-  3. Take the top one through a **short** Discover and Define, reusing everything you already have.
+  3. Take the top one through the **quick pass** (Product Framework): 2.3, 2.4, 2.5 and 2.7 always, everything else reused unless it changed, and gates 1 and 2 together in writing.
   4. Agree the next feature wave with the sponsor.
 - **Output:** the next feature wave, agreed.
 - **Done when:** the next feature wave has a scope and a date.

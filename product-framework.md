@@ -41,6 +41,40 @@ item with an owner and a date, reviewed weekly. Its top item is the **limiting
 factor**: the one thing holding the project back right now, named with its
 owner. It opens the tracker and the weekly status note.
 
+## Projects, AI products and feature waves
+How the work is cut up, so every gate knows what it decides (gaps 1 to 3 from the
+2026-10-15 audit, decided 2026-10-15).
+
+| Level | What it is | Example (RM plan) |
+|---|---|---|
+| Project | All the work for one user group | The RM project |
+| Core use case | One of the seven lines the project is organized on | Account intelligence and meeting prep |
+| AI product | A capability we build and release | The pre-meeting brief |
+| Feature wave | A set of AI products released together | Feature wave 1 |
+
+| Gate | Passed for |
+|---|---|
+| 1 Discover and 2 Define | The project, the first time; after that, each feature wave, through the quick pass (below) |
+| 3 Build and 4 Govern and test | Each AI product |
+| 5 Release and adopt | Each feature wave |
+| 6 Measure and iterate | Each AI product, monthly (keep, change or stop); the project, quarterly (invest more, adjust or stop) |
+
+**The quick pass for the next feature wave.** After the first pass, each new
+feature wave (chosen in sub-step 6.5) goes through Discover and Define quickly,
+reusing what the project already has:
+- **Always done:** 2.3 update the data contract, and the data owner signs the new fields; 2.4 update the risk intake, and the risk partner confirms the rating; 2.5 user stories and acceptance criteria for the wave; 2.7 measures, quality bar and value model for the wave's AI products.
+- **Reused unless something changed:** 1.0 to 1.7 (record a baseline in 1.7 for any new measure), 2.1, 2.2, 2.6, and 2.8, where only the wave's scope and pilot group are updated.
+- **Gates 1 and 2 together, in writing,** from one short gate pack, with a meeting only if a criterion is contested.
+
+**Change after launch.** A **material change** goes back through step 4 before
+it reaches users: new data, a new action the product can take, users outside the
+group step 4 approved, or a new or vendor-changed AI model. The product manager
+proposes whether a change is material and the risk partner confirms. Any other
+change is re-tested (6.3), logged in the release notes and told to the risk
+partner. Comes from: our choice, resting on the model risk guidance's
+expectation that changes are reviewed. ⚠️ The bank's model risk policy has the
+final word on what counts as material.
+
 ## The five kinds of measures
 The main outcome measure is agreed in Discover (1.1) and its baseline recorded in
 1.7; the full set is set in Define (2.7) and tracked in Measure and iterate.

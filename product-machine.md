@@ -140,6 +140,7 @@ The step 4 gate is a Partner decision: the risk partner's approval can't be over
 | 6.2 | Monthly impact note against baseline and comparison group | Draft | M31 Impact analyst | Analytics checks, then sponsor |
 | 6.3 | Re-test after every change; alert when quality slips | Auto | M32 Quality watchdog | Product manager, on alert |
 | 6.3 | Act on an alert: fix, roll back or pause, per the monitoring plan | Me | — | Operations, risk |
+| 6.3 | Decide whether a change is material (it goes back through step 4) | Me | — | Risk partner confirms |
 | 6.4 | Monthly keep/change/stop pack | Draft | M18 Monthly review pack drafter | Me |
 | 6.4 | Keep/change/stop decision | Me | In writing; a meeting only if contested | Sponsor |
 | 6.4 | Quarterly summary for invest more, adjust or stop | Draft | M18 Monthly review pack drafter | Sponsor, Finance |

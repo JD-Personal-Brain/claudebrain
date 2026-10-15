@@ -40,16 +40,16 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 - **Proof:** the agent spec's "allowed" and "not allowed" lists, and a test that a blocked action fails
 - **Comes from:** Our choice: our AI principle, one job each. To change it, ask the product manager.
 
-### K3. No credit decisions or pricing
+### K3. AI drafts or flags; a named credit officer decides
 - **Group:** People in charge
-- **What it is:** the intake says plainly what the product does not do, such as credit decisions or pricing. For RM analytics, any insight that suggests a credit product goes to compliance review.
+- **What it is:** the AI may draft or flag credit work (a credit memo draft, an early-warning flag), but a named credit officer makes every credit decision, and the product never sets or suggests a price. The intake says plainly what the product does not do. A product whose output informs a credit decision takes the **higher-risk path** in step 4, set at 2.4. For RM analytics, any insight that suggests a credit product goes to compliance review. (Restated 2026-10-15, gap 4 from the audit, so credit memo drafts can be built.)
 - **Why it matters:** fair-lending rules apply to business credit too, and they set a much higher bar.
-- **Set in:** 2.4
+- **Set in:** 2.4 (including whether the product takes the higher-risk path)
 - **Built in:** 3.6 (test cases the product must refuse). Guardrails for this are not covered in the playbook yet
 - **Proved in:** 3.7, 4.3
 - **Watched in:** 6.3 (the test set, with its must-refuse cases, is re-run)
 - **Tool (guess):** guardrail filters
-- **Proof:** a red-team test (someone trying to break it on purpose) showing it won't give a credit decision or a price
+- **Proof:** a red-team test (someone trying to break it on purpose) showing it won't give a credit decision or a price, and, on the higher-risk path, that every credit draft names the credit officer who decides
 - **Comes from:** Our choice: chosen to stay clear of fair-lending law (the Equal Credit Opportunity Act), which applies once AI touches credit decisions. To change it, ask the product manager.
 
 ### K4. Users see only what they're allowed to see
