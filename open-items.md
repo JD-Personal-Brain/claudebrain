@@ -173,7 +173,7 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | # | Item | Who | Waits on |
 |---|---|---|---|
 | P1 | The credit (portfolio management) plan. Started at my request on 2026-10-13 with the Portfolio Manager Core Use Cases page (the six parked credit processes plus two new ones, each lined up with a core use case); the portfolio manager user workflow map is part of W2. The plan itself still waits. Ready for then: franchise banking as a possible pilot, and whether to add "costs saved" and "loan losses avoided" to the value model | Me | Me saying the RM framework is ready (D5) |
-| P2 | Sharing with Associated. When I'm ready, Claude builds an "Associated edition" of the Document Library (idea 33): only the pages meant for them, with no internal labels | Me | Me saying I'm ready to share |
+| P2 | Sharing with Associated. We share the same pages, not a separate edition (idea 33: no, 2026-10-15). When I'm ready, Claude lists which pages to share one by one from each page's Share menu | Me | Me saying I'm ready to share |
 | P3 | A treasury and payments use case. The bank named it as a starting point for AI, and nothing has been planned yet | Me | After credit, unless B3 changes the order |
 | P4 | **Featured: running many products at once.** One intake form for new product ideas, a scoring rule to rank them against each other, how many products I can run at once, my week and month across products, and when a live product is retired | Me | The machine running one product well first |
 
