@@ -1,8 +1,10 @@
 """Builds designs/library.html, the Document Library, from designs/library.json.
 The page is one index in five numbered sections (the bank, how we deliver, relationship managers,
 portfolio managers, reference), one row per page. A row shows the page's status;
-its twisty opens a one-line description and the page's sections. Placeholder rows mark
-pages still to build.
+in most sections its twisty opens a one-line description and the page's sections. Placeholder rows mark
+pages still to build. A section marked "numbered" in library.json (the bank, how we deliver) shows
+plain numbered rows instead, read in order: click the name to open the page. A section
+marked "bulleted" (reference) shows the same plain rows with a dot instead of a number.
 To add a document: add it to library.json (and designs/README.md) and to PAGE_FILE below,
 run this, republish.
 Run: python3 designs/library-build.py"""
@@ -15,8 +17,9 @@ lib = json.load(open(os.path.join(ROOT, "designs", "library.json")))
 STATUS = {"In use": "s-use", "Waiting for review": "s-review", "Draft": "s-review", "In progress": "s-review", "Reference": "s-ref",
           "To build": "s-todo", "Later": "s-todo"}
 # Sections in page order, from library.json. An item is a page, or a placeholder ("todo") for one still to build.
-groups = [(g["name"], g["why"], g["items"]) for g in lib["groups"]]
-for _, _, ds in groups:
+# Each section's row style: a number (read in order), a dot (plain list) or None (twisty rows).
+groups = [(g["name"], g["why"], g["items"], "num" if g.get("numbered") else "dot" if g.get("bulleted") else None) for g in lib["groups"]]
+for _, _, ds, _ in groups:
     for d in ds:
         if d["status"] not in STATUS:
             raise SystemExit(f"Unknown status for {d['name']}: {d['status']}")
@@ -51,7 +54,16 @@ def sections(page_id):
 def chip(d):
     return f'<span class="status {STATUS[d["status"]]}">{E(d["status"])}</span>'
 
-def entry(d):
+def entry(d, num=None):
+    if num:
+        # Plain rows (a number or a dot): name and status only; the name opens the page.
+        # A placeholder has no page, so its name isn't a link.
+        search = E((d["name"] + " " + d["what"]).lower())
+        if d.get("todo"):
+            return f'<div class="ientry plain numbered todo" data-search="{search}"><span class="inum">{num}</span><span class="ipage">{E(d["name"])}</span>{chip(d)}</div>'
+        sections(d["id"])  # not shown here, but still checks the page is in PAGE_FILE
+        return (f'<div class="ientry plain numbered" data-search="{search}"><span class="inum">{num}</span>'
+                f'<a class="ipage" href="{E(d["url"])}" target="_blank" rel="noopener">{E(d["name"])}</a>{chip(d)}</div>')
     if d.get("todo"):
         return f'<div class="ientry plain todo" data-search="{E((d["name"] + " " + d["what"]).lower())}"><span class="ipage">{E(d["name"])}</span>{chip(d)}<p class="idesc">{E(d["what"])}</p></div>'
     # Pages with sections are a twisty: click the row to open it; click the name to open the page.
@@ -65,8 +77,8 @@ def entry(d):
     return (f'<details class="ientry" data-search="{search}"><summary>{name}{chip(d)}<span class="ic" title="Sections">{len(secs)}</span></summary>'
             f'<p class="idesc">{E(d["what"])}</p><ul class="isecs">{links}</ul></details>')
 
-index = "".join(f'<div class="igroup" id="g{i}"><h3><span class="gnum">{i+1}</span>{E(n)}</h3><p class="gwhy">{E(why)}</p>{"".join(entry(d) for d in ds)}</div>' for i, (n, why, ds) in enumerate(groups))
-nav = "".join(f'<a href="#g{i}"><span class="num">{i+1}</span>{E(n)}</a>' for i, (n, _, ds) in enumerate(groups))
+index = "".join(f'<div class="igroup" id="g{i}"><h3><span class="gnum">{i+1}</span>{E(n)}</h3><p class="gwhy">{E(why)}</p>{"".join(entry(d, (k + 1 if style == "num" else "\u2022") if style else None) for k, d in enumerate(ds))}</div>' for i, (n, why, ds, style) in enumerate(groups))
+nav = "".join(f'<a href="#g{i}"><span class="num">{i+1}</span>{E(n)}</a>' for i, (n, _, _, _) in enumerate(groups))
 
 page = f'''<title>Document Library</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -92,6 +104,7 @@ page = f'''<title>Document Library</title>
 .s-todo{{background:transparent;border:1px dashed var(--line);color:var(--muted)}}
 .ientry.todo{{background:transparent;border-style:dashed}}
 .ientry.todo .ipage{{color:var(--muted)}}
+.ientry.todo .ipage:hover{{text-decoration:none}}
 .ientry{{background:var(--card);border:1px solid var(--line);border-radius:8px;margin:0 0 6px}}
 .ientry>summary,.ientry.plain{{display:flex;align-items:baseline;gap:12px;padding:10px 16px}}
 .ientry>summary{{cursor:pointer;list-style:none}}
@@ -101,11 +114,13 @@ page = f'''<title>Document Library</title>
 .ientry>summary:focus-visible{{outline:2px solid var(--teal);outline-offset:2px;border-radius:8px}}
 .ientry[open]{{border-color:var(--teal)}}
 .ientry.plain{{flex-wrap:wrap;row-gap:2px}}
-.ipage{{font-family:var(--serif);font-weight:600;font-size:17px;color:var(--fg);text-decoration:none;margin-right:auto}}
-.ipage:hover{{text-decoration:underline;color:var(--teal)}}
+/* Page names you can click are teal, so they read as links; placeholders without a page stay muted. */
+.ipage{{font-family:var(--serif);font-weight:600;font-size:17px;color:var(--teal);text-decoration:none;margin-right:auto}}
+.ipage:hover{{text-decoration:underline}}
 .ic{{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap}}
 .idesc{{margin:0;padding:0 16px 10px 40px;font-size:14px;color:var(--muted);max-width:none}}
 .ientry.plain .idesc{{padding:0;flex-basis:100%}}
+.inum{{font-family:var(--mono);font-size:14px;color:var(--muted);width:12px;flex:none}}
 .isecs{{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0 16px 12px}}
 .isecs li{{margin:0}}
 .isecs a{{display:block;font-size:13px;border:1px solid var(--line);border-radius:999px;padding:3px 10px;color:var(--fg);text-decoration:none}}

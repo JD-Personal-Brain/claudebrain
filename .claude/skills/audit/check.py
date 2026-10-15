@@ -115,7 +115,7 @@ else:
         codes=re.findall(CODE,bare)
         if codes: print("NOW.md What's next uses",", ".join(codes),"without explaining it:",item[:60]); probs+=1
         if len(item.split())<9: print("NOW.md What's next item is too short to explain itself:",item[:60]); probs+=1
-# 7. alignment across documents (from L18: the library said "19-agent library" while the Agent Library showed 39)
+# 7. alignment across documents (from L18: the library said "19-agent library" while the Agent Library showed many more)
 import json as _json, html as _html
 n_sub={}
 for f in sorted(glob.glob('playbook/[1-6]-*.md')):
@@ -137,7 +137,7 @@ want={'agents':f'{M+A+H} agents','steps':f'{SUB} sub-steps','controls':f'{CTL} c
 for b in lib_docs:
     if b['id'] in want and b['count']!=want[b['id']]: print('designs/library.json count for',b['name'],'is',repr(b['count']),'but the sources give',repr(want[b['id']])); probs+=1
 # Each count is read with up to one word in front of the noun ("25 governance controls"). A total is
-# checked against its own number: "all 39 agents" must be every agent, "19 ... machine" agents the machine's.
+# checked against its own number: "all 40 agents" must be every agent, "19 ... machine" agents the machine's.
 for f in ['NOW.md','open-items.md','product-framework.md','product-machine.md','playbook/README.md','designs/library.json','memos/role-workflow.md','tech-stack.md']:
     t=open(f).read()
     for m in re.finditer(r'\b(\d+)[ -](?:([A-Za-z]+) )?(agents?|sub-steps|controls)\b',t):

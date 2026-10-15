@@ -140,7 +140,7 @@ footer{{color:var(--muted);font-size:14px;border-top:1px solid var(--line);paddi
 <section>
 <p class="label">The six steps</p>
 <h2 id="tasks">Each step's tasks, by kind</h2>
-<p>One row per task, numbered to match the field manual. Kind is the target once the machine is running; the first time through, many tasks are done by hand so they can be logged before they are automated. Tools are first guesses until we confirm the bank's setup.</p>
+<p>One row per task, numbered to match the sub-steps in the Product Playbook. Kind is the target once the machine is running; the first time through, many tasks are done by hand so they can be logged before they are automated. Tools are first guesses until we confirm the bank's setup.</p>
 <div class="note"><strong>To confirm first:</strong> whether bank policy lets automations message people or update trackers on their own. Tasks marked ⚠️ depend on it.</div>
 <div class="steps">{stepsec}</div>
 </section>

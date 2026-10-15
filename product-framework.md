@@ -64,7 +64,7 @@ them on the frozen version.
 
 ## AI principles
 These apply to every agent and every AI product, in every step.
-- **Two kinds of agents.** Some help the team do the work (the general agents in the Agent Library); others are the product users see (a project's own agents, in its memo's Appendix A).
+- **Two kinds of agents.** Some help the team do the work (the general agents in the Agent Library); others are the product users see (a project's own agents, in its memo's Appendix A). My research helpers (H1 and on) also live in the Agent Library but aren't part of any product or the product machine.
 - **Assistive first.** AI drafts or suggests, and a named person decides. Autonomy grows only with evidence, through the automation check in the Product Machine.
 - **One job each.** Every agent has a clear job, a short list of allowed actions, read-only by default, and every action logged. Each one is written up as an agent spec before it's built.
 - **Built where the work happens.** Use the tools people already work in (Outlook, Teams, Salesforce), and add a new platform only when it's needed.

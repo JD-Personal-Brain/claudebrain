@@ -550,7 +550,7 @@ listed actions, and those marked ⚠️ wait until the bank allows it.
 - **Runs on (guess):** M365 Copilot or a Copilot Studio agent.
 - **To confirm:** none.
 
-## Research helpers: agents that keep my own pages current
+## My research helpers: agents that keep my own pages current
 These aren't part of the product machine and don't belong to any project. They
 keep the reference material I plan from up to date. Each runs as a Claude Code
 scheduled task, from a skill in this repo.
@@ -585,4 +585,4 @@ Four agents keep running after launch, not just once:
 - **M28 Fairness monitor:** set up in 4.4; its ongoing mode re-runs the check monthly after launch (4.4), and fairness is in the monitoring plan (4.8).
 - **M32 Quality watchdog:** re-runs the test set on every change and at least monthly (6.3), and alerts the product manager when quality slips.
 
-_Last updated: 2026-10-10_
+_Last updated: 2026-10-14_
