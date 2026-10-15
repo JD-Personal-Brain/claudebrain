@@ -1,18 +1,17 @@
 # Audit Log
 
 How we audit our work: what we believe about audit, every check and when it
-runs, the record of every audit so far, and what to improve. Draft for my review
-(2026-10-15): the method describes what we already do; the improvements at the
-end are proposals, each waiting for a yes or no.
+runs, the record of every audit so far, and what to improve. Approved 2026-10-15, with all six improvements; every audit adds a row to
+the record below.
 
 ## How we think about audit
 
 Seven principles, drawn from what we already do and the lessons behind it.
 
 1. **Nothing reaches main unaudited.** Main is what every new session starts from, so it must always be clean (rule R18).
-2. **Check everything, not just what changed.** A stale line in a file nobody touched is still drift, so every audit sweeps every core document and every page (lesson L18).
+2. **Check everything, not just what changed.** A stale line in a file nobody touched is still drift, so the scripts check every file and page every time, and standard and deep audits sweep every core document (lesson L18).
 3. **Machines check the mechanical, people-style reviewers check the meaning.** Counts, names, links, wording and rendering are checked by scripts; logic, gaps and plain English by independent reviewers.
-4. **Fresh eyes, twice.** A reviewer who didn't do the work finds the problems; a second fresh reviewer confirms the fixes and looks for problems the fixes caused.
+4. **Fresh eyes, twice.** In standard and deep audits, a reviewer who didn't do the work finds the problems; a second fresh reviewer confirms the fixes and looks for problems the fixes caused. Quick audits (small fixes) use the scripts only.
 5. **Evidence, not claims.** "Clean" means the checker's output, the render check's output, screenshots and the reviewers' pass list (rule R7).
 6. **Every miss becomes a check.** A mistake is logged as a lesson, becomes a rule with a test, and, if it happens again, a required step or an automatic check (the log-lesson levels 1 to 3).
 7. **The work stays with Claude, the decisions with me.** Claude runs every check without asking; only decisions (a new rule, a merge into main) come to me, and I'm never asked to proofread reference pages (rule R22, and the co-collaborator rule in CLAUDE.md).
@@ -26,13 +25,14 @@ Seven principles, drawn from what we already do and the lessons behind it.
 | While building | Look at it as I will (R7) | Edits that landed in the wrong place; pages that render badly | Claude, after every change |
 | While building | Live page newer than its file (idea 38) | Overwriting another session's published edits | Inside every publish |
 | While building | Glossary check before naming (R25) and "find the words" (R21) | New names that clash with a defined term; claims a file doesn't support | Claude |
-| Every audit | The audit checker (15 checks) | Machine tables against the playbook; missing fields; empty tables; stale built pages; library and README out of step; Open Items numbers and counts; shorthand in What's next; counts of agents, sub-steps and controls; gate, question and governance wording; banned and retired words; RM and PM spelling; old page names; broken section links; stray marks; requirement sources; agent names | Automatic script |
+| Every audit | The audit checker (every check listed in `check.py`) | Machine tables against the playbook; missing fields; empty tables; stale built pages; library and README out of step; Open Items numbers and counts; shorthand in What's next; counts of agents, sub-steps and controls; gate, question and governance wording; banned and retired words; RM and PM spelling; old page names; broken section links; stray marks; requirement sources; agent names | Automatic script |
 | Every audit | Render check | Empty tables, cut-off canvas parts, sideways scrolling, stray Markdown, jump links that land in the wrong place (about 330 clicks) | Automatic script |
 | Every audit | Nothing-lost check (R29) | Sentences that disappeared from the working files | Automatic script; each line explained |
-| Every audit | Alignment sweep | Any core document that disagrees with the reference pages (agents, workflows, steps, controls, glossary) | Independent reviewers |
-| Every audit | First review | Consistency, cross-references, coverage, facts, logic, drift, plain English, open items | A fresh reviewer |
-| Every audit | Second review | Fixes that didn't land, and new problems the fixes caused | A second fresh reviewer |
+| Standard and deep audits | Alignment sweep | Any core document that disagrees with the reference pages (agents, workflows, steps, controls, glossary) | Independent reviewers |
+| Standard and deep audits | First review | Consistency, cross-references, coverage, facts, logic, drift, plain English, open items | A fresh reviewer |
+| Standard and deep audits | Second review | Fixes that didn't land, and new problems the fixes caused | A second fresh reviewer |
 | Every wrap-up | Audit first (wrap-up step 0) | Everything above, plus a scrub of every open item | Claude |
+| Every pull request | GitHub audit check | Any checker problem; the pull request shows a red mark | Automatic, on GitHub |
 | Merging into main | Pre-merge check (idea 36) | Any checker or render problem; it blocks the merge | Automatic, when Claude merges |
 | Every fifth wrap-up | Elon mode review | Work that should be cut or simplified before it's automated | Claude (elon-mode skill) |
 | About weekly | Rule tests (run-tests) and the weekly review | Rules that no longer work; what's annoying | Claude and me |
@@ -45,8 +45,9 @@ Seven principles, drawn from what we already do and the lessons behind it.
 Every audit so far, newest first. Earlier entries are rebuilt from NOW.md and the
 saved history, so their counts are approximate.
 
-| Date | What was audited | How | Findings | Result |
+| Date | What was audited | Size and how | Findings (and lost lines by reason) | Result |
 |---|---|---|---|---|
+| 2026-10-15 | The Audit Log itself and its six improvements | Deep by step 0's rule (a rename across pages and new audit rules), run as scripts plus one reviewer, because a deep audit of the same pages had run hours before | 1 Must fix, 6 Should fix, 7 Minor; lost lines: 10, all reworded or renamed | All fixed; merged |
 | 2026-10-15 | How we deliver and the reference pages, top to bottom (details below) | 7 reviewers, a made-up product walked through all 44 sub-steps, 4 editors, a second reviewer | About 110 (8 Must fix), plus about 25 from the second review | All fixed; 12 pages republished; 6 gaps to decide (D1); pull request #94 |
 | 2026-10-15 | Requirement sources check (idea 52) and the Elon mode changes | Checker, reviewer, second reviewer | A handful (approximately) | Fixed; merged |
 | 2026-10-15 | Product Workflow links to the Steps Catalog and Workflow Maps | 5 reviewers | Not counted | Passed; pull request #87 |
@@ -55,29 +56,27 @@ saved history, so their counts are approximate.
 | 2026-10-10 | Alignment audit against the four reference pages | Reviewers per reference page | About 44 | Fixed; the alignment sweep became a standard audit step |
 | 2026-10-09 | The Product Playbook, all six steps | Reviewer, second reviewer | 20, then 8 follow-ups | Fixed; the audit became step 0 of every wrap-up |
 
-## Gaps in how we audit today
+## Gaps found (2026-10-15)
 
-What this review of our own audit found:
+What this review of our own audit found, and what closed each one:
 
-1. **A merge done on GitHub skips the pre-merge check.** The check runs only when Claude merges; a merge clicked on GitHub (as on 2026-10-15) isn't checked.
-2. **Audits leave no record.** Results live in chat and commit messages, so there's no trend of findings over time. This log starts that record.
-3. **Every audit is the same size.** A one-line fix and a full reorganization both get the full treatment, which costs time on small changes.
-4. **Rule tests rarely run.** Item W16 lists more than 25 tests not yet run in a live session.
-5. **Audits wait on approval pop-ups.** Page checks and publishes stopped the 2026-10-15 audit for about 30 minutes (lesson L30; the settings fix is item W20).
-6. **The nothing-lost list is long and read by eye.** About 130 lines on 2026-10-15, explained in one sentence rather than line by line.
+1. **A merge done on GitHub skips the pre-merge check.** The check runs only when Claude merges; a merge clicked on GitHub (as on 2026-10-15) isn't checked. → Improvement 1, built.
+2. **Audits leave no record.** Results live in chat and commit messages, so there's no trend of findings over time. This log starts that record. → Improvement 2, built.
+3. **Every audit is the same size.** A one-line fix and a full reorganization both get the full treatment, which costs time on small changes. → Improvement 3, built.
+4. **Rule tests rarely run.** Item W16 lists more than 25 tests not yet run in a live session. → Improvement 4, built.
+5. **Audits wait on approval pop-ups.** Page checks and publishes stopped the 2026-10-15 audit for about 30 minutes (lesson L30; the settings fix is item W20). → Improvement 5, waiting on me.
+6. **The nothing-lost list is long and read by eye.** About 130 lines on 2026-10-15, explained in one sentence rather than line by line. → Improvement 6, built.
 
-## Proposed improvements
+## Improvements (all six approved 2026-10-15)
 
-Each one waits for my yes or no.
-
-| # | Improvement | What it would let me do | Label |
+| # | Improvement | Where it runs | Status |
 |---|---|---|---|
-| 1 | **A GitHub check on every pull request** that runs the audit checker, so a merge on GitHub is blocked the same way as Claude's | Merge from my phone or GitHub without skipping the checks | **Needed**: closes gap 1 |
-| 2 | **This Audit Log as the record**, with one entry added by every audit (date, scope, how, findings by severity, result, pull request), as a required step of the audit skill | See at a glance what was checked, what was found and whether quality is improving | **Needed**: closes gap 2 |
-| 3 | **Three audit sizes**: quick (the three scripts) for small fixes, standard (scripts plus one reviewer and a second) for normal sessions, deep (plus the alignment sweep and a walk-through) for reorganizations and before big milestones. The audit skill picks the size and says why | Faster wrap-ups on small days without losing depth when it matters | Optional: saves time |
-| 4 | **Rule tests at the weekly review**, with the results added to this log | Know the rules still work, not just that they exist | Optional: closes gap 4 |
-| 5 | **The page pop-up fix** (item W20): one permission rule I add, so page checks and publishes never wait on me | Audits run start to finish without stopping | **Needed**: closes gap 5 |
-| 6 | **Lost lines grouped by reason** (reworded, moved, cut on purpose) in each audit entry | Trust that nothing was lost without reading 100 lines | Optional |
+| 1 | **A GitHub check on every pull request** runs the audit checker and shows a red mark if anything fails, so I can see it before clicking Merge on GitHub | `.github/workflows/audit-check.yml` (the render check still runs only when Claude merges, because it needs a browser) | Built |
+| 2 | **This Audit Log is the record**: every audit adds a row (date, scope, size, findings by severity, lost lines by reason, result) | A required step (6) of the audit skill | Built |
+| 3 | **Three audit sizes**: quick (the three scripts) for small fixes, standard (scripts plus a reviewer and a second) for normal sessions, deep (plus one reviewer per reference page and a walk-through) for reorganizations and milestones | Step 0 of the audit skill: Claude picks the size and says why | Built |
+| 4 | **Rule tests at every weekly review**, with results recorded here | The wrap-up skill (weekly review) and the run-tests skill | Built |
+| 5 | **The page pop-up fix**: one permission rule, so page checks and publishes never wait on me | Item W20 in the Open Items log. Claude isn't allowed to change its own permissions, so I add it | Waiting on me |
+| 6 | **Lost lines grouped by reason** in each audit row | The nothing-lost script now ends with a count per file; the audit row groups them as reworded, moved or cut on purpose | Built |
 
 ## Entry: 2026-10-15, How we deliver and the reference pages
 
@@ -91,7 +90,7 @@ Each one waits for my yes or no.
 - **The structure is sound.** All 44 sub-steps have every field, every agent name and kind matches across files, every gate's wording matches the Product Workflow, and the built pages were all up to date.
 - **The pages disagreed on details that matter in real use:** who decides at each gate, what "proof" means at the Build gate, and whether a sponsor could waive the zero-tolerance permissions test. These are fixed.
 - **Several things the pages promised had no task behind them**, such as the incident dry run (proof of a legally required control) and the guardrail test in step 4. These are fixed.
-- **Six gaps remain that need your decision** before the RM and PM work. They are rules we never wrote, not mistakes, so I haven't invented them. They're listed below with my recommendation.
+- **Six gaps remain that need my decision** before the RM and PM work. They are rules we never wrote, not mistakes, so Claude didn't invent them. They're listed below with Claude's recommendation.
 
 ### What was found and fixed
 
@@ -112,7 +111,7 @@ About 110 findings: 8 Must fix, about 55 Should fix, the rest Minor. All are fix
 
 **Left on purpose:** the RM plan still quotes the old wording of gates 3 and 5. It's out of scope today and gets aligned when we do the RM work.
 
-### Decisions for you: gaps to close before the RM and PM work
+### Decisions for me: gaps to close before the RM and PM work
 
 Each is a rule the machine needs and doesn't have. My recommendation is in the last column.
 

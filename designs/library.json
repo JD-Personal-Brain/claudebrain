@@ -138,7 +138,7 @@
           "id": "audit-log",
           "name": "Audit Log",
           "what": "How we audit our work: the method, every check and when it runs, the record of every audit so far, and what to improve.",
-          "status": "Waiting for review",
+          "status": "In use",
           "url": "https://claude.ai/artifact/QnPL82PBx6AfGKB5VgqUPf",
           "source": "memos/audit-log.md"
         },

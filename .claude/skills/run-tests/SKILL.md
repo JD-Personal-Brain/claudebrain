@@ -37,6 +37,7 @@ if every point is met. Quote the line from the reply that proves it.
 
 ## 4. Record and report
 - Add the result to each test's **Results** line: date, ✅ pass or ❌ fail, and one line of proof.
+- Add one row to "The record" in `memos/audit-log.md` (the Audit Log): the date, "Rule tests", how many ran, passed and failed, and which rules failed (Audit Log improvement 4). Rebuild and republish the page.
 - For each failure, log it with the **log-lesson** skill (a failed test means the rule failed).
 - Tell the user in about 5 lines: how many passed, which failed, and which need a real session.
 - Save a draft to GitHub. Ask before merging into main.

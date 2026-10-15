@@ -1,0 +1,19 @@
+# Runs the audit checker on every pull request into main (Audit Log improvement 1).
+# If the checker finds a problem, this check shows a red mark on the pull request,
+# so a merge clicked on GitHub can be stopped before it happens.
+name: Audit checker
+on:
+  pull_request:
+    branches: [main]
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run the audit checker
+        run: |
+          python3 .claude/skills/audit/check.py 2>&1 | tee check-out.txt | grep -v '^ok' || true
+          grep -q '^problems: 0$' check-out.txt

@@ -14,7 +14,8 @@
    playbook sub-step; the Product Workflow page and each playbook step carry the memo's question and gate wording.
 8. The glossary: no word from its "Words we don't use" table appears in the core documents.
 9. Retired wording: nothing from the glossary's "Old wording we've retired" table is left anywhere people read (idea 37).
- 11. The four "How we deliver" pages keep the names the user set: Product Workflow, Product Framework,
+ 10. The two user groups are always written RM, RMs, PM, PMs (no "Rms", "rms" and so on).
+11. The four "How we deliver" pages keep the names the user set: Product Workflow, Product Framework,
     Product Machine, Product Playbook. No old name (Six-Step Product Workflow, Delivery Machine, Delivery Playbook)
     appears anywhere, built pages included, outside the glossary's retired-wording table and history files.
 12. Links to a section of another of our pages point to a section that exists there (idea 48).

@@ -25,7 +25,7 @@ Claude updates it at every wrap-up: finished items move to "Closed" with the dat
 
 | Stage | Open | What it is |
 |---|---|---|
-| Now | 4 | What we're working on first |
+| Now | 3 | What we're working on first |
 | Stage 1. Read and lock the core | 4 | What I read, then the decision on the RM framework |
 | Stage 2. Make the machine runnable | 4 | What Claude builds so a real run is possible |
 | Stage 3. Dry run and fix | 3 | Running the machine once and fixing it |
@@ -71,18 +71,17 @@ What we're working on first: a quick check on the bank news scout, then the user
 | W1 | **High priority.** Check that the bank news scout's first weekly run (Monday October 19) reached my personal email, jeremydrane2021@gmail.com. The scout no longer uses Gmail or my work address: its summary arrives as the scheduled task's own notice (email and phone). If the notice goes somewhere else, tell Claude. Optionally, allow sec.gov, investor.associatedbank.com and associatedbank.com in the cloud environment's Network access settings, so the scout can open the bank's pages. **Also turn on automatic approval:** both scout tasks ("Bank news scout (weekly)" and "(after Q3 results)") are set to stop and wait whenever a step needs approval, and nobody is there to approve on a Monday morning, so the run could stall without sending anything. How (checked 2026-10-14, button names not confirmed): in the Claude desktop app, open the **Code** tab, click **Routines** in the left sidebar (or under **More**), click the task, click **Edit**, set the permission mode to automatic approval and save; then the other task. Claude can't turn this on itself. If the setting isn't there, skip it: Anthropic's help page says cloud tasks don't ask for approval, and a missing Monday notice would show a stalled run. | Me | Monday October 19, 2026 (first weekly run) |
 | W2 | Map the RM and portfolio manager user workflows (agreed 2026-10-14, the next job; the RM map starts from Map 2 on the Workflow Maps, an RM's week with AI, which shows only the with-AI side): how each group works today, where each AI product fits, and how the work changes. **Start with the RM user workflow** (you asked for it on 2026-10-14; the next session begins here), then credit. Each gets a page in the Document Library, where a placeholder row waits. Show a sample of the page layout before building it. Use the new user-workflow routine (idea 41, built 2026-10-14) | Claude and me | Nothing |
 | D1 | Decide which gaps from the 2026-10-15 audit of How we deliver to close before the RM and portfolio manager work (idea 54). Six are marked Needed: the unit of work (which gates are per project, AI product or feature wave), change control after launch, the quick pass for the next feature wave, the credit boundary (control K3), products built on documents, and how a user workflow map feeds Discover. Three are Optional. Each has my recommendation on the Audit Log page (https://claude.ai/artifact/QnPL82PBx6AfGKB5VgqUPf) | Me | Nothing |
-| D2 | Read the Audit Log page (https://claude.ai/artifact/QnPL82PBx6AfGKB5VgqUPf): how we audit, every check and when it runs, the record of every audit, six gaps in how we audit today, and six proposed improvements. Say yes or no to each improvement | Me | Nothing |
 
 ## Stage 1. Read and lock the core
 
-**Who:** Me. You read the plan and the manual the whole framework rests on, then decide whether the RM framework is ready (D3). Nothing in stage 2 needs to wait for this, but the dry run and Andy do.
+**Who:** Me. You read the plan and the manual the whole framework rests on, then decide whether the RM framework is ready (D2). Nothing in stage 2 needs to wait for this, but the dry run and Andy do.
 
 | # | Item | Who | Waits on |
 |---|---|---|---|
 | V1 | Read the RM Analytics Plan (the long scrolling page): everything after the summary's opening and plan table: from "What lets us move this fast" on, then Parts 1 to 6. The RM Analytics Framework design page holds the same words | Me | Nothing |
 | V2 | Read the RM Core Use Cases page: McKinsey's five frontline AI use cases and their returns, how the RM plan covers them, and the three decisions made on 2026-10-15 (C30 to C32) | Me | Nothing |
 | V3 | Read the Portfolio Manager Core Use Cases page: what banks are deploying in commercial credit, and the credit counterpart proposed for each of the seven core use cases | Me | Nothing |
-| D3 | Is the RM framework ready to copy to other use cases? My answer on 2026-10-09: not yet. The reading in stage 1 and the work in stages 2 and 3 come first | Me | Credit, the next use case, waits on this |
+| D2 | Is the RM framework ready to copy to other use cases? My answer on 2026-10-09: not yet. The reading in stage 1 and the work in stages 2 and 3 come first | Me | Credit, the next use case, waits on this |
 
 ## Stage 2. Make the machine runnable
 
@@ -135,7 +134,7 @@ Useful any time; none of these blocks a stage. Dated ones first.
 | W17 | Check the product details marked "(verify)" in the Tech Stack Guide: product names, prices, vendor terms and any update to the regulators' model-risk guidance. Eleven lines carry the mark. New lead (2026-10-13, Portfolio Manager Core Use Cases page): SR 26-2, issued 17 April 2026, reportedly replaces SR 11-7, which our files cite; sources disagree on whether it covers generative AI, so read the Fed's own text before changing anything | Claude | Nothing |
 | W18 | Claude Mastery course: paste in the next page (Module 3: Projects, Connectors and Skills). Claude starts a course notes file when it arrives (idea 14, approved) | Me, then Claude | Nothing |
 | W19 | Try the newer skills on real work: "prototype X", "write a prompt for X", "new use case: X" | Me | Nothing |
-| W20 | Fewer approval pop-ups (idea 2, approved): page reads and publishes stopped the 2026-10-15 audit for about 30 minutes. The fix is one rule in the repo's settings (`.claude/settings.json`) that lets Claude use the page tools without asking; Claude isn't allowed to change its own permissions, so I add it (or choose "always allow" on the next page pop-up, if the app offers it ⚠️). Also tell Claude any other pop-ups I still see | Me, then Claude | Nothing |
+| W20 | **Fewer approval pop-ups (idea 2, approved; Audit Log improvement 5).** Page reads and publishes stopped the 2026-10-15 audit for about 30 minutes. Claude isn't allowed to change its own permissions, so I add one rule: open https://github.com/thejdogpsu/claudebrain/edit/main/.claude/settings.json, put the cursor just after the `{` on line 1, press Enter, paste `"permissions": { "allow": ["Artifact", "ArtifactComments", "ArtifactData"] },` and click Commit changes twice. Then tell Claude any other pop-ups I still see | Me | Nothing |
 | W21 | Playbooks for my everyday tools (idea 3, approved): name two or three tasks I repeat in email, calendar or documents. Claude turns each into a step-by-step skill | Me, then Claude | Nothing |
 
 ## Inside the bank
@@ -170,7 +169,7 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 
 | # | Item | Who | Waits on |
 |---|---|---|---|
-| P1 | The credit (portfolio management) plan. Started at my request on 2026-10-13 with the Portfolio Manager Core Use Cases page (the six parked credit processes plus two new ones, each lined up with a core use case); the portfolio manager user workflow map is part of W2. The order is agreed (C33): credit memo and annual review drafts first, early warning second, risk ratings out of the first feature waves. The plan itself still waits. Ready for then: franchise banking as a possible pilot, and whether to add "costs saved" and "loan losses avoided" to the value model | Me | Me saying the RM framework is ready (D3) |
+| P1 | The credit (portfolio management) plan. Started at my request on 2026-10-13 with the Portfolio Manager Core Use Cases page (the six parked credit processes plus two new ones, each lined up with a core use case); the portfolio manager user workflow map is part of W2. The order is agreed (C33): credit memo and annual review drafts first, early warning second, risk ratings out of the first feature waves. The plan itself still waits. Ready for then: franchise banking as a possible pilot, and whether to add "costs saved" and "loan losses avoided" to the value model | Me | Me saying the RM framework is ready (D2) |
 | P2 | Sharing with Associated. We share the same pages, not a separate edition (idea 33: no, 2026-10-15). When I'm ready, Claude lists which pages to share one by one from each page's Share menu | Me | Me saying I'm ready to share |
 | P3 | A treasury and payments use case. The bank named it as a starting point for AI, and nothing has been planned yet | Me | After credit, unless B3 changes the order |
 | P4 | **Featured: running many products at once.** One intake form for new product ideas, a scoring rule to rank them against each other, how many products I can run at once, my week and month across products, and when a live product is retired | Me | The machine running one product well first |
@@ -214,5 +213,6 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C33 | The credit order on the Portfolio Manager Core Use Cases page: yes. Credit memo and annual review drafts first, early warning second, risk ratings kept out of the first feature waves. The credit plan itself stays parked (P1) | 2026-10-15 |
 | C34 | The eight Elon mode suggestions: yes to all, built 2026-10-15. The automation check now cuts first (should it exist, delete, simplify, faster) before it automates; every control says where it comes from (law or regulator, bank policy, our choice) and who to ask to change it, with a table for the sub-steps and gates in the playbook; the dry run (W7) includes a deletion pass; each project names its limiting factor (W4 and the running layer); the first-time log gives a wait index; the Product Machine measures the machine itself; gates are decided in writing when clean; and a new elon-mode skill reviews the work at every fifth wrap-up | 2026-10-15 |
 | C35 | Requirement sources check (idea 52): yes, built. The audit checker now fails if a control has no "Comes from" line, or if a sub-step that sets, builds, proves or watches a law or bank-policy control is missing from the playbook's "Where the requirements come from" table; every sub-step that sets, builds, proves or watches such a control is now in the table | 2026-10-15 |
+| C36 | The Audit Log (renamed from "How We Deliver Audit"): approved with all six improvements. Built: a GitHub check on every pull request, an Audit Log row after every audit, three audit sizes (quick, standard, deep), rule tests at every weekly review, lost lines counted per file. The pop-up fix waits on me (W20) | 2026-10-15 |
 
 _Last updated: 2026-10-15_
