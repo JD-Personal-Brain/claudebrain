@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L35 · 2026-10-15 · A wrap-up audit left no row in the Audit Log
+- **What happened:** the earlier wrap-up that evening (pull request #103) ran its quick audit but added no row to the Audit Log, and the log still said the GitHub check only "shows a red mark" after it had become required. I asked whether the Audit Log should have been updated.
+- **Root cause:** the Audit Log row is step 6 of the audit skill, but the wrap-up's quick audit ran only the scripts and skipped that step; nothing in the wrap-up named it.
+- **Fix:** the missing row and the GitHub check wording are fixed. The wrap-up skill's step 0 now requires the Audit Log row and its republish at every wrap-up, quick ones included.
+- **Rule:** R18 · **Test:** T2-style check at the next wrap-up · **Level:** 3 (a required step in the wrap-up skill) · **Times it happened:** 1
+
 ### L34 · 2026-10-15 · Edited the RM plan while we were still locking the base (L28 again)
 - **What happened:** while closing the six gaps in the How we deliver pages, Claude also changed one sentence in the RM plan (the memo and its two pages) so its change rule matched the new one. I hadn't started RM or PM work: we're locking down the base first. The audit before this one had left the RM plan alone on purpose for exactly that reason. I said to leave the change in, but it was outside what I asked.
 - **Root cause:** a reviewer flagged the RM plan's line as a contradiction, and Claude treated "fix every finding" as covering pages outside the task, instead of checking the scope I'd set. A repeat of L28 (doing work I didn't ask for), so R31 moves to Level 2.
