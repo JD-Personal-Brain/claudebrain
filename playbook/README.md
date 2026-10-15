@@ -48,15 +48,18 @@ never wrote down.
 | What repeated | Anything I did more than once, or will do again next project |
 | Wait index | Calendar days from start to finish, divided by hours of real work. A high number means waiting, not working |
 | Cut first | Should it exist (and does it come from law, bank policy or our choice)? Delete it? Simplify it? Make it faster? |
-| Automation check | For what's left: repeat? Stable? Safe alone? (yes or no each) |
+| Then automate | For what's left: repeat? Stable? Safe alone? (yes or no each) |
 | Agent idea | If all three are yes: what it would do, and Auto or Draft |
+
+On later projects, keep a light version of this log for every sub-step (start and
+finish, hours and waits), so the machine's measures can be counted every time.
 
 ## Rules that apply to every step
 - **No client data in an AI tool the bank hasn't approved**, even for a quick test.
 - **Guesses about the bank are marked ⚠️** until confirmed. Replace them with facts as I learn them, and note the source.
 - **Numbers we don't have yet are [X].** Never invent them.
 - **At the gate,** run the automation check from `product-machine.md` on every Me and Draft task (cut first, then automate), and update the step's table there.
-- **Gates are decided in writing when they're clean:** if every criterion is met, the decider approves the gate pack in writing and the approval goes in the decision log; a meeting happens only when a criterion is contested or a decider asks for one. Partner sign-offs in step 4 don't change, and at the step 4 gate the decider approves the signed evidence pack (⚠️ the bank's approval policy may require a committee meeting).
+- **Gates are decided in writing when they're clean:** if every criterion is met, the decider approves the gate pack in writing and the approval goes in the decision log; a meeting happens only when a criterion is contested or a decider asks for one. Partner sign-offs in step 4 don't change, and at the step 4 gate the risk partner and the sponsor approve the signed evidence pack (⚠️ the bank's approval policy may require a committee meeting).
 - **Every sub-step is our choice** (ask the product manager to change it) unless the table below says it comes from law, a regulator or bank policy. A sub-step that sets, builds, proves or watches a law or bank-policy control inherits that control's source. Law and bank policy are never deleted by the automation check.
 
 ## Where the requirements come from
@@ -72,8 +75,9 @@ with the bank's risk partner at sub-step 2.4.
 | 1.3 Interview and shadow users | Inherits from the controls it sets, builds, proves or watches: K24 law or regulator | Each control's owner (Controls Catalog) |
 | 2.2 Choose the platform and delivery path | Inherits from the controls it sets, builds, proves or watches: K18 bank policy; K20 bank policy | Each control's owner (Controls Catalog) |
 | 2.3 Data contract | Bank policy on data use ⚠️, resting on customer privacy law (the Gramm-Leach-Bliley Act) | The data owner |
-| 2.4 Risk intake | Regulator: the model risk guidance (SR 11-7, possibly replaced by SR 26-2: item W17 in the Open Items log), through the bank's model risk policy | Model risk |
+| 2.4 Risk intake | Regulator: the model risk guidance (SR 11-7, with the OCC's matching Bulletin 2011-12, possibly replaced by SR 26-2: item W17 in the Open Items log), through the bank's model risk policy; also inherits K12 bank policy and K24 law or regulator (ask compliance) | Model risk |
 | 2.7 Set the measures, quality bar and value model | Inherits from the controls it sets, builds, proves or watches: K4 bank policy; K9 law or regulator | Each control's owner (Controls Catalog) |
+| 3.1 Design the solution and choose the AI capabilities | Inherits from the controls it sets, builds, proves or watches: K19 bank policy | Each control's owner (Controls Catalog) |
 | 3.2 Prepare trusted data | Inherits from the controls it sets, builds, proves or watches: K4 bank policy; K6 bank policy | Each control's owner (Controls Catalog) |
 | 3.3 Build the logic: simple rules first, AI explains | Inherits from the controls it sets, builds, proves or watches: K19 bank policy | Each control's owner (Controls Catalog) |
 | 3.4 Build in the controls | Inherits each control's source (Controls Catalog) | Each control's owner |
@@ -83,16 +87,16 @@ with the bank's risk partner at sub-step 2.4.
 | 4.2 Data and privacy review | Bank policy ⚠️, and customer privacy law (the Gramm-Leach-Bliley Act) where individuals' data is involved | Privacy |
 | 4.3 Testing evidence | Regulator: the model risk guidance expects testing; our quality bar sets the thresholds | Model risk |
 | 4.4 Fairness check | Law: fair lending (the Equal Credit Opportunity Act) wherever similar clients could be treated differently ⚠️ (my reading for a tool that doesn't decide credit) | Compliance |
-| 4.5 Confirm the controls work | Regulator and bank policy, through the controls it proves | Model risk |
-| 4.6 Vendor reviews | Regulator: the US banking regulators' third-party risk guidance (2023) | Vendor risk |
-| 4.7 Sign-offs | Bank policy: its approval process for AI and models ⚠️ | Model risk |
+| 4.5 Confirm the controls work | Regulator and bank policy, through the controls it proves | Each control's owner (Controls Catalog) |
+| 4.6 Vendor reviews | Regulator: the US banking regulators' third-party risk guidance (2023); also inherits K19 bank policy | Vendor risk; each control's owner (Controls Catalog) |
+| 4.7 Sign-offs | Bank policy: its approval process for AI and models ⚠️ | Model risk, as owner of the bank's AI and model approval policy ⚠️ [name needed] |
 | 4.8 Monitoring plan | Regulator: the model risk guidance expects ongoing monitoring | Model risk |
 | 5.1 Confirm release readiness | Inherits from the controls it sets, builds, proves or watches: K15 bank policy; K16 law or regulator | Each control's owner (Controls Catalog) |
 | 5.2 Launch the pilot, with a comparison group | Inherits from the controls it sets, builds, proves or watches: K18 bank policy | Each control's owner (Controls Catalog) |
-| 5.6 Fix fast | Inherits from the controls it sets, builds, proves or watches: K16 law or regulator | Each control's owner (Controls Catalog) |
+| 5.6 Fix fast | Inherits from the controls it sets, builds, proves or watches: K16 law or regulator; K17 law or regulator | Each control's owner (Controls Catalog) |
 | 6.1 Track the measures on a live dashboard | Inherits from the controls it sets, builds, proves or watches: K16 law or regulator | Each control's owner (Controls Catalog) |
 | 6.3 Re-test after every change, and watch for drift | Inherits from the controls it sets, builds, proves or watches: K4 bank policy; K9 law or regulator; K16 law or regulator; K17 law or regulator | Each control's owner (Controls Catalog) |
-| Step 4 gate | Regulator and bank policy (the formal approval) | Model risk |
+| Step 4 gate | Regulator and bank policy (the formal approval) | Model risk, as owner of the bank's AI and model approval policy ⚠️ [name needed] |
 | The other five gates | Our choice | The product manager |
 
 _Last updated: 2026-10-15_

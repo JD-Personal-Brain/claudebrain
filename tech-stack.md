@@ -44,7 +44,7 @@ pick the right layer above to fix it, without breaking the bank's rules.
 
 ---
 
-## By my product framework
+## By the six steps (Product Workflow)
 
 The same technologies, sorted by the six steps I'll use in this job.
 **Status key:** 🟡 named in the posting; I was told it's live (see the working assumption above), but product details are unconfirmed ·
@@ -182,14 +182,14 @@ The same technologies, sorted by the six steps I'll use in this job.
 The job says "governed release" again and again. In a bank, *how* you ship
 matters as much as *what* you ship.
 
-- **Model risk management:** US bank regulators expect banks to check, test and monitor their models. The key guidance is **SR 11-7** (Federal Reserve/OCC, 2011). Banks increasingly apply it to AI **(verify for any updates since 2026)**.
+- **Model risk management:** US bank regulators expect banks to check, test and monitor their models. The key guidance is **SR 11-7** (Federal Reserve, 2011, with the OCC's matching Bulletin 2011-12). Banks increasingly apply it to AI. It may have been replaced by **SR 26-2** (April 2026, reportedly; item W17 in the Open Items log) **(verify)**.
 - **Third-party risk:** using Microsoft, AWS, Salesforce or an AI vendor needs vendor risk reviews (US interagency guidance, 2023).
 - **Privacy:** customer financial data is protected by law (for example, the **Gramm-Leach-Bliley Act**). Decide early what data an AI may see.
 - **Fair lending:** if AI touches credit decisions, fair-lending laws apply (for example, the **Equal Credit Opportunity Act**). That's a much higher bar, so keep early products away from credit decisions.
 - **Responsible AI:** fairness, transparency, human oversight and clear accountability. The **NIST AI Risk Management Framework** (2023) is a common reference. The bank probably has its own policy too **(guess)**.
 
 **What a "governed release" likely includes (guess):**
-1. A use-case intake and risk rating (low, medium or high).
+1. An AI product intake and risk rating (low, medium or high).
 2. A data review: what data, whose, and is it allowed?
 3. Testing evidence: evals, accuracy, bias checks and red-teaming (trying to break it).
 4. Controls: human approval steps, guardrails and logging.
@@ -220,4 +220,4 @@ control measures. A starter set:
 - [ ] What does the AI governance process look like, and how long does it take?
 - [ ] Who builds: my team, IT, or citizen developers?
 
-_Last updated: 2026-10-09_
+_Last updated: 2026-10-15_

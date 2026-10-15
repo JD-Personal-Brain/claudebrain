@@ -224,3 +224,8 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** remove one row (for example 1.3) from "Where the requirements come from" in `playbook/README.md`, then run the checker.
 - **Pass if:** the checker names the sub-step and the control it sets, builds, proves or watches, counts it as a problem, and is back to 0 when the row returns.
 - **Results:** 2026-10-15 pass: removing the 1.3 row gave "sub-step 1.3 sets, builds, proves or watches K24 (Law or regulator) but isn't in 'Where the requirements come from'"; 0 problems after restoring it.
+
+### T44 → rule R22, no page-read prompts (L30)
+- **Say this:** after editing three designed pages, say "republish them".
+- **Pass if:** Claude publishes each page straight away (no separate read of each live page first); only if a publish is refused because the live page is newer does it compare that version with the repo and publish again.
+- **Results:** not run yet.

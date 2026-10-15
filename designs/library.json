@@ -32,7 +32,7 @@
         {
           "id": "framework",
           "name": "Product Framework",
-          "what": "The rules every product follows: who decides, how success is measured, the quality bar, the AI principles and how each step is written up.",
+          "what": "The rules every product follows: who decides at each gate, how success is measured, the quality bar, the AI principles and how each step is written up.",
           "status": "In use",
           "url": "https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ",
           "source": "product-framework.md"
@@ -40,7 +40,7 @@
         {
           "id": "product-machine",
           "name": "Product Machine",
-          "what": "Who does each task in every step (Auto, Draft, Me or Partner), how tasks move toward automation, and how one product manager runs many projects at once.",
+          "what": "Who does each task in every step (Auto, Draft, Me or Partner), how tasks move toward automation (cut first, then automate), how the machine itself is measured, and how one product manager runs many projects at once.",
           "status": "In use",
           "url": "https://claude.ai/artifact/S8Wbygy24cjguTMxZsN2QF",
           "source": "product-machine.md"
@@ -135,10 +135,18 @@
           "source": "open-items.md"
         },
         {
+          "id": "how-we-deliver-audit",
+          "name": "How We Deliver Audit",
+          "what": "The 2026-10-15 audit of the four How we deliver pages and the reference pages: what was found and fixed, and the gaps to decide before the RM and portfolio manager work.",
+          "status": "In use",
+          "url": "https://claude.ai/artifact/QnPL82PBx6AfGKB5VgqUPf",
+          "source": "memos/how-we-deliver-audit.md"
+        },
+        {
           "id": "glossary",
           "name": "Glossary",
           "what": "The words we use, one meaning each, the old wording we've retired, and the bank's terms still to map.",
-          "count": "65 terms",
+          "count": "69 terms",
           "status": "Reference",
           "url": "https://claude.ai/artifact/LRQHSz65beh9XewB6qsQvQ",
           "source": "glossary.md"
@@ -173,7 +181,7 @@
         {
           "id": "controls",
           "name": "Controls Catalog",
-          "what": "All 25 controls, the safeguards built into each product, and where each is set, built, proved and watched.",
+          "what": "All 25 controls, the safeguards built into each product, where each is set, built, proved and watched, and where each comes from (law, bank policy or our choice).",
           "count": "25 controls",
           "status": "Reference",
           "url": "https://claude.ai/artifact/7GmH3iBG6jcDkdacUysUrQ",
@@ -214,8 +222,8 @@
       "items": [
         {
           "id": "elon-mode",
-          "name": "Elon Mode Research",
-          "what": "How Elon Musk engineers and improves systems: his five-rule algorithm, eight thinking habits, where the method went wrong, and suggestions for our own system.",
+          "name": "Elon Mode",
+          "what": "How Elon Musk engineers and improves systems: his five-rule algorithm, eight thinking habits, where the method went wrong, and the eight changes we made to our system.",
           "status": "In use",
           "url": "https://claude.ai/artifact/NMxzPEotPQcM2KPUmsBbsX",
           "source": "memos/elon-mode-research.md"

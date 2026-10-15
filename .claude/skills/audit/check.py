@@ -21,6 +21,7 @@
 13. No built page shows a stray Markdown heading ("## ...") as text.
 14. Requirement sources (idea 52): every control has a "Comes from" line, and every sub-step that sets, builds, proves
     or watches a law, regulator or bank-policy control is in the playbook's "Where the requirements come from" table.
+15. Agent names: every "M<number> <Name>" in the Product Machine and the playbook steps matches the Agent Library.
 Prints each problem and a total. 0 problems means the mechanical checks pass.
 """
 import glob
@@ -61,7 +62,7 @@ for f in glob.glob('designs/*.html'):
     for m in re.findall(r'<(?:p|li|td|dd|dt|span|div|h\d)[^>]*>_[^<]{0,40}|[^<]{0,40}_</(?:p|li|td|dd|dt|span|div|h\d)>',open(f).read()):
         print(f,"shows a stray underscore:",m); probs+=1
 # 3. pages built from working copies are up to date
-for page,builder in [('designs/product-machine.html','designs/product-machine-build.py'),('designs/playbook.html','designs/playbook-build.py'),('designs/product-framework.html','designs/md-page-build.py'),('designs/tech-stack.html','designs/md-page-build.py'),('designs/job-description.html','designs/md-page-build.py'),('designs/prompting.html','designs/md-page-build.py'),('designs/bank-business.html','designs/md-page-build.py'),('designs/open-items.html','designs/md-page-build.py'),('designs/library.html','designs/library-build.py'),('designs/workflows.html','designs/workflows-build.py'),('designs/agents.html','designs/agents-build.py'),('designs/steps.html','designs/catalogs-build.py'),('designs/controls.html','designs/catalogs-build.py'),('designs/glossary.html','designs/md-page-build.py'),('designs/mckinsey-use-cases.html','designs/md-page-build.py'),('designs/credit-market-scan.html','designs/md-page-build.py'),('designs/elon-mode.html','designs/md-page-build.py')]:
+for page,builder in [('designs/product-machine.html','designs/product-machine-build.py'),('designs/playbook.html','designs/playbook-build.py'),('designs/product-framework.html','designs/md-page-build.py'),('designs/tech-stack.html','designs/md-page-build.py'),('designs/job-description.html','designs/md-page-build.py'),('designs/prompting.html','designs/md-page-build.py'),('designs/bank-business.html','designs/md-page-build.py'),('designs/open-items.html','designs/md-page-build.py'),('designs/library.html','designs/library-build.py'),('designs/workflows.html','designs/workflows-build.py'),('designs/agents.html','designs/agents-build.py'),('designs/steps.html','designs/catalogs-build.py'),('designs/controls.html','designs/catalogs-build.py'),('designs/glossary.html','designs/md-page-build.py'),('designs/mckinsey-use-cases.html','designs/md-page-build.py'),('designs/credit-market-scan.html','designs/md-page-build.py'),('designs/elon-mode.html','designs/md-page-build.py'),('designs/how-we-deliver-audit.html','designs/md-page-build.py')]:
     before=open(page).read()
     subprocess.run(['python3',builder],check=True)
     if open(page).read()!=before: print(page,"was out of date: rebuilt it, republish it"); probs+=1
@@ -165,6 +166,8 @@ if len(gates)!=6: print('memos/role-workflow.md: could not read the six gates, s
 rh=_html.unescape(open('designs/role-workflow.html').read())
 for n,g in gates.items():
     if f'<b>Gate {n}</b><span>{g[0].upper()+g[1:]}</span>' not in rh: print('designs/role-workflow.html gate',n,'differs from memos/role-workflow.md'); probs+=1
+    # each step card repeats its gate in lower case (missed on 2026-10-15, caught in a screenshot)
+    if f'<strong>Gate:</strong> {g[0].lower()+g[1:]}.</div>' not in rh: print('designs/role-workflow.html step',n,'card gate differs from memos/role-workflow.md'); probs+=1
 # each playbook step repeats its question and gate: they must match the Product Workflow word for word (idea from 2026-10-15)
 qs={m.group(1):m.group(2).strip() for m in re.finditer(r'^\| (\d)\. [^|]+\| ([^|]+) \|[^|]+\|[^|]+\|$',rw,re.M)}
 gv={m.group(1):m.group(2).strip() for m in re.finditer(r'^\| (\d)\. [^|]+\|[^|]+\| ([^|]+) \|[^|]+\|$',rw,re.M)}
@@ -222,7 +225,7 @@ else:
         low=plain.lower()
         for old,new in ret:
             nw=new.split(' (')[0].lower() if not new.startswith('(') else new.lower()
-            for m in re.finditer(r'(?<!\w)'+re.escape(old.lower())+r'(?!\w)',low):
+            for m in re.finditer(r'(?<!\w)'+re.escape(old.lower())+r'(?:s|es)?(?!\w)',low):  # plurals too ("written gates")
                 if nw in low[max(0,m.start()-150):m.start()]+low[m.end():m.end()+150]: continue  # the new wording must sit outside the match itself
                 print(f,'still says',repr(old),'(retired; use',repr(new)+'), near:',repr(plain[max(0,m.start()-40):m.end()+40])); probs+=1
 # 10. the two user groups are always written RM, RMs, PM, PMs (said 2026-10-14): no "Rms", "rms" and so on (an apostrophe for ownership, "the RM's", is fine, and so are all-capital labels such as "FOR RMS")
@@ -232,7 +235,7 @@ for f in sorted(set(core+glob.glob('memos/*.md')+['NOW.md','glossary.md','open-i
 # 11. page names the user set (2026-10-14, lesson L26): Product Workflow, Product Framework, Product Machine,
 # Product Playbook. Every old name fails, in any case, in the working files and on the built pages (checked as plain text).
 import html as _h2
-OLD_NAMES=['six-step product workflow','six-step workflow','delivery machine','delivery playbook']
+OLD_NAMES=['six-step product workflow','six-step workflow','delivery machine','delivery playbook','elon mode research']
 _named=['NOW.md','CLAUDE.md','open-items.md','product-framework.md','product-machine.md','tech-stack.md','prompting.md','designs/library.json','designs/README.md']+glob.glob('memos/*.md')+glob.glob('playbook/*.md')+glob.glob('learning/rules.md')+glob.glob('learning/tests.md')+glob.glob('designs/*.py')+glob.glob('designs/*.html')+glob.glob('designs/rm-analytics-canvas/*.dc.html')+glob.glob('.claude/skills/*/SKILL.md')
 for f in _named+['glossary.md']:
     t=open(f).read()
@@ -279,5 +282,14 @@ for _b in re.split(r"\n### ",_ctl)[1:]:
         _fm=re.search(r"\*\*"+_f+r":\*\* (.+)",_b)
         for _n in re.findall(r"\b\d\.\d\b",_fm.group(1) if _fm else ""):
             if _n not in _listed: print("playbook/README.md: sub-step",_n,"sets, builds, proves or watches",_cid,"("+_m.group(1).strip()+") but isn't in 'Where the requirements come from'"); probs+=1
+
+# 15. Agent names (audit 2026-10-15): every "M<number> <Name>" in the Product Machine and the playbook step files
+# uses the number and exact name from the Agent Library (playbook/agents.md), so they can't drift apart.
+_ag={m.group(1):m.group(2).strip() for m in re.finditer(r'^### (M\d+)\. (.+)$',open('playbook/agents.md').read(),re.M)}
+for f in ['product-machine.md','playbook/README.md','playbook/controls.md','product-framework.md']+sorted(glob.glob('playbook/[1-6]-*.md')):
+    for m in re.finditer(r'\b(M\d{1,2})\*{0,2} ([A-Z][a-z]+(?:[ -][a-z]+){0,3})',open(f).read()):
+        nm=_ag.get(m.group(1))
+        if nm is None: print(f,'names',m.group(1),'but the Agent Library has no such agent'); probs+=1
+        elif not (nm.startswith(m.group(2)) or m.group(2).startswith(nm)): print(f,'calls',m.group(1),repr(m.group(2)),'but the Agent Library calls it',repr(nm)); probs+=1
 
 print("problems:",probs)

@@ -28,6 +28,52 @@ for m in re.finditer(r"^\| (\d)\. ([^|]+?) \| ([^|]+) \|",RW,re.M):
     questions[m.group(1)]=(m.group(2),m.group(3).strip())
 steps=[(questions[n][0],questions[n][1],rows_after(f"**{n}. {questions[n][0]}**\n")) for n in "123456"]
 running=rows_after("## Across every project (the running layer)")
+# The prose sections below the tables are read from product-machine.md too (automation check,
+# gates in writing, measuring the machine, many projects), so the page can't drift from the .md.
+def section(head):
+    b=FW[FW.index(head+"\n")+len(head)+1:]
+    m=re.search(r"^## |^_Last updated",b,re.M)
+    return b[:m.start()] if m else b
+def inline(t):
+    t=E(t)
+    t=re.sub(r"\*\*(.+?)\*\*",r"<b>\1</b>",t)
+    t=re.sub(r"`(.+?)`",r"\1",t)
+    return t
+def paras(block):
+    return [" ".join(p.split("\n")).strip() for p in re.split(r"\n\s*\n",block.strip()) if p.strip()]
+def numbered(block):
+    out=[]
+    for m in re.finditer(r"^\d+\. \*\*(.+?)\*\*\s*(.*)$",block,re.M):
+        out.append(f'<li><b>{inline(m.group(1))}</b><span>{inline(m.group(2))}</span></li>' if m.group(2) else f'<li><b>{inline(m.group(1))}</b></li>')
+    return "".join(out)
+ck=section("## The automation check at every gate")
+ck_intro,ck_rest=ck.split("**First, cut:**")
+ck_cut,ck_rest=ck_rest.split("**Then, automate what's left:**")
+ck_cut_items,*ck_cut_after=re.split(r"\n\s*\n",ck_cut.strip(),maxsplit=1)
+_m=re.match(r"((?:^\d+\..*\n?)+)",ck_rest.strip(),re.M)
+ck_auto_list=_m.group(1); ck_after=paras(ck_rest.strip()[len(ck_auto_list):])
+check_html=(f'<p>{inline(" ".join(paras(ck_intro)))}</p><h3>First, cut</h3><ol>{numbered(ck_cut_items)}</ol>'
+    +"".join(f'<p>{inline(x)}</p>' for x in paras(ck_cut_after[0] if ck_cut_after else ""))
+    +f"<h3>Then, automate what's left</h3><ol start=\"5\">{numbered(ck_auto_list)}</ol>"
+    +"".join(f'<p>{inline(x)}</p>' for x in ck_after))
+gates_html="".join(f'<p>{inline(x)}</p>' for x in paras(section("## Gates in writing when they're clean")))
+ms=section("## Measuring the machine")
+ms_lines=ms.strip().split("\n")
+ms_tab=[l for l in ms_lines if l.startswith("|")]
+ms_text=[l for l in ms_lines if not l.startswith("|")]
+ms_before=paras("\n".join(ms_text[:ms_lines.index(ms_tab[0])]))
+ms_after=paras("\n".join(ms_lines[ms_lines.index(ms_tab[-1])+1:]))
+ms_head=[x.strip() for x in ms_tab[0].strip("|").split("|")]
+ms_rows=""
+for l in ms_tab[2:]:
+    c=[x.strip() for x in l.strip("|").split("|")]
+    ms_rows+=f'<tr><td><b>{inline(c[0])}</b></td><td>{inline(c[1])}</td><td>{inline(c[2])}</td></tr>'
+measures_html=("".join(f'<p>{inline(x)}</p>' for x in ms_before)
+    +f'<div class="step"><div class="tw"><table><thead><tr>{"".join(f"<th>{E(h)}</th>" for h in ms_head)}</tr></thead><tbody>{ms_rows}</tbody></table></div></div>'
+    +"".join(f'<p>{inline(x)}</p>' for x in ms_after))
+rules=re.findall(r"^- \*\*(.+?)\*\*\s*(.*)$",section("## Many projects at once"),re.M)
+rules_html="".join(f'<div class="rule"><h3>{inline(t.rstrip(".:"))}</h3><p>{inline(b)}</p></div>' for t,b in rules)
+NUMW={1:"One",2:"Two",3:"Three",4:"Four",5:"Five",6:"Six",7:"Seven",8:"Eight"}
 LBL={"auto":"Auto","draft":"Draft","me":"Me","partner":"Partner"}
 def chip(k): return f'<span class="chip k-{k}">{LBL[k]}</span>'
 def cell_num(num):
@@ -46,9 +92,22 @@ for i,(name,q,rows) in enumerate(steps,1):
         c=sum(1 for r in rows if r[1]==k)
         if c: segs+=f'<span class="seg k-{k}" style="flex:{c}" title="{LBL[k]}: {c}">{c}</span>'
     bars+=f'<div class="mixrow"><div class="mixname"><span class="num">{i}</span>{E(name)}</div><div class="mixbar" role="img" aria-label="{E(name)}: '+", ".join(f"{sum(1 for r in rows if r[1]==k)} {LBL[k]}" for k in ["me","draft","auto","partner"] if any(r[1]==k for r in rows))+f'">{segs}</div></div>'
+me_counts=[(sum(1 for r in rows if r[1]=="me"),name) for name,q,rows in steps]
+top=max(c for c,_ in me_counts)
+top_names=[n for c,n in me_counts if c==top]
+mix_text=(" and ".join(top_names)+(" carry" if len(top_names)>1 else " carries")+f" the most person-only work ({top} tasks"+(" each" if len(top_names)>1 else "")+"); the other steps lean more on AI drafts and automation.")
+def note_after(header):
+    # any short paragraph under a step's table (for example the step 4 gate note) shows under that table on the page
+    b=FW[FW.index(header)+len(header):]
+    lines=b.split("\n"); i=0
+    while i<len(lines) and lines[i].startswith("|"): i+=1
+    rest="\n".join(lines[i:]).strip()
+    m=re.search(r"^\*\*\d\. |^## ",rest,re.M)
+    return paras(rest[:m.start()] if m else rest)
 stepsec=""
 for i,(name,q,rows) in enumerate(steps,1):
-    stepsec+=f'<article class="step"><header><span class="num big">{i}</span><div><h3>{E(name)}</h3><p class="q">{E(q)}</p></div></header>{table(rows)}</article>'
+    notes="".join(f'<p class="q" style="padding:14px 20px;border-top:1px solid var(--line);max-width:none">{inline(x)}</p>' for x in note_after(f"**{i}. {name}**\n"))
+    stepsec+=f'<article class="step"><header><span class="num big">{i}</span><div><h3>{E(name)}</h3><p class="q">{E(q)}</p></div></header>{table(rows)}{notes}</article>'
 page=f'''<title>Product Machine</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
@@ -138,8 +197,8 @@ footer{{color:var(--muted);font-size:14px;border-top:1px solid var(--line);paddi
 </section>
 <section>
 <p class="label">Where the product manager's time goes</p>
-<h2 id="mix">Early steps need people; later steps run themselves</h2>
-<p>Number of tasks of each kind once the machine is running, by step, gate decisions included. Discover and Define carry the most person-only work, because that is where judgment matters most.</p>
+<h2 id="mix">Where person-only work sits</h2>
+<p>Number of tasks of each kind once the machine is running, by step, gate decisions included. {E(mix_text)}</p>
 <div class="mix">{bars}
 <div class="legend">{chip("me")} Only a person {chip("draft")} AI drafts {chip("auto")} Runs on its own {chip("partner")} Partner sign-off</div></div>
 </section>
@@ -147,43 +206,23 @@ footer{{color:var(--muted);font-size:14px;border-top:1px solid var(--line);paddi
 <p class="label">The six steps</p>
 <h2 id="tasks">Each step's tasks, by kind</h2>
 <p>One row per task, numbered to match the sub-steps in the Product Playbook. Kind is the target once the machine is running; the first time through, many tasks are done by hand so they can be logged before they are automated. Tools are first guesses until we confirm the bank's setup.</p>
-<div class="note"><strong>To confirm first:</strong> whether bank policy lets automations message people or update trackers on their own. Tasks marked ⚠️ depend on it.</div>
+<div class="note"><strong>To confirm first:</strong> whether bank policy lets automations send requests, reminders, reports or alerts to people outside the project team, or change a live system, on their own. Tasks marked ⚠️ depend on it.</div>
 <div class="steps">{stepsec}</div>
 </section>
 <section class="check">
 <p class="label">At every gate</p>
 <h2 id="check">The automation check: cut first, then automate</h2>
-<p>Before each go/no-go, take every task done by a person or drafted by AI through seven questions, in this order. Automating a task that shouldn't exist only locks in the waste (the order comes from Elon Musk's "algorithm"; see the Elon Mode Research page).</p>
-<h3>First, cut</h3>
-<ol>
-<li><b>Should it exist?</b><span>Who required it, and where does it come from: law or regulator, bank policy, or our choice (each control's card in the Controls Catalog; the Product Playbook's table for sub-steps and gates)? Law and bank policy stay. Our choices can be challenged.</span></li>
-<li><b>Can we delete it?</b><span>Record what it did and who agreed in the decision log. If nothing ever has to come back, we aren't cutting enough (about 1 in 10 should; ⚠️ sources give 10% or 20%).</span></li>
-<li><b>Can we simplify it?</b><span>Fewer steps, fewer hand-offs, fewer people to wait on.</span></li>
-<li><b>Can we make it faster?</b><span>Shorten the longest wait first. The wait index shows where.</span></li>
-</ol>
-<h3>Then, automate what's left</h3>
-<ol start="5">
-<li><b>Did it repeat?</b><span>Will it come up again, in this project or the next one?</span></li>
-<li><b>Is it stable?</b><span>Did we do it the same way at least twice?</span></li>
-<li><b>Is it safe alone?</b><span>It makes no decision, nothing reaches a client, and bank rules allow it.</span></li>
-</ol>
-<p>Three yeses: move the task one kind toward Auto before the next project. If an automated task goes wrong, a person takes it back until it's fixed.</p>
+{check_html}
 </section>
 <section>
 <p class="label">At every gate</p>
 <h2 id="gates">Gates in writing when they're clean</h2>
-<p>When every gate criterion is met, the decider approves the gate pack in writing, and the approval goes in the decision log. A gate meeting happens only when a criterion is contested or someone who decides asks for one. Partner sign-offs in step 4 don't change: each named partner still signs, and at the step 4 gate the decider approves the signed evidence pack (⚠️ the bank's approval policy may require a committee meeting). ⚠️ Whether the bank's culture accepts gates in writing is a guess; confirm it at the first project.</p>
+{gates_html}
 </section>
 <section>
 <p class="label">The machine is a product too</p>
 <h2 id="measures">Measuring the machine</h2>
-<p>Recorded for every project in sub-step 6.6 and shown in the one view of all projects. Targets are [X] until the first project sets a baseline; after that, each project should beat the last.</p>
-<div class="step"><div class="tw"><table><thead><tr><th>Measure</th><th>What it is</th><th>Where it comes from</th></tr></thead><tbody>
-<tr><td><b>Days from kickoff to pilot</b></td><td>Calendar days from sub-step 1.0 to the pilot launch (5.2)</td><td>The tracker</td></tr>
-<tr><td><b>Days at each gate</b></td><td>Calendar days from the gate pack being ready to the decision</td><td>The decision log</td></tr>
-<tr><td><b>Releases per month in the pilot</b></td><td>How many improved versions reach pilot users each month (how fast we iterate)</td><td>Release notes (5.6)</td></tr>
-<tr><td><b>Wait index</b></td><td>For each sub-step: calendar days from start to finish, divided by hours of real work. A high number means waiting, not working; fix the highest first</td><td>The first-time logs (6.6, agent M19)</td></tr>
-</tbody></table></div></div>
+{measures_html}
 </section>
 <section>
 <p class="label">Across every project</p>
@@ -193,12 +232,9 @@ footer{{color:var(--muted);font-size:14px;border-top:1px solid var(--line);paddi
 </section>
 <section>
 <p class="label">Many projects at once</p>
-<h2 id="rules">Four rules for running them side by side</h2>
+<h2 id="rules">{NUMW.get(len(rules),str(len(rules)))} rules for running them side by side</h2>
 <div class="rules">
-<div class="rule"><h3>One machine for every project</h3><p>The same steps, tables and tracker, so any project can be compared with any other.</p></div>
-<div class="rule"><h3>Limit the person-heavy steps</h3><p>At most [X] projects in Discover or Define at once. Steps 3 to 6 are mostly automated, so more projects can sit there.</p></div>
-<div class="rule"><h3>Stagger the gates</h3><p>No two gate meetings (the contested ones) in the same week.</p></div>
-<div class="rule"><h3>Plan the product manager's week</h3><p>[X] hours on decisions and gates, [X] on users, [X] on partners and sign-offs, [X] checking drafts. If person-only work runs over, the automation check comes first.</p></div>
+{rules_html}
 </div>
 </section>
 <footer>In use: reviewed 2026-10-14; cut-first check, gates in writing and the machine's measures added 2026-10-15. Tool choices are guesses until confirmed against the bank's setup. [X] marks numbers still to be set. The RM analytics plan is the first project to run through this machine.</footer>

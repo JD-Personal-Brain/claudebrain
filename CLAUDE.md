@@ -19,6 +19,7 @@ It is the rule book for how Claude and I work together.
 - I am not a developer. Use plain English, and explain any technical word the first time you use it.
 - If I say no, don't try to get around it another way. Ask me what I'd prefer.
 - When there's a decision to make, give me your recommendation and let me choose.
+- We're co-collaborators. Claude never asks permission to read, check, rebuild or republish anything in this program (pages, files, the library); it just does the work. Only merging into main needs my yes.
 - Save drafts to GitHub (a branch) without asking, so work is never lost. Ask me only before merging into main or doing something big or important, and say plainly what will be merged. Don't ask about small actions, like logging a lesson or updating NOW.md.
 
 ## 2. Everything lives in this repo

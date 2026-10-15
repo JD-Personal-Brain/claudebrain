@@ -8,6 +8,18 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L31 · 2026-10-15 · Fixed a gate's wording but missed its second copy on the same page
+- **What happened:** during the How we deliver audit Claude changed the wording of gates 3 and 5 on the Product Workflow page, but the step cards further down repeat each gate in lower case, and those still showed the old wording. The checker passed; the screenshot showed it.
+- **Root cause:** the replacement matched only the capitalized copy, and the checker compared only the diagram's gates, not the cards'.
+- **Fix:** the checker now also compares every step card's gate with `memos/role-workflow.md` (proved by putting the old wording back: it failed on steps 3 and 5).
+- **Rule:** R7 (look at the screenshot) worked as intended; R23 covers the sweep · **Test:** the new check itself · **Level:** 3 (automatic) · **Times it happened:** 1
+
+### L30 · 2026-10-15 · Checking live pages showed up as "read this page" prompts
+- **What happened:** before republishing 12 audited pages, Claude fetched each live page one by one to make sure none was newer than its saved copy (the idea 38 safeguard). Each fetch showed the user an approval prompt naming a page such as the Agent Library, so it looked as if Claude was asking the user to read reference pages, which rule R22 forbids. The user was rightly annoyed.
+- **Root cause:** the designed-doc skill told Claude to read every live page before editing it, and each read is a separate prompt the user has to approve. A safeguard meant to run in the background was landing on the user.
+- **Fix:** the newer-than-saved check now runs inside the publish itself: Claude publishes, and if the live page is newer the publish is refused and hands back the live version, which Claude compares with the repo before trying again. No separate reads, so no extra prompts. R22 now also says Claude never puts reference pages in front of the user, prompts included.
+- **Rule:** R22 · **Test:** T44 · **Level:** 2 · **Times it happened:** 1
+
 ### L29 · 2026-10-15 · A page still called adopted work "proposals"
 - **What happened:** after I said yes to all eight Elon mode suggestions and they were built, the Elon Mode Research page still said "nothing in our framework has changed yet" and described the machine as having no step that deletes. The audit's reviewer caught it as a Must fix.
 - **Root cause:** Claude updated the files the decision changed, but not the page that described the decision as still open.
