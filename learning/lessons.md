@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L27 · 2026-10-15 · Suggested moving content when I wanted links to the detail
+- **What happened:** I asked how to improve the integration between the Product Workflow, the Workflow Maps and the Steps Catalog. Claude's main suggestion was to move the clickable map onto the Product Workflow page, and it built a sample of that. I had to explain: I wasn't asking to copy information across pages; the Product Workflow page summarizes, and from it I should be able to click down to the deeper layer.
+- **Root cause:** Claude read "integration" as merging or moving content, not as navigation between layers. It went straight to a restructure instead of first asking what was missing for me as a reader: a way to get from the summary to the detail.
+- **Fix:** when I ask to connect or integrate pages, the first answer is links: every item on a summary page links to its detail (the exact card or section), and each page links to the related ones. Content stays in its one home; moving or copying content between pages is suggested only if I ask for it.
+- **Rule:** R30 · **Test:** T38 · **Level:** 1 · **Times it happened:** 1
+
 ### L26 · 2026-10-14 · A name I asked for wasn't applied everywhere
 - **What happened:** I asked for the field manual to be called "The Delivery Playbook" (my first message hinted at it too). Claude changed only the places with no "the" in front, so pages still said "the Delivery Playbook", and I had to ask again.
 - **Root cause:** Claude treated the rename as a narrow find-and-replace on one spelling and checked only that spelling, not every form a reader would see on the pages. Rule R23 (search every old form when a term changes) already covered this, so the rule failed: a repeat of L20 and L24.

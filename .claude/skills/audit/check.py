@@ -15,6 +15,7 @@
  11. The four "How we deliver" pages keep the names the user set: Product Workflow, Product Framework,
     Product Machine, Product Playbook. No old name (Six-Step Product Workflow, Delivery Machine, Delivery Playbook)
     appears anywhere, built pages included, outside the glossary's retired-wording table and history files.
+12. Links to a section of another of our pages point to a section that exists there (idea 48).
 Prints each problem and a total. 0 problems means the mechanical checks pass.
 5b. Every V/D/W/P item number cited in the working files is a live open item in open-items.md
     (it can't tell whether a reference points to the RIGHT item: after a renumbering, re-read each one).
@@ -238,4 +239,21 @@ for f in _named+['glossary.md']:
     for old in OLD_NAMES:
         for m in re.finditer(re.escape(old),t,re.I):
             print(f,'says',repr(t[max(0,m.start()-20):m.end()]),'- use the new name (Product Workflow, Product Machine or Product Playbook)'); probs+=1
+# 12. Links between our pages (idea 48): a link to a section of another of our pages
+# (https://claude.ai/artifact/<id>#<section>) must point to a section that exists on that page.
+# The page for each link comes from designs/README.md; pages without one .html file (the design canvas) are skipped.
+pages={}
+for m in re.finditer(r'https://claude\.ai/artifact/([A-Za-z0-9]+) \| `([^`/]+\.html)`',open('designs/README.md').read()):
+    pages[m.group(1)]='designs/'+m.group(2)
+ids_of={}
+def ids(f):
+    if f not in ids_of: ids_of[f]=set(re.findall(r'(?<![\w-])id="([^"]+)"',open(f).read()))
+    return ids_of[f]
+for f in sorted(glob.glob('designs/*.html')+glob.glob('designs/rm-analytics-canvas/*.dc.html')):
+    for m in re.finditer(r'href=["\']https://claude\.ai/artifact/([A-Za-z0-9]+)#([^"\']+)["\']',open(f).read()):
+        target=pages.get(m.group(1))
+        if not target and m.group(1)!='3c7ZxKjJcjWRyV7BbzKfhY':  # the design canvas has no single page file
+            print(f,'links to a section of artifact',m.group(1),'which designs/README.md does not map to one page, so the link was not checked'); probs+=1
+        if target and m.group(2) not in ids(target):
+            print(f,'links to',target.split('/')[-1]+'#'+m.group(2),'but that page has no section with that id'); probs+=1
 print("problems:",probs)
