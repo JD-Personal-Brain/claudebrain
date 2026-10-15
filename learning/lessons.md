@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L33 · 2026-10-15 · A task report too long to follow (L2 again)
+- **What happened:** after the four GitHub steps (the required-check test, pull request #98, the old account name, the audit and merge), Claude's report ran about 9 lines with four bullet points of detail and two suggestions. The one fact that mattered (the check still wasn't required, and what I had to click) was buried. I replied "wtf".
+- **Root cause:** R2 (about 5 lines, one question) was only made a required step for the wrap-up's final message (L2b). Ordinary task reports had no such step, so Claude listed everything it did instead of leading with what it means for me. A repeat of L2, so the fix moves past a required step.
+- **Fix:** every report that ends a task leads with one line on the outcome and what it means for me, then at most one step for me to do, about 5 lines in all; the details go in the pull request. Because L2 has now happened four times, idea 57 suggests an automatic length warning.
+- **Rule:** R2 · **Test:** T2 · **Level:** 3, automatic check suggested (repeat of L2, L2b) · **Times it happened:** 4
+
 ### L32 · 2026-10-15 · A settings edit I handed to the user broke the file
 - **What happened:** the page pop-up fix needed one rule in `.claude/settings.json`, which Claude isn't allowed to edit. Claude first told the user to "add this as the first line inside the opening {", then to replace the whole file. The pasted text landed after the first `{`, so the old text stayed below it and the file couldn't be read, which also switched off the startup and pre-merge checks in main. Claude caught it only because the user asked "did that work?".
 - **Root cause:** a non-developer was given a hand edit of a strict file format with nothing to confirm the result, and the checker didn't look at the settings file.
