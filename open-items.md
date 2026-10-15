@@ -83,7 +83,7 @@ What we're working on first: a quick check on the bank news scout, then the user
 | D1 | Add an AI product under core use case 5, AI sales coaching (personal guidance from call transcripts)? Low risk, and McKinsey reports new bankers ramping up 20% faster | Me | V2 |
 | D2 | Move prospecting (winning new clients) earlier than wave 3? McKinsey reports its biggest revenue numbers there; outside prospect data may set the pace | Me | V2 |
 | D3 | Keep autonomous lead nurturing and pricing out for now, because they conflict with "nothing reaches a client without the RM" and the fair-lending control? Claude recommends yes, revisit later with evidence | Me | V2 |
-| D4 | Agree the credit order the Portfolio Manager Core Use Cases page proposes: credit memo and annual review drafts first, early warning second, risk ratings kept out of the first waves? | Me | V3 |
+| D4 | Agree the credit order the Portfolio Manager Core Use Cases page proposes: credit memo and annual review drafts first, early warning second, risk ratings kept out of the first feature waves? | Me | V3 |
 | D5 | Is the RM framework ready to copy to other use cases? My answer on 2026-10-09: not yet. The reading in stage 1 and the work in stages 2 and 3 come first | Me | Credit, the next use case, waits on this |
 
 ## Stage 2. Make the machine runnable

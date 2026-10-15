@@ -162,12 +162,15 @@ for n,g in gates.items():
     if f'<b>Gate {n}</b><span>{g[0].upper()+g[1:]}</span>' not in rh: print('designs/role-workflow.html gate',n,'differs from memos/role-workflow.md'); probs+=1
 # each playbook step repeats its question and gate: they must match the Product Workflow word for word (idea from 2026-10-15)
 qs={m.group(1):m.group(2).strip() for m in re.finditer(r'^\| (\d)\. [^|]+\| ([^|]+) \|[^|]+\|[^|]+\|$',rw,re.M)}
+gv={m.group(1):m.group(2).strip() for m in re.finditer(r'^\| (\d)\. [^|]+\|[^|]+\| ([^|]+) \|[^|]+\|$',rw,re.M)}
 lc=lambda t:t[:1].lower()+t[1:]
 for f in sorted(glob.glob('playbook/[1-6]-*.md')):
     n=f.split('/')[-1][0]; t=open(f).read()
     pq=re.search(r'^\*\*The question:\*\* (.+)$',t,re.M); pg=re.search(r'^\*\*The gate:\*\* (.+)$',t,re.M)
     if not pq or pq.group(1).strip()!=lc(qs.get(n,'')): print(f,'"The question" differs from step',n,'in memos/role-workflow.md'); probs+=1
     if not pg or pg.group(1).strip()!=lc(gates.get(n,''))+'.': print(f,'"The gate" differs from gate',n,'in memos/role-workflow.md'); probs+=1
+    pv=re.search(r'^\*\*Governance thread:\*\* (.+)$',t,re.M)
+    if not pv or pv.group(1).strip()!=lc(gv.get(n,''))+'.': print(f,'"Governance thread" differs from step',n,'in memos/role-workflow.md'); probs+=1
 # 8. the glossary (glossary.md): no "Don't say" word (or its plural) in the core documents, and the library's term count is right
 gl=open('glossary.md').read()
 GT=len(re.findall(r'^\| \*\*[^*]+\*\* \|',gl,re.M))

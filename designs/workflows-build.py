@@ -135,7 +135,7 @@ def spine_map(mid, stages, branch_html, detail_html, tag):
     for i, st in enumerate(stages):
         br = ""
         for b in st["branches"]:
-            br += (f'<li><button type="button" class="branch" data-map="{mid}" data-id="{b["id"]}" aria-controls="{mid}-panel">'
+            br += (f'<li><button type="button" class="branch" id="{b["id"]}" data-map="{mid}" data-id="{b["id"]}" aria-controls="{mid}-panel">'
                    f'{branch_html(b)}</button></li>')
             templates += f'<template id="t-{b["id"]}">{detail_html(b)}</template>'
         arrow = '<span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 12" width="24" height="12"><line x1="0" y1="6" x2="18" y2="6" stroke="currentColor" stroke-width="2"/><polygon points="17,1 24,6 17,11" fill="currentColor"/></svg></span>' if i < len(stages) - 1 else ""
@@ -219,7 +219,7 @@ page = f'''<title>Workflow Maps</title>
 <nav class="stepnav" aria-label="Related pages"><a href="{WORKFLOW_URL}" target="_blank" rel="noopener">Product Workflow: the steps and their gates ↗</a><a href="{STEPS_URL}" target="_blank" rel="noopener">Steps Catalog: look up any sub-step ↗</a></nav>
 </div></div>
 <main class="wrap">
-<div class="howto"><span>Reading the maps:</span><span>Big navy box = a stage of the main process</span><span>Small box = a sub-process</span><span><span class="chip k-auto">Auto</span><span class="chip k-draft">Draft</span><span class="chip k-me">Me</span><span class="chip k-partner">Partner</span> = who does its tasks</span><span>◆ = a go/no-go gate</span><span><span class="chip k-draft">Governance</span> = the risk work in that step</span></div>
+<div class="howto"><span>Reading the maps:</span><span>Big navy box = a step of the main process</span><span>Small box = a sub-process</span><span><span class="chip k-auto">Auto</span><span class="chip k-draft">Draft</span><span class="chip k-me">Me</span><span class="chip k-partner">Partner</span> = who does its tasks</span><span>◆ = a go/no-go gate</span><span><span class="chip k-draft">Governance</span> = the risk work in that step</span></div>
 <section id="deliver" class="mapwrap">
 <div class="stephead"><span class="label">Map 1 · every product</span><h2>How we deliver a product</h2>
 <p class="intro" style="margin-top:6px;color:var(--muted)">The six steps of the Product Workflow, each ending in a gate, with its {n_sub} sub-steps underneath and the governance thread (the risk work) under each gate. After the first pass, steps 3 to 6 repeat in short cycles.</p></div>

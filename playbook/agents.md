@@ -539,7 +539,7 @@ listed actions, and those marked ⚠️ wait until the bank allows it.
 - **For:** the team
 - **Kind:** Draft → Draft
 - **Job:** propose and rank the next backlog items or the next lever, from usage and feedback.
-- **Starts when:** before each wave is planned.
+- **Starts when:** before each feature wave is planned.
 - **Inputs:** the dashboard; feedback themes; the monthly reviews.
 - **Allowed actions:** read; write a ranked list.
 - **Not allowed:** choosing the next feature wave.

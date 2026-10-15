@@ -98,7 +98,7 @@ log (see `README.md`) for every sub-step.
 ## 6.5 Feed the next feature wave
 
 - **Goal:** choose what comes next, and send it back through Discover and Define, quickly.
-- **Why it matters:** the first release is a start. The value comes from steady waves.
+- **Why it matters:** the first release is a start. The value comes from steady feature waves.
 - **Know first:** the backlog, the feedback themes, and what the sponsor wants next.
 - **First time, step by step:**
   1. List the candidates: backlog items, ideas from users and the next lever from Discover.
