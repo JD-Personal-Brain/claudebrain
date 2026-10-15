@@ -60,22 +60,25 @@ never wrote down.
 - **Every sub-step is our choice** (ask the product manager to change it) unless the table below says it comes from law, a regulator or bank policy. A sub-step that sets, builds, proves or watches a law or bank-policy control inherits that control's source. Law and bank policy are never deleted by the automation check.
 
 ## Where the requirements come from
-The sub-steps and gates that rest on law, a regulator or bank policy. Everything
+The sub-steps and gates that rest on law, a regulator or bank policy, including
+every sub-step that sets, builds, proves or watches such a control. Everything
 else in the playbook is our choice. Each control's own source is on its card in
 the Controls Catalog. ⚠️ These are my reading of US rules for banks, to confirm
 with the bank's risk partner at sub-step 2.4.
 
 | Sub-step or gate | Comes from | To change it, ask |
 |---|---|---|
-| 1.0 Kick off the project | Inherits from the controls it sets or proves: K15, K23 (bank policy) | Each control's owner (Controls Catalog) |
-| 1.3 Interview and shadow users | Inherits from the controls it sets or proves: K24 (law or regulator) | Each control's owner (Controls Catalog) |
-| 2.2 Choose the platform and delivery path | Inherits from the controls it sets or proves: K18, K20 (bank policy) | Each control's owner (Controls Catalog) |
+| 1.0 Kick off the project | Inherits from the controls it sets, builds, proves or watches: K15 bank policy; K23 bank policy | Each control's owner (Controls Catalog) |
+| 1.3 Interview and shadow users | Inherits from the controls it sets, builds, proves or watches: K24 law or regulator | Each control's owner (Controls Catalog) |
+| 2.2 Choose the platform and delivery path | Inherits from the controls it sets, builds, proves or watches: K18 bank policy; K20 bank policy | Each control's owner (Controls Catalog) |
 | 2.3 Data contract | Bank policy on data use ⚠️, resting on customer privacy law (the Gramm-Leach-Bliley Act) | The data owner |
 | 2.4 Risk intake | Regulator: the model risk guidance (SR 11-7, possibly replaced by SR 26-2: item W17 in the Open Items log), through the bank's model risk policy | Model risk |
-| 2.7 Set the measures, quality bar and value model | Inherits from the controls it sets or proves: K4, K9 (bank policy and law or regulator) | Each control's owner (Controls Catalog) |
-| 3.3 Build the logic: simple rules first, AI explains | Inherits from the controls it sets or proves: K19 (bank policy) | Each control's owner (Controls Catalog) |
+| 2.7 Set the measures, quality bar and value model | Inherits from the controls it sets, builds, proves or watches: K4 bank policy; K9 law or regulator | Each control's owner (Controls Catalog) |
+| 3.2 Prepare trusted data | Inherits from the controls it sets, builds, proves or watches: K4 bank policy; K6 bank policy | Each control's owner (Controls Catalog) |
+| 3.3 Build the logic: simple rules first, AI explains | Inherits from the controls it sets, builds, proves or watches: K19 bank policy | Each control's owner (Controls Catalog) |
 | 3.4 Build in the controls | Inherits each control's source (Controls Catalog) | Each control's owner |
-| 3.7 Test against the quality bar | Inherits from the controls it sets or proves: K4, K9 (bank policy and law or regulator) | Each control's owner (Controls Catalog) |
+| 3.6 Build the test set | Inherits from the controls it sets, builds, proves or watches: K9 law or regulator | Each control's owner (Controls Catalog) |
+| 3.7 Test against the quality bar | Inherits from the controls it sets, builds, proves or watches: K4 bank policy; K9 law or regulator | Each control's owner (Controls Catalog) |
 | 4.1 Risk rating and registration | Regulator: the model risk guidance, through the bank's model inventory | Model risk |
 | 4.2 Data and privacy review | Bank policy ⚠️, and customer privacy law (the Gramm-Leach-Bliley Act) where individuals' data is involved | Privacy |
 | 4.3 Testing evidence | Regulator: the model risk guidance expects testing; our quality bar sets the thresholds | Model risk |
@@ -84,7 +87,11 @@ with the bank's risk partner at sub-step 2.4.
 | 4.6 Vendor reviews | Regulator: the US banking regulators' third-party risk guidance (2023) | Vendor risk |
 | 4.7 Sign-offs | Bank policy: its approval process for AI and models ⚠️ | Model risk |
 | 4.8 Monitoring plan | Regulator: the model risk guidance expects ongoing monitoring | Model risk |
-| 5.1 Confirm release readiness | Inherits from the controls it sets or proves: K16 (law or regulator) | Each control's owner (Controls Catalog) |
+| 5.1 Confirm release readiness | Inherits from the controls it sets, builds, proves or watches: K15 bank policy; K16 law or regulator | Each control's owner (Controls Catalog) |
+| 5.2 Launch the pilot, with a comparison group | Inherits from the controls it sets, builds, proves or watches: K18 bank policy | Each control's owner (Controls Catalog) |
+| 5.6 Fix fast | Inherits from the controls it sets, builds, proves or watches: K16 law or regulator | Each control's owner (Controls Catalog) |
+| 6.1 Track the measures on a live dashboard | Inherits from the controls it sets, builds, proves or watches: K16 law or regulator | Each control's owner (Controls Catalog) |
+| 6.3 Re-test after every change, and watch for drift | Inherits from the controls it sets, builds, proves or watches: K4 bank policy; K9 law or regulator; K16 law or regulator; K17 law or regulator | Each control's owner (Controls Catalog) |
 | Step 4 gate | Regulator and bank policy (the formal approval) | Model risk |
 | The other five gates | Our choice | The product manager |
 

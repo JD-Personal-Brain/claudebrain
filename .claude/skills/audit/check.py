@@ -6,6 +6,8 @@
 2b. No built page shows a stray underscore left over from Markdown.
 4. Every page in designs/README.md is in the Document Library (designs/library.json), and the other way round.
 5. The Open Items log (open-items.md): no number used twice, counts match, pages and ideas still open are listed, not out of date.
+5b. Every V/D/W/P item number cited in the working files is a live open item in open-items.md
+    (it can't tell whether a reference points to the RIGHT item: after a renumbering, re-read each one).
 6. NOW.md's "What's next" has no unexplained shorthand.
 7. Alignment across documents (from L18): counts of agents, sub-steps, controls and workflow branches
    quoted anywhere match the sources; the Product Workflow's "What happens" lists (memos/role-workflow.md) have one item per
@@ -17,11 +19,9 @@
     appears anywhere, built pages included, outside the glossary's retired-wording table and history files.
 12. Links to a section of another of our pages point to a section that exists there (idea 48).
 13. No built page shows a stray Markdown heading ("## ...") as text.
-14. Requirement sources (idea 52): every control has a "Comes from" line, and every sub-step that sets or proves a
-    law, regulator or bank-policy control is in the playbook's "Where the requirements come from" table.
+14. Requirement sources (idea 52): every control has a "Comes from" line, and every sub-step that sets, builds, proves
+    or watches a law, regulator or bank-policy control is in the playbook's "Where the requirements come from" table.
 Prints each problem and a total. 0 problems means the mechanical checks pass.
-5b. Every V/D/W/P item number cited in the working files is a live open item in open-items.md
-    (it can't tell whether a reference points to the RIGHT item: after a renumbering, re-read each one).
 """
 import glob
 import subprocess
@@ -264,18 +264,20 @@ for f in sorted(glob.glob('designs/*.html')+glob.glob('designs/rm-analytics-canv
 for f in sorted(glob.glob('designs/*.html')):
     if re.search(r'>\s*#{2,4} [A-Z]', open(f).read()): print(f, "shows a stray Markdown heading (## ...) as text"); probs+=1
 
-# 14. Requirement sources (idea 52): a sub-step that sets or proves a law, regulator or bank-policy control
+# 14. Requirement sources (idea 52): a sub-step that sets, builds, proves or watches a law, regulator or bank-policy control
 # must be in the playbook's "Where the requirements come from" table, so it can't be cut by mistake.
 _ctl=open('playbook/controls.md').read()
-_tab=open('playbook/README.md').read().split("## Where the requirements come from")[-1]
+_rd=open('playbook/README.md').read()
+if "## Where the requirements come from" not in _rd: print("playbook/README.md: 'Where the requirements come from' section missing"); probs+=1
+_tab=_rd.split("## Where the requirements come from")[-1]
 _listed=set(re.findall(r"^\| (\d\.\d) ",_tab,re.M))
 for _b in re.split(r"\n### ",_ctl)[1:]:
     _cid=_b.split(".")[0]; _m=re.search(r"\*\*Comes from:\*\* ([^:]+):",_b)
     if not _m: print("playbook/controls.md:",_cid,"has no 'Comes from' line"); probs+=1; continue
     if _m.group(1).strip().startswith("Our"): continue
-    for _f in ["Set in","Proved in"]:
+    for _f in ["Set in","Built in","Proved in","Watched in"]:
         _fm=re.search(r"\*\*"+_f+r":\*\* (.+)",_b)
         for _n in re.findall(r"\b\d\.\d\b",_fm.group(1) if _fm else ""):
-            if _n not in _listed: print("playbook/README.md: sub-step",_n,"sets or proves",_cid,"("+_m.group(1).strip()+") but isn't in 'Where the requirements come from'"); probs+=1
+            if _n not in _listed: print("playbook/README.md: sub-step",_n,"sets, builds, proves or watches",_cid,"("+_m.group(1).strip()+") but isn't in 'Where the requirements come from'"); probs+=1
 
 print("problems:",probs)
