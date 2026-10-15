@@ -22,6 +22,7 @@
 13. No built page shows a stray Markdown heading ("## ...") as text.
 14. Requirement sources (idea 52): every control has a "Comes from" line, and every sub-step that sets, builds, proves
     or watches a law, regulator or bank-policy control is in the playbook's "Where the requirements come from" table.
+16. The settings file (.claude/settings.json) is valid, so the startup and pre-merge checks keep working (lesson L32).
 15. Agent names: every "M<number> <Name>" in the Product Machine and the playbook steps matches the Agent Library.
 Prints each problem and a total. 0 problems means the mechanical checks pass.
 """
@@ -292,5 +293,11 @@ for f in ['product-machine.md','playbook/README.md','playbook/controls.md','prod
         nm=_ag.get(m.group(1))
         if nm is None: print(f,'names',m.group(1),'but the Agent Library has no such agent'); probs+=1
         elif not (nm.startswith(m.group(2)) or m.group(2).startswith(nm)): print(f,'calls',m.group(1),repr(m.group(2)),'but the Agent Library calls it',repr(nm)); probs+=1
+
+# 16. The settings file must stay valid (lesson L32): a broken one silently switches off the startup and pre-merge checks.
+try:
+    json.load(open('.claude/settings.json'))
+except Exception as e:
+    print('.claude/settings.json is not valid:',e); probs+=1
 
 print("problems:",probs)

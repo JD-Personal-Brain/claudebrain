@@ -47,6 +47,7 @@ saved history, so their counts are approximate.
 
 | Date | What was audited | Size and how | Findings (and lost lines by reason) | Result |
 |---|---|---|---|---|
+| 2026-10-15 | Wrap-up: the settings-file repair and lesson L32 | Quick: checker, render check, nothing-lost | 1 Must fix (the settings file couldn't be read, found by reading it back); lost lines: a few, all reworded | Fixed in pull request #96; check 16 added so it can't recur |
 | 2026-10-15 | The Audit Log itself and its six improvements | Deep by step 0's rule (a rename across pages and new audit rules), run as scripts plus one reviewer, because a deep audit of the same pages had run hours before | 1 Must fix, 6 Should fix, 7 Minor; lost lines: 10, all reworded or renamed | All fixed; merged |
 | 2026-10-15 | How we deliver and the reference pages, top to bottom (details below) | 7 reviewers, a made-up product walked through all 44 sub-steps, 4 editors, a second reviewer | About 110 (8 Must fix), plus about 25 from the second review | All fixed; 12 pages republished; 6 gaps to decide (D1); pull request #94 |
 | 2026-10-15 | Requirement sources check (idea 52) and the Elon mode changes | Checker, reviewer, second reviewer | A handful (approximately) | Fixed; merged |
@@ -64,7 +65,7 @@ What this review of our own audit found, and what closed each one:
 2. **Audits leave no record.** Results live in chat and commit messages, so there's no trend of findings over time. This log starts that record. → Improvement 2, built.
 3. **Every audit is the same size.** A one-line fix and a full reorganization both get the full treatment, which costs time on small changes. → Improvement 3, built.
 4. **Rule tests rarely run.** Item W16 lists more than 25 tests not yet run in a live session. → Improvement 4, built.
-5. **Audits wait on approval pop-ups.** Page checks and publishes stopped the 2026-10-15 audit for about 30 minutes (lesson L30; the settings fix is item W20). → Improvement 5, waiting on me.
+5. **Audits wait on approval pop-ups.** Page checks and publishes stopped the 2026-10-15 audit for about 30 minutes (lesson L30). → Improvement 5, done.
 6. **The nothing-lost list is long and read by eye.** About 130 lines on 2026-10-15, explained in one sentence rather than line by line. → Improvement 6, built.
 
 ## Improvements (all six approved 2026-10-15)
@@ -75,7 +76,7 @@ What this review of our own audit found, and what closed each one:
 | 2 | **This Audit Log is the record**: every audit adds a row (date, scope, size, findings by severity, lost lines by reason, result) | A required step (6) of the audit skill | Built |
 | 3 | **Three audit sizes**: quick (the three scripts) for small fixes, standard (scripts plus a reviewer and a second) for normal sessions, deep (plus one reviewer per reference page and a walk-through) for reorganizations and milestones | Step 0 of the audit skill: Claude picks the size and says why | Built |
 | 4 | **Rule tests at every weekly review**, with results recorded here | The wrap-up skill (weekly review) and the run-tests skill | Built |
-| 5 | **The page pop-up fix**: one permission rule, so page checks and publishes never wait on me | Item W20 in the Open Items log. Claude isn't allowed to change its own permissions, so I add it | Waiting on me |
+| 5 | **The page pop-up fix**: one permission rule, so page checks and publishes never wait on me | The page rule in `.claude/settings.json`, added by me (closed C37) | Done |
 | 6 | **Lost lines grouped by reason** in each audit row | The nothing-lost script now ends with a count per file; the audit row groups them as reworded, moved or cut on purpose | Built |
 
 ## Entry: 2026-10-15, How we deliver and the reference pages
