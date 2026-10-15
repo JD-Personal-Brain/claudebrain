@@ -1,4 +1,3 @@
-import glob
 """Mechanical audit checks. Run from the repo root: python3 .claude/skills/audit/check.py
 1. Product Machine task tables (product-machine.md) and playbook sub-steps match (every sub-step has rows, every
    review-table "Aim for" kind matches the Product Machine, every sub-step has all 8 fields).
@@ -17,10 +16,14 @@ import glob
     Product Machine, Product Playbook. No old name (Six-Step Product Workflow, Delivery Machine, Delivery Playbook)
     appears anywhere, built pages included, outside the glossary's retired-wording table and history files.
 12. Links to a section of another of our pages point to a section that exists there (idea 48).
+13. No built page shows a stray Markdown heading ("## ...") as text.
+14. Requirement sources (idea 52): every control has a "Comes from" line, and every sub-step that sets or proves a
+    law, regulator or bank-policy control is in the playbook's "Where the requirements come from" table.
 Prints each problem and a total. 0 problems means the mechanical checks pass.
 5b. Every V/D/W/P item number cited in the working files is a live open item in open-items.md
     (it can't tell whether a reference points to the RIGHT item: after a renumbering, re-read each one).
 """
+import glob
 import subprocess
 import re,glob
 fw=open('product-machine.md').read()  # the task tables
@@ -257,8 +260,22 @@ for f in sorted(glob.glob('designs/*.html')+glob.glob('designs/rm-analytics-canv
             print(f,'links to a section of artifact',m.group(1),'which designs/README.md does not map to one page, so the link was not checked'); probs+=1
         if target and m.group(2) not in ids(target):
             print(f,'links to',target.split('/')[-1]+'#'+m.group(2),'but that page has no section with that id'); probs+=1
-# A Markdown heading that leaked into a built page as text (a "## " at the start of a paragraph or cell)
+# 13. A Markdown heading that leaked into a built page as text (a "## " at the start of a paragraph or cell)
 for f in sorted(glob.glob('designs/*.html')):
     if re.search(r'>\s*#{2,4} [A-Z]', open(f).read()): print(f, "shows a stray Markdown heading (## ...) as text"); probs+=1
+
+# 14. Requirement sources (idea 52): a sub-step that sets or proves a law, regulator or bank-policy control
+# must be in the playbook's "Where the requirements come from" table, so it can't be cut by mistake.
+_ctl=open('playbook/controls.md').read()
+_tab=open('playbook/README.md').read().split("## Where the requirements come from")[-1]
+_listed=set(re.findall(r"^\| (\d\.\d) ",_tab,re.M))
+for _b in re.split(r"\n### ",_ctl)[1:]:
+    _cid=_b.split(".")[0]; _m=re.search(r"\*\*Comes from:\*\* ([^:]+):",_b)
+    if not _m: print("playbook/controls.md:",_cid,"has no 'Comes from' line"); probs+=1; continue
+    if _m.group(1).strip().startswith("Our"): continue
+    for _f in ["Set in","Proved in"]:
+        _fm=re.search(r"\*\*"+_f+r":\*\* (.+)",_b)
+        for _n in re.findall(r"\b\d\.\d\b",_fm.group(1) if _fm else ""):
+            if _n not in _listed: print("playbook/README.md: sub-step",_n,"sets or proves",_cid,"("+_m.group(1).strip()+") but isn't in 'Where the requirements come from'"); probs+=1
 
 print("problems:",probs)
