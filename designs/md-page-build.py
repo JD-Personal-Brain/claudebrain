@@ -30,8 +30,8 @@ PAGES = [
      "What banks are deploying in commercial credit, and the credit counterpart of each of the seven core use cases."),
     ("memos/elon-mode-research.md", "elon-mode.html", "Elon Mode", "Research · how Musk builds and improves systems",
      "The main ideas Elon Musk is known for in engineering, business and process improvement, how sure we are of each, where they went wrong, our read of his model, and the eight changes we made to our own system."),
-    ("memos/how-we-deliver-audit.md", "how-we-deliver-audit.html", "How We Deliver Audit", "Reference · audit",
-     "A top-to-bottom audit of the four How we deliver pages and the reference pages: what was found and fixed, and the gaps to decide before the RM and portfolio manager work."),
+    ("memos/audit-log.md", "audit-log.html", "Audit Log", "Reference · audit",
+     "How we audit our work: the method, every check and when it runs, the record of every audit so far, and what to improve."),
     ("glossary.md", "glossary.html", "Glossary", "Reference · the words we use",
      "One meaning for each word in every plan, playbook page and agent spec, plus the bank's terms still to map."),
 ]

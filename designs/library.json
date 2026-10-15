@@ -135,12 +135,12 @@
           "source": "open-items.md"
         },
         {
-          "id": "how-we-deliver-audit",
-          "name": "How We Deliver Audit",
-          "what": "The 2026-10-15 audit of the four How we deliver pages and the reference pages: what was found and fixed, and the gaps to decide before the RM and portfolio manager work.",
-          "status": "In use",
+          "id": "audit-log",
+          "name": "Audit Log",
+          "what": "How we audit our work: the method, every check and when it runs, the record of every audit so far, and what to improve.",
+          "status": "Waiting for review",
           "url": "https://claude.ai/artifact/QnPL82PBx6AfGKB5VgqUPf",
-          "source": "memos/how-we-deliver-audit.md"
+          "source": "memos/audit-log.md"
         },
         {
           "id": "glossary",
