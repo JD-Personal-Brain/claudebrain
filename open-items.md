@@ -209,6 +209,6 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C26 | Thinking through the job, Part 1 (the Job Notes page): not required, so it's off the Document Library and no longer an open item. The working file `job-notes.md` stays for reference | 2026-10-14 |
 | C27 | Idea 46: yes. Every audit now runs a "nothing lost" check (`lost-lines.py`) that lists each sentence that disappeared from the working files, and each one must be put back or explained | 2026-10-14 |
 | C28 | Section links work: a link from one page to a section of another opens at that section. I checked it on 2026-10-15: a sub-step link on the Product Workflow page opened its card in the Steps Catalog. So the Document Library's section links and the links between the Product Workflow, Steps Catalog, Workflow Maps and Product Playbook stay as they are | 2026-10-15 |
-| C29 | Ideas 48 and 49: yes, both built. The audit checker now fails on any link to a section of another of our pages that doesn't exist (298 links checked), and each task row on the Product Machine page links to its sub-step card in the Steps Catalog | 2026-10-15 |
+| C29 | Ideas 48, 49 and 50: yes, all built. The audit checker now fails on any link to a section of another of our pages that doesn't exist (298 links checked), each task row on the Product Machine page links to its sub-step card in the Steps Catalog, and every wrap-up now puts forward two open ideas from the list (wrap-up step 4) | 2026-10-15 |
 
 _Last updated: 2026-10-15_
