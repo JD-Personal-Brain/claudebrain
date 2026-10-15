@@ -8,7 +8,7 @@ Work through 1.0 to 1.7 in order. The risk partner is briefed on the idea before
 run in the same weeks. Fill in the first-time log (see `README.md`) for every
 sub-step. At the end, run the automation review.
 
-> ⚠️ **How much to trust this.** Written 2026-10-09 from my framework, the RM
+> ⚠️ **How much to trust this.** Written 2026-10-09 from my framework, the relationship managers (RMs)
 > memo and general practice, not from Associated Bank. Lines marked ⚠️ are
 > guesses about how the bank works. Tools are named from `tech-stack.md`.
 
@@ -243,7 +243,7 @@ table in `product-machine.md`.
 | 1.4 | M22 Time-use analyst | Draft | Draft | Yes, M22 |
 | 1.5 | None (stays with a person) | Me | Me | — |
 | 1.6 | M4 Reaction summarizer | Me | Draft | Yes, M4 |
-| 1.7 | M5 Baseline recorder | Me | Auto | Yes, M5 |
+| 1.7 | M5 Baseline recorder | Me | Auto ⚠️ | Yes, M5 (ongoing mode) |
 | 1.7 | M6 Gate pack drafter | Draft | Draft | Yes, M6 |
 
 **First time** = how the task is done on the first project. **Aim for** = its kind in `product-machine.md`.

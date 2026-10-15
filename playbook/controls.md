@@ -212,7 +212,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 - **Group:** After launch
 - **What it is:** reviewers approve one frozen version. Every fix creates a new version that is re-tested, and a change that makes things worse is fixed, rolled back or paused.
 - **Why it matters:** an approval only means something if the thing approved is the thing running.
-- **Set in:** 4.3
+- **Set in:** 3.3 (keep every prompt version), 4.3
 - **Built in:** 3.3, 3.6, 4.3
 - **Proved in:** 4.3 (each fix creates a new frozen version), 4.5
 - **Watched in:** 5.6, 6.3
@@ -236,7 +236,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 - **Group:** Approvals
 - **What it is:** the product uses only the AI models the bank has approved, running where the bank has approved them.
 - **Why it matters:** a model the bank hasn't reviewed can't be relied on for bank data.
-- **Set in:** 3.3 (which model is approved is checked there; the playbook has no earlier step for it yet)
+- **Set in:** 3.1 (the design names the approved model)
 - **Built in:** 3.1, 3.3 (both name the approved model)
 - **Proved in:** 4.6 (the model's provider is confirmed as an approved vendor; a check against the bank's list of approved models is not covered in the playbook yet)
 - **Watched in:** not covered in the playbook yet

@@ -316,9 +316,9 @@ its person in charge; a monitor never reports a pass on missing data.
 - **Used in:** 6.6
 - **For:** the team
 - **Kind:** Me → Draft
-- **Job:** total time spent and waits from the first-time logs, work out each sub-step's wait index, and list the candidates to cut and to automate.
-- **Starts when:** at the end of the first full pass through all six steps.
-- **Inputs:** the first-time logs from every sub-step; the tracker (dates); the decision log (the dates each gate pack was ready and each decision was made); the release notes.
+- **Job:** total time spent and waits from the sub-step logs (the full first-time log on the first project), work out each sub-step's wait index, and list the candidates to cut and to automate.
+- **Starts when:** at the end of each project's first full pass through all six steps (sub-step 6.6).
+- **Inputs:** the sub-step logs from every sub-step; the tracker (dates); the decision log (the dates each gate pack was ready and each decision was made); the release notes.
 - **Allowed actions:** read; write a draft summary.
 - **Not allowed:** deciding what to delete or which agents to build.
 - **Outputs:** time and waits by step, sub-steps ranked by wait index (highest first), the tasks to consider cutting, the candidates that passed the automation check, and the four machine measures (days from kickoff to pilot, days at each gate, releases per month in the pilot, and the wait index).
@@ -479,8 +479,8 @@ its person in charge; a monitor never reports a pass on missing data.
 - **For:** the team
 - **Kind:** Draft → Draft
 - **Job:** compile the test results, data use and controls into the evidence pack reviewers sign.
-- **Starts when:** 4.1 to 4.6 are done.
-- **Inputs:** the outputs of 4.1 to 4.6; the bank's template, if there is one.
+- **Starts when:** 4.1 to 4.6 are done and the monitoring plan is drafted.
+- **Inputs:** the outputs of 4.1 to 4.6 and the draft monitoring plan (4.8); the bank's template, if there is one.
 - **Allowed actions:** read; write a draft pack.
 - **Not allowed:** changing any result; sending the pack.
 - **Outputs:** a draft evidence pack.
@@ -493,13 +493,13 @@ its person in charge; a monitor never reports a pass on missing data.
 ### M30. Feedback triage
 - **Used in:** 5.6
 - **For:** the team
-- **Kind:** Me → Auto
+- **Kind:** Me → Auto ⚠️
 - **Job:** sort user feedback into bugs, quality issues and ideas, and add each to the backlog.
 - **Starts when:** new feedback arrives.
 - **Inputs:** feedback from the product's one-click buttons and comments.
-- **Allowed actions:** read; tag; add items to the backlog.
+- **Allowed actions:** read; tag; add items to the backlog; alert the product manager and operations to a likely incident.
 - **Not allowed:** changing priorities; replying to users.
-- **Outputs:** tagged backlog items.
+- **Outputs:** tagged backlog items; incident alerts.
 - **Stops when:** all new feedback is sorted.
 - **Proof it worked:** the product manager reviews a weekly sample.
 - **Person in charge:** product manager.

@@ -34,7 +34,7 @@ not the first time risk partners see the product.
 | 5. Release and adopt | Will users use it every week? | Live monitoring; incident process | Weekly use and leading results hit targets; no serious incidents; long-term owner confirmed before scaling |
 | 6. Measure and iterate | Is it delivering the outcome, and what comes next? | Ongoing monitoring | Each month (and at the end of each feature wave): keep, change or stop each AI product; each quarter: invest more, adjust or stop overall |
 
-**Building starts on day one** (from the RM plan): a rough clickable mock-up within
+**Building starts early:** a rough clickable mock-up within
 days of the first interviews (sub-step 1.6), on sample data. The pace is set by the
 limiting factor (usually data access and review), not build time.
 

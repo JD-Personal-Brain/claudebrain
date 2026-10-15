@@ -78,7 +78,7 @@ confirms them on the frozen version.
 | Usefulness | Users would act on it | [X] |
 | Permissions | No one sees data they shouldn't | Zero tolerance |
 
-**Gaps:** only the sponsor can accept a documented gap on accuracy, sources
+**Gaps:** only the sponsor (and, in step 4, the risk partner) can accept a documented gap on accuracy, sources
 shown, relevance or usefulness, recorded in the decision log with a date to
 close it. Permissions, and any threshold that comes from law or bank policy,
 can never be waived.
@@ -125,7 +125,8 @@ Start every project with sub-step 1.0 in the Product Playbook (kickoff): name
 the outcome and the sponsor, fill in who's involved and who decides (above) with
 real names, copy the Product Machine's task tables into the shared tracker with
 an owner and a date for each task, brief the risk partner and create the project
-file. Then work through Discover with the playbook, writing each step up in the
+file, with this project's question, governance thread and gate for each of the
+six steps (from the Product Workflow). Then work through Discover with the playbook, writing each step up in the
 layout above. The plan's working copy is `memos/<project>.md`, as the RM memo
 does; people read it as a designed page in the Document Library.
 

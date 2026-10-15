@@ -126,7 +126,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
   3. Fix the top items, and add the rest to the backlog.
   4. Tell users what changed ("you said, we did").
   5. Log every incident, its owner and the fix. M30 Feedback triage flags anything that looks like an incident straight to the product manager and operations.
-  6. Each fix is a new version: re-run the test set (M26) before it reaches pilot users, and tell the risk partner about any material change (⚠️ what counts as material is still to be agreed).
+  6. Each fix is a new version: re-run the test set (M26) and the control tests (M11) before it reaches pilot users, and tell the risk partner about any material change (⚠️ what counts as material is still to be agreed).
 - **Output:** a weekly fix list, release notes and the incident log.
 - **Done when:** this runs every week.
 - **Automation watch:**
@@ -178,15 +178,15 @@ table in `product-machine.md`.
 | Sub-step | Agent | First time | Aim for | Already specified? |
 |---|---|---|---|---|
 | 5.1 | M15 Readiness tracker | Draft | Auto | Yes, M15 |
-| 5.1 | Pilot dashboard (Power BI, not an agent) | Draft | Draft | — |
+| 5.1 | None (the pilot dashboard in Power BI, an asset) | Draft | Draft | — |
 | 5.2 | M16 Release automation | Me | Auto ⚠️ | Yes, M16 |
-| 5.2 | Weekly usage report (Power BI, not an agent) | Me | Auto | — |
+| 5.2 | None (the weekly usage report in Power BI, an asset) | Me | Auto ⚠️ | — |
 | 5.3 | None (stays with a person) | Me | Me | — |
 | 5.4 | None: training users stays with a person | Me | Me | — |
-| 5.4 | The product's onboarding coach (A6 in the RM plan) | Me | Auto | Yes, RM plan Appendix A |
+| 5.4 | None (the product's FAQ or help, such as A6 in the RM plan) | Me | Auto ⚠️ | Yes, RM plan Appendix A |
 | 5.5 | None: recruiting champions stays with a person | Me | Me | — |
 | 5.5 | M17 Wins spotter | Me | Draft | Yes, M17 |
-| 5.6 | M30 Feedback triage | Me | Auto | Yes, M30 |
+| 5.6 | M30 Feedback triage | Me | Auto ⚠️ | Yes, M30 |
 | 5.6 | None: fixing and telling users what changed stays with a person | Me | Me | — |
 | 5.7 | None: confirming the long-term owner stays with a person | Me | Me | — |
 | 5.7 | M6 Gate pack drafter (shared) | Draft | Draft | Yes, M6 |

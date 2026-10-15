@@ -51,12 +51,15 @@ never wrote down.
 | Then automate | For what's left: repeat? Stable? Safe alone? (yes or no each) |
 | Agent idea | If all three are yes: what it would do, and Auto or Draft |
 
+On later projects, keep a light version of this log for every sub-step (start and
+finish, hours and waits), so the machine's measures can be counted every time.
+
 ## Rules that apply to every step
 - **No client data in an AI tool the bank hasn't approved**, even for a quick test.
 - **Guesses about the bank are marked ⚠️** until confirmed. Replace them with facts as I learn them, and note the source.
 - **Numbers we don't have yet are [X].** Never invent them.
 - **At the gate,** run the automation check from `product-machine.md` on every Me and Draft task (cut first, then automate), and update the step's table there.
-- **Gates are decided in writing when they're clean:** if every criterion is met, the decider approves the gate pack in writing and the approval goes in the decision log; a meeting happens only when a criterion is contested or a decider asks for one. Partner sign-offs in step 4 don't change, and at the step 4 gate the decider approves the signed evidence pack (⚠️ the bank's approval policy may require a committee meeting).
+- **Gates are decided in writing when they're clean:** if every criterion is met, the decider approves the gate pack in writing and the approval goes in the decision log; a meeting happens only when a criterion is contested or a decider asks for one. Partner sign-offs in step 4 don't change, and at the step 4 gate the risk partner and the sponsor approve the signed evidence pack (⚠️ the bank's approval policy may require a committee meeting).
 - **Every sub-step is our choice** (ask the product manager to change it) unless the table below says it comes from law, a regulator or bank policy. A sub-step that sets, builds, proves or watches a law or bank-policy control inherits that control's source. Law and bank policy are never deleted by the automation check.
 
 ## Where the requirements come from

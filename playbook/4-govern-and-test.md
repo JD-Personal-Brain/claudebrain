@@ -41,7 +41,7 @@ log (see `README.md`) for every sub-step.
 ## 4.2 Review data and privacy
 
 - **Goal:** confirm that the data the AI sees matches what was approved, and that privacy rules are met.
-- **Why it matters:** data about individuals, such as business owners and guarantors, is protected by law (for example, GLBA, whose privacy rules cover consumers; ⚠️ whether it reaches business owners' and guarantors' data is for privacy to confirm; bank policy protects it either way). Business client data is protected by bank policy and contracts ⚠️. Either way, data use that drifted from the approval is a serious finding.
+- **Why it matters:** data about individuals may be protected by law (for example, GLBA, whose privacy rules cover consumers; ⚠️ whether it reaches business owners' and guarantors' data is for privacy to confirm; bank policy protects it either way). Business client data is protected by bank policy and contracts ⚠️. Either way, data use that drifted from the approval is a serious finding.
 - **Know first:** the signed data contract (2.3), the data views (3.2), and the privacy team contact. ⚠️
 - **First time, step by step:**
   1. List every field the product actually reads, from the frozen version in test rather than the plan.
@@ -187,7 +187,7 @@ log (see `README.md`) for every sub-step.
 
 ## The Govern and test gate
 
-- **Who decides:** the risk partner and the sponsor; partner sign-offs can't be overruled (in writing when the gate is clean; a meeting only if a criterion is contested or a decider asks for one; see the Product Machine). The risk partner and the sponsor approve the signed evidence pack in writing; partner sign-offs don't change (⚠️ the bank's approval policy may require a committee meeting).
+- **Who decides:** the risk partner and the sponsor, who approve the signed evidence pack in writing; partner sign-offs can't be overruled. A meeting happens only if a criterion is contested or a decider asks for one (see the Product Machine; ⚠️ the bank's approval policy may require a committee meeting).
 - **Bring:** the signed evidence pack and the monitoring plan.
 - **Go means:** all sign-offs recorded, and the monitoring plan agreed.
 - **No-go means:** fix what reviewers found; each fix is a new frozen version, so re-run the test set and the control tests, and send changed evidence back to the signers it affects. Or stop, record why, and retire the AI product.
@@ -205,16 +205,16 @@ table in `product-machine.md`.
 | Sub-step | Agent | First time | Aim for | Already specified? |
 |---|---|---|---|---|
 | 4.1 | M25 Risk intake assistant | Me | Draft | Yes, M25 |
-| 4.2 | M13 Data-use checker | Draft | Auto | Yes, M13 |
+| 4.2 | M13 Data-use checker | Draft | Auto ⚠️ | Yes, M13 |
 | 4.2 | None: walking privacy through it stays with a person | Me | Me | — |
 | 4.3 | M26 Test grader, M27 Red-team agent | Draft | Auto | Yes, M26, M27 |
-| 4.4 | M28 Fairness monitor | Draft | Auto | Yes, M28 (ongoing mode) |
+| 4.4 | M28 Fairness monitor | Draft | Auto ⚠️ | Yes, M28 (ongoing mode) |
 | 4.5 | M11 Controls checker (from 3.4) | Draft | Auto | Yes, M11 |
-| 4.6 | Approved vendors list (not an agent) | Me | Me | — |
+| 4.6 | None (the approved vendors list, an asset) | Me | Me | — |
 | 4.7 | M29 Evidence pack assembler | Draft | Draft | Yes, M29 |
 | 4.7 | M14 Sign-off router | Me | Auto ⚠️ | Yes, M14 |
 | 4.7 | None: unblocking a stuck sign-off stays with a person | Me | Me | — |
-| 4.8 | Monitoring plan template | Draft | Draft | Asset: agent library |
+| 4.8 | None (the monitoring plan template, an asset) | Draft | Draft | Asset: agent library |
 
 **First time** = how the task is done on the first project. **Aim for** = its kind in `product-machine.md`.
 

@@ -154,7 +154,7 @@ log (see `README.md`) for every sub-step.
   4. Have experienced users grade a sample of outputs, to check the scoring, and check that each output traces to the rule or score that produced it (K22).
   5. Build the gate pack: the design, the controls checklist, test results and user feedback.
 - **Output:** a test report and the gate pack.
-- **Done when:** every threshold is met; permissions is always 100% and can't be waived. Any other shortfall goes to the gate as a documented gap, for the sponsor to accept or reject in the decision log.
+- **Done when:** every threshold is met; permissions is always 100% and can't be waived. Any other shortfall goes to the gate as a documented gap, for the sponsor to accept or reject in the decision log, with a date to close it. Any threshold from law or bank policy can't be waived either.
 - **Automation watch:**
   - First time: **Draft**.
   - Note: how long a full test run took by hand. That's the time the agent saves on every later change.
@@ -184,7 +184,7 @@ table in `product-machine.md`.
 | Sub-step | Agent | First time | Aim for | Already specified? |
 |---|---|---|---|---|
 | 3.1 | M10 Agent spec drafter | Me | Draft | Yes, M10 |
-| 3.2 | M24 Data contract checker (ongoing mode: data quality checks) | Me | Auto | Yes, M24 (ongoing mode) |
+| 3.2 | M24 Data contract checker (ongoing mode: data quality checks) | Me | Auto ⚠️ | Yes, M24 (ongoing mode) |
 | 3.3 | None new (M26 checks the outputs) | Draft | Draft | — |
 | 3.4 | M11 Controls checker | Me | Auto (test only) | Yes, M11 |
 | 3.5 | None (its feedback feeds M30 in step 5) | Me | Me | — |

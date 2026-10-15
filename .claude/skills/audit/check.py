@@ -286,7 +286,7 @@ for _b in re.split(r"\n### ",_ctl)[1:]:
 # 15. Agent names (audit 2026-10-15): every "M<number> <Name>" in the Product Machine and the playbook step files
 # uses the number and exact name from the Agent Library (playbook/agents.md), so they can't drift apart.
 _ag={m.group(1):m.group(2).strip() for m in re.finditer(r'^### (M\d+)\. (.+)$',open('playbook/agents.md').read(),re.M)}
-for f in ['product-machine.md']+sorted(glob.glob('playbook/[1-6]-*.md')):
+for f in ['product-machine.md','playbook/README.md','playbook/controls.md','product-framework.md']+sorted(glob.glob('playbook/[1-6]-*.md')):
     for m in re.finditer(r'\b(M\d{1,2})\*{0,2} ([A-Z][a-z]+(?:[ -][a-z]+){0,3})',open(f).read()):
         nm=_ag.get(m.group(1))
         if nm is None: print(f,'names',m.group(1),'but the Agent Library has no such agent'); probs+=1

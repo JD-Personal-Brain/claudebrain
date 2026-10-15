@@ -121,9 +121,9 @@ log (see `README.md`) for every sub-step.
 
 - **Goal:** make the next project faster and more automated than this one.
 - **Why it matters:** this is how one product manager ends up running many projects: each one leaves the machine better.
-- **Know first:** the first-time logs from every step, and the automation review tables at the end of each playbook file.
+- **Know first:** the sub-step logs from every step (the full first-time log on the first project), and the automation review tables at the end of each playbook file.
 - **First time, step by step:**
-  1. Read back through the first-time logs from steps 1 to 6.
+  1. Read back through the sub-step logs from steps 1 to 6.
   2. Total the time per step, work out each sub-step's wait index (calendar days from start to finish, divided by hours of real work), and mark the highest.
   3. Run the automation check on every Me and Draft task, cut first: decide what to delete, simplify or speed up (starting with the highest wait index). Record each deletion in the decision log with who agreed, and list which earlier deletions had to come back (if none did, we aren't cutting enough). Then, for each agent idea that passed the rest of the check, decide: build it now, later, or never.
   4. Record the machine's measures for this project (days from kickoff to pilot, days at each gate, releases per month in the pilot and the wait index; see "Measuring the machine" in the Product Machine), compare them with the last project, and add them to the one view of all projects.
@@ -134,7 +134,7 @@ log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Me**.
   - Note: which agents you built, and how much time they saved on the next project.
-  - Agent: **M19 Log summarizer** (agent library) that totals time, waits and each sub-step's wait index from the first-time logs. *Draft*.
+  - Agent: **M19 Log summarizer** (agent library) that totals time, waits and each sub-step's wait index from the sub-step logs. *Draft*.
 - **For RM analytics:** the RM project is the first run, so its logs set the starting point for every project after it.
 
 ---
@@ -159,7 +159,7 @@ table in `product-machine.md`.
 
 | Sub-step | Agent | First time | Aim for | Already specified? |
 |---|---|---|---|---|
-| 6.1 | Live dashboard (template) | Draft | Auto | Asset: agent library |
+| 6.1 | None (the live dashboard template, an asset) | Draft | Auto | Asset: agent library |
 | 6.2 | M31 Impact analyst | Draft | Draft | Yes, M31 |
 | 6.3 | M32 Quality watchdog | Draft | Auto | Yes, M32 |
 | 6.4 | M18 Monthly review pack drafter | Draft | Draft | Yes, M18 |

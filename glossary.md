@@ -30,11 +30,12 @@ documents against it.
 | **Frozen version** | The exact version reviewers test and approve in step 4. Every fix creates a new frozen version, which is tested again. |
 | **Product machine** | The whole system for running products: the six steps, the task tables (in `product-machine.md`, shown on the Product Machine page), the agents and the tracker. |
 | **Playbook** | The Product Playbook, the field manual: how to do each sub-step the first time, and what to log so it can be automated later. |
-| **First-time log** | The notes kept while doing a sub-step for the first time: start and finish, time spent, what was done, inputs, waits, what repeated, the wait index, the cut-first questions and the automation check (the fields are in the Product Playbook). Later projects keep a light version (start, finish, hours, waits) so the machine's measures can be counted every time. |
+| **First-time log** | The notes kept while doing a sub-step for the first time: start and finish, time spent, what was done, inputs, waits, what repeated, the wait index, and the cut-first and then-automate answers (the fields are in the Product Playbook). Later projects keep a light version (start, finish, hours, waits) so the machine's measures can be counted every time. |
+| **Sub-step log** | The log kept for every sub-step on every project: the full first-time log on the first project, then a light version (start, finish, hours, waits). The machine's measures and the wait index come from it. |
 | **Automation check** | Seven questions asked of every Me and Draft task at each gate, in order: **cut first** (should it exist, can we delete it, simplify it, make it faster?), **then automate** what's left (did it repeat, is it stable, is it safe alone?). Three yeses to the last three move it one kind toward Auto. Law and bank policy are never cut. |
 | **Comes from** | Where a requirement (a control, sub-step or gate) comes from: **law or regulator**, **bank policy** or **our choice**. It says who to ask to change it: the partner who owns the law (compliance, privacy, model risk or vendor risk), the policy's owner or the product manager. |
 | **Limiting factor** | The one thing holding a project back right now, with its owner (for example a data contract waiting for a signature). It opens the tracker and the weekly status note. |
-| **Wait index** | For a sub-step: calendar days from start to finish, divided by hours of real work, from the first-time log. A high number means waiting, not working. |
+| **Wait index** | For a sub-step: calendar days from start to finish, divided by hours of real work, from the sub-step log. A high number means waiting, not working. |
 | **Machine measures** | How well the product machine itself works, per project: days from kickoff to pilot, days at each gate, releases per month in the pilot, and the wait index (Product Machine). |
 | **Gate in writing** | A gate decided by the decider approving the gate pack in writing, used when every criterion is met; a meeting is held only when a criterion is contested or someone who decides asks for one. |
 | **Elon mode review** | A review of a plan or of the product machine through Elon Musk's lens (the Elon Mode Research page): the cut-first questions, the limiting factor and the machine's measures, plus the bank guardrails. Run by the elon-mode skill. |
@@ -50,13 +51,13 @@ documents against it.
 | **Risk partner** | The model risk person who rates the product and works with the team from day one. **Risk partners** (plural) means everyone who signs off in step 4: model risk, compliance, privacy and security. |
 | **Data owner** | The person who decides what data may be used, and signs the data contract. |
 | **Champion** | A respected user who shows peers how they use the product. |
-| **Kind** | Who does a task: **Auto** (runs on its own), **Draft** (AI drafts, a named person checks), **Me** (only a person) or **Partner** (a sign-off only a named partner can give). |
+| **Kind** | Who does a task: **Auto** (runs on its own), **Draft** (AI drafts, a named person checks), **Me** (only a person) or **Partner** (a decision only a named partner can make, such as a sign-off). |
 | **Agent** | An AI helper with one job, a short list of allowed actions and a named person in charge. |
 | **Research helper** | An agent that keeps my own reference pages current, such as H1, the bank news scout. Numbered H1 and on, listed in the Agent Library, and not part of the product machine. |
 | **General agent** | One of the 33 agents (M1 to M33) that run the product machine on every project, specified in the agent library: M1 to M19 handle the paperwork and routing, M20 to M33 do the team's analysis, testing and monitoring. |
 | **Product agent** | An agent inside the product that users see, numbered per project (A1 to A6 in the RM plan). Specified in that project's memo, Appendix A. |
 | **Agent spec** | An agent's written definition: its job, inputs, allowed and forbidden actions, outputs, when it stops, proof it worked and the person in charge. |
-| **Ongoing mode** | An agent first used once in a sub-step that then keeps checking the live product until it's retired (for example M24 on every data refresh). Agents built to run on a schedule from the start aren't counted as ongoing mode. |
+| **Ongoing mode** | An agent first used once in a sub-step that then keeps running until the product is retired (for example M24 on every data refresh). Agents built to run on a schedule from the start aren't counted as ongoing mode. |
 | **Control** | A safeguard built into a product so the bank can trust it (K1 to K25 in the Controls Catalog). Each says where it is set, built, proved and watched, and where it comes from (law or regulator, bank policy or our choice). |
 | **Sign-off** | A named partner's formal approval in step 4. Never automated. |
 | **Quality bar** | The thresholds a product must meet: accuracy, sources shown, relevance, usefulness and permissions (zero tolerance). Set in Define. |
@@ -89,8 +90,8 @@ documents against it.
 | **Decision log** | The record of each decision: what was decided, the options, who decided and why. For gates it also records the date the gate pack was ready and the decision date. |
 | **Risk and issue list** | The one list of a project's dependencies, risks and issues, each with an owner and a date, reviewed weekly. Its top item is the limiting factor. |
 | **Project file** | The project's working document (`memos/<project>.md`), created at kickoff (1.0): the plan, the who-decides list and the approved AI tools. People read it as a designed page. |
-| **Automation review** | The table at the end of each playbook step that lists every task with its first-time kind and the kind to aim for; at the gate, the automation check runs through it. |
-| **Tracker** | The one task list for a project: each task with its owner, date and status. |
+| **Automation review** | The table at the end of each playbook step that lists each sub-step's agent (or None) with its first-time kind and the kind to aim for; at the gate, the automation check runs through it. |
+| **Tracker** | The one task list for a project (its section of the one shared tracker): each task with its owner, date and status. |
 | **Open item** | Anything unfinished, kept in the Open Items log and numbered in priority order within its kind (W1 is the first piece of work). Numbers change when priorities change; closed items (C) keep theirs. |
 
 ## Words we don't use

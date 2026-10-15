@@ -34,12 +34,14 @@ done one kind closer to a person, so the work can be logged before it's
 automated; each playbook step's review table shows both. The gate check below
 moves tasks toward **Auto** over time. ⚠️ marks an Auto task that sends requests,
 reminders, reports or alerts to people outside the project team, or changes a live
-system, so it depends on the bank allowing that.
+system, so it depends on the bank allowing that. The project team is the product
+manager, analysts and the data and platform engineers on the product; the sponsor,
+partners and users are outside it. Dashboards people open themselves don't count.
 
 **1. Discover**
 | # | Task | Kind | Tool (guess) | Goes to |
 |---|---|---|---|---|
-| 1.0 | Agree the sponsor's role and who decides; brief a risk partner | Me | Meeting | Sponsor, risk |
+| 1.0 | Agree the sponsor's role and who decides; brief the risk partner | Me | Meeting | Sponsor, risk |
 | 1.0 | Set up the tracker, decision log and project file | Draft | M1 Kickoff pack builder | Me |
 | 1.0 | Confirm the AI tools the team may use and record them in the project file | Me | Meeting with IT and risk | Project file |
 | 1.1 | Agree the outcome and measure | Me | Meeting | Sponsor |
@@ -98,7 +100,7 @@ system, so it depends on the bank allowing that.
 | 4.2 | Walk privacy through it | Me | Meeting | Privacy |
 | 4.3 | Test and red-team the frozen version | Auto | M26 Test grader, M27 Red-team agent | Risk reviews every failure |
 | 4.4 | Agree the groups and thresholds with compliance | Partner | Meeting | Compliance |
-| 4.4 | Check fairness | Auto | M28 Fairness monitor | Compliance reviews |
+| 4.4 | Check fairness | Auto ⚠️ | M28 Fairness monitor | Compliance reviews |
 | 4.5 | Re-run the control tests | Auto | M11 Controls checker | Risk |
 | 4.5 | Show the controls working to risk; confirm the release route and IT's approval of every connection | Me | Meeting, audit log | Risk, IT |
 | 4.6 | Confirm the vendor reviews | Me | Approved vendors list | Vendor risk |
@@ -109,7 +111,7 @@ system, so it depends on the bank allowing that.
 | 4.8 | Draft the monitoring plan alongside 4.5 (it goes into the evidence pack), then finalise it | Draft | Monitoring plan template | Risk, operations |
 | Gate | Go/no-go | Partner | In writing; a meeting only if contested | Risk, sponsor |
 
-The step 4 gate is a Partner decision: the risk partner's approval can't be overruled; the sponsor approves the signed evidence pack.
+The step 4 gate is a Partner decision: the risk partner's approval can't be overruled; the risk partner and the sponsor approve the signed evidence pack.
 
 **5. Release and adopt**
 | # | Task | Kind | Tool (guess) | Goes to |
@@ -124,7 +126,7 @@ The step 4 gate is a Partner decision: the risk partner's approval can't be over
 | 5.4 | Answer "how do I…?" questions from the FAQ (the product's own help, if release 1 includes one, such as A6 in the RM plan) | Auto ⚠️ | The product's FAQ or help | Users; the product team keeps content current |
 | 5.5 | Recruit champions | Me | A Teams channel | Champions |
 | 5.5 | Spot wins to celebrate | Draft | M17 Wins spotter | Me, then sponsor and user leaders |
-| 5.6 | Sort feedback into bugs, quality issues and ideas | Auto | M30 Feedback triage | Backlog; I check a weekly sample |
+| 5.6 | Sort feedback into bugs, quality issues and ideas; flag likely incidents | Auto ⚠️ | M30 Feedback triage | Backlog; operations and me for incidents; I check a weekly sample |
 | 5.6 | Fix and tell users what changed | Me | Release notes | Users |
 | 5.6 | Log every incident, its owner and the fix | Me | Incident log | Operations, risk |
 | 5.7 | Confirm the long-term owner before scaling | Me | Meeting | Sponsor |
@@ -198,7 +200,7 @@ beat the last.
 | Measure | What it is | Where it comes from |
 |---|---|---|
 | Days from kickoff to pilot | Calendar days from sub-step 1.0 to the pilot launch (5.2) | The tracker |
-| Days at each gate | Calendar days from the gate pack being ready to the decision | The tracker (gate pack ready) and the decision log (decision date) |
+| Days at each gate | Calendar days from the gate pack being ready to the decision | The decision log (gate pack ready and decision dates) |
 | Releases per month in the pilot | How many improved versions reach pilot users each month (how fast we iterate) | Release notes (5.6) |
 | Wait index | For each sub-step: calendar days from start to finish, divided by hours of real work. A high number means waiting, not working; fix the highest first | The sub-step log (start, finish, hours, waits), kept on every project, not only the first; summarized by M19 in 6.6 |
 
@@ -206,7 +208,7 @@ Every project keeps a light log per sub-step (start, finish, hours, waits); the 
 
 ## Many projects at once
 - **One machine for every project.** The same steps, tables and tracker, so any project can be compared with any other.
-- **Limit the person-heavy steps.** Discover and Release and adopt carry the most person-only work (judgment early, working with users later), so at most [X] projects are in either at once. Define, Build, Govern and test, and Measure and iterate lean more on AI drafts and automation, so more projects can be there.
+- **Limit the person-heavy steps.** Discover and Define need the most of my time, so at most [X] projects are in them at once. Release and adopt also has many person-only tasks (working with users), so plan for it too. Build, Govern and test, and Measure and iterate lean more on AI drafts and automation, so more projects can be there.
 - **Stagger the gates.** No two gate packs from different projects land in the same week.
 - **Plan the product manager's week.** [X] hours on decisions and gates, [X] on users, [X] on partners and sign-offs, [X] checking drafts. If person-only work runs over, the automation check comes first.
 
