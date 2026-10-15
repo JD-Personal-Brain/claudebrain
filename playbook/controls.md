@@ -42,15 +42,15 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 
 ### K3. AI drafts or flags; a named credit officer decides
 - **Group:** People in charge
-- **What it is:** the AI may draft or flag credit work (a credit memo draft, an early-warning flag), but a named credit officer makes every credit decision, and the product never sets or suggests a price. The intake says plainly what the product does not do. A product whose output informs a credit decision takes the **higher-risk path** in step 4, set at 2.4. For RM analytics, any insight that suggests a credit product goes to compliance review. (Restated 2026-10-15, gap 4 from the audit, so credit memo drafts can be built.)
+- **What it is:** the AI may draft or flag credit work (a credit memo draft, an early-warning flag), but a named credit officer makes every credit decision, and the product never sets or suggests a price (restating terms a person already proposed, from the deal file, is allowed). A borrower's credit risk rating stays out of the first feature waves (closed item C33); whether a draft may carry a recommendation is decided at 2.4 with the credit policy owner, and the test set (3.6) follows that decision. The intake says plainly what the product does not do. A product whose output informs a credit decision takes the **higher-risk path** in step 4, set at 2.4. For RM analytics, any insight that suggests a credit product goes to compliance review. (Restated 2026-10-15, gap 4 from the audit, so credit memo drafts can be built.)
 - **Why it matters:** fair-lending rules apply to business credit too, and they set a much higher bar.
 - **Set in:** 2.4 (including whether the product takes the higher-risk path)
-- **Built in:** 3.6 (test cases the product must refuse). Guardrails for this are not covered in the playbook yet
-- **Proved in:** 3.7, 4.3
+- **Built in:** 3.6 (test cases the product must refuse). Guardrails for this, and showing the named credit officer on each credit draft, are not covered in the playbook yet
+- **Proved in:** 3.7, 4.3; on the higher-risk path also 4.4 (fairness) and 4.7 (the credit policy owner's sign-off)
 - **Watched in:** 6.3 (the test set, with its must-refuse cases, is re-run)
 - **Tool (guess):** guardrail filters
 - **Proof:** a red-team test (someone trying to break it on purpose) showing it won't give a credit decision or a price, and, on the higher-risk path, that every credit draft names the credit officer who decides
-- **Comes from:** Our choice: chosen to stay clear of fair-lending law (the Equal Credit Opportunity Act), which applies once AI touches credit decisions. To change it, ask the product manager.
+- **Comes from:** Our choice for the boundary itself: chosen to stay clear of fair-lending law (the Equal Credit Opportunity Act), which applies once AI touches credit decisions; to change it, ask the product manager. On the higher-risk path, the fairness check rests on that law (ask compliance) and the extra sign-off on the bank's credit policy ⚠️ (ask its owner).
 
 ### K4. Users see only what they're allowed to see
 - **Group:** Data
@@ -167,7 +167,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 - **Set in:** 2.4
 - **Built in:** 2.4 (intake), 4.1 (registration)
 - **Proved in:** 4.1
-- **Watched in:** not covered in the playbook yet. The RM plan says the risk partner is told before a material change
+- **Watched in:** 6.3 (each change is checked for a material change, which goes back through step 4)
 - **Tool (guess):** the bank's intake form
 - **Proof:** the confirmed rating and the registration record
 - **Comes from:** Law or regulator: the regulators' model risk guidance (SR 11-7, with the OCC's matching Bulletin 2011-12; possibly replaced by SR 26-2), carried out through the bank's model risk policy. ⚠️ Whether the bank treats this AI product as a "model" is the bank's call. To change it, ask model risk.

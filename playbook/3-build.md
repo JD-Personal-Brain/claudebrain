@@ -50,7 +50,7 @@ log (see `README.md`) for every sub-step.
   4. Spot-check 20 records by hand against the source system.
   5. **If the product works from documents:** index each source in the contract on its re-indexing schedule, carry each document's permissions into the index, so a user only finds documents they could already open, and spot-check 20 answers against the documents they cite.
 - **Output:** the data views, with checks and permissions.
-- **Done when:** the spot-check matches and the checks run every refresh.
+- **Done when:** the spot-check matches and the checks run every refresh (for documents, each source is re-indexed on its schedule).
 - **Automation watch:**
   - First time: **Me**, with the data engineer.
   - Note: which checks failed in the first week.
@@ -132,7 +132,7 @@ log (see `README.md`) for every sub-step.
 - **First time, step by step:**
   1. Collect [X] real examples covering normal, tricky and edge cases. ⚠️ A common start is about 50 to 100.
   2. Have experienced users write or approve the good answer for each one.
-  3. Add "must refuse" cases, such as another user's client, a credit decision or a pricing recommendation. They also seed the red-team plan in 4.3 (K10).
+  3. Add "must refuse" cases, such as another user's client, a credit decision or a pricing recommendation (restating terms a person already proposed, from the deal file, is allowed; the AI never proposes or changes a price). They also seed the red-team plan in 4.3 (K10).
   4. Store it with a version number, and never change old versions.
 - **Output:** the test set, versioned.
 - **Done when:** it covers every story in release 1 and the main risks.

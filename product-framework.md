@@ -23,6 +23,7 @@ written as [name needed] until they're filled.
 | Platform teams | The technical design | Define (2.2), Build |
 | Model risk (the risk partner) | The risk rating and the approval | Briefed in Discover (1.0); agrees at the Discover and Define gates; rating in Define (2.4); approval at the step 4 gate, which the sponsor can't overrule |
 | Compliance, privacy and security | The controls and their sign-off | Told the control requirements in Define (2.4); sign-off in Govern and test (4.2 to 4.7) |
+| Credit policy owner (higher-risk path only) | Whether a product that informs credit decisions may go live, and what its drafts may contain (control K3) ⚠️ [name needed] | Define (2.4), Govern and test (4.7) |
 | Vendor risk | Whether the vendors and AI models we use are approved | Define (2.2, starts any missing review), Govern and test (4.6) |
 | IT | The AI tools the team may use, and every connection the product makes | Discover (1.0), Define (2.2), Govern and test (4.5) |
 | Finance | How impact is counted, and the impact numbers | Define (2.7), the Measure and iterate gate |
@@ -61,14 +62,19 @@ How the work is cut up, so every gate knows what it decides (gaps 1 to 3 from th
 
 **The quick pass for the next feature wave.** After the first pass, each new
 feature wave (chosen in sub-step 6.5) goes through Discover and Define quickly,
-reusing what the project already has:
+reusing what the project already has. A wave that serves a new user group starts
+a new project, with the full pass:
 - **Always done:** 2.3 update the data contract, and the data owner signs the new fields; 2.4 update the risk intake, and the risk partner confirms the rating; 2.5 user stories and acceptance criteria for the wave; 2.7 measures, quality bar and value model for the wave's AI products.
-- **Reused unless something changed:** 1.0 to 1.7 (record a baseline in 1.7 for any new measure), 2.1, 2.2, 2.6, and 2.8, where only the wave's scope and pilot group are updated.
+- **Reused unless something changed:** 1.0 to 1.7 (record a baseline in 1.7 for any new measure, and show users a short 1.6 mock-up of any new AI product), 2.1, 2.2 (redone if the wave needs a different platform or delivery path), 2.6, and 2.8, where only the wave's scope and pilot group are updated. The product manager lists in the gate pack what was reused and what was redone.
 - **Gates 1 and 2 together, in writing,** from one short gate pack, with a meeting only if a criterion is contested.
 
 **Change after launch.** A **material change** goes back through step 4 before
 it reaches users: new data, a new action the product can take, users outside the
-group step 4 approved, or a new or vendor-changed AI model. The product manager
+group step 4 approved, a new AI model we choose, or a vendor model change
+the vendor announces as major. Smaller vendor updates trigger the 6.3 re-test
+(M32), and are judged as below. Step 4 approves
+the full planned user group from 2.8 (recorded in 4.7), so user waves inside it
+(5.7) are not a material change. The product manager
 proposes whether a change is material and the risk partner confirms. Any other
 change is re-tested (6.3), logged in the release notes and told to the risk
 partner. Comes from: our choice, resting on the model risk guidance's

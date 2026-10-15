@@ -25,7 +25,7 @@ documents against it.
 | **AI product** | A specific capability we build and release, such as the pre-meeting brief. Each sits under one core use case. |
 | **Wave** | Used two ways, so say which: a **feature wave** is a set of AI products released together, after a quick pass through Discover and Define; a **user wave** is the next group of users when a product scales (sub-step 5.7). |
 | **Quick pass** | How each new feature wave goes through Discover and Define after the first pass: four sub-steps always done (2.3, 2.4, 2.5, 2.7), the rest reused unless something changed, and gates 1 and 2 decided together in writing (Product Framework). |
-| **Material change** | A change to a live product that goes back through step 4: new data, a new action, users outside the group step 4 approved, or a new or vendor-changed AI model. The product manager proposes and the risk partner confirms; the bank's model risk policy has the final word ⚠️ (Product Framework). |
+| **Material change** | A change to a live product that goes back through step 4: new data, a new action, users outside the full user group step 4 approved, a new AI model we choose, or a vendor model change the vendor announces as major (smaller vendor updates are re-tested in 6.3). User waves inside the approved group aren't material. The product manager proposes and the risk partner confirms; the bank's model risk policy has the final word ⚠️ (Product Framework). |
 | **Higher-risk path** | The deeper step 4 review for a product whose output informs a credit decision, such as credit memo drafts: set at sub-step 2.4, under control K3. |
 | **Pilot** | The first live use, by a small pilot group, alongside a comparison group. |
 | **Comparison group** | Similar users who don't get the product yet, so its effect can be told apart from everything else that changed. |
@@ -160,6 +160,7 @@ Our plans depend on these, but the definitions belong to the bank. Each stays
 |---|---|---|
 | Relationship manager (RM) | The banker who owns business client relationships and brings in new deals | ⚠️ to map |
 | Portfolio manager (PM) | The credit partner paired with an RM. Associated's own job postings use this title (AVP to SVP) for the role that underwrites, monitors credit and partners closely with RMs (seen on job boards, 2026-10-14) | ⚠️ to map |
+| Credit officer | The person with credit authority who makes a credit decision that an AI draft or flag informs (control K3); it may be the portfolio manager or a credit approver | ⚠️ to map |
 | Treasury management officer | The specialist an RM refers clients to for payments and cash management | ⚠️ to map |
 | Client, relationship | A business client and everything the bank does with it | ⚠️ to map |
 | Segment and market | How clients and bankers are grouped (for example, by size or region) | ⚠️ to map |

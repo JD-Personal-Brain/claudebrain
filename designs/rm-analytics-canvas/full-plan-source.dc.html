@@ -998,7 +998,7 @@ class Component extends DCLogic {
         "Snowflake finds prospects that look like the bank's best clients, using agreed and explainable criteria.", "A2 explains each match.", "DECIDE: the RM decides whether to pursue each one."],
         "Prospects shown, pursued and won.", "New clients against the comparison group."),
       flow("B9", "Every release (every week or two)", "All waves", tm, "Any change to prompts, rules, data or models.", [
-        "M32 re-runs the test set.", "If the score is below the quality bar, the release stops.", "If the change is material, the risk partner is told before release.",
+        "M32 re-runs the test set.", "If the score is below the quality bar, the release stops.", "If the change is material (Product Framework), it goes back through step 4 before release.",
         "Release; M32 watches live quality for [X] days."],
         "Test scores, approvals, release notes.", "Quality trend; releases rolled back.")
     ];

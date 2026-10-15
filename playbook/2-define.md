@@ -73,9 +73,9 @@ Fill in the first-time log (see `README.md`) for every sub-step.
   4. Agree with the data owner how each gap is fixed or worked around.
   5. Get the data owner's sign-off, in writing.
   6. After 2.5, add any new fields and get the data owner to re-confirm in writing.
-  7. **If the product works from documents** (credit memos, financial statements, call notes), write the contract for documents instead of fields: each source (library or folder), its content owner, how often it is re-indexed, who may see each document, and the check that every answer cites the document it came from.
+  7. **If the product works from documents** (credit memos, financial statements, call notes), write the contract for documents instead of fields: each source (library or folder), its content owner, how often it is re-indexed (re-read by the search, so new or changed documents show up), who may see each document, and the check that every answer cites the document it came from.
 - **Output:** the data contract table and a gap list.
-- **Done when:** every field is either confirmed or has an agreed fix, and the data owner has signed the final field list.
+- **Done when:** every field is either confirmed or has an agreed fix, and the data owner has signed the final field list (for documents, the content owner has signed the source list).
 - **Automation watch:**
   - First time: **Draft**.
   - Note: how long the sign-off took, and which gaps came up. Expect the same gaps on the next project.
@@ -95,7 +95,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
 - **First time, step by step:**
   1. Get the intake form and ask the risk partner how long a review usually takes.
   2. Fill it in from the brief so far (2.1) and the Discover gate pack: what the product does, which data (the first field list from 2.3), who uses it, what it can change, and whether anything reaches a client.
-  3. Say plainly what it does **not** do, for example "no credit decisions, no pricing" (control K3). If its output informs a credit decision (a credit memo draft, an early-warning flag), mark it for the **higher-risk path** in step 4: a fairness check agreed with compliance (4.4), must-refuse cases in the test set (3.6), and a sign-off from the credit policy owner as well (4.7) ⚠️ the bank's model risk policy may add more.
+  3. Say plainly what it does **not** do, for example "no credit decisions, no pricing" (control K3). If its output informs a credit decision (a credit memo draft, an early-warning flag), mark it for the **higher-risk path** in step 4, and agree with the credit policy owner ⚠️ [name needed] what its drafts may contain (for example, whether a draft may carry a recommendation). The higher-risk path means a fairness check agreed with compliance (4.4), must-refuse cases in the test set (3.6), and a sign-off from the credit policy owner as well (4.7). ⚠️ The bank's model risk policy may add more.
   4. Submit it, then meet the risk partner to walk through it.
   5. Write down the control requirements they give you (human approval, logging, guardrails, permissions, consent for any recorded meeting) and copy them into the backlog as must-haves.
   6. Share the control requirements list with compliance, privacy and security, so nothing in step 4 is a surprise.
@@ -183,12 +183,12 @@ Fill in the first-time log (see `README.md`) for every sub-step.
 - **First time, step by step:**
   1. Draw a line in the backlog: above it is release 1.
   2. Test it: "Would a user use this every week, even if it had nothing else?" If not, move the line.
-  3. Confirm the final pilot group ([X] users) and the comparison group proposed in 1.7, with user leaders.
+  3. Confirm the final pilot group ([X] users) and the comparison group proposed in 1.7, with user leaders, and the full user group the product is planned to reach (the rollout). Step 4 approves that full group, so user waves inside it (5.7) don't go back through step 4.
   4. Set a target date for release 1, paced by what really blocks you (data access, approvals), not by habit.
   5. Ask the sponsor who should own the product long term, for example someone in a revenue line. Record the name, or "to be decided" with a date to decide by. Until then, the product manager owns it.
-  6. Complete the one-page brief: problem, outcome, users, platform (2.2), release 1 scope, what's out of scope and the long-term owner.
+  6. Complete the one-page brief: problem, outcome, users (pilot group and planned rollout), platform (2.2), release 1 scope, what's out of scope and the long-term owner.
   7. Build the gate pack: the brief, data contract, risk rating and controls, the backlog with release 1 marked, measures, value model, pilot group and date.
-- **Output:** the release 1 scope, the pilot and comparison groups, a date, the long-term owner (or a date to decide), the finished brief and the gate pack.
+- **Output:** the release 1 scope, the pilot and comparison groups, the planned rollout group, a date, the long-term owner (or a date to decide), the finished brief and the gate pack.
 - **Done when:** the gate pack is ready.
 - **Automation watch:**
   - First time: **Me** for the scope, **Draft** for the pack.

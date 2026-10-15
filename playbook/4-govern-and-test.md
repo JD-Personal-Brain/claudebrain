@@ -154,7 +154,7 @@ log (see `README.md`) for every sub-step.
   2. Check every claim in it against its source.
   3. Send it to each signer with a due date. On the higher-risk path (control K3), the credit policy owner signs too ⚠️ [name needed].
   4. Track the replies; chase anything late and meet anyone who's stuck.
-  5. Record each sign-off, with its date and any conditions.
+  5. Record each sign-off, with its date and any conditions, and the full user group the approval covers (the planned rollout from 2.8, not only the pilot group).
 - **Output:** the signed evidence pack.
 - **Done when:** every required signer has signed.
 - **Automation watch:**

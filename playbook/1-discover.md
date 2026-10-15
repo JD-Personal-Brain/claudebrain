@@ -100,7 +100,7 @@ sub-step. At the end, run the automation review.
   - The bank's rules on recording meetings and on using AI recaps. ⚠️ Confirm before recording.
   - Use only AI tools on the approved list from 1.0 (K23).
 - **First time, step by step:**
-  1. Start from the user group's workflow map (the user-workflow routine) if one exists: the interviews and shadowing test its "today" side and correct it. If there is no map yet, the interviews build its first version.
+  1. Start from the user group's workflow map (how they work today and with AI) if one exists: the interviews and shadowing test its "today" side and correct it. If there is no map yet, the interviews build its first version.
   2. Write a 30-minute interview guide of 8 to 10 open questions. Use `prompting.md` Example 1 to draft it, for example "Walk me through what you did after your last client meeting."
   3. Ask user leaders to nominate a mix of people: strong performers, average ones and skeptics.
   4. Send invitations and book the interviews.

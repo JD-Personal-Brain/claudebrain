@@ -126,7 +126,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
   3. Fix the top items, and add the rest to the backlog.
   4. Tell users what changed ("you said, we did").
   5. Log every incident, its owner and the fix. M30 Feedback triage flags anything that looks like an incident straight to the product manager and operations.
-  6. Each fix is a new version: re-run the test set (M26) and the control tests (M11) before it reaches pilot users, and tell the risk partner about any material change (⚠️ what counts as material is still to be agreed).
+  6. Each fix is a new version: re-run the test set (M26) and the control tests (M11) before it reaches pilot users. If it is a material change (Product Framework), it goes back through step 4 first; otherwise tell the risk partner.
 - **Output:** a weekly fix list, release notes and the incident log.
 - **Done when:** this runs every week.
 - **Automation watch:**
