@@ -124,6 +124,14 @@ footer{color:var(--muted);font-size:14px;border-top:1px solid var(--line);paddin
 .tasks li{margin:0}
 .csrc{margin:0;padding:0 16px 14px;font-size:12px;color:var(--muted);max-width:none}
 .empty{color:var(--muted)}
+/* Each step's header: its question, governance thread and gate, from the Product Workflow. */
+.sfacts{margin:14px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.sfacts div{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;min-width:0}
+.sfacts div.sgate{border-left:4px solid var(--amber)}
+.sfacts dt{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.sfacts dd{margin:0;font-size:14px}
+.ccard{scroll-margin-top:16px}
+@media (max-width:760px){.sfacts{grid-template-columns:1fr}}
 .howto{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--muted);align-items:center}
 @media (max-width:760px){.clist{grid-template-columns:1fr}.ccard .spec div{grid-template-columns:1fr;gap:2px}}
 </style>
@@ -131,6 +139,7 @@ footer{color:var(--muted);font-size:14px;border-top:1px solid var(--line);paddin
 <span class="label">Reference · controls</span>
 <h1>Controls Catalog</h1>
 <p class="lede">All 25 governance controls in one place: the safeguards built into every AI product, with where each is set, built, proved and watched.</p>
+
 <div class="filters">
 <label for="q">Search<input id="q" type="search" placeholder="Like approval or data" autocomplete="off"></label>
 <label for="grp">Kind of control<select id="grp"><option value="">All</option><option value="People in charge">People in charge</option><option value="Data">Data</option><option value="Quality">Quality</option><option value="Records">Records</option><option value="Approvals">Approvals</option><option value="After launch">After launch</option></select></label>
@@ -158,5 +167,8 @@ footer{color:var(--muted);font-size:14px;border-top:1px solid var(--line);paddin
     none.hidden=shown>0;
   }
   [q,g].forEach(function(el){el.addEventListener('input',run);el.addEventListener('change',run);});
+  // a link from another page that names a card (#s5-7) opens that card
+  function openHash(){var h=location.hash&&document.getElementById(decodeURIComponent(location.hash.slice(1)));if(h&&h.tagName==='DETAILS'){h.open=true;h.scrollIntoView();}}
+  openHash(); window.addEventListener('hashchange',openHash);
 })();
 </script>

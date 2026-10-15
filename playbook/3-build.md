@@ -1,7 +1,7 @@
 # Step 3: Build, the first time
 
 **The question:** what's the smallest version users will use and trust?
-**The gate:** it meets the quality bar in testing, and every control has proof.
+**The gate:** meets the quality bar in testing; every control has proof.
 **Governance thread:** controls built in; test set created.
 
 Build runs in short cycles: build a piece, test it, show users, repeat.

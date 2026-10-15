@@ -136,7 +136,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
 
 ---
 
-## 5.7 Scale in waves
+## 5.7 Scale in user waves
 
 - **Goal:** expand to more users only after a go/no-go check.
 - **Why it matters:** scaling something that isn't working spreads the problem.

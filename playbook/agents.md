@@ -539,7 +539,7 @@ listed actions, and those marked ⚠️ wait until the bank allows it.
 - **For:** the team
 - **Kind:** Draft → Draft
 - **Job:** propose and rank the next backlog items or the next lever, from usage and feedback.
-- **Starts when:** before each wave is planned.
+- **Starts when:** before each feature wave is planned.
 - **Inputs:** the dashboard; feedback themes; the monthly reviews.
 - **Allowed actions:** read; write a ranked list.
 - **Not allowed:** choosing the next feature wave.
@@ -560,7 +560,7 @@ scheduled task, from a skill in this repo.
 - **For:** me
 - **Kind:** Draft → Draft
 - **Job:** find new public facts about Associated Bank that change the Bank Business Briefing, and draft the edits.
-- **Starts when:** every Monday at 7:46 am Central (a scheduled task), once on October 23, 2026 after the Q3 results (that run swaps in the Q3 figures throughout), or when I say "run the news scout".
+- **Starts when:** every Monday at 7:46 am Central (6:46 am after clocks change on November 1; a scheduled task), once on October 23, 2026 after the Q3 results (that run swaps in the Q3 figures throughout), or when I say "run the news scout".
 - **Inputs:** the briefing (`memos/bank-business.md`); the scout's own log (`memos/bank-news-log.md`), so nothing is reported twice; public web pages and search results.
 - **Allowed actions:** search the web and open public pages; edit the briefing, rebuild its page source and add to the log on a draft branch; save that branch to GitHub; write one summary.
 - **Not allowed:** merging into main or opening a pull request; republishing the live page; sending email with any connector; using my work email; using non-public information; writing a number without its period and source; filling a gap from memory.

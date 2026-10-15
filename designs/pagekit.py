@@ -184,11 +184,17 @@ footer{color:var(--muted);font-size:14px;border-top:1px solid var(--line);paddin
 
 # ---------- The four "How we deliver" pages, in reading order ----------
 # Each of the four pages shows this strip in its header, so they read as one set.
+# The three pages that show the six steps, each with one job; they link to each other.
+WORKFLOW_URL = "https://claude.ai/artifact/8Nm5fkdicn2Gu5VmNVTvYv"   # Product Workflow: the steps and their gates
+STEPS_URL = "https://claude.ai/artifact/8UncWMYUq7hsJUhn5NSYEB"      # Steps Catalog: look up any sub-step
+MAPS_URL = "https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX"       # Workflow Maps: the processes as clickable maps
+PLAYBOOK_URL = "https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4"   # Product Playbook: how to do each sub-step
+
 SERIES = [
-    ("workflow", "Product Workflow", "The steps and their gates", "https://claude.ai/artifact/8Nm5fkdicn2Gu5VmNVTvYv"),
+    ("workflow", "Product Workflow", "The steps and their gates", WORKFLOW_URL),
     ("framework", "Product Framework", "The rules every product follows", "https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ"),
     ("machine", "Product Machine", "Every task, marked by who does it", "https://claude.ai/artifact/S8Wbygy24cjguTMxZsN2QF"),
-    ("playbook", "Product Playbook", "How to do each sub-step", "https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4"),
+    ("playbook", "Product Playbook", "How to do each sub-step", PLAYBOOK_URL),
 ]
 SERIES_CSS = """
 .series{margin-top:22px;display:flex;flex-direction:column;gap:8px}
@@ -213,3 +219,17 @@ def series(current):
         else:
             items.append(f'<li><a href="{url}" target="_blank" rel="noopener">{inner}</a></li>')
     return f'<nav class="series" aria-label="How we deliver, in reading order"><span class="stitle">How we deliver · read in this order</span><ol>{"".join(items)}</ol></nav>'
+
+def six_steps():
+    """The six steps from the Product Workflow's working copy (memos/role-workflow.md), its one home:
+    {"1": {"name", "question", "governance", "gate"}, ...}. Builders read them here so no page keeps its own copy."""
+    import os
+    root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    text = open(os.path.join(root, "memos", "role-workflow.md")).read()
+    out = {}
+    for m in re.finditer(r"^\| (\d)\. ([^|]+) \| ([^|]+) \| ([^|]+) \| ([^|]+) \|$", text, re.M):
+        out[m.group(1)] = {"name": m.group(2).strip(), "question": m.group(3).strip(),
+                           "governance": m.group(4).strip(), "gate": m.group(5).strip()}
+    if sorted(out) != list("123456"):
+        raise SystemExit("Could not read the six steps from memos/role-workflow.md")
+    return out

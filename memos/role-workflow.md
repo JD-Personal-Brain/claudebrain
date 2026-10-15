@@ -26,7 +26,7 @@ not the first time risk partners see the product.
 
 | Step | Question | Governance thread | Gate |
 |---|---|---|---|
-| 1. Discover | Which problem or opportunity is worth solving first? | Risk partners briefed on the idea | Sponsor agrees on the target, the measure and today's baseline |
+| 1. Discover | Which problem or opportunity is worth solving first? | Risk partner briefed on the idea | Sponsor agrees on the target, the measure and today's baseline |
 | 2. Define | What exactly do we build first, and how will we know it worked? | Risk intake and early rating; data use approved | Brief, data contract and risk rating agreed; value model shows payback within [X] months |
 | 3. Build | What's the smallest version users will use and trust? | Controls built in; test set created | Meets the quality bar in testing; every control has proof |
 | 4. Govern and test | Is it safe, fair and controlled? | Formal validation and sign-offs | All sign-offs recorded; monitoring plan agreed |
@@ -38,6 +38,10 @@ used in discovery. The pace is set by data access and review, not build time.
 
 ## What happens in each step
 One item per playbook sub-step, in the same order (1.0 to 6.6).
+Each sub-step on the designed page links to its card on the Steps Catalog
+(https://claude.ai/artifact/8UncWMYUq7hsJUhn5NSYEB); the steps as a clickable map are on
+the Workflow Maps (https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX). Both read each step's
+question, governance thread and gate from the table above, so they can't drift from it.
 - **1. Discover:** kick off the project (sponsor, who decides, tracker, risk briefing) · frame the outcome with the sponsor · size the opportunity with real data · interview and shadow users · map where their time goes · understand how they're measured and rewarded · test a rough mock-up · pick the first target and record today's numbers.
 - **2. Define:** write the problem and the outcome (one sentence each, measurable) · choose the platform and delivery path · define the data contract (exact fields, freshness, quality checks) · start the risk intake and list the control requirements · write user stories and acceptance criteria · set priorities and record the trade-offs · set the measures (the five kinds, in the Product Framework), quality bar and value model · scope the first release and the pilot group.
 - **3. Build:** design the solution and choose the AI capabilities (agents, retrieval with sources, data flows, workflow automations or system integrations) · prepare trusted data · build the logic: simple rules first, AI explains (it doesn't invent) · build in the controls · deliver it where users work, with the source behind every answer and one-click feedback · build the test set (real examples with known good answers) · test against the quality bar.
@@ -45,4 +49,4 @@ One item per playbook sub-step, in the same order (1.0 to 6.6).
 - **5. Release and adopt:** confirm release readiness · launch the pilot, with a comparison group · build it into routines (the core of adoption) · train users on their own work · recruit champions and celebrate wins · fix fast · scale in user waves after a go/no-go check.
 - **6. Measure and iterate:** track the measures on a live dashboard · compare with the baseline and the comparison group · re-test after every change, and watch for quality slipping ("drift") · hold the monthly keep / change / stop review · feed the next feature wave · improve the machine itself.
 
-_Last updated: 2026-10-14_
+_Last updated: 2026-10-15_

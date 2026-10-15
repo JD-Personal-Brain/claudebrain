@@ -67,7 +67,7 @@ screening.
 ## Regulatory note: SR 26-2
 - **What sources say:** SR 26-2, revised interagency guidance on model risk management, was issued on 17 April 2026 by the Federal Reserve, OCC and FDIC. It reportedly supersedes SR 11-7 (and possibly SR 21-8; sources differ). The Fed's letter reportedly says it is most relevant to banks with over $30 billion in assets. Associated Bank had $51.8 billion at 30 June 2026 (Bank Business Briefing), so it would likely apply.
 - **What's unclear:** sources disagree on whether it covers generative and agentic AI. Two (Lumenova, Enzai) say it excludes them; one (Openlayer) says it extends to them. The Fed's own text decides it; I couldn't open it.
-- **What it touches in our files:** `tech-stack.md`, `playbook/4-govern-and-test.md`, `playbook/2-define.md` and the RM plan all cite SR 11-7. Not changed yet, because the scope question is open (item W18 in the Open Items log).
+- **What it touches in our files:** `tech-stack.md`, `playbook/4-govern-and-test.md`, `playbook/2-define.md` and the RM plan all cite SR 11-7. Not changed yet, because the scope question is open (item W17 in the Open Items log).
 
 ## What it means for the credit plan
 **The RM structure carries over.** Each RM core use case has a credit

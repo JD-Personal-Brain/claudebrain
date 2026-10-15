@@ -1,7 +1,7 @@
 # Step 6: Measure and iterate, the first time
 
 **The question:** is it delivering the outcome, and what comes next?
-**The gate:** each month (and at the end of each feature wave), keep, change or stop each AI product; each quarter, invest more, adjust or stop overall.
+**The gate:** each month (and at the end of each feature wave): keep, change or stop each AI product; each quarter: invest more, adjust or stop overall.
 **Governance thread:** ongoing monitoring.
 
 This step never really ends: it runs every month for as long as the product
@@ -77,7 +77,7 @@ log (see `README.md`) for every sub-step.
 
 ## 6.4 Hold the monthly keep / change / stop review
 
-- **Goal:** a monthly decision on each feature, based on evidence.
+- **Goal:** a monthly decision on each AI product, based on evidence.
 - **Why it matters:** without a regular decision, weak features linger and strong ones don't get more investment.
 - **Know first:** the dashboard (6.1), the impact note (6.2) and quality trends (6.3).
 - **First time, step by step:**
@@ -98,7 +98,7 @@ log (see `README.md`) for every sub-step.
 ## 6.5 Feed the next feature wave
 
 - **Goal:** choose what comes next, and send it back through Discover and Define, quickly.
-- **Why it matters:** the first release is a start. The value comes from steady waves.
+- **Why it matters:** the first release is a start. The value comes from steady feature waves.
 - **Know first:** the backlog, the feedback themes, and what the sponsor wants next.
 - **First time, step by step:**
   1. List the candidates: backlog items, ideas from users and the next lever from Discover.

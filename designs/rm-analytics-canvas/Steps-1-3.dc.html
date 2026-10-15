@@ -70,7 +70,7 @@ th,td{text-align:left;vertical-align:top}
 <div style="display: flex; flex-wrap: wrap; gap: 14px">
 <div style="flex: 1 1 420px; background: #E6F2F0; border: 1px solid #BFDDD8; border-radius: 12px; padding: 22px 24px; display: flex; flex-direction: column; gap: 8px">
 <span style="font-weight: 600; color: #0A3F3B">The plan (estimate)</span>
-<span>A working prototype in week 1, built alongside discovery. The meeting follow-up goes to pilot RMs in about weeks 2–4, and call notes into Salesforce and the insight features in about weeks 4–6, then small releases every week or two and a new wave about every five weeks. The pace is set by data access and AI review, not by build time. A first read on closed revenue comes at about month 6.</span>
+<span>A working prototype in week 1, built alongside discovery. The meeting follow-up goes to pilot RMs in about weeks 2–4, and call notes into Salesforce and the insight features in about weeks 4–6, then small releases every week or two and a new feature wave about every five weeks. The pace is set by data access and AI review, not by build time. A first read on closed revenue comes at about month 6.</span>
 </div>
 <div style="flex: 1 1 420px; background: #FDF3E1; border: 1px solid #F0D9A8; border-radius: 12px; padding: 22px 24px; display: flex; flex-direction: column; gap: 8px">
 <span style="font-weight: 600; color: #8A4B00">What I'd need</span>
@@ -116,7 +116,7 @@ th,td{text-align:left;vertical-align:top}
 </div>
 </sc-for>
 </div>
-<p style="margin: 0; max-width: 880px"><strong style="color: #14213D">Why this works:</strong> standard AI products on platforms the bank already runs need less build and fit existing approvals. Each wave is low-risk and internal-only: the AI suggests and drafts, and the RM decides. If the bank's AI review applies to every new use, the review sets the real pace, which is why the risk partner is involved from week one.</p>
+<p style="margin: 0; max-width: 880px"><strong style="color: #14213D">Why this works:</strong> standard AI products on platforms the bank already runs need less build and fit existing approvals. Each feature wave is low-risk and internal-only: the AI suggests and drafts, and the RM decides. If the bank's AI review applies to every new use, the review sets the real pace, which is why the risk partner is involved from week one.</p>
 </section>
 </sc-if>
 
@@ -200,7 +200,7 @@ th,td{text-align:left;vertical-align:top}
 <div style="display: flex; flex-direction: column; gap: 8px; border-top: 4px solid #14213D; padding-top: 24px">
 <span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; letter-spacing: 0.06em; color: #0F5F59">4 · HOW THE WORK FLOWS</span>
 <h2 style="margin: 0; font-family: 'IBM Plex Serif', Georgia, serif; font-size: 36px; line-height: 1.2; color: #14213D">Six steps, each ending in a go/no-go gate</h2>
-<p style="margin: 0; max-width: 880px">The steps overlap rather than run in sequence: a working prototype exists in week 1, and the first features are live in about weeks 2–6 (meeting follow-up about weeks 2–4, insights and call notes about weeks 4–6). After that, steps 3–6 repeat in cycles of a week or two, and each new wave takes a short pass through Discover and Define. Governance runs through every step; Step 4 is the formal approval gate. Each step is set out in full in Parts 2 and 3.</p>
+<p style="margin: 0; max-width: 880px">The steps overlap rather than run in sequence: a working prototype exists in week 1, and the first features are live in about weeks 2–6 (meeting follow-up about weeks 2–4, insights and call notes about weeks 4–6). After that, steps 3–6 repeat in cycles of a week or two, and each new feature wave takes a short pass through Discover and Define. Governance runs through every step; Step 4 is the formal approval gate. Each step is set out in full in Parts 2 and 3.</p>
 </div>
 <div style="display: flex; flex-direction: column; gap: 12px">
 <sc-for list="{{ steps }}" as="step" hint-placeholder-count="6">
@@ -291,7 +291,7 @@ th,td{text-align:left;vertical-align:top}
 <sc-if value="{{ step.hasMeasures }}" hint-placeholder-val="{{ false }}">
 <div style="background: #14213D; color: #FFFFFF; border-radius: 12px; padding: 18px 22px; display: flex; flex-direction: column; gap: 4px">
 <span style="font-weight: 600">Leading and lagging measures</span>
-<span style="font-size: 16px; color: #DCE3EE">Commercial deals often take months to close, so each wave is judged first on leading measures (insights acted on, opportunities and pipeline created, client time gained), visible within weeks. Closed revenue against the comparison group gets a first read at about month 6 and firms up over the following quarters.</span>
+<span style="font-size: 16px; color: #DCE3EE">Commercial deals often take months to close, so each feature wave is judged first on leading measures (insights acted on, opportunities and pipeline created, client time gained), visible within weeks. Closed revenue against the comparison group gets a first read at about month 6 and firms up over the following quarters.</span>
 </div>
 <div style="display: flex; flex-direction: column; gap: 12px">
 <h3 style="margin: 0; font-size: 18px; color: #14213D">What we measure</h3>
@@ -373,7 +373,7 @@ th,td{text-align:left;vertical-align:top}
 <span style="display: flex; align-items: center; gap: 8px"><span style="display: inline-block; width: 28px; height: 12px; border-radius: 3px; background: #0F766E"></span>Step</span>
 <span style="display: flex; align-items: center; gap: 8px"><span style="display: inline-block; width: 28px; height: 12px; border-radius: 3px; background: #9FD3CB"></span>Activity</span>
 <span style="display: flex; align-items: center; gap: 8px"><span style="display: inline-block; width: 28px; height: 12px; border-radius: 3px; background: #F0C987"></span>Governance</span>
-<span style="display: flex; align-items: center; gap: 8px"><span style="display: inline-block; width: 28px; height: 12px; border-radius: 3px; background: #7F90BE"></span>Later waves</span>
+<span style="display: flex; align-items: center; gap: 8px"><span style="display: inline-block; width: 28px; height: 12px; border-radius: 3px; background: #7F90BE"></span>Later feature waves</span>
 <span style="display: flex; align-items: center; gap: 8px"><span style="display: inline-block; width: 12px; height: 12px; background: #14213D; transform: rotate(45deg)"></span>Gate or go-live</span>
 <span style="display: flex; align-items: center; gap: 8px"><span style="display: inline-block; width: 0; height: 16px; border-left: 2px dashed #B45309"></span>Day 90</span>
 </div>
@@ -442,7 +442,7 @@ th,td{text-align:left;vertical-align:top}
 <div style="display: flex; flex-wrap: wrap; gap: 14px">
 <div style="flex: 1 1 260px; display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #8A4B00">FOLLOW-UP GOES FIRST</span><span style="font-size: 15px">The meeting recap and follow-up runs in M365 Copilot on the RM's own meetings and email, so it needs the least new data and review.</span></div>
 <div style="flex: 1 1 260px; display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #8A4B00">INSIGHTS AND CALL NOTES BY ABOUT WEEK 10</span><span style="font-size: 15px">RMs keep shaping the brief, opportunity list and call notes in the test environment, so they're ready the day access and sign-off land.</span></div>
-<div style="flex: 1 1 260px; display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #8A4B00">DECIDED AT GATE 2 (WEEK 2)</span><span style="font-size: 15px">Later waves move back by the same amount. Deciding early means no one is surprised later.</span></div>
+<div style="flex: 1 1 260px; display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #8A4B00">DECIDED AT GATE 2 (WEEK 2)</span><span style="font-size: 15px">Later feature waves move back by the same amount. Deciding early means no one is surprised later.</span></div>
 </div>
 </div>
 <div style="display: flex; flex-direction: column; gap: 12px">
@@ -700,7 +700,7 @@ class Component extends DCLogic {
       {
         id: "discover", num: "1", name: "Discover", title: "Discover",
         goal: "Which standard AI products come first, and which revenue lever matters most?",
-        thread: "Risk partners briefed on the idea",
+        thread: "Risk partner briefed on the idea",
         gate: "Sponsor agrees on the wave 1 AI products, the target lever and the baseline",
         subs: subs([
           ["1. Frame the outcome", "Agree with the sponsor on “new revenue,” the three levers and the two goals", "M365 Copilot in Word"],
@@ -722,7 +722,7 @@ class Component extends DCLogic {
           "A working prototype on sample data, so RMs react to something real.",
           "Salesforce pipeline and activity; client balances and products in Snowflake. Identify the data owners.",
           "A ranked list of opportunities with sizes, the first target, the baseline, and a first value model.",
-          "No client data in unapproved AI tools; risk partners briefed on the idea.",
+          "No client data in unapproved AI tools; risk partner briefed on the idea.",
           "The sponsor agrees on the wave 1 AI products, the target lever and the baseline."
         ])
       },
@@ -771,17 +771,17 @@ class Component extends DCLogic {
           ["7. Capture feedback", "One click to accept, reject or change each insight, with a reason when rejected", "Salesforce, Power Automate"],
           ["8. Build the test set", "Real client examples with known good answers, graded by experienced RMs", "AWS Bedrock model evaluation"]
         ]),
-        strategy: "AI capabilities used: agents, retrieval with sources, data flows (Snowflake signals into Salesforce), workflow automations (the weekly digest) and system integrations (Salesforce, Teams and Outlook). This is where the RM-facing agents are built: a small team of single-purpose agents, read-only by default, with the RM approving anything that changes a record or reaches a client.",
+        strategy: "AI capabilities used: agents (A1 Signal finder, A2 Insight writer, A3 Prep and follow-up assistant), retrieval with sources, data flows (Snowflake signals into Salesforce), workflow automations (the weekly digest) and system integrations (Salesforce, Teams and Outlook). This is where the RM-facing agents are built: a small team of single-purpose agents, read-only by default, with the RM approving anything that changes a record or reaches a client.",
         agents: [
           agent("rm", "A1 Signal finder", "Scans each RM's clients overnight for opportunity signals using explainable rules and scores.", "Snowflake (Cortex)", "Snowflake balances, products, trends", "Business owns the rules; no client contact"),
-          agent("rm", "A2 Insight writer", "Turns each signal into a plain-English reason and talking points, citing the numbers.", "Salesforce Prompt Builder or AWS Bedrock", "Signal finder output; Salesforce client record", "The RM decides whether to act"),
+          agent("rm", "A2 Insight writer", "Turns each signal into a plain-English reason and talking points, citing the numbers.", "Salesforce Prompt Builder or AWS Bedrock", "A1 signals; Salesforce client record", "The RM decides whether to act"),
           agent("rm", "A3 Prep and follow-up assistant (wave 1)", "Drafts a pre-call brief, then call notes and follow-ups.", "Salesforce Agentforce or M365 Copilot", "Salesforce client record; Teams meeting recap (with client consent where recorded)", "The RM approves before anything is saved or sent"),
           agent("rm", "A5 RM assistant (wave 3)", "Answers “what should I know before my call with this client?”", "Salesforce Agentforce or a Copilot Studio agent in Teams", "Salesforce and Snowflake, read-only, only the RM's permitted clients", "Any record update needs the RM's click"),
           agent("team", "M26 Test grader", "Scores every version against the test set and the quality bar.", "AWS Bedrock model evaluation", "Test set, product outputs", "Experienced RMs grade a sample")
         ],
         cards: cards([
           "Drafting prompts and test questions; checking every version against the test set.",
-          "Wave 1: pre-meeting briefs, meeting follow-ups, call notes into Salesforce and the weekly opportunity list, with one-click feedback. Later waves add the next standard AI products. Assistive only.",
+          "Wave 1: pre-meeting briefs, meeting follow-ups, call notes into Salesforce and the weekly opportunity list, with one-click feedback. Later feature waves add the next standard AI products. Assistive only.",
           "Live connections from Snowflake and Salesforce; each RM sees only clients they're already allowed to see.",
           "A working product in a test environment, the test results and an evidence pack started.",
           "Filters that block sensitive data and off-topic answers (Bedrock Guardrails, Salesforce Einstein Trust Layer); every AI action logged; client consent for any recorded meeting.",
@@ -830,12 +830,12 @@ class Component extends DCLogic {
           ["5. Recruit champions", "Respected RMs who show peers how they use it", "A Teams channel"],
           ["6. Recognize AI-sourced wins", "Celebrate and credit wins that started from an insight", "Salesforce, sales leadership"],
           ["7. Fix fast", "Act on feedback every week", "Feedback logged in Salesforce"],
-          ["8. Scale in waves", "Expand only after a go/no-go check", "Power BI adoption dashboard"]
+          ["8. Scale in user waves", "Expand only after a go/no-go check", "Power BI adoption dashboard"]
         ]),
         strategy: "Adoption is a management routine, not a training event: new tools that arrive without a change in how teams work tend to get little use. AI helps RMs learn in the flow of work and turns feedback into fixes quickly.",
         agents: [
           agent("rm", "A6 Onboarding coach", "Answers “how do I use this?” inside Teams.", "Copilot Studio agent in Teams", "Training guides, FAQs", "Product team keeps content current"),
-          agent("rm", "A4 Weekly opportunity digest", "Sends each RM their top opportunities every Monday.", "Power Automate with the insight writer", "Signal finder and insight writer outputs", "The RM decides what to pursue"),
+          agent("rm", "A4 Weekly opportunity digest", "Sends each RM their top opportunities every Monday.", "Power Automate, with A2", "Insights from A2, ranked by the agreed score", "The RM decides what to pursue"),
           agent("team", "M30 Feedback triage", "Sorts feedback into bugs, quality issues and ideas, and routes it to the backlog.", "Power Automate with an approved LLM", "Feedback logged in Salesforce", "Product manager sets priorities")
         ],
         cards: cards([
@@ -1071,11 +1071,11 @@ class Component extends DCLogic {
       gantt: gantt,
       months: months,
       planRows: [
-        { step: "1. Discover", weeks: "Weeks 1\u20132, with a working prototype in week 1 (short sprints before later waves)", ends: "Gate 1 (end of week 1): wave 1 AI products, target lever, baseline; interviews and sizing continue in week 2" },
+        { step: "1. Discover", weeks: "Weeks 1\u20132, with a working prototype in week 1 (short sprints before later feature waves)", ends: "Gate 1 (end of week 1): wave 1 AI products, target lever, baseline; interviews and sizing continue in week 2" },
         { step: "2. Define", weeks: "Weeks 1\u20132, alongside discovery", ends: "Gate 2 (week 2): data contract, risk rating, value model; split decision if needed" },
         { step: "3. Build", weeks: "From day 1. Wave 1: weeks 1\u20135; wave 2: 7\u20139; wave 3: 11\u201314", ends: "Gate 3: each AI product meets the quality bar in testing, and every control has proof" },
         { step: "4. Govern and test", weeks: "Risk partner reviews each version from week 1; sign-offs per AI product", ends: "Gate 4: each AI product approved for real RMs and real client data" },
-        { step: "5. Release and adopt", weeks: "Follow-up live about weeks 2\u20134; insights and call notes about weeks 4\u20136; releases every week or two", ends: "Gate 5: each wave meets its adoption targets; long-term owner confirmed before scaling" },
+        { step: "5. Release and adopt", weeks: "Follow-up live about weeks 2\u20134; insights and call notes about weeks 4\u20136; releases every week or two", ends: "Gate 5: each feature wave meets its adoption targets; long-term owner confirmed before scaling" },
         { step: "6. Measure and iterate", weeks: "Leading measures from the first live week; closed revenue read about month 6", ends: "Gate 6: keep, change or stop each AI product monthly; invest more, adjust or stop each quarter" }
       ],
       releases: [
@@ -1152,7 +1152,7 @@ class Component extends DCLogic {
       risks: [
         { risk: "CRM data is incomplete (RMs skip logging)", fix: "Lean on account data in Snowflake first; the time-saving features improve CRM data over time (the flywheel)." },
         { risk: "RMs don't trust the insights", fix: "Show the reason and numbers behind every insight; co-design with pilot RMs; managers model use." },
-        { risk: "Governance takes longer than planned", fix: "Brief risk partners in week one; keep each wave low-risk, internal-only and on approved platforms; build the evidence pack as we go; if it still runs long, split wave 1 (see the backup plan)." },
+        { risk: "Governance takes longer than planned", fix: "Brief risk partners in week one; keep each feature wave low-risk, internal-only and on approved platforms; build the evidence pack as we go; if it still runs long, split wave 1 (see the backup plan)." },
         { risk: "Incentives don't reward acting on insights", fix: "Agree recognition for AI-sourced wins with sales leadership before launch." },
         { risk: "Costs grow with usage", fix: "Track cost per active RM; use the smallest AI model that meets the quality bar." },
         { risk: "Revenue attribution is disputed", fix: "Agree the comparison-group method and tagging with Finance in Define." },

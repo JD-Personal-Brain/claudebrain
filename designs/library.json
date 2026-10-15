@@ -150,7 +150,7 @@
           "count": "44 sub-steps",
           "status": "Reference",
           "url": "https://claude.ai/artifact/8UncWMYUq7hsJUhn5NSYEB",
-          "source": "playbook/, product-machine.md"
+          "source": "memos/role-workflow.md, playbook/, product-machine.md"
         },
         {
           "id": "workflows",
@@ -159,7 +159,7 @@
           "count": "2 maps · 53 branches",
           "status": "Reference",
           "url": "https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX",
-          "source": "playbook/, product-machine.md, RM memo Appendix B"
+          "source": "memos/role-workflow.md, playbook/, product-machine.md, RM memo Appendix B"
         },
         {
           "id": "agents",
