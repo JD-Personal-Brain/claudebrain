@@ -13,7 +13,8 @@
           "url": "https://claude.ai/artifact/7ZVT7LtdqxwAma4UrBgTPX",
           "source": "memos/bank-business.md"
         }
-      ]
+      ],
+      "numbered": true
     },
     {
       "id": "deliver",
@@ -52,7 +53,8 @@
           "url": "https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4",
           "source": "playbook/"
         }
-      ]
+      ],
+      "numbered": true
     },
     {
       "id": "rm",
@@ -201,7 +203,8 @@
           "url": "https://claude.ai/artifact/Secfj5fBtpVA1veroUU7A7",
           "source": "prompting.md"
         }
-      ]
+      ],
+      "bulleted": true
     }
   ]
 }

@@ -23,7 +23,8 @@ when it learns something new.
 - I didn't like a dark, terminal-style page (2026-10-13). Keep the house style unless I ask for something else, and show a small sample before building a whole page in a new look.
 - The program is organized around the two groups I serve: relationship managers and credit (each with its own core use cases). Organize plans and pages by who they serve, not by my process. (2026-10-14)
 - Meet users where they are: start from how RMs and credit people work today, then show where each AI product fits and how their work changes. My product process matters to me and my boss, not to them. (2026-10-14)
-- Long lists of pages should use collapsible rows (twisties) I click to open. (2026-10-14)
+- Lists where each page needs its description and sections (the RM and portfolio manager sections of the library) use collapsible rows (twisties) I click to open. (2026-10-14, narrowed 2026-10-15)
+- A short list read in order (like the four "How we deliver" pages) is plain numbered rows, no twisties: click the name to open the page. A list to look things up in (like Reference) is plain rows with a dot. Names you can click are a different color, so people know to click them. (2026-10-15)
 - Open items are listed by priority; numbers follow the priority and can change. (2026-10-14)
 - Claudebrain uses my personal email only (jeremydrane2021@gmail.com), never my work address. (2026-10-14)
 - I push for speed: plans should be paced by what really blocks us (data access, approvals), not traditional phases.
@@ -40,4 +41,4 @@ when it learns something new.
 - Learning to write good prompts (see `prompting.md`), and working through a "Claude Mastery" course I bought.
 - (more to add)
 
-_Last updated: 2026-10-14_
+_Last updated: 2026-10-15_

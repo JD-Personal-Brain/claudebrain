@@ -19,7 +19,7 @@ Read before asking the user anything (rule R6):
 - **The bank itself:** `memos/bank-business.md`, `tech-stack.md` (the tools the group works in).
 
 ## 2. Today: the work as it is
-List the group's work as 6 to 10 stages, in the order it happens (for RMs, something like: plan the week, find opportunities, prepare for a meeting, meet the client, follow up, update the CRM, refer to a specialist, keep the client). For RMs, the stages must line up with the four stages of Map 2 on the Workflow Maps ("Find the opportunity or risk", "Prepare", "Meet and follow up", "Log it"): nest yours under them, or update Map 2 in the same change, so the same week never has two different stage lists. For each stage:
+List the group's work as 6 to 10 stages, in the order it happens (for RMs, something like: plan the week, find opportunities, prepare for a meeting, meet the client, follow up, update the CRM, refer to a specialist, keep the client). For RMs, the stages must line up with the four stages of Map 2 on the Workflow Maps ("Find the opportunity or risk", "Prepare (or any time)", "Meet and follow up", "Log it"): nest yours under them, or update Map 2 in the same change, so the same week never has two different stage lists. For each stage:
 - **What they do**, in plain words, and **the tools they use** (from `tech-stack.md`).
 - **Time:** hours per week if known, else [X]. Never invent a number.
 - **Pain:** what's slow or missed, with its source (a memo line, McKinsey, my notes), or marked ⚠️ as a guess.

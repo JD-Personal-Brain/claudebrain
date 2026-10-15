@@ -15,7 +15,7 @@ Claude updates it at every wrap-up: finished items move to "Closed" with the dat
 ## The path (agreed 2026-10-10)
 
 1. **Read and lock the core** (me): the RM plan and the playbook.
-2. **Make the machine runnable** (Claude): templates, task list design, approvals map, control gaps.
+2. **Make the machine runnable** (Claude): templates, tracker design, approvals map, control gaps.
 3. **Dry run and fix** (both): one made-up product through all six steps; fix what breaks.
 4. **Get ready for Andy** (Claude builds, I decide): the RM mock-up, the Andy edition and my questions for him.
 
@@ -53,9 +53,9 @@ every working file (this section replaces the separate Gap Review page).
 | The six-step process for one product | Strong on paper | Steps, gates, 44 sub-steps, first-time logs and the automation check at every gate. Not yet tried on real work | W7 |
 | RM plan (the first worked example) | Strong draft, not reviewed | Memo v8, with agent specs and workflows. I've read only the summary's opening and plan table. Now organized on seven core use cases | V1, D1 to D3 |
 | Governance and controls | Partial | 25 controls named. 13 have a stage the playbook doesn't cover yet, such as who proves that only approved AI models are used | W6 |
-| Automating the process | Partial | Every task is marked Auto, Draft or Me, and 40 agents are fully specified: 33 general agents that run the product machine, the RM product's own 6, and my research helper H1 (the bank news scout). None of the 39 delivery agents is built or tested; H1 is set up and running. How much can run alone depends on whether the bank lets automations message people ⚠️ | B22, W7 |
+| Automating the process | Partial | Every task is marked Auto, Draft or Me, and 40 agents are fully specified: 33 general agents that run the product machine, the RM product's own 6, and my research helper H1 (the bank news scout). None of the 33 general agents or the 6 product agents is built or tested; H1 is set up and running. How much can run alone depends on whether the bank lets automations message people ⚠️ | B22, W7 |
 | Ready-to-fill templates | Missing | The brief, data contract, risk intake, gate pack, evidence pack and monitoring plan are described, but none exists as a template yet. The Draft agents need these to fill in | W3 |
-| Task list design | Missing | The reminders, status notes and progress view all read from one task list, but its fields aren't written down, and we don't know the bank's tool yet | W4, B23 |
+| Tracker design | Missing | The reminders, status notes and progress view all read from one task list, but its fields aren't written down, and we don't know the bank's tool yet | W4, B23 |
 | Approvals | Partial | Who decides is clear for every step. There's no map of who signs what, how long it takes, or who to go to when a sign-off is stuck | W5, B21 |
 | Showing what an RM sees | Missing | The plan promises a working prototype in week 1, but there's nothing to show yet | W10 |
 | A version written for Andy | Missing | The plan is written as my working plan, with internal labels, and doesn't say credit comes next | W11 |
@@ -88,7 +88,7 @@ What we're working on first: a quick check on the bank news scout, then the user
 
 ## Stage 2. Make the machine runnable
 
-**Who:** Claude, then a quick review from me. Build what a real run needs and doesn't have yet: the templates every product fills in, the task list design, who approves what, and the control gaps.
+**Who:** Claude, then a quick review from me. Build what a real run needs and doesn't have yet: the templates every product fills in, the tracker design, who approves what, and the control gaps.
 
 | # | Item | Who | Waits on |
 |---|---|---|---|
@@ -131,10 +131,10 @@ Useful any time; none of these blocks a stage. Dated ones first.
 |---|---|---|---|
 | W12 | First weekly review: what's working, what's annoying, what to change. Also re-check Anthropic's prompting guide for changes | Me, with Claude | About 2026-10-21 (not yet, said 2026-10-14) |
 | W13 | Re-run the Bank Business Briefing after the bank's Q3 2026 results on October 22, 2026, using the saved prompt (Example 5 in the Prompting Guide). Read the full Q2 earnings call transcript at the same time; only a summary was available the first time. The bank news scout's scheduled run on October 23 does the re-run as a draft | Claude | October 22, 2026 |
-| W14 | Check that a section link in the Document Library opens the page at that section. If it only opens the top, drop the section links or say so on the page | Me, then Claude | Nothing |
+| W14 | Check that a section link in the Document Library opens the page at that section. If it only opens the top, drop the section links or say so on the page (since 2026-10-15 only the relationship manager and portfolio manager sections still have section links) | Me, then Claude | Nothing |
 | W15 | Two loose ends from the McKinsey article: confirm its publication date (the pasted page showed none), and decide whether role redesign (new RM roles as agents take on work, McKinsey's fifth principle) belongs in the playbook; it isn't covered yet | Claude, then me | Nothing |
 | W16 | Loose ends in the Bank Business Briefing: check the exact wording of the bank's AI announcement before quoting it; replace the 2016 description of who the segment serves once the annual report for the 2025 financial year can be opened in full; and confirm two of my guesses, the RM headcount read from an unclear chart and that Omaha came with American National | Claude | Nothing |
-| W17 | Run the tests of Claude's rules that need a real session. Each test is a short scenario in `learning/tests.md` that checks one rule still works. Not yet run in a live session: T7, T10, T13, T14 and T17, and the second parts of T2, T3, T9 and T16. Never run at all: T18 to T22, T24 to T27 (including T27's new second part, from 2026-10-14) and T30 to T33. Re-run T8 (does Claude label every suggestion Needed or Optional?), which failed on 2026-10-09 before its rule was tightened, and T5, whose first run wasn't a fair test | Claude, in a new session | Nothing |
+| W17 | Run the tests of Claude's rules that need a real session. Each test is a short scenario in `learning/tests.md` that checks one rule still works. Not yet run in a live session: T7, T10, T13, T14 and T17, and the second parts of T2, T3, T9 and T16. Never run at all: T18 to T22, T24 to T27 (including T27's new second part, from 2026-10-14), T30 to T33, T36 and T37; finish T35 after the bank news scout's first scheduled run on October 19. Re-run T8 (does Claude label every suggestion Needed or Optional?), which failed on 2026-10-09 before its rule was tightened, and T5, whose first run wasn't a fair test | Claude, in a new session | Nothing |
 | W18 | Check the product details marked "(verify)" in the Tech Stack Guide: product names, prices, vendor terms and any update to the regulators' model-risk guidance. Eleven lines carry the mark. New lead (2026-10-13, Portfolio Manager Core Use Cases page): SR 26-2, issued 17 April 2026, reportedly replaces SR 11-7, which our files cite; sources disagree on whether it covers generative AI, so read the Fed's own text before changing anything | Claude | Nothing |
 | W19 | Claude Mastery course: paste in the next page (Module 3: Projects, Connectors and Skills). Claude starts a course notes file when it arrives (idea 14, approved) | Me, then Claude | Nothing |
 | W20 | Try the newer skills on real work: "prototype X", "write a prompt for X", "new use case: X" | Me | Nothing |
@@ -163,7 +163,7 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | B21 | What does the AI governance process look like, and how long does a review usually take? (from: RM plan, section 11; Tech Stack Guide) | The bank | Starting at the bank |
 | B22 | May automations message people or update trackers by themselves? This decides how much of the product machine can run on its own (from: Product Machine) | The bank | Starting at the bank |
 | B23 | Which tracker tool does the bank use for projects? (from: Product Machine; agent library) | The bank | Starting at the bank |
-| B24 | Twenty smaller permissions (twenty-one "To confirm" items, minus the tracker question in B23) the delivery agents depend on, such as whether meeting recaps are allowed, which test environments exist and how sign-offs must be recorded. Each is listed under "To confirm" in the agent library, and one overlaps B22 (from: `playbook/agents.md`) | The bank | Starting at the bank |
+| B24 | Twenty smaller permissions (twenty-one "To confirm" items, minus the tracker question in B23) the general agents depend on, such as whether meeting recaps are allowed, which test environments exist and how sign-offs must be recorded. Each is listed under "To confirm" in the agent library, and one overlaps B22 (from: `playbook/agents.md`) | The bank | Starting at the bank |
 | B25 | Do RMs work mainly in Salesforce? This decides where the insights appear (from: RM plan, section 5) | The bank | Starting at the bank |
 | B26 | The numbers still shown as [X] in the RM plan, the Product Workflow, the Product Framework and the Product Machine, such as payback months, weekly-use targets and how many projects I run at once, and the plan's week estimates. Each gets set with the bank's real figures (from: RM plan; Product Workflow; Product Framework; Product Machine) | The bank | Starting at the bank |
 | B27 | The 46 guesses about the bank marked ⚠️ across the six playbook steps. Each gets replaced with a fact as I learn it. Many overlap B15 to B23 (from: Product Playbook) | The bank | Starting at the bank |
@@ -187,7 +187,7 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C3 | Bring in the unmerged work from my other session. Merged into this log's pull request, with both sides kept where they overlapped | 2026-10-09 |
 | C4 | Four ideas: yes. The shorthand check (idea 32) and the Steps and Controls catalogs (idea 34) are built. Fewer pop-ups (idea 2) and everyday playbooks (idea 3) need facts from me first: see the pop-ups and everyday-playbooks items | 2026-10-09 |
 | C5 | Remove my safety rules (idea 16). The pop-up explanations and "Deny is safe" reminders are gone from the rule book, with the two pop-up rules and their tests | 2026-10-09 |
-| C6 | Make the RM plan's 14 helper agents general: yes. They are now M20 to M33 in the agent library, used by every project; the RM plan shows how it uses each one | 2026-10-10 |
+| C6 | Make the RM plan's 14 team agents general: yes. They are now M20 to M33 in the agent library, used by every project; the RM plan shows how it uses each one | 2026-10-10 |
 | C7 | Three new controls: yes. K23 (approved AI tools for the team's own work), K24 (consent before recording) and K25 (agents stop rather than guess) are in the Controls Catalog, set and built in the playbook (proving K23 and watching all three are still gaps, in the control-gaps item); the playbook's control check (4.5) now also confirms the build, test and live path and IT's approval of every connection | 2026-10-10 |
 | C8 | The line saying credit comes next is now part of the Andy edition item | 2026-10-10 |
 | C9 | Keeping the reference pages in line is now built into every audit (the alignment sweep and its automatic checks), and the Glossary was added as a fifth reference page | 2026-10-10 |
