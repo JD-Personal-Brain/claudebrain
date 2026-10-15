@@ -26,7 +26,7 @@ Claude updates it at every wrap-up: finished items move to "Closed" with the dat
 | Stage | Open | What it is |
 |---|---|---|
 | Now | 2 | What we're working on first |
-| Stage 1. Read and lock the core | 8 | What I read, then the decision on the RM framework |
+| Stage 1. Read and lock the core | 4 | What I read, then the decision on the RM framework |
 | Stage 2. Make the machine runnable | 4 | What Claude builds so a real run is possible |
 | Stage 3. Dry run and fix | 3 | Running the machine once and fixing it |
 | Stage 4. Get ready for Andy | 9 | What Andy sees, and what I ask him |
@@ -51,7 +51,7 @@ every working file (this section replaces the separate Gap Review page).
 | Area | Rating | Where we are | Open items |
 |---|---|---|---|
 | The six-step process for one product | Strong on paper | Steps, gates, 44 sub-steps, first-time logs and the automation check at every gate. Not yet tried on real work | W7 |
-| RM plan (the first worked example) | Strong draft, not reviewed | Memo v8, with agent specs and workflows. I've read only the summary's opening and plan table. Now organized on seven core use cases | V1, D1 to D3 |
+| RM plan (the first worked example) | Strong draft, not reviewed | Memo v8, with agent specs and workflows. I've read only the summary's opening and plan table. Now organized on seven core use cases | V1 |
 | Governance and controls | Partial | 25 controls named. 13 have a stage the playbook doesn't cover yet, such as who proves that only approved AI models are used | W6 |
 | Automating the process | Partial | Every task is marked Auto, Draft or Me, and 40 agents are fully specified: 33 general agents that run the product machine, the RM product's own 6, and my research helper H1 (the bank news scout). None of the 33 general agents or the 6 product agents is built or tested; H1 is set up and running. How much can run alone depends on whether the bank lets automations message people ⚠️ | B22, W7 |
 | Ready-to-fill templates | Missing | The brief, data contract, risk intake, gate pack, evidence pack and monitoring plan are described, but none exists as a template yet. The Draft agents need these to fill in | W3 |
@@ -73,18 +73,14 @@ What we're working on first: a quick check on the bank news scout, then the user
 
 ## Stage 1. Read and lock the core
 
-**Who:** Me. You read the plan and the manual the whole framework rests on, then decide whether the RM framework is ready (D5). Nothing in stage 2 needs to wait for this, but the dry run and Andy do.
+**Who:** Me. You read the plan and the manual the whole framework rests on, then decide whether the RM framework is ready (D1). Nothing in stage 2 needs to wait for this, but the dry run and Andy do.
 
 | # | Item | Who | Waits on |
 |---|---|---|---|
-| V1 | Read the RM Analytics Plan (the long scrolling page): everything after the summary's opening and plan table: from "What lets us move this fast" on, then Parts 1 to 6. The RM Analytics Framework design page holds the same words | Me | Nothing |
+| V1 | Read the RM Analytics Plan (the long scrolling page): everything after the summary's opening and plan table: from "What lets us move this fast" on, then Parts 1 to 6. The RM Analytics Framework design page holds the same words. | Me | Nothing |
 | V2 | Read the RM Core Use Cases page: McKinsey's five frontline AI use cases and their returns, how the RM plan covers them, and the questions it raises | Me | Nothing |
 | V3 | Read the Portfolio Manager Core Use Cases page: what banks are deploying in commercial credit, and the credit counterpart proposed for each of the seven core use cases | Me | Nothing |
-| D1 | Add an AI product under core use case 5, AI sales coaching (personal guidance from call transcripts)? Low risk, and McKinsey reports new bankers ramping up 20% faster | Me | V2 |
-| D2 | Move prospecting (winning new clients) earlier than wave 3? McKinsey reports its biggest revenue numbers there; outside prospect data may set the pace | Me | V2 |
-| D3 | Keep autonomous lead nurturing and pricing out for now, because they conflict with "nothing reaches a client without the RM" and the fair-lending control? Claude recommends yes, revisit later with evidence | Me | V2 |
-| D4 | Agree the credit order the Portfolio Manager Core Use Cases page proposes: credit memo and annual review drafts first, early warning second, risk ratings kept out of the first feature waves? | Me | V3 |
-| D5 | Is the RM framework ready to copy to other use cases? My answer on 2026-10-09: not yet. The reading in stage 1 and the work in stages 2 and 3 come first | Me | Credit, the next use case, waits on this |
+| D1 | Is the RM framework ready to copy to other use cases? My answer on 2026-10-09: not yet. The reading in stage 1 and the work in stages 2 and 3 come first | Me | Credit, the next use case, waits on this |
 
 ## Stage 2. Make the machine runnable
 
@@ -172,7 +168,7 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 
 | # | Item | Who | Waits on |
 |---|---|---|---|
-| P1 | The credit (portfolio management) plan. Started at my request on 2026-10-13 with the Portfolio Manager Core Use Cases page (the six parked credit processes plus two new ones, each lined up with a core use case); the portfolio manager user workflow map is part of W2. The plan itself still waits. Ready for then: franchise banking as a possible pilot, and whether to add "costs saved" and "loan losses avoided" to the value model | Me | Me saying the RM framework is ready (D5) |
+| P1 | The credit (portfolio management) plan. Started at my request on 2026-10-13 with the Portfolio Manager Core Use Cases page (the six parked credit processes plus two new ones, each lined up with a core use case); the portfolio manager user workflow map is part of W2. The order is agreed (C33): credit memo and annual review drafts first, early warning second, risk ratings out of the first feature waves. The plan itself still waits. Ready for then: franchise banking as a possible pilot, and whether to add "costs saved" and "loan losses avoided" to the value model | Me | Me saying the RM framework is ready (D1) |
 | P2 | Sharing with Associated. We share the same pages, not a separate edition (idea 33: no, 2026-10-15). When I'm ready, Claude lists which pages to share one by one from each page's Share menu | Me | Me saying I'm ready to share |
 | P3 | A treasury and payments use case. The bank named it as a starting point for AI, and nothing has been planned yet | Me | After credit, unless B3 changes the order |
 | P4 | **Featured: running many products at once.** One intake form for new product ideas, a scoring rule to rank them against each other, how many products I can run at once, my week and month across products, and when a live product is retired | Me | The machine running one product well first |
@@ -210,5 +206,9 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C27 | Idea 46: yes. Every audit now runs a "nothing lost" check (`lost-lines.py`) that lists each sentence that disappeared from the working files, and each one must be put back or explained | 2026-10-14 |
 | C28 | Section links work: a link from one page to a section of another opens at that section. I checked it on 2026-10-15: a sub-step link on the Product Workflow page opened its card in the Steps Catalog. So the Document Library's section links and the links between the Product Workflow, Steps Catalog, Workflow Maps and Product Playbook stay as they are | 2026-10-15 |
 | C29 | Ideas 48, 49 and 50: yes, all built. The audit checker now fails on any link to a section of another of our pages that doesn't exist (298 links checked), each task row on the Product Machine page links to its sub-step card in the Steps Catalog, and every wrap-up now puts forward two open ideas from the list (wrap-up step 4) | 2026-10-15 |
+| C30 | Add an AI product under core use case 5, AI sales coaching (personal guidance from call transcripts): yes | 2026-10-15 |
+| C31 | Move prospecting (winning new clients) earlier than wave 3: yes | 2026-10-15 |
+| C32 | Keep autonomous lead nurturing and pricing out of the RM plan for now, because they conflict with "nothing reaches a client without the RM" and the fair-lending control (K3): yes. Revisit later with evidence | 2026-10-15 |
+| C33 | The credit order on the Portfolio Manager Core Use Cases page: yes. Credit memo and annual review drafts first, early warning second, risk ratings kept out of the first feature waves. The credit plan itself stays parked (P1) | 2026-10-15 |
 
 _Last updated: 2026-10-15_
