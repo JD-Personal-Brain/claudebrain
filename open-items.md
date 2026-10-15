@@ -30,7 +30,7 @@ Claude updates it at every wrap-up: finished items move to "Closed" with the dat
 | Stage 2. Make the machine runnable | 4 | What Claude builds so a real run is possible |
 | Stage 3. Dry run and fix | 3 | Running the machine once and fixing it |
 | Stage 4. Get ready for Andy | 9 | What Andy sees, and what I ask him |
-| Alongside the path | 11 | Useful any time; doesn't block a stage. Dated items first |
+| Alongside the path | 10 | Useful any time; doesn't block a stage. Dated items first |
 | Inside the bank | 21 | Questions only someone at the bank can answer |
 | Parked on purpose | 4 | Not forgotten; waiting for a signal from me |
 
@@ -125,7 +125,6 @@ Useful any time; none of these blocks a stage. Dated ones first.
 
 | # | Item | Who | Waits on |
 |---|---|---|---|
-| D2 | Requirement sources check (idea 52): should the audit checker also fail when a sub-step that rests on law or bank policy has no "Comes from" tag in the playbook's table? (yes / no / not yet) | Me | Nothing |
 | W12 | First weekly review: what's working, what's annoying, what to change. Also re-check Anthropic's prompting guide for changes | Me, with Claude | About 2026-10-21 (not yet, said 2026-10-14) |
 | W13 | Re-run the Bank Business Briefing after the bank's Q3 2026 results on October 22, 2026, using the saved prompt (Example 5 in the Prompting Guide). Read the full Q2 earnings call transcript at the same time; only a summary was available the first time. The bank news scout's scheduled run on October 23 does the re-run as a draft | Claude | October 22, 2026 |
 | W14 | Two loose ends from the McKinsey article: confirm its publication date (the pasted page showed none), and decide whether role redesign (new RM roles as agents take on work, McKinsey's fifth principle) belongs in the playbook; it isn't covered yet | Claude, then me | Nothing |
@@ -212,5 +211,6 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C32 | Keep autonomous lead nurturing and pricing out of the RM plan for now, because they conflict with "nothing reaches a client without the RM" and the fair-lending control (K3): yes. Revisit later with evidence | 2026-10-15 |
 | C33 | The credit order on the Portfolio Manager Core Use Cases page: yes. Credit memo and annual review drafts first, early warning second, risk ratings kept out of the first feature waves. The credit plan itself stays parked (P1) | 2026-10-15 |
 | C34 | The eight Elon mode suggestions: yes to all, built 2026-10-15. The automation check now cuts first (should it exist, delete, simplify, faster) before it automates; every control says where it comes from (law or regulator, bank policy, our choice) and who to ask to change it, with a table for the sub-steps and gates in the playbook; the dry run (W7) includes a deletion pass; each project names its limiting factor (W4 and the running layer); the first-time log gives a wait index; the Product Machine measures the machine itself; gates are decided in writing when clean; and a new elon-mode skill reviews the work at every fifth wrap-up | 2026-10-15 |
+| C35 | Requirement sources check (idea 52): yes, built. The audit checker now fails if a control has no "Comes from" line, or if a sub-step that sets, builds, proves or watches a law or bank-policy control is missing from the playbook's "Where the requirements come from" table; every sub-step that sets, builds, proves or watches such a control is now in the table | 2026-10-15 |
 
 _Last updated: 2026-10-15_
