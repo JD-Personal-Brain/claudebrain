@@ -12,7 +12,7 @@ what the AI may not do, and how we prove it.
 Each control says where it is **set** (agreed as a requirement), **built**,
 **proved** (shown working to reviewers) and **watched** (after launch).
 
-Each also says where it **comes from**: **law or regulator** (fixed; to change it, ask compliance), **bank policy** (fixed unless the policy changes; ask the policy's owner) or **our choice** (a recommendation anyone may challenge; ask the product manager). Law and bank policy are our "laws of physics": the automation check never deletes them. Sources marked ⚠️ are my guesses until the bank's risk partner confirms them at sub-step 2.4.
+Each also says where it **comes from**: **law or regulator** (fixed; ask the partner who owns it: compliance, privacy, model risk or vendor risk), **bank policy** (fixed unless the policy changes; ask the policy's owner) or **our choice** (a recommendation anyone may challenge; ask the product manager). Law and bank policy are our "laws of physics": the automation check never deletes them, nor a sub-step that sets, builds, proves or watches them. Sources marked ⚠️ are my guesses until the bank's risk partner confirms them at sub-step 2.4.
 
 ---
 
@@ -62,7 +62,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; to change i
 - **Watched in:** 6.3
 - **Tool (guess):** Snowflake access rules and Salesforce sharing rules
 - **Proof:** a test where one user tries to see another user's clients and fails
-- **Comes from:** Law or regulator: customer privacy law (the Gramm-Leach-Bliley Act), carried out through the bank's access rules ⚠️. To change it, ask compliance (and model risk for the model risk guidance).
+- **Comes from:** Bank policy: the bank's access rules and client confidentiality ⚠️; customer privacy law (the Gramm-Leach-Bliley Act) also applies where individuals' data is involved, such as business owners and guarantors. To change it, ask privacy.
 
 ### K5. A data contract
 - **Group:** Data
@@ -122,7 +122,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; to change i
 - **Watched in:** 6.3
 - **Tool (guess):** a test grader agent
 - **Proof:** the test report for the version being released
-- **Comes from:** Law or regulator: the regulators' model risk guidance (SR 11-7, possibly replaced by SR 26-2: item W17 in the Open Items log) expects testing; the thresholds themselves are our choice. To change it, ask compliance (and model risk for the model risk guidance).
+- **Comes from:** Law or regulator: the regulators' model risk guidance (SR 11-7, possibly replaced by SR 26-2: item W17 in the Open Items log) expects testing; the thresholds themselves are our choice. ⚠️ Whether the bank treats this AI product as a "model" under its model risk policy is the bank's call. To change it, ask model risk.
 
 ### K10. Red-teaming
 - **Group:** Quality
@@ -146,7 +146,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; to change i
 - **Watched in:** 4.4 (the fairness monitor's ongoing mode runs it again each month after launch), 4.8 (fairness is in the monitoring plan)
 - **Tool (guess):** a fairness monitor agent
 - **Proof:** the fairness report and compliance's response
-- **Comes from:** Law or regulator: fair-lending law (the Equal Credit Opportunity Act) wherever similar clients could be treated differently. To change it, ask compliance (and model risk for the model risk guidance).
+- **Comes from:** Law or regulator: fair-lending law (the Equal Credit Opportunity Act) wherever similar clients could be treated differently ⚠️ (my reading for a tool that doesn't decide credit). To change it, ask compliance.
 
 ### K12. An audit log
 - **Group:** Records
@@ -170,7 +170,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; to change i
 - **Watched in:** not covered in the playbook yet. The RM plan says the risk partner is told before a material change
 - **Tool (guess):** the bank's intake form
 - **Proof:** the confirmed rating and the registration record
-- **Comes from:** Law or regulator: the regulators' model risk guidance (SR 11-7, possibly replaced by SR 26-2), carried out through the bank's model risk policy. To change it, ask compliance (and model risk for the model risk guidance).
+- **Comes from:** Law or regulator: the regulators' model risk guidance (SR 11-7, possibly replaced by SR 26-2), carried out through the bank's model risk policy. ⚠️ Whether the bank treats this AI product as a "model" is the bank's call. To change it, ask model risk.
 
 ### K14. Vendor reviews
 - **Group:** Approvals
@@ -182,7 +182,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; to change i
 - **Watched in:** not covered in the playbook yet
 - **Tool (guess):** the bank's approved vendors list
 - **Proof:** confirmation from vendor risk for each vendor
-- **Comes from:** Law or regulator: the US banking regulators' guidance on third-party risk (2023), carried out through the bank's vendor risk policy. To change it, ask compliance (and model risk for the model risk guidance).
+- **Comes from:** Law or regulator: the US banking regulators' guidance on third-party risk (2023), carried out through the bank's vendor risk policy. To change it, ask vendor risk.
 
 ### K15. Sign-offs
 - **Group:** Approvals
@@ -206,7 +206,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; to change i
 - **Watched in:** 5.6, 6.1, 6.3
 - **Tool (guess):** Power BI, and a quality watchdog agent
 - **Proof:** the monitoring plan, a dry run of the incident process and the incident log
-- **Comes from:** Law or regulator: the regulators' model risk guidance expects ongoing monitoring; the incident process follows bank policy ⚠️. To change it, ask compliance (and model risk for the model risk guidance).
+- **Comes from:** Law or regulator: the regulators' model risk guidance expects ongoing monitoring; the incident process follows bank policy. ⚠️ Whether the bank treats this AI product as a "model" is the bank's call. To change it, ask model risk.
 
 ### K17. Frozen versions and change control
 - **Group:** After launch
@@ -218,7 +218,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; to change i
 - **Watched in:** 6.3
 - **Tool (guess):** each platform's version history, and a quality watchdog agent
 - **Proof:** the list of versions, with the test results for each
-- **Comes from:** Law or regulator: the regulators' model risk guidance expects change control ⚠️. To change it, ask compliance (and model risk for the model risk guidance).
+- **Comes from:** Law or regulator: the regulators' model risk guidance expects change control ⚠️. To change it, ask model risk.
 
 ### K18. Separate build, test and live spaces
 - **Group:** Approvals
@@ -302,7 +302,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; to change i
 - **Watched in:** not covered in the playbook yet
 - **Tool (guess):** Teams meeting settings and M365 Copilot recaps
 - **Proof:** a test showing no recap is drafted from a meeting without recorded consent
-- **Comes from:** Law or regulator: call-recording consent laws, which differ by state, and the bank's recording policy. To change it, ask compliance (and model risk for the model risk guidance).
+- **Comes from:** Law or regulator: call-recording consent laws, which differ by state, and the bank's recording policy. To change it, ask compliance.
 
 ### K25. Agents stop rather than guess
 - **Group:** Quality

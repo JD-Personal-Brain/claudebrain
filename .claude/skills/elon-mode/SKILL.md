@@ -40,15 +40,18 @@ Drop any proposal that breaks one of these:
 - A pace one person can keep.
 
 ## 4. Report
-At most five findings, strongest first, each one line: what to cut, simplify,
+At a wrap-up, show only the top finding plus one line ("N more: say 'Elon mode'
+to see them"), so the wrap-up message stays short (rule R2). Otherwise, at most five findings, strongest first, each one line: what to cut, simplify,
 speed up or measure, why, and its source tag. Label each **Needed** or
 **Optional** (rule R8) and end with one question: which to apply. Record the
 user's answers as open items or ideas only if they say yes (rule R31). If
 nothing is worth cutting, say so in one line.
 
 ## 5. Record the run
-In NOW.md, reset "Wrap-ups since the last Elon mode review" to 0 and note the
-date. Add a line to the test results for T42 in `learning/tests.md`.
+If the target was the product machine (always true at a wrap-up), reset
+"Wrap-ups since the last Elon mode review" at the top of NOW.md to 0 and write
+the date, for example "0 (last run 2026-10-15; it runs at 5)". A run on a single
+plan doesn't reset the count. Add a line to the test results for T42 in `learning/tests.md`.
 
 ## Checks
 - Every finding names a real part (a sub-step number, agent number, control

@@ -207,7 +207,7 @@ for g in groups:
 howto = ('<div class="note"><span class="warn">⚠️</span> Gathered from my own framework and playbook, not from Associated Bank. '
          "The bank's own control list comes from its risk partner early in the Define step, and it replaces this one where they differ. "
          "Numbers such as 2.4 are sub-steps of my six-step process: look them up in the Steps Catalog. "
-         "Each control says where it comes from: <strong>law or regulator</strong> (ask compliance to change it), <strong>bank policy</strong> (ask the policy's owner) or <strong>our choice</strong> (ask the product manager). The automation check never deletes law or bank policy.</div>")
+         "Each control says where it comes from: <strong>law or regulator</strong> (ask the partner who owns it: compliance, privacy, model risk or vendor risk), <strong>bank policy</strong> (ask the policy's owner) or <strong>our choice</strong> (ask the product manager). The automation check never deletes law or bank policy.</div>")
 page("Controls Catalog", "Reference · controls",
      f"All {len(controls)} governance controls in one place: the safeguards built into every AI product, with where each is set, built, proved and watched.",
      "Kind of control", groups, sections, howto,

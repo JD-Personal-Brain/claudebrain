@@ -154,8 +154,8 @@ check in this order: **cut first, then automate** (the order Elon Musk's
 shouldn't exist only locks in the waste.
 
 **First, cut:**
-1. **Should it exist?** Who required it, and where does the requirement come from: law or regulator, bank policy, or our choice (each control's "Comes from" line in the Controls Catalog)? Law and bank policy stay. Our choices can be challenged.
-2. **Can we delete it?** If yes, delete it, and record in the decision log what it did and who agreed. If nothing we delete ever has to come back, we aren't cutting enough (Musk's rule of thumb: about 1 in 10 comes back).
+1. **Should it exist?** Who required it, and where does the requirement come from: law or regulator, bank policy, or our choice (each control's "Comes from" line in the Controls Catalog or, for sub-steps and gates, "Where the requirements come from" in the Product Playbook)? Law and bank policy stay. Our choices can be challenged.
+2. **Can we delete it?** If yes, delete it, and record in the decision log what it did and who agreed. If nothing we delete ever has to come back, we aren't cutting enough (Musk's rule of thumb: about 1 in 10 comes back; ⚠️ sources give 10% or 20%).
 3. **Can we simplify it?**
 4. **Can we make it faster?** Shorten the longest wait first; the wait index (below) shows where.
 
@@ -172,7 +172,9 @@ wrong, move it back to a person until it's fixed.
 When every gate criterion is met, the decider approves the gate pack in writing,
 and the approval goes in the decision log. A gate meeting happens only when a
 criterion is contested or someone who decides asks for one. Partner sign-offs in
-step 4 don't change: each named partner still signs. ⚠️ Whether the bank's
+step 4 don't change: each named partner still signs, and at the step 4 gate the
+decider approves the signed evidence pack (⚠️ the bank's approval policy may
+require a committee meeting). ⚠️ Whether the bank's
 culture accepts written gates is a guess; confirm it at the first project.
 
 ## Measuring the machine

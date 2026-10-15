@@ -105,7 +105,7 @@ listed actions, and those marked ⚠️ wait until the bank allows it.
 - **For:** the team
 - **Kind:** Draft → Draft
 - **Job:** put a step's outputs together into one gate pack.
-- **Starts when:** the product manager asks, before a gate meeting.
+- **Starts when:** the product manager asks, before a gate decision (in writing, or a meeting if contested).
 - **Inputs:** the outputs listed in the step's playbook sub-steps.
 - **Allowed actions:** read those outputs; write a draft pack.
 - **Not allowed:** changing any output; deciding go or no-go.

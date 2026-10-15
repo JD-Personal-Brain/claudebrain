@@ -56,8 +56,8 @@ never wrote down.
 - **Guesses about the bank are marked ⚠️** until confirmed. Replace them with facts as I learn them, and note the source.
 - **Numbers we don't have yet are [X].** Never invent them.
 - **At the gate,** run the automation check from `product-machine.md` on every Me and Draft task (cut first, then automate), and update the step's table there.
-- **Gates are decided in writing when they're clean:** if every criterion is met, the decider approves the gate pack in writing and the approval goes in the decision log; a meeting happens only when a criterion is contested or a decider asks for one. Partner sign-offs in step 4 don't change.
-- **Every sub-step is our choice** (ask the product manager to change it) unless the table below says it comes from law, a regulator or bank policy. Law and bank policy are never deleted by the automation check.
+- **Gates are decided in writing when they're clean:** if every criterion is met, the decider approves the gate pack in writing and the approval goes in the decision log; a meeting happens only when a criterion is contested or a decider asks for one. Partner sign-offs in step 4 don't change, and at the step 4 gate the decider approves the signed evidence pack (⚠️ the bank's approval policy may require a committee meeting).
+- **Every sub-step is our choice** (ask the product manager to change it) unless the table below says it comes from law, a regulator or bank policy. A sub-step that sets, builds, proves or watches a law or bank-policy control inherits that control's source. Law and bank policy are never deleted by the automation check.
 
 ## Where the requirements come from
 The sub-steps and gates that rest on law, a regulator or bank policy. Everything
@@ -70,9 +70,11 @@ with the bank's risk partner at sub-step 2.4.
 | 2.3 Data contract | Bank policy on data use ⚠️, resting on customer privacy law (the Gramm-Leach-Bliley Act) | The data owner |
 | 2.4 Risk intake | Regulator: the model risk guidance (SR 11-7, possibly replaced by SR 26-2: item W17 in the Open Items log), through the bank's model risk policy | Model risk |
 | 4.1 Risk rating and registration | Regulator: the model risk guidance, through the bank's model inventory | Model risk |
-| 4.2 Data and privacy review | Law: customer privacy (the Gramm-Leach-Bliley Act), through bank policy | Privacy |
+| 3.4 Build in the controls | Inherits each control's source (Controls Catalog) | Each control's owner |
+| 4.2 Data and privacy review | Bank policy ⚠️, and customer privacy law (the Gramm-Leach-Bliley Act) where individuals' data is involved | Privacy |
 | 4.3 Testing evidence | Regulator: the model risk guidance expects testing; our quality bar sets the thresholds | Model risk |
 | 4.4 Fairness check | Law: fair lending (the Equal Credit Opportunity Act) wherever similar clients could be treated differently | Compliance |
+| 4.5 Confirm the controls work | Regulator and bank policy, through the controls it proves | Model risk |
 | 4.6 Vendor reviews | Regulator: the US banking regulators' third-party risk guidance (2023) | Vendor risk |
 | 4.7 Sign-offs | Bank policy: its approval process for AI and models ⚠️ | Model risk |
 | 4.8 Monitoring plan | Regulator: the model risk guidance expects ongoing monitoring | Model risk |
