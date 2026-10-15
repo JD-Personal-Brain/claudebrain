@@ -166,6 +166,8 @@ if len(gates)!=6: print('memos/role-workflow.md: could not read the six gates, s
 rh=_html.unescape(open('designs/role-workflow.html').read())
 for n,g in gates.items():
     if f'<b>Gate {n}</b><span>{g[0].upper()+g[1:]}</span>' not in rh: print('designs/role-workflow.html gate',n,'differs from memos/role-workflow.md'); probs+=1
+    # each step card repeats its gate in lower case (missed on 2026-10-15, caught in a screenshot)
+    if f'<strong>Gate:</strong> {g[0].lower()+g[1:]}.</div>' not in rh: print('designs/role-workflow.html step',n,'card gate differs from memos/role-workflow.md'); probs+=1
 # each playbook step repeats its question and gate: they must match the Product Workflow word for word (idea from 2026-10-15)
 qs={m.group(1):m.group(2).strip() for m in re.finditer(r'^\| (\d)\. [^|]+\| ([^|]+) \|[^|]+\|[^|]+\|$',rw,re.M)}
 gv={m.group(1):m.group(2).strip() for m in re.finditer(r'^\| (\d)\. [^|]+\|[^|]+\| ([^|]+) \|[^|]+\|$',rw,re.M)}
