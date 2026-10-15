@@ -3,7 +3,8 @@ The page is one index in five numbered sections (the bank, how we deliver, relat
 portfolio managers, reference), one row per page. A row shows the page's status;
 its twisty opens a one-line description and the page's sections. Placeholder rows mark
 pages still to build. A section marked "numbered" in library.json (the bank, how we deliver) shows
-plain numbered rows instead, read in order: click the name to open the page.
+plain numbered rows instead, read in order: click the name to open the page. A section
+marked "bulleted" (reference) shows the same plain rows with a dot instead of a number.
 To add a document: add it to library.json (and designs/README.md) and to PAGE_FILE below,
 run this, republish.
 Run: python3 designs/library-build.py"""
@@ -16,7 +17,8 @@ lib = json.load(open(os.path.join(ROOT, "designs", "library.json")))
 STATUS = {"In use": "s-use", "Waiting for review": "s-review", "Draft": "s-review", "In progress": "s-review", "Reference": "s-ref",
           "To build": "s-todo", "Later": "s-todo"}
 # Sections in page order, from library.json. An item is a page, or a placeholder ("todo") for one still to build.
-groups = [(g["name"], g["why"], g["items"], g.get("numbered", False)) for g in lib["groups"]]
+# Each section's row style: a number (read in order), a dot (plain list) or None (twisty rows).
+groups = [(g["name"], g["why"], g["items"], "num" if g.get("numbered") else "dot" if g.get("bulleted") else None) for g in lib["groups"]]
 for _, _, ds, _ in groups:
     for d in ds:
         if d["status"] not in STATUS:
@@ -54,7 +56,7 @@ def chip(d):
 
 def entry(d, num=None):
     if num:
-        # Numbered rows: reading order, name and status only; the name opens the page.
+        # Plain rows (a number or a dot): name and status only; the name opens the page.
         return (f'<div class="ientry plain numbered" data-search="{E((d["name"] + " " + d["what"]).lower())}"><span class="inum">{num}</span>'
                 f'<a class="ipage" href="{E(d["url"])}" target="_blank" rel="noopener">{E(d["name"])}</a>{chip(d)}</div>')
     if d.get("todo"):
@@ -70,7 +72,7 @@ def entry(d, num=None):
     return (f'<details class="ientry" data-search="{search}"><summary>{name}{chip(d)}<span class="ic" title="Sections">{len(secs)}</span></summary>'
             f'<p class="idesc">{E(d["what"])}</p><ul class="isecs">{links}</ul></details>')
 
-index = "".join(f'<div class="igroup" id="g{i}"><h3><span class="gnum">{i+1}</span>{E(n)}</h3><p class="gwhy">{E(why)}</p>{"".join(entry(d, k + 1 if numbered else None) for k, d in enumerate(ds))}</div>' for i, (n, why, ds, numbered) in enumerate(groups))
+index = "".join(f'<div class="igroup" id="g{i}"><h3><span class="gnum">{i+1}</span>{E(n)}</h3><p class="gwhy">{E(why)}</p>{"".join(entry(d, (k + 1 if style == "num" else "\u2022") if style else None) for k, d in enumerate(ds))}</div>' for i, (n, why, ds, style) in enumerate(groups))
 nav = "".join(f'<a href="#g{i}"><span class="num">{i+1}</span>{E(n)}</a>' for i, (n, _, _, _) in enumerate(groups))
 
 page = f'''<title>Document Library</title>

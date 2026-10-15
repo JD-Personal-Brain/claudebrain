@@ -203,7 +203,8 @@
           "url": "https://claude.ai/artifact/Secfj5fBtpVA1veroUU7A7",
           "source": "prompting.md"
         }
-      ]
+      ],
+      "bulleted": true
     }
   ]
 }
