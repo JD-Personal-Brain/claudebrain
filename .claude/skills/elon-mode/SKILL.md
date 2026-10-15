@@ -6,7 +6,7 @@ description: Review a plan, a step of the product machine, or the machine as a w
 # Elon mode review
 
 A routine review that asks what Elon Musk would cut, speed up or measure, from
-`memos/elon-mode-research.md` (the Elon Mode Research page). It proposes; the
+`memos/elon-mode-research.md` (the Elon Mode page). It proposes; the
 user decides. Keep the message tiny (rule R2), and do only what's asked (rule R31).
 
 ## 1. Pick the target

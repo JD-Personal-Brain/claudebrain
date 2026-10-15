@@ -38,7 +38,7 @@ documents against it.
 | **Wait index** | For a sub-step: calendar days from start to finish, divided by hours of real work, from the sub-step log. A high number means waiting, not working. |
 | **Machine measures** | How well the product machine itself works, per project: days from kickoff to pilot, days at each gate, releases per month in the pilot, and the wait index (Product Machine). |
 | **Gate in writing** | A gate decided by the decider approving the gate pack in writing, used when every criterion is met; a meeting is held only when a criterion is contested or someone who decides asks for one. |
-| **Elon mode review** | A review of a plan or of the product machine through Elon Musk's lens (the Elon Mode Research page): the cut-first questions, the limiting factor and the machine's measures, plus the bank guardrails. Run by the elon-mode skill. |
+| **Elon mode review** | A review of a plan or of the product machine through Elon Musk's lens (the Elon Mode page): the cut-first questions, the limiting factor and the machine's measures, plus the bank guardrails. Run by the elon-mode skill. |
 
 ## People, agents and safeguards
 
@@ -144,6 +144,7 @@ that also says the new wording (a note about the change) is allowed.
 | Scale in waves | Scale in user waves (sub-step 5.7; say which kind of wave) | 2026-10-15 |
 | written gate | gate in writing | 2026-10-15 |
 | risk/issue list | risk and issue list | 2026-10-15 |
+| Elon Mode Research | Elon Mode (the page name; it sits in the library's Research section) | 2026-10-15 |
 | three-question check | the automation check (seven questions: cut first, then automate) | 2026-10-15 |
 
 ## Bank terms to map

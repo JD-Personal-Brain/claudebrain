@@ -135,6 +135,14 @@
           "source": "open-items.md"
         },
         {
+          "id": "how-we-deliver-audit",
+          "name": "How We Deliver Audit",
+          "what": "The 2026-10-15 audit of the four How we deliver pages and the reference pages: what was found and fixed, and the gaps to decide before the RM and portfolio manager work.",
+          "status": "In use",
+          "url": "https://claude.ai/artifact/QnPL82PBx6AfGKB5VgqUPf",
+          "source": "memos/how-we-deliver-audit.md"
+        },
+        {
           "id": "glossary",
           "name": "Glossary",
           "what": "The words we use, one meaning each, the old wording we've retired, and the bank's terms still to map.",
@@ -214,7 +222,7 @@
       "items": [
         {
           "id": "elon-mode",
-          "name": "Elon Mode Research",
+          "name": "Elon Mode",
           "what": "How Elon Musk engineers and improves systems: his five-rule algorithm, eight thinking habits, where the method went wrong, and the eight changes we made to our system.",
           "status": "In use",
           "url": "https://claude.ai/artifact/NMxzPEotPQcM2KPUmsBbsX",

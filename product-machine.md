@@ -162,7 +162,7 @@ The step 4 gate is a Partner decision: the risk partner's approval can't be over
 ## The automation check at every gate
 At each gate, before go/no-go, take every **Me** and **Draft** task through the
 check in this order: **cut first, then automate** (the order Elon Musk's
-"algorithm" uses; see the Elon Mode Research page). Automating a task that
+"algorithm" uses; see the Elon Mode page). Automating a task that
 shouldn't exist only locks in the waste.
 
 **First, cut:**
