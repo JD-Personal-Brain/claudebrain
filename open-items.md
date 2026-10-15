@@ -135,7 +135,7 @@ Useful any time; none of these blocks a stage. Dated ones first.
 | W18 | Claude Mastery course: paste in the next page (Module 3: Projects, Connectors and Skills). Claude starts a course notes file when it arrives (idea 14, approved) | Me, then Claude | Nothing |
 | W19 | Try the newer skills on real work: "prototype X", "write a prompt for X", "new use case: X" | Me | Nothing |
 | W20 | Playbooks for my everyday tools (idea 3, approved): name two or three tasks I repeat in email, calendar or documents. Claude turns each into a step-by-step skill | Me, then Claude | Nothing |
-| W21 | Make the GitHub "Audit checker" a required check (idea 56, suggested 2026-10-15), so a pull request with a red mark can't be merged even from my phone. Waiting on my yes or no; on a yes, Claude gives the click-by-click steps | Me | Nothing |
+| W21 | Make the GitHub "Audit checker" a required check (idea 56, yes 2026-10-15), so a pull request with a red mark can't be merged, even from my phone. On GitHub, open the claudebrain repo → **Settings** (top bar) → **Branches** (left side) → **Add branch protection rule** (it may say "Add classic branch protection rule") → type `main` as the branch name pattern → tick **Require status checks to pass before merging** → in the search box type `audit` and pick **audit** → click **Create**. ⚠️ Button names may differ slightly; if the option is missing, the GitHub plan may not include it for private repositories: tell Claude | Me | Nothing |
 
 ## Inside the bank
 
