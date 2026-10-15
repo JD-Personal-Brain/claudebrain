@@ -32,7 +32,7 @@ Seven principles, drawn from what we already do and the lessons behind it.
 | Standard and deep audits | First review | Consistency, cross-references, coverage, facts, logic, drift, plain English, open items | A fresh reviewer |
 | Standard and deep audits | Second review | Fixes that didn't land, and new problems the fixes caused | A second fresh reviewer |
 | Every wrap-up | Audit first (wrap-up step 0) | Everything above, plus a scrub of every open item | Claude |
-| Every pull request | GitHub audit check | Any checker problem; the pull request shows a red mark | Automatic, on GitHub |
+| Every pull request | GitHub audit check | Any checker problem; the pull request shows a red mark and can't be merged (a required check since 2026-10-15, closed item C38) | Automatic, on GitHub |
 | Merging into main | Pre-merge check (idea 36) | Any checker or render problem; it blocks the merge | Automatic, when Claude merges |
 | Every fifth wrap-up | Elon mode review | Work that should be cut or simplified before it's automated | Claude (elon-mode skill) |
 | About weekly | Rule tests (run-tests) and the weekly review | Rules that no longer work; what's annoying | Claude and me |
@@ -47,7 +47,9 @@ saved history, so their counts are approximate.
 
 | Date | What was audited | Size and how | Findings (and lost lines by reason) | Result |
 |---|---|---|---|---|
+| 2026-10-15 | Wrap-up: lesson L34, rule R31 at Level 2, profile and NOW.md; the Open Items log scrubbed | Quick: checker, nothing-lost (no designed page changed apart from this log) | 0 findings; lost lines: 0 | Merged after my yes |
 | 2026-10-15 | The six gaps from the 2026-10-15 audit of How we deliver, written in (closed item C39): unit of work, quick pass, material change, control K3's credit boundary, products built on documents, workflow maps into Discover | Deep by step 0's rule (new rules and a restated control): checker, render check, nothing-lost, a reviewer with a walk-through (credit memo drafts from financial statements as a feature wave), fixes, a second reviewer | First review: 3 Must fix, 9 Should fix, 4 Minor; second review: 1 Must fix, 6 Should fix, 4 Minor (the rollout group step 4 approves, credit-memo terms, the credit policy owner at 2.4, K13 in the sources table and others); lost lines: 15, all reworded by these rules or the closed decision | All fixed; the RM plan's old change rule updated in its memo and pages; merged after my yes |
+| 2026-10-15 | Wrap-up: lesson L33 (task reports too long), rule R2 widened, idea 57, NOW.md; the fifth-wrap-up Elon mode review of the machine (five proposals, none applied) | Quick: checker, nothing-lost | 2 checker problems fixed before saving (a stale item number, an idea missing from the Open Items log); lost lines: 0 | Merged; pull request #103 |
 | 2026-10-15 | Required check switched on: closed item C38, idea 56 done | Quick: checker, render check, nothing-lost | 0 findings; the test pull request #100 now reads blocked; lost lines: 6, all from the closed required-check item (moved to C38) | Merged |
 | 2026-10-15 | After the move to JD-Personal-Brain: pull request #98 (the steps for the required check), the required-check test, old account name | Quick: checker, render check, nothing-lost | 0 findings; no file still names the old account; the required-check test showed GitHub does not yet block a red pull request (it was switched on later the same day: C38); lost lines: 3, all reworded (the required-check item went from "suggested" to "yes") | Merged |
 | 2026-10-15 | Wrap-up: the settings-file repair and lesson L32 | Quick: checker, render check, nothing-lost | 1 Must fix (the settings file couldn't be read, found by reading it back); lost lines: a few, all reworded | Fixed in pull request #96; check 16 added so it can't recur |
@@ -64,7 +66,7 @@ saved history, so their counts are approximate.
 
 What this review of our own audit found, and what closed each one:
 
-1. **A merge done on GitHub skips the pre-merge check.** The check runs only when Claude merges; a merge clicked on GitHub (as on 2026-10-15) isn't checked. → Improvement 1, built.
+1. **A merge done on GitHub skips the pre-merge check.** The check runs only when Claude merges; a merge clicked on GitHub (as on 2026-10-15) isn't checked. → Improvement 1, built; since 2026-10-15 the check is required, so a pull request with a red mark can't be merged on GitHub at all (tested blocked, closed item C38).
 2. **Audits leave no record.** Results live in chat and commit messages, so there's no trend of findings over time. This log starts that record. → Improvement 2, built.
 3. **Every audit is the same size.** A one-line fix and a full reorganization both get the full treatment, which costs time on small changes. → Improvement 3, built.
 4. **Rule tests rarely run.** Item W16 lists more than 25 tests not yet run in a live session. → Improvement 4, built.
@@ -75,7 +77,7 @@ What this review of our own audit found, and what closed each one:
 
 | # | Improvement | Where it runs | Status |
 |---|---|---|---|
-| 1 | **A GitHub check on every pull request** runs the audit checker and shows a red mark if anything fails, so I can see it before clicking Merge on GitHub | `.github/workflows/audit-check.yml` (the render check still runs only when Claude merges, because it needs a browser) | Built |
+| 1 | **A GitHub check on every pull request** runs the audit checker and shows a red mark if anything fails; since 2026-10-15 it is a required check, so GitHub won't merge a pull request with a red mark (closed item C38) | `.github/workflows/audit-check.yml` (the render check still runs only when Claude merges, because it needs a browser) | Built; required since 2026-10-15 |
 | 2 | **This Audit Log is the record**: every audit adds a row (date, scope, size, findings by severity, lost lines by reason, result) | A required step (6) of the audit skill | Built |
 | 3 | **Three audit sizes**: quick (the three scripts) for small fixes, standard (scripts plus a reviewer and a second) for normal sessions, deep (plus one reviewer per reference page and a walk-through) for reorganizations and milestones | Step 0 of the audit skill: Claude picks the size and says why | Built |
 | 4 | **Rule tests at every weekly review**, with results recorded here | The wrap-up skill (weekly review) and the run-tests skill | Built |

@@ -8,6 +8,18 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L35 · 2026-10-15 · A wrap-up audit left no row in the Audit Log
+- **What happened:** the earlier wrap-up that evening (pull request #103) ran its quick audit but added no row to the Audit Log, and the log still said the GitHub check only "shows a red mark" after it had become required. I asked whether the Audit Log should have been updated.
+- **Root cause:** the Audit Log row is step 6 of the audit skill, but the wrap-up's quick audit ran only the scripts and skipped that step; nothing in the wrap-up named it.
+- **Fix:** the missing row and the GitHub check wording are fixed. The wrap-up skill's step 0 now requires the Audit Log row and its republish at every wrap-up, quick ones included.
+- **Rule:** R18 · **Test:** T2-style check at the next wrap-up · **Level:** 3 (a required step in the wrap-up skill) · **Times it happened:** 1
+
+### L34 · 2026-10-15 · Edited the RM plan while we were still locking the base (L28 again)
+- **What happened:** while closing the six gaps in the How we deliver pages, Claude also changed one sentence in the RM plan (the memo and its two pages) so its change rule matched the new one. I hadn't started RM or PM work: we're locking down the base first. The audit before this one had left the RM plan alone on purpose for exactly that reason. I said to leave the change in, but it was outside what I asked.
+- **Root cause:** a reviewer flagged the RM plan's line as a contradiction, and Claude treated "fix every finding" as covering pages outside the task, instead of checking the scope I'd set. A repeat of L28 (doing work I didn't ask for), so R31 moves to Level 2.
+- **Fix:** R31 now also covers audit findings: a finding in a page outside the task's scope (today, the RM and PM pages) is reported once as **Optional**, not fixed. My profile now says the base comes first and RM and PM pages are left alone until I say we're moving into RM.
+- **Rule:** R31 · **Test:** T41 · **Level:** 2 (repeat of L28) · **Times it happened:** 2
+
 ### L33 · 2026-10-15 · A task report too long to follow (L2 again)
 - **What happened:** after the four GitHub steps (the required-check test, pull request #98, the old account name, the audit and merge), Claude's report ran about 9 lines with four bullet points of detail and two suggestions. The one fact that mattered (the check still wasn't required, and what I had to click) was buried. I replied "wtf".
 - **Root cause:** R2 (about 5 lines, one question) was only made a required step for the wrap-up's final message (L2b). Ordinary task reports had no such step, so Claude listed everything it did instead of leading with what it means for me. A repeat of L2, so the fix moves past a required step.
@@ -42,7 +54,7 @@ If a mistake happens again, its fix moves up a level:
 - **What happened:** I said yes to four decisions in the Open Items log (the four open decisions, now closed items C30 to C33) and wanted them recorded. Claude also wrote "the RM plan update is next" into the log, the RM Core Use Cases page and NOW.md, and was about to ask which feature waves to use. I had to say: I didn't ask for that next, just update those four.
 - **Root cause:** Claude treated a decision as an order to start the work it implies, and wrote that next step into my files as if I'd agreed it. It confused recording a decision with planning what follows it.
 - **Fix:** do exactly what I ask. When a decision implies more work, don't add it to the log, NOW.md or "What's next", and don't start it: at most, mention it once in the reply as **Optional** and let me choose.
-- **Rule:** R31 · **Test:** T41 · **Level:** 1 · **Times it happened:** 1
+- **Rule:** R31 · **Test:** T41 · **Level:** 1 → 2 (see L34) · **Times it happened:** 2
 
 ### L27 · 2026-10-15 · Suggested moving content when I wanted links to the detail
 - **What happened:** I asked how to improve the integration between the Product Workflow, the Workflow Maps and the Steps Catalog. Claude's main suggestion was to move the clickable map onto the Product Workflow page, and it built a sample of that. I had to explain: I wasn't asking to copy information across pages; the Product Workflow page summarizes, and from it I should be able to click down to the deeper layer.

@@ -1,6 +1,6 @@
 # NOW: start here
 
-_Last updated: 2026-10-15 · Last review: none yet (first one due around 2026-10-21; I said not yet on 2026-10-14) · Wrap-ups since the last Elon mode review: 0 (last run 2026-10-15; it runs at 5)_
+_Last updated: 2026-10-15 · Last review: none yet (first one due around 2026-10-21; I said not yet on 2026-10-14) · Wrap-ups since the last Elon mode review: 1 (last run 2026-10-15; it runs at 5)_
 
 ## Where things stand
 - The Claude brain is set up: rule book, profile, learning files, ideas list and fourteen skills: log-lesson, wrap-up, designed-doc, write-prompt, run-tests, prototype, new-use-case, audit, make-skill, agent-spec, documents (new 2026-10-09), user-workflow (new 2026-10-14: maps a user group's work today, where each AI product fits, and the work afterwards; say "map the RM workflow"), bank-news-scout (new 2026-10-14: checks public news on the bank and drafts updates to the Bank Business Briefing) and elon-mode (new 2026-10-15: reviews a plan or the product machine the way Elon Musk would, cut first, then automate; runs at every fifth wrap-up, or say "Elon mode").
@@ -72,6 +72,7 @@ _Last updated: 2026-10-15 · Last review: none yet (first one due around 2026-10
 - **Wrap-up 2026-10-15 (late):** two pull requests merged after the Audit Log (#95 the six improvements, #96 the settings-file repair). Lesson L32: when I make an edit Claude can't, Claude reads it back and repairs it at once; the checker now fails on a broken settings file. Idea 56 put to me (see the ideas list).
 - **Session 2026-10-15 (evening): the GitHub audit check is now required** (closed item C38, idea 56). The repo moved to JD-Personal-Brain/claudebrain on a GitHub Team plan. Claude's first test showed a pull request with a failing audit still mergeable (the rule on main had no required check); I ticked "Require status checks" with **audit**, and the rerun showed it blocked. Pull requests #101 and #102 merged (the setting's steps from #98, the closure and two Audit Log rows); no file still uses the old account name; I deleted the four leftover branches. Lesson L33: a task report too long to follow (R2 now covers every task report; idea 57 suggests an automatic length warning).
 - **Six gaps closed** (2026-10-15, closed item C39, idea 54): I approved all six recommendations from the audit of How we deliver, and they're written into the pages. The Product Framework now says which gate is passed for a project, an AI product or a feature wave, the quick pass for each new feature wave, and when a change after launch goes back through step 4; control K3 is now "AI drafts or flags; a named credit officer decides", with a higher-risk path (so credit memo drafts can be built); the playbook covers products built on documents, and Discover starts from the user workflow map. A deep audit (two reviewers, a walk-through with credit memo drafts) found about 30 follow-ups, all fixed; 13 pages republished.
+- **Wrap-up 2026-10-15 (night):** the six gaps are merged into main (pull request #104). I said we're locking down the base (How we deliver, the audit and the reference pages) before any RM or PM work. Lesson L34: Claude had also changed one sentence in the RM plan to match the new change rule; I said to leave it, and from now on findings in RM and PM pages are only reported (R31 now at Level 2).
 - First prototype made: a calculator (v1, then v2 with green buttons). It was practice and has nothing to do with the job. The prototyping process is under agreements below.
 
 ## What's next
@@ -91,6 +92,7 @@ _Date to work toward: on Tuesday October 20, 2026 I talk with the credit lead an
 
 ## Current agreements (and why)
 - **Cut first, then automate** (Elon mode, decided 2026-10-15): at every gate, ask whether each task should exist, can be deleted, simplified or made faster before automating it; law and bank policy are never cut. Why: automating work that shouldn't exist locks in the waste, and I want a machine that gets smaller as well as faster.
+- **Base first, then RM, then PM** (said 2026-10-15): lock down the How we deliver pages, the audit and the reference pages before the RM work; RM and PM pages stay untouched until I say we're moving into RM. Why: the RM and PM plans will copy the base, so it must be solid first.
 - **Claude explains, I decide.** Why: I'm not a developer and want to stay in control.
 - **Tiny pieces to review.** Why: long messages are hard to review.
 - **Keep moving and let the system grow naturally.** Why: getting everything perfect up front isn't worth the time.
