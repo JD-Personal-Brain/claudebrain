@@ -150,7 +150,7 @@ The step 4 gate is a Partner decision: the risk partner's approval can't be over
 ## Across every project (the running layer)
 | # | Task | Kind | Tool (guess) | Goes to |
 |---|---|---|---|---|
-| All | Each project's tasks go into the one shared tracker (M1 at 1.0); owners keep statuses current | Draft | M1 Kickoff pack builder, then the tracker | Everyone on the project |
+| All | Each project's tasks go into the one shared tracker (M1 at 1.0); owners keep statuses current | Draft | M1 Kickoff pack builder, then the shared tracker (tool to confirm) | Everyone on the project |
 | All | Remind owners before a due date; tell me when something is late | Auto ⚠️ | Power Automate | Owners, then me |
 | All | Name the limiting factor: the one thing holding the project back right now, with its owner. It opens the tracker and the weekly status note, and my time goes there first | Me | The tracker | Sponsor and the owner |
 | All | Weekly status note for each project, from the tracker, opening with the limiting factor | Draft | M365 Copilot | Me, then sponsor and partners |
@@ -185,7 +185,7 @@ When every gate criterion is met, the decider approves the gate pack in writing,
 and the approval goes in the decision log. A gate meeting happens only when a
 criterion is contested or someone who decides asks for one. Partner sign-offs in
 step 4 don't change: each named partner still signs, and at the step 4 gate the
-decider approves the signed evidence pack (⚠️ the bank's approval policy may
+risk partner and the sponsor approve the signed evidence pack in writing (⚠️ the bank's approval policy may
 require a committee meeting). ⚠️ Whether the bank's
 culture accepts gates in writing is a guess; confirm it at the first project.
 

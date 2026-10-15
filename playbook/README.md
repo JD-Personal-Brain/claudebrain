@@ -74,7 +74,7 @@ with the bank's risk partner at sub-step 2.4.
 | 2.3 Data contract | Bank policy on data use ⚠️, resting on customer privacy law (the Gramm-Leach-Bliley Act) | The data owner |
 | 2.4 Risk intake | Regulator: the model risk guidance (SR 11-7, with the OCC's matching Bulletin 2011-12, possibly replaced by SR 26-2: item W17 in the Open Items log), through the bank's model risk policy; also inherits K12 bank policy and K24 law or regulator (ask compliance) | Model risk |
 | 2.7 Set the measures, quality bar and value model | Inherits from the controls it sets, builds, proves or watches: K4 bank policy; K9 law or regulator | Each control's owner (Controls Catalog) |
-| 3.1 Design the solution | Inherits from the controls it sets, builds, proves or watches: K19 bank policy | Each control's owner (Controls Catalog) |
+| 3.1 Design the solution and choose the AI capabilities | Inherits from the controls it sets, builds, proves or watches: K19 bank policy | Each control's owner (Controls Catalog) |
 | 3.2 Prepare trusted data | Inherits from the controls it sets, builds, proves or watches: K4 bank policy; K6 bank policy | Each control's owner (Controls Catalog) |
 | 3.3 Build the logic: simple rules first, AI explains | Inherits from the controls it sets, builds, proves or watches: K19 bank policy | Each control's owner (Controls Catalog) |
 | 3.4 Build in the controls | Inherits each control's source (Controls Catalog) | Each control's owner |
