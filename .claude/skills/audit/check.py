@@ -21,6 +21,7 @@
 13. No built page shows a stray Markdown heading ("## ...") as text.
 14. Requirement sources (idea 52): every control has a "Comes from" line, and every sub-step that sets, builds, proves
     or watches a law, regulator or bank-policy control is in the playbook's "Where the requirements come from" table.
+15. Agent names: every "M<number> <Name>" in the Product Machine and the playbook steps matches the Agent Library.
 Prints each problem and a total. 0 problems means the mechanical checks pass.
 """
 import glob
@@ -222,7 +223,7 @@ else:
         low=plain.lower()
         for old,new in ret:
             nw=new.split(' (')[0].lower() if not new.startswith('(') else new.lower()
-            for m in re.finditer(r'(?<!\w)'+re.escape(old.lower())+r'(?!\w)',low):
+            for m in re.finditer(r'(?<!\w)'+re.escape(old.lower())+r'(?:s|es)?(?!\w)',low):  # plurals too ("written gates")
                 if nw in low[max(0,m.start()-150):m.start()]+low[m.end():m.end()+150]: continue  # the new wording must sit outside the match itself
                 print(f,'still says',repr(old),'(retired; use',repr(new)+'), near:',repr(plain[max(0,m.start()-40):m.end()+40])); probs+=1
 # 10. the two user groups are always written RM, RMs, PM, PMs (said 2026-10-14): no "Rms", "rms" and so on (an apostrophe for ownership, "the RM's", is fine, and so are all-capital labels such as "FOR RMS")
@@ -279,5 +280,14 @@ for _b in re.split(r"\n### ",_ctl)[1:]:
         _fm=re.search(r"\*\*"+_f+r":\*\* (.+)",_b)
         for _n in re.findall(r"\b\d\.\d\b",_fm.group(1) if _fm else ""):
             if _n not in _listed: print("playbook/README.md: sub-step",_n,"sets, builds, proves or watches",_cid,"("+_m.group(1).strip()+") but isn't in 'Where the requirements come from'"); probs+=1
+
+# 15. Agent names (audit 2026-10-15): every "M<number> <Name>" in the Product Machine and the playbook step files
+# uses the number and exact name from the Agent Library (playbook/agents.md), so they can't drift apart.
+_ag={m.group(1):m.group(2).strip() for m in re.finditer(r'^### (M\d+)\. (.+)$',open('playbook/agents.md').read(),re.M)}
+for f in ['product-machine.md']+sorted(glob.glob('playbook/[1-6]-*.md')):
+    for m in re.finditer(r'\b(M\d{1,2})\*{0,2} ([A-Z][a-z]+(?:[ -][a-z]+){0,3})',open(f).read()):
+        nm=_ag.get(m.group(1))
+        if nm is None: print(f,'names',m.group(1),'but the Agent Library has no such agent'); probs+=1
+        elif not (nm.startswith(m.group(2)) or m.group(2).startswith(nm)): print(f,'calls',m.group(1),repr(m.group(2)),'but the Agent Library calls it',repr(nm)); probs+=1
 
 print("problems:",probs)

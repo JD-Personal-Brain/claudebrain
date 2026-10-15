@@ -11,8 +11,8 @@ at once, so start 4.1, 4.2 and 4.6 on the first day. Fill in the first-time
 log (see `README.md`) for every sub-step.
 
 > ⚠️ **How much to trust this.** Written 2026-10-09 from my framework, the RM
-> memo and general US banking practice (SR 11-7 model risk guidance, NIST AI
-> RMF, fair-lending law), not from Associated Bank's own process. The bank's
+> memo and general US banking practice (SR 11-7 model risk guidance, possibly replaced by SR 26-2: item W17
+> in the Open Items log; NIST AI RMF; fair-lending law), not from Associated Bank's own process. The bank's
 > review steps, forms and timings are unknown, so every bank-specific line here
 > is a guess ⚠️. Replace them on the first project.
 
@@ -41,10 +41,10 @@ log (see `README.md`) for every sub-step.
 ## 4.2 Review data and privacy
 
 - **Goal:** confirm that the data the AI sees matches what was approved, and that privacy rules are met.
-- **Why it matters:** data about individuals, such as business owners and guarantors, is protected by law (for example, GLBA, whose privacy rules cover consumers). Business client data is protected by bank policy and contracts ⚠️. Either way, data use that drifted from the approval is a serious finding.
+- **Why it matters:** data about individuals, such as business owners and guarantors, is protected by law (for example, GLBA, whose privacy rules cover consumers; ⚠️ whether it reaches business owners' and guarantors' data is for privacy to confirm; bank policy protects it either way). Business client data is protected by bank policy and contracts ⚠️. Either way, data use that drifted from the approval is a serious finding.
 - **Know first:** the signed data contract (2.3), the data views (3.2), and the privacy team contact. ⚠️
 - **First time, step by step:**
-  1. List every field the product actually reads, from the live build rather than the plan.
+  1. List every field the product actually reads, from the frozen version in test rather than the plan.
   2. Compare the list with the data contract and explain any difference.
   3. Show how permissions and masking work, with a test as proof.
   4. Walk the privacy team through it and answer their questions in writing.
@@ -67,7 +67,7 @@ log (see `README.md`) for every sub-step.
   1. Re-run the full test set on the frozen version.
   2. Report accuracy, made-up answers ("hallucinations"), relevance and permissions against the quality bar.
   3. Red-team it: try to make it reveal other users' data, give a credit decision or a price, or answer off-topic.
-  4. Record every failure, its fix and the re-test. Each fix creates a new frozen version: re-run the test set (M26) and the 4.5 control tests on it.
+  4. Record every failure, its fix and the re-test. Each fix creates a new frozen version: re-run the test set (M26) and the 4.5 control tests on it, and the fairness check (4.4) if the fix could change who gets what.
 - **Output:** the test report and the red-team report.
 - **Done when:** results meet the bar, and every red-team failure is fixed or accepted by risk.
 - **Automation watch:**
@@ -109,8 +109,11 @@ log (see `README.md`) for every sub-step.
   3. Show that a user must approve before anything reaches a client or changes a record.
   4. Feed an agent a missing or stale input on purpose, and show that it stops and alerts its owner instead of guessing.
   5. Show that meeting recaps are drafted only where consent is recorded.
-  6. Confirm the frozen version reached test through the agreed build, test and live path, that the move to live is approved, and that IT has approved every connection the product uses (the data-sharing rules checked in 2.2).
-  7. Update the controls checklist with fresh proof.
+  6. Confirm the frozen version reached test through the agreed build, test and live path, that the move to live has a named approver and an agreed route (the approval itself is recorded in 5.2), and that IT has approved every connection the product uses (the data-sharing rules checked in 2.2).
+  7. Show that the guardrails block off-topic answers, harmful content and sensitive data such as account numbers (the settings from 3.4, with the 4.3 red-team results as proof) (K8).
+  8. Show that an agent stays read-only: an action the agent isn't allowed to take is refused (K2).
+  9. Update the controls checklist with fresh proof.
+  10. Draft the monitoring plan (4.8) alongside this check, so it goes into the evidence pack as a draft.
 - **Output:** the updated controls checklist with proof.
 - **Done when:** every control has fresh proof.
 - **Automation watch:**
@@ -145,9 +148,9 @@ log (see `README.md`) for every sub-step.
 
 - **Goal:** one pack the reviewers sign, and every sign-off recorded.
 - **Why it matters:** a clear pack saves days of back-and-forth, and recorded sign-offs are the audit trail.
-- **Know first:** everything from 4.1 to 4.6, and who must sign (risk, compliance, privacy, security). ⚠️
+- **Know first:** everything from 4.1 to 4.6, the draft monitoring plan (4.8), and who must sign (risk, compliance, privacy, security). ⚠️
 - **First time, step by step:**
-  1. Put the outputs of 4.1 to 4.6 into one pack, using the bank's template if there is one ⚠️.
+  1. Put the outputs of 4.1 to 4.6, and the draft monitoring plan (4.8), into one pack, using the bank's template if there is one ⚠️.
   2. Check every claim in it against its source.
   3. Send it to each signer with a due date.
   4. Track the replies; chase anything late and meet anyone who's stuck.
@@ -164,13 +167,13 @@ log (see `README.md`) for every sub-step.
 
 ## 4.8 Agree the monitoring plan
 
-- **Goal:** agree what will be watched after launch, how often, and what triggers action.
+- **Goal:** agree what will be watched after launch, how often, and what triggers action. The plan is drafted alongside 4.5 and goes into the evidence pack (4.7) as a draft; this sub-step finalises it.
 - **Why it matters:** approval usually depends on it, and it's what step 6 runs on.
 - **Know first:** the measures (2.7) and what risk wants to monitor.
 - **First time, step by step:**
-  1. List what's watched: quality, guardrail blocks, user overrides, incidents and fairness.
+  1. List what's watched: quality, guardrail blocks, user overrides, incidents, fairness, data use against the data contract (M13) and data quality on each refresh (M24).
   2. For each one: how often, the alert threshold, who's alerted and what they do.
-  3. Write the incident process: who to call, and how to pause the product.
+  3. Write the incident process: who to call, who may pause the product (the product manager or operations, per the plan) and how. A serious incident is [X], set in the plan with the risk partner.
   4. Agree it with risk and operations.
 - **Output:** the monitoring plan and the incident process.
 - **Done when:** risk and operations have agreed it.
@@ -184,30 +187,37 @@ log (see `README.md`) for every sub-step.
 
 ## The Govern and test gate
 
-- **Who decides:** the risk partner and the sponsor.
+- **Who decides:** the risk partner and the sponsor; partner sign-offs can't be overruled (in writing when the gate is clean; a meeting only if a criterion is contested or a decider asks for one; see the Product Machine). The risk partner and the sponsor approve the signed evidence pack in writing; partner sign-offs don't change (⚠️ the bank's approval policy may require a committee meeting).
 - **Bring:** the signed evidence pack and the monitoring plan.
 - **Go means:** all sign-offs recorded, and the monitoring plan agreed.
-- **No-go means:** fix what reviewers found, then re-test only what changed.
-- **Record:** the decision and any conditions in the decision log.
+- **No-go means:** fix what reviewers found; each fix is a new frozen version, so re-run the test set and the control tests, and send changed evidence back to the signers it affects. Or stop, record why, and retire the AI product.
+- **Record:** the date the gate pack was ready, the decision date, the decision, who decided and any conditions, in the decision log.
 
 ---
 
 ## Govern and test automation review (do this at the gate)
 
+Run the automation check from the Product Machine on every Me and Draft task,
+using your first-time logs: cut first (should it exist, delete, simplify, make
+it faster), then automate what's left (repeat? stable? safe alone?). Then update this shortlist and the Govern and test
+table in `product-machine.md`.
+
 | Sub-step | Agent | First time | Aim for | Already specified? |
 |---|---|---|---|---|
 | 4.1 | M25 Risk intake assistant | Me | Draft | Yes, M25 |
-| 4.2 | Data-use checker | Draft | Auto | Yes, M13 |
+| 4.2 | M13 Data-use checker | Draft | Auto | Yes, M13 |
+| 4.2 | None: walking privacy through it stays with a person | Me | Me | — |
 | 4.3 | M26 Test grader, M27 Red-team agent | Draft | Auto | Yes, M26, M27 |
 | 4.4 | M28 Fairness monitor | Draft | Auto | Yes, M28 (ongoing mode) |
-| 4.5 | Controls checker (from 3.4) | Draft | Auto | Yes, M11 |
+| 4.5 | M11 Controls checker (from 3.4) | Draft | Auto | Yes, M11 |
 | 4.6 | Approved vendors list (not an agent) | Me | Me | — |
 | 4.7 | M29 Evidence pack assembler | Draft | Draft | Yes, M29 |
-| 4.7 | Sign-off router | Me | Auto ⚠️ | Yes, M14 |
+| 4.7 | M14 Sign-off router | Me | Auto ⚠️ | Yes, M14 |
+| 4.7 | None: unblocking a stuck sign-off stays with a person | Me | Me | — |
 | 4.8 | Monitoring plan template | Draft | Draft | Asset: agent library |
 
 **First time** = how the task is done on the first project. **Aim for** = its kind in `product-machine.md`.
 
 **Never automated:** the sign-offs themselves. Risk partners make every call.
 
-_Last updated: 2026-10-09_
+_Last updated: 2026-10-15_

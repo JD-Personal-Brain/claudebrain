@@ -21,7 +21,7 @@ log (see `README.md`) for every sub-step.
 - **Why it matters:** if numbers have to be pulled by hand each month, they'll be late, and decisions will be made without them.
 - **Know first:** the measures sheet (2.7), the data sources, and who builds dashboards (Power BI). ⚠️
 - **First time, step by step:**
-  1. Extend the pilot dashboard to one page per measure kind: usage, quality, business impact, adoption, risk and controls (plus cost).
+  1. Extend the pilot dashboard to one page per measure kind: usage, quality, business impact, adoption, risk and controls, plus a cost page (spend on licenses and model use), which feeds the value model.
   2. Split **leading** measures (use, insights acted on, pipeline created, visible within weeks) from **lagging** ones (closed revenue, which takes months).
   3. Check each number against its source by hand once.
   4. Share it with the sponsor and user leaders, and set it to refresh automatically.
@@ -78,15 +78,17 @@ log (see `README.md`) for every sub-step.
 ## 6.4 Hold the monthly keep / change / stop review
 
 - **Goal:** a monthly decision on each AI product, based on evidence.
-- **Why it matters:** without a regular decision, weak features linger and strong ones don't get more investment.
+- **Why it matters:** without a regular decision, weak AI products linger and strong ones don't get more investment.
 - **Know first:** the dashboard (6.1), the impact note (6.2) and quality trends (6.3).
 - **First time, step by step:**
-  1. Build a short pack: each feature's use, quality and impact, plus the top user feedback.
+  1. Build a short pack: each AI product's use, quality and impact, plus the top user feedback.
   2. Recommend keep, change or stop for each one, with the reason.
-  3. Meet the sponsor (30 minutes) and decide.
+  3. Send the pack to the sponsor; they decide in writing, with a 30-minute meeting only if a call is contested.
   4. Record the decisions and update the backlog.
-- **Output:** the decisions, recorded, and an updated backlog.
-- **Done when:** every feature has a decision for the month.
+  5. If the decision is stop: switch it off, tell users, update the model inventory, stop its ongoing agents and keep the logs as the bank's retention rules require ⚠️.
+  6. Every third month, roll the monthly packs, the impact note (6.2) and the machine's measures (6.6) into a quarterly summary for the invest more / adjust / stop decision (M18).
+- **Output:** the decisions, recorded, an updated backlog and, every third month, the quarterly summary.
+- **Done when:** every AI product has a decision for the month.
 - **Automation watch:**
   - First time: **Draft** for the pack, **Me** for the decision.
   - Note: what the sponsor looked at first. Put that at the top next time.
@@ -111,7 +113,7 @@ log (see `README.md`) for every sub-step.
   - First time: **Draft**.
   - Note: how much of Discover and Define you could skip or reuse.
   - Agent: **M33 Improvement scout** (agent library) proposes and ranks candidates. The product manager and the sponsor decide. *Draft*.
-- **For RM analytics:** the next standard AI products, such as early warnings and referral prompts in wave 2.
+- **For RM analytics:** the next standard AI products, such as early warnings and referral prompts in feature wave 2.
 
 ---
 
@@ -123,9 +125,9 @@ log (see `README.md`) for every sub-step.
 - **First time, step by step:**
   1. Read back through the first-time logs from steps 1 to 6.
   2. Total the time per step, work out each sub-step's wait index (calendar days from start to finish, divided by hours of real work), and mark the highest.
-  3. Run the automation check on every Me and Draft task, cut first: decide what to delete, simplify or speed up (starting with the highest wait index). Then, for each agent idea that passed the rest of the check, decide: build it now, later, or never.
-  4. Record the machine's measures for this project (days from kickoff to pilot, days at each gate, releases per month in the pilot; see "Measuring the machine" in the Product Machine) and compare them with the last project.
-  5. Update the task tables in `product-machine.md` (Auto, Draft or Me) and this playbook with what you learned.
+  3. Run the automation check on every Me and Draft task, cut first: decide what to delete, simplify or speed up (starting with the highest wait index). Record each deletion in the decision log with who agreed, and list which earlier deletions had to come back (if none did, we aren't cutting enough). Then, for each agent idea that passed the rest of the check, decide: build it now, later, or never.
+  4. Record the machine's measures for this project (days from kickoff to pilot, days at each gate, releases per month in the pilot and the wait index; see "Measuring the machine" in the Product Machine), compare them with the last project, and add them to the one view of all projects.
+  5. Update the Product Machine task tables (Auto, Draft or Me), the Product Framework and this playbook with what you learned.
   6. Write a one-page "what I'd do differently" note for the next project.
 - **Output:** updated Product Machine task tables, Product Framework and playbook, a list of what was deleted, a build list of agents, the machine's measures for this project, and the lessons note.
 - **Done when:** the next project can start from the updated files.
@@ -139,25 +141,33 @@ log (see `README.md`) for every sub-step.
 
 ## The Measure and iterate gate
 
-- **Who decides:** the sponsor; Finance for the impact numbers.
+- **Who decides:** the sponsor, with Finance confirming the impact numbers (in writing when the gate is clean; a meeting only if a criterion is contested or a decider asks for one; see the Product Machine).
 - **Bring:** the monthly pack (each feature wave) or a quarterly summary (overall).
 - **Each month (and at the end of each feature wave):** keep, change or stop each AI product.
 - **Each quarter:** invest more, adjust or stop overall, based on results against the comparison group.
-- **Record:** the decisions in the decision log.
+- **No-go means:** change the AI product and check again next month, or stop, record why, and retire the AI product (see 6.4).
+- **Record:** the date the gate pack was ready, the decision date, the decision, who decided and any conditions, in the decision log.
 
 ---
 
 ## Measure and iterate automation review (do this at the gate)
+
+Run the automation check from the Product Machine on every Me and Draft task,
+using your first-time logs: cut first (should it exist, delete, simplify, make
+it faster), then automate what's left (repeat? stable? safe alone?). Then update this shortlist and the Measure and iterate
+table in `product-machine.md`.
 
 | Sub-step | Agent | First time | Aim for | Already specified? |
 |---|---|---|---|---|
 | 6.1 | Live dashboard (template) | Draft | Auto | Asset: agent library |
 | 6.2 | M31 Impact analyst | Draft | Draft | Yes, M31 |
 | 6.3 | M32 Quality watchdog | Draft | Auto | Yes, M32 |
-| 6.4 | Monthly review pack drafter | Draft | Draft | Yes, M18 |
+| 6.4 | M18 Monthly review pack drafter | Draft | Draft | Yes, M18 |
+| 6.4 | None: the keep / change / stop decision stays with a person | Me | Me | — |
 | 6.5 | M33 Improvement scout | Draft | Draft | Yes, M33 |
-| 6.6 | Log summarizer | Me | Draft | Yes, M19 |
+| 6.6 | M19 Log summarizer | Me | Draft | Yes, M19 |
+| 6.6 | None: improving the machine stays with a person | Me | Me | — |
 
 **First time** = how the task is done on the first project. **Aim for** = its kind in `product-machine.md`.
 
-_Last updated: 2026-10-09_
+_Last updated: 2026-10-15_

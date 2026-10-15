@@ -1,7 +1,7 @@
 # Step 5: Release and adopt, the first time
 
 **The question:** will users use it every week?
-**The gate:** weekly use and results hit targets; no serious incidents; long-term owner confirmed before scaling.
+**The gate:** weekly use and leading results hit targets; no serious incidents; long-term owner confirmed before scaling.
 **Governance thread:** live monitoring; incident process.
 
 Adoption comes from changing how teams work, not from a training event. The
@@ -20,7 +20,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
 - **Why it matters:** a bad first week is hard to recover from. Users decide fast whether a tool is worth their time.
 - **Know first:** the sign-offs and conditions from step 4, operations contacts, and the release process for the platform. ⚠️
 - **First time, step by step:**
-  1. Go through a readiness checklist: sign-offs and conditions met, support contact named, incident process tested, training ready, communications drafted, monitoring switched on.
+  1. Go through a readiness checklist: sign-offs and conditions met, support contact named, incident process tested, training ready, communications drafted, monitoring switched on (M13 Data-use checker, M24 Data contract checker, M28 Fairness monitor and M32 Quality watchdog).
   2. Build the pilot dashboard from the 2.7 measures sheet, so usage and results are visible from day one.
   3. Do a dry run of the incident process: who is called, and how the product is paused.
   4. Agree the release date with operations and the platform team.
@@ -70,7 +70,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
 - **Automation watch:**
   - First time: **Me**. This is change management.
   - Note: which routine worked, and how managers phrased it. Reuse that for the next team.
-  - Agent: none. This stays with a person. The product's **weekly opportunity digest** (A4 in the RM plan, Appendix A) is a product feature that supports the routine, not an agent that runs it.
+  - Agent: none. This stays with a person. The product's **weekly opportunity digest** (A4 in the RM plan, Appendix A) is part of the product and supports the routine, not an agent that runs it.
 - **For RM analytics:** managers run weekly pipeline meetings from the insights.
 
 ---
@@ -101,7 +101,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
 - **Why it matters:** people trust peers more than project teams. Visible wins make the tool worth a try.
 - **Know first:** who's respected and well-connected in the pilot group (ask the managers).
 - **First time, step by step:**
-  1. Ask 2 or 3 respected users to be champions. Give them early access to new features and a direct line to you.
+  1. Ask 2 or 3 respected users to be champions. Give them early access to new AI products and changes and a direct line to you.
   2. Set up a channel (for example in Teams) where champions share tips.
   3. Collect early wins: a deal, an hour saved or a client moment that started with the product.
   4. Ask leaders to recognize those wins in their own meetings.
@@ -125,7 +125,8 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
   2. Sort it into bugs, quality issues and ideas.
   3. Fix the top items, and add the rest to the backlog.
   4. Tell users what changed ("you said, we did").
-  5. Log every incident, its owner and the fix.
+  5. Log every incident, its owner and the fix. M30 Feedback triage flags anything that looks like an incident straight to the product manager and operations.
+  6. Each fix is a new version: re-run the test set (M26) before it reaches pilot users, and tell the risk partner about any material change (⚠️ what counts as material is still to be agreed).
 - **Output:** a weekly fix list, release notes and the incident log.
 - **Done when:** this runs every week.
 - **Automation watch:**
@@ -159,31 +160,39 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
 
 ## The Release and adopt gate
 
-- **Who decides:** the sponsor, with user leaders.
+- **Who decides:** the sponsor and user leaders (in writing when the gate is clean; a meeting only if a criterion is contested or a decider asks for one; see the Product Machine).
 - **Bring:** the pilot results and the scale recommendation.
-- **Go means:** weekly use and results hit the targets, with no serious incidents, and the long-term owner confirmed before scaling.
-- **No-go means:** fix the routine, the product or the training, then check again.
-- **Record:** the decision in the decision log.
+- **Go means:** weekly use and leading results hit the targets, with no serious incidents, and the long-term owner confirmed before scaling.
+- **No-go means:** fix the routine, the product or the training, then check again. Or stop, record why, and retire the AI product.
+- **Record:** the date the gate pack was ready, the decision date, the decision, who decided and any conditions, in the decision log.
 
 ---
 
 ## Release and adopt automation review (do this at the gate)
 
+Run the automation check from the Product Machine on every Me and Draft task,
+using your first-time logs: cut first (should it exist, delete, simplify, make
+it faster), then automate what's left (repeat? stable? safe alone?). Then update this shortlist and the Release and adopt
+table in `product-machine.md`.
+
 | Sub-step | Agent | First time | Aim for | Already specified? |
 |---|---|---|---|---|
-| 5.1 | Readiness tracker | Draft | Auto | Yes, M15 |
+| 5.1 | M15 Readiness tracker | Draft | Auto | Yes, M15 |
 | 5.1 | Pilot dashboard (Power BI, not an agent) | Draft | Draft | — |
-| 5.2 | Release automation | Me | Auto ⚠️ | Yes, M16 |
+| 5.2 | M16 Release automation | Me | Auto ⚠️ | Yes, M16 |
 | 5.2 | Weekly usage report (Power BI, not an agent) | Me | Auto | — |
 | 5.3 | None (stays with a person) | Me | Me | — |
+| 5.4 | None: training users stays with a person | Me | Me | — |
 | 5.4 | The product's onboarding coach (A6 in the RM plan) | Me | Auto | Yes, RM plan Appendix A |
-| 5.5 | Wins spotter | Me | Draft | Yes, M17 |
+| 5.5 | None: recruiting champions stays with a person | Me | Me | — |
+| 5.5 | M17 Wins spotter | Me | Draft | Yes, M17 |
 | 5.6 | M30 Feedback triage | Me | Auto | Yes, M30 |
+| 5.6 | None: fixing and telling users what changed stays with a person | Me | Me | — |
 | 5.7 | None: confirming the long-term owner stays with a person | Me | Me | — |
-| 5.7 | Gate pack drafter (shared) | Draft | Draft | Yes, M6 |
+| 5.7 | M6 Gate pack drafter (shared) | Draft | Draft | Yes, M6 |
 
 **First time** = how the task is done on the first project. **Aim for** = its kind in `product-machine.md`.
 
 **Stays with a person:** working with managers on routines (5.3) and recruiting champions (5.5).
 
-_Last updated: 2026-10-09_
+_Last updated: 2026-10-15_

@@ -15,25 +15,36 @@ written as [name needed] until they're filled.
 
 | Who | What they decide or do | Where they come in |
 |---|---|---|
-| Sponsor | The outcome, the funding and the go/no-go at every gate | Every gate; the step 4 gate together with risk |
-| User leaders and pilot users | How the work is done today, and feedback on the product | Discover (interviews, mock-up), Release and adopt (pilot) |
-| Product manager (this role) | Scope, priorities and trade-offs; owns the product until a long-term owner is named | Every step |
+| Sponsor | The outcome, the funding and the go/no-go at every gate, together with the people named below for that gate | Every gate |
+| User leaders and pilot users | How the work is done today, and feedback on the product; user leaders decide with the sponsor whether to scale | Discover (interviews, mock-up), Release and adopt (pilot; the step 5 gate) |
+| Product manager (this role) | Scope, priorities and trade-offs; owns the product until a long-term owner is named; brings the gate pack and recommends at every gate | Every step |
 | Long-term owner | Holds the product after launch, for example someone in a revenue line; identified during the project | Named in Define if known (2.8), confirmed before scaling (5.7) |
-| Data owners | What data may be used; they sign the data contract | Define (2.3), Build (3.2) |
+| Data owners | What data may be used; they sign the data contract | Define (2.3; they agree at the Define gate), Build (3.2) |
 | Platform teams | The technical design | Define (2.2), Build |
-| Model risk | The risk rating and the approval | Briefed in Discover (1.0), rating in Define (2.4), approval in Govern and test |
-| Compliance, privacy and security | The controls and their sign-off | Govern and test (4.2 to 4.7) |
+| Model risk (the risk partner) | The risk rating and the approval | Briefed in Discover (1.0); agrees at the Discover and Define gates; rating in Define (2.4); approval at the step 4 gate, which the sponsor can't overrule |
+| Compliance, privacy and security | The controls and their sign-off | Told the control requirements in Define (2.4); sign-off in Govern and test (4.2 to 4.7) |
+| Vendor risk | Whether the vendors and AI models we use are approved | Define (2.2, starts any missing review), Govern and test (4.6) |
+| IT | The AI tools the team may use, and every connection the product makes | Discover (1.0), Define (2.2), Govern and test (4.5) |
+| Finance | How impact is counted, and the impact numbers | Define (2.7), the Measure and iterate gate |
+| Analytics | Checks the sizing and impact numbers | Discover (1.2), Measure and iterate (6.2) |
 | Operations | Running the product day to day | The monitoring plan (4.8), then after launch |
 
 **Decisions and trade-offs:** record each one in the decision log, with the
 options, who decided and why, so partners stay aligned.
 
-**Dependencies, risks and issues:** one list, each item with an owner and a
-date, reviewed weekly.
+**Gates in writing:** when every criterion is met, the decider approves the gate
+pack in writing; a meeting happens only when a criterion is contested or a
+decider asks for one (Product Machine).
+
+**The risk and issue list:** one list of dependencies, risks and issues, each
+item with an owner and a date, reviewed weekly. Its top item is the **limiting
+factor**: the one thing holding the project back right now, named with its
+owner. It opens the tracker and the weekly status note.
 
 ## The five kinds of measures
-Set in Define (sub-step 2.7) and tracked in Measure and iterate. These are the
-five the job description names. Pick one or two of each per product, and
+The main outcome measure is agreed in Discover (1.1) and its baseline recorded in
+1.7; the full set is set in Define (2.7) and tracked in Measure and iterate.
+These are the five the job description names. Pick one or two of each per product, and
 define each one exactly (source, formula, owner) so the dashboard can be built
 from it.
 
@@ -41,18 +52,23 @@ from it.
 |---|---|---|
 | Usage | Whether people use what it gives them | Answers or insights opened and acted on; drafts and briefs used |
 | Quality | Whether its answers are right and useful | Accuracy on the test set, % of answers with sources, thumbs up or down |
-| Business impact | Whether it moves the outcome the sponsor cares about | Hours saved per user, more client meetings, pipeline created, revenue won |
+| Business impact | Whether it moves the outcome the sponsor cares about | Hours saved per user, cost or time per task, more client meetings, pipeline created, revenue won |
 | Adoption | Whether it has become part of the routine | Weekly active users, % of target users, repeat use week after week, use inside the routines managers run |
 | Risk and controls | Whether it stays safe | Incidents, human overrides, guardrail blocks, review findings |
 
 Leading measures show up within weeks (use, insights acted on, pipeline
 created); lagging ones take months (closed revenue). Report both, so a good
-start isn't mistaken for a result.
+start isn't mistaken for a result. The gate at the end of Release and adopt uses
+leading measures; lagging ones are judged in Measure and iterate.
+
+The machine itself has its own measures (days from kickoff to pilot, days at
+each gate, releases per month, the wait index), on the Product Machine page.
 
 ## The quality bar
 How good is good enough. Thresholds are set in Define (2.7) as [X] until
-agreed, the test set checks them in Build (3.6 and 3.7), and step 4 confirms
-them on the frozen version.
+agreed. In Build (3.6 and 3.7) the test set checks accuracy, sources and
+permissions, and users grade a sample for relevance and usefulness. Step 4
+confirms them on the frozen version.
 
 | Test | What it means | Threshold |
 |---|---|---|
@@ -62,10 +78,16 @@ them on the frozen version.
 | Usefulness | Users would act on it | [X] |
 | Permissions | No one sees data they shouldn't | Zero tolerance |
 
+**Gaps:** only the sponsor can accept a documented gap on accuracy, sources
+shown, relevance or usefulness, recorded in the decision log with a date to
+close it. Permissions, and any threshold that comes from law or bank policy,
+can never be waived.
+
 ## AI principles
 These apply to every agent and every AI product, in every step.
-- **Two kinds of agents.** Some help the team do the work (the general agents in the Agent Library); others are the product users see (a project's own agents, in its memo's Appendix A). My research helpers (H1 and on) also live in the Agent Library but aren't part of any product or the product machine.
-- **Assistive first.** AI drafts or suggests, and a named person decides. Autonomy grows only with evidence, through the automation check in the Product Machine.
+- **Two kinds of agents at work on products.** Some help the team do the work (the general agents in the Agent Library); others are the product users see (a project's own agents, in its memo's Appendix A). My research helpers (H1 and on) are a separate group: they also live in the Agent Library but aren't part of any product or the product machine.
+- **Assistive first.** AI drafts or suggests, and a named person decides. Autonomy grows only with evidence, through the automation check in the Product Machine (cut first, then automate).
+- **Cut first, then automate.** Every requirement says where it comes from: law or regulator, bank policy, or our choice. Law and bank policy are never cut; our choices are challenged at every gate before anything is automated.
 - **One job each.** Every agent has a clear job, a short list of allowed actions, read-only by default, and every action logged. Each one is written up as an agent spec before it's built.
 - **Built where the work happens.** Use the tools people already work in (Outlook, Teams, Salesforce), and add a new platform only when it's needed.
 
@@ -86,12 +108,12 @@ The RM plan (`memos/rm-analytics-framework.md`) is the worked example.
 | Gate | What the go/no-go decision needs |
 
 ## How the job description maps to this framework
-| Job accountability (from `job-description.md`) | Where it lives |
+| From the job description (accountabilities and requirements, `job-description.md`) | Where it lives |
 |---|---|
 | Own products from discovery through governed release, adoption and improvement | All six steps |
 | Work with bankers to find needs; turn them into clear products | Discover → Define |
 | User stories, acceptance criteria, backlog priorities, release scope, success measures, control requirements, trade-offs | Define |
-| Configure AI capabilities (agents, retrieval, data flows, automations, integrations) in tools bankers use | Build |
+| Configure AI capabilities (agents, retrieval, data flows, automations, integrations) in tools bankers use | Define (2.2, the platform) → Build |
 | Governed delivery: risk, controls, privacy, responsible AI and regulation built in from the start | Governance thread in every step (Product Workflow); formal approval in Govern and test; the quality bar; AI principles |
 | Lead with limited oversight: priorities, decisions, dependencies, testing, controls, release readiness, issues | Who decides; decision log; the Product Machine; Build to Release gates |
 | Drive adoption and change in a regulated environment | Release and adopt |
@@ -99,11 +121,12 @@ The RM plan (`memos/rm-analytics-framework.md`) is the worked example.
 | Align business, technology, data, risk, compliance and operations partners | Who decides; decision log |
 
 ## Starting a new project
-1. Name the outcome and the sponsor.
-2. Fill in the six steps for this project (from the Product Workflow): its question, governance thread and gate for each step.
-3. Fill in who's involved and who decides, above, with real names.
-4. Copy the task tables from the Product Machine into the shared tracker, with an owner and a date for each task.
-5. Work through Discover first, using the write-up layout above and the Product Playbook (how to do each sub-step the first time, and what to log so it can be automated).
-6. Keep the plan in `memos/<project>.md`, as the RM memo does.
+Start every project with sub-step 1.0 in the Product Playbook (kickoff): name
+the outcome and the sponsor, fill in who's involved and who decides (above) with
+real names, copy the Product Machine's task tables into the shared tracker with
+an owner and a date for each task, brief the risk partner and create the project
+file. Then work through Discover with the playbook, writing each step up in the
+layout above. The plan's working copy is `memos/<project>.md`, as the RM memo
+does; people read it as a designed page in the Document Library.
 
-_Last updated: 2026-10-14_
+_Last updated: 2026-10-15_

@@ -10,8 +10,9 @@ Page 1 of the four "How we deliver" pages, read in this order:
 3. **Product Machine** (`product-machine.md`): every task, marked by who does it.
 4. **Product Playbook** (`playbook/`): how to do each sub-step the first time.
 
-> **Source.** Taken from my RM analytics memo (`memos/rm-analytics-framework.md`,
-> memo v6, 2026-10-08) with the RM details removed. Memo v8 (2026-10-09) follows
+> **Source.** The six steps and gates were first taken from my RM analytics memo
+> (`memos/rm-analytics-framework.md`, memo v6, 2026-10-08) with the RM details
+> removed; the sub-steps below come from the Product Playbook. Memo v8 (2026-10-09) follows
 > the same six steps and gates and is the full worked example, with agent specs
 > and workflows in its appendices. Its sub-steps are
 > tailored to RM work and aren't yet numbered like the playbook's 44; that's part
@@ -20,7 +21,7 @@ Page 1 of the four "How we deliver" pages, read in this order:
 ## The six steps at a glance
 Every AI product goes through six steps, each ending in a **go/no-go gate**. The
 first pass through all six is fast. After that, steps 3 to 6 repeat in short
-cycles, and each new set of features takes a quick pass through Discover and
+cycles, and each new feature wave takes a quick pass through Discover and
 Define. **Governance runs through every step:** step 4 is the formal approval,
 not the first time risk partners see the product.
 
@@ -28,13 +29,14 @@ not the first time risk partners see the product.
 |---|---|---|---|
 | 1. Discover | Which problem or opportunity is worth solving first? | Risk partner briefed on the idea | Sponsor agrees on the target, the measure and today's baseline |
 | 2. Define | What exactly do we build first, and how will we know it worked? | Risk intake and early rating; data use approved | Brief, data contract and risk rating agreed; value model shows payback within [X] months |
-| 3. Build | What's the smallest version users will use and trust? | Controls built in; test set created | Meets the quality bar in testing; every control has proof |
+| 3. Build | What's the smallest version users will use and trust? | Controls built in; test set created | Meets the quality bar in testing; every control is built and passes its control test |
 | 4. Govern and test | Is it safe, fair and controlled? | Formal validation and sign-offs | All sign-offs recorded; monitoring plan agreed |
-| 5. Release and adopt | Will users use it every week? | Live monitoring; incident process | Weekly use and results hit targets; no serious incidents; long-term owner confirmed before scaling |
+| 5. Release and adopt | Will users use it every week? | Live monitoring; incident process | Weekly use and leading results hit targets; no serious incidents; long-term owner confirmed before scaling |
 | 6. Measure and iterate | Is it delivering the outcome, and what comes next? | Ongoing monitoring | Each month (and at the end of each feature wave): keep, change or stop each AI product; each quarter: invest more, adjust or stop overall |
 
-**Building starts on day one** (from the RM plan): a working prototype in week 1,
-used in discovery. The pace is set by data access and review, not build time.
+**Building starts on day one** (from the RM plan): a rough clickable mock-up within
+days of the first interviews (sub-step 1.6), on sample data. The pace is set by the
+limiting factor (usually data access and review), not build time.
 
 ## What happens in each step
 One item per playbook sub-step, in the same order (1.0 to 6.6).

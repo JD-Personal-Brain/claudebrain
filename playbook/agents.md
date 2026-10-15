@@ -12,7 +12,11 @@ they keep my reference pages current and are not part of the product machine.
 Written with the **agent-spec** skill. Every agent follows the AI principles in
 `product-framework.md`: assistive first, one job each, read-only or draft-only unless a named
 person approves, and every action logged. Auto agents act only within their
-listed actions, and those marked ⚠️ wait until the bank allows it.
+listed actions. ⚠️ on an Auto agent means it sends requests, reminders, reports
+or alerts to people outside the project team, or changes a live system, so it
+depends on the bank allowing that. Every agent follows K25 (agents stop rather
+than guess): if an input is missing, stale or fails a check, it stops and alerts
+its person in charge; a monitor never reports a pass on missing data.
 
 > ⚠️ **How much to trust this.** Written 2026-10-09 from the playbook, not
 > from Associated Bank. "Runs on" tools are guesses from `tech-stack.md`, and
@@ -24,14 +28,14 @@ listed actions, and those marked ⚠️ wait until the bank allows it.
 - **Used in:** 1.0
 - **For:** the team
 - **Kind:** Draft → Draft
-- **Job:** create a new project's starting files from its one-line project statement.
+- **Job:** create a new project's starting files from its one-line project statement, and add the project's section to the one shared tracker (not a new tracker).
 - **Starts when:** the product manager writes the project statement.
 - **Inputs:** the project statement; the task tables in `product-machine.md`; the who-decides list in `product-framework.md`.
-- **Allowed actions:** create draft files: the tracker with every task listed, the decision log, the risk and issue list and the project file.
+- **Allowed actions:** create draft files: the project's section of the shared tracker with every task listed, the decision log, the risk and issue list and the project file.
 - **Not allowed:** assigning owners or dates; contacting anyone.
-- **Outputs:** a draft project pack, ready for owners and dates.
+- **Outputs:** a draft project pack, ready for owners and dates, with a "limiting factor" field at the top of the tracker section (filled in by the product manager).
 - **Stops when:** every file exists. If the statement is missing, it asks for it and creates nothing.
-- **Proof it worked:** the tracker has one row for every task in the Product Machine's task tables.
+- **Proof it worked:** the project's tracker section has one row for every task in the Product Machine's task tables.
 - **Person in charge:** product manager.
 - **Runs on (guess):** Power Automate with Microsoft Lists or Planner.
 - **To confirm:** ⚠️ which tracker the bank uses.
@@ -87,13 +91,13 @@ listed actions, and those marked ⚠️ wait until the bank allows it.
 ### M5. Baseline recorder
 - **Used in:** 1.7
 - **For:** the team
-- **Kind:** Me → Auto
+- **Kind:** Me → Auto ⚠️
 - **Job:** record each measure's "before" number on a schedule, from the day the measure is set.
 - **Starts when:** the measure's definition and source are agreed in 1.7.
 - **Inputs:** the measure's definition, its source and its owner.
 - **Allowed actions:** read the source; save a dated snapshot.
 - **Not allowed:** changing the definition; filling gaps with estimates.
-- **Outputs:** a dated history of the measure, for the pilot group and the comparison group.
+- **Outputs:** a dated history of the measure for the target users; split by pilot group and comparison group once 2.8 confirms them.
 - **Stops when:** the product is retired or the measure is replaced. If the source is missing or late, it alerts the data owner.
 - **Proof it worked:** the first snapshot matches the number recorded by hand in 1.7.
 - **Person in charge:** product manager; the data owner owns the source.
@@ -190,7 +194,7 @@ listed actions, and those marked ⚠️ wait until the bank allows it.
 - **Allowed actions:** run the control tests in the test environment; record the results.
 - **Not allowed:** running anything in the live environment; changing controls.
 - **Outputs:** a pass or fail for each control, with proof.
-- **Stops when:** every control is tested. Any failure alerts the product manager.
+- **Stops when:** every control is tested. Any failure alerts the product manager. If a control's test case or the test environment is missing, it reports that control as "not checked", never as a pass, and alerts the product manager.
 - **Proof it worked:** a control that was broken on purpose shows as a failure.
 - **Person in charge:** product manager; risk reviews failures.
 - **Runs on (guess):** AWS Bedrock evaluation or a test script in the platform.
@@ -200,12 +204,12 @@ listed actions, and those marked ⚠️ wait until the bank allows it.
 - **Used in:** 3.6
 - **For:** the team
 - **Kind:** Draft → Draft
-- **Job:** suggest new test cases from user feedback and test failures.
-- **Starts when:** each build cycle.
-- **Inputs:** the test set; feedback; failures from earlier test runs.
+- **Job:** draft the first test set at 3.6, then suggest new test cases from user feedback and test failures.
+- **Starts when:** at 3.6, once release 1's stories are agreed; after that, each build cycle.
+- **Inputs:** the release 1 user stories and acceptance criteria (2.5); the must-refuse cases from the control requirements (2.4); later, the test set, feedback and failures from earlier test runs.
 - **Allowed actions:** read; propose new cases.
 - **Not allowed:** writing the "good answer" (experienced users do that); changing old test set versions.
-- **Outputs:** proposed cases, each with the reason it's needed.
+- **Outputs:** at 3.6, a draft first test set built from the stories, acceptance criteria and must-refuse cases; later, proposed new cases, each with the reason it's needed.
 - **Stops when:** the proposals are delivered.
 - **Proof it worked:** users accept the cases that matter, and they catch real problems.
 - **Person in charge:** product manager; experienced users approve the answers.
@@ -215,14 +219,14 @@ listed actions, and those marked ⚠️ wait until the bank allows it.
 ### M13. Data-use checker
 - **Used in:** 4.2
 - **For:** the team
-- **Kind:** Draft → Auto
+- **Kind:** Draft → Auto ⚠️
 - **Job:** compare the data the product actually reads with the signed data contract.
 - **Starts when:** each new frozen version, and monthly after launch.
 - **Inputs:** the access logs or query history; the data contract.
 - **Allowed actions:** read; report differences.
 - **Not allowed:** changing access.
 - **Outputs:** a list of any fields read that aren't in the contract.
-- **Stops when:** every field read is checked. Any difference alerts privacy and the product manager.
+- **Stops when:** every field read is checked. Any difference alerts privacy and the product manager. If access logs are missing or older than [X] days, it reports "not checked" and alerts privacy.
 - **Proof it worked:** a field added on purpose in testing gets flagged.
 - **Person in charge:** product manager; privacy reviews flags.
 - **Runs on (guess):** Snowflake access history (Horizon).
@@ -251,10 +255,10 @@ listed actions, and those marked ⚠️ wait until the bank allows it.
 - **Job:** keep the release readiness checklist current and flag gaps.
 - **Starts when:** release planning begins.
 - **Inputs:** the readiness checklist; the tracker.
-- **Allowed actions:** read the tracker; tick items when their proof exists; flag what's missing.
+- **Allowed actions:** read the tracker; mark items "proof found" for the product manager to confirm; tick automatically only items backed by a system record (a recorded sign-off, a logged dry run); flag what's missing.
 - **Not allowed:** marking an item done without its proof.
 - **Outputs:** a readiness view with gaps, owners and dates.
-- **Stops when:** every item is ticked or has an owner and a date.
+- **Stops when:** every item is ticked, confirmed by the product manager, or has an owner and a date.
 - **Proof it worked:** a spot check of ticked items against their proof.
 - **Person in charge:** product manager.
 - **Runs on (guess):** Power Automate with the tracker.
@@ -296,13 +300,13 @@ listed actions, and those marked ⚠️ wait until the bank allows it.
 - **Used in:** 6.4
 - **For:** the team
 - **Kind:** Draft → Draft
-- **Job:** build the monthly keep/change/stop pack from the dashboard and the impact note.
+- **Job:** build the monthly keep/change/stop pack from the dashboard and the impact note; every third month, also a quarterly summary for the invest more / adjust / stop decision (6.4).
 - **Starts when:** monthly, before the review.
 - **Inputs:** the dashboard; the impact note; quality trends; top feedback.
 - **Allowed actions:** read; write a draft pack.
 - **Not allowed:** making the keep/change/stop recommendation for the product manager.
-- **Outputs:** a draft pack, one page per feature.
-- **Stops when:** every live feature has a page.
+- **Outputs:** a draft pack, one page per AI product; every third month, a quarterly summary for the invest more / adjust / stop decision (6.4).
+- **Stops when:** every live AI product has a page.
 - **Proof it worked:** the numbers in the pack match the dashboard.
 - **Person in charge:** product manager.
 - **Runs on (guess):** M365 Copilot with Power BI.
@@ -314,10 +318,10 @@ listed actions, and those marked ⚠️ wait until the bank allows it.
 - **Kind:** Me → Draft
 - **Job:** total time spent and waits from the first-time logs, work out each sub-step's wait index, and list the candidates to cut and to automate.
 - **Starts when:** at the end of the first full pass through all six steps.
-- **Inputs:** the first-time logs from every sub-step.
+- **Inputs:** the first-time logs from every sub-step; the tracker (dates); the decision log (the dates each gate pack was ready and each decision was made); the release notes.
 - **Allowed actions:** read; write a draft summary.
 - **Not allowed:** deciding what to delete or which agents to build.
-- **Outputs:** time and waits by step, sub-steps ranked by wait index (highest first), the tasks to consider cutting, and the candidates that passed the automation check.
+- **Outputs:** time and waits by step, sub-steps ranked by wait index (highest first), the tasks to consider cutting, the candidates that passed the automation check, and the four machine measures (days from kickoff to pilot, days at each gate, releases per month in the pilot, and the wait index).
 - **Stops when:** every log is read.
 - **Proof it worked:** the totals add up to the logs.
 - **Person in charge:** product manager.
@@ -380,7 +384,7 @@ listed actions, and those marked ⚠️ wait until the bank allows it.
 - **Kind:** Draft → Draft
 - **Job:** draft the problem statement, the outcome, user stories and acceptance criteria.
 - **Starts when:** the Discover gate is passed.
-- **Inputs:** the Discover gate pack; the control requirements from 2.4.
+- **Inputs:** the Discover gate pack (2.1); for stories in 2.5, also the control requirements from 2.4.
 - **Allowed actions:** read; write drafts.
 - **Not allowed:** approving anything; adding scope nobody asked for.
 - **Outputs:** a draft brief and draft stories with acceptance criteria.
@@ -393,14 +397,14 @@ listed actions, and those marked ⚠️ wait until the bank allows it.
 ### M24. Data contract checker
 - **Used in:** 2.3, 3.2
 - **For:** the team
-- **Kind:** Draft → Draft (2.3); Me → Auto (3.2, ongoing mode)
+- **Kind:** Draft → Draft (2.3); Me → Auto ⚠️ (3.2, ongoing mode)
 - **Job:** check that every field in the data contract exists, is fresh enough and passes its quality checks.
 - **Starts when:** the field list is drafted in 2.3; after that, on every data refresh.
 - **Inputs:** the data contract; the tables and their quality and access records.
 - **Allowed actions:** read-only checks; alert the data owner on failure.
 - **Not allowed:** changing data or access.
 - **Outputs:** a gap list in Define; after that, a pass or fail for each refresh.
-- **Stops when:** every field is checked. In its ongoing mode, it runs on every refresh until the product is retired.
+- **Stops when:** every field is checked. In its ongoing mode, it runs on every refresh until the product is retired. If a table or its quality record is missing or late, it reports "not checked" for those fields, never a pass, and alerts the data owner.
 - **Proof it worked:** the data owner signs off the gap list; a field broken on purpose in testing gets flagged.
 - **Person in charge:** the data owner.
 - **Runs on (guess):** Snowflake Cortex and Snowflake data checks.
@@ -418,7 +422,7 @@ listed actions, and those marked ⚠️ wait until the bank allows it.
 - **Outputs:** a pre-filled intake, with likely high-risk areas flagged.
 - **Stops when:** the intake is drafted.
 - **Proof it worked:** the risk partner sets the rating and confirms the draft was accurate.
-- **Person in charge:** the risk partner.
+- **Person in charge:** the product manager; the risk partner confirms the draft's accuracy.
 - **Runs on (guess):** a Copilot Studio agent grounded in the bank's policies.
 - **To confirm:** ⚠️ the bank's intake form and process.
 
@@ -432,7 +436,7 @@ listed actions, and those marked ⚠️ wait until the bank allows it.
 - **Allowed actions:** run the test set in the test environment; score; report.
 - **Not allowed:** changing the test set or the thresholds; releasing anything.
 - **Outputs:** a score report against each part of the quality bar.
-- **Stops when:** every test case is scored. A score below the bar alerts the product manager.
+- **Stops when:** every test case is scored. A score below the bar alerts the product manager. If the test set, the thresholds or any output is missing, it reports "not scored" for those cases, never a pass, and alerts the product manager.
 - **Proof it worked:** experienced users grade a sample, and their grades match.
 - **Person in charge:** product manager.
 - **Runs on (guess):** AWS Bedrock model evaluation.
@@ -442,14 +446,14 @@ listed actions, and those marked ⚠️ wait until the bank allows it.
 - **Used in:** 4.3
 - **For:** the team
 - **Kind:** Draft → Auto
-- **Job:** try to break the product: ask for other users' data, a credit decision or off-topic answers.
+- **Job:** try to break the product: ask for other users' data, a credit decision, a price or off-topic answers.
 - **Starts when:** a frozen version is ready for review.
 - **Inputs:** the product in test; the attack list, including the must-refuse cases.
 - **Allowed actions:** send test requests in the test environment only.
 - **Not allowed:** anything in the live environment; using real client data outside what the test environment allows.
 - **Outputs:** a failure list.
 - **Stops when:** every attack type is run.
-- **Proof it worked:** risk reviews every failure.
+- **Proof it worked:** a weakness planted on purpose in testing is found; risk reviews every failure.
 - **Person in charge:** the risk partner.
 - **Runs on (guess):** AWS Bedrock.
 - **To confirm:** ⚠️ whether risk runs its own red-teaming as well.
@@ -464,8 +468,8 @@ listed actions, and those marked ⚠️ wait until the bank allows it.
 - **Allowed actions:** read-only analysis; write a report.
 - **Not allowed:** changing the product; deciding whether a difference is acceptable.
 - **Outputs:** a fairness report.
-- **Stops when:** the report is complete; it runs again each month after launch.
-- **Proof it worked:** compliance reviews the results.
+- **Stops when:** the report is complete; it runs again each month after launch. If outputs or group data for a period are missing, it reports "not checked" for that period and alerts compliance.
+- **Proof it worked:** a bias planted on purpose in test data is flagged; compliance reviews the results.
 - **Person in charge:** compliance.
 - **Runs on (guess):** Snowflake, Power BI.
 - **To confirm:** ⚠️ which groups compliance wants compared.
@@ -528,7 +532,7 @@ listed actions, and those marked ⚠️ wait until the bank allows it.
 - **Allowed actions:** run the test set; read live signals; alert.
 - **Not allowed:** fixing, rolling back or pausing the product (the product manager decides).
 - **Outputs:** the score trend and alerts.
-- **Stops when:** each run is complete.
+- **Stops when:** each run is complete. If the test set, live outputs or thresholds are missing, it reports "not checked", never "no drift", and alerts the product manager.
 - **Proof it worked:** alerts are reviewed within [X] days, and a drop introduced on purpose in testing triggers one.
 - **Person in charge:** product manager.
 - **Runs on (guess):** AWS Bedrock model evaluation, Power Automate.
@@ -575,14 +579,20 @@ scheduled task, from a skill in this repo.
 These come up in the review tables but aren't agents. Each one is a template or
 a library, built once and reused.
 - **Story library (2.5):** reusable user stories for permissions, logging, feedback and controls.
+- **Approved vendors list (4.6):** the bank's list, checked for every vendor the product relies on.
+- **Release checklist (5.2):** written at the first manual release, then reused for every release.
 - **Monitoring plan template (4.8):** the standard plan, filled in for each product.
 - **Live dashboard template (6.1):** one Power BI template for the five kinds of measures.
 
 ## Agents with an ongoing mode
-Four agents keep running after launch, not just once:
+Ongoing mode means an agent first used once in a sub-step that then keeps
+checking the live product until it's retired. Five agents have one:
+- **M5 Baseline recorder:** set up in 1.7; it keeps recording each measure on a schedule until the product is retired or the measure is replaced, and alerts the data owner if the source is missing or late.
 - **M13 Data-use checker:** it runs again monthly after launch (4.2) and alerts privacy on any difference.
 - **M24 Data contract checker:** after Define, it runs on every data refresh (3.2) and alerts the data owner on failure.
 - **M28 Fairness monitor:** set up in 4.4; its ongoing mode re-runs the check monthly after launch (4.4), and fairness is in the monitoring plan (4.8).
 - **M32 Quality watchdog:** re-runs the test set on every change and at least monthly (6.3), and alerts the product manager when quality slips.
 
-_Last updated: 2026-10-14_
+Agents built to run on a schedule from the start (M11, M17, M18, M26, M30 and M31) are not "ongoing mode": running repeatedly is their normal job.
+
+_Last updated: 2026-10-15_

@@ -47,9 +47,10 @@ Fill in the first-time log (see `README.md`) for every sub-step.
   1. Score the candidate platforms on five criteria: where users work, where the data lives, fit with approvals and controls, cost model, and speed to a pilot.
   2. Meet each platform team for 30 minutes: "Could we do X? What would block us?"
   3. Write the delivery path: build environment → test → live, who moves it, and what approval each move needs.
-  4. Record the choice and the runner-up in the decision log.
+  4. Check the approved vendors list for the platform and model; if a vendor review is missing, start it now, because it is slow (K14).
+  5. Record the choice and the runner-up in the decision log.
 - **Output:** the platform decision with its scores, and the delivery path.
-- **Done when:** the platform team agrees it's feasible, and the decision is logged.
+- **Done when:** the platform team agrees it's feasible, the decision is logged, and IT has confirmed the planned connections are allowed under its data rules (K20).
 - **Automation watch:**
   - First time: **Me**, with platform teams.
   - Note: the questions each platform team asked. They become a standard feasibility checklist.
@@ -67,12 +68,13 @@ Fill in the first-time log (see `README.md`) for every sub-step.
   - Which tables are trusted ("certified") and who may see what. ⚠️ Ask the data team how certification works at the bank.
 - **First time, step by step:**
   1. From the Discover target and the 1.6 mock-up screens, list a first set of fields the product needs. Update the list when the user stories (2.5) are done.
-  2. For each field: source, owner, refresh rate needed, refresh rate today, quality check, and who may see it.
+  2. For each field: source, owner, refresh rate needed, refresh rate today, quality check, who may see it, and whether it is sensitive (to be masked or labeled).
   3. Check that each field exists and is fresh enough. Mark the gaps.
   4. Agree with the data owner how each gap is fixed or worked around.
   5. Get the data owner's sign-off, in writing.
+  6. After 2.5, add any new fields and get the data owner to re-confirm in writing.
 - **Output:** the data contract table and a gap list.
-- **Done when:** every field is either confirmed or has an agreed fix, and the owner has signed.
+- **Done when:** every field is either confirmed or has an agreed fix, and the data owner has signed the final field list.
 - **Automation watch:**
   - First time: **Draft**.
   - Note: how long the sign-off took, and which gaps came up. Expect the same gaps on the next project.
@@ -87,14 +89,15 @@ Fill in the first-time log (see `README.md`) for every sub-step.
 - **Why it matters:** controls are much cheaper to build in from the start than to bolt on at step 4. An early rating also tells you how long approval will take.
 - **Know first:**
   - The bank's AI or model risk intake process and form. ⚠️ Not known yet.
-  - Your risk contact from 1.0.
-  - The governance basics in `tech-stack.md` (SR 11-7, privacy, fair lending).
+  - Your risk partner from 1.0.
+  - The governance basics in `tech-stack.md` (SR 11-7, possibly replaced by SR 26-2: item W17 in the Open Items log; privacy; fair lending).
 - **First time, step by step:**
-  1. Get the intake form and ask your risk contact how long a review usually takes.
+  1. Get the intake form and ask the risk partner how long a review usually takes.
   2. Fill it in from the brief so far (2.1) and the Discover gate pack: what the product does, which data (the first field list from 2.3), who uses it, what it can change, and whether anything reaches a client.
   3. Say plainly what it does **not** do, for example "no credit decisions, no pricing."
   4. Submit it, then meet the risk partner to walk through it.
   5. Write down the control requirements they give you (human approval, logging, guardrails, permissions, consent for any recorded meeting) and copy them into the backlog as must-haves.
+  6. Share the control requirements list with compliance, privacy and security, so nothing in step 4 is a surprise.
 - **Output:** the submitted intake, an early rating, and a list of control requirements.
 - **Done when:** the risk partner has given an early rating and the control list.
 - **Automation watch:**
@@ -160,6 +163,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
   3. Fill in the value model with real numbers where you have them, and [X] where you don't.
   4. Agree with Finance how impact is counted: how wins are tagged, and how the comparison group is used.
   5. Define each measure exactly (source, formula, owner), so the dashboard can be built from it.
+  6. If a definition changed from the one recorded in 1.7, or a new business-impact measure was added, record its baseline now (date, source, definition), and point M5 at the final definitions; once 2.8 confirms the pilot and comparison groups, split the baseline by group.
 - **Output:** the measures sheet, the quality bar, the value model, and the method Finance agreed.
 - **Done when:** the sponsor and Finance agree, and every measure has a source.
 - **Automation watch:**
@@ -189,35 +193,40 @@ Fill in the first-time log (see `README.md`) for every sub-step.
   - First time: **Me** for the scope, **Draft** for the pack.
   - Note: what you copied into the gate pack by hand.
   - Agent: **M6 Gate pack drafter** (agent library) from Discover, reused here. *Draft*.
-- **For RM analytics:** wave 1 = pre-meeting briefs, meeting follow-ups, call notes into Salesforce and the weekly opportunity list.
+- **For RM analytics:** feature wave 1 = pre-meeting briefs, meeting follow-ups, call notes into Salesforce and the weekly opportunity list.
 
 ---
 
 ## The Define gate
 
-- **Who decides:** the sponsor, with the risk partner and the data owner.
+- **Who decides:** the sponsor, with the risk partner and the data owner (in writing when the gate is clean; a meeting only if a criterion is contested or a decider asks for one; see the Product Machine).
 - **Bring:** the gate pack from 2.8.
 - **Go means:** brief, data contract and risk rating agreed, and the value model shows payback within [X] months.
 - **No-go means:** fix the gap (often data or risk), or narrow the scope.
-- **Record:** the decision in the decision log.
+- **Record:** the date the gate pack was ready, the decision date, the decision, who decided and any conditions, in the decision log.
 
 ---
 
 ## Define automation review (do this at the gate)
 
+Run the automation check from the Product Machine on every Me and Draft task,
+using your first-time logs: cut first (should it exist, delete, simplify, make
+it faster), then automate what's left (repeat? stable? safe alone?). Then update this shortlist and the Define
+table in `product-machine.md`.
+
 | Sub-step | Agent | First time | Aim for | Already specified? |
 |---|---|---|---|---|
 | 2.1, 2.5 | M23 Requirements drafter | Draft | Draft | Yes, M23 |
-| 2.2 | Platform fit checker | Me | Draft | Yes, M7 |
+| 2.2 | M7 Platform fit checker | Me | Draft | Yes, M7 |
 | 2.3 | M24 Data contract checker | Draft | Draft | Yes, M24 |
 | 2.4 | M25 Risk intake assistant | Draft | Draft | Yes, M25 |
-| 2.5 | Story library (reusable stories, not an agent) | Draft | Draft | Asset: agent library |
-| 2.6 | Decision log drafter | Me | Draft | Yes, M8 |
+| 2.5 | None (a story library of reusable stories) | Draft | Draft | Asset: agent library |
+| 2.6 | M8 Decision log drafter | Me | Draft | Yes, M8 |
 | 2.6, 2.8 | None: priorities and scope stay with a person | Me | Me | — |
-| 2.7 | Measures sheet builder | Draft | Draft | Yes, M9 |
+| 2.7 | M9 Measures sheet builder | Draft | Draft | Yes, M9 |
 | 2.8 | None: recording the long-term owner stays with a person | Me | Me | — |
-| 2.8 | Gate pack drafter (shared with Discover) | Draft | Draft | Yes, M6 |
+| 2.8 | M6 Gate pack drafter (shared with Discover) | Draft | Draft | Yes, M6 |
 
 **First time** = how the task is done on the first project. **Aim for** = its kind in `product-machine.md`.
 
-_Last updated: 2026-10-09_
+_Last updated: 2026-10-15_

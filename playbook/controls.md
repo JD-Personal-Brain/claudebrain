@@ -33,8 +33,8 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 - **What it is:** every agent only reads by default and has a short list of things it may do.
 - **Why it matters:** the more an agent can do, the more review it needs. ⚠️ I expect a short list to help keep the risk rating low.
 - **Set in:** 3.1 ("keep every agent read-only unless a user clicks to approve an action"; it comes from the AI principles in my product framework, and the risk intake doesn't name it yet)
-- **Built in:** 3.1
-- **Proved in:** 4.5 (the playbook doesn't name a test for this yet)
+- **Built in:** 3.1, 3.4 (a test that a blocked action fails)
+- **Proved in:** 3.4, 4.5
 - **Watched in:** not covered in the playbook yet
 - **Tool (guess):** the agent's permissions on each platform
 - **Proof:** the agent spec's "allowed" and "not allowed" lists, and a test that a blocked action fails
@@ -56,13 +56,13 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 - **Group:** Data
 - **What it is:** each user gets answers only from data they could already open. The quality bar allows no failures here.
 - **Why it matters:** a leak of one client's data to the wrong banker is the most serious failure the product can have.
-- **Set in:** 2.7
-- **Built in:** 3.2
+- **Set in:** 2.4 (a control requirement), 2.7 (zero tolerance in the quality bar)
+- **Built in:** 3.2, 3.4, 3.6
 - **Proved in:** 3.7, 4.2, 4.3
 - **Watched in:** 6.3
 - **Tool (guess):** Snowflake access rules and Salesforce sharing rules
 - **Proof:** a test where one user tries to see another user's clients and fails
-- **Comes from:** Bank policy: the bank's access rules and client confidentiality ⚠️; customer privacy law (the Gramm-Leach-Bliley Act) also applies where individuals' data is involved, such as business owners and guarantors. To change it, ask privacy.
+- **Comes from:** Bank policy: the bank's access rules and client confidentiality ⚠️; customer privacy law (the Gramm-Leach-Bliley Act) covers individuals' personal (consumer) relationships with the bank; whether it reaches business owners' and guarantors' data in commercial lending is for privacy to confirm ⚠️. Bank policy protects it either way. To change it, ask privacy.
 
 ### K5. A data contract
 - **Group:** Data
@@ -79,7 +79,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 ### K6. Sensitive data is hidden or labeled
 - **Group:** Data
 - **What it is:** sensitive fields are hidden ("masked") and sensitive files carry labels that limit who can open them.
-- **Why it matters:** data about individuals, such as business owners and guarantors, is protected by law.
+- **Why it matters:** data about individuals, such as business owners and guarantors, needs protecting. Customer privacy law (the Gramm-Leach-Bliley Act) covers individuals' personal (consumer) relationships with the bank; whether it reaches business owners' and guarantors' data in commercial lending is for privacy to confirm ⚠️. Bank policy protects it either way.
 - **Set in:** 2.3 (who may see each field)
 - **Built in:** 3.2, 3.4
 - **Proved in:** 4.2
@@ -106,7 +106,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 - **Why it matters:** they catch what the instructions alone miss.
 - **Set in:** 2.4
 - **Built in:** 3.4
-- **Proved in:** 4.3, 4.5
+- **Proved in:** 4.3, 4.5 (the guardrail settings are confirmed in the control check)
 - **Watched in:** 6.3 (how often a guardrail blocks an answer)
 - **Tool (guess):** Bedrock Guardrails and the Einstein Trust Layer
 - **Proof:** the guardrail settings, and red-team results
@@ -122,13 +122,13 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 - **Watched in:** 6.3
 - **Tool (guess):** a test grader agent
 - **Proof:** the test report for the version being released
-- **Comes from:** Law or regulator: the regulators' model risk guidance (SR 11-7, possibly replaced by SR 26-2: item W17 in the Open Items log) expects testing; the thresholds themselves are our choice. ⚠️ Whether the bank treats this AI product as a "model" under its model risk policy is the bank's call. To change it, ask model risk.
+- **Comes from:** Law or regulator: the regulators' model risk guidance (SR 11-7, with the OCC's matching Bulletin 2011-12; possibly replaced by SR 26-2: item W17 in the Open Items log) expects testing; the thresholds themselves are our choice. ⚠️ Whether the bank treats this AI product as a "model" under its model risk policy is the bank's call. To change it, ask model risk.
 
 ### K10. Red-teaming
 - **Group:** Quality
 - **What it is:** trying on purpose to make the product reveal other users' data, give a credit decision or answer off-topic.
 - **Why it matters:** reviewers want to see how it fails, not only how it works.
-- **Set in:** 4.3 (not set any earlier in the playbook yet)
+- **Set in:** 3.6 (the must-refuse cases seed the red-team plan), 4.3
 - **Built in:** 4.3
 - **Proved in:** 4.3
 - **Watched in:** not covered in the playbook yet
@@ -170,14 +170,14 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 - **Watched in:** not covered in the playbook yet. The RM plan says the risk partner is told before a material change
 - **Tool (guess):** the bank's intake form
 - **Proof:** the confirmed rating and the registration record
-- **Comes from:** Law or regulator: the regulators' model risk guidance (SR 11-7, possibly replaced by SR 26-2), carried out through the bank's model risk policy. ⚠️ Whether the bank treats this AI product as a "model" is the bank's call. To change it, ask model risk.
+- **Comes from:** Law or regulator: the regulators' model risk guidance (SR 11-7, with the OCC's matching Bulletin 2011-12; possibly replaced by SR 26-2), carried out through the bank's model risk policy. ⚠️ Whether the bank treats this AI product as a "model" is the bank's call. To change it, ask model risk.
 
 ### K14. Vendor reviews
 - **Group:** Approvals
 - **What it is:** each outside vendor the product relies on is on the bank's approved list for this use, with terms that say what the vendor may do with the bank's data.
 - **Why it matters:** ⚠️ regulators expect the bank to manage the risk of the vendors it relies on (US interagency guidance on third parties, 2023; check for updates).
-- **Set in:** 4.6 (start any missing review on day one; the playbook has no earlier step for it yet)
-- **Built in:** 4.6
+- **Set in:** 2.2 (check the approved vendors list; start any missing review now)
+- **Built in:** 2.2 (missing reviews started), 4.6
 - **Proved in:** 4.6
 - **Watched in:** not covered in the playbook yet
 - **Tool (guess):** the bank's approved vendors list
@@ -188,17 +188,17 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 - **Group:** Approvals
 - **What it is:** risk, compliance, privacy and security each approve the release. Only a named partner can give a sign-off, and it is never automated.
 - **Why it matters:** this is the formal approval. Everything before it is preparation.
-- **Set in:** 1.0 (who decides, and asking the risk contact what they'll need to see)
+- **Set in:** 1.0 (who decides, and asking the risk partner what they'll need to see)
 - **Built in:** 4.7
 - **Proved in:** 4.7
 - **Watched in:** 5.1
 - **Tool (guess):** Power Automate approvals, or the bank's own system
 - **Proof:** each sign-off recorded with a name and a date
-- **Comes from:** Bank policy: the bank's approval process for AI and models ⚠️. To change it, ask the policy's owner at the bank [name needed].
+- **Comes from:** Bank policy: the bank's approval process for AI and models ⚠️. To change it, ask model risk, as owner of the bank's AI and model approval policy ⚠️ [name needed].
 
 ### K16. Monitoring and an incident process
 - **Group:** After launch
-- **What it is:** a plan for what is watched after launch (quality, guardrail blocks, user overrides, incidents and fairness), and a tested way to pause the product and call the right people.
+- **What it is:** a plan for what is watched after launch (quality, guardrail blocks, user overrides, incidents, fairness, data use against the contract (M13) and data quality on each refresh (M24)), and a tested way to pause the product and call the right people.
 - **Why it matters:** AI quality can slip over time as data, models or instructions change. Approval is not the end of the control work.
 - **Set in:** 4.8
 - **Built in:** 4.8
@@ -206,19 +206,19 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 - **Watched in:** 5.6, 6.1, 6.3
 - **Tool (guess):** Power BI, and a quality watchdog agent
 - **Proof:** the monitoring plan, a dry run of the incident process and the incident log
-- **Comes from:** Law or regulator: the regulators' model risk guidance expects ongoing monitoring; the incident process follows bank policy. ⚠️ Whether the bank treats this AI product as a "model" is the bank's call. To change it, ask model risk.
+- **Comes from:** Law or regulator: the regulators' model risk guidance (SR 11-7, with the OCC's matching Bulletin 2011-12; possibly replaced by SR 26-2) expects ongoing monitoring; the incident process follows bank policy. ⚠️ Whether the bank treats this AI product as a "model" is the bank's call. To change it, ask model risk.
 
 ### K17. Frozen versions and change control
 - **Group:** After launch
 - **What it is:** reviewers approve one frozen version. Every fix creates a new version that is re-tested, and a change that makes things worse is fixed, rolled back or paused.
 - **Why it matters:** an approval only means something if the thing approved is the thing running.
 - **Set in:** 4.3
-- **Built in:** 4.3
+- **Built in:** 3.3, 3.6, 4.3
 - **Proved in:** 4.3 (each fix creates a new frozen version), 4.5
-- **Watched in:** 6.3
+- **Watched in:** 5.6, 6.3
 - **Tool (guess):** each platform's version history, and a quality watchdog agent
 - **Proof:** the list of versions, with the test results for each
-- **Comes from:** Law or regulator: the regulators' model risk guidance expects change control ⚠️. To change it, ask model risk.
+- **Comes from:** Law or regulator: the regulators' model risk guidance (SR 11-7, with the OCC's matching Bulletin 2011-12; possibly replaced by SR 26-2) expects change control ⚠️. To change it, ask model risk.
 
 ### K18. Separate build, test and live spaces
 - **Group:** Approvals
@@ -226,7 +226,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 - **Why it matters:** nothing untested reaches bankers, and automated tests never run against live data.
 - **Set in:** 2.2
 - **Built in:** 2.2 (the path is written there)
-- **Proved in:** 4.5 (the frozen version reached test by the agreed path, the move to live is approved, and IT has approved every connection)
+- **Proved in:** 4.5 (the frozen version reached test by the agreed path, there is a named approver and an agreed route for the move to live (the approval itself is recorded in 5.2), and IT has approved every connection)
 - **Watched in:** 5.2
 - **Tool (guess):** Power Platform environments and the bank's release process
 - **Proof:** the written delivery path, and the approval recorded for each move
@@ -237,7 +237,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 - **What it is:** the product uses only the AI models the bank has approved, running where the bank has approved them.
 - **Why it matters:** a model the bank hasn't reviewed can't be relied on for bank data.
 - **Set in:** 3.3 (which model is approved is checked there; the playbook has no earlier step for it yet)
-- **Built in:** 3.3
+- **Built in:** 3.1, 3.3 (both name the approved model)
 - **Proved in:** 4.6 (the model's provider is confirmed as an approved vendor; a check against the bank's list of approved models is not covered in the playbook yet)
 - **Watched in:** not covered in the playbook yet
 - **Tool (guess):** AWS Bedrock's model list, and the models inside Microsoft and Salesforce
@@ -250,7 +250,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 - **Why it matters:** they often block an idea outright, so they are checked before the platform is chosen.
 - **Set in:** 2.2
 - **Built in:** 2.2 (checked there, not built)
-- **Proved in:** 4.5 (the frozen version reached test by the agreed path, the move to live is approved, and IT has approved every connection)
+- **Proved in:** 4.5 (the frozen version reached test by the agreed path, there is a named approver and an agreed route for the move to live (the approval itself is recorded in 5.2), and IT has approved every connection)
 - **Watched in:** not covered in the playbook yet
 - **Tool (guess):** Power Platform data policies
 - **Proof:** IT's confirmation that every connection the product uses is allowed
@@ -302,18 +302,18 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 - **Watched in:** not covered in the playbook yet
 - **Tool (guess):** Teams meeting settings and M365 Copilot recaps
 - **Proof:** a test showing no recap is drafted from a meeting without recorded consent
-- **Comes from:** Law or regulator: call-recording consent laws, which differ by state, and the bank's recording policy. To change it, ask compliance.
+- **Comes from:** Law or regulator: call-recording consent laws, which differ by state, and the bank's recording policy. ⚠️ In the bank's footprint, Illinois generally requires every party's consent to record a private conversation, while Wisconsin, Minnesota and Missouri generally require one party's; compliance confirms. To change it, ask compliance.
 
 ### K25. Agents stop rather than guess
 - **Group:** Quality
 - **What it is:** if an agent's inputs are missing, stale or fail a check, it stops and alerts its owner instead of producing a weaker answer.
 - **Why it matters:** a confident answer built on bad data is worse than no answer, because people act on it.
 - **Set in:** 3.1
-- **Built in:** 3.1
-- **Proved in:** 4.5
+- **Built in:** 3.1, 3.4 (a test with a missing or stale input on purpose)
+- **Proved in:** 3.4, 4.5
 - **Watched in:** not covered in the playbook yet
 - **Tool (guess):** each agent's stop rule, with alerts through Power Automate
 - **Proof:** a test where an agent is given a missing or stale input on purpose and stops with an alert
 - **Comes from:** Our choice: our agent specs. To change it, ask the product manager.
 
-_Last updated: 2026-10-10_
+_Last updated: 2026-10-15_

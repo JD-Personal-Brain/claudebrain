@@ -1,7 +1,7 @@
 # Step 3: Build, the first time
 
 **The question:** what's the smallest version users will use and trust?
-**The gate:** meets the quality bar in testing; every control has proof.
+**The gate:** meets the quality bar in testing; every control is built and passes its control test.
 **Governance thread:** controls built in; test set created.
 
 Build runs in short cycles: build a piece, test it, show users, repeat.
@@ -17,14 +17,14 @@ log (see `README.md`) for every sub-step.
 
 ## 3.1 Design the solution and choose the AI capabilities
 
-- **Goal:** agree how the pieces fit: which agents, data flows, automations and integrations.
+- **Goal:** agree how the pieces fit: which agents, retrieval with sources, data flows, workflow automations and system integrations.
 - **Why it matters:** a one-page design stops each team building its own idea of the product.
 - **Know first:**
   - The release 1 scope, data contract and control requirements from Define.
   - The AI principles in `product-framework.md`: assistive first, one job each, built where the work happens.
 - **First time, step by step:**
   1. Draw the flow on one page: data in → logic → AI writing → where the user sees it → feedback back in.
-  2. For each AI piece, write an agent spec: mission, inputs, allowed actions, outputs, stop condition, proof it worked, person in charge (the agent library, `playbook/agents.md`, is the pattern).
+  2. For each AI piece, write an agent spec: mission, inputs, allowed actions, outputs, stop condition, proof it worked, person in charge, and the AI model it uses, from the bank's approved list. The agent library (`playbook/agents.md`) is the pattern.
   3. Keep every agent read-only unless a user clicks to approve an action.
   4. Give each agent a stop rule: if its inputs are missing, stale or fail a check, it stops and alerts its owner instead of guessing.
   5. Review the design with the platform team and the risk partner.
@@ -66,9 +66,10 @@ log (see `README.md`) for every sub-step.
 - **First time, step by step:**
   1. Write the business rules in plain words with users, for example "flag clients whose balances fell [X]% in 90 days."
   2. Have them built as rules or scores, not as AI.
-  3. Use AI only to explain each result in plain English and suggest a next step, citing the numbers.
-  4. Write the prompts using `prompting.md`, and keep every version.
-  5. Check 10 to 20 outputs by hand with a user after every change.
+  3. Build only on the approved model named in the design (3.1).
+  4. Use AI only to explain each result in plain English and suggest a next step, citing the numbers.
+  5. Write the prompts using `prompting.md`, and keep every version.
+  6. Check 10 to 20 outputs by hand with a user after every change.
 - **Output:** working rules and prompts, with every version kept.
 - **Done when:** users agree the outputs are right and useful on real examples.
 - **Automation watch:**
@@ -90,9 +91,9 @@ log (see `README.md`) for every sub-step.
   3. Guardrails: block sensitive data and off-topic answers.
   4. Logging: every AI action recorded, with who, what and when.
   5. Recordings: meeting recaps come only from recordings made with consent under the bank's recording policy; otherwise the AI works from the user's own notes.
-  6. Test each control on purpose, for example by trying to see another user's clients.
-- **Output:** a controls checklist with proof for each one (a screenshot or a test result).
-- **Done when:** every control has proof.
+  6. Test each control on purpose, for example by trying to see another user's clients. Try an action the agent isn't allowed to take (read-only, K2) and feed it a stale or missing input (it must stop rather than guess, K25); check the guardrails block off-topic answers and sensitive data (K8).
+- **Output:** a controls checklist with a test result for each control.
+- **Done when:** every control is built and passes its control test.
 - **Automation watch:**
   - First time: **Me**, with platform teams.
   - Note: which controls the platform gave you for free, and which needed building. Next project, choose platforms with that in mind.
@@ -125,11 +126,11 @@ log (see `README.md`) for every sub-step.
 
 - **Goal:** a set of real examples with known good answers, used to test every version.
 - **Why it matters:** without a test set, "it's better" is an opinion. With one, it's a score, and it's the core evidence in step 4.
-- **Know first:** the quality bar (2.7), and 3 to 5 experienced users willing to grade answers.
+- **Know first:** the quality bar (2.7), the release 1 stories and acceptance criteria (2.5, 2.8), the control requirements' must-refuse cases (2.4), and 3 to 5 experienced users willing to grade answers.
 - **First time, step by step:**
   1. Collect [X] real examples covering normal, tricky and edge cases. ⚠️ A common start is about 50 to 100.
   2. Have experienced users write or approve the good answer for each one.
-  3. Add "must refuse" cases, such as another user's client, a credit decision or a pricing recommendation.
+  3. Add "must refuse" cases, such as another user's client, a credit decision or a pricing recommendation. They also seed the red-team plan in 4.3 (K10).
   4. Store it with a version number, and never change old versions.
 - **Output:** the test set, versioned.
 - **Done when:** it covers every story in release 1 and the main risks.
@@ -150,10 +151,10 @@ log (see `README.md`) for every sub-step.
   1. Run the test set against the current version.
   2. Score it on each part of the quality bar. Permissions must be 100%.
   3. List the failures, fix the biggest ones and re-run.
-  4. Have experienced users grade a sample of outputs, to check the scoring.
+  4. Have experienced users grade a sample of outputs, to check the scoring, and check that each output traces to the rule or score that produced it (K22).
   5. Build the gate pack: the design, the controls checklist, test results and user feedback.
 - **Output:** a test report and the gate pack.
-- **Done when:** every threshold is met, or the sponsor accepts a documented gap.
+- **Done when:** every threshold is met; permissions is always 100% and can't be waived. Any other shortfall goes to the gate as a documented gap, for the sponsor to accept or reject in the decision log.
 - **Automation watch:**
   - First time: **Draft**.
   - Note: how long a full test run took by hand. That's the time the agent saves on every later change.
@@ -165,27 +166,32 @@ log (see `README.md`) for every sub-step.
 
 ## The Build gate
 
-- **Who decides:** the sponsor, with the product manager.
+- **Who decides:** the sponsor (the product manager brings the gate pack and recommends) (in writing when the gate is clean; a meeting only if a criterion is contested or a decider asks for one; see the Product Machine).
 - **Bring:** the gate pack from 3.7.
-- **Go means:** it meets the quality bar in testing, and every control has proof.
+- **Go means:** it meets the quality bar in testing, and every control is built and passes its control test.
 - **No-go means:** another build cycle on the failures, or a smaller scope.
-- **Record:** the decision in the decision log.
+- **Record:** the date the gate pack was ready, the decision date, the decision, who decided and any conditions, in the decision log.
 
 ---
 
 ## Build automation review (do this at the gate)
 
+Run the automation check from the Product Machine on every Me and Draft task,
+using your first-time logs: cut first (should it exist, delete, simplify, make
+it faster), then automate what's left (repeat? stable? safe alone?). Then update this shortlist and the Build
+table in `product-machine.md`.
+
 | Sub-step | Agent | First time | Aim for | Already specified? |
 |---|---|---|---|---|
-| 3.1 | Agent spec drafter | Me | Draft | Yes, M10 |
-| 3.2 | Data quality checks (M24 in an ongoing mode) | Me | Auto | Yes, M24 (ongoing mode) |
+| 3.1 | M10 Agent spec drafter | Me | Draft | Yes, M10 |
+| 3.2 | M24 Data contract checker (ongoing mode: data quality checks) | Me | Auto | Yes, M24 (ongoing mode) |
 | 3.3 | None new (M26 checks the outputs) | Draft | Draft | — |
-| 3.4 | Controls checker | Me | Auto (test only) | Yes, M11 |
+| 3.4 | M11 Controls checker | Me | Auto (test only) | Yes, M11 |
 | 3.5 | None (its feedback feeds M30 in step 5) | Me | Me | — |
-| 3.6 | Test case generator | Draft | Draft | Yes, M12 |
+| 3.6 | M12 Test case generator | Draft | Draft | Yes, M12 |
 | 3.7 | M26 Test grader | Draft | Auto | Yes, M26 |
-| 3.7 | Gate pack drafter | Draft | Draft | Yes, M6 |
+| 3.7 | M6 Gate pack drafter | Draft | Draft | Yes, M6 |
 
 **First time** = how the task is done on the first project. **Aim for** = its kind in `product-machine.md`.
 
-_Last updated: 2026-10-09_
+_Last updated: 2026-10-15_
