@@ -4,11 +4,13 @@
 - designs/controls.html, the Controls Catalog: every governance control (from playbook/controls.md).
 Run: python3 designs/catalogs-build.py"""
 import glob, os, re
-from pagekit import CSS, E, inline, chipify
+from pagekit import CSS, E, inline, chipify, six_steps, WORKFLOW_URL, MAPS_URL
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 read = lambda p: open(os.path.join(ROOT, p)).read()
-STEPS = {"1": "Discover", "2": "Define", "3": "Build", "4": "Govern and test", "5": "Release and adopt", "6": "Measure and iterate"}
+SIX = six_steps()  # question, governance thread and gate of each step, from the Product Workflow
+STEPS = {n: st["name"] for n, st in SIX.items()}
+PLAYBOOK_URL = "https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4"
 cap = lambda t: t[:1].upper() + t[1:] if t else t
 
 HEAD = '''<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,6 +48,14 @@ STYLE = '''
 .tasks li{margin:0}
 .csrc{margin:0;padding:0 16px 14px;font-size:12px;color:var(--muted);max-width:none}
 .empty{color:var(--muted)}
+/* Each step's header: its question, governance thread and gate, from the Product Workflow. */
+.sfacts{margin:14px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.sfacts div{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;min-width:0}
+.sfacts div.sgate{border-left:4px solid var(--amber)}
+.sfacts dt{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.sfacts dd{margin:0;font-size:14px}
+.ccard{scroll-margin-top:16px}
+@media (max-width:760px){.sfacts{grid-template-columns:1fr}}
 .howto{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--muted);align-items:center}
 @media (max-width:760px){.clist{grid-template-columns:1fr}.ccard .spec div{grid-template-columns:1fr;gap:2px}}
 '''
@@ -69,7 +79,7 @@ SCRIPT = '''<script>
 </script>
 '''
 
-def page(title, label, lede, group_label, groups, sections, howto, footer, placeholder, out):
+def page(title, label, lede, group_label, groups, sections, howto, footer, placeholder, out, nav=""):
     opts = "".join(f'<option value="{E(g)}">{E(g)}</option>' for g in groups)
     html = f'''<title>{E(title)}</title>
 {HEAD}
@@ -78,6 +88,7 @@ def page(title, label, lede, group_label, groups, sections, howto, footer, place
 <span class="label">{E(label)}</span>
 <h1>{E(title)}</h1>
 <p class="lede">{E(lede)}</p>
+{nav}
 <div class="filters">
 <label for="q">Search<input id="q" type="search" placeholder="{E(placeholder)}" autocomplete="off"></label>
 <label for="grp">{E(group_label)}<select id="grp"><option value="">All</option>{opts}</select></label>
@@ -124,16 +135,20 @@ def step_card(num, name, f):
     step = STEPS[num[0]]
     rows = "".join(f"<li>{chipify(k)} {inline(t)} <span class=\"cmeta\">→ {inline(to)}</span></li>" for t, k, to in tasks.get(num, []))
     spec = "".join(f"<div><dt>{E(k)}</dt><dd>{inline(cap(f[k]))}</dd></div>" for k in ["Why it matters", "Output", "Done when"] if f.get(k))
-    return (f'<details class="ccard" data-group="{E(step)}" data-search="{E((num + " " + name + " " + " ".join(f.get(k, "") for k in ["Goal", "Why it matters", "Output", "Done when"]) + " " + " ".join(t for t, _, _ in tasks.get(num, []))).lower())}">'
+    return (f'<details class="ccard" id="s{num.replace(".", "-")}" data-group="{E(step)}" data-search="{E((num + " " + name + " " + " ".join(f.get(k, "") for k in ["Goal", "Why it matters", "Output", "Done when"]) + " " + " ".join(t for t, _, _ in tasks.get(num, []))).lower())}">'
             f'<summary><span class="cid">{num}</span><span class="cname">{inline(name)}</span>'
             f'<span class="cwhat">{inline(cap(f.get("Goal", "")))}</span><span class="cmeta">{E(step)} step · {len(tasks.get(num, []))} task{"" if len(tasks.get(num, [])) == 1 else "s"}</span></summary>'
             f'<dl class="spec">{spec}</dl><ul class="tasks" aria-label="Tasks in {num}">{rows}</ul>'
-            f'<p class="csrc">How to do it the first time: Product Playbook, step {num[0]}, sub-step {num}</p></details>')
+            f'<p class="csrc">How to do it the first time: <a href="{PLAYBOOK_URL}#s{num.replace(".", "-")}" target="_blank" rel="noopener">Product Playbook, sub-step {num}</a></p></details>')
 
 sections = ""
 for n, step in STEPS.items():
     mine = [x for x in subs if x[0][0] == n]
-    sections += (f'<section class="grp"><div class="ahead"><h2 id="step{n}">{n}. {E(step)} <span class="gcount">{len(mine)}</span></h2></div>'
+    st = SIX[n]
+    facts = (f'<dl class="sfacts"><div><dt>The question</dt><dd>{inline(st["question"])}</dd></div>'
+             f'<div><dt>Governance thread</dt><dd>{inline(st["governance"])}</dd></div>'
+             f'<div class="sgate"><dt>Gate {n}</dt><dd>{inline(st["gate"])}</dd></div></dl>')
+    sections += (f'<section class="grp"><div class="ahead"><h2 id="step{n}">{n}. {E(step)} <span class="gcount">{len(mine)}</span></h2>{facts}</div>'
                  f'<div class="clist">{"".join(step_card(*x) for x in mine)}</div></section>')
 howto = ('<div class="howto"><span>Each task is marked with who does it once the machine is running:</span>'
          '<span><span class="chip k-auto">Auto</span>runs on its own</span><span><span class="chip k-draft">Draft</span>AI drafts, a person checks</span>'
@@ -141,8 +156,10 @@ howto = ('<div class="howto"><span>Each task is marked with who does it once the
 page("Steps Catalog", "Reference · steps",
      f"All {len(subs)} sub-steps of the Product Workflow, across its six steps, in one place. Open any card to see why it matters, what it produces and its tasks.",
      "Step", list(STEPS.values()), sections, howto,
-     "Built from the Product Playbook and the task tables in the Product Machine, so it always matches them. Tools and task kinds are guesses until confirmed at the bank.",
-     "Like sign-off or pilot", "steps.html")
+     "Built from the Product Workflow (each step's question, governance thread and gate), the Product Playbook and the task tables in the Product Machine, so it always matches them. Tools and task kinds are guesses until confirmed at the bank.",
+     "Like sign-off or pilot", "steps.html",
+     nav=(f'<nav class="stepnav" aria-label="Related pages"><a href="{WORKFLOW_URL}" target="_blank" rel="noopener">Product Workflow: the steps and their gates</a>'
+          f'<a href="{MAPS_URL}" target="_blank" rel="noopener">Workflow Maps: the steps as a clickable map</a></nav>'))
 
 # ---------- Controls Catalog ----------
 controls = []

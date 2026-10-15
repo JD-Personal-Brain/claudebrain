@@ -4,12 +4,13 @@ Click a branch to see its details. Reads playbook/*.md, product-machine.md
 and the RM memo's Appendix B, so the maps never drift from the documents.
 Run: python3 designs/workflows-build.py"""
 import os, re
-from pagekit import CSS, E, inline, chipify
+from pagekit import CSS, E, inline, chipify, six_steps, WORKFLOW_URL, STEPS_URL
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 read = lambda p: open(os.path.join(ROOT, p)).read()
 PLAYBOOK_URL = "https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4"
 RM_PLAN_URL = "https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk"
+SIX = six_steps()  # each step's question, governance thread and gate come from the Product Workflow, their one home
 
 # ---------- Map 1: delivering a product (six steps -> 44 sub-steps) ----------
 fw = read("product-machine.md")
@@ -26,8 +27,7 @@ for fn in sorted(f for f in os.listdir(os.path.join(ROOT, "playbook")) if re.mat
     s = read(os.path.join("playbook", fn))
     n = fn[0]
     name = re.match(r"# Step \d: (.+?), the first time", s).group(1)
-    q = re.search(r"\*\*The question:\*\* (.+)", s).group(1)
-    gate = re.search(r"\*\*The gate:\*\* (.+)", s).group(1)
+    q, gate, gov = SIX[n]["question"], SIX[n]["gate"], SIX[n]["governance"]
     review = s[s.index("| Sub-step | Agent |"):]
     branches = []
     for part in re.split(r"\n## ", s)[1:]:
@@ -45,15 +45,16 @@ for fn in sorted(f for f in os.listdir(os.path.join(ROOT, "playbook")) if re.mat
                 if cells[4].lower().startswith("asset"):
                     assets.append(cells[1])
                 if cells[4].lower().startswith("yes"):
-                    agents |= set(re.findall(r"\b[MA]\d+\b", cells[1] + " " + cells[4]))
+                    agents |= set(re.findall(r"\b[MA]\d{1,2}\b", cells[1] + " " + cells[4]))
         agents = sorted(agents, key=lambda a: (a[0], int(a[1:])))
         branches.append({
             "id": f"d{num.replace('.', '-')}", "num": num, "title": title,
             "goal": field(body, "Goal"), "done": field(body, "Done when"),
             "tasks": kinds.get(num, []), "agents": agents, "assets": assets,
             "link": f"{PLAYBOOK_URL}#s{num.replace('.', '-')}",
+            "catalog": f"{STEPS_URL}#s{num.replace('.', '-')}",
         })
-    stages1.append({"n": n, "name": name, "q": q, "gate": gate, "branches": branches})
+    stages1.append({"n": n, "name": name, "q": q, "gate": gate, "gov": gov, "branches": branches})
 
 # ---------- Map 2: an RM's week (RM Analytics product workflows) ----------
 memo = read("memos/rm-analytics-framework.md")
@@ -69,7 +70,7 @@ for block in re.split(r"\n\*\*(?=B\d+\. )", appb)[1:]:
                   "trigger": field(body, "Trigger"), "steps": steps,
                   "logged": field(body, "Logged"), "measures": field(body, "Measures"),
                   "check": field(body, "Check"),
-                  "agents": sorted(set(re.findall(r"\b[AM]\d+\b", body)), key=lambda a: int(a[1:])),
+                  "agents": sorted(set(re.findall(r"\b[AM]\d{1,2}\b", body)), key=lambda a: int(a[1:])),
                   "link": f"{RM_PLAN_URL}#workflows"}
 
 # The RM's week as the main process. This grouping is my framing of the
@@ -108,7 +109,8 @@ def delivery_detail(b):
             f'<div><dt>Done when</dt><dd>{inline(b["done"][:1].upper() + b["done"][1:])}</dd></div>'
             f'<div><dt>Agents that help</dt><dd>{E(ag)}</dd></div></dl>'
             f'<h5>Tasks and who does them</h5><ul class="tasks">{tasks}</ul>'
-            f'<a class="more" href="{E(b["link"])}" target="_blank" rel="noopener">Open the full sub-step in the playbook</a>')
+            f'<p class="links"><a class="more" href="{E(b["link"])}" target="_blank" rel="noopener">Open the full sub-step in the playbook</a>'
+            f'<a class="more" href="{E(b["catalog"])}" target="_blank" rel="noopener">Find it in the Steps Catalog</a></p>')
 
 def rm_detail(f):
     steps = ""
@@ -138,6 +140,8 @@ def spine_map(mid, stages, branch_html, detail_html, tag):
             templates += f'<template id="t-{b["id"]}">{detail_html(b)}</template>'
         arrow = '<span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 12" width="24" height="12"><line x1="0" y1="6" x2="18" y2="6" stroke="currentColor" stroke-width="2"/><polygon points="17,1 24,6 17,11" fill="currentColor"/></svg></span>' if i < len(stages) - 1 else ""
         gate = f'<div class="gatebar"><span class="diamond" aria-hidden="true"></span>Gate: {inline(st["gate"])}</div>' if st.get("gate") else ""
+        if st.get("gov"):
+            gate += f'<div class="govbar"><b>Governance</b> {inline(st["gov"])}</div>'
         cols += (f'<li class="stage"><div class="stagebox"><span class="snum">{tag} {st["n"]}</span>'
                  f'<span class="sname">{inline(st["name"])}</span><span class="sq">{inline(st["q"][:1].upper() + st["q"][1:])}</span>{arrow}</div>'
                  f'<ul class="branches" aria-label="Sub-processes of {E(st["name"])}">{br}</ul>{gate}</li>')
@@ -197,6 +201,9 @@ page = f'''<title>Workflow Maps</title>
 .flow li.decide{{background:var(--amber-bg);border-radius:6px;padding:6px 10px;margin-left:-10px}}
 .dlabel{{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--amber);margin-right:6px}}
 .more{{align-self:flex-start;font-weight:500}}
+.links{{display:flex;flex-wrap:wrap;gap:6px 20px;margin:0;max-width:none}}
+.govbar{{margin-left:16px;font-size:12px;line-height:1.4;background:var(--amber-bg);border-radius:6px;padding:6px 8px}}
+.govbar b{{font-family:var(--mono);font-weight:500;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);display:block}}
 .loop{{background:var(--card);border:1px dashed var(--line);border-radius:8px;padding:14px 16px;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}}
 .loop p{{margin:0;font-size:14px;color:var(--muted);flex:1 1 260px}}
 .branch.wide{{width:auto;flex:0 1 280px}}
@@ -209,12 +216,13 @@ page = f'''<title>Workflow Maps</title>
 <h1>Workflow Maps</h1>
 <p class="lede">Each main process runs left to right. The sub-processes hang underneath the stage where they happen. Click any box to see its details, then open the full document if you need more.</p>
 <nav class="stepnav" aria-label="Maps"><a href="#deliver">How we deliver a product</a><a href="#rm">How an RM uses the product</a></nav>
+<nav class="stepnav" aria-label="Related pages"><a href="{WORKFLOW_URL}" target="_blank" rel="noopener">Product Workflow: the steps and their gates ↗</a><a href="{STEPS_URL}" target="_blank" rel="noopener">Steps Catalog: look up any sub-step ↗</a></nav>
 </div></div>
 <main class="wrap">
-<div class="howto"><span>Reading the maps:</span><span>Big navy box = a stage of the main process</span><span>Small box = a sub-process</span><span><span class="chip k-auto">Auto</span><span class="chip k-draft">Draft</span><span class="chip k-me">Me</span><span class="chip k-partner">Partner</span> = who does its tasks</span><span>◆ = a go/no-go gate</span></div>
+<div class="howto"><span>Reading the maps:</span><span>Big navy box = a stage of the main process</span><span>Small box = a sub-process</span><span><span class="chip k-auto">Auto</span><span class="chip k-draft">Draft</span><span class="chip k-me">Me</span><span class="chip k-partner">Partner</span> = who does its tasks</span><span>◆ = a go/no-go gate</span><span><span class="chip k-draft">Governance</span> = the risk work in that step</span></div>
 <section id="deliver" class="mapwrap">
 <div class="stephead"><span class="label">Map 1 · every product</span><h2>How we deliver a product</h2>
-<p class="intro" style="margin-top:6px;color:var(--muted)">The six steps of the Product Workflow, each ending in a gate, with its {n_sub} sub-steps underneath. After the first pass, steps 3 to 6 repeat in short cycles.</p></div>
+<p class="intro" style="margin-top:6px;color:var(--muted)">The six steps of the Product Workflow, each ending in a gate, with its {n_sub} sub-steps underneath and the governance thread (the risk work) under each gate. After the first pass, steps 3 to 6 repeat in short cycles.</p></div>
 {map1}
 </section>
 <section id="rm" class="mapwrap">
@@ -224,7 +232,7 @@ page = f'''<title>Workflow Maps</title>
 {map2}
 {loop}
 </section>
-<footer>Built from <code>playbook/</code>, <code>product-machine.md</code> and the RM memo's Appendix B by <code>designs/workflows-build.py</code>. Tasks marked ⚠️ depend on the bank allowing automations.</footer>
+<footer>Built from <code>memos/role-workflow.md</code> (each step's question, gate and governance thread), <code>playbook/</code>, <code>product-machine.md</code> and the RM memo's Appendix B by <code>designs/workflows-build.py</code>. Tasks marked ⚠️ depend on the bank allowing automations.</footer>
 </main>
 <script>
 (function(){{

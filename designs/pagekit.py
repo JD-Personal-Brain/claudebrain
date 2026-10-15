@@ -213,3 +213,22 @@ def series(current):
         else:
             items.append(f'<li><a href="{url}" target="_blank" rel="noopener">{inner}</a></li>')
     return f'<nav class="series" aria-label="How we deliver, in reading order"><span class="stitle">How we deliver · read in this order</span><ol>{"".join(items)}</ol></nav>'
+
+# The three pages that show the six steps, each with one job; they link to each other.
+WORKFLOW_URL = "https://claude.ai/artifact/8Nm5fkdicn2Gu5VmNVTvYv"   # Product Workflow: the steps and their gates
+STEPS_URL = "https://claude.ai/artifact/8UncWMYUq7hsJUhn5NSYEB"      # Steps Catalog: look up any sub-step
+MAPS_URL = "https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX"       # Workflow Maps: the processes as clickable maps
+
+def six_steps():
+    """The six steps from the Product Workflow's working copy (memos/role-workflow.md), its one home:
+    {"1": {"name", "question", "governance", "gate"}, ...}. Builders read them here so no page keeps its own copy."""
+    import os
+    root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    text = open(os.path.join(root, "memos", "role-workflow.md")).read()
+    out = {}
+    for m in re.finditer(r"^\| (\d)\. ([^|]+) \| ([^|]+) \| ([^|]+) \| ([^|]+) \|$", text, re.M):
+        out[m.group(1)] = {"name": m.group(2).strip(), "question": m.group(3).strip(),
+                           "governance": m.group(4).strip(), "gate": m.group(5).strip()}
+    if sorted(out) != list("123456"):
+        raise SystemExit("Could not read the six steps from memos/role-workflow.md")
+    return out
