@@ -30,9 +30,9 @@ Claude updates it at every wrap-up: finished items move to "Closed" with the dat
 | Stage 2. Make the machine runnable | 4 | What Claude builds so a real run is possible |
 | Stage 3. Dry run and fix | 3 | Running the machine once and fixing it |
 | Stage 4. Get ready for Andy | 9 | What Andy sees, and what I ask him |
-| Alongside the path | 10 | Useful any time; doesn't block a stage. Dated items first |
+| Alongside the path | 9 | Useful any time; doesn't block a stage. Dated items first |
 | Inside the bank | 21 | Questions only someone at the bank can answer |
-| Parked on purpose | 4 | Not forgotten; waiting for a signal from me |
+| Parked on purpose | 5 | Not forgotten; waiting for a signal from me |
 
 "Andy" here is my main contact at the bank. ⚠️ Claude assumes this is Andy Miner, the bank's senior director of AI for Corporate & Commercial Banking.
 
@@ -134,7 +134,6 @@ Useful any time; none of these blocks a stage. Dated ones first.
 | W18 | Claude Mastery course: paste in the next page (Module 3: Projects, Connectors and Skills). Claude starts a course notes file when it arrives (idea 14, approved) | Me, then Claude | Nothing |
 | W19 | Try the newer skills on real work: "prototype X", "write a prompt for X", "new use case: X" | Me | Nothing |
 | W20 | Playbooks for my everyday tools (idea 3, approved): name two or three tasks I repeat in email, calendar or documents. Claude turns each into a step-by-step skill | Me, then Claude | Nothing |
-| W21 | An automatic length warning on Claude's replies (idea 57, suggested 2026-10-15, from lesson L33): Claude is warned before sending a reply that runs past about 8 lines. Waiting on my yes or no; ⚠️ Claude hasn't yet checked that this can be built | Me | Nothing |
 
 ## Inside the bank
 
@@ -172,6 +171,7 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | P2 | Sharing with Associated. We share the same pages, not a separate edition (idea 33: no, 2026-10-15). When I'm ready, Claude lists which pages to share one by one from each page's Share menu | Me | Me saying I'm ready to share |
 | P3 | A treasury and payments use case. The bank named it as a starting point for AI, and nothing has been planned yet | Me | After credit, unless B3 changes the order |
 | P4 | **Featured: running many products at once.** One intake form for new product ideas, a scoring rule to rank them against each other, how many products I can run at once, my week and month across products, and when a live product is retired | Me | The machine running one product well first |
+| P5 | An automatic length warning on Claude's replies (idea 57): not needed at this point (said 2026-10-15). ⚠️ Claude hasn't yet checked that this can be built | Me | Long replies becoming a problem again |
 
 ## Closed
 
