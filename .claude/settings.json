@@ -1,4 +1,4 @@
-{{
+{
   "permissions": {
     "allow": ["Artifact", "ArtifactComments", "ArtifactData"]
   },
@@ -9,30 +9,6 @@
     "PreToolUse": [
       { "matcher": "mcp__github__merge_pull_request",
         "hooks": [ { "type": "command", "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/pre-merge-check.sh", "timeout": 300 } ] }
-    ]
-  }
-}  "hooks": {
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/session-start.sh"
-          }
-        ]
-      }
-    ],
-    "PreToolUse": [
-      {
-        "matcher": "mcp__github__merge_pull_request",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/pre-merge-check.sh",
-            "timeout": 300
-          }
-        ]
-      }
     ]
   }
 }
