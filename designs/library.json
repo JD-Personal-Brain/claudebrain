@@ -52,7 +52,8 @@
           "url": "https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4",
           "source": "playbook/"
         }
-      ]
+      ],
+      "numbered": true
     },
     {
       "id": "rm",

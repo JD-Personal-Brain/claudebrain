@@ -2,7 +2,8 @@
 The page is one index in five numbered sections (the bank, how we deliver, relationship managers,
 portfolio managers, reference), one row per page. A row shows the page's status;
 its twisty opens a one-line description and the page's sections. Placeholder rows mark
-pages still to build.
+pages still to build. A section marked "numbered" in library.json (how we deliver) shows
+plain numbered rows instead, read in order: click the name to open the page.
 To add a document: add it to library.json (and designs/README.md) and to PAGE_FILE below,
 run this, republish.
 Run: python3 designs/library-build.py"""
@@ -15,8 +16,8 @@ lib = json.load(open(os.path.join(ROOT, "designs", "library.json")))
 STATUS = {"In use": "s-use", "Waiting for review": "s-review", "Draft": "s-review", "In progress": "s-review", "Reference": "s-ref",
           "To build": "s-todo", "Later": "s-todo"}
 # Sections in page order, from library.json. An item is a page, or a placeholder ("todo") for one still to build.
-groups = [(g["name"], g["why"], g["items"]) for g in lib["groups"]]
-for _, _, ds in groups:
+groups = [(g["name"], g["why"], g["items"], g.get("numbered", False)) for g in lib["groups"]]
+for _, _, ds, _ in groups:
     for d in ds:
         if d["status"] not in STATUS:
             raise SystemExit(f"Unknown status for {d['name']}: {d['status']}")
@@ -51,7 +52,11 @@ def sections(page_id):
 def chip(d):
     return f'<span class="status {STATUS[d["status"]]}">{E(d["status"])}</span>'
 
-def entry(d):
+def entry(d, num=None):
+    if num:
+        # Numbered rows: reading order, name and status only; the name opens the page.
+        return (f'<div class="ientry plain numbered" data-search="{E((d["name"] + " " + d["what"]).lower())}"><span class="inum">{num}</span>'
+                f'<a class="ipage" href="{E(d["url"])}" target="_blank" rel="noopener">{E(d["name"])}</a>{chip(d)}</div>')
     if d.get("todo"):
         return f'<div class="ientry plain todo" data-search="{E((d["name"] + " " + d["what"]).lower())}"><span class="ipage">{E(d["name"])}</span>{chip(d)}<p class="idesc">{E(d["what"])}</p></div>'
     # Pages with sections are a twisty: click the row to open it; click the name to open the page.
@@ -65,8 +70,8 @@ def entry(d):
     return (f'<details class="ientry" data-search="{search}"><summary>{name}{chip(d)}<span class="ic" title="Sections">{len(secs)}</span></summary>'
             f'<p class="idesc">{E(d["what"])}</p><ul class="isecs">{links}</ul></details>')
 
-index = "".join(f'<div class="igroup" id="g{i}"><h3><span class="gnum">{i+1}</span>{E(n)}</h3><p class="gwhy">{E(why)}</p>{"".join(entry(d) for d in ds)}</div>' for i, (n, why, ds) in enumerate(groups))
-nav = "".join(f'<a href="#g{i}"><span class="num">{i+1}</span>{E(n)}</a>' for i, (n, _, ds) in enumerate(groups))
+index = "".join(f'<div class="igroup" id="g{i}"><h3><span class="gnum">{i+1}</span>{E(n)}</h3><p class="gwhy">{E(why)}</p>{"".join(entry(d, k + 1 if numbered else None) for k, d in enumerate(ds))}</div>' for i, (n, why, ds, numbered) in enumerate(groups))
+nav = "".join(f'<a href="#g{i}"><span class="num">{i+1}</span>{E(n)}</a>' for i, (n, _, _, _) in enumerate(groups))
 
 page = f'''<title>Document Library</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -106,6 +111,7 @@ page = f'''<title>Document Library</title>
 .ic{{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap}}
 .idesc{{margin:0;padding:0 16px 10px 40px;font-size:14px;color:var(--muted);max-width:none}}
 .ientry.plain .idesc{{padding:0;flex-basis:100%}}
+.inum{{font-family:var(--mono);font-size:14px;color:var(--teal);width:12px;flex:none}}
 .isecs{{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0 16px 12px}}
 .isecs li{{margin:0}}
 .isecs a{{display:block;font-size:13px;border:1px solid var(--line);border-radius:999px;padding:3px 10px;color:var(--fg);text-decoration:none}}
