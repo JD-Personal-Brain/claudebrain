@@ -312,12 +312,12 @@ listed actions, and those marked ⚠️ wait until the bank allows it.
 - **Used in:** 6.6
 - **For:** the team
 - **Kind:** Me → Draft
-- **Job:** total time spent and waits from the first-time logs, and list the automation candidates.
+- **Job:** total time spent and waits from the first-time logs, work out each sub-step's wait index, and list the candidates to cut and to automate.
 - **Starts when:** at the end of the first full pass through all six steps.
 - **Inputs:** the first-time logs from every sub-step.
 - **Allowed actions:** read; write a draft summary.
-- **Not allowed:** deciding which agents to build.
-- **Outputs:** time and waits by step, plus the candidates that passed the three-question check.
+- **Not allowed:** deciding what to delete or which agents to build.
+- **Outputs:** time and waits by step, sub-steps ranked by wait index (highest first), the tasks to consider cutting, and the candidates that passed the automation check.
 - **Stops when:** every log is read.
 - **Proof it worked:** the totals add up to the logs.
 - **Person in charge:** product manager.

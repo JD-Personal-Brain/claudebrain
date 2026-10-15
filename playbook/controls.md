@@ -12,6 +12,8 @@ what the AI may not do, and how we prove it.
 Each control says where it is **set** (agreed as a requirement), **built**,
 **proved** (shown working to reviewers) and **watched** (after launch).
 
+Each also says where it **comes from**: **law or regulator** (fixed; to change it, ask compliance), **bank policy** (fixed unless the policy changes; ask the policy's owner) or **our choice** (a recommendation anyone may challenge; ask the product manager). Law and bank policy are our "laws of physics": the automation check never deletes them. Sources marked ⚠️ are my guesses until the bank's risk partner confirms them at sub-step 2.4.
+
 ---
 
 ### K1. A person decides
@@ -24,6 +26,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Watched in:** 6.3 (how often users change or reject what the AI wrote)
 - **Tool (guess):** approval steps in Salesforce and Power Automate
 - **Proof:** a test showing nothing is sent or saved without a click from the user
+- **Comes from:** Our choice: our AI principle, assistive first. ⚠️ Bank policy may also require it. To change it, ask the product manager.
 
 ### K2. Read-only unless approved
 - **Group:** People in charge
@@ -35,6 +38,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Watched in:** not covered in the playbook yet
 - **Tool (guess):** the agent's permissions on each platform
 - **Proof:** the agent spec's "allowed" and "not allowed" lists, and a test that a blocked action fails
+- **Comes from:** Our choice: our AI principle, one job each. To change it, ask the product manager.
 
 ### K3. No credit decisions or pricing
 - **Group:** People in charge
@@ -46,6 +50,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Watched in:** 6.3 (the test set, with its must-refuse cases, is re-run)
 - **Tool (guess):** guardrail filters
 - **Proof:** a red-team test (someone trying to break it on purpose) showing it won't give a credit decision or a price
+- **Comes from:** Our choice: chosen to stay clear of fair-lending law (the Equal Credit Opportunity Act), which applies once AI touches credit decisions. To change it, ask the product manager.
 
 ### K4. Users see only what they're allowed to see
 - **Group:** Data
@@ -57,6 +62,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Watched in:** 6.3
 - **Tool (guess):** Snowflake access rules and Salesforce sharing rules
 - **Proof:** a test where one user tries to see another user's clients and fails
+- **Comes from:** Law or regulator: customer privacy law (the Gramm-Leach-Bliley Act), carried out through the bank's access rules ⚠️. To change it, ask compliance (and model risk for the model risk guidance).
 
 ### K5. A data contract
 - **Group:** Data
@@ -68,6 +74,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Watched in:** 3.2 (checks run on every data refresh), 4.2 (the data-use checker, M13, also runs monthly after launch)
 - **Tool (guess):** Snowflake data checks
 - **Proof:** the signed contract, and a comparison of the fields actually read with the fields in the contract
+- **Comes from:** Our choice: our way of proving data use; the data owner's approval follows bank policy ⚠️. To change it, ask the product manager.
 
 ### K6. Sensitive data is hidden or labeled
 - **Group:** Data
@@ -79,6 +86,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Watched in:** not covered in the playbook yet
 - **Tool (guess):** Snowflake masking and Microsoft Purview labels
 - **Proof:** a test showing a masked field stays hidden from a user without the right access
+- **Comes from:** Bank policy: the bank's data classification rules ⚠️, which rest on customer privacy law. To change it, ask the policy's owner at the bank [name needed].
 
 ### K7. Every answer shows its source
 - **Group:** Quality
@@ -90,6 +98,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Watched in:** 6.3
 - **Tool (guess):** source links on the Salesforce record
 - **Proof:** the share of test answers that show a source, against the quality bar
+- **Comes from:** Our choice: our quality bar. To change it, ask the product manager.
 
 ### K8. Guardrails
 - **Group:** Quality
@@ -101,6 +110,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Watched in:** 6.3 (how often a guardrail blocks an answer)
 - **Tool (guess):** Bedrock Guardrails and the Einstein Trust Layer
 - **Proof:** the guardrail settings, and red-team results
+- **Comes from:** Our choice: our quality bar. ⚠️ The bank's AI policy may also require it. To change it, ask the product manager.
 
 ### K9. A test set and a quality bar
 - **Group:** Quality
@@ -112,6 +122,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Watched in:** 6.3
 - **Tool (guess):** a test grader agent
 - **Proof:** the test report for the version being released
+- **Comes from:** Law or regulator: the regulators' model risk guidance (SR 11-7, possibly replaced by SR 26-2: item W17 in the Open Items log) expects testing; the thresholds themselves are our choice. To change it, ask compliance (and model risk for the model risk guidance).
 
 ### K10. Red-teaming
 - **Group:** Quality
@@ -123,6 +134,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Watched in:** not covered in the playbook yet
 - **Tool (guess):** a red-team agent, with risk reviewing every failure
 - **Proof:** the red-team report, with each failure fixed or accepted by risk
+- **Comes from:** Our choice: our testing approach. ⚠️ The bank's AI policy may also require it. To change it, ask the product manager.
 
 ### K11. A fairness check
 - **Group:** Quality
@@ -134,6 +146,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Watched in:** 4.4 (the fairness monitor's ongoing mode runs it again each month after launch), 4.8 (fairness is in the monitoring plan)
 - **Tool (guess):** a fairness monitor agent
 - **Proof:** the fairness report and compliance's response
+- **Comes from:** Law or regulator: fair-lending law (the Equal Credit Opportunity Act) wherever similar clients could be treated differently. To change it, ask compliance (and model risk for the model risk guidance).
 
 ### K12. An audit log
 - **Group:** Records
@@ -145,6 +158,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Watched in:** not covered in the playbook yet
 - **Tool (guess):** each platform's own activity log
 - **Proof:** the log for a sample of actions
+- **Comes from:** Bank policy: the bank's record-keeping and audit rules ⚠️. To change it, ask the policy's owner at the bank [name needed].
 
 ### K13. A risk rating and registration
 - **Group:** Approvals
@@ -156,6 +170,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Watched in:** not covered in the playbook yet. The RM plan says the risk partner is told before a material change
 - **Tool (guess):** the bank's intake form
 - **Proof:** the confirmed rating and the registration record
+- **Comes from:** Law or regulator: the regulators' model risk guidance (SR 11-7, possibly replaced by SR 26-2), carried out through the bank's model risk policy. To change it, ask compliance (and model risk for the model risk guidance).
 
 ### K14. Vendor reviews
 - **Group:** Approvals
@@ -167,6 +182,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Watched in:** not covered in the playbook yet
 - **Tool (guess):** the bank's approved vendors list
 - **Proof:** confirmation from vendor risk for each vendor
+- **Comes from:** Law or regulator: the US banking regulators' guidance on third-party risk (2023), carried out through the bank's vendor risk policy. To change it, ask compliance (and model risk for the model risk guidance).
 
 ### K15. Sign-offs
 - **Group:** Approvals
@@ -178,6 +194,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Watched in:** 5.1
 - **Tool (guess):** Power Automate approvals, or the bank's own system
 - **Proof:** each sign-off recorded with a name and a date
+- **Comes from:** Bank policy: the bank's approval process for AI and models ⚠️. To change it, ask the policy's owner at the bank [name needed].
 
 ### K16. Monitoring and an incident process
 - **Group:** After launch
@@ -189,6 +206,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Watched in:** 5.6, 6.1, 6.3
 - **Tool (guess):** Power BI, and a quality watchdog agent
 - **Proof:** the monitoring plan, a dry run of the incident process and the incident log
+- **Comes from:** Law or regulator: the regulators' model risk guidance expects ongoing monitoring; the incident process follows bank policy ⚠️. To change it, ask compliance (and model risk for the model risk guidance).
 
 ### K17. Frozen versions and change control
 - **Group:** After launch
@@ -200,6 +218,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Watched in:** 6.3
 - **Tool (guess):** each platform's version history, and a quality watchdog agent
 - **Proof:** the list of versions, with the test results for each
+- **Comes from:** Law or regulator: the regulators' model risk guidance expects change control ⚠️. To change it, ask compliance (and model risk for the model risk guidance).
 
 ### K18. Separate build, test and live spaces
 - **Group:** Approvals
@@ -211,6 +230,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Watched in:** 5.2
 - **Tool (guess):** Power Platform environments and the bank's release process
 - **Proof:** the written delivery path, and the approval recorded for each move
+- **Comes from:** Bank policy: IT's rules for moving software into live use ⚠️. To change it, ask the policy's owner at the bank [name needed].
 
 ### K19. Approved AI models only
 - **Group:** Approvals
@@ -222,6 +242,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Watched in:** not covered in the playbook yet
 - **Tool (guess):** AWS Bedrock's model list, and the models inside Microsoft and Salesforce
 - **Proof:** the model named in the design, matched to the bank's approved list
+- **Comes from:** Bank policy: the bank's list of approved AI models ⚠️. To change it, ask the policy's owner at the bank [name needed].
 
 ### K20. Rules on which systems may share data
 - **Group:** Data
@@ -233,6 +254,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Watched in:** not covered in the playbook yet
 - **Tool (guess):** Power Platform data policies
 - **Proof:** IT's confirmation that every connection the product uses is allowed
+- **Comes from:** Bank policy: IT's data loss prevention rules. To change it, ask the policy's owner at the bank [name needed].
 
 ### K21. A named owner
 - **Group:** People in charge
@@ -244,6 +266,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Watched in:** not covered in the playbook yet
 - **Tool (guess):** the decision log
 - **Proof:** the owner's name recorded, or "to be decided" with a date
+- **Comes from:** Our choice: our framework (the product manager owns each product until a long-term owner is named). To change it, ask the product manager.
 
 ### K22. Simple rules first, and the AI explains
 - **Group:** Quality
@@ -255,6 +278,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Watched in:** 6.3
 - **Tool (guess):** rules in Snowflake, with the AI writing the explanation
 - **Proof:** for a sample of answers, the rule that fired and the data behind it
+- **Comes from:** Our choice: our AI principles. To change it, ask the product manager.
 
 ### K23. Approved AI tools for the team's own work
 - **Group:** Data
@@ -266,6 +290,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Watched in:** not covered in the playbook yet
 - **Tool (guess):** the bank's list of approved AI tools
 - **Proof:** the approved list in the project file, and every agent's "Runs on" matching it
+- **Comes from:** Bank policy: the bank's list of approved AI tools ⚠️. To change it, ask the policy's owner at the bank [name needed].
 
 ### K24. Consent before recording
 - **Group:** Data
@@ -277,6 +302,7 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Watched in:** not covered in the playbook yet
 - **Tool (guess):** Teams meeting settings and M365 Copilot recaps
 - **Proof:** a test showing no recap is drafted from a meeting without recorded consent
+- **Comes from:** Law or regulator: call-recording consent laws, which differ by state, and the bank's recording policy. To change it, ask compliance (and model risk for the model risk guidance).
 
 ### K25. Agents stop rather than guess
 - **Group:** Quality
@@ -288,5 +314,6 @@ Each control says where it is **set** (agreed as a requirement), **built**,
 - **Watched in:** not covered in the playbook yet
 - **Tool (guess):** each agent's stop rule, with alerts through Power Automate
 - **Proof:** a test where an agent is given a missing or stale input on purpose and stops with an alert
+- **Comes from:** Our choice: our agent specs. To change it, ask the product manager.
 
 _Last updated: 2026-10-10_

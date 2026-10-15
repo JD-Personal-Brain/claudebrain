@@ -109,6 +109,7 @@ td:nth-child(3),td:nth-child(4){{color:var(--muted)}}
 .check li b{{font-family:var(--serif);font-size:19px;font-weight:600}}
 .check li span,.check p{{color:var(--onnavy-muted)}}
 .check .label{{color:#8FD3CA}}
+.check h3{{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#8FD3CA;margin:4px 0 -6px}}
 .rules{{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}}
 .rule{{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:20px;display:flex;flex-direction:column;gap:8px}}
 .rule h3{{font-size:18px}}
@@ -151,14 +152,38 @@ footer{{color:var(--muted);font-size:14px;border-top:1px solid var(--line);paddi
 </section>
 <section class="check">
 <p class="label">At every gate</p>
-<h2 id="check">The automation check</h2>
-<p>Before each go/no-go, ask three questions of every task done by a person or drafted by AI:</p>
+<h2 id="check">The automation check: cut first, then automate</h2>
+<p>Before each go/no-go, take every task done by a person or drafted by AI through seven questions, in this order. Automating a task that shouldn't exist only locks in the waste (the order comes from Elon Musk's "algorithm"; see the Elon Mode Research page).</p>
+<h3>First, cut</h3>
+<ol>
+<li><b>Should it exist?</b><span>Who required it, and where does it come from: law or regulator, bank policy, or our choice? Law and bank policy stay. Our choices can be challenged.</span></li>
+<li><b>Can we delete it?</b><span>Record what it did and who agreed in the decision log. If nothing ever has to come back, we aren't cutting enough (about 1 in 10 should).</span></li>
+<li><b>Can we simplify it?</b><span>Fewer steps, fewer hand-offs, fewer people to wait on.</span></li>
+<li><b>Can we make it faster?</b><span>Shorten the longest wait first. The wait index shows where.</span></li>
+</ol>
+<h3>Then, automate what's left</h3>
 <ol>
 <li><b>Did it repeat?</b><span>Will it come up again, in this project or the next one?</span></li>
 <li><b>Is it stable?</b><span>Did we do it the same way at least twice?</span></li>
 <li><b>Is it safe alone?</b><span>It makes no decision, nothing reaches a client, and bank rules allow it.</span></li>
 </ol>
 <p>Three yeses: move the task one kind toward Auto before the next project. If an automated task goes wrong, a person takes it back until it's fixed.</p>
+</section>
+<section>
+<p class="label">At every gate</p>
+<h2 id="gates">Gates in writing when they're clean</h2>
+<p>When every gate criterion is met, the decider approves the gate pack in writing, and the approval goes in the decision log. A gate meeting happens only when a criterion is contested or someone who decides asks for one. Partner sign-offs in step 4 don't change: each named partner still signs. ⚠️ Whether the bank's culture accepts written gates is a guess; confirm it at the first project.</p>
+</section>
+<section>
+<p class="label">The machine is a product too</p>
+<h2 id="measures">Measuring the machine</h2>
+<p>Recorded for every project in sub-step 6.6 and shown in the one view of all projects. Targets are [X] until the first project sets a baseline; after that, each project should beat the last.</p>
+<div class="step"><div class="tw"><table><thead><tr><th>Measure</th><th>What it is</th><th>Where it comes from</th></tr></thead><tbody>
+<tr><td><b>Days from kickoff to pilot</b></td><td>Calendar days from sub-step 1.0 to the pilot launch (5.2)</td><td>The tracker</td></tr>
+<tr><td><b>Days at each gate</b></td><td>Calendar days from the gate pack being ready to the decision</td><td>The decision log</td></tr>
+<tr><td><b>Releases per month in the pilot</b></td><td>How many improved versions reach pilot users each month (how fast we iterate)</td><td>Release notes (5.6)</td></tr>
+<tr><td><b>Wait index</b></td><td>For each sub-step: calendar days from start to finish, divided by hours of real work. A high number means waiting, not working; fix the highest first</td><td>The first-time logs (6.6, agent M19)</td></tr>
+</tbody></table></div></div>
 </section>
 <section>
 <p class="label">Across every project</p>
@@ -172,11 +197,11 @@ footer{{color:var(--muted);font-size:14px;border-top:1px solid var(--line);paddi
 <div class="rules">
 <div class="rule"><h3>One machine for every project</h3><p>The same steps, tables and tracker, so any project can be compared with any other.</p></div>
 <div class="rule"><h3>Limit the person-heavy steps</h3><p>At most [X] projects in Discover or Define at once. Steps 3 to 6 are mostly automated, so more projects can sit there.</p></div>
-<div class="rule"><h3>Stagger the gates</h3><p>No two gate meetings in the same week.</p></div>
+<div class="rule"><h3>Stagger the gates</h3><p>No two gate meetings (the contested ones) in the same week.</p></div>
 <div class="rule"><h3>Plan the product manager's week</h3><p>[X] hours on decisions and gates, [X] on users, [X] on partners and sign-offs, [X] checking drafts. If person-only work runs over, the automation check comes first.</p></div>
 </div>
 </section>
-<footer>In use: reviewed 2026-10-14. Tool choices are guesses until confirmed against the bank's setup. [X] marks numbers still to be set. The RM analytics plan is the first project to run through this machine.</footer>
+<footer>In use: reviewed 2026-10-14; cut-first check, written gates and the machine's measures added 2026-10-15. Tool choices are guesses until confirmed against the bank's setup. [X] marks numbers still to be set. The RM analytics plan is the first project to run through this machine.</footer>
 </main>
 '''
 open(os.path.join(ROOT,'designs','product-machine.html'),'w').write(page)

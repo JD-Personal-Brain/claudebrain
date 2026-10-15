@@ -40,18 +40,43 @@ never wrote down.
 
 | Field | What to write |
 |---|---|
-| Time spent | Hours, roughly |
+| Start and finish | The dates the sub-step started and finished |
+| Time spent | Hours of real work, roughly |
 | What I actually did | The real steps, including the ones not in the playbook |
 | Inputs I needed | Data, documents, people |
 | Where I waited | Who or what held it up, and for how long |
 | What repeated | Anything I did more than once, or will do again next project |
-| Automation check | Repeat? Stable? Safe alone? (yes or no each) |
+| Wait index | Calendar days from start to finish, divided by hours of real work. A high number means waiting, not working |
+| Cut first | Should it exist (and does it come from law, bank policy or our choice)? Delete it? Simplify it? Make it faster? |
+| Automation check | For what's left: repeat? Stable? Safe alone? (yes or no each) |
 | Agent idea | If all three are yes: what it would do, and Auto or Draft |
 
 ## Rules that apply to every step
 - **No client data in an AI tool the bank hasn't approved**, even for a quick test.
 - **Guesses about the bank are marked ⚠️** until confirmed. Replace them with facts as I learn them, and note the source.
 - **Numbers we don't have yet are [X].** Never invent them.
-- **At the gate,** run the automation check from `product-machine.md` on every Me and Draft task, and update the step's table there.
+- **At the gate,** run the automation check from `product-machine.md` on every Me and Draft task (cut first, then automate), and update the step's table there.
+- **Gates are decided in writing when they're clean:** if every criterion is met, the decider approves the gate pack in writing and the approval goes in the decision log; a meeting happens only when a criterion is contested or a decider asks for one. Partner sign-offs in step 4 don't change.
+- **Every sub-step is our choice** (ask the product manager to change it) unless the table below says it comes from law, a regulator or bank policy. Law and bank policy are never deleted by the automation check.
 
-_Last updated: 2026-10-14_
+## Where the requirements come from
+The sub-steps and gates that rest on law, a regulator or bank policy. Everything
+else in the playbook is our choice. Each control's own source is on its card in
+the Controls Catalog. ⚠️ These are my reading of US rules for banks, to confirm
+with the bank's risk partner at sub-step 2.4.
+
+| Sub-step or gate | Comes from | To change it, ask |
+|---|---|---|
+| 2.3 Data contract | Bank policy on data use ⚠️, resting on customer privacy law (the Gramm-Leach-Bliley Act) | The data owner |
+| 2.4 Risk intake | Regulator: the model risk guidance (SR 11-7, possibly replaced by SR 26-2: item W17 in the Open Items log), through the bank's model risk policy | Model risk |
+| 4.1 Risk rating and registration | Regulator: the model risk guidance, through the bank's model inventory | Model risk |
+| 4.2 Data and privacy review | Law: customer privacy (the Gramm-Leach-Bliley Act), through bank policy | Privacy |
+| 4.3 Testing evidence | Regulator: the model risk guidance expects testing; our quality bar sets the thresholds | Model risk |
+| 4.4 Fairness check | Law: fair lending (the Equal Credit Opportunity Act) wherever similar clients could be treated differently | Compliance |
+| 4.6 Vendor reviews | Regulator: the US banking regulators' third-party risk guidance (2023) | Vendor risk |
+| 4.7 Sign-offs | Bank policy: its approval process for AI and models ⚠️ | Model risk |
+| 4.8 Monitoring plan | Regulator: the model risk guidance expects ongoing monitoring | Model risk |
+| Step 4 gate | Regulator and bank policy (the formal approval) | Model risk |
+| The other five gates | Our choice | The product manager |
+
+_Last updated: 2026-10-15_

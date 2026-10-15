@@ -226,8 +226,9 @@ sub-step. At the end, run the automation review.
 
 ## Discover automation review (do this at the gate)
 
-Run the three questions (Repeat? Stable? Safe alone?) on every Me and Draft
-task, using your first-time logs. Then update this shortlist and the Discover
+Run the automation check from the Product Machine on every Me and Draft task,
+using your first-time logs: cut first (should it exist, delete, simplify, make
+it faster), then automate what's left (repeat? stable? safe alone?). Then update this shortlist and the Discover
 table in `product-machine.md`.
 
 | Sub-step | Agent | First time | Aim for | Already specified? |
