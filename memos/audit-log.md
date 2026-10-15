@@ -47,6 +47,7 @@ saved history, so their counts are approximate.
 
 | Date | What was audited | Size and how | Findings (and lost lines by reason) | Result |
 |---|---|---|---|---|
+| 2026-10-15 | After the move to JD-Personal-Brain: pull request #98 (item W21 steps), the required-check test, old account name | Quick: checker, render check, nothing-lost | 0 findings; no file still names the old account; the required-check test showed GitHub does not yet block a red pull request (W21 stays open); lost lines: 3, all reworded (W21 went from "suggested" to "yes") | Merged |
 | 2026-10-15 | Wrap-up: the settings-file repair and lesson L32 | Quick: checker, render check, nothing-lost | 1 Must fix (the settings file couldn't be read, found by reading it back); lost lines: a few, all reworded | Fixed in pull request #96; check 16 added so it can't recur |
 | 2026-10-15 | The Audit Log itself and its six improvements | Deep by step 0's rule (a rename across pages and new audit rules), run as scripts plus one reviewer, because a deep audit of the same pages had run hours before | 1 Must fix, 6 Should fix, 7 Minor; lost lines: 10, all reworded or renamed | All fixed; merged |
 | 2026-10-15 | How we deliver and the reference pages, top to bottom (details below) | 7 reviewers, a made-up product walked through all 44 sub-steps, 4 editors, a second reviewer | About 110 (8 Must fix), plus about 25 from the second review | All fixed; 12 pages republished; 6 gaps to decide (D1); pull request #94 |
