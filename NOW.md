@@ -117,3 +117,4 @@ _Date to work toward: on Tuesday October 20, 2026 I talk with the credit lead an
   2. It's saved as `prototypes/<name>/prototype-v1.html`. Each change I ask for becomes a new file (v2, v3, and so on), and old versions are never changed.
   3. Claude tests it against a "done" checklist (pass or fail for each item), sends me the file and saves a draft to GitHub, then merges it into main after I say yes.
   4. Any new session can continue from the latest version. Current: calculator, v2 (green buttons).
+- Test line: Delivery Machine (deliberate audit failure, throwaway)
