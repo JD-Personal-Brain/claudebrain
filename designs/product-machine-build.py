@@ -1,7 +1,7 @@
 import html
 E=html.escape
 import re, os
-from pagekit import series, SERIES_CSS
+from pagekit import series, SERIES_CSS, STEPS_URL
 # Reads the task tables straight from product-machine.md, and each step's question from the
 # Product Workflow (memos/role-workflow.md), so the page can't drift from its working copies.
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -30,8 +30,13 @@ steps=[(questions[n][0],questions[n][1],rows_after(f"**{n}. {questions[n][0]}**\
 running=rows_after("## Across every project (the running layer)")
 LBL={"auto":"Auto","draft":"Draft","me":"Me","partner":"Partner"}
 def chip(k): return f'<span class="chip k-{k}">{LBL[k]}</span>'
+def cell_num(num):
+    # a sub-step number links to its card in the Steps Catalog (idea 49); "Gate" and "All" stay plain
+    if re.fullmatch(r"\d\.\d",num):
+        return f'<a href="{STEPS_URL}#s{num.replace(".","-")}" target="_blank" rel="noopener" title="Open sub-step {num} in the Steps Catalog">{E(num)}</a>'
+    return E(num)
 def table(rows,head="Task"):
-    r="".join(f'<tr><td class="n">{E(num)}</td><td>{E(t)}</td><td>{chip(k)}{" ⚠️" if w else ""}</td><td>{E(tool)}</td><td>{E(to)}</td></tr>' for t,k,tool,to,num,w in rows)
+    r="".join(f'<tr><td class="n">{cell_num(num)}</td><td>{E(t)}</td><td>{chip(k)}{" ⚠️" if w else ""}</td><td>{E(tool)}</td><td>{E(to)}</td></tr>' for t,k,tool,to,num,w in rows)
     return f'<div class="tw"><table><thead><tr><th>#</th><th>{head}</th><th>Kind</th><th>Tool <span class="g">(guess)</span></th><th>Goes to</th></tr></thead><tbody>{r}</tbody></table></div>'
 # mix bars
 bars=""
