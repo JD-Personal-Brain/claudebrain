@@ -30,7 +30,7 @@ Claude updates it at every wrap-up: finished items move to "Closed" with the dat
 | Stage 2. Make the machine runnable | 4 | What Claude builds so a real run is possible |
 | Stage 3. Dry run and fix | 3 | Running the machine once and fixing it |
 | Stage 4. Get ready for Andy | 9 | What Andy sees, and what I ask him |
-| Alongside the path | 10 | Useful any time; doesn't block a stage. Dated items first |
+| Alongside the path | 9 | Useful any time; doesn't block a stage. Dated items first |
 | Inside the bank | 21 | Questions only someone at the bank can answer |
 | Parked on purpose | 4 | Not forgotten; waiting for a signal from me |
 
@@ -135,7 +135,6 @@ Useful any time; none of these blocks a stage. Dated ones first.
 | W18 | Claude Mastery course: paste in the next page (Module 3: Projects, Connectors and Skills). Claude starts a course notes file when it arrives (idea 14, approved) | Me, then Claude | Nothing |
 | W19 | Try the newer skills on real work: "prototype X", "write a prompt for X", "new use case: X" | Me | Nothing |
 | W20 | Playbooks for my everyday tools (idea 3, approved): name two or three tasks I repeat in email, calendar or documents. Claude turns each into a step-by-step skill | Me, then Claude | Nothing |
-| W21 | Make the GitHub "Audit checker" a required check (idea 56, yes 2026-10-15), so a pull request with a red mark can't be merged, even from my phone. On GitHub, open the claudebrain repo → **Settings** (top bar) → **Branches** (left side) → **Add branch protection rule** (it may say "Add classic branch protection rule") → type `main` as the branch name pattern → tick **Require status checks to pass before merging** → in the search box type `audit` and pick **audit** → click **Create**. ⚠️ Button names may differ slightly; if the option is missing, the GitHub plan may not include it for private repositories: tell Claude. **Tested 2026-10-15, not on yet:** after the move to JD-Personal-Brain, main has a protection rule, but its "Require status checks to pass" box isn't ticked (no check named), so a pull request with a red audit mark still showed as mergeable (test pull request #100). Edit the rule, tick that box and pick **audit**; Claude reruns the test | Me | Nothing |
 
 ## Inside the bank
 
@@ -215,5 +214,6 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C35 | Requirement sources check (idea 52): yes, built. The audit checker now fails if a control has no "Comes from" line, or if a sub-step that sets, builds, proves or watches a law or bank-policy control is missing from the playbook's "Where the requirements come from" table; every sub-step that sets, builds, proves or watches such a control is now in the table | 2026-10-15 |
 | C36 | The Audit Log (renamed from "How We Deliver Audit"): approved with all six improvements. Built: a GitHub check on every pull request, an Audit Log row after every audit, three audit sizes (quick, standard, deep), rule tests at every weekly review, lost lines counted per file. The pop-up fix waits on me (W20) | 2026-10-15 |
 | C37 | Fewer approval pop-ups (idea 2): the page rule is in `.claude/settings.json` (my commit, repaired by Claude the same day, pull request #96). Pages should no longer ask for approval from the next session | 2026-10-15 |
+| C38 | The GitHub audit check is now required (idea 56). After the move to JD-Personal-Brain I ticked "Require status checks to pass before merging" with **audit** on main's rule; Claude's test (pull request #100, with a deliberate checker failure) showed GitHub reporting it as blocked, so a pull request with a red audit mark can't be merged, even from my phone | 2026-10-15 |
 
 _Last updated: 2026-10-15_
