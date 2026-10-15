@@ -175,7 +175,7 @@ criterion is contested or someone who decides asks for one. Partner sign-offs in
 step 4 don't change: each named partner still signs, and at the step 4 gate the
 decider approves the signed evidence pack (⚠️ the bank's approval policy may
 require a committee meeting). ⚠️ Whether the bank's
-culture accepts written gates is a guess; confirm it at the first project.
+culture accepts gates in writing is a guess; confirm it at the first project.
 
 ## Measuring the machine
 The machine is a product too, so it gets its own measures, recorded for every

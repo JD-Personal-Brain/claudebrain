@@ -69,11 +69,11 @@ with the bank's risk partner at sub-step 2.4.
 |---|---|---|
 | 2.3 Data contract | Bank policy on data use ⚠️, resting on customer privacy law (the Gramm-Leach-Bliley Act) | The data owner |
 | 2.4 Risk intake | Regulator: the model risk guidance (SR 11-7, possibly replaced by SR 26-2: item W17 in the Open Items log), through the bank's model risk policy | Model risk |
-| 4.1 Risk rating and registration | Regulator: the model risk guidance, through the bank's model inventory | Model risk |
 | 3.4 Build in the controls | Inherits each control's source (Controls Catalog) | Each control's owner |
+| 4.1 Risk rating and registration | Regulator: the model risk guidance, through the bank's model inventory | Model risk |
 | 4.2 Data and privacy review | Bank policy ⚠️, and customer privacy law (the Gramm-Leach-Bliley Act) where individuals' data is involved | Privacy |
 | 4.3 Testing evidence | Regulator: the model risk guidance expects testing; our quality bar sets the thresholds | Model risk |
-| 4.4 Fairness check | Law: fair lending (the Equal Credit Opportunity Act) wherever similar clients could be treated differently | Compliance |
+| 4.4 Fairness check | Law: fair lending (the Equal Credit Opportunity Act) wherever similar clients could be treated differently ⚠️ (my reading for a tool that doesn't decide credit) | Compliance |
 | 4.5 Confirm the controls work | Regulator and bank policy, through the controls it proves | Model risk |
 | 4.6 Vendor reviews | Regulator: the US banking regulators' third-party risk guidance (2023) | Vendor risk |
 | 4.7 Sign-offs | Bank policy: its approval process for AI and models ⚠️ | Model risk |

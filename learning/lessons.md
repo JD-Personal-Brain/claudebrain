@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L29 · 2026-10-15 · A page still called adopted work "proposals"
+- **What happened:** after I said yes to all eight Elon mode suggestions and they were built, the Elon Mode Research page still said "nothing in our framework has changed yet" and described the machine as having no step that deletes. The audit's reviewer caught it as a Must fix.
+- **Root cause:** Claude updated the files the decision changed, but not the page that described the decision as still open.
+- **Fix:** when a decision closes, search for every place that describes it as open or proposed (the page itself, NOW.md, the Open Items log) and update it in the same change. Added to rule R23.
+- **Rule:** R23 · **Test:** T42 covers the Elon mode page; R23's own test covers the sweep · **Level:** 3 · **Times it happened:** 1
+
 ### L28 · 2026-10-15 · Queued follow-up work I hadn't asked for
 - **What happened:** I said yes to four decisions in the Open Items log (the four open decisions, now closed items C30 to C33) and wanted them recorded. Claude also wrote "the RM plan update is next" into the log, the RM Core Use Cases page and NOW.md, and was about to ask which feature waves to use. I had to say: I didn't ask for that next, just update those four.
 - **Root cause:** Claude treated a decision as an order to start the work it implies, and wrote that next step into my files as if I'd agreed it. It confused recording a decision with planning what follows it.

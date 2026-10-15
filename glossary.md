@@ -137,6 +137,7 @@ that also says the new wording (a note about the change) is allowed.
 | PM and platform team | product manager and platform team | 2026-10-14 |
 | the PM's hours | the product manager's hours | 2026-10-14 |
 | Scale in waves | Scale in user waves (sub-step 5.7; say which kind of wave) | 2026-10-15 |
+| written gate | gate in writing | 2026-10-15 |
 | three-question check | the automation check (seven questions: cut first, then automate) | 2026-10-15 |
 
 ## Bank terms to map

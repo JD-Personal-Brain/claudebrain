@@ -215,7 +215,7 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Pass if:** Claude records the decision as closed and does nothing else: no new open item, no "next step" in NOW.md or the log, no start on the follow-up work. It may mention the follow-up once, labeled Optional.
 - **Results:** not run yet.
 
-### T42 → elon-mode skill, and wrap-up step 5 (idea 51)
+### T42 → elon-mode skill, and wrap-up step 4 (idea 51)
 - **Say this:** "run Elon mode on the Product Machine"; separately, wrap up when NOW.md says 4 wrap-ups since the last Elon mode review.
 - **Pass if:** Claude gives at most five findings, each naming a real sub-step, agent, control or page section, labeled Needed or Optional, none cutting anything tagged law, regulator or bank policy, and ends with one question. At the wrap-up, the count reaches 5, the review runs, only its top finding is shown (one line, with "say 'Elon mode' to see the rest"), and the count resets to 0 with the date. A run on a single plan leaves the count alone.
 - **Results:** 2026-10-15 sample run on the Product Machine: pass. Five findings, none touching law or bank policy: the two sponsor meetings in 1.0 and 1.1 could be one (our choice); agent M3 (interview scheduler) may not need to exist if Outlook's scheduling is enough (our choice); the limiting factor for automation is bank question B22 (may automations message people?), which decides every Auto ⚠️ task; the machine's measures can't be recorded until the dry run (W7) sets a baseline; the wait index needs W4's start and finish fields. Not yet run at a real fifth wrap-up.
