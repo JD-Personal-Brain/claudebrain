@@ -93,7 +93,8 @@ def agent_library():
 readme = open(os.path.join(PB, "README.md")).read()
 how = readme.split("## How every sub-step is written")[1].split("\n## ")[0]
 log = readme.split("## The first-time log (fill in for every sub-step)")[1].split("\n## ")[0]
-rules = readme.split("## Rules that apply to every step")[1].split("_Last updated")[0]
+rules = readme.split("## Rules that apply to every step")[1].split("\n## ")[0].split("_Last updated")[0]
+sources = readme.split("## Where the requirements come from")[1].split("\n## ")[0].split("_Last updated")[0]
 steps = [step(f) for f in sorted(os.listdir(PB)) if re.match(r"\d-.*\.md$", f)]
 nav = '<a href="#use">How to use it</a>' + "".join(f'<a href="#step{n}"><span class="num">{n}</span>{inline(t)}</a>' for n, t, _ in steps) + '<a href="#agents">Agents</a>'
 
@@ -132,6 +133,7 @@ page = f'''<title>Product Playbook</title>
 <div class="panel"><h5>Rules for every step</h5>{render_blocks(rules)}</div>
 </div>
 <div><h3 style="margin-bottom:10px">The first-time log</h3>{render_blocks(log)}</div>
+<div><h3 style="margin-bottom:10px">Where the requirements come from</h3>{render_blocks(sources)}</div>
 </section>
 {"".join(h for _, _, h in steps)}
 {agent_library()}

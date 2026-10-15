@@ -1,3 +1,4 @@
+import glob
 """Mechanical audit checks. Run from the repo root: python3 .claude/skills/audit/check.py
 1. Product Machine task tables (product-machine.md) and playbook sub-steps match (every sub-step has rows, every
    review-table "Aim for" kind matches the Product Machine, every sub-step has all 8 fields).
@@ -256,4 +257,8 @@ for f in sorted(glob.glob('designs/*.html')+glob.glob('designs/rm-analytics-canv
             print(f,'links to a section of artifact',m.group(1),'which designs/README.md does not map to one page, so the link was not checked'); probs+=1
         if target and m.group(2) not in ids(target):
             print(f,'links to',target.split('/')[-1]+'#'+m.group(2),'but that page has no section with that id'); probs+=1
+# A Markdown heading that leaked into a built page as text (a "## " at the start of a paragraph or cell)
+for f in sorted(glob.glob('designs/*.html')):
+    if re.search(r'>\s*#{2,4} [A-Z]', open(f).read()): print(f, "shows a stray Markdown heading (## ...) as text"); probs+=1
+
 print("problems:",probs)
