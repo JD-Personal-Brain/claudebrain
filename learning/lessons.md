@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L28 · 2026-10-15 · Queued follow-up work I hadn't asked for
+- **What happened:** I said yes to four decisions in the Open Items log (the four open decisions, now closed items C30 to C33) and wanted them recorded. Claude also wrote "the RM plan update is next" into the log, the RM Core Use Cases page and NOW.md, and was about to ask which feature waves to use. I had to say: I didn't ask for that next, just update those four.
+- **Root cause:** Claude treated a decision as an order to start the work it implies, and wrote that next step into my files as if I'd agreed it. It confused recording a decision with planning what follows it.
+- **Fix:** do exactly what I ask. When a decision implies more work, don't add it to the log, NOW.md or "What's next", and don't start it: at most, mention it once in the reply as **Optional** and let me choose.
+- **Rule:** R31 · **Test:** T41 · **Level:** 1 · **Times it happened:** 1
+
 ### L27 · 2026-10-15 · Suggested moving content when I wanted links to the detail
 - **What happened:** I asked how to improve the integration between the Product Workflow, the Workflow Maps and the Steps Catalog. Claude's main suggestion was to move the clickable map onto the Product Workflow page, and it built a sample of that. I had to explain: I wasn't asking to copy information across pages; the Product Workflow page summarizes, and from it I should be able to click down to the deeper layer.
 - **Root cause:** Claude read "integration" as merging or moving content, not as navigation between layers. It went straight to a restructure instead of first asking what was missing for me as a reader: a way to get from the summary to the detail.
