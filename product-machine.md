@@ -54,7 +54,7 @@ bank allowing automations to message people.
 | 1.7 | Choose the first target | Me | Meeting | Sponsor |
 | 1.7 | Record the baseline, once the measure is set | Auto | M5 Baseline recorder (Power BI) | Sponsor |
 | 1.7 | Build the gate pack | Draft | M6 Gate pack drafter | Sponsor |
-| Gate | Go/no-go | Me | Meeting | Sponsor, risk |
+| Gate | Go/no-go | Me | In writing; a meeting only if contested | Sponsor, risk |
 
 **2. Define**
 | # | Task | Kind | Tool (guess) | Goes to |
@@ -71,7 +71,7 @@ bank allowing automations to message people.
 | 2.8 | Scope release 1 and the pilot group | Me | Backlog tool | Sponsor |
 | 2.8 | Record the long-term owner, or "to be decided" with a date to decide by | Me | Meeting | Sponsor |
 | 2.8 | Complete the brief and the gate pack | Draft | M6 Gate pack drafter | Sponsor |
-| Gate | Go/no-go | Me | Meeting | Sponsor, risk, data owner |
+| Gate | Go/no-go | Me | In writing; a meeting only if contested | Sponsor, risk, data owner |
 
 **3. Build**
 | # | Task | Kind | Tool (guess) | Goes to |
@@ -87,7 +87,7 @@ bank allowing automations to message people.
 | 3.6 | Build the test set | Draft | M12 Test case generator | Users approve the answers |
 | 3.7 | Run the test set on every version | Auto | M26 Test grader | Me, on failure |
 | 3.7 | Build the gate pack | Draft | M6 Gate pack drafter | Sponsor |
-| Gate | Go/no-go | Me | Meeting | Sponsor |
+| Gate | Go/no-go | Me | In writing; a meeting only if contested | Sponsor |
 
 **4. Govern and test**
 | # | Task | Kind | Tool (guess) | Goes to |
@@ -104,7 +104,7 @@ bank allowing automations to message people.
 | 4.7 | The sign-offs themselves | Partner | — | Recorded in the tracker |
 | 4.7 | Unblock a stuck sign-off | Me | Meeting | — |
 | 4.8 | Draft the monitoring plan | Draft | Monitoring plan template | Risk, operations |
-| Gate | Go/no-go | Partner | Meeting | Risk, sponsor |
+| Gate | Go/no-go | Partner | In writing; a meeting only if contested | Risk, sponsor |
 
 **5. Release and adopt**
 | # | Task | Kind | Tool (guess) | Goes to |
@@ -122,7 +122,7 @@ bank allowing automations to message people.
 | 5.6 | Fix and tell users what changed | Me | Release notes | Users |
 | 5.7 | Confirm the long-term owner before scaling | Me | Meeting | Sponsor |
 | 5.7 | Write the scale recommendation | Draft | M6 Gate pack drafter | Sponsor |
-| Gate | Go/no-go to scale | Me | Meeting | Sponsor, user leaders |
+| Gate | Go/no-go to scale | Me | In writing; a meeting only if contested | Sponsor, user leaders |
 
 **6. Measure and iterate**
 | # | Task | Kind | Tool (guess) | Goes to |
@@ -135,31 +135,65 @@ bank allowing automations to message people.
 | 6.5 | Rank the candidates for the next feature wave | Draft | M33 Improvement scout | Me, then sponsor |
 | 6.6 | Total time and waits from the first-time logs | Draft | M19 Log summarizer | Me |
 | 6.6 | Improve the machine: update the Product Machine, the Product Framework and the playbook | Me | — | — |
-| Gate | Keep, change or stop; invest more, adjust or stop | Me | Meeting | Sponsor, Finance |
+| Gate | Keep, change or stop; invest more, adjust or stop | Me | In writing; a meeting only if contested | Sponsor, Finance |
 
 ## Across every project (the running layer)
 | # | Task | Kind | Tool (guess) | Goes to |
 |---|---|---|---|---|
 | All | One tracker for all projects: task, owner, date, status (I set it up once) | Auto | A shared tracker (tool to confirm) | Everyone on the project |
 | All | Remind owners before a due date; tell me when something is late | Auto ⚠️ | Power Automate | Owners, then me |
-| All | Weekly status note for each project, from the tracker | Draft | M365 Copilot | Me, then stakeholders |
+| All | Name the limiting factor: the one thing holding the project back right now, with its owner. It opens the tracker and the weekly status note, and my time goes there first | Me | The tracker | Sponsor and the owner |
+| All | Weekly status note for each project, from the tracker, opening with the limiting factor | Draft | M365 Copilot | Me, then stakeholders |
 | All | Decision log and risk/issue list, from meeting notes | Draft | M8 Decision log drafter (M365 Copilot) | Me |
-| All | One view of all projects: step, late items, measures | Auto | Power BI | Sponsors and leaders |
+| All | One view of all projects: step, limiting factor, late items, product measures and the machine's measures | Auto | Power BI | Sponsors and leaders |
 
 ## The automation check at every gate
-At each gate, before go/no-go, ask of every **Me** and **Draft** task:
-1. **Did it repeat?** Will it come up again, in this project or the next one?
-2. **Is it stable?** Did we do it the same way at least twice?
-3. **Is it safe alone?** It makes no decision, nothing reaches a client, and the bank's rules allow it.
+At each gate, before go/no-go, take every **Me** and **Draft** task through the
+check in this order: **cut first, then automate** (the order Elon Musk's
+"algorithm" uses; see the Elon Mode Research page). Automating a task that
+shouldn't exist only locks in the waste.
 
-All three yes → move it one kind toward **Auto** before the next project, and
+**First, cut:**
+1. **Should it exist?** Who required it, and where does the requirement come from: law or regulator, bank policy, or our choice (each control's "Comes from" line in the Controls Catalog or, for sub-steps and gates, "Where the requirements come from" in the Product Playbook)? Law and bank policy stay. Our choices can be challenged.
+2. **Can we delete it?** If yes, delete it, and record in the decision log what it did and who agreed. If nothing we delete ever has to come back, we aren't cutting enough (Musk's rule of thumb: about 1 in 10 comes back; ⚠️ sources give 10% or 20%).
+3. **Can we simplify it?**
+4. **Can we make it faster?** Shorten the longest wait first; the wait index (below) shows where.
+
+**Then, automate what's left:**
+5. **Did it repeat?** Will it come up again, in this project or the next one?
+6. **Is it stable?** Did we do it the same way at least twice?
+7. **Is it safe alone?** It makes no decision, nothing reaches a client, and the bank's rules allow it.
+
+Yes to 5, 6 and 7 → move it one kind toward **Auto** before the next project, and
 update that step's task table above. The reverse also applies: if an **Auto** task went
 wrong, move it back to a person until it's fixed.
+
+## Gates in writing when they're clean
+When every gate criterion is met, the decider approves the gate pack in writing,
+and the approval goes in the decision log. A gate meeting happens only when a
+criterion is contested or someone who decides asks for one. Partner sign-offs in
+step 4 don't change: each named partner still signs, and at the step 4 gate the
+decider approves the signed evidence pack (⚠️ the bank's approval policy may
+require a committee meeting). ⚠️ Whether the bank's
+culture accepts gates in writing is a guess; confirm it at the first project.
+
+## Measuring the machine
+The machine is a product too, so it gets its own measures, recorded for every
+project in sub-step 6.6 and shown in the one view of all projects. Targets are
+[X] until the first project sets a baseline; after that, each project should
+beat the last.
+
+| Measure | What it is | Where it comes from |
+|---|---|---|
+| Days from kickoff to pilot | Calendar days from sub-step 1.0 to the pilot launch (5.2) | The tracker |
+| Days at each gate | Calendar days from the gate pack being ready to the decision | The decision log |
+| Releases per month in the pilot | How many improved versions reach pilot users each month (how fast we iterate) | Release notes (5.6) |
+| Wait index | For each sub-step: calendar days from start to finish, divided by hours of real work. A high number means waiting, not working; fix the highest first | The first-time logs (6.6, agent M19) |
 
 ## Many projects at once
 - **Same machine for every project:** the same steps, tables and tracker, so any project can be compared with any other.
 - **Limit the Me-heavy steps.** Discover and Define need the most of my time, so at most [X] projects are in them at once. Steps 3 to 6 are mostly Auto and Draft, so more projects can be there.
-- **Stagger the gates** so that no two gate meetings land in the same week.
+- **Stagger the gates** so that no two gate meetings (the contested ones) land in the same week.
 - **My week, planned:** [X] hours on decisions and gates, [X] on users, [X] on partners and sign-offs, [X] checking drafts. If **Me** work runs over, the automation check comes first.
 
-_Last updated: 2026-10-14_
+_Last updated: 2026-10-15_

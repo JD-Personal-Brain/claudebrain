@@ -122,16 +122,17 @@ log (see `README.md`) for every sub-step.
 - **Know first:** the first-time logs from every step, and the automation review tables at the end of each playbook file.
 - **First time, step by step:**
   1. Read back through the first-time logs from steps 1 to 6.
-  2. Total the time per step, and mark where you waited longest.
-  3. For each agent idea that passed the three-question check, decide: build it now, later, or never.
-  4. Update the task tables in `product-machine.md` (Auto, Draft or Me) and this playbook with what you learned.
-  5. Write a one-page "what I'd do differently" note for the next project.
-- **Output:** updated Product Machine task tables, Product Framework and playbook, a build list of agents, and the lessons note.
+  2. Total the time per step, work out each sub-step's wait index (calendar days from start to finish, divided by hours of real work), and mark the highest.
+  3. Run the automation check on every Me and Draft task, cut first: decide what to delete, simplify or speed up (starting with the highest wait index). Then, for each agent idea that passed the rest of the check, decide: build it now, later, or never.
+  4. Record the machine's measures for this project (days from kickoff to pilot, days at each gate, releases per month in the pilot; see "Measuring the machine" in the Product Machine) and compare them with the last project.
+  5. Update the task tables in `product-machine.md` (Auto, Draft or Me) and this playbook with what you learned.
+  6. Write a one-page "what I'd do differently" note for the next project.
+- **Output:** updated Product Machine task tables, Product Framework and playbook, a list of what was deleted, a build list of agents, the machine's measures for this project, and the lessons note.
 - **Done when:** the next project can start from the updated files.
 - **Automation watch:**
   - First time: **Me**.
   - Note: which agents you built, and how much time they saved on the next project.
-  - Agent: **M19 Log summarizer** (agent library) that totals time and waits from the first-time logs. *Draft*.
+  - Agent: **M19 Log summarizer** (agent library) that totals time, waits and each sub-step's wait index from the first-time logs. *Draft*.
 - **For RM analytics:** the RM project is the first run, so its logs set the starting point for every project after it.
 
 ---

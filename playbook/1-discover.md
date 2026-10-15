@@ -216,7 +216,7 @@ sub-step. At the end, run the automation review.
 
 ## The Discover gate
 
-- **Who decides:** the sponsor, with a risk partner present.
+- **Who decides:** the sponsor, with the risk partner's agreement (in writing when the gate is clean; see the Product Machine).
 - **Bring:** the gate pack from 1.7.
 - **Go means:** the sponsor agrees on the target, the measure and today's baseline. The risk partner has no blocking concern.
 - **No-go means:** go back to the sub-step that fell short (usually 1.2 or 1.7), or stop the project and record why.
@@ -226,8 +226,9 @@ sub-step. At the end, run the automation review.
 
 ## Discover automation review (do this at the gate)
 
-Run the three questions (Repeat? Stable? Safe alone?) on every Me and Draft
-task, using your first-time logs. Then update this shortlist and the Discover
+Run the automation check from the Product Machine on every Me and Draft task,
+using your first-time logs: cut first (should it exist, delete, simplify, make
+it faster), then automate what's left (repeat? stable? safe alone?). Then update this shortlist and the Discover
 table in `product-machine.md`.
 
 | Sub-step | Agent | First time | Aim for | Already specified? |

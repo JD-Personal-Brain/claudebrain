@@ -169,7 +169,7 @@ for block in re.split(r"\n### ", read("playbook/controls.md"))[1:]:
     head, _, body = block.partition("\n")
     m = re.match(r"(K\d+)\. (.+)", head)
     controls.append((m.group(1), m.group(2), fields_of(body)))
-NEED = ["Group", "What it is", "Why it matters", "Set in", "Built in", "Proved in", "Watched in", "Tool (guess)", "Proof"]
+NEED = ["Group", "What it is", "Why it matters", "Set in", "Built in", "Proved in", "Watched in", "Tool (guess)", "Proof", "Comes from"]
 for cid, name, f in controls:
     missing = [k for k in NEED if not f.get(k)]
     if missing:
@@ -196,7 +196,7 @@ def control_card(cid, name, f):
     spec = "".join(f"<div><dt>{E(k)}</dt><dd>{inline(cap(f[k]))}</dd></div>" for k in NEED[2:])
     return (f'<details class="ccard" data-group="{E(f["Group"])}" data-search="{E((cid + " " + name + " " + " ".join(f[k] for k in ["Group", "What it is", "Why it matters", "Tool (guess)", "Proof"])).lower())}">'
             f'<summary><span class="cid">{cid}</span><span class="cname">{inline(name)}</span>'
-            f'<span class="cwhat">{inline(cap(f["What it is"]))}</span><span class="cmeta">Set: {E(stages(f["Set in"]))} · Proved: {E(stages(f["Proved in"]))}</span></summary>'
+            f'<span class="cwhat">{inline(cap(f["What it is"]))}</span><span class="cmeta">{E(f["Comes from"].split(":")[0])} · Set: {E(stages(f["Set in"]))} · Proved: {E(stages(f["Proved in"]))}</span></summary>'
             f'<dl class="spec">{spec}</dl><p class="csrc">Numbers such as 2.4 are playbook sub-steps: look them up in the Steps Catalog.</p></details>')
 
 sections = ""
@@ -206,7 +206,8 @@ for g in groups:
                  f'<div class="clist">{"".join(control_card(*c) for c in mine)}</div></section>')
 howto = ('<div class="note"><span class="warn">⚠️</span> Gathered from my own framework and playbook, not from Associated Bank. '
          "The bank's own control list comes from its risk partner early in the Define step, and it replaces this one where they differ. "
-         "Numbers such as 2.4 are sub-steps of my six-step process: look them up in the Steps Catalog.</div>")
+         "Numbers such as 2.4 are sub-steps of my six-step process: look them up in the Steps Catalog. "
+         "Each control says where it comes from: <strong>law or regulator</strong> (ask the partner who owns it: compliance, privacy, model risk or vendor risk), <strong>bank policy</strong> (ask the policy's owner) or <strong>our choice</strong> (ask the product manager). The automation check never deletes law or bank policy, nor a sub-step that sets, builds, proves or watches them.</div>")
 page("Controls Catalog", "Reference · controls",
      f"All {len(controls)} governance controls in one place: the safeguards built into every AI product, with where each is set, built, proved and watched.",
      "Kind of control", groups, sections, howto,

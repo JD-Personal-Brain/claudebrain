@@ -31,7 +31,13 @@ documents against it.
 | **Product machine** | The whole system for running products: the six steps, the task tables (in `product-machine.md`, shown on the Product Machine page), the agents and the tracker. |
 | **Playbook** | The Product Playbook, the field manual: how to do each sub-step the first time, and what to log so it can be automated later. |
 | **First-time log** | The notes kept while doing a sub-step for the first time: time spent, waits, inputs and what repeated. |
-| **Automation check** | Three questions asked of every Me and Draft task at each gate: did it repeat, is it stable, is it safe alone? Three yeses move it one kind toward Auto. |
+| **Automation check** | Seven questions asked of every Me and Draft task at each gate, in order: **cut first** (should it exist, can we delete it, simplify it, make it faster?), **then automate** what's left (did it repeat, is it stable, is it safe alone?). Three yeses to the last three move it one kind toward Auto. Law and bank policy are never cut. |
+| **Comes from** | Where a requirement (a control, sub-step or gate) comes from: **law or regulator**, **bank policy** or **our choice**. It says who to ask to change it: the partner who owns the law (compliance, privacy, model risk or vendor risk), the policy's owner or the product manager. |
+| **Limiting factor** | The one thing holding a project back right now, with its owner (for example a data contract waiting for a signature). It opens the tracker and the weekly status note. |
+| **Wait index** | For a sub-step: calendar days from start to finish, divided by hours of real work, from the first-time log. A high number means waiting, not working. |
+| **Machine measures** | How well the product machine itself works, per project: days from kickoff to pilot, days at each gate, releases per month in the pilot, and the wait index (Product Machine). |
+| **Gate in writing** | A gate decided by the decider approving the gate pack in writing, used when every criterion is met; a meeting is held only when one is contested. |
+| **Elon mode review** | A review of a plan or of the product machine through Elon Musk's lens (the Elon Mode Research page): the cut-first questions plus the bank guardrails. Run by the elon-mode skill. |
 
 ## People, agents and safeguards
 
@@ -131,6 +137,8 @@ that also says the new wording (a note about the change) is allowed.
 | PM and platform team | product manager and platform team | 2026-10-14 |
 | the PM's hours | the product manager's hours | 2026-10-14 |
 | Scale in waves | Scale in user waves (sub-step 5.7; say which kind of wave) | 2026-10-15 |
+| written gate | gate in writing | 2026-10-15 |
+| three-question check | the automation check (seven questions: cut first, then automate) | 2026-10-15 |
 
 ## Bank terms to map
 

@@ -1,10 +1,10 @@
 """Builds designs/library.html, the Document Library, from designs/library.json.
-The page is one index in five numbered sections (the bank, how we deliver, relationship managers,
-portfolio managers, reference), one row per page. A row shows the page's status;
-in most sections its twisty opens a one-line description and the page's sections. Placeholder rows mark
+The page is one index in six numbered sections (the bank, how we deliver, relationship managers,
+portfolio managers, reference, research), one row per page. A row shows the page's status;
+in the relationship manager and portfolio manager sections its twisty opens a one-line description and the page's sections. Placeholder rows mark
 pages still to build. A section marked "numbered" in library.json (the bank, how we deliver) shows
 plain numbered rows instead, read in order: click the name to open the page. A section
-marked "bulleted" (reference) shows the same plain rows with a dot instead of a number.
+marked "bulleted" (reference, research) shows the same plain rows with a dot instead of a number.
 To add a document: add it to library.json (and designs/README.md) and to PAGE_FILE below,
 run this, republish.
 Run: python3 designs/library-build.py"""
@@ -32,7 +32,7 @@ PAGE_FILE = {"open-items": "open-items.html", "job-description": "job-descriptio
              "product-machine": "product-machine.html", "playbook": "playbook.html", "workflow": "role-workflow.html",
              "rm-design": None, "rm-plan": "rm-analytics-plan.html", "mckinsey-use-cases": "mckinsey-use-cases.html",
              "prompting": "prompting.html", "credit-market-scan": "credit-market-scan.html", "workflows": "workflows.html", "agents": "agents.html", "steps": "steps.html",
-             "controls": "controls.html", "glossary": "glossary.html"}
+             "controls": "controls.html", "glossary": "glossary.html", "elon-mode": "elon-mode.html"}
 
 def text(h):
     h = re.sub(r'<span class="g?count">.*?</span>', "", h)  # drop item counts like "19"
@@ -130,7 +130,7 @@ page = f'''<title>Document Library</title>
 <div class="band"><div class="wrap">
 <span class="label">The program</span>
 <h1>Document Library</h1>
-<p class="lede">The AI program for Associated Bank&#x27;s relationship managers and credit team: the bank, each group&#x27;s work and core use cases, how we deliver, and reference.</p>
+<p class="lede">The AI program for Associated Bank&#x27;s relationship managers and credit team: the bank, each group&#x27;s work and core use cases, how we deliver, reference and research.</p>
 <nav class="stepnav" aria-label="Sections">{nav}</nav>
 <div class="filter"><label for="q">Find a document</label><input id="q" type="search" placeholder="Type a word, like plan, agent or prompt" autocomplete="off"></div>
 </div></div>

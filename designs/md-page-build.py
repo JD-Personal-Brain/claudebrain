@@ -28,6 +28,8 @@ PAGES = [
      "McKinsey's five frontline AI use cases and their reported returns, how our RM plan covers them, and the seven core use cases the plan is now organized on."),
     ("memos/credit-market-scan.md", "credit-market-scan.html", "Portfolio Manager Core Use Cases", "Portfolio managers · core use cases",
      "What banks are deploying in commercial credit, and the credit counterpart of each of the seven core use cases."),
+    ("memos/elon-mode-research.md", "elon-mode.html", "Elon Mode Research", "Research · how Musk builds and improves systems",
+     "The main ideas Elon Musk is known for in engineering, business and process improvement, how sure we are of each, where they went wrong, our read of his model, and suggestions for our own system."),
     ("glossary.md", "glossary.html", "Glossary", "Reference · the words we use",
      "One meaning for each word in every plan, playbook page and agent spec, plus the bank's terms still to map."),
 ]

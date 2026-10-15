@@ -30,7 +30,7 @@ Claude updates it at every wrap-up: finished items move to "Closed" with the dat
 | Stage 2. Make the machine runnable | 4 | What Claude builds so a real run is possible |
 | Stage 3. Dry run and fix | 3 | Running the machine once and fixing it |
 | Stage 4. Get ready for Andy | 9 | What Andy sees, and what I ask him |
-| Alongside the path | 10 | Useful any time; doesn't block a stage. Dated items first |
+| Alongside the path | 11 | Useful any time; doesn't block a stage. Dated items first |
 | Inside the bank | 21 | Questions only someone at the bank can answer |
 | Parked on purpose | 4 | Not forgotten; waiting for a signal from me |
 
@@ -89,7 +89,7 @@ What we're working on first: a quick check on the bank news scout, then the user
 | # | Item | Who | Waits on |
 |---|---|---|---|
 | W3 | Ready-to-fill templates: brief, data contract, risk intake, gate pack, decision log, evidence pack, monitoring plan, release-readiness checklist | Claude drafts, I review | My yes |
-| W4 | Tracker design: the fields every task carries, written to work in any tool (bank question B23 is still open) | Claude drafts, I review | My yes |
+| W4 | Tracker design: the fields every task carries, written to work in any tool (bank question B23 is still open). Each project's tracker opens with its limiting factor and owner, and records each sub-step's start and finish dates and hours, so the wait index and the machine's measures come straight from it (Elon mode, agreed 2026-10-15) | Claude drafts, I review | My yes |
 | W5 | Approvals map for one product: who signs what at each gate, typical turnaround ⚠️, and who to go to when a sign-off is stuck | Claude drafts, I review | My yes |
 | W6 | Close the gaps the Controls Catalog found in my playbook: 13 of the 25 controls have a stage marked "not covered in the playbook yet", such as who proves that only approved AI models are used. Each needs a line added to the right playbook step, or a decision that it isn't needed | Claude, with my yes for each playbook change | Nothing |
 
@@ -99,7 +99,7 @@ What we're working on first: a quick check on the bank news scout, then the user
 
 | # | Item | Who | Waits on |
 |---|---|---|---|
-| W7 | Dry run of the machine: take one small made-up product through all six steps with the templates and two or three agents built as Claude skills, and log where it breaks | Claude and me | W3 and W4, and my read of the pages (V1) |
+| W7 | Dry run of the machine: take one small made-up product through all six steps with the templates and two or three agents built as Claude skills, and log where it breaks. Include a **deletion pass** (Elon mode, agreed 2026-10-15): mark every sub-step, agent and control "did it change a decision or catch a problem?" and delete what didn't, until about 1 in 10 has to come back. Law and bank-policy items are never cut. Record each sub-step's wait index and the machine's measures as the first baseline | Claude and me | W3 and W4, and my read of the pages (V1) |
 | W8 | Apply the product machine to the RM plan as the first worked example: mark every RM task Auto, Draft or Me | Claude, with me | V1 and W7 |
 | W9 | Support model and incident runbook for one product: who users call, how issues are logged and fixed, and the steps to pause or roll back the product | Claude drafts, I review | W7 (the dry run shows what support is needed) |
 
@@ -125,6 +125,7 @@ Useful any time; none of these blocks a stage. Dated ones first.
 
 | # | Item | Who | Waits on |
 |---|---|---|---|
+| D2 | Requirement sources check (idea 52): should the audit checker also fail when a sub-step that rests on law or bank policy has no "Comes from" tag in the playbook's table? (yes / no / not yet) | Me | Nothing |
 | W12 | First weekly review: what's working, what's annoying, what to change. Also re-check Anthropic's prompting guide for changes | Me, with Claude | About 2026-10-21 (not yet, said 2026-10-14) |
 | W13 | Re-run the Bank Business Briefing after the bank's Q3 2026 results on October 22, 2026, using the saved prompt (Example 5 in the Prompting Guide). Read the full Q2 earnings call transcript at the same time; only a summary was available the first time. The bank news scout's scheduled run on October 23 does the re-run as a draft | Claude | October 22, 2026 |
 | W14 | Two loose ends from the McKinsey article: confirm its publication date (the pasted page showed none), and decide whether role redesign (new RM roles as agents take on work, McKinsey's fifth principle) belongs in the playbook; it isn't covered yet | Claude, then me | Nothing |
@@ -210,5 +211,6 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C31 | Move prospecting (winning new clients) earlier than wave 3: yes | 2026-10-15 |
 | C32 | Keep autonomous lead nurturing and pricing out of the RM plan for now, because they conflict with "nothing reaches a client without the RM" and the fair-lending control (K3): yes. Revisit later with evidence | 2026-10-15 |
 | C33 | The credit order on the Portfolio Manager Core Use Cases page: yes. Credit memo and annual review drafts first, early warning second, risk ratings kept out of the first feature waves. The credit plan itself stays parked (P1) | 2026-10-15 |
+| C34 | The eight Elon mode suggestions: yes to all, built 2026-10-15. The automation check now cuts first (should it exist, delete, simplify, faster) before it automates; every control says where it comes from (law or regulator, bank policy, our choice) and who to ask to change it, with a table for the sub-steps and gates in the playbook; the dry run (W7) includes a deletion pass; each project names its limiting factor (W4 and the running layer); the first-time log gives a wait index; the Product Machine measures the machine itself; gates are decided in writing when clean; and a new elon-mode skill reviews the work at every fifth wrap-up | 2026-10-15 |
 
 _Last updated: 2026-10-15_
