@@ -26,7 +26,7 @@ not the first time risk partners see the product.
 
 | Step | Question | Governance thread | Gate |
 |---|---|---|---|
-| 1. Discover | Which problem or opportunity is worth solving first? | Risk partners briefed on the idea | Sponsor agrees on the target, the measure and today's baseline |
+| 1. Discover | Which problem or opportunity is worth solving first? | Risk partner briefed on the idea | Sponsor agrees on the target, the measure and today's baseline |
 | 2. Define | What exactly do we build first, and how will we know it worked? | Risk intake and early rating; data use approved | Brief, data contract and risk rating agreed; value model shows payback within [X] months |
 | 3. Build | What's the smallest version users will use and trust? | Controls built in; test set created | Meets the quality bar in testing; every control has proof |
 | 4. Govern and test | Is it safe, fair and controlled? | Formal validation and sign-offs | All sign-offs recorded; monitoring plan agreed |

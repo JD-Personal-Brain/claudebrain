@@ -2,9 +2,9 @@
 
 **The question:** which problem or opportunity is worth solving first?
 **The gate:** sponsor agrees on the target, the measure and today's baseline.
-**Governance thread:** risk partners briefed on the idea.
+**Governance thread:** risk partner briefed on the idea.
 
-Work through 1.0 to 1.7 in order. Risk partners are briefed on the idea before any build uses real client data. Some can overlap: 1.3, 1.4 and 1.5 usually
+Work through 1.0 to 1.7 in order. The risk partner is briefed on the idea before any build uses real client data. Some can overlap: 1.3, 1.4 and 1.5 usually
 run in the same weeks. Fill in the first-time log (see `README.md`) for every
 sub-step. At the end, run the automation review.
 

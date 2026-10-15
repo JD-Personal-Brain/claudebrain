@@ -24,7 +24,7 @@ everything else is iterated and grown on top.
 **The plan (estimate):** a working prototype in week 1, built alongside
 discovery. The meeting follow-up goes to pilot RMs in about weeks 2–4, and call notes
 into Salesforce and the insight features in about weeks 4–6, then small releases every week or two and
-a new wave about every five weeks. The pace is set by data access and the
+a new feature wave about every five weeks. The pace is set by data access and the
 bank's AI review, not by build time. A first read on closed revenue comes at
 about month 6. By day 90: wave 1 live for about two months, wave 2 live, wave 3
 in review.
@@ -96,7 +96,7 @@ sales funnel, and call notes reuse the recap the meeting follow-up already
 produces. They go live with the insights, once saving to Salesforce is signed off.
 
 **Why this works:** standard AI products on platforms the bank already runs
-need less build and fit existing approvals. Each wave is low-risk and
+need less build and fit existing approvals. Each feature wave is low-risk and
 internal-only: the AI suggests and drafts, and the RM decides. If the bank's
 AI review applies to every new use, the review sets the real pace, which is
 why the risk partner is involved from week one.
@@ -171,7 +171,7 @@ formal approval gate, not the first time risk partners see the product.
 
 | Step | Question it answers | Governance thread | Gate (go/no-go) |
 |---|---|---|---|
-| **1. Discover** | Which standard AI products come first, and which revenue lever matters most? | Risk partners briefed on the idea | Sponsor agrees on the wave 1 AI products, the target lever and the baseline |
+| **1. Discover** | Which standard AI products come first, and which revenue lever matters most? | Risk partner briefed on the idea | Sponsor agrees on the wave 1 AI products, the target lever and the baseline |
 | **2. Define** | What exactly do we build first, and how will we know it worked? | Risk intake and early rating; data use approved | Brief, data contract and risk rating agreed; value model shows payback within [X] months |
 | **3. Build** | What's the smallest version RMs will use and trust? | Controls built in; test set created | Meets the quality bar (below) in testing; every control has proof |
 | **4. Govern and test** | Is it safe, fair and controlled? | Formal validation and sign-offs | All sign-offs recorded; monitoring plan agreed |
@@ -249,7 +249,7 @@ loop compounds over time and is a reason to build both goals together.
 - **AI for RMs:** a working prototype on sample data, so RMs react to something real.
 - **Data:** Salesforce pipeline and activity; client balances and products in Snowflake. Identify the data owners.
 - **Output:** a ranked list of opportunities with sizes, the first target, the baseline, and a first value model.
-- **Checks:** no client data in unapproved AI tools; risk partners briefed on the idea.
+- **Checks:** no client data in unapproved AI tools; risk partner briefed on the idea.
 - **Gate:** the sponsor agrees on the wave 1 AI products, the target lever and the baseline.
 
 ---
@@ -318,7 +318,7 @@ and Outlook).
 | M26 Test grader | For the team | Scores every version against the test set and the quality bar | AWS Bedrock model evaluation | Test set, product outputs | Experienced RMs grade a sample |
 
 - **AI for the team:** drafting prompts and test questions; checking every version against the test set.
-- **AI for RMs:** wave 1: pre-meeting briefs, meeting follow-ups, call notes into Salesforce and the weekly opportunity list, with one-click feedback. Later waves add the next standard AI products. Assistive only.
+- **AI for RMs:** wave 1: pre-meeting briefs, meeting follow-ups, call notes into Salesforce and the weekly opportunity list, with one-click feedback. Later feature waves add the next standard AI products. Assistive only.
 - **Data:** live connections from Snowflake and Salesforce; each RM sees only clients they're already allowed to see.
 - **Output:** a working product in a test environment, the test results and an evidence pack started.
 - **Checks:** filters that block sensitive data and off-topic answers (Bedrock Guardrails, Salesforce Einstein Trust Layer); every AI action logged; client consent for any recorded meeting.
@@ -394,7 +394,7 @@ and Outlook).
 **Goal:** Prove it creates new revenue, and keep making it better.
 
 **Leading and lagging measures.** Commercial deals often take months to
-close, so each wave is judged first on *leading* measures (insights acted on,
+close, so each feature wave is judged first on *leading* measures (insights acted on,
 opportunities and pipeline created, client time gained), visible within
 weeks. *Lagging* measures, meaning closed revenue against the comparison
 group, get a first read at about month 6 and firm up over the following
@@ -460,7 +460,7 @@ the first days.
 goes first: it runs in M365 Copilot on the RM's own meetings and email, so it
 needs the least new data and review. RMs keep shaping the brief,
 opportunity list and call notes in the test environment, so they're ready the day access and
-sign-off land, by about week 10. Later waves move back by the same amount. The
+sign-off land, by about week 10. Later feature waves move back by the same amount. The
 call is made at Gate 2 (week 2).
 
 **Wave 1: the first six weeks**
@@ -479,7 +479,7 @@ call is made at Gate 2 (week 2).
 
 | Step | Weeks (estimate) | Ends with |
 |---|---|---|
-| **1. Discover** | Weeks 1–2, with a working prototype in week 1 (short sprints before later waves) | Gate 1 (end of week 1): wave 1 AI products, target lever, baseline; interviews and sizing continue in week 2 |
+| **1. Discover** | Weeks 1–2, with a working prototype in week 1 (short sprints before later feature waves) | Gate 1 (end of week 1): wave 1 AI products, target lever, baseline; interviews and sizing continue in week 2 |
 | **2. Define** | Weeks 1–2, alongside discovery | Gate 2 (week 2): data contract, risk rating, value model; split decision if needed |
 | **3. Build** | From day 1. Wave 1: weeks 1–5; wave 2: 7–9; wave 3: 11–14 | Gate 3: each AI product meets the quality bar in testing, and every control has proof |
 | **4. Govern and test** | Risk partner reviews each version from week 1; sign-offs per AI product | Gate 4: each AI product approved for real RMs and real client data |
@@ -498,7 +498,7 @@ coming in.
 |---|---|
 | **CRM data is incomplete** (RMs skip logging) | Lean on account data in Snowflake first; the time-saving features improve CRM data over time (the flywheel) |
 | **RMs don't trust the insights** | Show the reason and the numbers behind every insight; co-design with pilot RMs; managers model use |
-| **Governance takes longer than planned** | Brief risk partners in week one; keep each wave low-risk, internal-only and on approved platforms; build the evidence pack as we go; if it still runs long, split wave 1 (see the backup plan in Section 6) |
+| **Governance takes longer than planned** | Brief risk partners in week one; keep each feature wave low-risk, internal-only and on approved platforms; build the evidence pack as we go; if it still runs long, split wave 1 (see the backup plan in Section 6) |
 | **Incentives don't reward acting on insights** | Agree recognition for AI-sourced wins with sales leadership before launch |
 | **Costs grow with usage** | Track cost per active RM; use the smallest AI model that meets the quality bar |
 | **Revenue attribution is disputed** | Agree the comparison-group method and tagging with Finance in Define |

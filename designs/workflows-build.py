@@ -221,7 +221,7 @@ page = f'''<title>Workflow Maps</title>
 <nav class="stepnav" aria-label="Related pages"><a href="{WORKFLOW_URL}" target="_blank" rel="noopener">Product Workflow: the steps and their gates ↗</a><a href="{STEPS_URL}" target="_blank" rel="noopener">Steps Catalog: look up any sub-step ↗</a></nav>
 </div></div>
 <main class="wrap">
-<div class="howto"><span>Reading the maps:</span><span>Big navy box = a step of the main process</span><span>Small box = a sub-process</span><span><span class="chip k-auto">Auto</span><span class="chip k-draft">Draft</span><span class="chip k-me">Me</span><span class="chip k-partner">Partner</span> = who does its tasks</span><span>◆ = a go/no-go gate</span><span><span class="govkey">Governance</span> = the risk work in that step</span></div>
+<div class="howto"><span>Reading the maps:</span><span>Big navy box = a step (Map 1) or a stage of the RM's week (Map 2)</span><span>Small box = a sub-process</span><span><span class="chip k-auto">Auto</span><span class="chip k-draft">Draft</span><span class="chip k-me">Me</span><span class="chip k-partner">Partner</span> = who does its tasks</span><span>◆ = a go/no-go gate</span><span><span class="govkey">Governance</span> = the risk work in that step</span></div>
 <section id="deliver" class="mapwrap">
 <div class="stephead"><span class="label">Map 1 · every product</span><h2>How we deliver a product</h2>
 <p class="intro" style="margin-top:6px;color:var(--muted)">The six steps of the Product Workflow, each ending in a gate, with its {n_sub} sub-steps underneath and the governance thread (the risk work) under each gate. After the first pass, steps 3 to 6 repeat in short cycles.</p></div>
@@ -251,6 +251,9 @@ page = f'''<title>Workflow Maps</title>
     b.addEventListener('click',function(){{show(b);}});
   }});
   ['deliver','rm'].forEach(function(m){{var f=document.querySelector('.branch[data-map="'+m+'"]'); if(f) f.setAttribute('aria-pressed','true');}});
+  // a link from another page that names a sub-step (#d3-1) shows that sub-step's details
+  function openHash(){{var h=location.hash&&document.getElementById(decodeURIComponent(location.hash.slice(1))); if(h&&h.classList.contains('branch')) show(h);}}
+  openHash(); window.addEventListener('hashchange',openHash);
 }})();
 </script>
 '''
