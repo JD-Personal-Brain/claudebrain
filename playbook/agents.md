@@ -220,7 +220,7 @@ its person in charge; a monitor never reports a pass on missing data.
 - **Used in:** 4.2
 - **For:** the team
 - **Kind:** Draft → Auto ⚠️
-- **Job:** compare the data the product actually reads with the signed data contract.
+- **Job:** compare the data the product actually reads with the signed data contract. Documents: not covered yet (privacy compares the documents retrieved with the contract's sources by hand).
 - **Starts when:** each new frozen version, and monthly after launch.
 - **Inputs:** the access logs or query history; the data contract.
 - **Allowed actions:** read; report differences.
@@ -398,7 +398,7 @@ its person in charge; a monitor never reports a pass on missing data.
 - **Used in:** 2.3, 3.2
 - **For:** the team
 - **Kind:** Draft → Draft (2.3); Me → Auto ⚠️ (3.2, ongoing mode)
-- **Job:** check that every field in the data contract exists, is fresh enough and passes its quality checks.
+- **Job:** check that every field in the data contract exists, is fresh enough and passes its quality checks. Documents: not covered yet (for a product built on documents, the content owner checks re-indexing and permissions by hand until this agent gains a documents mode).
 - **Starts when:** the field list is drafted in 2.3; after that, on every data refresh.
 - **Inputs:** the data contract; the tables and their quality and access records.
 - **Allowed actions:** read-only checks; alert the data owner on failure.
@@ -527,7 +527,7 @@ its person in charge; a monitor never reports a pass on missing data.
 - **For:** the team
 - **Kind:** Draft → Auto
 - **Job:** re-run the test set after every change and at least monthly, and alert when quality slips ("drift").
-- **Starts when:** any change to prompts, rules, data or models; and monthly.
+- **Starts when:** any change to prompts, rules, data or models, including vendor model updates (from the vendor's release notes, checked by the platform team); and monthly.
 - **Inputs:** the test set; live outputs; feedback; the monitoring plan's thresholds.
 - **Allowed actions:** run the test set; read live signals; alert.
 - **Not allowed:** fixing, rolling back or pausing the product (the product manager decides).

@@ -25,7 +25,7 @@ log (see `README.md`) for every sub-step.
 - **Know first:** the early rating from 2.4, and the bank's model or AI inventory and who keeps it. ⚠️
 - **First time, step by step:**
   1. Ask the risk partner what the formal submission needs, and by when.
-  2. Update the intake with anything that changed since Define.
+  2. Update the intake with anything that changed since Define, and confirm whether the product takes the higher-risk path (control K3, set at 2.4).
   3. Register the product in the inventory.
   4. Get the confirmed rating in writing.
 - **Output:** the confirmed rating and the inventory entry.
@@ -84,7 +84,7 @@ log (see `README.md`) for every sub-step.
 - **Why it matters:** if outputs touch credit, fair-lending law applies (for example, ECOA). Even without credit, uneven treatment is a reputational risk.
 - **Know first:** which groups to compare (client segments, regions), and what compliance wants to see. ⚠️
 - **First time, step by step:**
-  1. With compliance, agree which groups to compare and what counts as a worrying difference.
+  1. With compliance, agree which groups to compare and what counts as a worrying difference. On the higher-risk path (control K3) this check is always required.
   2. Run the comparison on test outputs.
   3. Explain any difference, or fix it.
   4. Get compliance's written view.
@@ -152,9 +152,9 @@ log (see `README.md`) for every sub-step.
 - **First time, step by step:**
   1. Put the outputs of 4.1 to 4.6, and the draft monitoring plan (4.8), into one pack, using the bank's template if there is one ⚠️.
   2. Check every claim in it against its source.
-  3. Send it to each signer with a due date.
+  3. Send it to each signer with a due date. On the higher-risk path (control K3), the credit policy owner signs too ⚠️ [name needed].
   4. Track the replies; chase anything late and meet anyone who's stuck.
-  5. Record each sign-off, with its date and any conditions.
+  5. Record each sign-off, with its date and any conditions, and the full user group the approval covers (the planned rollout from 2.8, not only the pilot group).
 - **Output:** the signed evidence pack.
 - **Done when:** every required signer has signed.
 - **Automation watch:**

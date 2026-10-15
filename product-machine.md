@@ -66,7 +66,7 @@ partners and users are outside it. Dashboards people open themselves don't count
 | 2.2 | Score the platforms against the five criteria | Draft | M7 Platform fit checker | Me |
 | 2.2 | Choose the platform and delivery path | Me | Meetings with platform teams | Decision log |
 | 2.3 | Data contract (fields, freshness, checks) | Draft | M24 Data contract checker (Snowflake) | Data owner signs |
-| 2.4 | Risk intake and control requirements | Draft | M25 Risk intake assistant | Model risk rates it |
+| 2.4 | Risk intake and control requirements | Draft | M25 Risk intake assistant | Model risk rates it; the credit policy owner on the higher-risk path |
 | 2.5 | User stories and acceptance criteria | Draft | M23, story library | Me |
 | 2.6 | Backlog priorities and trade-offs | Me | Backlog tool | Sponsor |
 | 2.6 | Decision log entries | Draft | M8 Decision log drafter (M365 Copilot) | Me |
@@ -75,6 +75,8 @@ partners and users are outside it. Dashboards people open themselves don't count
 | 2.8 | Record the long-term owner, or "to be decided" with a date to decide by | Me | Meeting | Sponsor |
 | 2.8 | Complete the brief and the gate pack | Draft | M6 Gate pack drafter | Sponsor |
 | Gate | Go/no-go | Me | In writing; a meeting only if contested | Sponsor, risk, data owner |
+
+On the quick pass for a later feature wave, gates 1 and 2 are decided together in writing (Product Framework).
 
 **3. Build**
 | # | Task | Kind | Tool (guess) | Goes to |
@@ -105,7 +107,7 @@ partners and users are outside it. Dashboards people open themselves don't count
 | 4.5 | Show the controls working to risk; confirm the release route and IT's approval of every connection | Me | Meeting, audit log | Risk, IT |
 | 4.6 | Confirm the vendor reviews | Me | Approved vendors list | Vendor risk |
 | 4.7 | Put together the evidence pack | Draft | M29 Evidence pack assembler | Me, then risk |
-| 4.7 | Send sign-off requests and chase them | Auto ⚠️ | M14 Sign-off router (Power Automate approvals) | Risk, compliance, privacy, security |
+| 4.7 | Send sign-off requests and chase them | Auto ⚠️ | M14 Sign-off router (Power Automate approvals) | Risk, compliance, privacy, security; the credit policy owner on the higher-risk path |
 | 4.7 | The sign-offs themselves | Partner | — | Recorded in the tracker |
 | 4.7 | Unblock a stuck sign-off | Me | Meeting | — |
 | 4.8 | Draft the monitoring plan alongside 4.5 (it goes into the evidence pack), then finalise it | Draft | Monitoring plan template | Risk, operations |
@@ -127,7 +129,7 @@ The step 4 gate is a Partner decision: the risk partner's approval can't be over
 | 5.5 | Recruit champions | Me | A Teams channel | Champions |
 | 5.5 | Spot wins to celebrate | Draft | M17 Wins spotter | Me, then sponsor and user leaders |
 | 5.6 | Sort feedback into bugs, quality issues and ideas; flag likely incidents | Auto ⚠️ | M30 Feedback triage | Backlog; operations and me for incidents; I check a weekly sample |
-| 5.6 | Fix and tell users what changed | Me | Release notes | Users |
+| 5.6 | Fix and tell users what changed; decide whether a fix is a material change | Me | Release notes | Users; the risk partner confirms a material change |
 | 5.6 | Log every incident, its owner and the fix | Me | Incident log | Operations, risk |
 | 5.7 | Confirm the long-term owner before scaling | Me | Meeting | Sponsor |
 | 5.7 | Write the scale recommendation | Draft | M6 Gate pack drafter | Sponsor |
@@ -140,6 +142,7 @@ The step 4 gate is a Partner decision: the risk partner's approval can't be over
 | 6.2 | Monthly impact note against baseline and comparison group | Draft | M31 Impact analyst | Analytics checks, then sponsor |
 | 6.3 | Re-test after every change; alert when quality slips | Auto | M32 Quality watchdog | Product manager, on alert |
 | 6.3 | Act on an alert: fix, roll back or pause, per the monitoring plan | Me | — | Operations, risk |
+| 6.3 | Decide whether a change is material (it goes back through step 4) | Me | — | Risk partner confirms |
 | 6.4 | Monthly keep/change/stop pack | Draft | M18 Monthly review pack drafter | Me |
 | 6.4 | Keep/change/stop decision | Me | In writing; a meeting only if contested | Sponsor |
 | 6.4 | Quarterly summary for invest more, adjust or stop | Draft | M18 Monthly review pack drafter | Sponsor, Finance |

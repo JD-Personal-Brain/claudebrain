@@ -48,8 +48,9 @@ log (see `README.md`) for every sub-step.
   2. Add the quality checks from the contract, such as no blanks and a refresh within [X] hours.
   3. Apply the permission rule: each user only sees data they're already allowed to see. Mask the fields the data contract marks as sensitive, and label sensitive files.
   4. Spot-check 20 records by hand against the source system.
+  5. **If the product works from documents:** index each source in the contract on its re-indexing schedule, carry each document's permissions into the index, so a user only finds documents they could already open, and spot-check 20 answers against the documents they cite.
 - **Output:** the data views, with checks and permissions.
-- **Done when:** the spot-check matches and the checks run every refresh.
+- **Done when:** the spot-check matches and the checks run every refresh (for documents, each source is re-indexed on its schedule).
 - **Automation watch:**
   - First time: **Me**, with the data engineer.
   - Note: which checks failed in the first week.
@@ -70,6 +71,7 @@ log (see `README.md`) for every sub-step.
   4. Use AI only to explain each result in plain English and suggest a next step, citing the numbers.
   5. Write the prompts using `prompting.md`, and keep every version.
   6. Check 10 to 20 outputs by hand with a user after every change.
+  7. **If the product works from documents,** "simple rules first" means retrieval first: the AI answers only from the documents it finds (retrieval with sources), quotes or cites each one, and says so when nothing answers the question.
 - **Output:** working rules and prompts, with every version kept.
 - **Done when:** users agree the outputs are right and useful on real examples.
 - **Automation watch:**
@@ -130,7 +132,7 @@ log (see `README.md`) for every sub-step.
 - **First time, step by step:**
   1. Collect [X] real examples covering normal, tricky and edge cases. ⚠️ A common start is about 50 to 100.
   2. Have experienced users write or approve the good answer for each one.
-  3. Add "must refuse" cases, such as another user's client, a credit decision or a pricing recommendation. They also seed the red-team plan in 4.3 (K10).
+  3. Add "must refuse" cases, such as another user's client, a credit decision or a pricing recommendation (restating terms a person already proposed, from the deal file, is allowed; the AI never proposes or changes a price). They also seed the red-team plan in 4.3 (K10).
   4. Store it with a version number, and never change old versions.
 - **Output:** the test set, versioned.
 - **Done when:** it covers every story in release 1 and the main risks.

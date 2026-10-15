@@ -747,6 +747,6 @@ B9 is the release routine behind them.
 
 **B9. Every release (every week or two)**
 - **Trigger:** any change to prompts, rules, data or models.
-- **Steps:** 1. M32 re-runs the test set. 2. If the score is below the quality bar, the release stops. 3. If the change is material, the risk partner is told before release. 4. Release; M32 watches live quality for [X] days.
+- **Steps:** 1. M32 re-runs the test set. 2. If the score is below the quality bar, the release stops. 3. If the change is material (Product Framework), it goes back through step 4 before release. 4. Release; M32 watches live quality for [X] days.
 - **Logged:** test scores, approvals, release notes.
 - **Measures:** quality trend; releases rolled back.

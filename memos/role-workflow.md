@@ -22,7 +22,7 @@ Page 1 of the four "How we deliver" pages, read in this order:
 Every AI product goes through six steps, each ending in a **go/no-go gate**. The
 first pass through all six is fast. After that, steps 3 to 6 repeat in short
 cycles, and each new feature wave takes a quick pass through Discover and
-Define. **Governance runs through every step:** step 4 is the formal approval,
+Define (the quick pass, in the Product Framework, which also says which gate is passed for a project, an AI product or a feature wave). **Governance runs through every step:** step 4 is the formal approval,
 not the first time risk partners see the product.
 
 | Step | Question | Governance thread | Gate |

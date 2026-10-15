@@ -86,16 +86,16 @@ with the bank's risk partner at sub-step 2.4.
 | 4.1 Risk rating and registration | Regulator: the model risk guidance, through the bank's model inventory | Model risk |
 | 4.2 Data and privacy review | Bank policy ⚠️, and customer privacy law (the Gramm-Leach-Bliley Act) where individuals' data is involved | Privacy |
 | 4.3 Testing evidence | Regulator: the model risk guidance expects testing; our quality bar sets the thresholds | Model risk |
-| 4.4 Fairness check | Law: fair lending (the Equal Credit Opportunity Act) wherever similar clients could be treated differently ⚠️ (my reading for a tool that doesn't decide credit) | Compliance |
+| 4.4 Fairness check | Law: fair lending (the Equal Credit Opportunity Act) wherever similar clients could be treated differently ⚠️ (my reading for a tool that doesn't decide credit); always required on the higher-risk path (control K3), where drafts inform credit decisions | Compliance |
 | 4.5 Confirm the controls work | Regulator and bank policy, through the controls it proves | Each control's owner (Controls Catalog) |
 | 4.6 Vendor reviews | Regulator: the US banking regulators' third-party risk guidance (2023); also inherits K19 bank policy | Vendor risk; each control's owner (Controls Catalog) |
-| 4.7 Sign-offs | Bank policy: its approval process for AI and models ⚠️ | Model risk, as owner of the bank's AI and model approval policy ⚠️ [name needed] |
+| 4.7 Sign-offs | Bank policy: its approval process for AI and models ⚠️; on the higher-risk path (control K3), also the bank's credit policy ⚠️ | Model risk, as owner of the bank's AI and model approval policy ⚠️ [name needed]; the credit policy owner for the higher-risk path |
 | 4.8 Monitoring plan | Regulator: the model risk guidance expects ongoing monitoring | Model risk |
 | 5.1 Confirm release readiness | Inherits from the controls it sets, builds, proves or watches: K15 bank policy; K16 law or regulator | Each control's owner (Controls Catalog) |
 | 5.2 Launch the pilot, with a comparison group | Inherits from the controls it sets, builds, proves or watches: K18 bank policy | Each control's owner (Controls Catalog) |
 | 5.6 Fix fast | Inherits from the controls it sets, builds, proves or watches: K16 law or regulator; K17 law or regulator | Each control's owner (Controls Catalog) |
 | 6.1 Track the measures on a live dashboard | Inherits from the controls it sets, builds, proves or watches: K16 law or regulator | Each control's owner (Controls Catalog) |
-| 6.3 Re-test after every change, and watch for drift | Inherits from the controls it sets, builds, proves or watches: K4 bank policy; K9 law or regulator; K16 law or regulator; K17 law or regulator | Each control's owner (Controls Catalog) |
+| 6.3 Re-test after every change, and watch for drift | Inherits from the controls it sets, builds, proves or watches: K4 bank policy; K9 law or regulator; K13 law or regulator; K16 law or regulator; K17 law or regulator | Each control's owner (Controls Catalog) |
 | Step 4 gate | Regulator and bank policy (the formal approval) | Model risk, as owner of the bank's AI and model approval policy ⚠️ [name needed] |
 | The other five gates | Our choice | The product manager |
 

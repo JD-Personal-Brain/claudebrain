@@ -100,13 +100,14 @@ sub-step. At the end, run the automation review.
   - The bank's rules on recording meetings and on using AI recaps. ⚠️ Confirm before recording.
   - Use only AI tools on the approved list from 1.0 (K23).
 - **First time, step by step:**
-  1. Write a 30-minute interview guide of 8 to 10 open questions. Use `prompting.md` Example 1 to draft it, for example "Walk me through what you did after your last client meeting."
-  2. Ask user leaders to nominate a mix of people: strong performers, average ones and skeptics.
-  3. Send invitations and book the interviews.
-  4. Run each interview. Listen more than you talk, and ask "show me" rather than "tell me".
-  5. Shadow two or three people for half a day each, and write down every task and how long it takes. Note the team's regular routines (weekly pipeline meetings and similar), because 5.3 builds the product into them.
-  6. After each one, write a 5-line summary the same day: biggest pain, a quote, and what surprised you.
-  7. When done, pull out themes, with each theme linked to the interviews behind it.
+  1. Start from the user group's workflow map (how they work today and with AI) if one exists: the interviews and shadowing test its "today" side and correct it. If there is no map yet, the interviews build its first version.
+  2. Write a 30-minute interview guide of 8 to 10 open questions. Use `prompting.md` Example 1 to draft it, for example "Walk me through what you did after your last client meeting."
+  3. Ask user leaders to nominate a mix of people: strong performers, average ones and skeptics.
+  4. Send invitations and book the interviews.
+  5. Run each interview. Listen more than you talk, and ask "show me" rather than "tell me".
+  6. Shadow two or three people for half a day each, and write down every task and how long it takes. Note the team's regular routines (weekly pipeline meetings and similar), because 5.3 builds the product into them.
+  7. After each one, write a 5-line summary the same day: biggest pain, a quote, and what surprised you.
+  8. When done, pull out themes, with each theme linked to the interviews behind it, and update the workflow map.
 - **Output:** interview notes, shadowing notes, and a themes list with quotes and sources.
 - **Done when:** you've covered every role and the last two or three interviews added nothing new.
 - **Automation watch:**
@@ -127,7 +128,7 @@ sub-step. At the end, run the automation review.
   - Activity data: Salesforce activities, and M365 Copilot or Viva Insights reports for email and meetings. ⚠️ Check what the bank has turned on.
   - Your shadowing notes from 1.3.
 - **First time, step by step:**
-  1. List the main activities from shadowing, such as meeting prep, client meetings, call notes, CRM updates and internal meetings.
+  1. Start from the activities on the workflow map's "today" side, corrected in 1.3, and add any others from shadowing, such as meeting prep, client meetings, call notes, CRM updates and internal meetings.
   2. Pull the data you have for each one: counts and time where the data allows it.
   3. Fill the gaps with estimates from the interviews, labeled as estimates.
   4. Mark each activity as **client-facing**, **admin** or **internal**.
@@ -198,7 +199,7 @@ sub-step. At the end, run the automation review.
   - Everything from 1.1 to 1.6.
   - Where the baseline numbers will come from (Power BI or Snowflake), and who owns them.
 - **First time, step by step:**
-  1. List the candidate targets. Score each on size (1.2), pain (1.3 and 1.4), user reaction (1.6), data readiness and risk.
+  1. List the candidate targets, starting from the workflow map's "where AI fits" list. Score each on size (1.2), pain (1.3 and 1.4), user reaction (1.6), data readiness and risk.
   2. Recommend one, with the reason and the runners-up.
   3. For its measure, record today's number for the target users, the date, the source and the exact definition.
   4. Propose a comparison group: similar users who won't get the tool at first. (Finance agrees the method in 2.7; the final group is confirmed in 2.8.)
