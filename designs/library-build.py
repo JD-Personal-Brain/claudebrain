@@ -2,7 +2,7 @@
 The page is one index in five numbered sections (the bank, how we deliver, relationship managers,
 portfolio managers, reference), one row per page. A row shows the page's status;
 its twisty opens a one-line description and the page's sections. Placeholder rows mark
-pages still to build. A section marked "numbered" in library.json (how we deliver) shows
+pages still to build. A section marked "numbered" in library.json (the bank, how we deliver) shows
 plain numbered rows instead, read in order: click the name to open the page.
 To add a document: add it to library.json (and designs/README.md) and to PAGE_FILE below,
 run this, republish.
@@ -106,8 +106,9 @@ page = f'''<title>Document Library</title>
 .ientry>summary:focus-visible{{outline:2px solid var(--teal);outline-offset:2px;border-radius:8px}}
 .ientry[open]{{border-color:var(--teal)}}
 .ientry.plain{{flex-wrap:wrap;row-gap:2px}}
-.ipage{{font-family:var(--serif);font-weight:600;font-size:17px;color:var(--fg);text-decoration:none;margin-right:auto}}
-.ipage:hover{{text-decoration:underline;color:var(--teal)}}
+/* Page names you can click are teal, so they read as links; placeholders without a page stay muted. */
+.ipage{{font-family:var(--serif);font-weight:600;font-size:17px;color:var(--teal);text-decoration:none;margin-right:auto}}
+.ipage:hover{{text-decoration:underline}}
 .ic{{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap}}
 .idesc{{margin:0;padding:0 16px 10px 40px;font-size:14px;color:var(--muted);max-width:none}}
 .ientry.plain .idesc{{padding:0;flex-basis:100%}}

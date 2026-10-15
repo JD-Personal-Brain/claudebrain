@@ -13,7 +13,8 @@
           "url": "https://claude.ai/artifact/7ZVT7LtdqxwAma4UrBgTPX",
           "source": "memos/bank-business.md"
         }
-      ]
+      ],
+      "numbered": true
     },
     {
       "id": "deliver",
