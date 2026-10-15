@@ -1,7 +1,7 @@
 """Builds designs/library.html, the Document Library, from designs/library.json.
 The page is one index in five numbered sections (the bank, how we deliver, relationship managers,
 portfolio managers, reference), one row per page. A row shows the page's status;
-its twisty opens a one-line description and the page's sections. Placeholder rows mark
+in most sections its twisty opens a one-line description and the page's sections. Placeholder rows mark
 pages still to build. A section marked "numbered" in library.json (the bank, how we deliver) shows
 plain numbered rows instead, read in order: click the name to open the page. A section
 marked "bulleted" (reference) shows the same plain rows with a dot instead of a number.
@@ -57,7 +57,12 @@ def chip(d):
 def entry(d, num=None):
     if num:
         # Plain rows (a number or a dot): name and status only; the name opens the page.
-        return (f'<div class="ientry plain numbered" data-search="{E((d["name"] + " " + d["what"]).lower())}"><span class="inum">{num}</span>'
+        # A placeholder has no page, so its name isn't a link.
+        search = E((d["name"] + " " + d["what"]).lower())
+        if d.get("todo"):
+            return f'<div class="ientry plain numbered todo" data-search="{search}"><span class="inum">{num}</span><span class="ipage">{E(d["name"])}</span>{chip(d)}</div>'
+        sections(d["id"])  # not shown here, but still checks the page is in PAGE_FILE
+        return (f'<div class="ientry plain numbered" data-search="{search}"><span class="inum">{num}</span>'
                 f'<a class="ipage" href="{E(d["url"])}" target="_blank" rel="noopener">{E(d["name"])}</a>{chip(d)}</div>')
     if d.get("todo"):
         return f'<div class="ientry plain todo" data-search="{E((d["name"] + " " + d["what"]).lower())}"><span class="ipage">{E(d["name"])}</span>{chip(d)}<p class="idesc">{E(d["what"])}</p></div>'
@@ -99,6 +104,7 @@ page = f'''<title>Document Library</title>
 .s-todo{{background:transparent;border:1px dashed var(--line);color:var(--muted)}}
 .ientry.todo{{background:transparent;border-style:dashed}}
 .ientry.todo .ipage{{color:var(--muted)}}
+.ientry.todo .ipage:hover{{text-decoration:none}}
 .ientry{{background:var(--card);border:1px solid var(--line);border-radius:8px;margin:0 0 6px}}
 .ientry>summary,.ientry.plain{{display:flex;align-items:baseline;gap:12px;padding:10px 16px}}
 .ientry>summary{{cursor:pointer;list-style:none}}
@@ -114,7 +120,7 @@ page = f'''<title>Document Library</title>
 .ic{{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap}}
 .idesc{{margin:0;padding:0 16px 10px 40px;font-size:14px;color:var(--muted);max-width:none}}
 .ientry.plain .idesc{{padding:0;flex-basis:100%}}
-.inum{{font-family:var(--mono);font-size:14px;color:var(--teal);width:12px;flex:none}}
+.inum{{font-family:var(--mono);font-size:14px;color:var(--muted);width:12px;flex:none}}
 .isecs{{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0 16px 12px}}
 .isecs li{{margin:0}}
 .isecs a{{display:block;font-size:13px;border:1px solid var(--line);border-radius:999px;padding:3px 10px;color:var(--fg);text-decoration:none}}
