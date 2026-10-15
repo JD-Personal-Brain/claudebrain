@@ -167,5 +167,8 @@ footer{color:var(--muted);font-size:14px;border-top:1px solid var(--line);paddin
     none.hidden=shown>0;
   }
   [q,g].forEach(function(el){el.addEventListener('input',run);el.addEventListener('change',run);});
+  // a link from another page that names a card (#s5-7) opens that card
+  function openHash(){var h=location.hash&&document.getElementById(decodeURIComponent(location.hash.slice(1)));if(h&&h.tagName==='DETAILS'){h.open=true;h.scrollIntoView();}}
+  openHash(); window.addEventListener('hashchange',openHash);
 })();
 </script>

@@ -290,7 +290,7 @@ loop compounds over time and is a reason to build both goals together.
 
 **Goal:** Build the smallest version that RMs will actually use and trust.
 
-**AI capabilities used:** agents (signal finder, insight writer, prep and
+**AI capabilities used:** agents (A1 Signal finder, A2 Insight writer, A3 Prep and
 follow-up assistant), retrieval with sources (each insight shows the client
 data behind it), data flows (Snowflake signals into Salesforce), workflow
 automations (the weekly digest) and system integrations (Salesforce, Teams
@@ -312,7 +312,7 @@ and Outlook).
 | Agent | Type | Job | Runs on | Reads from | Person in charge |
 |---|---|---|---|---|---|
 | A1 Signal finder | For RMs | Scans each RM's clients overnight for opportunity signals using explainable rules and scores | Snowflake (Cortex) | Snowflake balances, products, trends | Business owns the rules; no client contact |
-| A2 Insight writer | For RMs | Turns each signal into a plain-English reason and talking points, citing the numbers | Salesforce Prompt Builder or AWS Bedrock | Signal finder output; Salesforce client record | The RM decides whether to act |
+| A2 Insight writer | For RMs | Turns each signal into a plain-English reason and talking points, citing the numbers | Salesforce Prompt Builder or AWS Bedrock | A1 signals; Salesforce client record | The RM decides whether to act |
 | A3 Prep and follow-up assistant (wave 1) | For RMs | Drafts a pre-call brief, then call notes and follow-ups | Salesforce Agentforce or M365 Copilot | Salesforce client record; Teams meeting recap (with client consent where recorded) | The RM approves before anything is saved or sent |
 | A5 RM assistant (wave 3) | For RMs | Answers "what should I know before my call with this client?" | Salesforce Agentforce or a Copilot Studio agent in Teams | Salesforce and Snowflake, read-only, only the RM's permitted clients | Any record update needs the RM's click |
 | M26 Test grader | For the team | Scores every version against the test set and the quality bar | AWS Bedrock model evaluation | Test set, product outputs | Experienced RMs grade a sample |
@@ -377,7 +377,7 @@ and Outlook).
 | Agent | Type | Job | Runs on | Reads from | Person in charge |
 |---|---|---|---|---|---|
 | A6 Onboarding coach | For RMs | Answers "how do I use this?" inside Teams | Copilot Studio agent in Teams | Training guides, FAQs | Product team keeps content current |
-| A4 Weekly opportunity digest | For RMs | Sends each RM their top opportunities every Monday | Power Automate with the insight writer | Signal finder and insight writer outputs | The RM decides what to pursue |
+| A4 Weekly opportunity digest | For RMs | Sends each RM their top opportunities every Monday | Power Automate, with A2 | Insights from A2, ranked by the agreed score | The RM decides what to pursue |
 | M30 Feedback triage | For the team | Sorts feedback into bugs, quality issues and ideas, and routes it to the backlog | Power Automate with an approved LLM | Feedback logged in Salesforce | Product manager sets priorities |
 
 - **AI for the team:** summarizing pilot feedback and spotting patterns.
@@ -483,7 +483,7 @@ call is made at Gate 2 (week 2).
 | **2. Define** | Weeks 1–2, alongside discovery | Gate 2 (week 2): data contract, risk rating, value model; split decision if needed |
 | **3. Build** | From day 1. Wave 1: weeks 1–5; wave 2: 7–9; wave 3: 11–14 | Gate 3: each AI product meets the quality bar in testing, and every control has proof |
 | **4. Govern and test** | Risk partner reviews each version from week 1; sign-offs per AI product | Gate 4: each AI product approved for real RMs and real client data |
-| **5. Release and adopt** | Follow-up live about weeks 2–4; insights and call notes about weeks 4–6; releases every week or two | Gate 5: each wave meets its adoption targets; long-term owner confirmed before scaling |
+| **5. Release and adopt** | Follow-up live about weeks 2–4; insights and call notes about weeks 4–6; releases every week or two | Gate 5: each feature wave meets its adoption targets; long-term owner confirmed before scaling |
 | **6. Measure and iterate** | Leading measures from the first live week; closed revenue read about month 6 | Gate 6: keep, change or stop each AI product monthly; invest more, adjust or stop each quarter |
 
 **By day 90 (about week 13):** wave 1 has been live with pilot RMs for about

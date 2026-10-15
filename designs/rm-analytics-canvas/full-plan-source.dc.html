@@ -729,7 +729,7 @@ class Component extends DCLogic {
         strategy: "AI capabilities used: agents, retrieval with sources, data flows (Snowflake signals into Salesforce), workflow automations (the weekly digest) and system integrations (Salesforce, Teams and Outlook). This is where the RM-facing agents are built: a small team of single-purpose agents, read-only by default, with the RM approving anything that changes a record or reaches a client.",
         agents: [
           agent("rm", "A1 Signal finder", "Scans each RM's clients overnight for opportunity signals using explainable rules and scores.", "Snowflake (Cortex)", "Snowflake balances, products, trends", "Business owns the rules; no client contact"),
-          agent("rm", "A2 Insight writer", "Turns each signal into a plain-English reason and talking points, citing the numbers.", "Salesforce Prompt Builder or AWS Bedrock", "Signal finder output; Salesforce client record", "The RM decides whether to act"),
+          agent("rm", "A2 Insight writer", "Turns each signal into a plain-English reason and talking points, citing the numbers.", "Salesforce Prompt Builder or AWS Bedrock", "A1 signals; Salesforce client record", "The RM decides whether to act"),
           agent("rm", "A3 Prep and follow-up assistant (wave 1)", "Drafts a pre-call brief, then call notes and follow-ups.", "Salesforce Agentforce or M365 Copilot", "Salesforce client record; Teams meeting recap (with client consent where recorded)", "The RM approves before anything is saved or sent"),
           agent("rm", "A5 RM assistant (wave 3)", "Answers “what should I know before my call with this client?”", "Salesforce Agentforce or a Copilot Studio agent in Teams", "Salesforce and Snowflake, read-only, only the RM's permitted clients", "Any record update needs the RM's click"),
           agent("team", "M26 Test grader", "Scores every version against the test set and the quality bar.", "AWS Bedrock model evaluation", "Test set, product outputs", "Experienced RMs grade a sample")
@@ -790,7 +790,7 @@ class Component extends DCLogic {
         strategy: "Adoption is a management routine, not a training event: new tools that arrive without a change in how teams work tend to get little use. AI helps RMs learn in the flow of work and turns feedback into fixes quickly.",
         agents: [
           agent("rm", "A6 Onboarding coach", "Answers “how do I use this?” inside Teams.", "Copilot Studio agent in Teams", "Training guides, FAQs", "Product team keeps content current"),
-          agent("rm", "A4 Weekly opportunity digest", "Sends each RM their top opportunities every Monday.", "Power Automate with the insight writer", "Signal finder and insight writer outputs", "The RM decides what to pursue"),
+          agent("rm", "A4 Weekly opportunity digest", "Sends each RM their top opportunities every Monday.", "Power Automate, with A2", "Insights from A2, ranked by the agreed score", "The RM decides what to pursue"),
           agent("team", "M30 Feedback triage", "Sorts feedback into bugs, quality issues and ideas, and routes it to the backlog.", "Power Automate with an approved LLM", "Feedback logged in Salesforce", "Product manager sets priorities")
         ],
         cards: cards([
@@ -1027,7 +1027,7 @@ class Component extends DCLogic {
         { step: "2. Define", weeks: "Weeks 1\u20132, alongside discovery", ends: "Gate 2 (week 2): data contract, risk rating, value model; split decision if needed" },
         { step: "3. Build", weeks: "From day 1. Wave 1: weeks 1\u20135; wave 2: 7\u20139; wave 3: 11\u201314", ends: "Gate 3: each AI product meets the quality bar in testing, and every control has proof" },
         { step: "4. Govern and test", weeks: "Risk partner reviews each version from week 1; sign-offs per AI product", ends: "Gate 4: each AI product approved for real RMs and real client data" },
-        { step: "5. Release and adopt", weeks: "Follow-up live about weeks 2\u20134; insights and call notes about weeks 4\u20136; releases every week or two", ends: "Gate 5: each wave meets its adoption targets; long-term owner confirmed before scaling" },
+        { step: "5. Release and adopt", weeks: "Follow-up live about weeks 2\u20134; insights and call notes about weeks 4\u20136; releases every week or two", ends: "Gate 5: each feature wave meets its adoption targets; long-term owner confirmed before scaling" },
         { step: "6. Measure and iterate", weeks: "Leading measures from the first live week; closed revenue read about month 6", ends: "Gate 6: keep, change or stop each AI product monthly; invest more, adjust or stop each quarter" }
       ],
       releases: [

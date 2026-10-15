@@ -218,6 +218,7 @@ def series(current):
 WORKFLOW_URL = "https://claude.ai/artifact/8Nm5fkdicn2Gu5VmNVTvYv"   # Product Workflow: the steps and their gates
 STEPS_URL = "https://claude.ai/artifact/8UncWMYUq7hsJUhn5NSYEB"      # Steps Catalog: look up any sub-step
 MAPS_URL = "https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX"       # Workflow Maps: the processes as clickable maps
+PLAYBOOK_URL = "https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4"   # Product Playbook: how to do each sub-step
 
 def six_steps():
     """The six steps from the Product Workflow's working copy (memos/role-workflow.md), its one home:

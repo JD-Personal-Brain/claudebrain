@@ -4,13 +4,12 @@
 - designs/controls.html, the Controls Catalog: every governance control (from playbook/controls.md).
 Run: python3 designs/catalogs-build.py"""
 import glob, os, re
-from pagekit import CSS, E, inline, chipify, six_steps, WORKFLOW_URL, MAPS_URL
+from pagekit import CSS, E, inline, chipify, six_steps, WORKFLOW_URL, MAPS_URL, PLAYBOOK_URL
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 read = lambda p: open(os.path.join(ROOT, p)).read()
 SIX = six_steps()  # question, governance thread and gate of each step, from the Product Workflow
 STEPS = {n: st["name"] for n, st in SIX.items()}
-PLAYBOOK_URL = "https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4"
 cap = lambda t: t[:1].upper() + t[1:] if t else t
 
 HEAD = '''<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -75,6 +74,9 @@ SCRIPT = '''<script>
     none.hidden=shown>0;
   }
   [q,g].forEach(function(el){el.addEventListener('input',run);el.addEventListener('change',run);});
+  // a link from another page that names a card (#s5-7) opens that card
+  function openHash(){var h=location.hash&&document.getElementById(decodeURIComponent(location.hash.slice(1)));if(h&&h.tagName==='DETAILS'){h.open=true;h.scrollIntoView();}}
+  openHash(); window.addEventListener('hashchange',openHash);
 })();
 </script>
 '''
@@ -158,8 +160,8 @@ page("Steps Catalog", "Reference · steps",
      "Step", list(STEPS.values()), sections, howto,
      "Built from the Product Workflow (each step's question, governance thread and gate), the Product Playbook and the task tables in the Product Machine, so it always matches them. Tools and task kinds are guesses until confirmed at the bank.",
      "Like sign-off or pilot", "steps.html",
-     nav=(f'<nav class="stepnav" aria-label="Related pages"><a href="{WORKFLOW_URL}" target="_blank" rel="noopener">Product Workflow: the steps and their gates</a>'
-          f'<a href="{MAPS_URL}" target="_blank" rel="noopener">Workflow Maps: the steps as a clickable map</a></nav>'))
+     nav=(f'<nav class="stepnav" aria-label="Related pages"><a href="{WORKFLOW_URL}" target="_blank" rel="noopener">Product Workflow: the steps and their gates ↗</a>'
+          f'<a href="{MAPS_URL}" target="_blank" rel="noopener">Workflow Maps: the steps as a clickable map ↗</a></nav>'))
 
 # ---------- Controls Catalog ----------
 controls = []

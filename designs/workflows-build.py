@@ -1,14 +1,14 @@
 """Builds designs/workflows.html, the Workflow Maps: each main process as a
 left-to-right spine of stages, with its sub-processes branching underneath.
-Click a branch to see its details. Reads playbook/*.md, product-machine.md
-and the RM memo's Appendix B, so the maps never drift from the documents.
+Click a branch to see its details. Reads memos/role-workflow.md (each step's
+question, gate and governance thread, via pagekit.six_steps()), playbook/*.md,
+product-machine.md and the RM memo's Appendix B, so the maps never drift from the documents.
 Run: python3 designs/workflows-build.py"""
 import os, re
-from pagekit import CSS, E, inline, chipify, six_steps, WORKFLOW_URL, STEPS_URL
+from pagekit import CSS, E, inline, chipify, six_steps, WORKFLOW_URL, STEPS_URL, PLAYBOOK_URL
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 read = lambda p: open(os.path.join(ROOT, p)).read()
-PLAYBOOK_URL = "https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4"
 RM_PLAN_URL = "https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk"
 SIX = six_steps()  # each step's question, governance thread and gate come from the Product Workflow, their one home
 
@@ -26,7 +26,7 @@ stages1 = []
 for fn in sorted(f for f in os.listdir(os.path.join(ROOT, "playbook")) if re.match(r"\d-.*\.md$", f)):
     s = read(os.path.join("playbook", fn))
     n = fn[0]
-    name = re.match(r"# Step \d: (.+?), the first time", s).group(1)
+    name = SIX[n]["name"]
     q, gate, gov = SIX[n]["question"], SIX[n]["gate"], SIX[n]["governance"]
     review = s[s.index("| Sub-step | Agent |"):]
     branches = []
@@ -101,7 +101,8 @@ def chips(ts):
 def delivery_detail(b):
     tasks = "".join(f"<li>{chipify(k)} {inline(t)}</li>" for t, k in b["tasks"])
     auto = any(kind.split()[0] in ("Auto", "Draft") for _, kind in b["tasks"])
-    ag = ", ".join(b["agents"] + [f"{a.replace(' (template)', '')} (a reusable template)" for a in b["assets"]])
+    # Map 1 is for every product, so an RM plan product agent (A1 to A6) says where it comes from
+    ag = ", ".join([a + " (a product agent in the RM plan)" if a.startswith("A") else a for a in b["agents"]] + [f"{a.replace(' (template)', '')} (a reusable template)" for a in b["assets"]])
     if not ag:
         ag = "No named agent yet" if auto else "None: this stays with a person"
     return (f'<h4><span class="num">{b["num"]}</span> {inline(b["title"])}</h4>'
@@ -203,6 +204,7 @@ page = f'''<title>Workflow Maps</title>
 .more{{align-self:flex-start;font-weight:500}}
 .links{{display:flex;flex-wrap:wrap;gap:6px 20px;margin:0;max-width:none}}
 .govbar{{margin-left:16px;font-size:12px;line-height:1.4;background:var(--amber-bg);border-radius:6px;padding:6px 8px}}
+.govkey{{display:inline-block;background:var(--amber-bg);border-radius:6px;padding:2px 8px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);border:1px dashed var(--amber)}}
 .govbar b{{font-family:var(--mono);font-weight:500;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);display:block}}
 .loop{{background:var(--card);border:1px dashed var(--line);border-radius:8px;padding:14px 16px;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}}
 .loop p{{margin:0;font-size:14px;color:var(--muted);flex:1 1 260px}}
@@ -219,7 +221,7 @@ page = f'''<title>Workflow Maps</title>
 <nav class="stepnav" aria-label="Related pages"><a href="{WORKFLOW_URL}" target="_blank" rel="noopener">Product Workflow: the steps and their gates ↗</a><a href="{STEPS_URL}" target="_blank" rel="noopener">Steps Catalog: look up any sub-step ↗</a></nav>
 </div></div>
 <main class="wrap">
-<div class="howto"><span>Reading the maps:</span><span>Big navy box = a step of the main process</span><span>Small box = a sub-process</span><span><span class="chip k-auto">Auto</span><span class="chip k-draft">Draft</span><span class="chip k-me">Me</span><span class="chip k-partner">Partner</span> = who does its tasks</span><span>◆ = a go/no-go gate</span><span><span class="chip k-draft">Governance</span> = the risk work in that step</span></div>
+<div class="howto"><span>Reading the maps:</span><span>Big navy box = a step of the main process</span><span>Small box = a sub-process</span><span><span class="chip k-auto">Auto</span><span class="chip k-draft">Draft</span><span class="chip k-me">Me</span><span class="chip k-partner">Partner</span> = who does its tasks</span><span>◆ = a go/no-go gate</span><span><span class="govkey">Governance</span> = the risk work in that step</span></div>
 <section id="deliver" class="mapwrap">
 <div class="stephead"><span class="label">Map 1 · every product</span><h2>How we deliver a product</h2>
 <p class="intro" style="margin-top:6px;color:var(--muted)">The six steps of the Product Workflow, each ending in a gate, with its {n_sub} sub-steps underneath and the governance thread (the risk work) under each gate. After the first pass, steps 3 to 6 repeat in short cycles.</p></div>

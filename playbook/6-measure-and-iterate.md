@@ -77,7 +77,7 @@ log (see `README.md`) for every sub-step.
 
 ## 6.4 Hold the monthly keep / change / stop review
 
-- **Goal:** a monthly decision on each feature, based on evidence.
+- **Goal:** a monthly decision on each AI product, based on evidence.
 - **Why it matters:** without a regular decision, weak features linger and strong ones don't get more investment.
 - **Know first:** the dashboard (6.1), the impact note (6.2) and quality trends (6.3).
 - **First time, step by step:**
