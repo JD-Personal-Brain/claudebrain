@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L32 · 2026-10-15 · A settings edit I handed to the user broke the file
+- **What happened:** the page pop-up fix needed one rule in `.claude/settings.json`, which Claude isn't allowed to edit. Claude first told the user to "add this as the first line inside the opening {", then to replace the whole file. The pasted text landed after the first `{`, so the old text stayed below it and the file couldn't be read, which also switched off the startup and pre-merge checks in main. Claude caught it only because the user asked "did that work?".
+- **Root cause:** a non-developer was given a hand edit of a strict file format with nothing to confirm the result, and the checker didn't look at the settings file.
+- **Fix:** when the user must make an edit Claude can't, Claude checks the result straight away (reads the file back) and repairs it before saying it's done. The audit checker now fails if `.claude/settings.json` isn't valid (check 16), so the GitHub check on every pull request catches it too.
+- **Rule:** R7 · **Test:** check 16 itself · **Level:** 3 (automatic) · **Times it happened:** 1
+
 ### L31 · 2026-10-15 · Fixed a gate's wording but missed its second copy on the same page
 - **What happened:** during the How we deliver audit Claude changed the wording of gates 3 and 5 on the Product Workflow page, but the step cards further down repeat each gate in lower case, and those still showed the old wording. The checker passed; the screenshot showed it.
 - **Root cause:** the replacement matched only the capitalized copy, and the checker compared only the diagram's gates, not the cards'.
