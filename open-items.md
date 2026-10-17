@@ -30,7 +30,7 @@ Claude updates it at every wrap-up: finished items move to "Closed" with the dat
 | Stage 2. Make the machine runnable | 4 | What Claude builds so a real run is possible |
 | Stage 3. Dry run and fix | 3 | Running the machine once and fixing it |
 | Stage 4. Get ready for Andy | 8 | What Andy sees, and what I ask him |
-| Alongside the path | 11 | Useful any time; doesn't block a stage. Dated items first |
+| Alongside the path | 10 | Useful any time; doesn't block a stage. Dated items first |
 | Inside the bank | 21 | Questions only someone at the bank can answer |
 | Parked on purpose | 5 | Not forgotten; waiting for a signal from me |
 
@@ -136,7 +136,6 @@ Useful any time; none of these blocks a stage. Dated ones first.
 | W19 | Try the newer skills on real work: "prototype X", "write a prompt for X", "new use case: X" | Me | Nothing |
 | W20 | Playbooks for my everyday tools (idea 3, approved): name two or three tasks I repeat in email, calendar or documents. Claude turns each into a step-by-step skill | Me, then Claude | Nothing |
 | W21 | Give the RM and portfolio manager sections of the Document Library the same plain numbered rows as the other sections, and write the group names the glossary's way: spelled out with the short form the first time on a page ("relationship managers (RMs)", "portfolio managers (PMs)"), then RM and PM. Planned for 2026-10-16, not done yet | Me, with Claude | Nothing |
-| D2 | A use case kit check (idea 58, put to me at the 2026-10-17 wrap-up): should the audit checker fail if a use case's library section is missing a kit piece, so the portfolio manager use case can't skip one? (yes / no / not yet) | Me | Nothing |
 
 ## Inside the bank
 
@@ -224,5 +223,6 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C42 | One source for the RM plan (use case kit decision 3): agreed. The plan's working file (`memos/rm-analytics-framework.md`) becomes the one source, the long scrolling page is built from it by a script, and the RM Analytics Framework design page (the summary and six parts side by side) is retired and leaves the library. This replaces the 2026-10-09 agreement that edits go to the design page first; the work itself is done in stage 2 of the use case kit | 2026-10-17 |
 | C43 | The RM Leader Brief (use case kit decision 4): agreed. One new page for Andy and bank leaders in four parts (the case, the plan on a page, the value, the ask), every line linking down to its detail; it replaces the one-page RM summary, is the Andy edition (W3), is built only after the Elon mode review of the RM plan, and follows Sample 1 on the review page | 2026-10-17 |
 | C44 | The fix order for stage 2 of the use case kit (decision 5): agreed. 1. a current, single-source plan (the 2026-10-15 decisions and agreed waves, the plan in line with How we deliver, the scrolling page built from the working file); 2. the RM user workflow (W2), sample first; 3. the Elon mode review, then the RM Leader Brief (W3); 4. one block per AI product, exact measures and controls per AI product, the coaching product's agent and workflow. W9 and W11 stay in their stages | 2026-10-17 |
+| C45 | A use case kit check (idea 58): yes, built. The audit checker now fails if a library section marked as following the use case kit is missing a kit piece (leader brief, user workflow, core use cases, plan, mock-up), as a page or a "to build" row. The RM section is marked and gained two "to build" rows (the RM Leader Brief and the RM mock-up); the portfolio manager section is marked when we move into PM. The reply-length warning (idea 57) stays not yet | 2026-10-17 |
 
 _Last updated: 2026-10-17_

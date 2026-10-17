@@ -63,9 +63,17 @@
       "items": [
         {
           "todo": true,
+          "kit": "leader-brief",
+          "name": "RM Leader Brief",
+          "what": "The case, the plan on a page, the value and the ask, for Andy and bank leaders; every line links down to its detail.",
+          "status": "To build"
+        },
+        {
+          "todo": true,
           "name": "RM user workflow: today and with AI",
           "what": "How RMs work today, where each AI product fits, and how their work changes.",
-          "status": "To build"
+          "status": "To build",
+          "kit": "user-workflow"
         },
         {
           "id": "mckinsey-use-cases",
@@ -73,7 +81,8 @@
           "what": "The seven core use cases the RM plan is built on: McKinsey's five frontline AI use cases and their reported returns, plus admin off the RM's plate and keep clients.",
           "status": "Waiting for review",
           "url": "https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X",
-          "source": "memos/mckinsey-frontline-ai.md"
+          "source": "memos/mckinsey-frontline-ai.md",
+          "kit": "core-use-cases"
         },
         {
           "id": "rm-plan",
@@ -81,9 +90,18 @@
           "what": "The full RM plan on one scrolling page, built from its working file: core use cases, AI products, value, who decides, the six steps, risks, agent specs and workflows.",
           "status": "Waiting for review",
           "url": "https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk",
-          "source": "memos/rm-analytics-framework.md"
+          "source": "memos/rm-analytics-framework.md",
+          "kit": "plan"
+        },
+        {
+          "todo": true,
+          "kit": "mock-up",
+          "name": "RM mock-up",
+          "what": "Clickable screens of the weekly opportunity list and the pre-meeting client brief, on made-up data.",
+          "status": "Later"
         }
-      ]
+      ],
+      "kit": true
     },
     {
       "id": "credit",

@@ -77,6 +77,14 @@ readme_urls=set(re.findall(r'https://claude\.ai/artifact/\w+',open('designs/READ
 library_url='https://claude.ai/artifact/LTpbCT4kN4LcyEoYnh7vgj'
 for u in sorted(readme_urls-lib_urls-{library_url}): print("designs/library.json is missing",u); probs+=1
 for u in sorted(lib_urls-readme_urls): print("designs/README.md is missing",u); probs+=1
+# 4b. the use case kit (idea 58, decided 2026-10-17, closed item C45): every library section marked "kit": true
+# lists each kit piece, as a page or a "to build" row, so no use case skips one. Mark a section once its use case starts the kit.
+KIT_PIECES=['leader-brief','user-workflow','core-use-cases','plan','mock-up']
+for g in lib['groups']:
+    if g.get('kit'):
+        have=[d.get('kit') for d in g['items']]
+        for k in KIT_PIECES:
+            if k not in have: print('designs/library.json: the',repr(g['name']),'section is missing the use case kit piece',repr(k),'(add its page, or a "to build" row with "kit":',repr(k)+')'); probs+=1
 # 5. the Open Items log is in step with the rest of the repo (open-items.md)
 oi=open('open-items.md').read()
 nums=re.findall(r'^\| ([A-Z]\d+) \|',oi,re.M)
