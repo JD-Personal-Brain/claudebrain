@@ -51,7 +51,7 @@ every working file (this section replaces the separate Gap Review page).
 | Area | Rating | Where we are | Open items |
 |---|---|---|---|
 | The six-step process for one product | Strong on paper | Steps, gates, 44 sub-steps, first-time logs and the automation check at every gate. Not yet tried on real work | W7 |
-| RM plan (the first worked example) | Strong draft, not reviewed | Memo v8, with agent specs and workflows. I've read only the summary's opening and plan table. Now organized on seven core use cases | V1 |
+| RM plan (the first worked example) | Strong draft, not reviewed | Memo v9 (2026-10-17), with agent specs and workflows, organized on seven core use cases; brought up to date and rebuilt from its working file on 2026-10-17. I've read only the summary's opening and plan table | V1 |
 | Governance and controls | Partial | 25 controls named. 13 have a stage the playbook doesn't cover yet, such as who proves that only approved AI models are used | W6 |
 | Automating the process | Partial | Every task is marked Auto, Draft or Me, and 40 agents are fully specified: 33 general agents that run the product machine, the RM product's own 6, and my research helper H1 (the bank news scout). None of the 33 general agents or the 6 product agents is built or tested; H1 is set up and running. How much can run alone depends on whether the bank lets automations message people ⚠️ | B22, W7 |
 | Ready-to-fill templates | Missing | The brief, data contract, risk intake, gate pack, evidence pack and monitoring plan are described, but none exists as a template yet. The Draft agents need these to fill in | W3 |

@@ -83,7 +83,7 @@ order it in Discover.
 
 | Wave (estimate) | AI product (its core use case is in the section above) | Revenue lever or goal | Built mainly on |
 |---|---|---|---|
-| **Wave 1** (live about weeks 2–6: follow-up about weeks 2–4; brief, opportunity list and call notes about weeks 4–6) | Pre-meeting client brief | Time; all levers | Salesforce, Snowflake, Agentforce or M365 Copilot |
+| **Wave 1** (live about weeks 2–6: follow-up and how-to helper about weeks 2–4; brief, opportunity list and call notes about weeks 4–6) | Pre-meeting client brief | Time; all levers | Salesforce, Snowflake, Agentforce or M365 Copilot |
 | | Meeting recap and follow-up draft | Time | M365 Copilot in Teams and Outlook |
 | | Weekly opportunity list (product gaps) | Grow existing clients | Snowflake signals, Power Automate digest |
 | | Call notes into Salesforce (RM approves) | Time; better data | Salesforce Agentforce |
