@@ -1,6 +1,6 @@
 # NOW: start here
 
-_Last updated: 2026-10-17 (later) · Last review: none yet (first one due around 2026-10-21; I said not yet on 2026-10-14) · Wrap-ups since the last Elon mode review: 4 (last run 2026-10-15; it runs at 5)_
+_Last updated: 2026-10-17 (later) · Last review: none yet (first one due around 2026-10-21; I said not yet on 2026-10-14) · Wrap-ups since the last Elon mode review: 0 (last run 2026-10-17; it runs at 5)_
 
 ## Where things stand
 - The Claude brain is set up: rule book, profile, learning files, ideas list and fourteen skills: log-lesson, wrap-up, designed-doc, write-prompt, run-tests, prototype, new-use-case, audit, make-skill, agent-spec, documents (new 2026-10-09), user-workflow (new 2026-10-14: maps a user group's work today, where each AI product fits, and the work afterwards; say "map the RM workflow"), bank-news-scout (new 2026-10-14: checks public news on the bank and drafts updates to the Bank Business Briefing) and elon-mode (new 2026-10-15: reviews a plan or the product machine the way Elon Musk would, cut first, then automate; runs at every fifth wrap-up, or say "Elon mode").
