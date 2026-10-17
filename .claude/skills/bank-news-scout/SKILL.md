@@ -53,7 +53,7 @@ Drop everything else: stock-price moves, analyst ratings, repeats of known facts
 Rate each kept item **High** (changes a number or a decision in my plans), **Medium** (changes the picture) or **Low** (worth knowing).
 
 ## 4. Draft the edits
-- Edit `memos/bank-business.md` in place, following the rules in Example 5 of `prompting.md`: every number with its period and a source tag, ⚠️ on my own conclusions, [X] where no public number exists, and plain English.
+- Edit `memos/bank-business.md` in place, following the rules in Prompt 3 of `prompt-library.md`: every number with its period and a source tag, ⚠️ on my own conclusions, [X] where no public number exists, and plain English.
 - Add each new source to section 10. Update the "As of" line and "_Last updated_".
 - A new quarter's results replace the old figures throughout, so all numbers stay from one period. Say so in the summary.
 - Rebuild the page source: `python3 designs/md-page-build.py`. Don't republish the live page.

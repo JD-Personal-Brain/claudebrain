@@ -29,7 +29,7 @@ when it learns something new.
 - Claudebrain uses my personal email only (jeremydrane2021@gmail.com), never my work address. (2026-10-14)
 - Summary pages should link down to the detailed layer (the exact card or section), not repeat it. Each piece of information has one home. (2026-10-15)
 - When I give a decision or ask for one change, do just that. Don't queue up the follow-up work in my files; mention it once at most. (2026-10-15)
-- Lock down the base first (the How we deliver pages, the audit, the reference pages), then move into the RM work, then the PM work. Leave RM and PM pages alone until I say we're moving into RM. (2026-10-15)
+- Lock down the base first (the How we deliver pages, the audit, the reference pages), then move into the RM work, then the PM work. Leave PM pages alone until I say we're moving into PM. (2026-10-15; moved into RM on 2026-10-17)
 - I push for speed: plans should be paced by what really blocks us (data access, approvals), not traditional phases.
 
 ## Tools I use

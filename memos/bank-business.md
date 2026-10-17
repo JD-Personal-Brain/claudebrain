@@ -1,7 +1,7 @@
 # Associated Bank: the business behind the role
 
 **As of October 9, 2026, through Q2 2026** (the quarter that ended June 30, 2026). News checked through October 14, 2026 by the bank news scout.
-Built with Example 5 in `prompting.md`. Public information only.
+Built with Prompt 3 in the Prompt Library (`prompt-library.md`). Public information only.
 
 > **How to read this.** Every number shows its period and a source tag such as
 > [S2], which links to the list in section 10. ⚠️ marks my own conclusion, not
@@ -271,7 +271,7 @@ Three things keep this briefing up to date. None of them changes main on its own
 | What | When | What it does | What I get |
 |---|---|---|---|
 | **H1 Bank news scout**, an agent in the Agent Library | Every Monday at 7:46 am Central (6:46 am after clocks change on November 1), and once on Friday October 23, 2026, the morning after the Q3 results (that run swaps in the Q3 figures throughout, using the briefing prompt) | Searches public sources for new facts about the bank, keeps only what changes this page, drafts the edits on a draft branch and logs what it found | An email and phone notice from the scheduled task, at my personal address, with a 2-minute summary. Then I say "merge the news scout update" in a session |
-| **The briefing prompt** (Example 5 in the Prompting Guide) | Each quarter, after new results | Rebuilds the whole briefing from the latest filings, with every number from one period | A full refresh, audited before it goes into main |
+| **The briefing prompt** (Prompt 3 in the Prompt Library) | Each quarter, after new results | Rebuilds the whole briefing from the latest filings, with every number from one period | A full refresh, audited before it goes into main |
 | **The audit** | Before every merge | Checks every number has a source, the page renders fully, and the names match the glossary | Nothing reaches main with a known error |
 
 ⚠️ The scout's pages come from search results, because the bank's own sites are blocked from Claude's workspace. Each item it reports says so.

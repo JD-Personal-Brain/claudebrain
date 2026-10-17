@@ -32,7 +32,8 @@ PAGE_FILE = {"open-items": "open-items.html", "job-description": "job-descriptio
              "product-machine": "product-machine.html", "playbook": "playbook.html", "workflow": "role-workflow.html",
              "rm-design": None, "rm-plan": "rm-analytics-plan.html", "mckinsey-use-cases": "mckinsey-use-cases.html",
              "prompting": "prompting.html", "credit-market-scan": "credit-market-scan.html", "workflows": "workflows.html", "agents": "agents.html", "steps": "steps.html",
-             "controls": "controls.html", "glossary": "glossary.html", "elon-mode": "elon-mode.html", "audit-log": "audit-log.html"}
+             "controls": "controls.html", "glossary": "glossary.html", "elon-mode": "elon-mode.html", "audit-log": "audit-log.html",
+             "prompt-library": "prompt-library.html"}
 
 def text(h):
     h = re.sub(r'<span class="g?count">.*?</span>', "", h)  # drop item counts like "19"

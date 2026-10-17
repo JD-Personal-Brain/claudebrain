@@ -206,10 +206,19 @@
         {
           "id": "prompting",
           "name": "Prompting Guide",
-          "what": "How we write prompts: Anthropic's advice in plain English, a fill-in template, five worked examples and a checklist.",
+          "what": "How we write prompts: Anthropic's advice in plain English, a fill-in template, three worked examples and a checklist.",
           "status": "In use",
           "url": "https://claude.ai/artifact/Secfj5fBtpVA1veroUU7A7",
           "source": "prompting.md"
+        },
+        {
+          "id": "prompt-library",
+          "name": "Prompt Library",
+          "what": "Our core prompts in one place, each with its version and what changed: the use case kit, a full product memo and the bank briefing.",
+          "count": "3 prompts",
+          "status": "In use",
+          "url": "https://claude.ai/artifact/W96baXJf665MJ4qtHmkrks",
+          "source": "prompt-library.md"
         }
       ],
       "bulleted": true

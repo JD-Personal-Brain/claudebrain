@@ -24,6 +24,8 @@ PAGES = [
      "How the bank earns money, the corporate segment in depth, and where AI work lines up with each revenue line."),
     ("prompting.md", "prompting.html", "Prompting Guide", "Working with Claude",
      "How we write prompts: Anthropic's advice in plain English, a fill-in template, worked examples and a checklist."),
+    ("prompt-library.md", "prompt-library.html", "Prompt Library", "Working with Claude",
+     "Our core prompts in one place, each with its version and what changed, so we can reuse them and improve them over time."),
     ("memos/mckinsey-frontline-ai.md", "mckinsey-use-cases.html", "RM Core Use Cases", "Relationship managers · core use cases",
      "McKinsey's five frontline AI use cases and their reported returns, how our RM plan covers them, and the seven core use cases the plan is now organized on."),
     ("memos/credit-market-scan.md", "credit-market-scan.html", "Portfolio Manager Core Use Cases", "Portfolio managers · core use cases",
