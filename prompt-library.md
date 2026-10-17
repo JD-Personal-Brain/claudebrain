@@ -38,8 +38,7 @@ Inputs:   <use_case_work>
           Appendix A agent specs and Appendix B workflows),
           [memos/rm-analytics-summary.md], [memos/mckinsey-frontline-ai.md]
           (the RM Core Use Cases page), [memos/rm-analytics-audit.md],
-          [memos/rm-analytics-market-scan.md], the design page sources in
-          [designs/rm-analytics-canvas/], the scrolling page
+          [memos/rm-analytics-market-scan.md], the scrolling page
           [designs/rm-analytics-plan.html], [Map 2 on the Workflow Maps
           (an RM's week with AI, built by designs/workflows-build.py)],
           the [RM product agents] on the Agent Library
@@ -126,9 +125,8 @@ Steps:    STAGE 1: propose (change no existing files)
 
           STAGE 2: build (only after my yes, and only what I approved)
           1. Fix the gaps one at a time, in the ranked order. Edit the
-             working copy first, then the designed page, then any page
-             built from it (the RM design page before the scrolling
-             page).
+             working copy first, then rebuild the designed pages built
+             from it.
           2. Ask me each decision as it comes, one at a time, with
              your recommendation.
           3. Write the kit itself down as a reusable template, so the

@@ -77,7 +77,7 @@ What we're working on first: a quick check on the bank news scout, then the user
 
 | # | Item | Who | Waits on |
 |---|---|---|---|
-| V1 | Read the RM Analytics Plan (the long scrolling page): everything after the summary's opening and plan table: from "What lets us move this fast" on, then Parts 1 to 6. The RM Analytics Framework design page holds the same words | Me | Nothing |
+| V1 | Read the RM Analytics Plan (the long scrolling page): everything after the executive summary. It was brought up to date and rebuilt from its working file on 2026-10-17 (the 2026-10-15 decisions, the agreed waves and the How we deliver rules), so read it fresh | Me | Nothing |
 | V2 | Read the RM Core Use Cases page: McKinsey's five frontline AI use cases and their returns, how the RM plan covers them, and the three decisions made on 2026-10-15 (C30 to C32) | Me | Nothing |
 | V3 | Read the Portfolio Manager Core Use Cases page: what banks are deploying in commercial credit, and the credit counterpart proposed for each of the seven core use cases | Me | Nothing |
 | D1 | Is the RM framework ready to copy to other use cases? My answer on 2026-10-09: not yet. The reading in stage 1 and the work in stages 2 and 3 come first | Me | Credit, the next use case, waits on this |

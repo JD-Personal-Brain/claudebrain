@@ -20,13 +20,13 @@ a product that pays for itself and then some.
 | Weeks 1–2 | Shape it with RMs; agree data contract, risk rating and value model |
 | **Weeks 2–4** | **Meeting follow-up live with pilot RMs** |
 | **Weeks 4–6** | **Brief, opportunity list and call notes live, once data access and sign-off land** |
-| About week 10 | Wave 2: early warnings, referral prompts |
-| About week 15 | Wave 3: an RM assistant, prospect lookalikes |
+| About week 10 | Wave 2: early warnings, referral prompts, prospect lookalikes |
+| About week 15 | Wave 3: an RM assistant, AI sales coaching |
 | About month 6 | First read on closed revenue: invest more, adjust or stop |
 
 **What lets us move this fast:** build from day one on sample data, standard
 features only, low risk by design, a risk partner reviewing each version,
-data access requested on day one, and fast sponsor decisions. **Backup:** the
+data access requested on day one, and fast gate decisions, in writing when every criterion is met. **Backup:** the
 pace is set by data access and AI review, not build time. If either runs long,
 the meeting follow-up goes first, and the insights and call notes follow by about week 10.
 

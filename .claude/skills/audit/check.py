@@ -64,7 +64,7 @@ for f in glob.glob('designs/*.html'):
     for m in re.findall(r'<(?:p|li|td|dd|dt|span|div|h\d)[^>]*>_[^<]{0,40}|[^<]{0,40}_</(?:p|li|td|dd|dt|span|div|h\d)>',open(f).read()):
         print(f,"shows a stray underscore:",m); probs+=1
 # 3. pages built from working copies are up to date
-for page,builder in [('designs/product-machine.html','designs/product-machine-build.py'),('designs/playbook.html','designs/playbook-build.py'),('designs/product-framework.html','designs/md-page-build.py'),('designs/tech-stack.html','designs/md-page-build.py'),('designs/job-description.html','designs/md-page-build.py'),('designs/prompting.html','designs/md-page-build.py'),('designs/prompt-library.html','designs/md-page-build.py'),('designs/bank-business.html','designs/md-page-build.py'),('designs/open-items.html','designs/md-page-build.py'),('designs/library.html','designs/library-build.py'),('designs/workflows.html','designs/workflows-build.py'),('designs/agents.html','designs/agents-build.py'),('designs/steps.html','designs/catalogs-build.py'),('designs/controls.html','designs/catalogs-build.py'),('designs/glossary.html','designs/md-page-build.py'),('designs/mckinsey-use-cases.html','designs/md-page-build.py'),('designs/credit-market-scan.html','designs/md-page-build.py'),('designs/elon-mode.html','designs/md-page-build.py'),('designs/audit-log.html','designs/md-page-build.py')]:
+for page,builder in [('designs/product-machine.html','designs/product-machine-build.py'),('designs/playbook.html','designs/playbook-build.py'),('designs/product-framework.html','designs/md-page-build.py'),('designs/tech-stack.html','designs/md-page-build.py'),('designs/job-description.html','designs/md-page-build.py'),('designs/prompting.html','designs/md-page-build.py'),('designs/prompt-library.html','designs/md-page-build.py'),('designs/rm-analytics-plan.html','designs/md-page-build.py'),('designs/bank-business.html','designs/md-page-build.py'),('designs/open-items.html','designs/md-page-build.py'),('designs/library.html','designs/library-build.py'),('designs/workflows.html','designs/workflows-build.py'),('designs/agents.html','designs/agents-build.py'),('designs/steps.html','designs/catalogs-build.py'),('designs/controls.html','designs/catalogs-build.py'),('designs/glossary.html','designs/md-page-build.py'),('designs/mckinsey-use-cases.html','designs/md-page-build.py'),('designs/credit-market-scan.html','designs/md-page-build.py'),('designs/elon-mode.html','designs/md-page-build.py'),('designs/audit-log.html','designs/md-page-build.py')]:
     before=open(page).read()
     subprocess.run(['python3',builder],check=True)
     if open(page).read()!=before: print(page,"was out of date: rebuilt it, republish it"); probs+=1
@@ -250,7 +250,7 @@ for f in _named+['glossary.md']:
             print(f,'says',repr(t[max(0,m.start()-20):m.end()]),'- use the new name (Product Workflow, Product Machine or Product Playbook)'); probs+=1
 # 12. Links between our pages (idea 48): a link to a section of another of our pages
 # (https://claude.ai/artifact/<id>#<section>) must point to a section that exists on that page.
-# The page for each link comes from designs/README.md; pages without one .html file (the design canvas) are skipped.
+# The page for each link comes from designs/README.md.
 pages={}
 for m in re.finditer(r'https://claude\.ai/artifact/([A-Za-z0-9]+) \| `([^`/]+\.html)`',open('designs/README.md').read()):
     pages[m.group(1)]='designs/'+m.group(2)
@@ -261,7 +261,7 @@ def ids(f):
 for f in sorted(glob.glob('designs/*.html')+glob.glob('designs/rm-analytics-canvas/*.dc.html')):
     for m in re.finditer(r'href=["\']https://claude\.ai/artifact/([A-Za-z0-9]+)#([^"\']+)["\']',open(f).read()):
         target=pages.get(m.group(1))
-        if not target and m.group(1)!='3c7ZxKjJcjWRyV7BbzKfhY':  # the design canvas has no single page file
+        if not target:
             print(f,'links to a section of artifact',m.group(1),'which designs/README.md does not map to one page, so the link was not checked'); probs+=1
         if target and m.group(2) not in ids(target):
             print(f,'links to',target.split('/')[-1]+'#'+m.group(2),'but that page has no section with that id'); probs+=1

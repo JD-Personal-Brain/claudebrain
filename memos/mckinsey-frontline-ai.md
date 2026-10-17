@@ -1,6 +1,6 @@
 # RM core use cases: McKinsey's frontline AI use cases, and how our plan covers them
 
-A core reference for choosing which core use cases and AI products to build, and the basis for the RM plan's seven core use cases. It summarizes McKinsey's
+A core reference for choosing which core use cases and AI products to build for relationship managers (RMs), and the basis for the RM plan's seven core use cases. It summarizes McKinsey's
 article "Agentic AI is here. Is your bank's frontline team ready?" and checks the
 RM plan against its five use cases. Checked against the article's text, pasted
 in by me on 2026-10-10.
@@ -41,21 +41,20 @@ coaching in late stage), and negotiation (4).
 
 | McKinsey use case | In our RM plan | Coverage |
 |---|---|---|
-| 1. Prospecting and next best opportunities | Wave 3: prospect lookalikes (B8). Wave 1's weekly opportunity list finds next best opportunities in existing clients | **Partly.** New-client prospecting comes late (wave 3), and McKinsey reports its biggest numbers here |
+| 1. Prospecting and next best opportunities | Wave 2: prospect lookalikes (B8, moved up from wave 3 on 2026-10-15). Wave 1's weekly opportunity list finds next best opportunities in existing clients | **Covered.** New-client prospecting now comes in wave 2, because McKinsey reports its biggest numbers here |
 | 2. Lead nurturing, including cross-sell | Wave 2: referral prompts (B6) for cross-sell between teams. Nothing contacts prospects on its own | **Partly, by design.** Our rule is that nothing reaches a client without the RM, so an agent that writes to prospects by itself is out of scope today |
 | 3. Account intelligence and meeting prep (McKinsey: account planning and meeting prep) | Wave 1: pre-meeting client brief (B2). Wave 3: RM assistant (B7) | **Covered**, and first in line |
-| 4. Deal scoring and pricing (McKinsey: deal structuring and pricing) | Not in the plan. The plan keeps the AI away from pricing and credit decisions (control K3) | **Not covered, by design.** Pricing touches fair-lending rules, so it would need a much higher bar |
-| 5. AI sales coaching | Not in the plan. The onboarding coach (A6) answers "how do I use this?" only | **Not covered** |
+| 4. Deal scoring and pricing (McKinsey: deal structuring and pricing) | Not in the plan. Under control K3 the AI never makes a credit decision and never sets or suggests a price | **Not covered, by design** (kept out on 2026-10-15). Pricing touches fair-lending rules, so it would need a much higher bar |
+| 5. AI sales coaching | Wave 3: AI sales coaching from call transcripts (added 2026-10-15; its agent spec and workflow are still to write). The how-to helper (A6) only answers "how do I use this?" | **Covered from wave 3** |
 
 **Also in our plan, not in McKinsey's five:** early warning when a client may
 leave (B5), and the meeting follow-up (B3) and call notes saved to the CRM (B4), both in wave 1,
 which tackle McKinsey's number one problem, excessive admin.
 
 **What this means:** wave 1 lines up with McKinsey's most-cited problem (meeting
-prep and admin). The gaps are coaching, which is low risk and could fit an early
-wave, and prospecting, which McKinsey rates highest for revenue and we have in
-wave 3. Autonomous lead nurturing and pricing are left out on purpose, for governance
-reasons. All three questions were decided on 2026-10-15 (below).
+prep and admin). Since the decisions of 2026-10-15 (below), prospecting comes in
+wave 2 and coaching in wave 3 (waves agreed 2026-10-17). Autonomous lead nurturing
+and pricing are left out on purpose, for governance reasons.
 
 ## What it changed: the RM plan now uses McKinsey's framework (decided 2026-10-10)
 
@@ -83,4 +82,4 @@ which plugs into the bank's ontology); 4 is the Controls Catalog and
 champions). ⚠️ Role redesign (new roles such as "agent orchestrator") isn't
 covered yet.
 
-_Last updated: 2026-10-10_
+_Last updated: 2026-10-17_

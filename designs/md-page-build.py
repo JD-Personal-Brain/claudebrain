@@ -28,6 +28,15 @@ PAGES = [
      "Our core prompts in one place, each with its version and what changed, so we can reuse them and improve them over time."),
     ("memos/mckinsey-frontline-ai.md", "mckinsey-use-cases.html", "RM Core Use Cases", "Relationship managers · core use cases",
      "McKinsey's five frontline AI use cases and their reported returns, how our RM plan covers them, and the seven core use cases the plan is now organized on."),
+    ("memos/rm-analytics-framework.md", "rm-analytics-plan.html", "RM Analytics Plan", "Relationship managers · the plan",
+     "Give relationship managers (RMs) AI insights that help them win new revenue, and free up the time they need to act on them.",
+     {"Core use cases, on McKinsey's framework": "Core use cases", "The AI products, in delivery order: a standard base, then iterate": "AI products",
+      "1. The outcome": "Outcome", "2. The value model": "Value", "3. Who's involved and who decides": "Who decides",
+      "4. How the work flows": "Six steps", "5. How we deploy AI": "AI approach", "Step 1: Discover": "Step 1", "Step 2: Define": "Step 2",
+      "Step 3: Build": "Step 3", "Step 4: Govern and test (formal approval gate)": "Step 4", "Step 5: Release and adopt": "Step 5",
+      "Step 6: Measure and iterate": "Step 6", "6. The project plan (estimate)": "Plan", "7. Top risks and how I'd handle them": "Risks",
+      "8. What other banks are doing": "Other banks", "9. What I'd confirm in the first weeks": "To confirm",
+      "Appendix A: Agent specs": "Agent specs", "Appendix B: Workflows": "Workflows"}),
     ("memos/credit-market-scan.md", "credit-market-scan.html", "Portfolio Manager Core Use Cases", "Portfolio managers · core use cases",
      "What banks are deploying in commercial credit, and the credit counterpart of each of the seven core use cases."),
     ("memos/elon-mode-research.md", "elon-mode.html", "Elon Mode", "Research · how Musk builds and improves systems",
@@ -41,7 +50,7 @@ PAGES = [
 def slug(t):
     return re.sub(r"[^a-z0-9]+", "-", t.lower()).strip("-")[:40]
 
-def build(src, out, name, label, lede):
+def build(src, out, name, label, lede, short=None):
     s = open(os.path.join(ROOT, src)).read()
     title = re.match(r"^# (.+)$", s, re.M).group(1)
     updated = re.search(r"_Last updated: ([^_]+)_", s)
@@ -62,7 +71,7 @@ def build(src, out, name, label, lede):
     for sec in sections:
         head, _, text = sec.partition("\n")
         sid = slug(head)
-        nav.append(f'<a href="#{sid}">{inline(head)}</a>')
+        nav.append(f'<a href="#{sid}">{inline((short or {}).get(head, head))}</a>')
         secs.append(f'<section id="{sid}"><div class="stephead"><h2>{inline(head)}</h2></div>'
                     f'<div class="mdbody">{render_blocks(text, kinds=True)}</div></section>')
     page = f'''<title>{E(name)}</title>

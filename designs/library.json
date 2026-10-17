@@ -78,19 +78,10 @@
         {
           "id": "rm-plan",
           "name": "RM Analytics Plan",
-          "what": "The full RM plan on one scrolling page, the easiest way to read it start to finish. Same words as the RM Analytics Framework.",
+          "what": "The full RM plan on one scrolling page, built from its working file: core use cases, AI products, value, who decides, the six steps, risks, agent specs and workflows.",
           "status": "Waiting for review",
           "url": "https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk",
           "source": "memos/rm-analytics-framework.md"
-        },
-        {
-          "id": "rm-design",
-          "name": "RM Analytics Framework",
-          "what": "The same RM plan as a one-page summary and six parts, side by side.",
-          "status": "Waiting for review",
-          "url": "https://claude.ai/artifact/3c7ZxKjJcjWRyV7BbzKfhY",
-          "source": "memos/rm-analytics-framework.md",
-          "index_note": "Sections: see RM Analytics Plan"
         }
       ]
     },
