@@ -41,7 +41,7 @@ documents against it.
 | **Wait index** | For a sub-step: calendar days from start to finish, divided by hours of real work, from the sub-step log. A high number means waiting, not working. |
 | **Machine measures** | How well the product machine itself works, per project: days from kickoff to pilot, days at each gate, releases per month in the pilot, and the wait index (Product Machine). |
 | **Gate in writing** | A gate decided by the decider approving the gate pack in writing, used when every criterion is met; a meeting is held only when a criterion is contested or someone who decides asks for one. |
-| **Use case kit** | The standard set of pieces every use case should have, in two layers: the **leader layer** I communicate from (for Andy and bank leaders) and the **working layer** I and the team work from. Proposed by Prompt 1 in the Prompt Library, run first on RMs (2026-10-17); its pieces are agreed in that prompt's stage 1. |
+| **Use case kit** | The standard set of pieces every use case should have, in two layers: the **leader layer** I communicate from (for Andy and bank leaders) and the **working layer** I and the team work from. Set by Prompt 1 in the Prompt Library, run first on RMs, and agreed 2026-10-17 (closed item C40): 4 leader pieces (the case, the plan on a page, the value, the ask) and 10 working pieces, listed on the use case kit review page. |
 | **Elon mode review** | A review of a plan or of the product machine through Elon Musk's lens (the Elon Mode page): the cut-first questions, the limiting factor and the machine's measures, plus the bank guardrails. Run by the elon-mode skill. |
 
 ## People, agents and safeguards
