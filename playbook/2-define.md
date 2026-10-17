@@ -30,7 +30,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
   - First time: **Draft**.
   - Note: how many rewrites it took, and why.
   - Agent: **M23 Requirements drafter** (agent library) drafts both sentences from the Discover findings. You edit, and the sponsor approves.
-- **For RM analytics:** "RMs miss growth opportunities in their existing book because signals are scattered across systems," with the outcome tied to AI-sourced pipeline.
+- **For the RM Assistant:** "RMs miss growth opportunities in their existing book because signals are scattered across systems," with the outcome tied to AI-sourced pipeline.
 
 ---
 
@@ -55,7 +55,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
   - First time: **Me**, with platform teams.
   - Note: the questions each platform team asked. They become a standard feasibility checklist.
   - Agent: **M7 Platform fit checker** (agent library) that scores a brief against the five criteria and lists known blockers. *Draft*.
-- **For RM analytics:** start on the Salesforce client record (Agentforce, Prompt Builder), with a Monday digest through Power Automate (memo section 5).
+- **For the RM Assistant:** start on the Salesforce client record (Agentforce, Prompt Builder), with a Monday digest through Power Automate (memo section 5).
 
 ---
 
@@ -80,7 +80,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
   - First time: **Draft**.
   - Note: how long the sign-off took, and which gaps came up. Expect the same gaps on the next project.
   - Agent: **M24 Data contract checker** (agent library). It checks fields, freshness and quality read-only, and the data owner signs off.
-- **For RM analytics:** balances, product holdings and trends from Snowflake; client records, pipeline and activity from Salesforce ⚠️ (where each lives is still to confirm).
+- **For the RM Assistant:** balances, product holdings and trends from Snowflake; client records, pipeline and activity from Salesforce ⚠️ (where each lives is still to confirm).
 
 ---
 
@@ -105,7 +105,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
   - First time: **Draft**. You fill it in; risk rates it.
   - Note: which questions on the form were hard to answer. Next time, answer them earlier in Discover.
   - Agent: **M25 Risk intake assistant** (agent library). It pre-fills the intake and flags likely high-risk areas, and the risk partner sets the rating.
-- **For RM analytics:** any insight that suggests a credit product goes to compliance review, because fair-lending rules apply to business credit too.
+- **For the RM Assistant:** any insight that suggests a credit product goes to compliance review, because fair-lending rules apply to business credit too.
 
 ---
 
@@ -126,7 +126,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
   - First time: **Draft**.
   - Note: which story patterns repeat, such as permissions, logging and feedback. These become a story library for every project.
   - Agent: **M23 Requirements drafter** (agent library).
-- **For RM analytics:** "As an RM, each Monday I need my top 5 client opportunities, with the reason and a suggested next step, so I can plan my calls."
+- **For the RM Assistant:** "As an RM, each Monday I need my top 5 client opportunities, with the reason and a suggested next step, so I can plan my calls."
 
 ---
 
@@ -146,7 +146,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
   - First time: **Me**. Trade-offs are judgment calls.
   - Note: which scoring questions actually changed the order.
   - Agent: **M8 Decision log drafter** (agent library) that writes log entries from meeting recaps (M365 Copilot). *Draft*.
-- **For RM analytics:** briefs, follow-ups, call notes saved to Salesforce and the opportunity list come first.
+- **For the RM Assistant:** the brief, the meeting follow-up (with call notes into Salesforce) and the Monday opportunity list come first.
 
 ---
 
@@ -171,7 +171,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
   - First time: **Draft**.
   - Note: which measures you could pull automatically and which needed someone by hand.
   - Agent: **M9 Measures sheet builder** (agent library) that drafts the measures and their sources from the brief and the data contract. *Draft*.
-- **For RM analytics:** every AI-sourced opportunity is tagged in Salesforce from day one, and Finance agrees the comparison method before the pilot (memo section 2).
+- **For the RM Assistant:** every AI-sourced opportunity is tagged in Salesforce from day one, and Finance agrees the comparison method before the pilot (memo section 2).
 
 ---
 
@@ -194,7 +194,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
   - First time: **Me** for the scope, **Draft** for the pack.
   - Note: what you copied into the gate pack by hand.
   - Agent: **M6 Gate pack drafter** (agent library) from Discover, reused here. *Draft*.
-- **For RM analytics:** feature wave 1 = pre-meeting briefs, meeting follow-ups, call notes into Salesforce and the weekly opportunity list.
+- **For the RM Assistant:** feature wave 1 = three capabilities: the pre-meeting client brief, the meeting follow-up (recap, email and call notes into Salesforce) and the Monday opportunity list.
 
 ---
 

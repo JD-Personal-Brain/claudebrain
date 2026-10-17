@@ -49,7 +49,7 @@ How the work is cut up, so every gate knows what it decides (gaps 1 to 3 from th
 | Level | What it is | Example (RM plan) |
 |---|---|---|
 | Project | All the work for one user group | The RM project |
-| Core use case | One of the seven lines the project is organized on | Account intelligence and meeting prep |
+| Core use case | One of the seven needs the project's AI products answer | Account intelligence and meeting prep |
 | AI product | A capability we build and release | The pre-meeting brief |
 | Feature wave | A set of AI products released together | Feature wave 1 |
 

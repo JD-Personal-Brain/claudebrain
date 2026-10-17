@@ -34,7 +34,7 @@ log (see `README.md`) for every sub-step.
   - First time: **Me**, with platform teams.
   - Note: which spec fields were hard to fill in. That tells you what to ask earlier.
   - Agent: **M10 Agent spec drafter** (agent library) that turns a user story into a first spec. *Draft*.
-- **For RM analytics:** A1 Signal finder → A2 Insight writer → Salesforce record and the A4 Weekly opportunity digest. A3 handles prep and follow-up (memo Appendix A).
+- **For the RM Assistant:** A1 Signal finder → A2 Insight writer → Salesforce record and the A4 Weekly opportunity digest. A3 handles prep and follow-up (memo Appendix A).
 
 ---
 
@@ -55,7 +55,7 @@ log (see `README.md`) for every sub-step.
   - First time: **Me**, with the data engineer.
   - Note: which checks failed in the first week.
   - Agent: the quality checks become **Auto** once they run on every refresh. M24 Data contract checker (agent library) watches them: its ongoing mode runs on every data refresh.
-- **For RM analytics:** signal views for balance trends, product gaps and activity.
+- **For the RM Assistant:** signal views for balance trends, product gaps and activity.
 
 ---
 
@@ -78,7 +78,7 @@ log (see `README.md`) for every sub-step.
   - First time: **Draft**. AI drafts prompts; you and users check.
   - Note: which prompt changes fixed which problems. Keep a prompt change log.
   - Agent: none new. The checking becomes **M26 Test grader** (3.7).
-- **For RM analytics:** A1 finds signals with explainable rules; A2 writes the reason and talking points.
+- **For the RM Assistant:** A1 finds signals with explainable rules; A2 writes the reason and talking points.
 
 ---
 
@@ -100,7 +100,7 @@ log (see `README.md`) for every sub-step.
   - First time: **Me**, with platform teams.
   - Note: which controls the platform gave you for free, and which needed building. Next project, choose platforms with that in mind.
   - Agent: **M11 Controls checker** (agent library) that re-runs the control tests on every release. *Auto*, test environment only.
-- **For RM analytics:** RMs approve before anything is saved or sent; each RM sees only their permitted clients.
+- **For the RM Assistant:** RMs approve before anything is saved or sent; each RM sees only their permitted clients.
 
 ---
 
@@ -120,7 +120,7 @@ log (see `README.md`) for every sub-step.
   - First time: **Me**, with platform teams.
   - Note: the feedback options users actually used.
   - Agent: the feedback saved here feeds **M30 Feedback triage** in step 5.
-- **For RM analytics:** insights on the Salesforce client record, plus the Monday digest in Teams or Outlook.
+- **For the RM Assistant:** insights on the Salesforce client record, plus the Monday digest in Teams or Outlook.
 
 ---
 
@@ -140,7 +140,7 @@ log (see `README.md`) for every sub-step.
   - First time: **Draft**. AI suggests cases; users approve the answers.
   - Note: how long grading took per example.
   - Agent: **M12 Test case generator** (agent library) that suggests new cases from feedback and failures. *Draft*.
-- **For RM analytics:** real client examples graded by experienced RMs.
+- **For the RM Assistant:** real client examples graded by experienced RMs.
 
 ---
 
@@ -162,7 +162,7 @@ log (see `README.md`) for every sub-step.
   - Note: how long a full test run took by hand. That's the time the agent saves on every later change.
   - Agent: **M26 Test grader** (agent library). It scores every version; users grade a sample. Aim for **Auto** on every new version.
   - Agent: **M6 Gate pack drafter** (agent library) from Discover, reused for the Build gate pack. *Draft*.
-- **For RM analytics:** accuracy (numbers match the source), relevance and usefulness rated by RMs.
+- **For the RM Assistant:** accuracy (numbers match the source), relevance and usefulness rated by RMs.
 
 ---
 

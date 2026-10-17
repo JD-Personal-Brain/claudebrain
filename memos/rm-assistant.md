@@ -12,7 +12,7 @@ The assistant is personal to each RM, and it is constrained in five ways. These 
 |---|---|
 | **Jobs** | It does only the capabilities listed on this page. Anything else, it says so and stops. |
 | **Workflows** | It works where the RM already works: the Salesforce client record, Teams and Outlook. No new app to learn. |
-| **Data** | It sees only certified data, and only the clients the RM is already allowed to see. |
+| **Data** | Client data: certified data only. It also uses the RM's own calendar, email and meetings (transcripts only with consent) and any outside prospect data the bank licenses. Always only the clients the RM is already allowed to see. |
 | **Controls** | It drafts and suggests; the RM approves anything saved or sent. It never contacts a client on its own, never makes a credit decision and never sets or suggests a price. Meetings are recorded only with client consent. Everything it does is logged. |
 | **Feedback** | Every output has one-click feedback (use, change or reject, with a reason). The feedback steers what gets better next. |
 
@@ -37,8 +37,8 @@ Each capability is one AI product (glossary). **Comes from** says which need it 
 | | Referral prompts | Flags a client need for a partner team (for example treasury management); the RM decides and makes the referral | McKinsey: lead nurturing, including cross-sell | 2 |
 | **Before the meeting** | Pre-meeting client brief | One page before each client meeting: the relationship, recent activity, open opportunities and talking points | McKinsey: account intelligence and meeting prep | 1 |
 | | Client Q&A | Answers "what should I know about this client?" at any time | McKinsey: account intelligence and meeting prep | 3 |
-| **During and after the meeting** | Meeting follow-up | During: Teams transcribes the meeting, only with client consent, so the RM can listen instead of typing. After: drafts the recap, the follow-up email and the call notes for Salesforce; the RM approves before anything is saved or sent | Our own: admin off the RM's plate | 1 |
-| **After the meeting** | Coaching after calls | Private guidance for the RM after a call, seen only by that RM | McKinsey: AI sales coaching | 3 |
+| **During and after the meeting** | Meeting follow-up | During: Teams transcribes the meeting, only with client consent (without it, the assistant drafts from the RM's own notes), so the RM can listen instead of typing. After: drafts the recap, the follow-up email and the call notes for Salesforce; the RM approves before anything is saved or sent | Our own: admin off the RM's plate | 1 |
+| **After the meeting** | AI sales coaching (after calls) | Private guidance for the RM after a call, seen only by that RM | McKinsey: AI sales coaching | 3 |
 | **Grow and keep the book** | Early warning | Flags clients who may be drifting away (falling balances, less activity) | Our own: keep clients | 2 |
 | **Credit hand-off** | Credit request draft | ⚠️ New idea, not decided: pulls the client's financials into a draft for the portfolio manager. Would take the higher-risk path (control K3) | The RM's job: credit and advice | Not planned |
 | **Left out on purpose** | Pricing suggestions; contacting prospects on its own | — | McKinsey: deal scoring and pricing; lead nurturing (full version) | Out (decided 2026-10-15) |
@@ -51,7 +51,7 @@ Built once and shared by every capability, and later by portfolio managers.
 | Part | What it is | Used by |
 |---|---|---|
 | **Client data** | The Salesforce client record and activity; balances, products and trends in Snowflake (certified data only) | Every capability |
-| **The RM's own work** | Their calendar, email and Teams meetings (transcripts only with client consent) | Brief, meeting follow-up, coaching |
+| **The RM's own work** | Their calendar, email and Teams meetings (transcripts only with client consent) | Brief, meeting follow-up, AI sales coaching |
 | **Outside prospect data** | ⚠️ To confirm: what the bank already licenses | Prospect lookalikes |
 | **Signals engine** (the "analytics") | Simple, explainable rules find opportunities and risks in the data; AI writes the reason in plain English and shows the numbers | Opportunity list, referral prompts, early warning, prospect lookalikes |
 | **Drafting** | Briefs, recaps, emails and notes, always marked as drafts | Brief, follow-up, Q&A, coaching |
@@ -76,6 +76,6 @@ Portfolio managers (PMs) get the same kind of assistant on the same foundation, 
 - How long does the bank's AI review take?
 
 ## 8. How it maps to the RM plan
-The RM Assistant Plan (rebuilt around the assistant on 2026-10-17) delivers this page: the seven core use cases are the **needs** the capabilities answer, each capability is one AI product, and the product agents (A1 to A5) are the **foundation**. The plan's old "RM assistant" (wave 3) is the Client Q&A capability here.
+The RM Assistant Plan (rebuilt around the assistant on 2026-10-17) delivers this page: the seven core use cases are the **needs** the capabilities answer, each capability is one AI product, and the product agents (A1 to A5) do the work: A1 and A2 are the signals engine and drafting in the **foundation**; A3, A4 and A5 deliver the capabilities. The plan's old "RM assistant" (wave 3) is the Client Q&A capability here.
 
 _Last updated: 2026-10-17_

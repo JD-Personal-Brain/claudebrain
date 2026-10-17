@@ -11,7 +11,7 @@ own AI assistant inside Salesforce, Teams and Outlook. Its job is to help the RM
 win business, and to free up the time they need to win it. It starts with three
 capabilities and gains more, feature wave by feature wave, on one shared
 foundation. What it is, its limits and every capability by moment in the RM's
-work are on The [RM Assistant page](https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2);
+work are on [The RM Assistant page](https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2);
 this plan is how it gets delivered. It is a working hypothesis, to be tested in Discover.
 
 **Wave 1: three capabilities that cover the RM's meeting and their week.**
@@ -24,8 +24,11 @@ then client Q&A and AI sales coaching (wave 3).
 
 **The limiting factor: data access.** The data contract (the signed list of data
 the product may use) needs the Salesforce and Snowflake data owners' signatures,
-aimed for week 2. The data owners sign; the product manager chases it from day
-one. The bank's AI review is the second thing that sets the pace.
+aimed for week 2. Owner: the product manager, who chases it from day one; the
+signers are the Salesforce and Snowflake data owners [names needed]. The bank's
+AI review is the second thing that sets the pace; for the very first capability (the
+follow-up's recap and email, in M365 Copilot) it is the main one, together with the
+bank's recording policy.
 
 **The approach, in three points:**
 1. **Build from day one, aimed at revenue.** A working prototype in week 1, shaped with RMs, and the first capability live within weeks.
@@ -69,9 +72,9 @@ The menu is a starting point; the sponsor and RMs confirm and order it in Discov
 | | Monday opportunity list (product gaps) | Prospecting and next best opportunities | A1, A2, A4 | Snowflake signals, Power Automate digest | AI-sourced pipeline and wins, against the comparison group [X] |
 | **Wave 2** (dates set at gate 2) | Early warning: client may leave | Keep clients | A1, A2 | Snowflake signals, Salesforce | Clients kept, against the comparison group [X] |
 | | Referral prompts (for example, RM to treasury specialist) | Lead nurturing, including cross-sell | A1, A2 | Salesforce, Power Automate | Referrals made and won [X] |
-| | Prospect lookalikes | Prospecting and next best opportunities | A2 | Snowflake, Salesforce | New clients, against the comparison group [X] |
+| | Prospect lookalikes | Prospecting and next best opportunities | A1, A2 | Snowflake, Salesforce | New clients, against the comparison group [X] |
 | **Wave 3** (dates set at gate 2) | Client Q&A ("what should I know about this client?") | Account intelligence and meeting prep | A5 | Salesforce Agentforce or Copilot Studio | Questions answered; answer ratings [X] |
-| | AI sales coaching from call transcripts | AI sales coaching | Spec to come | M365 Copilot (Teams transcripts), Copilot Studio | Coaching used after calls; win rate and new-RM ramp-up time [X] |
+| | AI sales coaching (after calls; private to the RM, measured only in aggregate) | AI sales coaching | Spec to come | M365 Copilot (Teams transcripts), Copilot Studio | Coaching used after calls; win rate and new-RM ramp-up time [X] |
 | **Left out on purpose** | Pricing suggestions; contacting prospects on its own | Deal scoring and pricing; lead nurturing (the full version) | — | — | — |
 
 **Why the follow-up and call notes are one capability (decided 2026-10-17):** both
@@ -81,6 +84,8 @@ RM's own meetings and need the least new data and review), then saving the call
 notes to Salesforce once that's signed off (about weeks 4–6). Call notes are in
 wave 1 because in McKinsey's survey of about 400 bankers, admin is one of the top
 two problems at every stage of the sales funnel (decided 2026-10-10).
+
+**How the follow-up passes its gates.** Because the recap and email go live first, the follow-up passes gates 3 and 4 twice: first for the recap and email (weeks 2–3), then for saving call notes to Salesforce, which is a material change (a new action, a record write) and goes back through step 4 (weeks 4–5; Product Framework, change after launch). Gate 5 is decided once, for wave 1 as a whole, after the brief, the list and call notes have been live for [X] weeks.
 
 **Why there's no how-to helper (decided 2026-10-17):** a pilot group of a few RMs
 learns from training on their own clients, champions and a Teams channel. A
@@ -131,7 +136,7 @@ invented here.
 | **Revenue from insights** | RMs in scope [X] × qualified opportunities surfaced per RM per month [X] × share acted on [X]% × win rate [X]% × average first-year revenue per win [$X] |
 | **Time freed** | RMs in scope [X] × hours saved per week [X]. Reported as hours and client-facing time, not turned into revenue: any revenue that time creates already shows up in the results against the comparison group, so counting it again would count the same win twice (decided 2026-10-17) |
 | **Costs** | Licenses (for example, Copilot or Agentforce seats) + build effort + running costs (AI usage, data) + change management |
-| **Net value** | Revenue above the comparison group, minus costs. Target payback: [X] months |
+| **Net value** | Revenue above the comparison group, minus costs. Target payback: [X] months, judged for wave 1 as a whole; the time savers are judged on hours freed and client-facing time against an hours target the sponsor agrees [X], not on payback |
 
 Each core use case gets its own line once targets are set in Define.
 
@@ -144,27 +149,28 @@ one. Finance agrees the method before the pilot starts.
 ## 3. Who's involved and who decides
 
 The roles, what each one decides and the gates each joins are set once in the
-Product Framework. For the RM project they are:
+[Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ). For the RM project they are:
 
 | Role (Product Framework) | For the RM project |
 |---|---|
 | Sponsor | A commercial banking leader [name needed] |
-| User leaders | RM leaders and market managers: they choose the pilot group and run the weekly pipeline meeting where the assistant's insights are used |
+| User leaders | RM leaders and market managers: they choose the pilot group, run the weekly pipeline meeting where the assistant's insights are used, and decide with the sponsor whether to scale (gate 5) |
 | Pilot users | Pilot RMs: they co-design and test, and their feedback steers the backlog |
 | Data owners | The owners of the Salesforce and Snowflake data [names needed] |
 | Platform teams | Salesforce, Microsoft, AWS and data engineering |
-| Long-term owner | To be decided; for example, someone in a revenue line |
+| Long-term owner | To be decided by a date set in Define (sub-step 8); for example, someone in a revenue line |
 | Also for RMs: sales leadership and HR | Whether acting on the assistant's insights is recognized in how RMs are measured and paid |
 
 The risk partner, compliance, privacy and security, vendor risk, IT, Finance,
-Analytics and Operations join as the Product Framework sets out. No RM capability
+Analytics and Operations join as the Product Framework sets out; the risk partner's
+step 4 approval can't be overruled by the sponsor. No RM capability
 takes the higher-risk path, so the credit policy owner isn't involved; any insight
 that suggests a credit product goes to compliance (control K3).
 
 **Keeping partners aligned.** Decisions go in the decision log, and dependencies,
 risks and issues in the risk and issue list (Product Framework). Its top item is
 the limiting factor: today, the data contract waiting for the data owners'
-signatures.
+signatures, owned by the product manager.
 
 ---
 
@@ -209,7 +215,7 @@ What's specific to RMs:
 
 **Starting point, to confirm in Discover:** if RMs work mainly in Salesforce,
 show insights on the Salesforce client record (Agentforce, Prompt Builder),
-with Snowflake as the data and signal engine. Send the Monday list through
+with Snowflake as the data and signal engine. Send the Monday opportunity list through
 Teams or Outlook (Power Automate). Use one AI path for the pilot, and add AWS
 Bedrock only where custom AI work is needed beyond what's built into
 Salesforce. Every extra platform adds build work and another review.
@@ -257,7 +263,7 @@ client they aren't allowed to see (zero tolerance).
 - **Data:** Salesforce pipeline and activity; client balances and products in Snowflake. Identify the data owners.
 - **Output:** a ranked list of opportunities with sizes, the first target, the baseline, and a first value model.
 - **Checks:** no client data in unapproved AI tools; risk partner briefed on the idea.
-- **Gate:** the sponsor agrees on the wave 1 AI products, the target lever and the baseline, with the risk partner agreeing.
+- **Gate:** the sponsor confirms the wave 1 AI products and the target lever on first sizing, with the risk partner agreeing; the baseline is recorded once the measures are set, and confirmed at gate 2.
 
 ---
 
@@ -270,11 +276,11 @@ client they aren't allowed to see (zero tolerance).
 | 1. Write the problem and outcome | One sentence each, with a measurable target | M365 Copilot in Word |
 | 2. Choose the platform and delivery path | Apply the five criteria; confirm the pilot platform and the release plan | Salesforce, Copilot Studio, Power Automate |
 | 3. Define the data contract | Exact fields, freshness and quality checks; for document sources (meeting recaps, call transcripts), the sources, their content owner, how often they're re-indexed and who may see each document | Snowflake, Salesforce |
-| 4. Start the risk intake | Describe the AI product, get an early risk rating and list the control requirements | The bank's governance process |
+| 4. Start the risk intake | Describe the AI product, get an early risk rating and list the control requirements, including consent before recording (K24) for the meeting follow-up | The bank's governance process |
 | 5. Write user stories and acceptance criteria | Short "as an RM, I need…" statements, each with a test of done | An approved LLM to draft; the team reviews |
 | 6. Set the measures, quality bar and value model | Revenue, capacity and adoption targets; quality thresholds; payback | Power BI |
 | 7. Agree attribution with Finance | How AI-sourced revenue is tagged and compared | Salesforce |
-| 8. Prioritize and scope the first release | Rank the backlog by value, effort and risk, and record the trade-offs; pick the smallest useful version and the pilot group | — |
+| 8. Prioritize and scope the first release | Rank the backlog by value, effort and risk, and record the trade-offs; pick the smallest useful version and the pilot group; propose dates for waves 2 and 3 from the data access requests and the early risk rating; record the long-term owner, or a date to decide by | — |
 
 **AI strategy:** Use AI as a drafting partner, so the team spends its time on decisions rather than documents. Nothing is approved by an agent.
 
@@ -289,7 +295,7 @@ client they aren't allowed to see (zero tolerance).
 - **Data:** a signed-off data contract, so no feature depends on data we don't have.
 - **Output:** a one-page product brief, a prioritized backlog, the data contract, the risk rating and control requirements, and the value model.
 - **Checks:** under control K3, the AI never makes a credit decision and never sets or suggests a price; it drafts or flags, and a named credit officer makes every credit decision. Any insight that suggests a credit product, such as a line of credit, is reviewed by compliance, because fair-lending rules (including the Equal Credit Opportunity Act) apply to business credit too.
-- **Gate:** the brief, data contract and risk rating are agreed, and the value model shows payback within [X] months.
+- **Gate:** the brief, data contract and risk rating are agreed, the value model shows payback within [X] months, and dates are proposed for waves 2 and 3 (each is confirmed at that wave's quick-pass gates, once wave 1's step 4 pass shows real review times).
 
 ---
 
@@ -344,10 +350,10 @@ and Outlook).
 | 2. Review data and privacy | Confirm what client data the AI sees, and why it's allowed | Snowflake (Horizon access rules and masking) |
 | 3. Gather testing evidence | Accuracy, rate of made-up answers, and red-teaming (trying to break it) | AWS Bedrock model evaluation |
 | 4. Check fairness | Are opportunities, especially credit-related ones, spread fairly across client segments and regions? | Snowflake, Power BI |
-| 5. Confirm controls | Human approval before anything reaches a client; guardrails; audit logs | Bedrock Guardrails, Einstein Trust Layer, Power Platform environments and data rules |
+| 5. Confirm controls | Human approval before anything reaches a client; consent captured before any recording (K24); guardrails; audit logs | Bedrock Guardrails, Einstein Trust Layer, Power Platform environments and data rules |
 | 6. Confirm vendor reviews | Third-party risk reviews for the vendors involved | The bank's vendor risk process |
 | 7. Get sign-offs | Risk, compliance, privacy and security | — |
-| 8. Agree the monitoring plan | What is watched after launch, the alert thresholds, who acts and how to pause the product | Power BI, Power Automate |
+| 8. Agree the monitoring plan | What is watched after launch (including the share of recaps from consented recordings versus the RM's own notes), the alert thresholds, who acts and how to pause the product | Power BI, Power Automate |
 
 **AI strategy:** Use AI to test harder and document faster, but never to approve. Risk partners make every call.
 
@@ -372,7 +378,7 @@ and Outlook).
 
 | Sub-step | What happens | Tools that help |
 |---|---|---|
-| 1. Confirm release readiness | Support model, incident process, training and communications ready; sign-offs in place | Power Platform environments, Teams |
+| 1. Confirm release readiness | Support model (champions and the Teams channel, with the product manager behind them), incident process, training and communications ready; sign-offs in place | Power Platform environments, Teams |
 | 2. Launch the pilot | A small group of RMs and their managers, alongside a comparison group | Power Platform environments (test to live), Salesforce release |
 | 3. Build it into routines (the core of adoption) | Managers run weekly pipeline meetings from the insights, so use becomes a habit, not a training topic | Salesforce, Power BI |
 | 4. Train in context | Short demos built on RMs' own clients; "how do I…?" questions go to champions and the Teams channel | Teams |
@@ -476,26 +482,26 @@ call is made at Gate 2 (week 2).
 | Week | What gets done | Owner | Proof it's done |
 |---|---|---|---|
 | Days 1–5 | Sponsor kickoff; risk partner briefed; data access and test environments requested; working prototype built on sample data | Product manager, platform team | Prototype shown to the sponsor |
-| 1 | **Gate 1:** sponsor sees the prototype and picks wave 1, the target lever and the baseline | Sponsor, with the risk partner | Decision log entry |
+| 1 | **Gate 1:** sponsor sees the prototype and confirms wave 1 and the target lever on first sizing (the baseline follows once the measures are set) | Sponsor, with the risk partner | Decision log entry |
 | 1–2 | RM interviews and shadowing using the prototype; improve it every few days; levers sized | Product manager, pilot RMs, analyst | RM feedback log; sized levers |
-| 2 | **Gate 2:** data contract, early risk rating, value model, Finance attribution method; split decision if needed | Sponsor, data owners, risk partner | Signed data contract; early risk rating |
-| 2–3 | Meeting follow-up set up in M365 Copilot; reviewed and signed off for pilot use | Platform team, risk partner | Sign-off recorded |
+| 2 | **Gate 2:** data contract, early risk rating, value model, Finance attribution method, baseline confirmed, dates proposed for waves 2 and 3; split decision if needed | Sponsor, data owners, risk partner | Signed data contract; early risk rating |
+| 2–3 | Recap and email set up in M365 Copilot: a small test set graded by RMs (gate 3); controls tested, including consent before recording (K24); evidence pack and sign-offs (gate 4); readiness for this part: incident dry run, comparison group, training | Platform team, risk partner, operations | Gate 3 and gate 4 entries in the decision log; readiness checklist |
 | About 2–4 | **Meeting follow-up live with pilot RMs** | Product manager | First weekly usage report |
 | 2–5 | Connect real data in the test environment; build the test set and evidence pack; risk partner reviews each version | Platform teams, product manager | Test results against the quality bar |
-| 4–5 | Sign-offs for the insight features and call notes; release readiness (training, support, incident process, comparison group) | Risk, compliance, privacy, security, operations | Sign-offs recorded; readiness checklist complete |
-| About 4–6 | **Client brief, weekly opportunity list and call notes into Salesforce live with pilot RMs** | Product manager | Usage and act-on rates in Power BI; share of meetings logged |
+| 4–5 | Sign-offs for the brief, the opportunity list and saving call notes (a material change to the follow-up, back through step 4); release readiness (training, support, incident process, comparison group) | Risk, compliance, privacy, security, operations | Sign-offs recorded; readiness checklist complete |
+| About 4–6 | **Client brief, Monday opportunity list and call notes into Salesforce live with pilot RMs** | Product manager | Usage and act-on rates in Power BI; share of meetings logged |
 
 | Step | Weeks (estimate) | Ends with |
 |---|---|---|
 | **1. Discover** | Weeks 1–2, with a working prototype in week 1 (the quick pass before later feature waves) | Gate 1 (end of week 1): wave 1 AI products, target lever, baseline; interviews and sizing continue in week 2 |
-| **2. Define** | Weeks 1–2, alongside discovery | Gate 2 (week 2): data contract, risk rating, value model; split decision if needed |
+| **2. Define** | Weeks 1–2, alongside discovery | Gate 2 (week 2): data contract, risk rating, value model, dates proposed for waves 2 and 3; split decision if needed |
 | **3. Build** | From day 1. Wave 1: weeks 1–5; waves 2 and 3: dates set at gate 2 | Gate 3: each AI product meets the quality bar in testing, and every control is built and passes its control test |
 | **4. Govern and test** | Risk partner reviews each version from week 1; sign-offs per AI product | Gate 4: each AI product approved for real RMs and real client data |
 | **5. Release and adopt** | Follow-up recap and email live about weeks 2–4; the brief, the opportunity list and call notes about weeks 4–6; releases every week or two | Gate 5: each feature wave meets its weekly use and leading-result targets, with no serious incidents; long-term owner confirmed before scaling |
 | **6. Measure and iterate** | Leading measures from the first live week; closed revenue read about month 6 | Gate 6: keep, change or stop each AI product monthly; invest more, adjust or stop each quarter |
 
 **By day 90 (about week 13):** wave 1 has been live with pilot RMs for about
-two months and leading measures are coming in. How far waves 2 and 3 have
+two months (about three weeks if the backup plan is used) and leading measures are coming in. How far waves 2 and 3 have
 got depends on the dates set at gate 2.
 
 ---
@@ -555,6 +561,7 @@ builds on them. I'd confirm early:
 - Who owns the client data in Snowflake and Salesforce?
 - How are RMs measured and rewarded today?
 - How long does AI governance review usually take?
+- Is recording client meetings in Teams allowed, how is consent captured, and who owns the recording policy?
 - What team and budget are available for the pilot?
 - How each platform is set up for RMs today: which features, licenses and connections?
 
@@ -563,7 +570,7 @@ builds on them. I'd confirm early:
 ## Appendix A: Agent specs
 
 Each agent named in Steps 1–6. AI sales coaching (wave 3): agent spec not written
-yet (closed item C44, step 4). The product's agents (A1 to A5) are written so a
+yet (closed item C44, step 4 of the use case kit). The product's agents (A1 to A5) are written so a
 platform team can build them and a risk partner can review them; the team's
 agents are the product machine's general agents, specified in full in the
 agent library. **[X]** values are set in Define.
@@ -578,7 +585,7 @@ agent library. **[X]** values are set in Define.
 ### Agents RMs use (the product)
 
 **A1. Signal finder** · wave 1 · runs on Snowflake (Cortex)
-- **Job:** each night, scan each RM's clients for opportunity signals using the agreed rules and scores (product gaps; from wave 2, early warnings and referral needs).
+- **Job:** each night, scan each RM's clients for opportunity signals using the agreed rules and scores (product gaps; from wave 2, early warnings and referral needs, and prospect lookalikes from the licensed prospect data, using the criteria compliance approves).
 - **Inputs:** certified Snowflake views of balances, products, activity and trends; the rule set owned by the business.
 - **Allowed actions:** read the certified views; write signals to a signals table.
 - **Not allowed:** contacting clients; changing Salesforce; inventing signals outside the rule set.
@@ -590,7 +597,7 @@ agent library. **[X]** values are set in Define.
 **A2. Insight writer** · wave 1 · runs on Salesforce Prompt Builder (or AWS Bedrock if needed)
 - **Job:** turn each signal into a plain-English reason, talking points and a suggested next step, citing the numbers.
 - **Inputs:** signals from A1; the Salesforce client record.
-- **Allowed actions:** read signals and the client record; write a draft insight to the client record.
+- **Allowed actions:** read signals and the client record; write a draft insight to the assistant's own insights panel, shown on the client record; it changes no client record field.
 - **Not allowed:** recommending credit decisions or pricing; stating any number not in its inputs.
 - **Outputs:** one insight per signal, with its sources shown.
 - **Stops when:** every signal has an insight, or a guardrail blocks one (logged and sent to the product manager).
@@ -658,11 +665,11 @@ agent library. The table shows how this project uses each one: its RM inputs, ow
 Each RM-facing capability as a step-by-step flow. Every RM-facing flow (B1–B8)
 has one **decision point** where the RM decides, and everything is logged.
 B9 is the release routine behind them. AI sales coaching (wave 3): workflow not
-written yet (closed item C44, step 4).
+written yet (closed item C44, step 4 of the use case kit).
 
 **B1. Monday opportunity list** (wave 1)
 - **Trigger:** every night (signals); every Monday morning (digest).
-- **Steps:** 1. A1 scans clients and writes signals. 2. A2 writes an insight for each. 3. Insights appear on the Salesforce client record. 4. A4 sends each RM their top [X]. 5. **Decision point:** the RM accepts, rejects (with a reason) or changes each insight. 6. On accept, the RM creates an opportunity in Salesforce, tagged "AI-sourced." 7. M30 sorts the feedback. 8. Managers review the list in the weekly pipeline meeting.
+- **Steps:** 1. A1 scans clients and writes signals. 2. A2 writes an insight for each. 3. Insights appear in the assistant's panel on the Salesforce client record (no record field changes). 4. A4 sends each RM their top [X]. 5. **Decision point:** the RM accepts, rejects (with a reason) or changes each insight. 6. On accept, the RM creates an opportunity in Salesforce, tagged "AI-sourced." 7. M30 sorts the feedback. 8. Managers review the list in the weekly pipeline meeting.
 - **Logged:** signals, insights, opens, decisions and reasons, opportunities created.
 - **Measures:** share of insights acted on; pipeline from AI-sourced opportunities.
 
@@ -690,7 +697,7 @@ written yet (closed item C44, step 4).
 - **Logged:** alerts, RM actions, outcomes.
 - **Measures:** clients kept against the comparison group.
 
-**B6. Referral prompt** (wave 2)
+**B6. Referral prompts** (wave 2)
 - **Trigger:** A1 spots a likely need another team serves, such as treasury management.
 - **Steps:** 1. A2 explains the need. 2. **Decision point:** the RM clicks "refer" or dismisses it. 3. On refer, Power Automate creates the referral in Salesforce and notifies the specialist. 4. The specialist accepts it and the referral is tracked to close.
 - **Logged:** prompts, referrals, acceptances, outcomes.
@@ -704,7 +711,7 @@ written yet (closed item C44, step 4).
 
 **B8. Prospect lookalikes** (wave 2)
 - **Trigger:** monthly.
-- **Steps:** 1. Snowflake finds prospects that look like the bank's best clients, using agreed and explainable criteria. 2. A2 explains each match. 3. **Decision point:** the RM decides whether to pursue each one.
+- **Steps:** 1. A1 finds prospects that look like the bank's best clients in the licensed prospect data, using agreed and explainable criteria (wave 2's data contract update adds that data). 2. A2 explains each match. 3. **Decision point:** the RM decides whether to pursue each one.
 - **Logged:** prospects shown, pursued and won.
 - **Measures:** new clients against the comparison group.
 - **Check:** compliance reviews the criteria before launch, because prospect selection can raise fair-lending questions.

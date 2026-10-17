@@ -71,7 +71,7 @@
         {
           "id": "rm-assistant",
           "name": "The RM Assistant",
-          "what": "The core RM product, as a hypothesis: one AI assistant for each RM, with limits, capabilities for each moment of the RM's work, release by release, on a shared foundation.",
+          "what": "The core RM product, as a hypothesis: one AI assistant for each RM, with limits, capabilities for each moment of the RM's work, added feature wave by feature wave on a shared foundation.",
           "status": "Waiting for review",
           "url": "https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2",
           "source": "memos/rm-assistant.md"
@@ -86,7 +86,7 @@
         {
           "id": "mckinsey-use-cases",
           "name": "RM Core Use Cases",
-          "what": "The seven core use cases the RM plan is built on: McKinsey's five frontline AI use cases and their reported returns, plus admin off the RM's plate and keep clients.",
+          "what": "The seven core use cases The RM Assistant's capabilities answer: McKinsey's five frontline AI use cases and their reported returns, plus admin off the RM's plate and keep clients.",
           "status": "Waiting for review",
           "url": "https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X",
           "source": "memos/mckinsey-frontline-ai.md",

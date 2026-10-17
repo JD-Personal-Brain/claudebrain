@@ -237,7 +237,7 @@ footer{{color:var(--muted);font-size:14px;border-top:1px solid var(--line);paddi
 {rules_html}
 </div>
 </section>
-<footer>In use: reviewed 2026-10-14; cut-first check, gates in writing and the machine's measures added 2026-10-15. Tool choices are guesses until confirmed against the bank's setup. [X] marks numbers still to be set. The RM analytics plan is the first project to run through this machine.</footer>
+<footer>In use: reviewed 2026-10-14; cut-first check, gates in writing and the machine's measures added 2026-10-15. Tool choices are guesses until confirmed against the bank's setup. [X] marks numbers still to be set. The RM Assistant Plan is the first project to run through this machine.</footer>
 </main>
 '''
 open(os.path.join(ROOT,'designs','product-machine.html'),'w').write(page)

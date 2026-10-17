@@ -56,7 +56,7 @@ for fn in sorted(f for f in os.listdir(os.path.join(ROOT, "playbook")) if re.mat
         })
     stages1.append({"n": n, "name": name, "q": q, "gate": gate, "gov": gov, "branches": branches})
 
-# ---------- Map 2: an RM's week (RM Analytics product workflows) ----------
+# ---------- Map 2: an RM's week (The RM Assistant's workflows) ----------
 memo = read("memos/rm-analytics-framework.md")
 appb = memo.split("## Appendix B: Workflows")[1]
 flows = {}
@@ -77,7 +77,7 @@ for block in re.split(r"\n\*\*(?=B\d+\. )", appb)[1:]:
 # memo's workflows; confirm it with RMs in Discover.
 RM_STAGES = [
     ("1", "Find the opportunity or risk", "Which clients should I call, and why?", ["B1", "B5", "B6", "B8"]),
-    ("2", "Prepare (or any time)", "What do I need to know before I talk to them? The assistant (B7) works at any stage.", ["B2", "B7"]),
+    ("2", "Prepare (or any time)", "What do I need to know before I talk to them? Client Q&A (B7) works at any stage.", ["B2", "B7"]),
     ("3", "Meet and follow up", "What did we agree, and what happens next?", ["B3"]),
     ("4", "Log it", "Is the client record up to date?", ["B4"]),
 ]
@@ -228,7 +228,7 @@ page = f'''<title>Workflow Maps</title>
 {map1}
 </section>
 <section id="rm" class="mapwrap">
-<div class="stephead"><span class="label">Map 2 · RM Analytics</span><h2>How an RM uses the product</h2>
+<div class="stephead"><span class="label">Map 2 · The RM Assistant</span><h2>How an RM uses the product</h2>
 <p class="intro" style="margin-top:6px;color:var(--muted)">An RM's week, with each of the product's workflows placed where it helps. Every RM-facing workflow (B1 to B8) has a point where the RM decides, and nothing reaches a client without the RM. B9 is the release routine behind them.</p></div>
 <div class="note">⚠️ Grouping the workflows into these four stages is my framing of the plan. Confirm it with RMs in Discover.</div>
 {map2}

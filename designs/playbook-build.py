@@ -6,7 +6,7 @@ from pagekit import E, inline, chipify, render_list, render_table, render_blocks
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PB = os.path.join(ROOT, "playbook")
 
-FIELDS = ["Goal", "Why it matters", "Know first", "First time, step by step", "Output", "Done when", "Automation watch", "For RM analytics"]
+FIELDS = ["Goal", "Why it matters", "Know first", "First time, step by step", "Output", "Done when", "Automation watch", "For the RM Assistant"]
 def parse_fields(body):
     fields, cur = {}, None
     for ln in body.split("\n"):
@@ -33,7 +33,7 @@ def substep(num, title, body):
 <div class="subgrid"><div class="col">{left}</div>
 <div class="col steps"><h5>First time, step by step</h5>{field_html(f["First time, step by step"])}</div></div>
 <div class="auto"><h5>Automation watch</h5>{field_html(f["Automation watch"])}</div>
-<div class="rm"><span class="rmlabel">For RM analytics</span> {field_html(f["For RM analytics"])}</div>
+<div class="rm"><span class="rmlabel">For the RM Assistant</span> {field_html(f["For the RM Assistant"])}</div>
 </article>'''
 
 def step(fn):

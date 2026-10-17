@@ -34,7 +34,7 @@ log (see `README.md`) for every sub-step.
   - First time: **Me**, with risk.
   - Note: what changed between the early rating and the formal one, and why.
   - Agent: **M25 Risk intake assistant** (agent library) updates the intake from the latest brief. *Draft*.
-- **For RM analytics:** expect a lower rating while the product stays assistive and away from credit decisions ⚠️. Risk decides.
+- **For the RM Assistant:** expect a lower rating while the product stays assistive and away from credit decisions ⚠️. Risk decides.
 
 ---
 
@@ -54,7 +54,7 @@ log (see `README.md`) for every sub-step.
   - First time: **Draft**.
   - Note: how much of the statement was copied from the data contract.
   - Agent: **M13 Data-use checker** (agent library) that compares the fields actually read with the contract and flags differences. *Auto*, read-only. It runs on each new frozen version, and again monthly after launch.
-- **For RM analytics:** each RM sees only clients they're already allowed to see.
+- **For the RM Assistant:** each RM sees only clients they're already allowed to see.
 
 ---
 
@@ -74,7 +74,7 @@ log (see `README.md`) for every sub-step.
   - First time: **Draft**, with red-teaming partly **Auto**.
   - Note: which attacks found real problems. Keep them for every future project.
   - Agents: **M26 Test grader** and **M27 Red-team agent** (agent library). Risk reviews every failure.
-- **For RM analytics:** "must refuse" cases include another RM's clients and credit decisions.
+- **For the RM Assistant:** "must refuse" cases include another RM's clients and credit decisions.
 
 ---
 
@@ -94,7 +94,7 @@ log (see `README.md`) for every sub-step.
   - First time: **Draft**.
   - Note: the groups and thresholds compliance chose. Reuse them.
   - Agent: **M28 Fairness monitor** (agent library). *Auto* report; compliance reviews. Its ongoing mode runs it again monthly after launch.
-- **For RM analytics:** check that opportunities, especially credit-related ones, are spread fairly across segments and regions.
+- **For the RM Assistant:** check that opportunities, especially credit-related ones, are spread fairly across segments and regions.
 
 ---
 
@@ -120,7 +120,7 @@ log (see `README.md`) for every sub-step.
   - First time: **Draft**.
   - Note: which control tests you ran by hand.
   - Agent: **M11 Controls checker** (agent library) from 3.4. *Auto*, test environment only.
-- **For RM analytics:** RM approval before saving call notes or sending follow-ups.
+- **For the RM Assistant:** RM approval before saving call notes or sending follow-ups.
 
 ---
 
@@ -140,7 +140,7 @@ log (see `README.md`) for every sub-step.
   - First time: **Me**.
   - Note: which vendors were already approved. Keep a list, because the next project will likely reuse them.
   - Agent: none needed. A shared **approved vendors list** does the job.
-- **For RM analytics:** Salesforce, Microsoft and AWS (with the model provider behind Bedrock).
+- **For the RM Assistant:** Salesforce, Microsoft and AWS (with the model provider behind Bedrock).
 
 ---
 
@@ -161,7 +161,7 @@ log (see `README.md`) for every sub-step.
   - First time: **Draft** for the pack, **Me** for chasing.
   - Note: how long each signer took, and what they asked.
   - Agents: **M29 Evidence pack assembler** (agent library), *Draft*. **M14 Sign-off router** (agent library; Power Automate approvals) sends the requests and chases them, *Auto* ⚠️.
-- **For RM analytics:** risk, compliance (including fair lending), privacy and security.
+- **For the RM Assistant:** risk, compliance (including fair lending), privacy and security.
 
 ---
 
@@ -181,7 +181,7 @@ log (see `README.md`) for every sub-step.
   - First time: **Draft**.
   - Note: the thresholds chosen. Reuse them next time.
   - Asset: the **monitoring plan template** (not an agent), so the plan is drafted the same way every time. *Draft*. M32 Quality watchdog (agent library) then runs much of the plan in step 6.
-- **For RM analytics:** re-test after every change, with alerts on drift.
+- **For the RM Assistant:** re-test after every change, with alerts on drift.
 
 ---
 
