@@ -142,7 +142,7 @@ Rules:    Change no existing files in stage 1; the only new thing is
           because I approve the structure before anything is built.
           Keep the order of work already agreed in <decisions> (for
           [RMs]: the [Elon mode review comes before the Andy
-          edition (W11), and the workflow map is W2]) and say which
+          edition (W3), and the workflow map is W2]) and say which
           open items the kit covers, because those are already
           planned.
           Give every fact one home and link to it from everywhere

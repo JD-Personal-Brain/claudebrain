@@ -114,7 +114,7 @@ About 110 findings: 8 Must fix, about 55 Should fix, the rest Minor. All are fix
 | Product Playbook, steps 1 to 3 | The sponsor could accept a gap on permissions; the data contract never marked fields as sensitive, but Build masks "sensitive" fields; the baseline could be recorded before the measure was final; vendor reviews started only in step 4 (now in 2.2, because they're slow). | Yes |
 | Product Playbook, steps 4 to 6 | Guardrails were never shown working; the monitoring plan came after the sign-offs that depend on it (now drafted alongside 4.5 and in the evidence pack); the step 4 no-go skipped re-testing; the monthly decision required a meeting (now in writing); "stop" had no steps (now it does). | Yes |
 | Agent Library | Monitors didn't say what happens when data is missing, so a missing input could read as "all clear". Every agent now stops and alerts, and a monitor never reports a pass on missing data. An Auto agent ticked readiness items itself (now it marks them for me to confirm). | Yes |
-| Controls Catalog | The customer privacy law (GLBA) was described as covering business owners and guarantors, which is uncertain; now marked ⚠️ for privacy to confirm. Several controls gained the sub-steps that now build or prove them. 13 of 25 controls still have a stage not covered in the playbook (item W6, unchanged). | Yes |
+| Controls Catalog | The customer privacy law (GLBA) was described as covering business owners and guarantors, which is uncertain; now marked ⚠️ for privacy to confirm. Several controls gained the sub-steps that now build or prove them. 13 of 25 controls still have a stage not covered in the playbook (item W7, unchanged). | Yes |
 | Glossary and language | "Risk contact" and "risk partner" named one role; "risk and issue list" had three names; "automation check" meant two things. Each now has one name. New terms: risk and issue list, project file, automation review. | Yes |
 | Tech Stack Guide | Heading named the wrong page; the model risk note now cites the OCC's matching guidance and the possible SR 26-2 replacement (item W17). | Yes |
 | The checker | It now also catches plural forms of retired words, and fails if an agent's number and name differ between the Product Machine, the playbook and the Agent Library. | Yes |
@@ -138,11 +138,11 @@ Each is a rule the machine needs and doesn't have. My recommendation is in the l
 | 9 | **A fallback for each ⚠️ Auto task** if the bank says automations can't message people. | Otherwise the machine stalls waiting for that answer at the first project. | Optional | One line per ⚠️ row: what it becomes (usually Draft) if the answer is no. |
 
 **Already planned, with what the audit adds:**
-- **W3 templates:** add the outcome note, sizing table, measures sheet, value model, controls checklist, scale recommendation, monthly and quarterly packs, incident log, the sub-step log and a gate approval record.
-- **W4 tracker design:** include the limiting factor, the date each gate pack was ready and the decision date (two machine measures depend on them).
-- **W5 approvals map:** add credit officers and the credit policy owner when PM work starts.
-- **W6 control gaps:** 13 of 25 controls still have a stage not covered.
-- **W9 support model:** incident severity, who may pause, rollback and the handover to the long-term owner.
+- **W4 templates:** add the outcome note, sizing table, measures sheet, value model, controls checklist, scale recommendation, monthly and quarterly packs, incident log, the sub-step log and a gate approval record.
+- **W5 tracker design:** include the limiting factor, the date each gate pack was ready and the decision date (two machine measures depend on them).
+- **W6 approvals map:** add credit officers and the credit policy owner when PM work starts.
+- **W7 control gaps:** 13 of 25 controls still have a stage not covered.
+- **W10 support model:** incident severity, who may pause, rollback and the handover to the long-term owner.
 
 ### Proof
 
