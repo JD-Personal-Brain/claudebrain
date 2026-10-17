@@ -1,6 +1,6 @@
 # AI-powered RM analytics: how I'd deliver the first use case
 
-Principal Applied AI Product Manager · Associated Bank · memo v9, 2026-10-17. This working file is the one source of the plan: the RM Analytics Plan page is built from it.
+Principal Applied AI Product Manager · Associated Bank · October 2026 (memo v9, 2026-10-17)
 
 ---
 
@@ -34,7 +34,7 @@ in review.
 **What I'd need:** a business sponsor, time with 6–10 RMs and their managers, named data owners, an early risk
 partner, and a willing pilot group.
 
-**How to use this plan.** The AI products are organized under seven core use cases (McKinsey's five plus two of our own), each with a return profile (see "Core use cases"). Sections 1–9 are the plan. Appendix A specifies
+**How to use this plan.** The AI products are organized under seven core use cases (McKinsey's five plus two of our own), each with a return profile (see "Core use cases"). The numbered sections 1–9, with the six steps, are the plan. Appendix A specifies
 the product's agents in full (job, inputs, allowed actions, outputs, when it
 stops and proof it worked) and shows how the team uses the product machine's
 general agents, whose full specs are in the agent library. Appendix B sets out each of the plan's workflows (B1 to B9) step by step, so the
@@ -87,6 +87,7 @@ order it in Discover.
 | | Meeting recap and follow-up draft | Time | M365 Copilot in Teams and Outlook |
 | | Weekly opportunity list (product gaps) | Grow existing clients | Snowflake signals, Power Automate digest |
 | | Call notes into Salesforce (RM approves) | Time; better data | Salesforce Agentforce |
+| | How-to helper (A6): answers "how do I use this?" | Adoption | Copilot Studio agent in Teams |
 | **Wave 2** (live about week 10) | Early warning: client may leave | Keep clients | Snowflake signals, Salesforce |
 | | Referral prompts (for example, RM to treasury specialist) | Grow existing clients | Salesforce, Power Automate |
 | | Prospect lookalikes | Win new clients | Snowflake, Salesforce |
@@ -105,8 +106,8 @@ sales funnel, and call notes reuse the recap the meeting follow-up already
 produces. They go live with the insights, once saving to Salesforce is signed off.
 
 **Why this works:** standard AI products on platforms the bank already runs
-need less build and fit existing approvals. Each feature wave is low-risk and
-internal-only: the AI suggests and drafts, and the RM decides. If the bank's
+need less build and fit existing approvals. Each feature wave is internal-only and
+assistive: the AI suggests and drafts, and the RM decides. If the bank's
 AI review applies to every new use, the review sets the real pace, which is
 why the risk partner is involved from week one.
 
@@ -154,7 +155,7 @@ one. Finance agrees the method before the pilot starts.
 | Who | Role | Decides |
 |---|---|---|
 | **Business sponsor** (commercial banking leader) | Owns the outcome and the funding | Target lever; go/no-go at each gate, together with the people named for that gate (Product Framework) |
-| **RM leaders and market managers** | Shape the workflow; run the weekly routine | Pilot group, how insights are used in pipeline meetings |
+| **RM leaders and market managers** | Shape the workflow; run the weekly routine | Pilot group; how insights are used in pipeline meetings; with the sponsor, whether to scale (the step 5 gate) |
 | **Pilot RMs** | Co-design and test | Whether each insight is useful (their feedback steers the backlog) |
 | **Product manager** (this role) | Owns discovery through adoption; owns the product until a long-term owner is named | Scope, priorities, trade-offs |
 | **Data owners** (Snowflake, Salesforce) | Provide and certify data | What data may be used, and how |
@@ -170,7 +171,9 @@ one. Finance agrees the method before the pilot starts.
 | **Analytics** | Checks the sizing and impact numbers | Whether the numbers hold up |
 
 The roles and the gates each one joins are set once in the Product Framework; this
-table names who they are for the RM project.
+table names who they are for the RM project. No RM product takes the higher-risk
+path, so the credit policy owner isn't involved; any insight that suggests a credit
+product goes to compliance (control K3).
 
 **Keeping partners aligned.** Every decision goes in a decision log: what was
 decided, who decided and why. Dependencies, risks and issues sit in one risk and
@@ -193,12 +196,12 @@ formal approval gate, not the first time risk partners see the product.
 
 | Step | Question it answers | Governance thread | Gate (go/no-go) |
 |---|---|---|---|
-| **1. Discover** | Which standard AI products come first, and which revenue lever matters most? | Risk partner briefed on the idea | Sponsor agrees on the wave 1 AI products, the target lever and the baseline (for the project the first time, then for each feature wave) |
+| **1. Discover** | Which standard AI products come first, and which revenue lever matters most? | Risk partner briefed on the idea | Sponsor agrees on the AI products for the wave, the target lever and the baseline (wave 1 the first time; later feature waves take the quick pass, gates 1 and 2 together in writing) |
 | **2. Define** | What exactly do we build first, and how will we know it worked? | Risk intake and early rating; data use approved | Brief, data contract and risk rating agreed; value model shows payback within [X] months |
 | **3. Build** | What's the smallest version RMs will use and trust? | Controls built in; test set created | Meets the quality bar (below) in testing; every control is built and passes its control test |
 | **4. Govern and test** | Is it safe, fair and controlled? | Formal validation and sign-offs | All sign-offs recorded; monitoring plan agreed |
 | **5. Release and adopt** | Will RMs use it every week? | Live monitoring; incident process | Weekly use and leading results hit targets (at least [X]% of pilot RMs active weekly, at least [X]% of insights acted on); no serious incidents; long-term owner confirmed before scaling |
-| **6. Measure and iterate** | Is it creating new revenue, and what comes next? | Ongoing model monitoring | Each month (and at the end of each feature wave): keep, change or stop each AI product; quarterly: invest more, adjust or stop, based on results against the comparison group |
+| **6. Measure and iterate** | Is it creating new revenue, and what comes next? | Ongoing monitoring | Each month (and at the end of each feature wave): keep, change or stop each AI product; quarterly: invest more, adjust or stop, based on results against the comparison group |
 
 **Each step is described the same way:** Goal · Work (sub-steps and tools) ·
 AI strategy (the agents) · AI for the team · AI for RMs · Data · Output ·
@@ -305,7 +308,7 @@ loop compounds over time and is a reason to build both goals together.
 - **AI for RMs:** defined, not built. For example: "Each Monday, show me my top 5 client opportunities, with the reason and a suggested next step," and "Before each call, give me a one-page brief; afterward, draft my notes for Salesforce."
 - **Data:** a signed-off data contract, so no feature depends on data we don't have.
 - **Output:** a one-page product brief, a prioritized backlog, the data contract, the risk rating and control requirements, and the value model.
-- **Checks:** under control K3, the AI never makes a credit decision and never sets or suggests a price; it drafts or flags, and a named person decides. Any insight that suggests a credit product, such as a line of credit, is reviewed by compliance, because fair-lending rules (including the Equal Credit Opportunity Act) apply to business credit too.
+- **Checks:** under control K3, the AI never makes a credit decision and never sets or suggests a price; it drafts or flags, and a named credit officer makes every credit decision. Any insight that suggests a credit product, such as a line of credit, is reviewed by compliance, because fair-lending rules (including the Equal Credit Opportunity Act) apply to business credit too.
 - **Gate:** the brief, data contract and risk rating are agreed, and the value model shows payback within [X] months.
 
 ---
@@ -315,7 +318,8 @@ loop compounds over time and is a reason to build both goals together.
 **Goal:** Build the smallest version that RMs will actually use and trust.
 
 **AI capabilities used:** agents (A1 Signal finder, A2 Insight writer, A3 Prep and
-follow-up assistant), retrieval with sources (each insight shows the client
+follow-up assistant, A4 Weekly opportunity digest and A6 How-to helper; in later
+feature waves, A5 RM assistant and AI sales coaching, spec to come), retrieval with sources (each insight shows the client
 data behind it), data flows (Snowflake signals into Salesforce), workflow
 automations (the weekly digest) and system integrations (Salesforce, Teams
 and Outlook).
@@ -579,7 +583,8 @@ builds on them. I'd confirm early:
 
 ## Appendix A: Agent specs
 
-Each agent named in Steps 1–6. The product's agents (A1 to A6) are written so a
+Each agent named in Steps 1–6. AI sales coaching (wave 3): agent spec not written
+yet (closed item C44, step 4). The product's agents (A1 to A6) are written so a
 platform team can build them and a risk partner can review them; the team's
 agents are the product machine's general agents, specified in full in the
 agent library. **[X]** values are set in Define.
@@ -681,7 +686,8 @@ agent library. The table shows how this project uses each one: its RM inputs, ow
 
 Each RM-facing AI product as a step-by-step flow. Every RM-facing flow (B1–B8)
 has one **decision point** where the RM decides, and everything is logged.
-B9 is the release routine behind them.
+B9 is the release routine behind them. AI sales coaching (wave 3): workflow not
+written yet (closed item C44, step 4).
 
 **B1. Weekly opportunity list** (wave 1)
 - **Trigger:** every night (signals); every Monday morning (digest).

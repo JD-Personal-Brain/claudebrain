@@ -64,7 +64,7 @@ for block in re.split(r"\n\*\*(?=A\d+\. )", appa.split("### Agents the team uses
     agents.append({"id": m.group(1), "name": m.group(2), "group": "product", "steps": ["Used by RMs"] + steps_of(u), "aim": "",
                    "job": f["Job"], "meta": cap(m.group(3).strip()) + (f" · also used in {', '.join(u)}" if u else ""),
                    "fields": [(k, f[k]) for k in ["Inputs", "Allowed actions", "Not allowed", "Outputs", "Stops when", "Proof it worked", "Person in charge"] if k in f],
-                   "source": "RM Analytics plan · Appendix A"})
+                   "source": "RM Analytics Plan · Appendix A"})
 
 GROUPS = [("machine", "Run the product machine", "Handle the paperwork and routing that move any project through the six steps: kickoff, notes, gate packs, sign-offs and releases. Reused on every project."),
           ("team", "Do the team's analysis, testing and monitoring", "General agents for every project: sizing, research, requirements, data checks, testing, red-teaming, fairness, evidence, feedback and impact. The RM plan shows how it uses each one."),

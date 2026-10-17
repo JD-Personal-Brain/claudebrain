@@ -111,13 +111,13 @@ What we're working on first: a quick check on the bank news scout, then the user
 |---|---|---|---|
 | W10 | Build an RM mock-up: clickable screens of the Monday opportunity list and the pre-meeting client brief, on made-up sample data, so Andy can see what an RM gets | Claude, with my review | Stage 1 |
 | W11 | Build the RM Leader Brief, which is the "Andy edition" of the RM plan (decided 2026-10-17, C43): one page in his terms, no internal labels, in four parts (the case, the plan on a page, the value, the ask), each line linking down to its detail, with one line that credit comes next; it replaces the one-page RM summary and follows Sample 1 on the use case kit review page. First, run an Elon mode review on the RM plan (say "Elon mode" for the elon-mode skill; idea 53, agreed 2026-10-15) and cut anything that doesn't earn its place, so Andy sees the lean version | Claude, then me | V1 and my yes |
-| B1 | Which revenue lever matters most to the business right now? (from: RM plan, section 11) | Me, with Andy | Nothing |
-| B2 | How will success be judged in the first 6 months? (from: RM plan, section 11) | Me, with Andy | Nothing |
+| B1 | Which revenue lever matters most to the business right now? (from: RM plan, section 9) | Me, with Andy | Nothing |
+| B2 | How will success be judged in the first 6 months? (from: RM plan, section 9) | Me, with Andy | Nothing |
 | B3 | What are Andy's first use cases, and how does RM analytics rank against credit (portfolio management) and treasury and payments? (from: Bank Business Briefing, section 9) | Me, with Andy | Nothing |
 | B4 | ⚠️ Is the new franchise banking team (the bank's national team for franchise owners, launched in April 2026), where RMs and portfolio managers sit together, the intended first team? This is my guess from our conversation (from: Chat, 2026-10-09) | Me, with Andy | Nothing |
 | B5 | Does "Corporate & Commercial Banking" include commercial real estate and the specialty industries, and where does the role sit? (from: Bank Business Briefing, section 9) | Me, with Andy | Nothing |
-| B6 | What team and budget are available for the pilot? (from: RM plan, section 11) | Me, with Andy | Nothing |
-| B7 | Which RM teams would make a good pilot group? (from: RM plan, section 11) | Me, with Andy | Nothing |
+| B6 | What team and budget are available for the pilot? (from: RM plan, section 9) | Me, with Andy | Nothing |
+| B7 | Which RM teams would make a good pilot group? (from: RM plan, section 9) | Me, with Andy | Nothing |
 
 ## Alongside the path
 
@@ -142,19 +142,19 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | # | Item | Who | Waits on |
 |---|---|---|---|
 | B8 | How many RMs, treasury management officers and portfolio managers are there today, by market, including American National? (from: Bank Business Briefing, section 9) | The bank | Starting at the bank |
-| B9 | How are RMs measured, paid and rewarded, and how are referrals to treasury, capital markets and wealth credited? (from: RM plan, section 11; Bank Business Briefing, section 9) | The bank | Starting at the bank |
+| B9 | How are RMs measured, paid and rewarded, and how are referrals to treasury, capital markets and wealth credited? (from: RM plan, section 9; Bank Business Briefing, section 9) | The bank | Starting at the bank |
 | B10 | The value model's inputs: win rate, first-year revenue per win by product, and client-facing hours per RM today (from: Bank Business Briefing, section 9) | The bank | Starting at the bank |
 | B11 | The segment's fee income by line today, including what sits inside the $47.6 million the bank doesn't break down (public figures stop at the 2025 financial year) (from: Bank Business Briefing, section 9) | The bank | Starting at the bank |
 | B12 | The segment's deposits, and the share of borrowing clients who keep their main accounts with the bank (from: Bank Business Briefing, section 9) | The bank | Starting at the bank |
 | B13 | What share of commercial clients use treasury management? (from: Bank Business Briefing, section 9) | The bank | Starting at the bank |
 | B14 | Does Finance accept costs saved and loan losses avoided as returns, as well as new revenue? (from: Bank Business Briefing, section 9) | The bank | Starting at the bank |
-| B15 | Who owns the client data in Snowflake and Salesforce, and which data lives where? (from: RM plan, section 11; playbook sub-step 2.3 (the data contract)) | The bank | Starting at the bank |
-| B16 | How is each platform set up for RMs today: which features, licenses and connections? Which Salesforce products does the bank own? Every tool named in the product machine's task tables is a guess until this is known (from: RM plan, section 11; Tech Stack Guide; Product Machine) | The bank | Starting at the bank |
+| B15 | Who owns the client data in Snowflake and Salesforce, and which data lives where? (from: RM plan, section 9; playbook sub-step 2.3 (the data contract)) | The bank | Starting at the bank |
+| B16 | How is each platform set up for RMs today: which features, licenses and connections? Which Salesforce products does the bank own? Every tool named in the product machine's task tables is a guess until this is known (from: RM plan, section 9; Tech Stack Guide; Product Machine) | The bank | Starting at the bank |
 | B17 | Why does the bank have both Snowflake and Fabric, and which holds what? (from: Tech Stack Guide) | The bank | Starting at the bank |
 | B18 | Which AI models are approved, and where do they run? (from: Tech Stack Guide) | The bank | Starting at the bank |
 | B19 | Has the American National systems conversion happened, and are the acquired clients in Salesforce and Snowflake? (from: Bank Business Briefing, section 9) | The bank | Starting at the bank |
 | B20 | Who builds: my team, IT, or business staff using click-to-build tools such as Power Platform? (from: Tech Stack Guide) | The bank | Starting at the bank |
-| B21 | What does the AI governance process look like, and how long does a review usually take? (from: RM plan, section 11; Tech Stack Guide) | The bank | Starting at the bank |
+| B21 | What does the AI governance process look like, and how long does a review usually take? (from: RM plan, section 9; Tech Stack Guide) | The bank | Starting at the bank |
 | B22 | May automations message people or update trackers by themselves? This decides how much of the product machine can run on its own (from: Product Machine) | The bank | Starting at the bank |
 | B23 | Which tracker tool does the bank use for projects? (from: Product Machine; agent library) | The bank | Starting at the bank |
 | B24 | Twenty smaller permissions (twenty-one "To confirm" items, minus the tracker question in B23) the general agents depend on, such as whether meeting recaps are allowed, which test environments exist and how sign-offs must be recorded. Each is listed under "To confirm" in the agent library, and one overlaps B22 (from: `playbook/agents.md`) | The bank | Starting at the bank |

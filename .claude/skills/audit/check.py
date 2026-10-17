@@ -258,7 +258,7 @@ ids_of={}
 def ids(f):
     if f not in ids_of: ids_of[f]=set(re.findall(r'(?<![\w-])id="([^"]+)"',open(f).read()))
     return ids_of[f]
-for f in sorted(glob.glob('designs/*.html')+glob.glob('designs/rm-analytics-canvas/*.dc.html')):
+for f in sorted(glob.glob('designs/*.html')):
     for m in re.finditer(r'href=["\']https://claude\.ai/artifact/([A-Za-z0-9]+)#([^"\']+)["\']',open(f).read()):
         target=pages.get(m.group(1))
         if not target:
