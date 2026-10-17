@@ -35,7 +35,7 @@ fwk={}
 for m in re.finditer(r'^\| (\d\.\d) \| [^|]+ \| ([^|]+) \|',fw,re.M):
     fwk.setdefault(m.group(1),set()).add(m.group(2).strip().split()[0].lower())
 probs=0
-fields=["**Goal:**","**Why it matters:**","**Know first:**","**First time, step by step:**","**Output:**","**Done when:**","**Automation watch:**","**For RM analytics:**"]
+fields=["**Goal:**","**Why it matters:**","**Know first:**","**First time, step by step:**","**Output:**","**Done when:**","**Automation watch:**","**For the RM Assistant:**"]
 for f in sorted(glob.glob('playbook/[1-6]-*.md')):
     s=open(f).read()
     subs=re.findall(r'^## (\d\.\d) ',s,re.M)

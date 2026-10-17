@@ -41,11 +41,11 @@ coaching in late stage), and negotiation (4).
 
 | McKinsey use case | In our RM plan | Coverage |
 |---|---|---|
-| 1. Prospecting and next best opportunities | Wave 2: prospect lookalikes (B8, moved up from wave 3 on 2026-10-15). Wave 1's weekly opportunity list finds next best opportunities in existing clients | **Covered.** New-client prospecting now comes in wave 2, because McKinsey reports its biggest numbers here |
+| 1. Prospecting and next best opportunities | Wave 2: prospect lookalikes (B8, moved up from wave 3 on 2026-10-15). Wave 1's Monday opportunity list finds next best opportunities in existing clients | **Covered.** New-client prospecting now comes in wave 2, because McKinsey reports its biggest numbers here |
 | 2. Lead nurturing, including cross-sell | Wave 2: referral prompts (B6) for cross-sell between teams. Nothing contacts prospects on its own | **Partly, by design.** Our rule is that nothing reaches a client without the RM, so an agent that writes to prospects by itself is out of scope today |
-| 3. Account intelligence and meeting prep (McKinsey: account planning and meeting prep) | Wave 1: pre-meeting client brief (B2). Wave 3: RM assistant (B7) | **Covered**, and first in line |
+| 3. Account intelligence and meeting prep (McKinsey: account planning and meeting prep) | Wave 1: pre-meeting client brief (B2). Wave 3: Client Q&A (B7) | **Covered**, and first in line |
 | 4. Deal scoring and pricing (McKinsey: deal structuring and pricing) | Not in the plan. Under control K3 the AI never makes a credit decision and never sets or suggests a price | **Not covered, by design** (kept out on 2026-10-15). Pricing touches fair-lending rules, so it would need a much higher bar |
-| 5. AI sales coaching | Wave 3: AI sales coaching from call transcripts (added 2026-10-15; its agent spec and workflow are still to write). The how-to helper (A6) only answers "how do I use this?" | **Covered from wave 3** |
+| 5. AI sales coaching | Wave 3: AI sales coaching from call transcripts (added 2026-10-15; its agent spec and workflow are still to write). | **Covered from wave 3** |
 
 **Also in our plan, not in McKinsey's five:** early warning when a client may
 leave (B5), and the meeting follow-up (B3) and call notes saved to the CRM (B4), both in wave 1,
@@ -58,10 +58,7 @@ and pricing are left out on purpose, for governance reasons.
 
 ## What it changed: the RM plan now uses McKinsey's framework (decided 2026-10-10)
 
-The RM plan is now organized on seven core use cases, with our AI products
-underneath each one and a return profile for each (the plan's "Core use cases"
-section): McKinsey's five plus two of our own, admin off the RM's plate
-(McKinsey's top problem, which its five use cases don't name) and keep clients. Decided on 2026-10-15 (closed items C30 to C32 in the Open Items log):
+The RM plan is now built around The RM Assistant (memo v10, 2026-10-17): the seven core use cases are the needs its capabilities answer. Their return profiles live here: McKinsey's five above, plus our own two: **admin off the RM's plate** (problem: admin and CRM updates crowd out client time, McKinsey's top problem, which its five use cases don't name; return: part of the 10 to 12 hours a week McKinsey expects back per banker, and about 40% better coverage) and **keep clients** (problem: clients drift away before anyone notices; return: set from the bank's own retention data). Decided on 2026-10-15 (closed items C30 to C32 in the Open Items log):
 - **Prospecting earlier: yes.** McKinsey's biggest revenue numbers are in prospecting, and our prospect lookalikes were in wave 3. Outside prospect data may set the pace.
 - **Add coaching: yes** (placed in wave 3 on 2026-10-17, because it needs recording consent and more review: C41). Low risk, uses call transcripts the meeting features already need, and McKinsey reports faster ramp-up for new bankers.
 - **Autonomous lead nurturing and pricing stay out for now: yes.** An agent that writes to prospects on its own, or recommends prices, conflicts with "nothing reaches a client without the RM" and the fair-lending control (K3). Revisit later with evidence.

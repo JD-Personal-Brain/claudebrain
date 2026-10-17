@@ -1,6 +1,6 @@
 """Builds designs/agents.html, the Agent Library: every agent in one place,
 filterable, each opening to its full spec. Reads playbook/agents.md (M1-M33,
-the product machine's general agents) and the RM memo's Appendix A (A1-A6,
+the product machine's general agents) and the RM memo's Appendix A (A1-A5,
 the product RMs use). Run: python3 designs/agents-build.py"""
 import os, re
 from pagekit import CSS, E, inline, chipify, render_blocks
@@ -55,7 +55,7 @@ for block in re.split(r"\n### ", read("playbook/agents.md"))[1:]:
 
 memo = read("memos/rm-analytics-framework.md")
 appa = memo.split("## Appendix A: Agent specs")[1].split("## Appendix B")[0]
-# A1-A6: the product RMs use
+# A1-A5: the product RMs use
 for block in re.split(r"\n\*\*(?=A\d+\. )", appa.split("### Agents the team uses")[0])[1:]:
     head, _, body = block.partition("\n")
     m = re.match(r"(A\d+)\. (.+?)\*\*\s*·\s*(.+)", head)
@@ -64,11 +64,11 @@ for block in re.split(r"\n\*\*(?=A\d+\. )", appa.split("### Agents the team uses
     agents.append({"id": m.group(1), "name": m.group(2), "group": "product", "steps": ["Used by RMs"] + steps_of(u), "aim": "",
                    "job": f["Job"], "meta": cap(m.group(3).strip()) + (f" · also used in {', '.join(u)}" if u else ""),
                    "fields": [(k, f[k]) for k in ["Inputs", "Allowed actions", "Not allowed", "Outputs", "Stops when", "Proof it worked", "Person in charge"] if k in f],
-                   "source": "RM Analytics Plan · Appendix A"})
+                   "source": "RM Assistant Plan · Appendix A"})
 
 GROUPS = [("machine", "Run the product machine", "Handle the paperwork and routing that move any project through the six steps: kickoff, notes, gate packs, sign-offs and releases. Reused on every project."),
           ("team", "Do the team's analysis, testing and monitoring", "General agents for every project: sizing, research, requirements, data checks, testing, red-teaming, fairness, evidence, feedback and impact. The RM plan shows how it uses each one."),
-          ("product", "The product RMs use", "The agents inside RM Analytics. Nothing reaches a client without the RM. Insights and alerts are shown to the RM and their manager; anything saved as the RM's own work, like a call note or an opportunity, needs the RM's approval."),
+          ("product", "The product RMs use", "The agents inside The RM Assistant. Nothing reaches a client without the RM. Insights and alerts are shown to the RM and their manager; anything saved as the RM's own work, like a call note or an opportunity, needs the RM's approval."),
           ("helpers", "My research helpers", "Agents that keep my own reference pages current, such as the Bank Business Briefing. Not part of the product machine. Each runs on a schedule and only drafts: I decide what goes into main.")]
 counts = {g: sum(a["group"] == g for a in agents) for g, *_ in GROUPS}
 

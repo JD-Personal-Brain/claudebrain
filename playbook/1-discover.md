@@ -37,7 +37,7 @@ sub-step. At the end, run the automation review.
   - First time: **Me** (sponsor and risk conversations) and **Draft** (setting up the tracker and files).
   - Note: how long setting up the tracker took, and what you copied by hand.
   - Agent: **M1 Kickoff pack builder** (agent library) that creates the tracker, decision log, project file and who-decides template from one project statement. *Draft*: you check it.
-- **For RM analytics:** the plan for relationship managers (RMs). Sponsor = the commercial banking leader. The statement: "more new revenue from RMs, by finding opportunities and freeing time to act on them." The memo's "Who's involved" table (section 3) is the who-decides list.
+- **For the RM Assistant:** the plan for relationship managers (RMs). Sponsor = the commercial banking leader. The statement: "more new revenue from RMs, by finding opportunities and freeing time to act on them." The memo's "Who's involved" table (section 3) is the who-decides list.
 
 ---
 
@@ -60,7 +60,7 @@ sub-step. At the end, run the automation review.
   - First time: **Me**. Agreeing a goal is a conversation.
   - Note: which questions got the most useful answers. They become a standard question list.
   - Agent: **M2 Outcome note drafter** (agent library) that turns the meeting recap into the one-page note (M365 Copilot). *Draft*.
-- **For RM analytics:** two goals (more revenue opportunities, more time to act) and three levers (win new clients, grow existing clients, keep clients), as in memo section 1.
+- **For the RM Assistant:** two goals (more revenue opportunities, more time to act) and three levers (win new clients, grow existing clients, keep clients), as in memo section 1.
 
 ---
 
@@ -86,7 +86,7 @@ sub-step. At the end, run the automation review.
   - First time: **Draft**. AI can run first-pass questions; a person checks them.
   - Note: which questions you asked. They will repeat on every project with a revenue goal.
   - Agent: **M21 Opportunity sizer** (agent library). It answers plain-English sizing questions read-only, on Snowflake Cortex Analyst. An analyst re-runs the key numbers.
-- **For RM analytics:** size new clients (prospects that look like the best clients), growth (product gaps such as treasury management) and retention (falling balances). Use Salesforce pipeline and Snowflake balances.
+- **For the RM Assistant:** size new clients (prospects that look like the best clients), growth (product gaps such as treasury management) and retention (falling balances). Use Salesforce pipeline and Snowflake balances.
 
 ---
 
@@ -116,7 +116,7 @@ sub-step. At the end, run the automation review.
   - Agents:
     - **M20 Interview synthesizer** (agent library): turns recaps into themes linked to their sources. You check every theme.
     - **M3 Interview scheduler** (agent library; Power Automate with Outlook) that sends invitations and reminders to nominated users. *Auto*, once the bank allows automations to message people ⚠️.
-- **For RM analytics:** talk to RMs, their sales managers, and treasury specialists and credit analysts. The key question: "How do you decide which client to call next?"
+- **For the RM Assistant:** talk to RMs, their sales managers, and treasury specialists and credit analysts. The key question: "How do you decide which client to call next?"
 
 ---
 
@@ -140,7 +140,7 @@ sub-step. At the end, run the automation review.
   - First time: **Draft**.
   - Note: which data sources were useful, and which were empty or untrusted.
   - Agent: **M22 Time-use analyst** (agent library). It reads activity data (for example, CRM activity) read-only. You confirm the results with users in person.
-- **For RM analytics:** the memo targets meeting prep, call notes and CRM updates as the admin to cut.
+- **For the RM Assistant:** the memo targets meeting prep, call notes and CRM updates as the admin to cut.
 
 ---
 
@@ -162,7 +162,7 @@ sub-step. At the end, run the automation review.
   - First time: **Me**. These are sensitive conversations.
   - Note: who had the real answer. Next project, go to them first.
   - Agent: none. This stays with a person.
-- **For RM analytics:** if RMs are paid on closed revenue but not on referrals, cross-team referral insights will be ignored. Raise that early.
+- **For the RM Assistant:** if RMs are paid on closed revenue but not on referrals, cross-team referral insights will be ignored. Raise that early.
 
 ---
 
@@ -187,7 +187,7 @@ sub-step. At the end, run the automation review.
   - First time: **Draft** for the mock-up (Claude builds it with the `prototype` skill). **Me** for running the sessions and summarizing reactions.
   - Note: how long each version took to build, and what feedback came up every time.
   - Agent: **M4 Reaction summarizer** (agent library) that turns session notes into "what to change next". *Draft*.
-- **For RM analytics:** a pre-meeting client brief and a weekly opportunity list, built on sample clients.
+- **For the RM Assistant:** a pre-meeting client brief and the Monday opportunity list, built on sample clients.
 
 ---
 
@@ -213,7 +213,7 @@ sub-step. At the end, run the automation review.
   - Agents:
     - **M5 Baseline recorder** (agent library; Power BI) that snapshots the measure for the target users on a schedule from today on (the pilot and comparison groups are confirmed in 2.8). *Auto*.
     - **M6 Gate pack drafter** (agent library) pulls each sub-step's outputs into one document. *Draft*.
-- **For RM analytics:** feature wave 1 = pre-meeting briefs, meeting follow-ups, call notes into Salesforce and the weekly opportunity list (memo Step 1).
+- **For the RM Assistant:** feature wave 1 = three capabilities: the pre-meeting client brief, the meeting follow-up (recap, email and call notes into Salesforce) and the Monday opportunity list (memo Step 1).
 
 ---
 

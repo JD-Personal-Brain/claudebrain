@@ -18,11 +18,13 @@ documents against it.
 | **Sub-step** | A numbered piece of a step, from 1.0 to 6.6 (44 in all). Each has its own section in the playbook and its own card in the Steps Catalog. |
 | **Gate** | The go/no-go decision at the end of each step. A named person decides, and the decision goes in the decision log. |
 | **Governance thread** | The risk and control work that runs through every step, so that step 4 confirms what risk partners have already seen. |
-| **Core use case** | One of the seven lines a plan is organized on. The RM plan set them: McKinsey's five frontline use cases (prospecting and next best opportunities, lead nurturing, account intelligence and meeting prep, deal scoring and pricing, AI sales coaching) plus two of our own (admin off the RM's plate, keep clients). The credit work is proposed to reuse the same seven lines through each one's credit counterpart (Portfolio Manager Core Use Cases page; not yet agreed). Say **RM core use case** or **credit core use case** when it matters which. Each has a user problem and a return profile. |
+| **Core use case** | One of the seven needs a plan's AI products answer (in the RM plan, each of The RM Assistant's capabilities answers one). The RM plan set them: McKinsey's five frontline use cases (prospecting and next best opportunities, lead nurturing, account intelligence and meeting prep, deal scoring and pricing, AI sales coaching) plus two of our own (admin off the RM's plate, keep clients). The credit work is proposed to reuse the same seven needs through each one's credit counterpart (Portfolio Manager Core Use Cases page; not yet agreed). Say **RM core use case** or **credit core use case** when it matters which. Each has a user problem and a return profile. |
 | **Credit counterpart** | The proposed credit-side version of an RM core use case, for portfolio managers and credit analysts; for example, credit memo and annual review drafts under account intelligence and meeting prep (see the Portfolio Manager Core Use Cases page). |
 | **Use case (on its own)** | A whole area of work for one user group, such as the RM use case or the credit use case. Not one AI product (say AI product) and not one of the seven lines (say core use case). |
 | **User workflow** | How a user group (RMs, portfolio managers) works today, and how that work changes with AI. Not the same as the RM plan's numbered workflows B1 to B9 on the Workflow Maps. |
 | **AI product** | A specific capability we build and release, such as the pre-meeting brief. Each sits under one core use case. |
+| **RM Assistant** | The core RM product (a hypothesis since 2026-10-17): one personal AI assistant for each RM, with limits on its jobs, workflows, data and controls, and capabilities added feature wave by feature wave on a shared foundation (The RM Assistant page). The RM plan's "RM assistant" (wave 3) is now its **Client Q&A** capability. |
+| **Capability** | One specific job the RM Assistant does, such as the pre-meeting client brief. Each capability is one AI product. |
 | **Wave** | Used two ways, so say which: a **feature wave** is a set of AI products released together, after a quick pass through Discover and Define; a **user wave** is the next group of users when a product scales (sub-step 5.7). |
 | **Quick pass** | How each new feature wave goes through Discover and Define after the first pass: four sub-steps always done (2.3, 2.4, 2.5, 2.7), the rest reused unless something changed, and gates 1 and 2 decided together in writing (Product Framework). |
 | **Material change** | A change to a live product that goes back through step 4: new data, a new action, users outside the full user group step 4 approved, a new AI model we choose, or a vendor model change the vendor announces as major (smaller vendor updates are re-tested in 6.3). User waves inside the approved group aren't material. The product manager proposes and the risk partner confirms; the bank's model risk policy has the final word ⚠️ (Product Framework). |
@@ -59,7 +61,7 @@ documents against it.
 | **Agent** | An AI helper with one job, a short list of allowed actions and a named person in charge. |
 | **Research helper** | An agent that keeps my own reference pages current, such as H1, the bank news scout. Numbered H1 and on, listed in the Agent Library, and not part of the product machine. |
 | **General agent** | One of the 33 agents (M1 to M33) that run the product machine on every project, specified in the agent library: M1 to M19 handle the paperwork and routing, M20 to M33 do the team's analysis, testing and monitoring. |
-| **Product agent** | An agent inside the product that users see, numbered per project (A1 to A6 in the RM plan). Specified in that project's memo, Appendix A. |
+| **Product agent** | An agent inside the product that users see, numbered per project (A1 to A5 in the RM plan; A6 was removed on 2026-10-17). Specified in that project's memo, Appendix A. |
 | **Agent spec** | An agent's written definition: its job, inputs, allowed and forbidden actions, outputs, when it stops, proof it worked and the person in charge. |
 | **Ongoing mode** | An agent first used once in a sub-step that then keeps running until the product is retired (for example M24 on every data refresh). Agents built to run on a schedule from the start aren't counted as ongoing mode. |
 | **Control** | A safeguard built into a product so the bank can trust it (K1 to K25 in the Controls Catalog). Each says where it is set, built, proved and watched, and where it comes from (law or regulator, bank policy or our choice). |
@@ -149,6 +151,7 @@ that also says the new wording (a note about the change) is allowed.
 | risk/issue list | risk and issue list | 2026-10-15 |
 | How We Deliver Audit | Audit Log (the page name) | 2026-10-15 |
 | Elon Mode Research | Elon Mode (the page name; it sits in the library's Research section) | 2026-10-15 |
+| RM Analytics Plan | RM Assistant Plan (the page name) | 2026-10-17 |
 | three-question check | the automation check (seven questions: cut first, then automate) | 2026-10-15 |
 
 ## Bank terms to map
@@ -180,4 +183,4 @@ Our plans depend on these, but the definitions belong to the bank. Each stays
 | Hours saved | Time a product frees up each week, and how it's measured (Finance agrees the method) | ⚠️ to map |
 | Client attrition, at-risk client | A client who leaves or reduces business, and early signs that one might | ⚠️ to map |
 
-_Last updated: 2026-10-15_
+_Last updated: 2026-10-17_

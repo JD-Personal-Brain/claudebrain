@@ -1,5 +1,7 @@
 # AI-powered RM analytics: one-page summary
 
+> **Retired working copy (2026-10-17).** Out of date: the RM plan is now built around The RM Assistant (memo v10), and the RM Leader Brief replaces this summary (closed item C43). Kept only as a record; don't use it.
+
 _Principal Applied AI Product Manager · Associated Bank · October 2026 ·
 the full project plan is a separate document_
 

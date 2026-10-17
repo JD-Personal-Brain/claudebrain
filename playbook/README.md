@@ -32,7 +32,7 @@ in order, and fill in its **first-time log** as you go.
 - **Output:** what it produces (a document, a number, a decision).
 - **Done when:** how to tell it's finished.
 - **Automation watch:** what to note while doing it, the agent it could become, the kind to use the first time and the kind to aim for (Auto, Draft or Me).
-- **For RM analytics:** a short worked example from the first project.
+- **For the RM Assistant:** a short worked example from the first project.
 
 ## The first-time log (fill in for every sub-step)
 This is what makes automation possible later: you can't automate work you

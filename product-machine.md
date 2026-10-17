@@ -125,7 +125,7 @@ The step 4 gate is a Partner decision: the risk partner's approval can't be over
 | 5.2 | Weekly usage report | Auto ⚠️ | Power BI | Sponsor, user leaders |
 | 5.3 | Build it into a routine managers already run | Me | Meetings | Managers |
 | 5.4 | Train users on their own work | Me | Teams, in person | Pilot users |
-| 5.4 | Answer "how do I…?" questions from the FAQ (the product's own help, if release 1 includes one, such as A6 in the RM plan) | Auto ⚠️ | The product's FAQ or help | Users; the product team keeps content current |
+| 5.4 | Answer "how do I…?" questions from the FAQ (the product's own help, if a release includes one) | Auto ⚠️ | The product's FAQ or help | Users; the product team keeps content current |
 | 5.5 | Recruit champions | Me | A Teams channel | Champions |
 | 5.5 | Spot wins to celebrate | Draft | M17 Wins spotter | Me, then sponsor and user leaders |
 | 5.6 | Sort feedback into bugs, quality issues and ideas; flag likely incidents | Auto ⚠️ | M30 Feedback triage | Backlog; operations and me for incidents; I check a weekly sample |

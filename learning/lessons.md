@@ -8,6 +8,18 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L37 · 2026-10-17 · The RM plan never said what the product was
+- **What happened:** over several sessions the RM plan gained one way of sorting its work after another (two goals, three revenue levers, seven core use cases, three waves), each added on top without rebuilding the document. I said it felt like "a lot of information", not streamlined, organized or prioritized, and asked what we were actually building.
+- **Root cause:** each new decision was written into the plan where it fit, but nobody stepped back to rebuild the plan around one spine, and the plan never opened with the product itself. Adding structure felt like progress, so the layering went unnoticed.
+- **Fix:** the plan is rebuilt around one product, The RM Assistant (memo v10), with the core use cases as the needs its capabilities answer. New rule R33: when a new way of organizing a plan is agreed, rebuild the plan around one spine, opening with what the product is, instead of adding the new scheme on top.
+- **Rule:** R33 · **Test:** T46 · **Level:** 1 · **Times it happened:** 1
+
+### L36 · 2026-10-17 · Put "map how RMs work today" first, but only the bank knows that
+- **What happened:** asked for my RM to-do list, Claude put "map the RM user workflow" first. I pointed out that I don't know how the bank's RMs work today, so it can't be locked in.
+- **Root cause:** the to-do list was copied from the agreed order in the use case kit, without asking whether each item could be done from what we have. The workflow map depends on facts only people at the bank can give.
+- **Fix:** the RM user workflow is now a draft of assumptions, tested with the RM lead and in Discover. New rule R32: before putting work on a to-do list, check whether it depends on facts only the bank has; if it does, say so and offer it as a draft of assumptions with questions to confirm.
+- **Rule:** R32 · **Test:** T45 · **Level:** 1 · **Times it happened:** 1
+
 ### L35 · 2026-10-15 · A wrap-up audit left no row in the Audit Log
 - **What happened:** the earlier wrap-up that evening (pull request #103) ran its quick audit but added no row to the Audit Log, and the log still said the GitHub check only "shows a red mark" after it had become required. I asked whether the Audit Log should have been updated.
 - **Root cause:** the Audit Log row is step 6 of the audit skill, but the wrap-up's quick audit ran only the scripts and skipped that step; nothing in the wrap-up named it.

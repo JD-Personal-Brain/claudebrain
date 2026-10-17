@@ -30,7 +30,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
   - First time: **Draft**.
   - Note: which checklist items were late, and why.
   - Agent: **M15 Readiness tracker** (agent library) that checks off items from the tracker and flags gaps. *Auto*.
-- **For RM analytics:** support through operations, and communications sent by RM leaders, not by the project team.
+- **For the RM Assistant:** support through operations, and communications sent by RM leaders, not by the project team.
 
 ---
 
@@ -51,7 +51,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
   - First time: **Me**, with platform teams.
   - Note: every manual step in the move to live. Those steps are the release checklist for next time.
   - Agent: **M16 Release automation** (agent library) that runs the release checklist in the platform's own deployment tools. *Auto* where the platform supports it ⚠️.
-- **For RM analytics:** pilot RMs and their managers, compared with similar RMs not yet using it.
+- **For the RM Assistant:** pilot RMs and their managers, compared with similar RMs not yet using it.
 
 ---
 
@@ -71,7 +71,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
   - First time: **Me**. This is change management.
   - Note: which routine worked, and how managers phrased it. Reuse that for the next team.
   - Agent: none. This stays with a person. The product's **weekly opportunity digest** (A4 in the RM plan, Appendix A) is part of the product and supports the routine, not an agent that runs it.
-- **For RM analytics:** managers run weekly pipeline meetings from the insights.
+- **For the RM Assistant:** managers run weekly pipeline meetings from the insights.
 
 ---
 
@@ -89,9 +89,9 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
 - **Done when:** every pilot user has done one real task themselves.
 - **Automation watch:**
   - First time: **Me**.
-  - Note: the questions people asked. They feed the how-to helper.
-  - Agent: the product's **how-to helper** (A6 in the RM plan, Appendix A) answers "how do I…?" in Teams from the guide and the FAQ. *Auto* for answers; the product team keeps the content current.
-- **For RM analytics:** demos built on each RM's own clients.
+  - Note: the questions people asked. They feed the FAQ.
+  - Agent: the product's own help, if a release includes one, answers "how do I…?" in Teams from the guide and the FAQ. *Auto* for answers; the product team keeps the content current. The RM plan has none for its pilot (champions and a Teams channel answer instead; decided 2026-10-17).
+- **For the RM Assistant:** demos built on each RM's own clients.
 
 ---
 
@@ -111,7 +111,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
   - First time: **Me**.
   - Note: which wins got noticed, and where.
   - Agent: **M17 Wins spotter** (agent library) that flags AI-sourced wins from the tagged data for you to check and share. *Draft*.
-- **For RM analytics:** credit AI-sourced wins in sales meetings, tagged in Salesforce.
+- **For the RM Assistant:** credit AI-sourced wins in sales meetings, tagged in Salesforce.
 
 ---
 
@@ -133,7 +133,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
   - First time: **Me**, reading everything yourself the first few weeks.
   - Note: how feedback splits between bugs, quality and ideas, and how long sorting took.
   - Agent: **M30 Feedback triage** (agent library) sorts and routes it, and you review a weekly sample. Aim for **Auto**.
-- **For RM analytics:** feedback logged in Salesforce from the one-click buttons.
+- **For the RM Assistant:** feedback logged in Salesforce from the one-click buttons.
 
 ---
 
@@ -154,7 +154,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
   - First time: **Draft** for the recommendation, **Me** for the decision.
   - Note: what you reused from the first user wave. The more you reuse, the faster later user waves go.
   - Agent: **M6 Gate pack drafter** (agent library), reused. *Draft*.
-- **For RM analytics:** expand only after the go/no-go check on the adoption dashboard.
+- **For the RM Assistant:** expand only after the go/no-go check on the adoption dashboard.
 
 ---
 
@@ -183,7 +183,7 @@ table in `product-machine.md`.
 | 5.2 | None (the weekly usage report in Power BI, an asset) | Me | Auto ⚠️ | — |
 | 5.3 | None (stays with a person) | Me | Me | — |
 | 5.4 | None: training users stays with a person | Me | Me | — |
-| 5.4 | None (the product's FAQ or help, such as A6 in the RM plan) | Me | Auto ⚠️ | Yes, RM plan Appendix A |
+| 5.4 | None (the product's FAQ or help, if a release includes one) | Me | Auto ⚠️ | — (the RM plan has none; decided 2026-10-17) |
 | 5.5 | None: recruiting champions stays with a person | Me | Me | — |
 | 5.5 | M17 Wins spotter | Me | Draft | Yes, M17 |
 | 5.6 | M30 Feedback triage | Me | Auto ⚠️ | Yes, M30 |

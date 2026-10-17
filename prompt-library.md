@@ -36,7 +36,7 @@ Inputs:   <use_case_work>
           Everything already built for [relationship managers (RMs)]:
           [memos/rm-analytics-framework.md] (the full plan, with
           Appendix A agent specs and Appendix B workflows),
-          [memos/rm-analytics-summary.md], [memos/mckinsey-frontline-ai.md]
+          [memos/rm-assistant.md], [memos/mckinsey-frontline-ai.md]
           (the RM Core Use Cases page), [memos/rm-analytics-audit.md],
           [memos/rm-analytics-market-scan.md], the scrolling page
           [designs/rm-analytics-plan.html], [Map 2 on the Workflow Maps

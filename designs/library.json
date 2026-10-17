@@ -69,6 +69,14 @@
           "status": "To build"
         },
         {
+          "id": "rm-assistant",
+          "name": "The RM Assistant",
+          "what": "The core RM product, as a hypothesis: one AI assistant for each RM, with limits, capabilities for each moment of the RM's work, added feature wave by feature wave on a shared foundation.",
+          "status": "Waiting for review",
+          "url": "https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2",
+          "source": "memos/rm-assistant.md"
+        },
+        {
           "todo": true,
           "name": "RM user workflow: today and with AI",
           "what": "How RMs work today, where each AI product fits, and how their work changes.",
@@ -78,7 +86,7 @@
         {
           "id": "mckinsey-use-cases",
           "name": "RM Core Use Cases",
-          "what": "The seven core use cases the RM plan is built on: McKinsey's five frontline AI use cases and their reported returns, plus admin off the RM's plate and keep clients.",
+          "what": "The seven core use cases The RM Assistant's capabilities answer: McKinsey's five frontline AI use cases and their reported returns, plus admin off the RM's plate and keep clients.",
           "status": "Waiting for review",
           "url": "https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X",
           "source": "memos/mckinsey-frontline-ai.md",
@@ -86,8 +94,8 @@
         },
         {
           "id": "rm-plan",
-          "name": "RM Analytics Plan",
-          "what": "The full RM plan on one scrolling page, built from its working file: core use cases, AI products, value, who decides, the six steps, risks, agent specs and workflows.",
+          "name": "RM Assistant Plan",
+          "what": "How The RM Assistant gets delivered, on one scrolling page built from its working file: the capabilities wave by wave, value, who decides, the six steps, the project plan, risks, agent specs and workflows.",
           "status": "Waiting for review",
           "url": "https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk",
           "source": "memos/rm-analytics-framework.md",
@@ -97,7 +105,7 @@
           "todo": true,
           "kit": "mock-up",
           "name": "RM mock-up",
-          "what": "Clickable screens of the weekly opportunity list and the pre-meeting client brief, on made-up data.",
+          "what": "Clickable screens of the Monday opportunity list and the pre-meeting client brief, on made-up data.",
           "status": "Later"
         }
       ],
@@ -155,7 +163,7 @@
           "id": "glossary",
           "name": "Glossary",
           "what": "The words we use, one meaning each, the old wording we've retired, and the bank's terms still to map.",
-          "count": "73 terms",
+          "count": "75 terms",
           "status": "Reference",
           "url": "https://claude.ai/artifact/LRQHSz65beh9XewB6qsQvQ",
           "source": "glossary.md"
@@ -182,7 +190,7 @@
           "id": "agents",
           "name": "Agent Library",
           "what": "Every agent in one place: what it does, what it may and may not do, and who's in charge. Filter by step or by who it serves.",
-          "count": "40 agents",
+          "count": "39 agents",
           "status": "Reference",
           "url": "https://claude.ai/artifact/Cn9nANQoqp2BP7yrmy61zn",
           "source": "playbook/agents.md, RM memo Appendix A"

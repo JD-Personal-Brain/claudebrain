@@ -31,7 +31,7 @@ log (see `README.md`) for every sub-step.
   - First time: **Draft**.
   - Note: which numbers you couldn't get automatically, and why.
   - Agent: the dashboard is **Auto** once built. Save it as a template for the next project.
-- **For RM analytics:** a first read on closed revenue at about month 6, firming up over the following quarters (memo Step 6).
+- **For the RM Assistant:** a first read on closed revenue at about month 6, firming up over the following quarters (memo Step 6).
 
 ---
 
@@ -51,7 +51,7 @@ log (see `README.md`) for every sub-step.
   - First time: **Draft**.
   - Note: the questions leaders asked about the numbers. Answer them in next month's note.
   - Agent: **M31 Impact analyst** (agent library). Analytics validates before reporting. *Draft*.
-- **For RM analytics:** AI-sourced pipeline and revenue, pilot RMs against similar RMs.
+- **For the RM Assistant:** AI-sourced pipeline and revenue, pilot RMs against similar RMs.
 
 ---
 
@@ -72,7 +72,7 @@ log (see `README.md`) for every sub-step.
   - First time: **Draft**.
   - Note: what caused each drop.
   - Agent: **M32 Quality watchdog** (agent library) re-runs the test set and alerts. The product manager decides whether to fix or roll back. Aim for **Auto**.
-- **For RM analytics:** watch RM rejections of insights; a rising rate is the earliest warning.
+- **For the RM Assistant:** watch RM rejections of insights; a rising rate is the earliest warning.
 
 ---
 
@@ -94,7 +94,7 @@ log (see `README.md`) for every sub-step.
   - First time: **Draft** for the pack, **Me** for the decision.
   - Note: what the sponsor looked at first. Put that at the top next time.
   - Agent: **M18 Monthly review pack drafter** (agent library) built from the dashboard and the impact note. *Draft*.
-- **For RM analytics:** each feature wave's AI products reviewed separately.
+- **For the RM Assistant:** each feature wave's AI products reviewed separately.
 
 ---
 
@@ -114,7 +114,7 @@ log (see `README.md`) for every sub-step.
   - First time: **Draft**.
   - Note: how much of Discover and Define you could skip or reuse.
   - Agent: **M33 Improvement scout** (agent library) proposes and ranks candidates. The product manager and the sponsor decide. *Draft*.
-- **For RM analytics:** the next standard AI products, such as early warnings and referral prompts in feature wave 2.
+- **For the RM Assistant:** the next standard AI products, such as early warnings and referral prompts in feature wave 2.
 
 ---
 
@@ -136,7 +136,7 @@ log (see `README.md`) for every sub-step.
   - First time: **Me**.
   - Note: which agents you built, and how much time they saved on the next project.
   - Agent: **M19 Log summarizer** (agent library) that totals time, waits and each sub-step's wait index from the sub-step logs. *Draft*.
-- **For RM analytics:** the RM project is the first run, so its logs set the starting point for every project after it.
+- **For the RM Assistant:** the RM project is the first run, so its logs set the starting point for every project after it.
 
 ---
 
