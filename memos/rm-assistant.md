@@ -12,7 +12,7 @@ The assistant is personal to each RM, and it is constrained in five ways. These 
 |---|---|
 | **Jobs** | It does only the capabilities listed on this page. Anything else, it says so and stops. |
 | **Workflows** | It works where the RM already works: the Salesforce client record, Teams and Outlook. No new app to learn. |
-| **Data** | Client data: certified data only. It also uses the RM's own calendar, email and meetings (transcripts only with consent) and any outside prospect data the bank licenses. Always only the clients the RM is already allowed to see. |
+| **Data** | Client data: certified data only. It also uses the RM's own calendar, email and meetings (transcripts only with consent) and any outside prospect data the bank licenses. Client data is always limited to the clients the RM is already allowed to see. |
 | **Controls** | It drafts and suggests; the RM approves anything saved or sent. It never contacts a client on its own, never makes a credit decision and never sets or suggests a price. Meetings are recorded only with client consent. Everything it does is logged. |
 | **Feedback** | Every output has one-click feedback (use, change or reject, with a reason). The feedback steers what gets better next. |
 
@@ -43,7 +43,7 @@ Each capability is one AI product (glossary). **Comes from** says which need it 
 | **Credit hand-off** | Credit request draft | ⚠️ New idea, not decided: pulls the client's financials into a draft for the portfolio manager. Would take the higher-risk path (control K3) | The RM's job: credit and advice | Not planned |
 | **Left out on purpose** | Pricing suggestions; contacting prospects on its own | — | McKinsey: deal scoring and pricing; lead nurturing (full version) | Out (decided 2026-10-15) |
 
-**Wave 1 at a glance:** three capabilities: the pre-meeting client brief, the meeting follow-up and the Monday opportunity list. Together they cover the RM's whole meeting, before, during and after, plus the Monday call list. The order is the hypothesis; dates for waves 2 and 3 are set at gate 2 (the Define go/no-go), once data access and review times are known. How the waves get delivered is in the [RM Assistant Plan](https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk).
+**Wave 1 at a glance:** three capabilities: the pre-meeting client brief, the meeting follow-up and the Monday opportunity list. Together they cover the RM's whole meeting, before, during and after, plus the Monday call list. The order is the hypothesis; dates for waves 2 and 3 are proposed at gate 2 (the Define go/no-go) and confirmed at each wave's own quick-pass gates, once data access and review times are known. How the waves get delivered is in the [RM Assistant Plan](https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk).
 
 ## 4. The foundation underneath
 Built once and shared by every capability, and later by portfolio managers.

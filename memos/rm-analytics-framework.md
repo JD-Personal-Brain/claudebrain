@@ -39,8 +39,8 @@ bank's recording policy.
 discovery. The meeting follow-up's recap and email go to pilot RMs in about
 weeks 2–4; the brief, the opportunity list and saving call notes to Salesforce
 in about weeks 4–6. Then small releases every week or two. Dates for waves 2
-and 3 are set at gate 2 (the Define go/no-go, week 2), once data access and
-review times are known. A first read on closed revenue comes at about month 6.
+and 3 are proposed at gate 2 (the Define go/no-go, week 2) and confirmed at each
+wave's own quick-pass gates, once data access and review times are known. A first read on closed revenue comes at about month 6.
 
 **What I'd need:** a business sponsor, time with 6–10 RMs and their managers, named data owners, an early risk
 partner, and a willing pilot group.
@@ -70,10 +70,10 @@ The menu is a starting point; the sponsor and RMs confirm and order it in Discov
 | **Wave 1** (follow-up about weeks 2–4; the rest about weeks 4–6) | Pre-meeting client brief | Account intelligence and meeting prep | A3 | Salesforce, Snowflake, Agentforce or M365 Copilot | Prep time per meeting; client-facing hours [X] |
 | | Meeting follow-up: recap, email draft and call notes into Salesforce (the RM approves) | Admin off the RM's plate | A3 | M365 Copilot in Teams and Outlook; Salesforce Agentforce for the notes | Hours saved per week; share of meetings logged [X] |
 | | Monday opportunity list (product gaps) | Prospecting and next best opportunities | A1, A2, A4 | Snowflake signals, Power Automate digest | AI-sourced pipeline and wins, against the comparison group [X] |
-| **Wave 2** (dates set at gate 2) | Early warning: client may leave | Keep clients | A1, A2 | Snowflake signals, Salesforce | Clients kept, against the comparison group [X] |
+| **Wave 2** (dates proposed at gate 2) | Early warning: client may leave | Keep clients | A1, A2 | Snowflake signals, Salesforce | Clients kept, against the comparison group [X] |
 | | Referral prompts (for example, RM to treasury specialist) | Lead nurturing, including cross-sell | A1, A2 | Salesforce, Power Automate | Referrals made and won [X] |
 | | Prospect lookalikes | Prospecting and next best opportunities | A1, A2 | Snowflake, Salesforce | New clients, against the comparison group [X] |
-| **Wave 3** (dates set at gate 2) | Client Q&A ("what should I know about this client?") | Account intelligence and meeting prep | A5 | Salesforce Agentforce or Copilot Studio | Questions answered; answer ratings [X] |
+| **Wave 3** (dates proposed at gate 2) | Client Q&A ("what should I know about this client?") | Account intelligence and meeting prep | A5 | Salesforce Agentforce or Copilot Studio | Questions answered; answer ratings [X] |
 | | AI sales coaching (after calls; private to the RM, measured only in aggregate) | AI sales coaching | Spec to come | M365 Copilot (Teams transcripts), Copilot Studio | Coaching used after calls; win rate and new-RM ramp-up time [X] |
 | **Left out on purpose** | Pricing suggestions; contacting prospects on its own | Deal scoring and pricing; lead nurturing (the full version) | — | — | — |
 
@@ -186,8 +186,8 @@ formal approval gate, not the first time risk partners see the product.
 
 | Step | Question it answers | Governance thread | Gate (go/no-go) |
 |---|---|---|---|
-| **1. Discover** | Which capabilities come first, and which revenue lever matters most? | Risk partner briefed on the idea | Sponsor agrees on the capabilities for the wave, the target lever and the baseline (wave 1 the first time; later feature waves take the quick pass, gates 1 and 2 together in writing) |
-| **2. Define** | What exactly do we build first, and how will we know it worked? | Risk intake and early rating; data use approved | Brief, data contract and risk rating agreed; value model shows payback within [X] months; dates set for the next waves |
+| **1. Discover** | Which capabilities come first, and which revenue lever matters most? | Risk partner briefed on the idea | Sponsor confirms the capabilities for the wave and the target lever on first sizing; the baseline is confirmed at gate 2 (wave 1 the first time; later feature waves take the quick pass, gates 1 and 2 together in writing) |
+| **2. Define** | What exactly do we build first, and how will we know it worked? | Risk intake and early rating; data use approved | Brief, data contract and risk rating agreed; value model shows payback within [X] months; dates proposed for the next waves |
 | **3. Build** | What's the smallest version RMs will use and trust? | Controls built in; test set created | Meets the quality bar in testing; every control is built and passes its control test |
 | **4. Govern and test** | Is it safe, fair and controlled? | Formal validation and sign-offs | All sign-offs recorded; monitoring plan agreed |
 | **5. Release and adopt** | Will RMs use it every week? | Live monitoring; incident process | Weekly use and leading results hit targets (at least [X]% of pilot RMs active weekly, at least [X]% of insights acted on); no serious incidents; long-term owner confirmed before scaling |
@@ -474,7 +474,7 @@ the first days.
 recap and email go first: they run in M365 Copilot on the RM's own meetings and email, so they
 need the least new data and review. RMs keep shaping the brief,
 opportunity list and call notes in the test environment, so they're ready the day access and
-sign-off land, by about week 10. The dates for later waves, set at gate 2, allow for it. The
+sign-off land, by about week 10. The dates for later waves, proposed at gate 2, allow for it. The
 call is made at Gate 2 (week 2).
 
 **Wave 1: the first six weeks**
@@ -493,16 +493,16 @@ call is made at Gate 2 (week 2).
 
 | Step | Weeks (estimate) | Ends with |
 |---|---|---|
-| **1. Discover** | Weeks 1–2, with a working prototype in week 1 (the quick pass before later feature waves) | Gate 1 (end of week 1): wave 1 AI products, target lever, baseline; interviews and sizing continue in week 2 |
+| **1. Discover** | Weeks 1–2, with a working prototype in week 1 (the quick pass before later feature waves) | Gate 1 (end of week 1): wave 1 AI products and target lever on first sizing (baseline confirmed at gate 2); interviews and sizing continue in week 2 |
 | **2. Define** | Weeks 1–2, alongside discovery | Gate 2 (week 2): data contract, risk rating, value model, dates proposed for waves 2 and 3; split decision if needed |
-| **3. Build** | From day 1. Wave 1: weeks 1–5; waves 2 and 3: dates set at gate 2 | Gate 3: each AI product meets the quality bar in testing, and every control is built and passes its control test |
+| **3. Build** | From day 1. Wave 1: weeks 1–5; waves 2 and 3: dates proposed at gate 2 | Gate 3: each AI product meets the quality bar in testing, and every control is built and passes its control test |
 | **4. Govern and test** | Risk partner reviews each version from week 1; sign-offs per AI product | Gate 4: each AI product approved for real RMs and real client data |
 | **5. Release and adopt** | Follow-up recap and email live about weeks 2–4; the brief, the opportunity list and call notes about weeks 4–6; releases every week or two | Gate 5: each feature wave meets its weekly use and leading-result targets, with no serious incidents; long-term owner confirmed before scaling |
 | **6. Measure and iterate** | Leading measures from the first live week; closed revenue read about month 6 | Gate 6: keep, change or stop each AI product monthly; invest more, adjust or stop each quarter |
 
 **By day 90 (about week 13):** wave 1 has been live with pilot RMs for about
 two months (about three weeks if the backup plan is used) and leading measures are coming in. How far waves 2 and 3 have
-got depends on the dates set at gate 2.
+got depends on the dates proposed at gate 2 and confirmed at each wave's quick-pass gates.
 
 ---
 
@@ -585,9 +585,9 @@ agent library. **[X]** values are set in Define.
 ### Agents RMs use (the product)
 
 **A1. Signal finder** · wave 1 · runs on Snowflake (Cortex)
-- **Job:** each night, scan each RM's clients for opportunity signals using the agreed rules and scores (product gaps; from wave 2, early warnings and referral needs, and prospect lookalikes from the licensed prospect data, using the criteria compliance approves).
-- **Inputs:** certified Snowflake views of balances, products, activity and trends; the rule set owned by the business.
-- **Allowed actions:** read the certified views; write signals to a signals table.
+- **Job:** each night, scan each RM's clients for opportunity signals using the agreed rules and scores (product gaps; from wave 2, early warnings and referral needs). From wave 2, also monthly: find prospect lookalikes in the licensed prospect data, using the criteria compliance approves.
+- **Inputs:** certified Snowflake views of balances, products, activity and trends; the rule set owned by the business; from wave 2, the licensed prospect data named in the data contract.
+- **Allowed actions:** read the certified views and the licensed prospect data; write signals to a signals table.
 - **Not allowed:** contacting clients; changing Salesforce; inventing signals outside the rule set.
 - **Outputs:** a list of signals per RM, each with the rule that fired and the numbers behind it.
 - **Stops when:** every in-scope client has been scanned, or the data is older than [X] hours (then it alerts the data owner and produces nothing).

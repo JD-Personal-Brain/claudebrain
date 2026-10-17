@@ -7,8 +7,8 @@ description: Draft a full product plan (memo) for a new AI use case at Associate
 
 This turns one line ("new use case: treasury management officers") into a memo
 organized by the six steps in `memos/role-workflow.md` and following the rules in
-`product-framework.md`, like the RM plan, The RM Assistant
-memo (`memos/rm-analytics-framework.md`), which is the worked example.
+`product-framework.md`, like the RM plan
+(`memos/rm-analytics-framework.md`, built around The RM Assistant), which is the worked example.
 
 ## 1. Confirm the basics
 Ask only for what the user's message doesn't already say, one question at a time:
