@@ -69,6 +69,14 @@
           "status": "To build"
         },
         {
+          "id": "rm-assistant",
+          "name": "The RM Assistant",
+          "what": "The core RM product, as a hypothesis: one AI assistant for each RM, with limits, capabilities for each moment of the RM's work, release by release, on a shared foundation.",
+          "status": "Waiting for review",
+          "url": "https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2",
+          "source": "memos/rm-assistant.md"
+        },
+        {
           "todo": true,
           "name": "RM user workflow: today and with AI",
           "what": "How RMs work today, where each AI product fits, and how their work changes.",
@@ -155,7 +163,7 @@
           "id": "glossary",
           "name": "Glossary",
           "what": "The words we use, one meaning each, the old wording we've retired, and the bank's terms still to map.",
-          "count": "73 terms",
+          "count": "75 terms",
           "status": "Reference",
           "url": "https://claude.ai/artifact/LRQHSz65beh9XewB6qsQvQ",
           "source": "glossary.md"
