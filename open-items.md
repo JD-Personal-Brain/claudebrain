@@ -26,7 +26,7 @@ Claude updates it at every wrap-up: finished items move to "Closed" with the dat
 | Stage | Open | What it is |
 |---|---|---|
 | Now | 3 | What we're working on first |
-| Stage 1. Read and lock the core | 6 | What I read, then the decision on the RM framework |
+| Stage 1. Read and lock the core | 4 | What I read, then the decision on the RM framework |
 | Stage 2. Make the machine runnable | 4 | What Claude builds so a real run is possible |
 | Stage 3. Dry run and fix | 3 | Running the machine once and fixing it |
 | Stage 4. Get ready for Andy | 8 | What Andy sees, and what I ask him |
@@ -83,8 +83,6 @@ What we're working on first: a quick check on the bank news scout, then stage 2 
 | V2 | Read the RM Core Use Cases page: McKinsey's five frontline AI use cases and their returns, how the RM plan covers them, and the three decisions made on 2026-10-15 (C30 to C32) | Me | Nothing |
 | V3 | Read the Portfolio Manager Core Use Cases page: what banks are deploying in commercial credit, and the credit counterpart proposed for each of the seven core use cases | Me | Nothing |
 | D1 | Is the RM framework ready to copy to other use cases? My answer on 2026-10-09: not yet. The reading in stage 1 and the work in stages 2 and 3 come first | Me | Credit, the next use case, waits on this |
-| D2 | A question sheet for my Tuesday October 20 talk with the RM and credit leads (idea 59), built from The RM Assistant's "What to confirm": yes, no or not yet | Me | Nothing |
-| D3 | A check that The RM Assistant page and the RM plan list the same capabilities, waves and agents (idea 60), so the two can't drift: yes, no or not yet | Me | Nothing |
 
 ## Stage 2. Make the machine runnable
 
@@ -175,7 +173,7 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | P2 | Sharing with Associated. We share the same pages, not a separate edition (idea 33: no, 2026-10-15). When I'm ready, Claude lists which pages to share one by one from each page's Share menu | Me | Me saying I'm ready to share |
 | P3 | A treasury and payments use case. The bank named it as a starting point for AI, and nothing has been planned yet | Me | After credit, unless B3 changes the order |
 | P4 | **Featured: running many products at once.** One intake form for new product ideas, a scoring rule to rank them against each other, how many products I can run at once, my week and month across products, and when a live product is retired | Me | The machine running one product well first |
-| P5 | An automatic length warning on Claude's replies (idea 57): not needed at this point (said 2026-10-15). ⚠️ Claude hasn't yet checked that this can be built | Me | Long replies becoming a problem again |
+| P5 | A question sheet for my talk with the RM and credit leads (idea 59), built from The RM Assistant's "What to confirm": not yet, we still have a lot of work to do first (said 2026-10-17) | Me | Me saying we're ready for it |
 
 ## Closed
 
@@ -228,5 +226,7 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C45 | A use case kit check (idea 58): yes, built. The audit checker now fails if a library section marked as following the use case kit is missing a kit piece (leader brief, user workflow, core use cases, plan, mock-up), as a page or a "to build" row. The RM section is marked and gained two "to build" rows (the RM Leader Brief and the RM mock-up); the portfolio manager section is marked when we move into PM. The reply-length warning (idea 57) stays not yet | 2026-10-17 |
 | C46 | The RM Assistant (said 2026-10-17): yes, as our working hypothesis and the core RM product. Each RM gets one personal AI assistant, with limits (jobs, workflows, data, controls, feedback), capabilities for each moment of the RM's work drawn from McKinsey's use cases, our own needs and the RM's job, and a shared foundation that portfolio managers reuse. The RM Assistant page (https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2, working copy `memos/rm-assistant.md`) is in the library's RM section. The RM plan was rebuilt around it the same day (C47) | 2026-10-17 |
 | C47 | The five Elon mode findings on the RM plan (said 2026-10-17): yes to all five, applied in memo v10. No week dates for waves 2 and 3 until gate 2; wave 1 is three capabilities (the pre-meeting client brief; the meeting follow-up, with call notes into Salesforce; the Monday opportunity list); the how-to helper (A6) removed and its number not reused; what the Product Framework says is linked, not repeated; freed-up time counted as hours, not revenue; the limiting factor named at the top. The page is renamed the RM Assistant Plan, and its wave 3 "RM assistant" is now Client Q&A (A5) | 2026-10-17 |
+| C48 | A check that The RM Assistant page and the RM plan list the same capabilities in the same waves (idea 60): yes (said 2026-10-17), built as check 17 of the audit checker; it fails if either page lists a capability or wave the other doesn't | 2026-10-17 |
+| C49 | An automatic length warning on Claude's replies (idea 57): yes (said 2026-10-17), built. A Stop hook (`.claude/hooks/reply-length.py`, switched on in `.claude/settings.json`) stops Claude once when a reply runs past 8 lines and asks for a short follow-up: the outcome, what it means and at most one step | 2026-10-17 |
 
 _Last updated: 2026-10-17_

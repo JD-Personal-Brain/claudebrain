@@ -308,4 +308,29 @@ try:
 except Exception as e:
     print('.claude/settings.json is not valid:',e); probs+=1
 
+# 17. The RM Assistant page and the RM plan list the same capabilities in the same waves (idea 60, 2026-10-17),
+# so the product page and its delivery plan can't drift apart. Names are compared up to the first ":" or "(".
+def _caps(md, head):
+    t=open(md).read(); t=t.split(head,1)[1].split('\n## ',1)[0]; out=set(); wave=None
+    for row in re.findall(r'^\|(.+)\|\s*$', t, re.M):
+        c=[x.strip() for x in row.split('|')]
+        if set(''.join(c))<=set('-: ') or c[0].lower().startswith(('wave','moment')) and c[-1].lower() in ('wave','our measure (target set in define)'): continue
+        return_cols=c
+        if head.startswith('## 3.'):   # The RM Assistant: Moment | Capability | What it does | Comes from | Wave
+            name,w=c[1],c[4]
+        else:                          # the plan: Wave | Capability | Core use case | Agents | Built on | Measure
+            m=re.match(r'\*\*Wave (\d)',c[0]); wave=m.group(1) if m else (wave if c[0]=='' else None); name,w=c[1],wave
+        if w not in ('1','2','3'): continue
+        for n in re.split(r' · ', name):
+            out.add((re.split(r'[:(]', n)[0].strip().lower(), w))
+    return out
+try:
+    a=_caps('memos/rm-assistant.md','## 3. Capabilities')
+    b=_caps('memos/rm-analytics-framework.md',"## The assistant's capabilities")
+    for x in sorted(a-b): print('memos/rm-assistant.md lists capability',repr(x[0]),'in wave',x[1],'but the RM plan does not'); probs+=1
+    for x in sorted(b-a): print('memos/rm-analytics-framework.md lists capability',repr(x[0]),'in wave',x[1],'but The RM Assistant page does not'); probs+=1
+    if not a or not b: print('check 17 could not read the capability tables'); probs+=1
+except Exception as e:
+    print('check 17 (RM Assistant page vs plan) failed to run:',e); probs+=1
+
 print("problems:",probs)
