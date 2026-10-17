@@ -23,7 +23,7 @@ PAGES = [
     ("memos/bank-business.md", "bank-business.html", "Bank Business Briefing", "Associated Bank · the business",
      "How the bank earns money, the corporate segment in depth, and where AI work lines up with each revenue line."),
     ("prompting.md", "prompting.html", "Prompting Guide", "Working with Claude",
-     "How we write prompts: Anthropic's advice in plain English, a fill-in template, worked examples and a checklist."),
+     "How we write prompts: Anthropic's advice in plain English, a fill-in template, three worked examples and a checklist."),
     ("prompt-library.md", "prompt-library.html", "Prompt Library", "Working with Claude",
      "Our core prompts in one place, each with its version and what changed, so we can reuse them and improve them over time."),
     ("memos/mckinsey-frontline-ai.md", "mckinsey-use-cases.html", "RM Core Use Cases", "Relationship managers · core use cases",

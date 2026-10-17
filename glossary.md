@@ -41,6 +41,7 @@ documents against it.
 | **Wait index** | For a sub-step: calendar days from start to finish, divided by hours of real work, from the sub-step log. A high number means waiting, not working. |
 | **Machine measures** | How well the product machine itself works, per project: days from kickoff to pilot, days at each gate, releases per month in the pilot, and the wait index (Product Machine). |
 | **Gate in writing** | A gate decided by the decider approving the gate pack in writing, used when every criterion is met; a meeting is held only when a criterion is contested or someone who decides asks for one. |
+| **Use case kit** | The standard set of pieces every use case should have, in two layers: the **leader layer** I communicate from (for Andy and bank leaders) and the **working layer** I and the team work from. Proposed by Prompt 1 in the Prompt Library, run first on RMs (2026-10-17); its pieces are agreed in that prompt's stage 1. |
 | **Elon mode review** | A review of a plan or of the product machine through Elon Musk's lens (the Elon Mode page): the cut-first questions, the limiting factor and the machine's measures, plus the bank guardrails. Run by the elon-mode skill. |
 
 ## People, agents and safeguards
@@ -87,7 +88,7 @@ documents against it.
 |---|---|
 | **Designed page** | A branded page a person reads. Everything a person reads is one. |
 | **Working copy** | The Markdown file behind a designed page. Claude edits it; people read the page. |
-| **Reference page** | A page built to look things up: the Agent Library, Workflow Maps, Steps Catalog, Controls Catalog and this glossary (the Document Library's Reference section also lists Open Items, the Tech Stack Guide, the Job Description and the Prompting Guide, pages I read or act on). Claude keeps them aligned; they're never on the review list. |
+| **Reference page** | A page built to look things up: the Agent Library, Workflow Maps, Steps Catalog, Controls Catalog and this glossary (the Document Library's Reference section also lists Open Items, the Audit Log, the Tech Stack Guide, the Job Description, the Prompting Guide and the Prompt Library, pages I read or act on). Claude keeps them aligned; they're never on the review list. |
 | **Gate pack** | Everything the decider needs at a gate, put together in one document. |
 | **Evidence pack** | Everything reviewers sign in step 4: the outputs of 4.1 to 4.6 (risk rating, data and privacy review, test and red-team results, fairness, controls and vendor reviews) and the draft monitoring plan (4.8). |
 | **Decision log** | The record of each decision: what was decided, the options, who decided and why. For gates it also records the date the gate pack was ready and the decision date. |

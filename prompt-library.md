@@ -10,6 +10,7 @@ holds the ones worth keeping.
 - **To run a prompt:** copy it into a new session, fill in the `[brackets]`, and send it. Or just ask Claude by name, for example "run the use case kit prompt for RMs".
 - **To improve one:** say what to keep and what to change ("When the answer is off" in the Prompting Guide). Claude updates the prompt here, raises its version number and adds a line to its "What changed" note.
 - **To add one:** when a prompt is worth reusing, Claude asks whether to save it here.
+- **Tip numbers** (tip 4, tip 6, tip 9) point to "Anthropic's advice, in plain English" in the Prompting Guide: tip 4 is tags, tip 6 is long material first, tip 9 is draft, check, improve.
 
 | # | Prompt | What it gives me | Version |
 |---|---|---|---|
@@ -39,8 +40,12 @@ Inputs:   <use_case_work>
           (the RM Core Use Cases page), [memos/rm-analytics-audit.md],
           [memos/rm-analytics-market-scan.md], the design page sources in
           [designs/rm-analytics-canvas/], the scrolling page
-          [designs/rm-analytics-plan.html], and the [rm] section of
-          designs/library.json
+          [designs/rm-analytics-plan.html], [Map 2 on the Workflow Maps
+          (an RM's week with AI, built by designs/workflows-build.py)],
+          the [RM product agents] on the Agent Library
+          (designs/agents.html), and the [rm] section of
+          designs/library.json (the section's id; portfolio managers'
+          is credit)
           </use_case_work>
           <base> memos/role-workflow.md, product-framework.md (above all
           "How each step is written up" and "Projects, AI products and
@@ -60,8 +65,8 @@ Role:     You are a principal product leader who has set up product
           bank. You're also good at organizing information, so that
           each fact has one home and each reader finds what they need.
 
-Context:  I'm doing the Principal Applied AI Product Manager job at
-          Associated Bank (job-description.md). A use case is a whole
+Context:  I'm thinking through how I'd do the Principal Applied AI
+          Product Manager job at Associated Bank (job-description.md). A use case is a whole
           area of work for one user group (glossary). I have a lot of
           work for the [RM] use case but no agreed answer to: what is
           the standard set of pieces every use case should have? I want
@@ -74,13 +79,13 @@ Context:  I'm doing the Principal Applied AI Product Manager job at
           - The working layer: what I and the team work from day to
             day: plans, specs, workflows, measures, decisions.
           The [RM] use case goes first because most of its pieces
-          exist. The kit will then be copied to [portfolio managers
-          (PMs)], so it must be written generally, with the [RM]
+          exist. The kit will then be copied to {next group: portfolio managers
+          (PMs)}, so it must be written generally, with the [RM]
           version as the worked example. I also want to learn: explain
           why each piece exists, so I could defend the kit to a
           product leader at the bank.
 
-Steps:    STAGE 1: propose (change no files)
+Steps:    STAGE 1: propose (change no existing files)
           1. Take stock. List every piece of [RM] work in
              <use_case_work>: what it is, who it's for, which layer it
              belongs to, where it lives (file, page, section), how
@@ -127,20 +132,27 @@ Steps:    STAGE 1: propose (change no files)
           2. Ask me each decision as it comes, one at a time, with
              your recommendation.
           3. Write the kit itself down as a reusable template, so the
-             [PM] use case can start from it.
+             {next group: PM} use case can start from it.
           4. Update the Document Library's [RM] section to match the
              kit.
           5. Run the audit, fix what it finds, save a draft to GitHub
              and tell me what would be merged. Don't merge.
 
-Rules:    Change nothing in stage 1, because I approve the structure
-          before anything is built.
+Rules:    Change no existing files in stage 1; the only new thing is
+          the review page, a temporary draft kept out of
+          designs/README.md and the Document Library until stage 2,
+          because I approve the structure before anything is built.
+          Keep the order of work already agreed in <decisions> (for
+          [RMs]: the [Elon mode review comes before the leader
+          edition (W11), and the workflow map is W2]) and say which
+          open items the kit covers, because those are already
+          planned.
           Give every fact one home and link to it from everywhere
           else, because copies drift apart.
           Respect closed decisions in <decisions> and don't reopen
           them, because I've already decided; if one looks wrong,
           say so once and leave it.
-          Leave the [PM] pages untouched and report anything you find
+          Leave the {next group: PM} pages untouched and report anything you find
           in them once, labeled Optional, because they come after the
           [RM] work (rule R31).
           Don't add new pages, files or skills I haven't approved;
@@ -148,9 +160,9 @@ Rules:    Change nothing in stage 1, because I approve the structure
           Use [X] for numbers we don't have, and treat outside figures
           (such as McKinsey's) as benchmarks, never our targets,
           because leaders will check every number.
-          Mark your own judgment with ⚠️ and cite a source only if you
-          can name a real one, because I need to know what's proven
-          and what's your view.
+          Cite a source for every outside fact and leave out any fact
+          you can't source; mark your own judgment with ⚠️, because
+          I need to know what's proven and what's your view.
           Use the glossary's words, one meaning each, because the
           audit fails on anything else.
           Keep the AI assistive (AI drafts or suggests, a named person
@@ -163,10 +175,10 @@ Goal:     Using everything above, give me the use case kit and the
           I can say in two minutes what every use case must have and
           why, which [RM] pieces are missing or out of date, and in
           what order we fix them; after stage 2 the [RM] use case
-          matches the kit, and the kit is ready to copy to [PMs].
+          matches the kit, and the kit is ready to copy to {next group: PMs}.
 
-Output:   Stage 1: one designed review page (a draft, not yet in the
-          Document Library) with five parts:
+Output:   Stage 1: one designed review page (the temporary draft)
+          with five parts:
           1. The kit (one table: piece, question, reader, layer,
              required or optional, home)
           2. Why each piece exists (two or three lines each, so I
@@ -184,13 +196,16 @@ Tone:     A senior product leader coaching a peer: direct and clear,
 ```
 
 **For the next use case:** change every `[bracket]` from the RM version to the
-new one: the user group, its files in `<use_case_work>`, and its section in the
-library. In stage 1, start from the agreed kit instead of proposing one, and
+new one: the user group, its files in `<use_case_work>`, its open items and its
+section in the library (portfolio managers' section id is `credit`). Change each
+`{next group: ...}` to the group after it, or delete those words if none is planned. In stage 1, start from the agreed kit instead of proposing one, and
 only grade, rank and fix.
 
 **What changed:** version 1, first written 2026-10-17.
 
 ## Prompt 2: a full product memo (like the RM analytics memo)
+**Version 1** (2026-10-09).
+
 Builds a plan for a new use case from my saved files. The five files go in as
 Inputs, in tags (tip 4), and the request comes last (tip 6). Step 4 is
 "draft, check, improve" (tip 9). Expect a strong first draft: the RM memo took
@@ -239,6 +254,8 @@ Output:   Executive summary, outcome, value model, who decides, the six
 **What changed:** version 1, written 2026-10-09 as Example 4 in the Prompting Guide; moved here 2026-10-17.
 
 ## Prompt 3: a business briefing on the bank (like the Bank Business Briefing)
+**Version 1** (2026-10-09).
+
 Gathers the public facts about the bank's business and maps each revenue line
 to my work. The saved files go in as Inputs, in tags (tip 4), and the request
 comes last (tip 6). Step 7 is "draft, check, improve" (tip 9). Re-run it each

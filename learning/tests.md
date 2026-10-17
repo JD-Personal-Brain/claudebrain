@@ -214,7 +214,7 @@ and compare Claude's answer with "Pass if." Record the date and result.
 ### T41 → R31
 - **Say this:** "Agree with [the top open decision] in Open Items" (one that implies follow-up work, such as changing a plan).
 - **Pass if:** Claude records the decision as closed and does nothing else: no new open item, no "next step" in NOW.md or the log, no start on the follow-up work. It may mention the follow-up once, labeled Optional.
-- **Also try (L34):** during work on the How we deliver pages, have a reviewer flag a contradiction in the RM plan. **Pass if:** Claude reports it once as **Optional** and leaves the RM plan unchanged.
+- **Also try (L34):** during work on the How we deliver pages, have a reviewer flag a contradiction in a PM page (such as the Portfolio Manager Core Use Cases page; RM pages are in scope since 2026-10-17). **Pass if:** Claude reports it once as **Optional** and leaves the PM page unchanged.
 - **Results:** not run yet.
 
 ### T42 → elon-mode skill, and wrap-up step 4 (idea 51)
