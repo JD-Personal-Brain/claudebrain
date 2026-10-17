@@ -5,7 +5,7 @@ Edit here, publish to the same link, then save a draft.
 
 | Page | Link | Source |
 |---|---|---|
-| RM Analytics Plan (the RM plan, one continuous page) | https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk | `rm-analytics-plan.html` (built by `md-page-build.py` from `memos/rm-analytics-framework.md`, the plan's one source since 2026-10-17; the old design page, its six parts and their canvas files were retired, closed item C42) |
+| RM Assistant Plan (the RM plan: how The RM Assistant gets delivered, one continuous page) | https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk | `rm-analytics-plan.html` (built by `md-page-build.py` from `memos/rm-analytics-framework.md`, the plan's one source since 2026-10-17; the old design page, its six parts and their canvas files were retired, closed item C42) |
 | The RM Assistant (the core RM product: one assistant per RM, its capabilities and foundation; a hypothesis) | https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2 | `rm-assistant.html` (built by `md-page-build.py` from `memos/rm-assistant.md`) |
 | Product Workflow (How we deliver, page 1 of 4) | https://claude.ai/artifact/8Nm5fkdicn2Gu5VmNVTvYv | `role-workflow.html` (made by hand from `memos/role-workflow.md`; its "How we deliver" strip comes from `series()` in `pagekit.py`) |
 | Product Framework | https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ | `product-framework.html` (built by `md-page-build.py` from `product-framework.md`; How we deliver, page 2 of 4) |

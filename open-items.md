@@ -53,7 +53,7 @@ every working file and kept current at each wrap-up, last on 2026-10-17 (this se
 | The six-step process for one product | Strong on paper | Steps, gates, 44 sub-steps, first-time logs and the automation check at every gate. Not yet tried on real work | W8 |
 | RM plan (the first worked example) | Strong draft, not reviewed | Memo v9 (2026-10-17), with agent specs and workflows, organized on seven core use cases; brought up to date and rebuilt from its working file on 2026-10-17. I've read only the summary's opening and plan table | V1 |
 | Governance and controls | Partial | 25 controls named. 12 have a stage the playbook doesn't cover yet, such as who proves that only approved AI models are used | W7 |
-| Automating the process | Partial | Every task is marked Auto, Draft or Me, and 40 agents are fully specified: 33 general agents that run the product machine, the RM product's own 6, and my research helper H1 (the bank news scout). None of the 33 general agents or the 6 product agents is built or tested; H1 is set up and running. How much can run alone depends on whether the bank lets automations message people ⚠️ | B22, W8 |
+| Automating the process | Partial | Every task is marked Auto, Draft or Me, and 39 agents are fully specified: 33 general agents that run the product machine, the RM product's own 5, and my research helper H1 (the bank news scout). None of the 33 general agents or the 5 product agents is built or tested; H1 is set up and running. How much can run alone depends on whether the bank lets automations message people ⚠️ | B22, W8 |
 | Ready-to-fill templates | Missing | The brief, data contract, risk intake, gate pack, evidence pack and monitoring plan are described, but none exists as a template yet. The Draft agents need these to fill in | W4 |
 | Tracker design | Missing | The reminders, status notes and progress view all read from one task list, but its fields aren't written down, and we don't know the bank's tool yet | W5, B23 |
 | Approvals | Partial | Who decides is clear for every step. There's no map of who signs what, how long it takes, or who to go to when a sign-off is stuck | W6, B21 |
@@ -79,7 +79,7 @@ What we're working on first: a quick check on the bank news scout, then stage 2 
 
 | # | Item | Who | Waits on |
 |---|---|---|---|
-| V1 | Read the RM Analytics Plan (the long scrolling page): everything after the executive summary. It was brought up to date and rebuilt from its working file on 2026-10-17 (the 2026-10-15 decisions, the agreed waves and the How we deliver rules), so read it fresh | Me | Nothing |
+| V1 | Read the RM Assistant Plan (the long scrolling page): everything after the executive summary. It was brought up to date and rebuilt from its working file on 2026-10-17 (the 2026-10-15 decisions, the agreed waves and the How we deliver rules), so read it fresh | Me | Nothing |
 | V2 | Read the RM Core Use Cases page: McKinsey's five frontline AI use cases and their returns, how the RM plan covers them, and the three decisions made on 2026-10-15 (C30 to C32) | Me | Nothing |
 | V3 | Read the Portfolio Manager Core Use Cases page: what banks are deploying in commercial credit, and the credit counterpart proposed for each of the seven core use cases | Me | Nothing |
 | D1 | Is the RM framework ready to copy to other use cases? My answer on 2026-10-09: not yet. The reading in stage 1 and the work in stages 2 and 3 come first | Me | Credit, the next use case, waits on this |

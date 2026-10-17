@@ -101,7 +101,7 @@ def chips(ts):
 def delivery_detail(b):
     tasks = "".join(f"<li>{chipify(k)} {inline(t)}</li>" for t, k in b["tasks"])
     auto = any(kind.split()[0] in ("Auto", "Draft") for _, kind in b["tasks"])
-    # Map 1 is for every product, so an RM plan product agent (A1 to A6) says where it comes from
+    # Map 1 is for every product, so an RM plan product agent (A1 to A5) says where it comes from
     ag = ", ".join([a + " (a product agent in the RM plan)" if a.startswith("A") else a for a in b["agents"]] + [f"{a.replace(' (template)', '')} (a reusable template)" for a in b["assets"]])
     if not ag:
         ag = "No named agent yet" if auto else "None: this stays with a person"

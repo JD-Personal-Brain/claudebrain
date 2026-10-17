@@ -193,7 +193,7 @@ Each revenue line, which bankers it helps (RMs or PMs), the job outcome it serve
 | **Specialty industries** | RMs | Revenue workflows | Revenue from insights | Prospect lookalikes within one industry, where clients resemble each other | **Medium.** Fewer bankers, but the pattern repeats nationally |
 | **Commercial real estate lending** | PMs (real estate RMs sell it) | Operating efficiency | Not in the model today | Help with portfolio reviews and loan monitoring | **Medium.** Growth is capped by concentration limits, so the gain is cost and time |
 | **Credit quality** (the $21.3 million quarterly provision) | PMs | Operating efficiency | Not in the model today | A credit early-warning signal for PMs. This is not in my RM plan today: the plan's wave 2 early warning flags clients who may leave, not loans that may go bad | **Unknown.** Potentially large, but hard to prove and higher risk to govern |
-| **All lines** | RMs and PMs | Adoption | Every part: nothing counts until RMs and PMs use it weekly | How-to helper (A6), usage reporting | Decides whether any of the above shows up |
+| **All lines** | RMs and PMs | Adoption | Every part: nothing counts until RMs and PMs use it weekly | Training on RMs' own clients, champions, usage reporting | Decides whether any of the above shows up |
 
 **What this means for my plan** ⚠️:
 

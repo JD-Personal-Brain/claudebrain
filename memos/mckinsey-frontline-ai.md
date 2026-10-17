@@ -43,9 +43,9 @@ coaching in late stage), and negotiation (4).
 |---|---|---|
 | 1. Prospecting and next best opportunities | Wave 2: prospect lookalikes (B8, moved up from wave 3 on 2026-10-15). Wave 1's weekly opportunity list finds next best opportunities in existing clients | **Covered.** New-client prospecting now comes in wave 2, because McKinsey reports its biggest numbers here |
 | 2. Lead nurturing, including cross-sell | Wave 2: referral prompts (B6) for cross-sell between teams. Nothing contacts prospects on its own | **Partly, by design.** Our rule is that nothing reaches a client without the RM, so an agent that writes to prospects by itself is out of scope today |
-| 3. Account intelligence and meeting prep (McKinsey: account planning and meeting prep) | Wave 1: pre-meeting client brief (B2). Wave 3: RM assistant (B7) | **Covered**, and first in line |
+| 3. Account intelligence and meeting prep (McKinsey: account planning and meeting prep) | Wave 1: pre-meeting client brief (B2). Wave 3: client Q&A (B7) | **Covered**, and first in line |
 | 4. Deal scoring and pricing (McKinsey: deal structuring and pricing) | Not in the plan. Under control K3 the AI never makes a credit decision and never sets or suggests a price | **Not covered, by design** (kept out on 2026-10-15). Pricing touches fair-lending rules, so it would need a much higher bar |
-| 5. AI sales coaching | Wave 3: AI sales coaching from call transcripts (added 2026-10-15; its agent spec and workflow are still to write). The how-to helper (A6) only answers "how do I use this?" | **Covered from wave 3** |
+| 5. AI sales coaching | Wave 3: AI sales coaching from call transcripts (added 2026-10-15; its agent spec and workflow are still to write). | **Covered from wave 3** |
 
 **Also in our plan, not in McKinsey's five:** early warning when a client may
 leave (B5), and the meeting follow-up (B3) and call notes saved to the CRM (B4), both in wave 1,

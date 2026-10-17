@@ -94,8 +94,8 @@
         },
         {
           "id": "rm-plan",
-          "name": "RM Analytics Plan",
-          "what": "The full RM plan on one scrolling page, built from its working file: core use cases, AI products, value, who decides, the six steps, risks, agent specs and workflows.",
+          "name": "RM Assistant Plan",
+          "what": "How The RM Assistant gets delivered, on one scrolling page built from its working file: the capabilities wave by wave, value, who decides, the six steps, the project plan, risks, agent specs and workflows.",
           "status": "Waiting for review",
           "url": "https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk",
           "source": "memos/rm-analytics-framework.md",
@@ -190,7 +190,7 @@
           "id": "agents",
           "name": "Agent Library",
           "what": "Every agent in one place: what it does, what it may and may not do, and who's in charge. Filter by step or by who it serves.",
-          "count": "40 agents",
+          "count": "39 agents",
           "status": "Reference",
           "url": "https://claude.ai/artifact/Cn9nANQoqp2BP7yrmy61zn",
           "source": "playbook/agents.md, RM memo Appendix A"

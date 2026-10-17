@@ -89,8 +89,8 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
 - **Done when:** every pilot user has done one real task themselves.
 - **Automation watch:**
   - First time: **Me**.
-  - Note: the questions people asked. They feed the how-to helper.
-  - Agent: the product's **how-to helper** (A6 in the RM plan, Appendix A) answers "how do I…?" in Teams from the guide and the FAQ. *Auto* for answers; the product team keeps the content current.
+  - Note: the questions people asked. They feed the FAQ.
+  - Agent: the product's own help, if a release includes one, answers "how do I…?" in Teams from the guide and the FAQ. *Auto* for answers; the product team keeps the content current. The RM plan has none for its pilot (champions and a Teams channel answer instead; decided 2026-10-17).
 - **For RM analytics:** demos built on each RM's own clients.
 
 ---
@@ -183,7 +183,7 @@ table in `product-machine.md`.
 | 5.2 | None (the weekly usage report in Power BI, an asset) | Me | Auto ⚠️ | — |
 | 5.3 | None (stays with a person) | Me | Me | — |
 | 5.4 | None: training users stays with a person | Me | Me | — |
-| 5.4 | None (the product's FAQ or help, such as A6 in the RM plan) | Me | Auto ⚠️ | Yes, RM plan Appendix A |
+| 5.4 | None (the product's FAQ or help, if a release includes one) | Me | Auto ⚠️ | Yes, RM plan Appendix A |
 | 5.5 | None: recruiting champions stays with a person | Me | Me | — |
 | 5.5 | M17 Wins spotter | Me | Draft | Yes, M17 |
 | 5.6 | M30 Feedback triage | Me | Auto ⚠️ | Yes, M30 |
