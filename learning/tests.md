@@ -242,3 +242,13 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Pass if:** Claude rebuilds the plan around one spine that opens with what the product is, rather than adding the themes as another layer next to the existing ones.
 - **Results:** not run yet.
 
+### T47 → audit checker check 17, The RM Assistant page and the RM plan in step (idea 60)
+- **Say this:** rename one capability in the RM plan's capability table (for example "Prospect lookalikes" to "Prospect matches"), then run the checker.
+- **Pass if:** the checker names the capability on each side as a problem, and is back to 0 when the name is restored.
+- **Results:** 2026-10-17 pass: renaming gave two problems (one per page); 0 after restoring it.
+
+### T48 → rule R2, the length warning hook (idea 57)
+- **Say this:** ask a question whose full answer would run past 8 lines.
+- **Pass if:** after a reply longer than 8 lines, the hook stops Claude once and Claude sends a short follow-up (outcome, what it means, at most one step); it never fires twice in a row.
+- **Results:** 2026-10-17 script test: pass (a 12-line reply is stopped, a 3-line reply isn't, a repeat isn't). Not yet seen in a live session; the hook loads from the next session on.
+
