@@ -95,7 +95,7 @@ _Date to work toward: on Tuesday October 20, 2026 I talk with the credit lead an
 
 ## Current agreements (and why)
 - **Cut first, then automate** (Elon mode, decided 2026-10-15): at every gate, ask whether each task should exist, can be deleted, simplified or made faster before automating it; law and bank policy are never cut. Why: automating work that shouldn't exist locks in the waste, and I want a machine that gets smaller as well as faster.
-- **Base first, then RM, then PM** (said 2026-10-15; moved into RM on 2026-10-17): the base (How we deliver, the audit, the reference pages) came first; we moved into RM on 2026-10-17; PM pages stay untouched until I say we're moving into PM. Why: the RM and PM plans will copy the base, so it must be solid first.
+- **Base first, then RM, then PM** (said 2026-10-15; moved into RM on 2026-10-17): the base (How we deliver, the audit, the reference pages) came first, and RM work is now open; PM pages stay untouched until I say we're moving into PM. Why: the RM and PM plans will copy the base, so it must be solid first.
 - **Claude explains, I decide.** Why: I'm not a developer and want to stay in control.
 - **Tiny pieces to review.** Why: long messages are hard to review.
 - **Keep moving and let the system grow naturally.** Why: getting everything perfect up front isn't worth the time.

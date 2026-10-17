@@ -7,7 +7,7 @@ the request last. The Prompting Guide teaches how to write a prompt; this page
 holds the ones worth keeping.
 
 ## How to use this page
-- **To run a prompt:** copy it into a new session, fill in the `[brackets]`, and send it. Or just ask Claude by name, for example "run the use case kit prompt for RMs".
+- **To run a prompt:** copy it into a new session, fill in the `[brackets]`, and send it (leave any `{next group: ...}` as written; it names the group that comes after). Or just ask Claude by name, for example "run the use case kit prompt for RMs".
 - **To improve one:** say what to keep and what to change ("When the answer is off" in the Prompting Guide). Claude updates the prompt here, raises its version number and adds a line to its "What changed" note.
 - **To add one:** when a prompt is worth reusing, Claude asks whether to save it here.
 - **Tip numbers** (tip 4, tip 6, tip 9) point to "Anthropic's advice, in plain English" in the Prompting Guide: tip 4 is tags, tip 6 is long material first, tip 9 is draft, check, improve.
@@ -143,7 +143,7 @@ Rules:    Change no existing files in stage 1; the only new thing is
           designs/README.md and the Document Library until stage 2,
           because I approve the structure before anything is built.
           Keep the order of work already agreed in <decisions> (for
-          [RMs]: the [Elon mode review comes before the leader
+          [RMs]: the [Elon mode review comes before the Andy
           edition (W11), and the workflow map is W2]) and say which
           open items the kit covers, because those are already
           planned.
