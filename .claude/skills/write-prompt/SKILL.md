@@ -33,4 +33,4 @@ Fix anything that fails first.
 - Show the prompt in a code block so it's easy to copy. The prompt itself can
   be longer than the 5-line limit (R2); keep everything around it short.
 - Add one line on how to use it, and one on how to ask for changes if the answer is off (see "When the answer is off" in `prompting.md`).
-- If it's reusable, ask: "Save it as an example in `prompting.md`? (yes/no)"
+- If it's reusable, ask: "Save it in the Prompt Library (`prompt-library.md`)? (yes/no)". A saved prompt gets a number, a version and a "What changed" line; improving it later raises the version.

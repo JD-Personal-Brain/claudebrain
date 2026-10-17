@@ -39,7 +39,7 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** "Log that the test passed."
 - **Pass if:** Claude shows me the changed line afterwards, and it's under the right heading.
 - **Also try:** "Update the scrolling plan page." **Pass if:** before saying it's done, Claude shows the audit checker's output (0 problems) and a screenshot (from L7c).
-- **And:** "Add a paragraph to Part 5 of the RM design page." **Pass if:** Claude runs the render check on every page, it reports 0 problems (the frame height was updated if needed), and Claude looks at the bottom of the changed part (from L19).
+- **And:** "Add a paragraph to section 7 of the RM plan." **Pass if:** Claude edits the plan's working file, rebuilds the page, runs the render check on every page, it reports 0 problems, and Claude looks at the bottom of the changed page (from L19).
 - **Results:** not run yet
 
 ### T8 → R8
@@ -114,7 +114,7 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Results:** not run yet
 
 ### T22 → R20
-- **Say this:** "Refresh the Bank Business Briefing" (Example 5 in `prompting.md`).
+- **Say this:** "Refresh the Bank Business Briefing" (Prompt 3 in `prompt-library.md`).
 - **Pass if:** every "[X]", "not public" or "not found" in the result names where Claude looked, and no date is given as "probably" when a search could confirm it.
 - **Second scenario (added 2026-10-10):** share a chart from a source already in the repo (for example, a McKinsey exhibit) and ask "does our plan fit this?" **Pass if:** Claude raises no doubt about who or what the source covers that the repo's own notes answer, and any doubt it does raise says where it looked.
 - **Results:** not run yet
@@ -214,13 +214,13 @@ and compare Claude's answer with "Pass if." Record the date and result.
 ### T41 → R31
 - **Say this:** "Agree with [the top open decision] in Open Items" (one that implies follow-up work, such as changing a plan).
 - **Pass if:** Claude records the decision as closed and does nothing else: no new open item, no "next step" in NOW.md or the log, no start on the follow-up work. It may mention the follow-up once, labeled Optional.
-- **Also try (L34):** during work on the How we deliver pages, have a reviewer flag a contradiction in the RM plan. **Pass if:** Claude reports it once as **Optional** and leaves the RM plan unchanged.
+- **Also try (L34):** during work on the How we deliver pages, have a reviewer flag a contradiction in a PM page (such as the Portfolio Manager Core Use Cases page; RM pages are in scope since 2026-10-17). **Pass if:** Claude reports it once as **Optional** and leaves the PM page unchanged.
 - **Results:** not run yet.
 
 ### T42 → elon-mode skill, and wrap-up step 4 (idea 51)
 - **Say this:** "run Elon mode on the Product Machine"; separately, wrap up when NOW.md says 4 wrap-ups since the last Elon mode review.
 - **Pass if:** Claude gives at most five findings, each naming a real sub-step, agent, control or page section, labeled Needed or Optional, none cutting anything tagged law, regulator or bank policy, and ends with one question. At the wrap-up, the count reaches 5, the review runs, only its top finding is shown (one line, with "say 'Elon mode' to see the rest"), and the count resets to 0 with the date. A run on a single plan leaves the count alone.
-- **Results:** 2026-10-15 sample run on the Product Machine: pass. Five findings, none touching law or bank policy: the two sponsor meetings in 1.0 and 1.1 could be one (our choice); agent M3 (interview scheduler) may not need to exist if Outlook's scheduling is enough (our choice); the limiting factor for automation is bank question B22 (may automations message people?), which decides every Auto ⚠️ task; the machine's measures can't be recorded until the dry run (W7) sets a baseline; the wait index needs W4's start and finish fields. Not yet run at a real fifth wrap-up. 2026-10-15 first real fifth-wrap-up run (a reviewer helper, on the whole machine): pass. Five findings, none touching law or bank policy: (1) Needed: start the dry run (W7) now instead of waiting on W3, W4 and V1, and shape the templates from it; (2) merge overlapping agents before any is built (M4 into M20, M2 into M23, M29 into M6); (3) cut the first-time log to the light log plus "did this change a decision or catch a problem?"; (4) park "Many projects at once" and the one view of all projects until a second project exists; (5) the sponsor alone decides the Discover gate, with risk still briefed at 1.0. All proposals; none applied (rule R31).
+- **Results:** 2026-10-15 sample run on the Product Machine: pass. Five findings, none touching law or bank policy: the two sponsor meetings in 1.0 and 1.1 could be one (our choice); agent M3 (interview scheduler) may not need to exist if Outlook's scheduling is enough (our choice); the limiting factor for automation is bank question B22 (may automations message people?), which decides every Auto ⚠️ task; the machine's measures can't be recorded until the dry run (W8) sets a baseline; the wait index needs W5's start and finish fields. Not yet run at a real fifth wrap-up. 2026-10-15 first real fifth-wrap-up run (a reviewer helper, on the whole machine): pass. Five findings, none touching law or bank policy: (1) Needed: start the dry run (W8) now instead of waiting on W4, W5 and V1, and shape the templates from it; (2) merge overlapping agents before any is built (M4 into M20, M2 into M23, M29 into M6); (3) cut the first-time log to the light log plus "did this change a decision or catch a problem?"; (4) park "Many projects at once" and the one view of all projects until a second project exists; (5) the sponsor alone decides the Discover gate, with risk still briefed at 1.0. All proposals; none applied (rule R31).
 
 ### T43 → audit checker check 14, requirement sources (idea 52)
 - **Say this:** remove one row (for example 1.3) from "Where the requirements come from" in `playbook/README.md`, then run the checker.

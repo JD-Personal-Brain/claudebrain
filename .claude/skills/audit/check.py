@@ -64,7 +64,7 @@ for f in glob.glob('designs/*.html'):
     for m in re.findall(r'<(?:p|li|td|dd|dt|span|div|h\d)[^>]*>_[^<]{0,40}|[^<]{0,40}_</(?:p|li|td|dd|dt|span|div|h\d)>',open(f).read()):
         print(f,"shows a stray underscore:",m); probs+=1
 # 3. pages built from working copies are up to date
-for page,builder in [('designs/product-machine.html','designs/product-machine-build.py'),('designs/playbook.html','designs/playbook-build.py'),('designs/product-framework.html','designs/md-page-build.py'),('designs/tech-stack.html','designs/md-page-build.py'),('designs/job-description.html','designs/md-page-build.py'),('designs/prompting.html','designs/md-page-build.py'),('designs/bank-business.html','designs/md-page-build.py'),('designs/open-items.html','designs/md-page-build.py'),('designs/library.html','designs/library-build.py'),('designs/workflows.html','designs/workflows-build.py'),('designs/agents.html','designs/agents-build.py'),('designs/steps.html','designs/catalogs-build.py'),('designs/controls.html','designs/catalogs-build.py'),('designs/glossary.html','designs/md-page-build.py'),('designs/mckinsey-use-cases.html','designs/md-page-build.py'),('designs/credit-market-scan.html','designs/md-page-build.py'),('designs/elon-mode.html','designs/md-page-build.py'),('designs/audit-log.html','designs/md-page-build.py')]:
+for page,builder in [('designs/product-machine.html','designs/product-machine-build.py'),('designs/playbook.html','designs/playbook-build.py'),('designs/product-framework.html','designs/md-page-build.py'),('designs/tech-stack.html','designs/md-page-build.py'),('designs/job-description.html','designs/md-page-build.py'),('designs/prompting.html','designs/md-page-build.py'),('designs/prompt-library.html','designs/md-page-build.py'),('designs/rm-analytics-plan.html','designs/md-page-build.py'),('designs/bank-business.html','designs/md-page-build.py'),('designs/open-items.html','designs/md-page-build.py'),('designs/library.html','designs/library-build.py'),('designs/workflows.html','designs/workflows-build.py'),('designs/agents.html','designs/agents-build.py'),('designs/steps.html','designs/catalogs-build.py'),('designs/controls.html','designs/catalogs-build.py'),('designs/glossary.html','designs/md-page-build.py'),('designs/mckinsey-use-cases.html','designs/md-page-build.py'),('designs/credit-market-scan.html','designs/md-page-build.py'),('designs/elon-mode.html','designs/md-page-build.py'),('designs/audit-log.html','designs/md-page-build.py')]:
     before=open(page).read()
     subprocess.run(['python3',builder],check=True)
     if open(page).read()!=before: print(page,"was out of date: rebuilt it, republish it"); probs+=1
@@ -88,7 +88,7 @@ for k in 'VDWBP':
 # numbers change with priorities, so every item number cited elsewhere must still be a live item (L22)
 live=set(nums)
 # it only checks that a cited number exists; after a renumbering, re-read each reference to confirm it names the right item
-for f in ['NOW.md','ideas.md','product-framework.md','product-machine.md','glossary.md','tech-stack.md','open-items.md']+sorted(glob.glob('memos/*.md'))+sorted(glob.glob('playbook/*.md'))+sorted(glob.glob('learning/*.md'))+sorted(glob.glob('.claude/skills/*/SKILL.md'))+sorted(glob.glob('designs/rm-analytics-canvas/*.dc.html')):
+for f in ['NOW.md','ideas.md','product-framework.md','product-machine.md','glossary.md','tech-stack.md','open-items.md']+sorted(glob.glob('memos/*.md'))+sorted(glob.glob('playbook/*.md'))+sorted(glob.glob('learning/*.md'))+sorted(glob.glob('.claude/skills/*/SKILL.md')):
     t=open(f).read()
     if f=='open-items.md': t='\n'.join(re.sub(r'^\| [A-Z]\d+ \|','|',l) for l in t.split('\n'))
     for m in re.finditer(r'\b([VDWP]\d{1,2})\b(?! Labs)',t):
@@ -219,7 +219,7 @@ else:
         if m: ret.append((m.group(1).strip(),m.group(2).strip()))
         else: print('glossary.md: could not read this "Old wording we\'ve retired" row:',row[:60]); probs+=1
     if not ret: print('glossary.md: the "Old wording we\'ve retired" table is empty'); probs+=1
-    where=sorted(set(core+glob.glob('memos/*.md')+['NOW.md','glossary.md','prompting.md','job-notes.md','job-description.md','designs/library.json','designs/README.md','designs/role-workflow.html','designs/rm-analytics-plan.html']+glob.glob('designs/*-build.py')+glob.glob('designs/rm-analytics-canvas/*.dc.html')+glob.glob('.claude/skills/*/SKILL.md')))
+    where=sorted(set(core+glob.glob('memos/*.md')+['NOW.md','glossary.md','prompting.md','prompt-library.md','job-notes.md','job-description.md','designs/library.json','designs/README.md','designs/role-workflow.html','designs/rm-analytics-plan.html']+glob.glob('designs/*-build.py')+glob.glob('.claude/skills/*/SKILL.md')))
     for f in where:
         txt=open(f).read()
         if f=='glossary.md': txt=txt.split("## Old wording we've retired")[0]
@@ -231,14 +231,14 @@ else:
                 if nw in low[max(0,m.start()-150):m.start()]+low[m.end():m.end()+150]: continue  # the new wording must sit outside the match itself
                 print(f,'still says',repr(old),'(retired; use',repr(new)+'), near:',repr(plain[max(0,m.start()-40):m.end()+40])); probs+=1
 # 10. the two user groups are always written RM, RMs, PM, PMs (said 2026-10-14): no "Rms", "rms" and so on (an apostrophe for ownership, "the RM's", is fine, and so are all-capital labels such as "FOR RMS")
-for f in sorted(set(core+glob.glob('memos/*.md')+['NOW.md','glossary.md','open-items.md','designs/library.json','designs/rm-analytics-plan.html']+glob.glob('designs/*-build.py')+glob.glob('designs/*.html')+glob.glob('designs/rm-analytics-canvas/*.dc.html'))):
+for f in sorted(set(core+glob.glob('memos/*.md')+['NOW.md','glossary.md','open-items.md','designs/library.json','designs/rm-analytics-plan.html']+glob.glob('designs/*-build.py')+glob.glob('designs/*.html'))):
     for m in re.finditer(r"(?<![\w/.#-])(Rms|rms|Pms|pms|R\.M\.s?|P\.M\.s?)(?![\w])",re.sub(r'data-search="[^"]*"','',open(f).read())):  # lowercase search indexes are fine
         print(f,'writes',repr(m.group(1)),'- write RMs or PMs'); probs+=1
 # 11. page names the user set (2026-10-14, lesson L26): Product Workflow, Product Framework, Product Machine,
 # Product Playbook. Every old name fails, in any case, in the working files and on the built pages (checked as plain text).
 import html as _h2
 OLD_NAMES=['six-step product workflow','six-step workflow','delivery machine','delivery playbook','elon mode research']
-_named=['NOW.md','CLAUDE.md','open-items.md','product-framework.md','product-machine.md','tech-stack.md','prompting.md','designs/library.json','designs/README.md']+glob.glob('memos/*.md')+glob.glob('playbook/*.md')+glob.glob('learning/rules.md')+glob.glob('learning/tests.md')+glob.glob('designs/*.py')+glob.glob('designs/*.html')+glob.glob('designs/rm-analytics-canvas/*.dc.html')+glob.glob('.claude/skills/*/SKILL.md')
+_named=['NOW.md','CLAUDE.md','open-items.md','product-framework.md','product-machine.md','tech-stack.md','prompting.md','prompt-library.md','designs/library.json','designs/README.md']+glob.glob('memos/*.md')+glob.glob('playbook/*.md')+glob.glob('learning/rules.md')+glob.glob('learning/tests.md')+glob.glob('designs/*.py')+glob.glob('designs/*.html')+glob.glob('.claude/skills/*/SKILL.md')
 for f in _named+['glossary.md']:
     t=open(f).read()
     if f=='glossary.md': t=t.split("## Old wording we've retired")[0]
@@ -250,7 +250,7 @@ for f in _named+['glossary.md']:
             print(f,'says',repr(t[max(0,m.start()-20):m.end()]),'- use the new name (Product Workflow, Product Machine or Product Playbook)'); probs+=1
 # 12. Links between our pages (idea 48): a link to a section of another of our pages
 # (https://claude.ai/artifact/<id>#<section>) must point to a section that exists on that page.
-# The page for each link comes from designs/README.md; pages without one .html file (the design canvas) are skipped.
+# The page for each link comes from designs/README.md.
 pages={}
 for m in re.finditer(r'https://claude\.ai/artifact/([A-Za-z0-9]+) \| `([^`/]+\.html)`',open('designs/README.md').read()):
     pages[m.group(1)]='designs/'+m.group(2)
@@ -258,10 +258,10 @@ ids_of={}
 def ids(f):
     if f not in ids_of: ids_of[f]=set(re.findall(r'(?<![\w-])id="([^"]+)"',open(f).read()))
     return ids_of[f]
-for f in sorted(glob.glob('designs/*.html')+glob.glob('designs/rm-analytics-canvas/*.dc.html')):
+for f in sorted(glob.glob('designs/*.html')):
     for m in re.finditer(r'href=["\']https://claude\.ai/artifact/([A-Za-z0-9]+)#([^"\']+)["\']',open(f).read()):
         target=pages.get(m.group(1))
-        if not target and m.group(1)!='3c7ZxKjJcjWRyV7BbzKfhY':  # the design canvas has no single page file
+        if not target:
             print(f,'links to a section of artifact',m.group(1),'which designs/README.md does not map to one page, so the link was not checked'); probs+=1
         if target and m.group(2) not in ids(target):
             print(f,'links to',target.split('/')[-1]+'#'+m.group(2),'but that page has no section with that id'); probs+=1

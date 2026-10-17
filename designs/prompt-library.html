@@ -1,0 +1,383 @@
+<title>Prompt Library</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
+<style>
+/* Layout: navy header band, a pill nav of the six steps, then one reading column; each sub-step is a card with a two-column body. */
+:root{--bg:#F4F6F8;--card:#FFFFFF;--line:#D9DEE5;--fg:#1B2433;--muted:#4D5868;--navy:#14213D;--onnavy:#FFFFFF;--onnavy-muted:#C9D3E3;--teal:#0F5F59;--teal-bg:#E1F0EE;--amber-bg:#FDF3E1;--amber:#8A4B00;--me:#14213D;--me-fg:#FFFFFF;--partner-bg:#E6E9EE;--partner:#3B4656;--label-on-navy:#8FD3CA;
+--serif:"IBM Plex Serif",Georgia,"Times New Roman",serif;--sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1420;--card:#161E2C;--line:#2A3446;--fg:#E6EAF0;--muted:#A3AEBF;--navy:#0A1830;--onnavy:#FFFFFF;--onnavy-muted:#B4C1D6;--teal:#5FC4B8;--teal-bg:#123A37;--amber-bg:#3A2A10;--amber:#F2C27A;--me:#C9D6F0;--me-fg:#0E1420;--partner-bg:#2A3446;--partner:#C6CFDC;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0E1420;--card:#161E2C;--line:#2A3446;--fg:#E6EAF0;--muted:#A3AEBF;--navy:#0A1830;--onnavy:#FFFFFF;--onnavy-muted:#B4C1D6;--teal:#5FC4B8;--teal-bg:#123A37;--amber-bg:#3A2A10;--amber:#F2C27A;--me:#C9D6F0;--me-fg:#0E1420;--partner-bg:#2A3446;--partner:#C6CFDC;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.55}
+a{color:var(--teal)}
+a:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+code{font-family:var(--mono);font-size:.88em;background:var(--teal-bg);color:var(--teal);padding:1px 5px;border-radius:4px}
+.band{background:var(--navy);color:var(--onnavy);padding-block:48px 36px;padding-inline:20px}
+.wrap{max-width:1080px;margin:0 auto}
+.label{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--teal)}
+.band .label{color:var(--label-on-navy)}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(32px,5vw,46px);line-height:1.15;margin:10px 0 12px;text-wrap:balance}
+.lede{font-size:18px;color:var(--onnavy-muted);max-width:66ch;margin:0}
+.stepnav{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.stepnav a{color:var(--onnavy);text-decoration:none;border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:7px 14px;font-size:14px;display:flex;gap:8px;align-items:center}
+.stepnav a:hover{background:rgba(255,255,255,.08)}
+.stepnav .num{color:var(--label-on-navy)}
+main.wrap{padding-block:32px 64px;padding-inline:20px;display:flex;flex-direction:column;gap:56px}
+h2{font-family:var(--serif);font-weight:600;font-size:34px;line-height:1.2;margin:6px 0 0;text-wrap:balance}
+h3{font-family:var(--serif);font-weight:600;font-size:22px;margin:0}
+h4{font-family:var(--serif);font-weight:600;font-size:20px;margin:0;text-wrap:balance}
+h5{font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+p{margin:0 0 8px;max-width:72ch}
+ul,ol{margin:0;padding-left:22px}
+li{margin:3px 0}
+.num{font-family:var(--mono);font-size:13px;color:var(--teal);font-variant-numeric:tabular-nums}
+section{display:flex;flex-direction:column;gap:18px}
+.use{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:20px;min-width:0}
+.stephead{border-top:4px solid var(--navy);padding-top:22px}
+.meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0 0}
+.meta div{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 14px;min-width:0}
+.meta dt{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:4px}
+.meta dd{margin:0;font-size:15px}
+.intro p{color:var(--muted)}
+.note{background:var(--amber-bg);border-radius:8px;padding:14px 18px;font-size:15px;max-width:none}
+.warn{font-size:.9em}
+.toc{display:flex;flex-wrap:wrap;gap:8px}
+.toc a{display:flex;gap:8px;align-items:baseline;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:14px;color:var(--fg);text-decoration:none}
+.toc a:hover{border-color:var(--teal)}
+.sub{background:var(--card);border:1px solid var(--line);border-radius:8px;overflow:hidden;scroll-margin-top:16px}
+.sub>header{display:flex;gap:14px;align-items:baseline;padding:16px 20px;border-bottom:1px solid var(--line)}
+.sub>header .num{font-size:15px}
+.subgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0}
+.col{padding:16px 20px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.col.steps{border-left:1px solid var(--line)}
+.col.steps ol{display:flex;flex-direction:column;gap:6px}
+.fld p,.fld li{font-size:15px}
+.auto{background:var(--teal-bg);padding:14px 20px;font-size:15px}
+.auto h5{color:var(--teal)}
+.rm{padding:12px 20px;font-size:14px;color:var(--muted);border-top:1px solid var(--line);display:flex;gap:10px;flex-wrap:wrap;align-items:baseline}
+.rm p{margin:0}
+.rmlabel{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);background:var(--amber-bg);padding:2px 8px;border-radius:4px;white-space:nowrap}
+.gate{background:var(--navy);color:var(--onnavy);border-radius:8px;padding:22px 24px;display:flex;flex-direction:column;gap:8px}
+.gate .label{color:var(--label-on-navy)}
+.gate h3{color:var(--onnavy)}
+.gate li{color:var(--onnavy-muted)}
+.gate strong{color:var(--onnavy)}
+.review{display:flex;flex-direction:column;gap:10px}
+.review>p{color:var(--muted);font-size:15px}
+.tw{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:8px}
+table{width:100%;border-collapse:collapse;font-size:15px;min-width:600px}
+th{text-align:left;font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:10px 16px;border-bottom:1px solid var(--line)}
+td{padding:10px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+.chip{display:inline-block;font-family:var(--mono);font-size:12px;padding:2px 9px;border-radius:999px;white-space:nowrap;font-weight:500;margin-right:4px}
+.k-auto{background:var(--teal-bg);color:var(--teal)}
+.k-draft{background:var(--amber-bg);color:var(--amber)}
+.k-me{background:var(--me);color:var(--me-fg)}
+.k-partner{background:var(--partner-bg);color:var(--partner)}
+.agents{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.agent{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:18px 20px;display:flex;flex-direction:column;gap:10px;min-width:0;scroll-margin-top:16px}
+.agent header{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline}
+.agent .used{font-family:var(--mono);font-size:12px;color:var(--muted);margin-left:auto}
+.agent .job{margin:0;font-size:16px}
+.kindrow{font-size:14px;color:var(--muted)}
+.spec{margin:0;display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding-top:10px}
+.spec div{display:grid;grid-template-columns:140px minmax(0,1fr);gap:10px}
+.spec dt{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.spec dd{margin:0;font-size:14px}
+pre.diagram{font-family:var(--mono);font-size:13px;line-height:1.5;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px 18px;overflow-x:auto;margin:0}
+.md-h{margin:8px 0 2px}
+footer{color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:760px){.subgrid,.use,.meta,.agents{grid-template-columns:1fr}.spec div{grid-template-columns:1fr;gap:2px}.col.steps{border-left:0;border-top:1px solid var(--line)}}
+
+.mdbody{display:flex;flex-direction:column;gap:12px}
+.mdbody>ul,.mdbody>ol{max-width:78ch}
+.mdbody li{margin:4px 0}
+.intro-block{display:flex;flex-direction:column;gap:12px}
+</style>
+<div class="band"><div class="wrap">
+<span class="label">Working with Claude</span>
+<h1>Prompt Library: our core prompts</h1>
+<p class="lede">Our core prompts in one place, each with its version and what changed, so we can reuse them and improve them over time.</p>
+<nav class="stepnav" aria-label="Sections"><a href="#how-to-use-this-page">How to use this page</a><a href="#prompt-1-the-use-case-kit-organize-a-use">Prompt 1: the use case kit (organize a use case, find its gaps, fix them)</a><a href="#prompt-2-a-full-product-memo-like-the-rm">Prompt 2: a full product memo (like the RM analytics memo)</a><a href="#prompt-3-a-business-briefing-on-the-bank">Prompt 3: a business briefing on the bank (like the Bank Business Briefing)</a></nav>
+</div></div>
+<main class="wrap">
+<div class="intro-block"><p>The prompts we use again and again, kept in one place so we can find them, reuse them and improve them over time. Each one is built from the Prompting Guide (<code>prompting.md</code>): its template, a reason for every rule, long material first and the request last. The Prompting Guide teaches how to write a prompt; this page holds the ones worth keeping.</p></div>
+<section id="how-to-use-this-page"><div class="stephead"><h2>How to use this page</h2></div><div class="mdbody"><ul><li><strong>To run a prompt:</strong> copy it into a new session, fill in the <code>[brackets]</code>, and send it (leave any <code>{next group: ...}</code> as written; it names the group that comes after). Or just ask Claude by name, for example "run the use case kit prompt for RMs".</li><li><strong>To improve one:</strong> say what to keep and what to change ("When the answer is off" in the Prompting Guide). Claude updates the prompt here, raises its version number and adds a line to its "What changed" note.</li><li><strong>To add one:</strong> when a prompt is worth reusing, Claude asks whether to save it here.</li><li><strong>Tip numbers</strong> (tip 4, tip 6, tip 9) point to "Anthropic's advice, in plain English" in the Prompting Guide: tip 4 is tags, tip 6 is long material first, tip 9 is draft, check, improve.</li></ul><div class="tw"><table><thead><tr><th>#</th><th>Prompt</th><th>What it gives me</th><th>Version</th></tr></thead><tbody><tr><td>1</td><td>The use case kit</td><td>The standard set of pieces every use case has (a leader layer and a working layer), the use case measured against it, and the gaps fixed</td><td>1 (2026-10-17)</td></tr><tr><td>2</td><td>A full product memo</td><td>A full product plan for a new use case, from my saved files</td><td>1 (2026-10-09)</td></tr><tr><td>3</td><td>A business briefing on the bank</td><td>The Bank Business Briefing, rebuilt from public sources each quarter</td><td>1 (2026-10-09)</td></tr></tbody></table></div></div></section><section id="prompt-1-the-use-case-kit-organize-a-use"><div class="stephead"><h2>Prompt 1: the use case kit (organize a use case, find its gaps, fix them)</h2></div><div class="mdbody"><p><strong>Version 1</strong> (2026-10-17). First run: relationship managers (RMs).</p><p>Sets the standard set of pieces every use case should have, in two layers: a <strong>leader layer</strong> I communicate from (for Andy and bank leaders) and a <strong>working layer</strong> I and the team work from. It runs first on the RM work, where most of the material already exists, so the kit is tested against real work before it's copied to portfolio managers (PMs). It runs in two stages and stops between them for my yes, because a new structure needs a sample before anything is built (rule R27). The inputs are files in the repo, so Claude reads them itself; the paths are listed in tags (tip 4) and the request comes last (tip 6). Stage 1 step 7 and stage 2 step 5 are "draft, check, improve" (tip 9).</p><pre class="diagram">Inputs:   &lt;use_case_work&gt;
+          Everything already built for [relationship managers (RMs)]:
+          [memos/rm-analytics-framework.md] (the full plan, with
+          Appendix A agent specs and Appendix B workflows),
+          [memos/rm-analytics-summary.md], [memos/mckinsey-frontline-ai.md]
+          (the RM Core Use Cases page), [memos/rm-analytics-audit.md],
+          [memos/rm-analytics-market-scan.md], the scrolling page
+          [designs/rm-analytics-plan.html], [Map 2 on the Workflow Maps
+          (an RM&#x27;s week with AI, built by designs/workflows-build.py)],
+          the [RM product agents] on the Agent Library
+          (designs/agents.html), and the [rm] section of
+          designs/library.json (the section&#x27;s id; portfolio managers&#x27;
+          is credit)
+          &lt;/use_case_work&gt;
+          &lt;base&gt; memos/role-workflow.md, product-framework.md (above all
+          &quot;How each step is written up&quot; and &quot;Projects, AI products and
+          feature waves&quot;), product-machine.md, playbook/, glossary.md
+          &lt;/base&gt;
+          &lt;decisions&gt; open-items.md: every open item that mentions
+          [RMs or the RM plan], and every closed decision (C) about it,
+          with its date &lt;/decisions&gt;
+          &lt;bank&gt; memos/bank-business.md &lt;/bank&gt;
+          &lt;how_i_work&gt; me/profile.md, learning/rules.md &lt;/how_i_work&gt;
+          &lt;workflow_routine&gt; .claude/skills/user-workflow/SKILL.md
+          &lt;/workflow_routine&gt;
+
+Role:     You are a principal product leader who has set up product
+          portfolios at large regulated companies, and you&#x27;re coaching
+          a new Principal Applied AI Product Manager at a commercial
+          bank. You&#x27;re also good at organizing information, so that
+          each fact has one home and each reader finds what they need.
+
+Context:  I&#x27;m thinking through how I&#x27;d do the Principal Applied AI
+          Product Manager job at Associated Bank (job-description.md). A use case is a whole
+          area of work for one user group (glossary). I have a lot of
+          work for the [RM] use case but no agreed answer to: what is
+          the standard set of pieces every use case should have? I want
+          that answer, the use case kit, so every use case we turn on
+          starts from the same kit. The kit has two layers:
+          - The leader layer: what I communicate from. Mainly for Andy
+            (the hiring leader) and bank leaders deciding whether to
+            back and fund the work. Short, in their terms, no internal
+            labels.
+          - The working layer: what I and the team work from day to
+            day: plans, specs, workflows, measures, decisions.
+          The [RM] use case goes first because most of its pieces
+          exist. The kit will then be copied to {next group: portfolio managers
+          (PMs)}, so it must be written generally, with the [RM]
+          version as the worked example. I also want to learn: explain
+          why each piece exists, so I could defend the kit to a
+          product leader at the bank.
+
+Steps:    STAGE 1: propose (change no existing files)
+          1. Take stock. List every piece of [RM] work in
+             &lt;use_case_work&gt;: what it is, who it&#x27;s for, which layer it
+             belongs to, where it lives (file, page, section), how
+             current it is, and anything it repeats from another piece.
+          2. Propose the kit. For each piece give: its name, the one
+             question it answers, its reader, its layer, required or
+             optional, its one home (which page owns it), and what it
+             links to. Test each against two questions: does a leader
+             need it to decide, or does the team need it to work? Cut
+             anything that fails both (cut first, then add). Consider
+             at least these, and add or drop any with a reason:
+             the leader summary; the case for change (the user problem
+             and the value); the user workflow, today and with AI
+             (required, built with &lt;workflow_routine&gt;); the core use
+             cases and the return profile of each; the AI products in
+             feature waves; the value model; the plan through the six
+             steps; who decides; measures and the dashboard design;
+             risks and controls; agent specs; workflows; open
+             decisions; a clickable mock-up; sources and market scan.
+          3. Show how the layers connect: each leader-layer item links
+             down to its exact section in the working layer (rule R30),
+             and how the kit appears in the use case&#x27;s section of the
+             Document Library.
+          4. Grade the [RM] work against the kit. For each piece:
+             Have, Partly, Missing, Out of date or Repeated. Look hard
+             for &quot;Out of date&quot;: decisions closed after the plan was
+             written (in &lt;decisions&gt;), changes to &lt;base&gt; since then,
+             and wording in the glossary&#x27;s retired-wording table.
+          5. Rank the gaps: first what blocks the leader layer, then
+             what blocks the team, then the rest. For each, say the
+             fix, the effort (small, medium, large) and whether it
+             needs a decision from me.
+          6. Make a small sample of the leader layer&#x27;s layout and of
+             the library section, built from real [RM] content
+             (rule R27).
+          7. Check the draft against the Goal and the Rules, then
+             improve it. Stop and wait for my yes.
+
+          STAGE 2: build (only after my yes, and only what I approved)
+          1. Fix the gaps one at a time, in the ranked order. Edit the
+             working copy first, then rebuild the designed pages built
+             from it.
+          2. Ask me each decision as it comes, one at a time, with
+             your recommendation.
+          3. Write the kit itself down as a reusable template, so the
+             {next group: PM} use case can start from it.
+          4. Update the Document Library&#x27;s [RM] section to match the
+             kit.
+          5. Run the audit, fix what it finds, save a draft to GitHub
+             and tell me what would be merged. Don&#x27;t merge.
+
+Rules:    Change no existing files in stage 1; the only new thing is
+          the review page, a temporary draft kept out of
+          designs/README.md and the Document Library until stage 2,
+          because I approve the structure before anything is built.
+          Keep the order of work already agreed in &lt;decisions&gt; (for
+          [RMs]: the [Elon mode review comes before the Andy
+          edition (W3), and the workflow map is W2]) and say which
+          open items the kit covers, because those are already
+          planned.
+          Give every fact one home and link to it from everywhere
+          else, because copies drift apart.
+          Respect closed decisions in &lt;decisions&gt; and don&#x27;t reopen
+          them, because I&#x27;ve already decided; if one looks wrong,
+          say so once and leave it.
+          Leave the {next group: PM} pages untouched and report anything you find
+          in them once, labeled Optional, because they come after the
+          [RM] work (rule R31).
+          Don&#x27;t add new pages, files or skills I haven&#x27;t approved;
+          propose them in stage 1, because I keep the system small.
+          Use [X] for numbers we don&#x27;t have, and treat outside figures
+          (such as McKinsey&#x27;s) as benchmarks, never our targets,
+          because leaders will check every number.
+          Cite a source for every outside fact and leave out any fact
+          you can&#x27;t source; mark your own judgment with ⚠️, because
+          I need to know what&#x27;s proven and what&#x27;s your view.
+          Use the glossary&#x27;s words, one meaning each, because the
+          audit fails on anything else.
+          Keep the AI assistive (AI drafts or suggests, a named person
+          decides), because the bank will require it.
+          Write in plain English and explain any technical word,
+          because I&#x27;m not a developer and leaders aren&#x27;t either.
+
+Goal:     Using everything above, give me the use case kit and the
+          [RM] use case measured against it. Done means: after stage 1
+          I can say in two minutes what every use case must have and
+          why, which [RM] pieces are missing or out of date, and in
+          what order we fix them; after stage 2 the [RM] use case
+          matches the kit, and the kit is ready to copy to {next group: PMs}.
+
+Output:   Stage 1: one designed review page (the temporary draft)
+          with five parts:
+          1. The kit (one table: piece, question, reader, layer,
+             required or optional, home)
+          2. Why each piece exists (two or three lines each, so I
+             learn)
+          3. How the layers connect (a simple map)
+          4. The [RM] work graded against the kit, and the ranked gaps
+          5. The samples, and the decisions I need to make
+          Then a chat message of about 5 lines with the page link and
+          one question: my first decision.
+          Stage 2: a short report per gap fixed (pass or fail, with
+          proof), then the audit result and what would be merged.
+
+Tone:     A senior product leader coaching a peer: direct and clear,
+          explaining the why, no selling.</pre><p><strong>For the next use case:</strong> change every <code>[bracket]</code> from the RM version to the new one: the user group, its files in <code>&lt;use_case_work&gt;</code>, its open items and its section in the library (portfolio managers' section id is <code>credit</code>). Change each <code>{next group: ...}</code> to the group after it, or delete those words if none is planned. In stage 1, start from the agreed kit instead of proposing one, and only grade, rank and fix.</p><p><strong>What changed:</strong> version 1, first written 2026-10-17.</p></div></section><section id="prompt-2-a-full-product-memo-like-the-rm"><div class="stephead"><h2>Prompt 2: a full product memo (like the RM analytics memo)</h2></div><div class="mdbody"><p><strong>Version 1</strong> (2026-10-09).</p><p>Builds a plan for a new use case from my saved files. The five files go in as Inputs, in tags (tip 4), and the request comes last (tip 6). Step 4 is "draft, check, improve" (tip 9). Expect a strong first draft: the RM memo took 7 rounds, so follow up with an audit against <code>memos/role-workflow.md</code> and <code>product-framework.md</code>, then a fix round.</p><pre class="diagram">Inputs:   &lt;job_description&gt; [job-description.md] &lt;/job_description&gt;
+          &lt;workflow&gt; [memos/role-workflow.md] &lt;/workflow&gt;
+          &lt;framework&gt; [product-framework.md] &lt;/framework&gt;
+          &lt;tech_stack&gt; [tech-stack.md] &lt;/tech_stack&gt;
+          &lt;my_notes&gt; [what the hiring leader told me] &lt;/my_notes&gt;
+
+Role:     You are a Principal Applied AI Product Manager at a
+          commercial bank, writing for its business and risk leaders.
+
+Context:  The first use case is AI-powered analytics for relationship
+          managers (RMs). Assume the goal is new revenue that more than
+          pays for the tool, because that&#x27;s my working assumption. The
+          bank wants working versions quickly, so plan a standard base
+          of use cases rolled out in waves, then iterate.
+
+Steps:    1. Organize the plan by the six steps in &lt;workflow&gt;, using
+             the write-up layout in &lt;framework&gt; for each step.
+          2. Add a table showing where the plan covers each
+             accountability in &lt;job_description&gt;.
+          3. Use only tools named in &lt;tech_stack&gt;.
+          4. Draft it, check it against the Goal and the checklist,
+             then improve it.
+
+Rules:    Use [X] placeholders, never invented numbers, because leaders
+          will check them. Cite a source for every outside fact, so it
+          can be verified. Keep the AI assistive (AI suggests, the RM
+          decides), because the bank will require it. Plain English.
+
+Goal:     Using everything above, write a memo on how I&#x27;d deliver this
+          first use case. Done means a business leader could read the
+          summary in 2 minutes and approve a pilot.
+
+Output:   Executive summary, outcome, value model, who decides, the six
+          steps, project plan, risks, how the plan covers the role,
+          and what I&#x27;d confirm first.</pre><p><strong>For a different use case:</strong> change the Context (the use case, its goal and any assumptions) and the user group named in the Rules. Everything else stays.</p><p><strong>What changed:</strong> version 1, written 2026-10-09 as Example 4 in the Prompting Guide; moved here 2026-10-17.</p></div></section><section id="prompt-3-a-business-briefing-on-the-bank"><div class="stephead"><h2>Prompt 3: a business briefing on the bank (like the Bank Business Briefing)</h2></div><div class="mdbody"><p><strong>Version 1</strong> (2026-10-09).</p><p>Gathers the public facts about the bank's business and maps each revenue line to my work. The saved files go in as Inputs, in tags (tip 4), and the request comes last (tip 6). Step 7 is "draft, check, improve" (tip 9). Re-run it each quarter when new results come out; the output is <code>memos/bank-business.md</code>.</p><pre class="diagram">Inputs:   &lt;job_description&gt; [job-description.md] &lt;/job_description&gt;
+          &lt;value_model&gt; [section 2, &quot;The value model&quot;, of
+          memos/rm-analytics-framework.md] &lt;/value_model&gt;
+          &lt;tech_stack&gt; [tech-stack.md] &lt;/tech_stack&gt;
+
+Role:     You are a bank analyst who also knows how commercial
+          bankers work day to day, briefing a new product manager.
+
+Context:  I&#x27;m going after the Principal Applied AI Product Manager
+          role at Associated Bank, which sits in [Corporate and
+          Commercial Banking]. I need one business picture of the
+          bank, so every AI product I plan ties to a real revenue
+          line and I can say where the return comes from. Business
+          and risk leaders may read it, so it has to hold up with
+          people who know the bank well.
+
+Steps:    1. Gather from public sources, in this order: the latest
+             annual and quarterly reports (10-K, 10-Q), the latest
+             earnings release and investor presentation, the
+             earnings call, the bank&#x27;s own commercial web pages,
+             then trade press for recent news.
+          2. Describe the whole bank briefly: size, footprint,
+             reporting segments, and how it earns money (interest
+             income against fee income).
+          3. Go deep on [Corporate and Commercial Banking]: who it
+             serves, its units, every product and service, its
+             specialty industries, its leaders and its growth plan.
+          4. List each revenue line in that business. For each one:
+             how it earns money, its size and trend, who sells it,
+             and what limits its growth today.
+          5. Map each revenue line to the four outcomes in
+             &lt;job_description&gt; (revenue workflows, banker capacity,
+             operating efficiency, adoption) and to the terms of
+             &lt;value_model&gt;. Say which lines AI work could move
+             most, and why.
+          6. List what public sources can&#x27;t answer and I must
+             confirm inside the bank.
+          7. Draft it, check every number against its source and
+             against the Goal, then improve it.
+
+Rules:    Give every number its period and a link to its source,
+          because leaders will check them.
+          Write [X], never an estimate, where no public number
+          exists, because a made-up figure would mislead. The
+          value model&#x27;s inputs (win rate, revenue per win) are
+          internal, so expect them to stay [X].
+          Mark your own conclusions with ⚠️ and keep them apart
+          from facts, because I need to know what the bank said
+          and what you inferred.
+          If a page won&#x27;t open, say so and leave the gap, because
+          filling it from memory risks out-of-date facts.
+          Say when an acquisition distorts a comparison (American
+          National closed on April 1, 2026), because growth
+          across that date isn&#x27;t organic.
+          Use public information only, because nothing non-public
+          about the bank belongs in my files.
+          Use plain English and explain each banking term the
+          first time, because I&#x27;m new to commercial banking.
+
+Goal:     Using everything above, write a business briefing on
+          Associated Bank, focused on [Corporate and Commercial
+          Banking]. Done means that after a 2-minute read of the
+          summary I can name every revenue line in that business,
+          say roughly how big it is, and point to the AI work
+          that could move it.
+
+Output:   1. Summary (5 lines)
+          2. The bank at a glance
+          3. How the bank earns money
+          4. [Corporate and Commercial Banking] in depth
+          5. Revenue lines (one table)
+          6. Alignment map: revenue line × job outcome × value
+             model term
+          7. Strategy and what&#x27;s changing
+          8. Risks and limits
+          9. To confirm inside the bank
+          10. Sources, with dates
+          Stamp it &quot;as of [date], through [latest quarter]&quot;. Save
+          the working copy as memos/bank-business.md, then make
+          the designed page and add it to the Document Library.
+
+Tone:     An analyst&#x27;s briefing: factual and direct, no selling.</pre><p><strong>For a different part of the bank:</strong> change the <code>[brackets]</code> (for example, to Community, Consumer, and Business). Everything else stays.</p><p><strong>Tip from the first run (2026-10-09):</strong> the annual report is too long to open in one go. The segment's own results are in the quarterly report's "Segment Reporting" note.</p><p><strong>What changed:</strong> version 1, written 2026-10-09 as Example 5 in the Prompting Guide; moved here 2026-10-17.</p></div></section>
+<footer>Built from the working copy <code>prompt-library.md</code> · last updated 2026-10-17. Lines marked ⚠️ are guesses to confirm; [X] marks numbers still to be set.</footer>
+</main>

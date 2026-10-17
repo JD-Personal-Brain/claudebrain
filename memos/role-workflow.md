@@ -16,7 +16,7 @@ Page 1 of the four "How we deliver" pages, read in this order:
 > the same six steps and gates and is the full worked example, with agent specs
 > and workflows in its appendices. Its sub-steps are
 > tailored to RM work and aren't yet numbered like the playbook's 44; that's part
-> of applying the product machine to the RM memo (work item W8 in the Open Items log).
+> of applying the product machine to the RM memo (work item W9 in the Open Items log).
 
 ## The six steps at a glance
 Every AI product goes through six steps, each ending in a **go/no-go gate**. The

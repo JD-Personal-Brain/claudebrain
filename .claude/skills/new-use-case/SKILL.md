@@ -18,7 +18,7 @@ Ask only for what the user's message doesn't already say, one question at a time
 Don't ask for anything already in the repo (rule R6).
 
 ## 2. Draft the memo
-Use Example 4 in `prompting.md` as the brief, with this use case's Context and
+Use Prompt 2 in `prompt-library.md` as the brief, with this use case's Context and
 user group swapped in. In short:
 - Organize by the six steps (`memos/role-workflow.md`), each with the write-up layout in `product-framework.md`.
 - Organize the AI products under the seven core use cases, as the RM plan does: for this user group, each core use case's counterpart (see `glossary.md`, and the Portfolio Manager Core Use Cases page for an example).

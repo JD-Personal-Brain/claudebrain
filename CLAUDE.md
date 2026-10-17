@@ -42,6 +42,7 @@ Everything about how I work with Claude is kept here, not just in chat history. 
 | `memos/` | Memos about how I'd do the job, such as the RM analytics framework |
 | `playbook/` | Product Playbook: the field manual: how to do each sub-step the first time, a short list of the agents, and the controls (page 4) |
 | `prompting.md` | How we write prompts: Anthropic's advice, a template and a checklist |
+| `prompt-library.md` | Prompt Library: our core prompts, kept to reuse and improve over time |
 | `ideas.md` | Ideas for improvements, so nothing gets lost |
 | `.claude/skills/` | Skills: step-by-step routines I can ask for by name |
 

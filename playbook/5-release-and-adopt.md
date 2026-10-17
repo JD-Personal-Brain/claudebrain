@@ -89,8 +89,8 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
 - **Done when:** every pilot user has done one real task themselves.
 - **Automation watch:**
   - First time: **Me**.
-  - Note: the questions people asked. They feed the onboarding coach.
-  - Agent: the product's **onboarding coach** (A6 in the RM plan, Appendix A) answers "how do I…?" in Teams from the guide and the FAQ. *Auto* for answers; the product team keeps the content current.
+  - Note: the questions people asked. They feed the how-to helper.
+  - Agent: the product's **how-to helper** (A6 in the RM plan, Appendix A) answers "how do I…?" in Teams from the guide and the FAQ. *Auto* for answers; the product team keeps the content current.
 - **For RM analytics:** demos built on each RM's own clients.
 
 ---

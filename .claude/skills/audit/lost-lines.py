@@ -32,7 +32,7 @@ def norm(s):
 
 # everything a reader or Claude can see today, flattened into one searchable text
 now_files = set(git("ls-files").split())         # every file in the repo, nested folders included
-now_files = {f for f in now_files if f.endswith((".md", ".json", ".html")) and not f.startswith("designs/rm-analytics-canvas/support")}
+now_files = {f for f in now_files if f.endswith((".md", ".json", ".html"))}
 corpus = " ".join(norm(" ".join(sentences(open(f, errors="ignore").read()))) for f in now_files)
 
 changed = [f for f in git("diff", "--name-only", base, "--", *WORK).split() if f not in SKIP]
