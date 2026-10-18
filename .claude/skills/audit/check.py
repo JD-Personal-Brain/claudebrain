@@ -328,9 +328,9 @@ try:
     a=_caps('memos/rm-assistant.md','## 2. Capabilities')
     d=_caps('memos/rm-assistant-detail.md','## 3. Capabilities')
     for x in sorted(a^d): print('The RM Assistant short page and its detail file differ on capability',repr(x[0]),'in wave',x[1]); probs+=1
-    b=_caps('memos/rm-analytics-framework.md',"## The assistant's capabilities")
-    for x in sorted(a-b): print('memos/rm-assistant.md lists capability',repr(x[0]),'in wave',x[1],'but the RM plan does not'); probs+=1
-    for x in sorted(b-a): print('memos/rm-analytics-framework.md lists capability',repr(x[0]),'in wave',x[1],'but The RM Assistant page does not'); probs+=1
+    b=_caps('memos/rm-assistant-detail.md',"**How each capability is built**")  # the build table (moved from the full plan on 2026-10-18)
+    for x in sorted(a-b): print('memos/rm-assistant.md lists capability',repr(x[0]),'in wave',x[1],'but the build table in the detail file does not'); probs+=1
+    for x in sorted(b-a): print('the build table in memos/rm-assistant-detail.md lists capability',repr(x[0]),'in wave',x[1],'but the RM Assistant page does not'); probs+=1
     if not a or not b: print('check 17 could not read the capability tables'); probs+=1
 except Exception as e:
     print('check 17 (RM Assistant page vs plan) failed to run:',e); probs+=1

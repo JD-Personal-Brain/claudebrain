@@ -34,7 +34,7 @@ log (see `README.md`) for every sub-step.
   - First time: **Me**, with platform teams.
   - Note: which spec fields were hard to fill in. That tells you what to ask earlier.
   - Agent: **M10 Agent spec drafter** (agent library) that turns a user story into a first spec. *Draft*.
-- **For the RM Assistant:** A1 Signal finder → A2 Insight writer → Salesforce record and the A4 Weekly opportunity digest. A3 handles prep and follow-up (memo Appendix A).
+- **For the RM Assistant:** A1 Signal finder → A2 Insight writer → the Salesforce record and the Monday send (a scheduled step in workflow B1). A3 handles prep and follow-up (memo Appendix A).
 
 ---
 
@@ -120,7 +120,7 @@ log (see `README.md`) for every sub-step.
   - First time: **Me**, with platform teams.
   - Note: the feedback options users actually used.
   - Agent: the feedback saved here feeds **M30 Feedback triage** in step 5.
-- **For the RM Assistant:** insights on the Salesforce client record, plus the Monday digest in Teams or Outlook.
+- **For the RM Assistant:** insights on the Salesforce client record, plus the Monday send in Teams or Outlook.
 
 ---
 

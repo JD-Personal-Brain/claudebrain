@@ -31,7 +31,7 @@ log (see `README.md`) for every sub-step.
   - First time: **Draft**.
   - Note: which numbers you couldn't get automatically, and why.
   - Agent: the dashboard is **Auto** once built. Save it as a template for the next project.
-- **For the RM Assistant:** a first read on closed revenue at about month 6, firming up over the following quarters (memo Step 6).
+- **For the RM Assistant:** a first read on closed revenue at about month 6, firming up over the following quarters (memo section 4).
 
 ---
 

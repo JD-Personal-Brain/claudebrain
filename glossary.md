@@ -61,7 +61,7 @@ documents against it.
 | **Agent** | An AI helper with one job, a short list of allowed actions and a named person in charge. |
 | **Research helper** | An agent that keeps my own reference pages current, such as H1, the bank news scout. Numbered H1 and on, listed in the Agent Library, and not part of the product machine. |
 | **General agent** | One of the 33 agents (M1 to M33) that run the product machine on every project, specified in the agent library: M1 to M19 handle the paperwork and routing, M20 to M33 do the team's analysis, testing and monitoring. |
-| **Product agent** | An agent inside the product that users see, numbered per project (A1 to A5 in the RM plan; A6 was removed on 2026-10-17). Specified in that project's memo, Appendix A. |
+| **Product agent** | An agent inside the product that users see, numbered per project (A1, A2, A3 and A5 in the RM plan; A4 was merged into workflow B1 on 2026-10-18 and A6 removed on 2026-10-17). Specified in that project's memo, Appendix A. |
 | **Agent spec** | An agent's written definition: its job, inputs, allowed and forbidden actions, outputs, when it stops, proof it worked and the person in charge. |
 | **Ongoing mode** | An agent first used once in a sub-step that then keeps running until the product is retired (for example M24 on every data refresh). Agents built to run on a schedule from the start aren't counted as ongoing mode. |
 | **Control** | A safeguard built into a product so the bank can trust it (K1 to K25 in the Controls Catalog). Each says where it is set, built, proved and watched, and where it comes from (law or regulator, bank policy or our choice). |

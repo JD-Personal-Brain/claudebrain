@@ -55,7 +55,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
   - First time: **Me**, with platform teams.
   - Note: the questions each platform team asked. They become a standard feasibility checklist.
   - Agent: **M7 Platform fit checker** (agent library) that scores a brief against the five criteria and lists known blockers. *Draft*.
-- **For the RM Assistant:** start on the Salesforce client record (Agentforce, Prompt Builder), with a Monday digest through Power Automate (memo section 5).
+- **For the RM Assistant:** the meeting follow-up's recap and email in M365 Copilot first; insights, the brief and call notes on the Salesforce client record (Agentforce, Prompt Builder), with the Monday list sent through Power Automate (memo section 5; ⚠️ an assumption to confirm in Discover).
 
 ---
 

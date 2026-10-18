@@ -9,19 +9,19 @@ The first 13 weeks (about 90 days), as estimates to confirm in the first days. W
 
 ```gantt
 weeks 13
-Kickoff and a working prototype on sample data | 0 | 1 | build | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-step-1-discover
-Gate 1: the sponsor confirms wave 1 | 1 | 1 | gate | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-step-1-discover
-Interviews and sizing with RMs | 0 | 2 | build | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-step-1-discover
-Gate 2: data contract, risk rating, value model | 2 | 2 | gate | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-step-2-define
-Meeting recap and email: tests and sign-offs | 1 | 3 | build | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-the-assistant-s-capabilities-wave-by-wav
-**Meeting recap and email live** | 3 | 13 | live | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-step-5-release-and-adopt
-Brief, opportunity list and call notes: built and tested on real data | 1 | 5 | build | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-step-3-build
-Their sign-offs (call notes go back through step 4) | 3 | 5 | build | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-step-4-govern-and-test-formal-approval-g
-**Brief, opportunity list and call notes live** | 5 | 13 | live | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-step-5-release-and-adopt
-Small releases every week or two | 6 | 13 | ongoing | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-step-6-measure-and-iterate
+Kickoff and a working prototype on sample data | 0 | 1 | build | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-4-how-the-work-flows
+Gate 1: target, measure and baseline agreed; wave 1 confirmed | 1 | 1 | gate | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-4-how-the-work-flows
+Interviews and sizing with RMs | 0 | 2 | build | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-4-how-the-work-flows
+Gate 2: data contract, risk rating, value model | 2 | 2 | gate | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-4-how-the-work-flows
+Meeting recap and email: tests and sign-offs | 1 | 3 | build | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-4-how-the-work-flows
+**Meeting recap and email live** | 3 | 13 | live | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-4-how-the-work-flows
+Brief, opportunity list and call notes: built and tested on real data | 1 | 5 | build | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-4-how-the-work-flows
+Their sign-offs (saving call notes needs its own approval) | 3 | 5 | build | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-4-how-the-work-flows
+**Brief, opportunity list and call notes live** | 5 | 13 | live | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-4-how-the-work-flows
+Small releases every week or two | 6 | 13 | ongoing | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-4-how-the-work-flows
 ```
 
-Waves 2 and 3 get dates at gate 2, once data access and review times are known. The first read on closed revenue comes at about month 6.
+Gates are go/no-go decisions; the data contract is the signed list of client data the assistant may use. Waves 2 and 3 get dates at gate 2, once data access and review times are known. The first read on closed revenue comes at about month 6.
 
 ## 1. What could slow us down (to confirm)
 The real blockers aren't known yet; they're a first question for the bank. Possible ones:
@@ -35,10 +35,12 @@ Detail: [the backup plan and the six conditions for moving fast](https://claude.
 | Role | For the RM project |
 |---|---|
 | Sponsor | A commercial banking leader [name needed]: the outcome, funding and every gate |
-| User leaders | RM leaders and market managers: choose the pilot group, use the assistant in the weekly pipeline meeting, decide with the sponsor whether to scale |
+| User leaders | RM leaders and market managers: choose the pilot group, use the assistant in a team meeting they already run, such as a weekly pipeline meeting (⚠️ to confirm), and decide with the sponsor whether to scale |
 | Pilot RMs | Co-design and test; their feedback steers what gets built |
-| Data owners | Salesforce and Snowflake data [names needed]: sign the data contract |
+| Data owners | The client data, which we expect sits in Salesforce and Snowflake (⚠️ to confirm) [names needed]: sign the data contract |
 | Risk partner | Rates the product and approves it at step 4; the sponsor can't overrule that approval |
+| Compliance, privacy and security | Sign off at step 4 |
+| Finance | Agrees how results are counted, and joins the sponsor for the quarterly call to invest more, adjust or stop |
 | Sales leadership and HR | Whether acting on the assistant's insights counts in how RMs are measured and paid |
 
 Detail: [who's involved and who decides](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-3-who-s-involved-and-who-decides).
@@ -56,9 +58,9 @@ Detail: [the value model](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part
 |---|---|
 | Data access or the AI review takes longer | Start both on day one; keep wave 1 internal, assistive and on approved platforms (the backup plan is in section 1) |
 | RMs don't trust the insights | Show the reason and the numbers behind every insight; build it with pilot RMs; managers use it in their routines |
-| CRM data is incomplete | Lean on account data in Snowflake first; approved call notes improve CRM data over time |
+| Client records (CRM) may be incomplete (⚠️ to confirm) | Lean on account data first; approved call notes improve the records over time |
 | Incentives don't reward acting on insights | Agree recognition for AI-sourced wins with sales leadership before launch |
-| Client privacy in recorded meetings | Record only with client consent and under the bank's recording policy; notes stay drafts until the RM approves |
+| Client privacy in recorded meetings | Record only with client consent and under any recording policy the bank has (⚠️ to confirm); notes stay drafts until the RM approves |
 
 Detail: [every risk and how I'd handle it](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-7-top-risks-and-how-i-d-handle-them).
 

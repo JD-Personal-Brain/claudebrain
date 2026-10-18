@@ -6,13 +6,13 @@ Where we think the value of AI is for each group of bankers we serve, and the ou
 
 ## Relationship managers
 
-**The need in one line:** RMs at many commercial banks spend only about 25–30% of their time with clients (McKinsey). Admin, weak leads and meeting prep take the rest. So the value is in two places: better opportunities, and the time to act on them.
+**The need in one line:** RMs at many commercial banks spend only about 25–30% of their time with clients (McKinsey). Much of the rest goes to admin, weak leads and meeting prep. So the value is in two places: better opportunities, and the time to act on them.
 
 | Core use case | Where the value is | Outside evidence (McKinsey unless noted) | Our AI product (wave) |
 |---|---|---|---|
 | **Prospecting and next best opportunities** | Finding the clients and prospects most likely to buy | About 30% pipeline growth and 10% higher revenue; one bank saw twice the conversion rate of traditional leads | Monday opportunity list (1); prospect lookalikes (2) |
-| **Lead nurturing, including cross-sell** | More qualified leads and referrals between teams | Two to three times more qualified leads; 5% higher conversion (early pilots). Morgan Stanley: AI-matched referrals to advisors doubled to more than 100,000 (2024, its CFO) | Referral prompts (2). Contacting prospects on its own: out on purpose |
-| **Account intelligence and meeting prep** | Better meetings in less prep time | About 25% less prep time; 10% more time with clients. Bank of America's CTO: AI prep lets a banker cover about 50 clients instead of 15 in some cases (not audited) | Pre-meeting client brief (1); client Q&A (3) |
+| **Lead nurturing, including cross-sell** | More qualified leads and referrals between teams | Two to three times more qualified leads; 5% higher conversion (early pilots). Morgan Stanley: AI-matched referrals to advisors doubled to more than 100,000 (2024, its CFO; [The Daily Upside](https://www.thedailyupside.com/technology/artificial-intelligence/how-morgan-stanleys-ai-helped-close-100k-new-clients-this-year/), Oct 2024) | Referral prompts (2). Contacting prospects on its own: out on purpose |
+| **Account intelligence and meeting prep** | Better meetings in less prep time | About 25% less prep time; 10% more time with clients. Bank of America's CTO: AI prep lets a banker cover about 50 clients instead of 15 in some cases (not audited; Reuters 2025, via [TechInformed](https://techinformed.com/?p=37424)) | Pre-meeting client brief (1); client Q&A (3) |
 | **Deal scoring and pricing** | Better margins, faster approvals | 10% margin gains; one bank cut deal turnaround from five days to two | Out on purpose: the AI never sets or suggests a price (fair-lending rules) |
 | **AI sales coaching** | Better calls; new RMs up to speed sooner | Customer satisfaction up seven points; new bankers up to speed 20% faster | AI sales coaching (3) |
 | **Admin off the RM's plate** (our own) | Hours back for clients; better CRM data | Admin ranks first or second of bankers' problems at every stage of a sale (survey of 406 bankers, October 2025); it earns part of the 10–12 hours a week McKinsey expects back per banker, and about 40% better coverage | Meeting follow-up, with call notes into Salesforce (1) |

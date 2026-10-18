@@ -180,7 +180,7 @@
           "id": "agents",
           "name": "Agent Library",
           "what": "Every agent in one place: what it does, what it may and may not do, and who's in charge. Filter by step or by who it serves.",
-          "count": "39 agents",
+          "count": "38 agents",
           "status": "Reference",
           "url": "https://claude.ai/artifact/Cn9nANQoqp2BP7yrmy61zn",
           "source": "playbook/agents.md, RM memo Appendix A"

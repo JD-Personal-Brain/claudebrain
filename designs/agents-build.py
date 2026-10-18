@@ -1,6 +1,6 @@
 """Builds designs/agents.html, the Agent Library: every agent in one place,
 filterable, each opening to its full spec. Reads playbook/agents.md (M1-M33,
-the product machine's general agents) and the RM memo's Appendix A (A1-A5,
+the product machine's general agents) and the RM memo's Appendix A (A1, A2, A3, A5;
 the product RMs use). Run: python3 designs/agents-build.py"""
 import os, re
 from pagekit import CSS, E, inline, chipify, render_blocks
@@ -55,7 +55,7 @@ for block in re.split(r"\n### ", read("playbook/agents.md"))[1:]:
 
 memo = read("memos/rm-analytics-framework.md")
 appa = memo.split("## Appendix A: Agent specs")[1].split("## Appendix B")[0]
-# A1-A5: the product RMs use
+# A1, A2, A3, A5: the product RMs use
 for block in re.split(r"\n\*\*(?=A\d+\. )", appa.split("### Agents the team uses")[0])[1:]:
     head, _, body = block.partition("\n")
     m = re.match(r"(A\d+)\. (.+?)\*\*\s*·\s*(.+)", head)
