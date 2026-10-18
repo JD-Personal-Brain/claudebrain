@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L38 · 2026-10-18 · A "Portfolio managers next" section on the RM Assistant page
+- **What happened:** when I cut the RM pages down for people, Claude kept a "Portfolio managers next" section on the short RM Assistant page. I asked why a PM section was in an RM document: it made no sense there.
+- **Root cause:** the short page was cut from the long file section by section, and each section was shortened rather than asked "does this reader need it?" A note about the next user group belongs in the detail document, not on a page the RM business reads.
+- **Fix:** the section is gone from the RM Assistant page (it stays in RM Detail). New rule R34: a page for one user group's readers talks only about that group; other groups appear only in the detail document or the shared pages.
+- **Rule:** R34 · **Test:** T49 · **Level:** 1 · **Times it happened:** 1
+
 ### L37 · 2026-10-17 · The RM plan never said what the product was
 - **What happened:** over several sessions the RM plan gained one way of sorting its work after another (two goals, three revenue levers, seven core use cases, three waves), each added on top without rebuilding the document. I said it felt like "a lot of information", not streamlined, organized or prioritized, and asked what we were actually building.
 - **Root cause:** each new decision was written into the plan where it fit, but nobody stepped back to rebuild the plan around one spine, and the plan never opened with the product itself. Adding structure felt like progress, so the layering went unnoticed.

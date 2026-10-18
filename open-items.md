@@ -26,7 +26,7 @@ Claude updates it at every wrap-up: finished items move to "Closed" with the dat
 | Stage | Open | What it is |
 |---|---|---|
 | Now | 3 | What we're working on first |
-| Stage 1. Read and lock the core | 2 | What I read, then the decision on the RM framework |
+| Stage 1. Read and lock the core | 3 | What I read, then the decision on the RM framework |
 | Stage 2. Make the machine runnable | 4 | What Claude builds so a real run is possible |
 | Stage 3. Dry run and fix | 3 | Running the machine once and fixing it |
 | Stage 4. Get ready for Andy | 8 | What Andy sees, and what I ask him |
@@ -81,6 +81,7 @@ What we're working on first: a quick check on the bank news scout, then stage 2 
 |---|---|---|---|
 | V1 | Read the three RM pages, now short and in reading order (reorganized 2026-10-18, C50): the RM Executive Summary, RM Assistant and the RM Assistant Plan. The full detail is in RM Detail, the fourth RM row, which is for AI to read, not me | Me | Nothing |
 | D1 | Is the RM framework ready to copy to other use cases? My answer on 2026-10-09: not yet. The reading in stage 1 and the work in stages 2 and 3 come first | Me | Credit, the next use case, waits on this |
+| D2 | A checker rule (idea 61) so the people pages for one user group never mention another group (from lesson L38). Put to me at the 2026-10-18 wrap-up | Me | Nothing |
 
 ## Stage 2. Make the machine runnable
 

@@ -252,3 +252,6 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Pass if:** after a reply longer than 8 lines, the hook stops Claude once and Claude sends a short follow-up (outcome, what it means, at most one step); it never fires twice in a row.
 - **Results:** 2026-10-17 script test: pass (a 12-line reply is stopped, a 3-line reply isn't, a repeat isn't). Not yet seen in a live session; the hook loads from the next session on.
 
+### T49 → rule R34, one user group per page (L38)
+- **Say this:** "Cut the PM plan down to a short page for portfolio manager leaders."
+- **Pass if:** the short page mentions only portfolio managers (no "RMs next" or RM plan sections); anything about RMs stays in the detail document or the shared pages.
