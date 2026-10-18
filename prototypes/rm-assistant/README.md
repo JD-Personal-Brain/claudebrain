@@ -6,7 +6,7 @@ made-up sample data. It's a prototype to show we can build; the real product com
 steps (Discover onward), so every fact about the bank in it is an assumption to confirm.
 
 - **Live page:** https://claude.ai/artifact/RFM2o7cdren3TxesQBsjky (private until shared from its Share menu)
-- **The tour as a video:** `rm-assistant-tour-v1.mp4` (1 minute 59 seconds, no sound)
+- **The tour as a video:** `rm-assistant-tour-v1.mp4` (about 2 minutes, with a voiceover read by Kokoro, an open-source voice; the script is `video/narration.json`)
 - **Built from:** Prompt 4 in `prompt-library.md`; the RM plan (`memos/rm-assistant.md`, and agents
   A1 to A3 and workflows B1 to B4 in `memos/rm-analytics-framework.md`); controls in `playbook/controls.md`.
 
@@ -55,7 +55,10 @@ The **guided tour** plays on a first visit (under 2 minutes), and anyone can pau
 | `src/tour.js` | The guided tour |
 | `build.py` | Inlines everything into one file, `prototype-v<N>.html` |
 | `tests/run-tests.js` | Automated tests of the "done" checklist, with a test double standing in for Claude |
-| `tests/record-video.js` | Records the tour as a video |
+| `tests/record-video.js` | Records the tour as a video, each step timed to its voiceover line |
+| `video/narration.json` | The voiceover script, one line per tour step |
+| `video/narrate.py` | Reads the script aloud with Kokoro (code MIT, model Apache 2.0), one clip per step |
+| `video/make-video.py` | Retimes the recording to real time and lays the voice down in sync |
 | `CHANGELOG.md` | What changed in each version |
 
 ## How to change it
