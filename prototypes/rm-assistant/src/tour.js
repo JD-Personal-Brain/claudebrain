@@ -7,22 +7,23 @@
   const $ = s => document.querySelector(s);
   const go = s => window.APP.show(s);
   const STEPS = [
-    { title: "Meet The RM Assistant", text: "One AI assistant for every relationship manager (RM): it finds the clients worth calling, prepares each meeting and writes the follow-up. The aim is more revenue per RM and more hours with clients. Sample data throughout.", dur: 7500, before: () => go("list") },
-    { target: ".persona", title: "You're Jordan Ellis", text: "A senior RM with 12 business clients, all made up. The assistant only ever sees Jordan's own clients.", dur: 6000 },
-    { target: "#hero", title: "This week at a glance", text: "Each Monday starts here: the clients worth a call, how many signals were found, and every number checked against its source.", dur: 7000 },
-    { target: "#listTrace", title: "The Signal finder spots opportunities", text: "Plain rules the business owns, such as idle cash or check fraud exposure, run against each client. It also reads real outside data: the Federal Reserve's 10-year Treasury yield.", dur: 9000, before: () => { window.APP.runList("replay"); } },
-    { target: "#listResults .card", title: "Claude explains each one", text: "The Insight writer, running on Claude, turns each client's signals into a plain-English reason, talking points and a next step, using only the numbers behind them.", dur: 8000 },
-    { target: "#listResults .card .ncheck", title: "Every number is checked", text: "When a draft is finished, the page checks each number against the agent's data before the RM can use it. Anything it can't trace is flagged.", dur: 6500 },
-    { target: "#listResults .card .actions", title: "You decide", text: "Use it, change it or reject it. Here Jordan uses the first one: it becomes an opportunity tagged AI-sourced, so the results can be counted.", dur: 8000, before: () => window.APP.acceptFirst() },
-    { target: ".steps-panel", title: "Ready for Tuesday's meeting", text: "Before each meeting, the Prep and follow-up assistant looks up four sources itself: the client record, open insights, recent activity and market data. Every step is shown.", dur: 9000, before: () => { go("brief"); window.APP.replayBrief(false); } },
-    { target: "#briefDoc", title: "A one-page brief with sources", text: "Every fact carries its source, and the watch-outs keep the RM away from pricing and credit commitments.", dur: 7000 },
-    { target: "#consent", title: "After the meeting", text: "The assistant drafts the recap, the follow-up email and the CRM call note. No recording without the client's consent, so here it works from Jordan's notes.", dur: 8500, before: () => { go("followup"); return window.APP.runFollow("instant"); } },
-    { target: ".approvebar", title: "Nothing is saved or sent until Jordan approves", text: "Unclear items come back marked CHECK instead of guessed. The note reaches the CRM only after Jordan's click, and Jordan sends the email.", dur: 9000 },
-    { target: "#breakit", title: "Try to break it", text: "Ask for a credit decision, a price or another RM's client: code checks stop common phrasings before any AI sees them, Claude's rules are the second line, and every action is logged.", dur: 8500, before: () => { go("controls"); return window.APP.ask("Should we approve Lakeshore's line increase?"); } },
-    { target: "#measureGrid", title: "How we'd know it works", text: "Five measures from day one: usage, quality, business impact, adoption, and risk and controls. In a pilot, RMs with the assistant are compared with RMs without it.", dur: 8500, before: () => go("measures") },
-    { target: "#pilotNeeds", title: "What it would take", text: "A pilot needs read access to client and CRM data, a risk partner from day one and a small group of RMs. Our assumption, to confirm: data access sets the pace, not the build.", dur: 8500, before: () => go("about") },
-    { title: "Your turn", text: "Run the agents live on Claude from any screen (inside claude.ai, the first run asks your permission). Replay this tour any time.", dur: 5500, before: () => go("list") }
+    { screen: "list", title: "Meet The RM Assistant", text: "One AI assistant for every relationship manager (RM): it finds the clients worth calling, prepares each meeting and writes the follow-up. The aim is more revenue per RM and more hours with clients. Sample data throughout.", dur: 7500 },
+    { screen: "list", target: ".persona", title: "You're Jordan Ellis", text: "A senior RM with 12 business clients, all made up. The assistant only ever sees Jordan's own clients.", dur: 6000 },
+    { screen: "list", target: "#hero", title: "This week at a glance", text: "Each Monday starts here: the clients worth a call, how many signals were found, and every number checked against its source.", dur: 7000 },
+    { screen: "list", target: "#listTrace", title: "The Signal finder spots opportunities", text: "Plain rules the business owns, such as idle cash or check fraud exposure, run against each client. It also reads real outside data: the Federal Reserve's 10-year Treasury yield.", dur: 7500, before: () => window.APP.runList("replay") },
+    { screen: "list", target: "#listResults .card", title: "Claude explains each one", text: "The Insight writer, running on Claude, turns each client's signals into a plain-English reason, talking points and a next step, using only the numbers behind them.", dur: 8000 },
+    { screen: "list", target: "#listResults .card .ncheck", title: "Every number is checked", text: "When a draft is finished, the page checks each number against the agent's data before the RM can use it. Anything it can't trace is flagged.", dur: 6500 },
+    { screen: "list", target: "#listResults .card .actions", title: "You decide", text: "Use it, change it or reject it. Here Jordan uses the first one: it becomes an opportunity tagged AI-sourced, so the results can be counted.", dur: 8000, before: () => window.APP.acceptFirst() },
+    { screen: "brief", target: ".steps-panel", title: "Ready for Tuesday's meeting", text: "Before each meeting, the Prep and follow-up assistant looks up four sources itself: the client record, open insights, recent activity and market data. Every step is shown.", dur: 6500, before: () => window.APP.replayBrief(false) },
+    { screen: "brief", target: "#briefDoc", title: "A one-page brief with sources", text: "Every fact carries its source, and the watch-outs keep the RM away from pricing and credit commitments.", dur: 7000 },
+    { screen: "followup", target: "#consent", title: "After the meeting", text: "The assistant drafts the recap, the follow-up email and the CRM call note. No recording without the client's consent, so here it works from Jordan's notes.", dur: 8500, before: () => window.APP.runFollow("instant") },
+    { screen: "followup", target: ".approvebar", title: "Nothing is saved or sent until Jordan approves", text: "Unclear items come back marked CHECK instead of guessed. The note reaches the CRM only after Jordan's click, and Jordan sends the email.", dur: 9000 },
+    { screen: "controls", target: "#breakit", title: "Try to break it", text: "Ask for a credit decision, a price or another RM's client: code checks stop common phrasings before any AI sees them, Claude's rules are the second line, and every action is logged.", dur: 8500, before: () => window.APP.ask("Should we approve Lakeshore's line increase?") },
+    { screen: "measures", target: "#measureGrid", title: "How we'd know it works", text: "Five measures from day one: usage, quality, business impact, adoption, and risk and controls. In a pilot, RMs with the assistant are compared with RMs without it.", dur: 8500 },
+    { screen: "about", target: "#pilotNeeds", title: "What it would take", text: "A pilot needs read access to client and CRM data, a risk partner from day one and a small group of RMs. Our assumption, to confirm: data access sets the pace, not the build.", dur: 8500 },
+    { screen: "list", title: "Your turn", text: "Run the agents live on Claude from any screen (inside claude.ai, the first run asks your permission). Replay this tour any time.", dur: 5500, before: () => go("list") }
   ];
+  if (Array.isArray(window.TOUR_DURS)) STEPS.forEach((s, n) => { if (window.TOUR_DURS[n]) s.dur = window.TOUR_DURS[n]; });   // the narrated video sets each step to its voiceover's length
   const TOTAL = STEPS.reduce((a, s) => a + s.dur, 0);
   let i = 0, t = 0, last = 0, paused = false, raf = 0, running = false, entering = false, token = 0;
   const fmt = ms => { const s = Math.round(ms / 1000); return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0"); };
@@ -43,13 +44,15 @@
     const my = ++token; entering = true;
     i = Math.max(0, Math.min(n, STEPS.length - 1)); t = startOf(i);
     const st = STEPS[i];
+    go(st.screen);   // every step names its screen, so Back and Next always land in the right place
     $("#tTitle").textContent = st.title; $("#tText").textContent = st.text;
     $("#tcount").textContent = `Step ${i + 1} of ${STEPS.length}`;
     $("#tNext").textContent = i === STEPS.length - 1 ? "Finish" : "Next";
     $("#tBack").disabled = i === 0;
     if (st.before) { try { await st.before(); } catch (e) {} }
     if (my !== token) return;
-    t = startOf(i);   // the step's clock starts once its screen is ready
+    t = startOf(i);
+    (window.__tourLog = window.__tourLog || []).push({ step: i, at: performance.now() });   // the step's clock starts once its screen is ready
     const el = st.target && document.querySelector(st.target);
     if (el) el.scrollIntoView({ block: "center", behavior: reduce() ? "auto" : "smooth" });
     entering = false;
@@ -66,6 +69,7 @@
     raf = requestAnimationFrame(frame);
   }
   function start() {
+    if (running) return;
     $("#tour").hidden = false; running = true; paused = false; $("#tPause").textContent = "Pause";
     enter(0); last = performance.now(); raf = requestAnimationFrame(frame);
     window.AGENTS.log("Tour", "Started the guided tour", "", "Adoption");

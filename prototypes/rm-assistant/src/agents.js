@@ -151,9 +151,9 @@
     /\b(we can|we'll|we will|i can|i'll) (offer|do|match|give|beat|waive)\b.{0,40}(\d|%|rate|price|prime|fee)/i,
     /\b(pre-?approved|you('re| are) approved|we('| wi)ll approve|approval is likely|you qualify)\b/i, /\bprime (plus|\+)/i
   ];
-  function outputGuard(text) {
+  function outputGuard(text, count = true) {
     const hits = OUT_PATTERNS.map(r => (String(text).match(r) || [])[0]).filter(Boolean);
-    if (hits.length) measures.outputFlags++;
+    if (hits.length && count) measures.outputFlags++;
     return hits;
   }
 
