@@ -7,8 +7,10 @@ steps (Discover onward), so every fact about the bank in it is an assumption to 
 
 - **Live page:** https://claude.ai/artifact/RFM2o7cdren3TxesQBsjky (private until shared from its Share menu)
 - **The tour as a video:** `rm-assistant-tour-v1.mp4` (about 2 minutes, with a voiceover read by Kokoro, an open-source voice; the script is `video/narration.json`)
-- **Built from:** Prompt 4 in `prompt-library.md`; the RM plan (`memos/rm-assistant.md`, and agents
-  A1 to A3 and workflows B1 to B4 in `memos/rm-analytics-framework.md`); controls in `playbook/controls.md`.
+- **Built from:** Prompt 4 in `prompt-library.md`; the product page (`memos/rm-assistant.md`), agents A1 to A3 and
+  workflows B1 to B4 in the full plan (`memos/rm-analytics-framework.md`); controls in `playbook/controls.md`.
+- **Added for the prototype only:** the outside data feed (the 10-year Treasury yield) and its "Rates context" rule. They
+  aren't in the plan's agent specs or data contract; a real build would add them through the data contract (K5) first.
 
 ## What's in it
 
@@ -31,7 +33,7 @@ The **guided tour** plays on a first visit (under 2 minutes), and anyone can pau
 - **Without live AI** (outside claude.ai, or if the viewer says no), every screen plays the **recorded run**
   in `src/replay.js`, written by Claude during the build and labeled "Recorded run" on screen. The tour
   always uses recorded runs, so it never spends anyone's usage.
-- **Number check (K7):** as soon as an AI draft is finished, and before the RM can use it, every number in it
+- **Number check (K7 and the accuracy bar):** as soon as an AI draft is finished, and before the RM can use it, every number in it
   is matched against the numeric data the agent was given; anything it can't trace (including amounts written
   in words) is highlighted. Small whole numbers under 10 are left unchecked, so counts like "3 talking points" pass.
 - **Guardrails (K8, K4, K1):** checked in code before Claude is asked; Claude's prompt carries the same
@@ -69,3 +71,5 @@ The **guided tour** plays on a first visit (under 2 minutes), and anyone can pau
 3. Test it: `PW=/opt/node-tools/node_modules/playwright node tests/run-tests.js prototype-v2.html`
    (screenshots go to `$SHOTS`).
 4. Add a line to `CHANGELOG.md`, publish the new file to the same page link, and save a draft to GitHub.
+
+_Last updated: 2026-10-18_

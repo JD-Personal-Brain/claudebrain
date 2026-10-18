@@ -4,7 +4,7 @@ One meaning for each word, used the same way in every plan, playbook page and
 agent spec. Claude loads this every session, and the audit checks the core
 documents against it.
 
-> **Two kinds of terms.** The first two sections are our own working words for
+> **Two kinds of terms.** The first three sections are our own working words for
 > how products are delivered: the bank won't supply these, so we define them.
 > The last section lists the bank's business terms our plans depend on. Those
 > are **not** defined here: each one is marked ⚠️ until the bank's own

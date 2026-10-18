@@ -99,4 +99,4 @@ with the bank's risk partner at sub-step 2.4.
 | Step 4 gate | Regulator and bank policy (the formal approval) | Model risk, as owner of the bank's AI and model approval policy ⚠️ [name needed] |
 | The other five gates | Our choice | The product manager |
 
-_Last updated: 2026-10-15_
+_Last updated: 2026-10-18_

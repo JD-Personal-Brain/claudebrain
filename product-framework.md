@@ -168,4 +168,4 @@ table above. The plan's working copy is `memos/<project>.md`, as the RM memo
 does. People read three short pages (executive summary, product, plan); the full
 plan goes into the project's detail document for AI (RM Detail for RMs).
 
-_Last updated: 2026-10-15_
+_Last updated: 2026-10-18_

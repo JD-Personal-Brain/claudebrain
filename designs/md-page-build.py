@@ -3,7 +3,7 @@ page always matches its file (rule R16). Run: python3 designs/md-page-build.py
 To add a page: add a line to PAGES, run this, publish the new .html, and list
 it in designs/README.md."""
 import os, re
-from pagekit import CSS, E, inline, render_blocks, series, SERIES_CSS
+from pagekit import CSS, E, inline, render_blocks, series, SERIES_CSS, link_refs
 
 # Pages whose ### headings get ids, so other pages can link straight to them (RM Detail: the plan links into it).
 ANCHORED = {"memos/rm-ai-reference.md"}
@@ -21,13 +21,13 @@ PAGES = [
      "Each technology in the job: what it is, how the bank likely uses it, and what I need to know."),
     ("job-description.md", "job-description.html", "Job Description", "Associated Bank · the role",
      "The Principal Applied AI Product Manager posting: what the role owns, what it requires, and the tools it names."),
-    ("open-items.md", "open-items.html", "Open Items", "Where things stand",
+    ("open-items.md", "open-items.html", "Open Items", "My workspace · where things stand",
      "Everything still open in one log: decisions and reviews waiting on me, work to do, questions for the bank, and what's parked."),
     ("memos/bank-business.md", "bank-business.html", "Bank Business Briefing", "Associated Bank · the business",
      "How the bank earns money, the corporate segment in depth, and where AI work lines up with each revenue line."),
-    ("prompting.md", "prompting.html", "Prompting Guide", "Working with Claude",
+    ("prompting.md", "prompting.html", "Prompting Guide", "My workspace · working with Claude",
      "How we write prompts: Anthropic's advice in plain English, a fill-in template, three worked examples and a checklist."),
-    ("prompt-library.md", "prompt-library.html", "Prompt Library", "Working with Claude",
+    ("prompt-library.md", "prompt-library.html", "Prompt Library", "My workspace · working with Claude",
      "Our core prompts in one place, each with its version and what changed, so we can reuse them and improve them over time."),
     ("memos/use-case-library.md", "use-case-library.html", "Use Case Library", "Research · use cases",
      "Where the value of AI is for each group of bankers we serve, and the outside research behind it: relationship managers (RMs) and portfolio managers (PMs).",
@@ -51,7 +51,7 @@ PAGES = [
      "What banks are deploying in commercial credit, and the credit counterpart of each of the seven core use cases."),
     ("memos/elon-mode-research.md", "elon-mode.html", "Elon Mode", "Research · how Musk builds and improves systems",
      "The main ideas Elon Musk is known for in engineering, business and process improvement, how sure we are of each, where they went wrong, our read of his model, and the eight changes we made to our own system."),
-    ("memos/audit-log.md", "audit-log.html", "Audit Log", "Reference · audit",
+    ("memos/audit-log.md", "audit-log.html", "Audit Log", "My workspace · audit",
      "How we audit our work: the method, every check and when it runs, the record of every audit so far, and what to improve."),
     ("glossary.md", "glossary.html", "Glossary", "Reference · the words we use",
      "One meaning for each word in every plan, playbook page and agent spec, plus the bank's terms still to map."),
@@ -105,7 +105,7 @@ def build(src, out, name, label, lede, short=None):
 <footer>Built from the working copy <code>{E(src)}</code>{f" · last updated {E(updated.group(1))}" if updated else ""}. Lines marked ⚠️ are guesses to confirm; [X] marks numbers still to be set.</footer>
 </main>
 '''
-    open(os.path.join(ROOT, "designs", out), "w").write(page)
+    open(os.path.join(ROOT, "designs", out), "w").write(link_refs(page, out))
 
 for p in PAGES:
     build(*p)

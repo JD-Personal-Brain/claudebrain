@@ -262,3 +262,60 @@ def six_steps():
     if sorted(out) != list("123456"):
         raise SystemExit("Could not read the six steps from memos/role-workflow.md")
     return out
+
+
+# ---------- Cross-links (added 2026-10-18, from the deep audit and Elon mode review) ----------
+# Every built page links its references automatically, so no link has to be added by hand:
+# control numbers (K1 to K25) to their card in the Controls Catalog, agent numbers (M1 to M33,
+# A1/A2/A3/A5, H1) to their card in the Agent Library, and page names to their page. The links
+# come from the page list in designs/README.md, so a page's address lives in one place. Text inside
+# links, code, headings, card summaries and table headers is left alone.
+import os as _os
+_ROOT = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+def _page_urls():
+    urls = {}
+    for m in re.finditer(r"\| *([^|]+?) *\| *(https://claude\.ai/artifact/\w+) *\| *`([^`]+)`", open(_os.path.join(_ROOT, "designs", "README.md")).read()):
+        urls[_os.path.basename(m.group(3))] = m.group(2)
+    return urls
+PAGE_NAMES = [  # name as people write it -> the page's built file
+    ("Controls Catalog", "controls.html"), ("Agent Library", "agents.html"), ("Steps Catalog", "steps.html"),
+    ("Workflow Maps", "workflows.html"), ("Use Case Library", "use-case-library.html"), ("RM Detail", "rm-ai-reference.html"),
+    ("RM Assistant Plan", "rm-analytics-plan.html"), ("RM Assistant Prototype", "prototype-v1.html"), ("RM Executive Summary", "rm-executive-summary.html"),
+    ("Product Workflow", "role-workflow.html"), ("Product Framework", "product-framework.html"), ("Product Machine", "product-machine.html"),
+    ("Product Playbook", "playbook.html"), ("Elon Mode", "elon-mode.html"), ("Glossary", "glossary.html"), ("Bank Business Briefing", "bank-business.html"),
+    ("Tech Stack Guide", "tech-stack.html"), ("Prompt Library", "prompt-library.html"), ("Prompting Guide", "prompting.html")]
+_SKIP = {"a", "code", "pre", "script", "style", "title", "summary", "th", "h1", "nav", "button", "label", "select", "option"}
+def link_refs(page, here):
+    """here: this page's built file name (links to itself become in-page jumps)."""
+    urls = _page_urls()
+    def target(fname, anchor=""):
+        if fname == here: return "#" + anchor if anchor else None
+        u = urls.get(fname)
+        return (u + ("#" + anchor if anchor else "")) if u else None
+    names = sorted(PAGE_NAMES, key=lambda x: -len(x[0]))
+    name_re = re.compile(r"\b(" + "|".join(re.escape(n) for n, _ in names) + r")\b")
+    code_re = re.compile(r"(?<![\w.$-])(K(?:2[0-5]|1\d|[1-9])|M(?:3[0-3]|[12]\d|[1-9])|A[1235]|H1)(?![\w.%-])")
+    def repl_text(t):
+        def code(m):
+            c = m.group(1); href = target("controls.html" if c[0] == "K" else "agents.html", c.lower())
+            return f'<a class="xref" href="{href}"{"" if href.startswith("#") else " target=\"_blank\" rel=\"noopener\""}>{c}</a>' if href else c
+        def name(m):
+            f = dict(names)[m.group(1)]; href = target(f)
+            return f'<a class="xref" href="{href}" target="_blank" rel="noopener">{m.group(1)}</a>' if href and not href.startswith("#") else m.group(1)
+        parts = re.split(r"(<a\b[^>]*>.*?</a>)", name_re.sub(name, t))   # names first, then codes outside the new links
+        return "".join(p if p.startswith("<a") else code_re.sub(code, p) for p in parts)
+    out, depth = [], 0
+    for tok in re.split(r"(<[^>]+>)", page):
+        if tok.startswith("<"):
+            m = re.match(r"<(/?)([a-zA-Z0-9]+)", tok)
+            if m and m.group(2).lower() in _SKIP:
+                depth += -1 if m.group(1) else (0 if tok.endswith("/>") else 1)
+                depth = max(depth, 0)
+            out.append(tok)
+        else:
+            out.append(tok if depth or not tok.strip() else repl_text(tok))
+    return "".join(out)
+XREF_CSS = ".xref{color:inherit;text-decoration:underline;text-decoration-color:var(--teal);text-underline-offset:2px}.xref:hover{color:var(--teal)}"
+CSS += XREF_CSS
+CSS += "code{overflow-wrap:anywhere}"
+CSS += "p,li,dd{overflow-wrap:break-word}"

@@ -4,7 +4,7 @@
 - designs/controls.html, the Controls Catalog: every governance control (from playbook/controls.md).
 Run: python3 designs/catalogs-build.py"""
 import glob, os, re
-from pagekit import CSS, E, inline, chipify, six_steps, WORKFLOW_URL, MAPS_URL, PLAYBOOK_URL
+from pagekit import CSS, E, inline, chipify, six_steps, WORKFLOW_URL, MAPS_URL, PLAYBOOK_URL, STEPS_URL, link_refs
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 read = lambda p: open(os.path.join(ROOT, p)).read()
@@ -103,7 +103,7 @@ def page(title, label, lede, group_label, groups, sections, howto, footer, place
 <footer>{footer}</footer>
 </main>
 {SCRIPT}'''
-    open(os.path.join(ROOT, "designs", out), "w").write(html)
+    open(os.path.join(ROOT, "designs", out), "w").write(link_refs(html, out))
 
 def fields_of(body):
     """Top-level '- **Name:** text' lines, with any indented lines under them joined on."""
@@ -192,9 +192,13 @@ def stages(text):
         return "not covered yet"
     return ", ".join(nums) + (" (partly not covered)" if ("not covered" in text or "doesn't name" in text) else "")
 
+def steplinks(h):
+    # "Set in 2.4" links to the 2.4 card in the Steps Catalog
+    return re.sub(r"(?<![\d.$])([1-6])\.([0-8])(?![\d%])", lambda m: f'<a href="{STEPS_URL}#s{m.group(1)}-{m.group(2)}" target="_blank" rel="noopener">{m.group(0)}</a>', h)
+
 def control_card(cid, name, f):
-    spec = "".join(f"<div><dt>{E(k)}</dt><dd>{inline(cap(f[k]))}</dd></div>" for k in NEED[2:])
-    return (f'<details class="ccard" data-group="{E(f["Group"])}" data-search="{E((cid + " " + name + " " + " ".join(f[k] for k in ["Group", "What it is", "Why it matters", "Tool (guess)", "Proof"])).lower())}">'
+    spec = "".join(f"<div><dt>{E(k)}</dt><dd>{steplinks(inline(cap(f[k])))}</dd></div>" for k in NEED[2:])
+    return (f'<details class="ccard" id="{cid.lower()}" data-group="{E(f["Group"])}" data-search="{E((cid + " " + name + " " + " ".join(f[k] for k in ["Group", "What it is", "Why it matters", "Tool (guess)", "Proof"])).lower())}">'
             f'<summary><span class="cid">{cid}</span><span class="cname">{inline(name)}</span>'
             f'<span class="cwhat">{inline(cap(f["What it is"]))}</span><span class="cmeta">{E(f["Comes from"].split(":")[0])} · Set: {E(stages(f["Set in"]))} · Proved: {E(stages(f["Proved in"]))}</span></summary>'
             f'<dl class="spec">{spec}</dl><p class="csrc">Numbers such as 2.4 are playbook sub-steps: look them up in the Steps Catalog.</p></details>')

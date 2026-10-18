@@ -5,7 +5,7 @@ question, gate and governance thread, via pagekit.six_steps()), playbook/*.md,
 product-machine.md and the RM memo's Appendix B, so the maps never drift from the documents.
 Run: python3 designs/workflows-build.py"""
 import os, re
-from pagekit import CSS, E, inline, chipify, six_steps, WORKFLOW_URL, STEPS_URL, PLAYBOOK_URL
+from pagekit import CSS, E, inline, chipify, six_steps, WORKFLOW_URL, STEPS_URL, PLAYBOOK_URL, link_refs
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 read = lambda p: open(os.path.join(ROOT, p)).read()
@@ -214,7 +214,7 @@ page = f'''<title>Workflow Maps</title>
 @media (max-width:860px){{.spine{{grid-template-columns:1fr}}.arrow{{right:auto;left:24px;top:auto;bottom:-16px;transform:rotate(90deg)}}.stagebox{{min-height:0}}}}
 </style>
 <div class="band"><div class="wrap">
-<span class="label">Workflow maps</span>
+<span class="label">Reference · workflows</span>
 <h1>Workflow Maps</h1>
 <p class="lede">Each main process runs left to right. The sub-processes hang underneath the stage where they happen. Click any box to see its details, then open the full document if you need more.</p>
 <nav class="stepnav" aria-label="Maps"><a href="#deliver">How we deliver a product</a><a href="#rm">How an RM uses the product</a></nav>
@@ -257,4 +257,4 @@ page = f'''<title>Workflow Maps</title>
 }})();
 </script>
 '''
-open(os.path.join(ROOT, "designs", "workflows.html"), "w").write(page)
+open(os.path.join(ROOT, "designs", "workflows.html"), "w").write(link_refs(page, "workflows.html"))

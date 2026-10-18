@@ -3,7 +3,7 @@ filterable, each opening to its full spec. Reads playbook/agents.md (M1-M33,
 the product machine's general agents) and the RM memo's Appendix A (A1, A2, A3, A5;
 the product RMs use). Run: python3 designs/agents-build.py"""
 import os, re
-from pagekit import CSS, E, inline, chipify, render_blocks
+from pagekit import CSS, E, inline, chipify, render_blocks, link_refs
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 read = lambda p: open(os.path.join(ROOT, p)).read()
@@ -72,14 +72,20 @@ GROUPS = [("machine", "Run the product machine", "Handle the paperwork and routi
           ("helpers", "My research helpers", "Agents that keep my own reference pages current, such as the Bank Business Briefing. Not part of the product machine. Each runs on a schedule and only drafts: I decide what goes into main.")]
 counts = {g: sum(a["group"] == g for a in agents) for g, *_ in GROUPS}
 
+RM_DETAIL = "https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n"
+def spec_link(src):
+    # Product agents' full specs live in RM Detail (the full plan's Appendix A): link straight to it
+    if "Appendix A" in src: return f'<a href="{RM_DETAIL}#part-5-the-full-delivery-plan-with-every-appendix-a-agent-specs" target="_blank" rel="noopener">{E(src)}</a>'
+    return E(src)
+
 def card(a):
     spec = "".join(f"<div><dt>{E(k)}</dt><dd>{inline(cap(v))}</dd></div>" for k, v in a["fields"])
     aim = chipify(a["aim"]) if a["aim"] else ""
-    return (f'<details class="agcard" data-group="{a["group"]}" data-steps="{E("|".join(a["steps"]))}" '
+    return (f'<details class="agcard" id="{a["id"].lower()}" data-group="{a["group"]}" data-steps="{E("|".join(a["steps"]))}" '
             f'data-search="{E((a["id"] + " " + a["name"] + " " + a["job"]).lower())}">'
             f'<summary><span class="aid">{a["id"]}</span><span class="aname">{E(a["name"])}</span>{aim}'
             f'<span class="ajob">{inline(cap(a["job"]))}</span><span class="ameta">{inline(a["meta"])}</span></summary>'
-            f'<dl class="spec">{spec}</dl><p class="asrc">Full spec: {E(a["source"])}</p></details>')
+            f'<dl class="spec">{spec}</dl><p class="asrc">Full spec: {spec_link(a["source"])}</p></details>')
 
 sections = ""
 for g, name, why in GROUPS:
@@ -174,5 +180,6 @@ page = f'''<title>Agent Library</title>
 }})();
 </script>
 '''
-open(os.path.join(ROOT, "designs", "agents.html"), "w").write(page)
+OPEN_HASH = "<script>(function(){function o(){var h=location.hash&&document.getElementById(decodeURIComponent(location.hash.slice(1)));if(h&&h.tagName==='DETAILS'){h.open=true;h.scrollIntoView();}}o();window.addEventListener('hashchange',o);})();</script>"
+open(os.path.join(ROOT, "designs", "agents.html"), "w").write(link_refs(page, "agents.html") + OPEN_HASH)
 print(len(agents), counts)

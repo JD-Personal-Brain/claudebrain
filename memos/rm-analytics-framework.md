@@ -2,7 +2,7 @@
 
 Principal Applied AI Product Manager · Associated Bank · October 2026 (memo v11, 2026-10-18)
 
-The detail behind the three short RM pages (the RM Executive Summary, RM Assistant and the RM
+The detail behind the three short RM pages (the RM Executive Summary, The RM Assistant and the RM
 Assistant Plan), read in RM Detail. What the product is, its capabilities and waves, and the decisions
 behind them are in RM Detail, Part 3 (The RM Assistant in full detail); the rules every product follows are in the
 [Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ) and aren't repeated here.
@@ -95,11 +95,11 @@ then steps 3–6 repeat in cycles of a week or two, and each new feature wave ta
 Discover and Define (Product Framework). Governance runs through every step; step 4 is the formal approval,
 not the first time risk partners see the product. What's different for RMs:
 
-| Step | Gate for RMs | What's specific to RMs | General agents used |
+| Step | Gate for RMs | What's specific to RMs | General agents used (the analysis agents, M20 to M33; M1 to M19 run every step as the Product Machine sets out) |
 |---|---|---|---|
 | **1. Discover** | The sponsor, with the risk partner, agrees the target lever, the main measure and today's baseline (from a first rough sizing; confirmed at gate 2), and confirms the wave 1 capabilities | Frame "new revenue" as three levers (section 1) and two goals; size them with pipeline, win/loss, balances and products; interview and shadow RMs and managers, starting from the RM user workflow (how they find opportunities today, and what gets in the way); learn how RMs are measured and paid; test the prototype on sample data every few days | M20 interview synthesizer (Teams transcripts only with consent), M21 opportunity sizer, M22 time-use analyst |
 | **2. Define** | The brief, data contract and risk rating agreed; the full set of measures and the value model show payback within [X] months; dates proposed for waves 2 and 3 | The data contract covers documents too (meeting recaps and call transcripts: their source, owner, re-indexing and who may see them); the risk intake lists consent before recording (control K24) for the meeting follow-up; Finance agrees how AI-sourced revenue is tagged and compared; any insight that suggests a credit product, such as a line of credit, is reviewed by compliance (control K3: the AI never makes a credit decision and never sets or suggests a price; fair-lending rules apply to business credit too) | M23 requirements drafter, M24 data contract checker (then on every data refresh), M25 risk intake assistant |
-| **3. Build** | Meets the quality bar in testing; every control is built and passes its control test | Simple, explainable rules find the opportunities and AI only explains them; every insight shows the numbers behind it; one-click use, change or reject with a reason; each RM sees only clients they may already see; filters block sensitive data and off-topic answers; every AI action logged; the test set uses real client examples graded by experienced RMs | M26 test grader |
+| **3. Build** | Meets the quality bar in testing; every control is built and passes its control test | Simple, explainable rules find the opportunities and AI only explains them (K22); every insight shows the numbers behind it (K7); one-click use, change or reject with a reason (K1); each RM sees only clients they may already see (K4); filters block sensitive data and off-topic answers (K8); every AI action logged (K12); the test set uses real client examples graded by experienced RMs | M26 test grader |
 | **4. Govern and test** | All sign-offs recorded and the monitoring plan agreed, for each AI product | Register the product in the bank's model inventory (⚠️ to confirm) and confirm its rating (model risk guidance SR 11-7; ⚠️ SR 26-2 may replace it, item W17); red-team for other RMs' clients and credit requests; check opportunities are spread fairly across client segments and regions; show consent captured before any recording (K24); the monitoring plan watches the share of recaps from consented recordings versus the RM's own notes | M27 red-team agent, M28 fairness monitor (then monthly), M29 evidence pack assembler |
 | **5. Release and adopt** | Weekly use and leading results hit targets (at least [X]% of pilot RMs active weekly, at least [X]% of insights acted on); no serious incidents; long-term owner confirmed before scaling | A pilot group of RMs and their managers, with a comparison group; build it into a routine managers already run, such as a weekly pipeline meeting (⚠️ to confirm), so use becomes a habit; train on RMs' own clients; champions and a Teams channel answer "how do I…?"; recognize AI-sourced wins with sales leadership | M30 feedback triage |
 | **6. Measure and iterate** | Each month, keep, change or stop each AI product; each quarter, the sponsor with Finance decides to invest more, adjust or stop, on results against the comparison group | Leading measures first (insights acted on, pipeline created, client time gained), visible within weeks; closed revenue against the comparison group from about month 6; plus cost per active RM and per acted-on insight, because the goal is a product that pays for itself | M31 impact analyst, M32 quality watchdog, M33 improvement scout |
@@ -110,7 +110,7 @@ not the first time risk partners see the product. What's different for RMs:
 
 The AI principles (assistive first, cut first then automate, one job each, built
 where the work happens) are the Product Framework's; the assistant's own limits
-(its jobs, workflows, data, controls and feedback) are on the RM Assistant page.
+(its jobs, workflows, data, controls and feedback) are on The RM Assistant page.
 What's specific to RMs:
 
 **Choosing the platform.** The pilot picks one delivery platform, using five criteria:

@@ -14,7 +14,7 @@ These limits make it safe to give every RM one.
 - **Feedback:** one click on every output (use, change or reject), which steers what gets better next.
 
 ## 2. Capabilities, by moment in the RM's work
-Each capability is one AI product and answers one core use case (see the [Use Case Library](https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X) for the value and the research).
+Each capability is one AI product and answers one core use case (see the [Use Case Library](https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X#relationship-managers) for the value and the research).
 
 | Moment | Capability | What it does | Core use case | Wave |
 |---|---|---|---|---|
@@ -36,6 +36,6 @@ Every capability runs on one shared foundation, built once:
 - a **signals engine**: simple, explainable rules spot opportunities and risks, and AI explains each one in plain English with the numbers;
 - drafting, and the controls and feedback above.
 
-Every detail (the RM's job, the foundation part by part, what to confirm) is in [RM Detail](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n), the fifth page in the RM section, after the RM Assistant Prototype.
+Every detail (the RM's job, the foundation part by part, what to confirm) is in [RM Detail](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n), for AI to read. To see the assistant working, try the [RM Assistant Prototype](https://claude.ai/artifact/RFM2o7cdren3TxesQBsjky).
 
 _Last updated: 2026-10-18_

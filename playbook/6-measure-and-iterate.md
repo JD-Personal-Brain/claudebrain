@@ -171,4 +171,4 @@ table in `product-machine.md`.
 
 **First time** = how the task is done on the first project. **Aim for** = its kind in `product-machine.md`.
 
-_Last updated: 2026-10-15_
+_Last updated: 2026-10-18_
