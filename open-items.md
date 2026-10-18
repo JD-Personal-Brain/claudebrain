@@ -26,13 +26,13 @@ Claude updates it at every wrap-up: finished items move to "Closed" with the dat
 | Stage | Open | What it is |
 |---|---|---|
 | Now | 3 | What we're working on first |
-| Stage 1. Read and lock the core | 3 | What I read, then the decision on the RM framework |
+| Stage 1. Read and lock the core | 2 | What I read, then the decision on the RM framework |
 | Stage 2. Make the machine runnable | 4 | What Claude builds so a real run is possible |
 | Stage 3. Dry run and fix | 3 | Running the machine once and fixing it |
 | Stage 4. Get ready for Andy | 8 | What Andy sees, and what I ask him |
 | Alongside the path | 10 | Useful any time; doesn't block a stage. Dated items first |
 | Inside the bank | 21 | Questions only someone at the bank can answer |
-| Parked on purpose | 5 | Not forgotten; waiting for a signal from me |
+| Parked on purpose | 4 | Not forgotten; waiting for a signal from me |
 
 "Andy" here is my main contact at the bank. ⚠️ Claude assumes this is Andy Miner, the bank's senior director of AI for Corporate & Commercial Banking.
 
@@ -81,7 +81,6 @@ What we're working on first: a quick check on the bank news scout, then stage 2 
 |---|---|---|---|
 | V1 | Read the three RM pages, now short and in reading order (reorganized 2026-10-18, C50): the RM Executive Summary, RM Assistant and the RM Assistant Plan. The full detail is in RM Detail, the fifth RM row (after the RM Assistant Prototype), which is for AI to read, not me | Me | Nothing |
 | D1 | Is the RM framework ready to copy to other use cases? My answer on 2026-10-09: not yet. The reading in stage 1 and the work in stages 2 and 3 come first | Me | Credit, the next use case, waits on this |
-| D2 | A checker rule (idea 61) so the people pages for one user group never mention another group (from lesson L38). Put to me at the 2026-10-18 wrap-ups; not yet (said 2026-10-18) | Me | Me saying it is time |
 
 ## Stage 2. Make the machine runnable
 
@@ -172,7 +171,6 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | P2 | Sharing with Associated. We share the same pages, not a separate edition (idea 33: no, 2026-10-15). When I'm ready, Claude lists which pages to share one by one from each page's Share menu | Me | Me saying I'm ready to share |
 | P3 | A treasury and payments use case. The bank named it as a starting point for AI, and nothing has been planned yet | Me | After credit, unless B3 changes the order |
 | P4 | **Featured: running many products at once.** One intake form for new product ideas, a scoring rule to rank them against each other, how many products I can run at once, my week and month across products, and when a live product is retired | Me | The machine running one product well first |
-| P5 | A question sheet for my talk with the RM and credit leads (idea 59), built from the full RM plan's section 8 ("What I'd confirm in the first weeks", in RM Detail): not yet, we still have a lot of work to do first (said 2026-10-17) | Me | Me saying we're ready for it |
 
 ## Closed
 
@@ -233,5 +231,7 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C53 | The RM section's order (said 2026-10-18): the RM Assistant Prototype is row 4 and RM Detail row 5, after the three short pages for people (C50) | 2026-10-18 |
 | C54 | Regroup the Document Library by use, for a human reader (said 2026-10-18): seven sections. "The bank and the role" adds the Job Description and Tech Stack Guide; Reference holds only the five lookup pages, in process order (Glossary, Steps Catalog, Workflow Maps, Agent Library, Controls Catalog); Research adds the Use Case Library; a new "My workspace" section, for me only, holds Open Items, the Audit Log, the Prompting Guide and the Prompt Library | 2026-10-18 |
 | C55 | RM gate 1 timing (said 2026-10-18: overlap, as recommended): the overlapping first pass is written into the Product Framework, so gate 1 can pass on a first sizing and a provisional baseline, with the rest of Discover and the final baseline finished by gate 2 | 2026-10-18 |
+| C56 | The checker rule for one user group per people page (idea 61, an open decision until now): yes on 2026-10-18 and built the same day as checker check 18 | 2026-10-18 |
+| C57 | The question sheet for my talk with the RM and credit leads (idea 59, parked until now): no (said 2026-10-18) | 2026-10-18 |
 
 _Last updated: 2026-10-18_
