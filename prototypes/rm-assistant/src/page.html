@@ -31,7 +31,7 @@
       <button type="button" data-screen="followup"><span class="nav-k">B3·B4</span>Meeting follow-up</button>
       <span class="nav-label">Trust and adoption</span>
       <button type="button" data-screen="controls"><span class="nav-k">K</span>Controls and audit log</button>
-      <button type="button" data-screen="measures"><span class="nav-k">PM</span>Product manager view</button>
+      <button type="button" data-screen="measures"><span class="nav-k">5M</span>Product manager view</button>
       <button type="button" data-screen="about"><span class="nav-k">?</span>How it's built</button>
     </nav>
     <main class="main" id="main">
@@ -86,10 +86,7 @@
         <div class="split">
           <div class="panel">
             <h2 class="h-small">Your notes · Lakeshore Precision Tooling · Tuesday, October 20</h2>
-            <div class="consent" id="consent">
-              <span class="ctl">K24</span>
-              <span>Recording: <strong>the client didn't agree</strong>, so A3 drafts from your own notes.</span>
-            </div>
+            <div class="consent" id="consent"><span class="ctl">K24</span><span>Recording: <strong>the client didn't agree</strong>, so A3 drafts from your own notes.</span></div>
             <label class="sr" for="notes">Meeting notes</label>
             <textarea id="notes" rows="12"></textarea>
             <div class="runbar">
@@ -146,7 +143,7 @@
         <div class="panel">
           <h2 class="h-small">How we'd get RMs to use it</h2>
           <ul class="plain">
-            <li><strong>Built into a routine managers already run:</strong> the Monday list goes into the weekly pipeline meeting (sub-step 5.3).</li>
+            <li><strong>Built into a routine managers already run:</strong> the Monday list could go into the weekly pipeline meeting (our assumption, to confirm with the bank; sub-step 5.3).</li>
             <li><strong>Trained on their own work:</strong> each RM's first session uses their own book, not a demo (5.4).</li>
             <li><strong>One click of feedback on every output</strong> steers what gets better next (5.6).</li>
             <li><strong>Champions</strong> show peers how they use it, and wins get celebrated (5.5).</li>
@@ -175,12 +172,12 @@
           <ul class="plain">
             <li><strong>Sample book:</strong> 12 made-up business clients for one RM, plus 2 belonging to another RM (used only to show the refusal).</li>
             <li id="marketLine"></li>
-            <li><strong>Why a saved copy:</strong> a published page can't reach outside websites, so the build script fetches the data and bakes it in with its date. In production the agents read certified data from the bank's own systems.</li>
+            <li><strong>Why a saved copy:</strong> a published page can't reach outside websites, so the build script fetches the data and bakes it in with its date. In production, our assumption (to confirm with the bank) is that the agents read certified data from the bank's own systems.</li>
           </ul>
         </div>
         <div class="panel">
           <h2 class="h-small">Where it sits in the product machine</h2>
-          <p>This is the rough clickable mock-up of sub-step 1.6, built early to test reactions. It follows the RM plan: The RM Assistant's wave 1 capabilities, agents A1 to A3, workflows B1 to B4 and controls K1, K2, K4, K7, K8, K12, K22, K24 and K25.</p>
+          <p>This is the rough clickable mock-up of sub-step 1.6, built early to test reactions. It follows the RM plan: The RM Assistant's wave 1 capabilities, agents A1 to A3, workflows B1 to B4 and controls K1, K2, K3, K4, K7, K8, K12, K22, K24 and K25.</p>
           <p class="muted">Code: <code>prototypes/rm-assistant/</code> in the claudebrain repository, with a README, a build script, automated tests and a changelog. Every version is kept.</p>
         </div>
       </section>

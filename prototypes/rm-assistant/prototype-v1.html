@@ -236,7 +236,7 @@ td.num,.tnum{font-variant-numeric:tabular-nums}
       <button type="button" data-screen="followup"><span class="nav-k">B3·B4</span>Meeting follow-up</button>
       <span class="nav-label">Trust and adoption</span>
       <button type="button" data-screen="controls"><span class="nav-k">K</span>Controls and audit log</button>
-      <button type="button" data-screen="measures"><span class="nav-k">PM</span>Product manager view</button>
+      <button type="button" data-screen="measures"><span class="nav-k">5M</span>Product manager view</button>
       <button type="button" data-screen="about"><span class="nav-k">?</span>How it's built</button>
     </nav>
     <main class="main" id="main">
@@ -291,10 +291,7 @@ td.num,.tnum{font-variant-numeric:tabular-nums}
         <div class="split">
           <div class="panel">
             <h2 class="h-small">Your notes · Lakeshore Precision Tooling · Tuesday, October 20</h2>
-            <div class="consent" id="consent">
-              <span class="ctl">K24</span>
-              <span>Recording: <strong>the client didn't agree</strong>, so A3 drafts from your own notes.</span>
-            </div>
+            <div class="consent" id="consent"><span class="ctl">K24</span><span>Recording: <strong>the client didn't agree</strong>, so A3 drafts from your own notes.</span></div>
             <label class="sr" for="notes">Meeting notes</label>
             <textarea id="notes" rows="12"></textarea>
             <div class="runbar">
@@ -351,7 +348,7 @@ td.num,.tnum{font-variant-numeric:tabular-nums}
         <div class="panel">
           <h2 class="h-small">How we'd get RMs to use it</h2>
           <ul class="plain">
-            <li><strong>Built into a routine managers already run:</strong> the Monday list goes into the weekly pipeline meeting (sub-step 5.3).</li>
+            <li><strong>Built into a routine managers already run:</strong> the Monday list could go into the weekly pipeline meeting (our assumption, to confirm with the bank; sub-step 5.3).</li>
             <li><strong>Trained on their own work:</strong> each RM's first session uses their own book, not a demo (5.4).</li>
             <li><strong>One click of feedback on every output</strong> steers what gets better next (5.6).</li>
             <li><strong>Champions</strong> show peers how they use it, and wins get celebrated (5.5).</li>
@@ -380,12 +377,12 @@ td.num,.tnum{font-variant-numeric:tabular-nums}
           <ul class="plain">
             <li><strong>Sample book:</strong> 12 made-up business clients for one RM, plus 2 belonging to another RM (used only to show the refusal).</li>
             <li id="marketLine"></li>
-            <li><strong>Why a saved copy:</strong> a published page can't reach outside websites, so the build script fetches the data and bakes it in with its date. In production the agents read certified data from the bank's own systems.</li>
+            <li><strong>Why a saved copy:</strong> a published page can't reach outside websites, so the build script fetches the data and bakes it in with its date. In production, our assumption (to confirm with the bank) is that the agents read certified data from the bank's own systems.</li>
           </ul>
         </div>
         <div class="panel">
           <h2 class="h-small">Where it sits in the product machine</h2>
-          <p>This is the rough clickable mock-up of sub-step 1.6, built early to test reactions. It follows the RM plan: The RM Assistant's wave 1 capabilities, agents A1 to A3, workflows B1 to B4 and controls K1, K2, K4, K7, K8, K12, K22, K24 and K25.</p>
+          <p>This is the rough clickable mock-up of sub-step 1.6, built early to test reactions. It follows the RM plan: The RM Assistant's wave 1 capabilities, agents A1 to A3, workflows B1 to B4 and controls K1, K2, K3, K4, K7, K8, K12, K22, K24 and K25.</p>
           <p class="muted">Code: <code>prototypes/rm-assistant/</code> in the claudebrain repository, with a README, a build script, automated tests and a changelog. Every version is kept.</p>
         </div>
       </section>
@@ -683,7 +680,7 @@ window.REPLAY = {
       talkingPoints: ["Ask how much staff time the branch runs take.", "Offer to show remote deposit on a laptop and scanner."],
       nextStep: "Offer Ruth Halvorsen a short remote deposit demo." },
     { clientId: "C104", headline: "Brewer's Row takes cards through another processor",
-      why: "The group runs 4 restaurants and has no merchant services with us. Andre said in September that he's unhappy with his current processor's fees.",
+      why: "The restaurant group takes card payments from diners and has no merchant services with us. Andre said in September that he's unhappy with his current processor's fees.",
       talkingPoints: ["Ask what bothers him most about his current card setup.", "Offer an introduction to the merchant services team."],
       nextStep: "Raise it at Thursday's 15:30 introduction to the new general manager." }
   ],
@@ -817,51 +814,63 @@ Cash is building with nowhere to go, and Maria already asked about it in Septemb
 
   // ---------- K8 guardrails: checked in code before Claude is ever asked ----------
   const GUARDS = [
-    { control: "K8", kind: "credit decision", re: /\b(approve|approval|decline|deny|underwrit\w*|credit ?worth\w*|credit (decision|limit|score)|risk rating|line increase|should (we|i) lend|grant (the|a) loan)\b/i,
-      reply: "I can't help with credit decisions. That's for the portfolio manager and the credit officer. I can note the request for Sam Okafor (portfolio manager)." },
-    { control: "K8", kind: "pricing", re: /\b(what rate|which rate|pric(e|es|ing)|quote|discount|fee waiver|waive (the )?fees?|how much (should|to) (we )?charge|interest rate (to|should|we))\b/i,
-      reply: "I don't set or suggest prices or rates. Pricing goes through the bank's pricing process with the treasury or lending team." },
-    { control: "K1", kind: "contacting a client", re: /\b(send|e-?mail|text|message|call)\b.{0,30}\b(client|customer|maria|tom|them)\b.{0,20}\b(now|for me|automatically|directly)\b|\bauto-?send\b/i,
-      reply: "I don't contact clients. I draft; you review and send it yourself." }
+    { control: "K8", kind: "credit decision",
+      re: /\b(approv(e|al of)\b.{0,25}\b(loan|line|credit|limit|request|increase)|decline\b.{0,25}\b(loan|line|credit|request)|underwrit\w*|credit ?worth\w*|credit (decision|limit|score|risk)|risk rating|(bigger|larger|higher|new) (line|loan|limit)|(increase|raise)\b.{0,15}\b(line|limit|loan)|line increase|extend (more )?credit|lend\w*|borrow\w*|grant\b.{0,10}\bloan|qualif\w* for)\b/i,
+      reply: "I can't help with credit decisions. They belong to the portfolio manager and the credit officer, so bring in Sam Okafor (portfolio manager)." },
+    { control: "K8", kind: "pricing",
+      re: /(\b(what|which) (interest )?(rate|price|apr|fee)s?\b|\bapr\b|\b(lower|better|special|best|lowest|discounted) (rate|price|pricing|fee)s?\b|\b(rate|price|pricing|fee)s?\b.{0,20}\b(should|to|can) (i |we )?(offer|give|quote|charge)|\b(offer|give|quote|charge)\b.{0,25}\b(rate|price|discount|fee)s?\b|\bdiscount\b|\bfee waiver\b|\bwaive\b.{0,10}\bfees?\b|how much (should|to|can) (we |i )?charge|\bbeat\b.{0,15}\b(rate|price|offer)\b)/i,
+      reply: "I don't set or suggest prices or rates. Pricing belongs to the people who own it, such as the treasury or lending team." }
   ];
+  // K1: the assistant drafts; it never contacts a client itself.
+  const CONTACT_NAMES = () => B.clients.filter(c => c.rm === B.rm.id).flatMap(c => c.contacts.map(p => p.name.split(" ").pop().toLowerCase()).concat(c.contacts.map(p => p.name.replace(/^Dr\. /, "").split(" ")[0].toLowerCase())));
+  function contactsClient(text) {
+    const t = text.toLowerCase();
+    if (/\bauto-?send\b/.test(t)) return true;
+    if (/^\s*(please\s+)?(draft|write|prepare|summari[sz]e)\b/.test(t)) return false;   // asking for a draft is the assistant's job
+    if (!/\b(send|e-?mail|text|message|reach out to|contact|call)\b/.test(t.replace(/\bcall notes?\b/g, ""))) return false;
+    return /\b(client|customer|them|him|her)\b/.test(t) || CONTACT_NAMES().some(n => new RegExp("\\b" + n + "\\b").test(t));
+  }
   function guard(text) {
     for (const g of GUARDS) if (g.re.test(text)) return { blocked: true, control: g.control, kind: g.kind, reply: g.reply };
+    if (contactsClient(text)) return { blocked: true, control: "K1", kind: "contacting a client", reply: "I don't contact clients. I draft; you review and send it yourself." };
     const other = B.clients.find(c => c.rm !== B.rm.id && text.toLowerCase().includes(c.name.toLowerCase().split(" ")[0].toLowerCase()));
     if (other) return { blocked: true, control: "K4", kind: "a client outside your book", reply: `${other.name} isn't in your book, so I can't show anything about it. Users see only the clients they're allowed to see.` };
     return { blocked: false };
   }
 
   // ---------- K7: every number in an AI output must trace to its inputs ----------
-  function collectNumbers(obj, out) {
+  // Allowed numbers come from numeric fields only (not ids, dates or free text); a share (0.94) also counts as a percent (94).
+  function collectNumbers(obj, key, out) {
     if (obj == null) return out;
-    if (typeof obj === "number") out.push(obj);
-    else if (typeof obj === "string") (obj.match(/-?\d[\d,]*\.?\d*/g) || []).forEach(m => { const v = parseFloat(m.replace(/,/g, "")); if (!isNaN(v)) out.push(v); });
-    else if (Array.isArray(obj)) obj.forEach(v => collectNumbers(v, out));
-    else if (typeof obj === "object") Object.values(obj).forEach(v => collectNumbers(v, out));
+    if (typeof obj === "number") { out.push(obj); if (/share/i.test(key || "") && obj > 0 && obj < 1) out.push(Math.round(obj * 1000) / 10); }
+    else if (Array.isArray(obj)) obj.forEach(v => collectNumbers(v, key, out));
+    else if (typeof obj === "object") Object.entries(obj).forEach(([k, v]) => collectNumbers(v, k, out));
     return out;
   }
+  const MONTHS = "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec";
   function numberCheck(text, inputs) {
-    const allowed = [];
-    collectNumbers(inputs, []).forEach(v => { allowed.push(v); if (v > 0 && v < 1) allowed.push(v * 100); });
+    const allowed = collectNumbers(inputs, "", []);
     const clean = String(text)
-      .replace(/\b\d{4}-\d{2}(-\d{2})?\b/g, " ")                       // ISO dates
-      .replace(/\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.? \d{1,2}(st|nd|rd|th)?\b/gi, " ") // month-day
-      .replace(/\b\d{1,2}:\d{2}\b/g, " ")                                // times
-      .replace(/\b(19|20)\d{2}\b/g, " ")                                 // years
-      .replace(/\b[A-Z]{1,2}\d{1,3}\b/g, " ")                            // codes: K7, T1, A3, C101, Q3, H15
-      .replace(/\b\d+(st|nd|rd|th)\b/g, " ")                             // ordinals
+      .replace(/\b\d{4}-\d{2}(-\d{2})?\b/g, " ")                                            // ISO dates
+      .replace(new RegExp(`\\b(${MONTHS})[a-z]*\\.? \\d{1,2}(st|nd|rd|th)?\\b`, "gi"), " ")  // month and day
+      .replace(new RegExp(`\\b((${MONTHS})[a-z]*\\.?|since|in|of|for|by|from|until|before|after|Q[1-4]) (19|20)\\d{2}\\b`, "gi"), " ") // years, only where they read as dates
+      .replace(/\b\d{1,2}:\d{2}\b/g, " ")                                                   // times
+      .replace(/\b[A-Z]{1,2}\d{1,3}\b/g, " ")                                               // codes: K7, T1, A3, C101, Q3
+      .replace(/\b\d+(st|nd|rd|th)\b/g, " ")                                                // ordinals
       .replace(/\b\d+-(year|axis|month|day|week|minute)\b/gi, " ")
       .replace(/H\.15/g, " ");
     const found = [];
-    const re = /(\$)?(\d{1,3}(?:,\d{3})+|\d+(?:\.\d+)?)\s?(million|thousand|M\b|K\b|k\b|%|percent|points?|pts?)?/g;
+    const re = /(\$)?(\d{1,3}(?:,\d{3})+|\d+(?:\.\d+)?)\s?(million|thousand|billion|M\b|K\b|k\b|B\b|%|percent|points?|pts?)?/g;
     let m;
     while ((m = re.exec(clean))) {
       let v = parseFloat(m[2].replace(/,/g, "")); const unit = (m[3] || "").toLowerCase();
       if (!m[1] && !unit && Number.isInteger(v) && v < 10) continue;   // small counts ("3 talking points")
-      if (unit === "million" || unit === "m") v *= 1e6; else if (unit === "thousand" || unit === "k") v *= 1e3;
+      if (unit === "million" || unit === "m") v *= 1e6; else if (unit === "thousand" || unit === "k") v *= 1e3; else if (unit === "billion" || unit === "b") v *= 1e9;
       const ok = allowed.some(a => Math.abs(v - a) <= Math.max(0.051, Math.abs(a) * 0.02));
       found.push({ text: m[0].trim(), ok });
     }
+    // Amounts written in words can't be traced, so they're flagged.
+    (clean.match(/\b(one|two|three|four|five|six|seven|eight|nine|ten|a few|several|hundreds of|thousands of) (hundred|thousand|million|billion)\b/gi) || []).forEach(w => found.push({ text: w, ok: false }));
     const result = { total: found.length, traced: found.filter(f => f.ok).length, untraced: found.filter(f => !f.ok).map(f => f.text) };
     measures.numbersChecked += result.total; measures.numbersTraced += result.traced;
     return result;
@@ -1081,8 +1090,8 @@ The RM asks: ${q}`;
     const { data } = A.a2Prompt(top);
     const box = $("#listResults"); box.innerHTML = "";
     top.forEach((t, i) => {
-      const ins = insights.find(x => x.clientId === t.clientId) || insights[i];
-      if (!ins) return;
+      const ins = insights.find(x => x.clientId === t.clientId);
+      if (!ins) return;   // never pair an insight with the wrong client
       const c = A.findClient(t.clientId);
       const text = [ins.headline, ins.why, ...(ins.talkingPoints || []), ins.nextStep].join(" ");
       const nc = A.numberCheck(text, data[i]);
@@ -1200,6 +1209,7 @@ The RM asks: ${q}`;
     $("#useBrief").addEventListener("click", ev => { A.measures.used++; A.log("RM", "Used the brief", c.name, "K1"); ev.target.outerHTML = `<span class="done-note">Marked as used</span>`; changed(); });
     changed();
   }
+  const DRAFTING = `<p class="hint">Still drafting. The number check (K7) runs as soon as the draft is finished, before you can use it.</p>`;
   async function replayBrief(instant) {
     const c = A.findClient("C101"); briefClient = "C101"; renderMeetings();
     const list = $("#briefSteps"); list.innerHTML = ""; $("#briefDoc").innerHTML = `<p class="muted">Drafting…</p>`;
@@ -1207,7 +1217,7 @@ The RM asks: ${q}`;
     for (const st of R.briefSteps) { await tools.find(t => t.name === st.tool).execute(st.input, {}); if (!instant) await wait(450); }
     if (!instant) {
       const words = R.brief.split(/(\s+)/); let shown = "";
-      for (let i = 0; i < words.length; i += 12) { shown += words.slice(i, i + 12).join(""); $("#briefDoc").innerHTML = md(shown); await wait(40); }
+      for (let i = 0; i < words.length; i += 12) { shown += words.slice(i, i + 12).join(""); $("#briefDoc").innerHTML = DRAFTING + md(shown); await wait(40); }
     }
     A.log("A3 Prep and follow-up", "Drafted the brief (recorded run)", c.name, "K7");
     finishBrief(R.brief, c, "replay");
@@ -1221,10 +1231,10 @@ The RM asks: ${q}`;
       let result;
       if (AI.tools) {
         const tools = A.makeTools(({ tool, input }) => addToolStep(list, tool, input));
-        result = await AI.sample(A.a3BriefPrompt(c, true), { tools, modelTier: "quick", signal: briefCtl.signal, onText: ({ text }) => { doc.innerHTML = md(text); } });
+        result = await AI.sample(A.a3BriefPrompt(c, true), { tools, modelTier: "quick", signal: briefCtl.signal, onText: ({ text }) => { doc.innerHTML = DRAFTING + md(text); } });
       } else {
         const li = document.createElement("li"); li.textContent = "Read the client record, open insights, recent activity and market data (this view can't run page tools, so they're given in the prompt)"; list.appendChild(li);
-        result = await AI.sample(A.a3BriefPrompt(c, false), { modelTier: "quick", signal: briefCtl.signal, onText: ({ text }) => { doc.innerHTML = md(text); } });
+        result = await AI.sample(A.a3BriefPrompt(c, false), { modelTier: "quick", signal: briefCtl.signal, onText: ({ text }) => { doc.innerHTML = DRAFTING + md(text); } });
       }
       const text = result.text.slice(result.text.indexOf("##") >= 0 ? result.text.indexOf("##") : 0);
       A.measures.liveRuns++;
@@ -1266,7 +1276,7 @@ The RM asks: ${q}`;
     </div>`;
     $("#copyEmail").addEventListener("click", () => {
       const txt = $("#emailSubject").value + "\n\n" + $("#emailBody").value;
-      const ok = () => { $("#copyState").textContent = "Copied. Send it yourself from Outlook: the assistant never sends email (K1)."; A.log("RM", "Copied the email to send", c.name, "K1"); };
+      const ok = () => { $("#copyState").textContent = "Copied. Send it yourself from your email: the assistant never sends email (K1)."; A.log("RM", "Copied the email to send", c.name, "K1"); };
       try { navigator.clipboard.writeText(txt).then(ok, () => { $("#emailBody").select(); $("#copyState").textContent = "Select-all done: press Ctrl+C or Cmd+C to copy. You send it yourself (K1)."; }); }
       catch (e) { $("#emailBody").select(); $("#copyState").textContent = "Press Ctrl+C or Cmd+C to copy. You send it yourself (K1)."; }
     });
@@ -1287,12 +1297,12 @@ The RM asks: ${q}`;
     A.measures.runs++;
     if (mode !== "live") {
       if (mode !== "instant") { $("#followOut").innerHTML = '<div class="skeleton"></div>'; await wait(900); }
-      A.log("A3 Prep and follow-up", "Drafted recap, email and call note (recorded run)", c.name + ": from the RM's notes, no recording", "K24, K25");
+      A.log("A3 Prep and follow-up", "Drafted recap, email and call note (recorded run)", c.name + (B.meetingNotes.recordingConsent ? ": from the transcript" : ": from the RM's notes, no recording"), "K24, K25");
       renderFollow(R.followup, "replay"); state.textContent = ""; return;
     }
     const g = A.guard($("#notes").value);
     if (g.blocked && g.control === "K4") { state.textContent = g.reply; return; }
-    $("#followOut").innerHTML = `<div class="skeleton"></div><p class="muted">A3 is drafting from your notes on Claude. Consent check: no recording, so notes only (K24).</p>`;
+    $("#followOut").innerHTML = `<div class="skeleton"></div><p class="muted">A3 is drafting on Claude. Consent check (K24): ${B.meetingNotes.recordingConsent ? "the client agreed to recording" : "no recording, so it uses your notes only"}.</p>`;
     followCtl = new AbortController(); $("#stopFollow").hidden = false; $("#runFollow").disabled = true;
     const t0 = Date.now();
     try {
@@ -1322,10 +1332,10 @@ The RM asks: ${q}`;
     if (c && /meet/i.test(q)) return c.nextMeeting ? `${c.name}: ${fmtDate(c.nextMeeting.date)} at ${c.nextMeeting.time}, ${c.nextMeeting.where} (${c.nextMeeting.purpose}). [Client record]` : `There's no meeting booked with ${c.name}. [Client record]`;
     return null;
   }
-  async function ask(q) {
+  async function ask(q, fromTour) {
     const out = $("#askOut"); const g = A.guard(q);
     if (g.blocked) {
-      A.measures.guardrailBlocks++; if (g.control === "K4") A.measures.permissionRefusals++;
+      if (!fromTour) { A.measures.guardrailBlocks++; if (g.control === "K4") A.measures.permissionRefusals++; }
       A.log("Guardrail", "Blocked a request before it reached Claude", `${g.kind}: "${q}"`, g.control);
       out.innerHTML = `<div class="blocked"><strong>Blocked by ${g.control} (${esc(g.kind)}).</strong> The request was stopped in code, before any AI saw it.<br>${esc(g.reply)}</div>`;
       changed(); return;
@@ -1340,8 +1350,9 @@ The RM asks: ${q}`;
       const { text } = await AI.sample(A.guardPrompt(q), { modelTier: "quick", onText: ({ text }) => { out.innerHTML = `<div class="allowed">${inline(text)}</div>`; } });
       const refused = /^I can't help/i.test(text.trim());
       if (refused) { A.measures.guardrailBlocks++; A.log("RM Assistant", "Declined a request (Claude's own check)", q, "K8, K25"); }
-      else A.log("RM Assistant", "Answered from the RM's book", q, "K4, K7");
-      out.innerHTML = `<div class="${refused ? "blocked" : "allowed"}">${inline(text)}<br><span class="muted">${refused ? "Declined by Claude, the second line of defence after the guardrails in code." : "Live answer on Claude, from your own clients only."}</span></div>`;
+      const nc = refused ? null : A.numberCheck(text, A.myClients().map(c => A.clientRecord(c.id)));
+      if (!refused) A.log("RM Assistant", "Answered from the RM's book", q, "K4, K7");
+      out.innerHTML = `<div class="${refused ? "blocked" : "allowed"}">${nc ? markUntraced(inline(text), nc.untraced) : inline(text)}<br><span class="muted">${refused ? "Declined by Claude, the second line of defence after the guardrails in code." : "Live answer on Claude, from your own clients only."}</span> ${nc ? checkBadge(nc) : ""}</div>`;
     } catch (e) { out.innerHTML = `<div class="allowed">${esc(A.errText(e))}</div>`; dropToReplay(e); }
     changed();
   }
@@ -1352,11 +1363,11 @@ The RM asks: ${q}`;
     ["K2", "Read-only unless approved", "The call note reaches the CRM only after you click approve."],
     ["K3", "AI drafts or flags; a named credit officer decides", "Anything about credit, like equipment financing, goes to the portfolio manager."],
     ["K4", "Users see only what they're allowed to see", "A1 scans only Jordan's 12 clients; A3's tools refuse another RM's clients."],
-    ["K7", "Every answer shows its source", "A source on every fact, and every number checked against the data before you see it."],
+    ["K7", "Every answer shows its source", "A source on every fact, and every number checked against the agent's data as soon as a draft is finished, before you can use it."],
     ["K8", "Guardrails", "Credit decisions, prices and contacting clients are blocked in code before Claude is asked."],
     ["K12", "An audit log", "Every agent action and every approval is logged below."],
     ["K22", "Simple rules first, and the AI explains", "A1 is plain rules the business owns; AI only explains what fired."],
-    ["K24", "Consent before recording", "No recording without the client's consent, so A3 drafts from your notes."],
+    ["K24", "Consent before recording", "A3 reads the meeting's consent flag: no consent, no transcript, so here it drafts from your notes."],
     ["K25", "Agents stop rather than guess", "Unclear dates and owners come back marked CHECK for you to confirm."]
   ];
   $("#ctlGrid").innerHTML = CONTROLS.map(([k, n, w]) => `<div class="ctl-card"><span><span class="ctl">${k}</span> <strong>${esc(n)}</strong></span><span class="where">${esc(w)}</span></div>`).join("");
@@ -1386,6 +1397,7 @@ The RM asks: ${q}`;
   $("#marketLine").innerHTML = `<strong>Outside data:</strong> ${esc(M.name)}, ${esc(M.publisher)}, monthly from ${M.series[0].month} to ${M.latest.month}, public domain, through the datahub.io copy on GitHub. Saved copy fetched ${M.fetched}; latest value ${M.latest.yield}%.`;
 
   // ---------- Start ----------
+  $("#consent").innerHTML = `<span class="ctl">K24</span><span>Recording: ${B.meetingNotes.recordingConsent ? "<strong>the client agreed</strong>. In the real product A3 would use the Teams transcript; this prototype has notes only." : "<strong>the client didn't agree</strong>, so A3 drafts from your own notes."}</span>`;
   renderMeetings(); renderAudit(); renderMeasures();
   runList("instant"); replayBrief(true); runFollow("instant");
   A.measures.runs = 0; // the filled-in recorded runs at load don't count as runs
@@ -1406,15 +1418,15 @@ The RM asks: ${q}`;
     { title: "Meet The RM Assistant", text: "A concept prototype: one AI assistant for each relationship manager (RM), to help them win business and free up the time to win it. Everything here is sample data. This tour takes under 2 minutes.", dur: 8000 },
     { target: ".persona", title: "You're Jordan Ellis", text: "A senior RM with 12 business clients, all made up. The assistant only ever sees Jordan's own clients.", dur: 7000, before: () => go("list") },
     { target: "#nav", title: "Three capabilities to start", text: "Wave 1 of the plan: the Monday opportunity list, the pre-meeting client brief and the meeting follow-up. More capabilities join the same assistant later.", dur: 9000 },
-    { target: "#listTrace", title: "Agent A1 finds the signals", text: "Every Monday, A1 checks each client against simple rules the business owns, such as idle cash or check fraud exposure. Here it also reads real outside data: the Federal Reserve's 10-year Treasury yield.", dur: 9000, before: () => window.APP.runList("replay") },
+    { target: "#listTrace", title: "Agent A1 finds the signals", text: "Each night, A1 checks each client against simple rules the business owns, such as idle cash or check fraud exposure, and every Monday the top ones go to the RM. Here it also reads real outside data: the Federal Reserve's 10-year Treasury yield.", dur: 9000, before: () => window.APP.runList("replay") },
     { target: "#listResults .card", title: "Agent A2 explains each one", text: "A2, running on Claude, turns each signal into a plain-English reason, talking points and a next step, using only the numbers behind it.", dur: 8500 },
-    { target: "#listResults .card .ncheck", title: "Every number is checked", text: "Before you see an insight, the page checks each number against the data the agent was given (control K7). Anything it can't trace is flagged.", dur: 7500 },
+    { target: "#listResults .card .ncheck", title: "Every number is checked", text: "When a draft is finished, the page checks each number against the data the agent was given, before the RM can use it (control K7). Anything it can't trace is flagged.", dur: 7500 },
     { target: "#listResults .card .actions", title: "You decide", text: "Accept, change or dismiss. Accepting creates an opportunity tagged AI-sourced, so we can count the results. One click of feedback steers what improves next.", dur: 8500 },
     { target: ".steps-panel", title: "A3 prepares you for Tuesday", text: "Before each meeting, A3 calls four tools: the client record, the open insights, recent activity and market data. You see every step it took.", dur: 9500, before: () => { go("brief"); window.APP.replayBrief(false); } },
     { target: "#briefDoc", title: "A one-page brief with sources", text: "Every fact carries its source, and the watch-outs keep the RM away from pricing and credit commitments.", dur: 7500 },
     { target: "#consent", title: "After the meeting", text: "A3 drafts the recap, the follow-up email and the CRM note. No recording without the client's consent (K24), so here it works from Jordan's notes.", dur: 9000, before: () => { go("followup"); window.APP.runFollow("instant"); } },
     { target: "#approveNote", title: "Nothing is saved or sent until you approve", text: "Unclear items come back marked CHECK instead of guessed (K25). The note reaches the CRM only after Jordan's click (K2), and Jordan sends the email (K1).", dur: 9500 },
-    { target: "#breakit", title: "Try to break it", text: "Ask for a credit decision, a price or another RM's client: the guardrails stop it in code before any AI sees it (K8, K4). Every action lands in the audit log (K12).", dur: 9000, before: () => { go("controls"); window.APP.ask("Should we approve Lakeshore's line increase?"); } },
+    { target: "#breakit", title: "Try to break it", text: "Ask for a credit decision, a price or another RM's client: the guardrails stop it in code before any AI sees it (K8, K4). Every action lands in the audit log (K12).", dur: 9000, before: () => { go("controls"); window.APP.ask("Should we approve Lakeshore's line increase?", true); } },
     { target: "#measureGrid", title: "How we'd know it works", text: "The product manager view tracks the five kinds of measures: usage, quality, business impact, adoption, and risk and controls. Adoption is the goal: built into the routines RMs already have.", dur: 9500, before: () => go("measures") },
     { title: "Your turn", text: "Run the agents live on Claude from any screen (inside claude.ai, the first run asks your permission). Replay this tour any time from \"Play the tour\".", dur: 7000, before: () => go("list") }
   ];

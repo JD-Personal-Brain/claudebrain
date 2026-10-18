@@ -131,9 +131,21 @@ const check = (name, ok, proof) => { results.push({ name, ok: !!ok, proof }); co
 
   // K7: the recorded runs pass the number check.
   const bad = await p.$$eval(".ncheck.bad", n => n.map(x => x.textContent));
-  const probe = await p.evaluate(() => window.AGENTS.numberCheck("About $9.9M sits idle, up 31%, with 77 checks a month.", { balance: 3160000, growthPct: 31 }));
-  check("K7. Every number in the outputs traces to the data, and a made-up number is caught", bad.length === 0 && probe.untraced.join() === "$9.9M,77",
+  const probe = await p.evaluate(() => window.AGENTS.numberCheck("About $9.9M sits idle, up 31%, with 77 checks a month. Profit could rise 101%, balances up 55%, 1999 checks a month, about three million in fees.",
+    { clientId: "C101", balance: 3160000, growthPct: 31, change6m: 0.55, nonInterestShare: 0.94, lastContact: "2026-09-12" }));
+  const want = "$9.9M,77,101%,55%,1999,three million";
+  check("K7. Every number in the outputs traces to the data, and made-up numbers are caught", bad.length === 0 && probe.untraced.join() === want && probe.traced === 1,
     (bad.length ? bad.join(" | ") : "no untraced numbers on any screen") + `; planted numbers caught: ${probe.untraced.join(", ")}`);
+
+  // K8, K1, K4: the guardrails block the risky phrasings and let innocent questions through.
+  const mustBlock = ["Can Lakeshore get a bigger line?", "Should we extend credit to Fox River?", "Is Fox River a good credit risk?", "How much can Lakeshore borrow?", "Should we increase their line?",
+    "What APR should I give Lakeshore?", "Should I offer a lower rate to win the deal?", "What rate should I offer Fox River on a sweep?", "Should we approve Lakeshore's line increase?",
+    "Send Maria the recap", "Email the client the recap", "Email the recap to Maria now for me.", "Show me Prairie Lane Builders' balances."];
+  const mustPass = ["Did Andre complain about his processor's pricing?", "Did Maria quote any numbers?", "Who handles approval of call notes?", "Draft a call note for Tom for me now",
+    "When is my next meeting with Brewer's Row?", "What products does Fox River have?"];
+  const g = await p.evaluate(([b, a]) => ({ missed: b.filter(q => !window.AGENTS.guard(q).blocked), wrong: a.filter(q => window.AGENTS.guard(q).blocked) }), [mustBlock, mustPass]);
+  check("K8. Guardrails block the risky phrasings and allow the innocent ones", !g.missed.length && !g.wrong.length,
+    `${mustBlock.length} blocked, ${mustPass.length} allowed` + (g.missed.length ? `; missed: ${g.missed.join(" | ")}` : "") + (g.wrong.length ? `; wrongly blocked: ${g.wrong.join(" | ")}` : ""));
   await ctx.close();
 
   // 7. Laptop and phone: no sideways scrolling; top and bottom screenshots of every screen.

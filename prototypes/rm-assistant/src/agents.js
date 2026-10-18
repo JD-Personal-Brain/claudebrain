@@ -73,51 +73,63 @@
 
   // ---------- K8 guardrails: checked in code before Claude is ever asked ----------
   const GUARDS = [
-    { control: "K8", kind: "credit decision", re: /\b(approve|approval|decline|deny|underwrit\w*|credit ?worth\w*|credit (decision|limit|score)|risk rating|line increase|should (we|i) lend|grant (the|a) loan)\b/i,
-      reply: "I can't help with credit decisions. That's for the portfolio manager and the credit officer. I can note the request for Sam Okafor (portfolio manager)." },
-    { control: "K8", kind: "pricing", re: /\b(what rate|which rate|pric(e|es|ing)|quote|discount|fee waiver|waive (the )?fees?|how much (should|to) (we )?charge|interest rate (to|should|we))\b/i,
-      reply: "I don't set or suggest prices or rates. Pricing goes through the bank's pricing process with the treasury or lending team." },
-    { control: "K1", kind: "contacting a client", re: /\b(send|e-?mail|text|message|call)\b.{0,30}\b(client|customer|maria|tom|them)\b.{0,20}\b(now|for me|automatically|directly)\b|\bauto-?send\b/i,
-      reply: "I don't contact clients. I draft; you review and send it yourself." }
+    { control: "K8", kind: "credit decision",
+      re: /\b(approv(e|al of)\b.{0,25}\b(loan|line|credit|limit|request|increase)|decline\b.{0,25}\b(loan|line|credit|request)|underwrit\w*|credit ?worth\w*|credit (decision|limit|score|risk)|risk rating|(bigger|larger|higher|new) (line|loan|limit)|(increase|raise)\b.{0,15}\b(line|limit|loan)|line increase|extend (more )?credit|lend\w*|borrow\w*|grant\b.{0,10}\bloan|qualif\w* for)\b/i,
+      reply: "I can't help with credit decisions. They belong to the portfolio manager and the credit officer, so bring in Sam Okafor (portfolio manager)." },
+    { control: "K8", kind: "pricing",
+      re: /(\b(what|which) (interest )?(rate|price|apr|fee)s?\b|\bapr\b|\b(lower|better|special|best|lowest|discounted) (rate|price|pricing|fee)s?\b|\b(rate|price|pricing|fee)s?\b.{0,20}\b(should|to|can) (i |we )?(offer|give|quote|charge)|\b(offer|give|quote|charge)\b.{0,25}\b(rate|price|discount|fee)s?\b|\bdiscount\b|\bfee waiver\b|\bwaive\b.{0,10}\bfees?\b|how much (should|to|can) (we |i )?charge|\bbeat\b.{0,15}\b(rate|price|offer)\b)/i,
+      reply: "I don't set or suggest prices or rates. Pricing belongs to the people who own it, such as the treasury or lending team." }
   ];
+  // K1: the assistant drafts; it never contacts a client itself.
+  const CONTACT_NAMES = () => B.clients.filter(c => c.rm === B.rm.id).flatMap(c => c.contacts.map(p => p.name.split(" ").pop().toLowerCase()).concat(c.contacts.map(p => p.name.replace(/^Dr\. /, "").split(" ")[0].toLowerCase())));
+  function contactsClient(text) {
+    const t = text.toLowerCase();
+    if (/\bauto-?send\b/.test(t)) return true;
+    if (/^\s*(please\s+)?(draft|write|prepare|summari[sz]e)\b/.test(t)) return false;   // asking for a draft is the assistant's job
+    if (!/\b(send|e-?mail|text|message|reach out to|contact|call)\b/.test(t.replace(/\bcall notes?\b/g, ""))) return false;
+    return /\b(client|customer|them|him|her)\b/.test(t) || CONTACT_NAMES().some(n => new RegExp("\\b" + n + "\\b").test(t));
+  }
   function guard(text) {
     for (const g of GUARDS) if (g.re.test(text)) return { blocked: true, control: g.control, kind: g.kind, reply: g.reply };
+    if (contactsClient(text)) return { blocked: true, control: "K1", kind: "contacting a client", reply: "I don't contact clients. I draft; you review and send it yourself." };
     const other = B.clients.find(c => c.rm !== B.rm.id && text.toLowerCase().includes(c.name.toLowerCase().split(" ")[0].toLowerCase()));
     if (other) return { blocked: true, control: "K4", kind: "a client outside your book", reply: `${other.name} isn't in your book, so I can't show anything about it. Users see only the clients they're allowed to see.` };
     return { blocked: false };
   }
 
   // ---------- K7: every number in an AI output must trace to its inputs ----------
-  function collectNumbers(obj, out) {
+  // Allowed numbers come from numeric fields only (not ids, dates or free text); a share (0.94) also counts as a percent (94).
+  function collectNumbers(obj, key, out) {
     if (obj == null) return out;
-    if (typeof obj === "number") out.push(obj);
-    else if (typeof obj === "string") (obj.match(/-?\d[\d,]*\.?\d*/g) || []).forEach(m => { const v = parseFloat(m.replace(/,/g, "")); if (!isNaN(v)) out.push(v); });
-    else if (Array.isArray(obj)) obj.forEach(v => collectNumbers(v, out));
-    else if (typeof obj === "object") Object.values(obj).forEach(v => collectNumbers(v, out));
+    if (typeof obj === "number") { out.push(obj); if (/share/i.test(key || "") && obj > 0 && obj < 1) out.push(Math.round(obj * 1000) / 10); }
+    else if (Array.isArray(obj)) obj.forEach(v => collectNumbers(v, key, out));
+    else if (typeof obj === "object") Object.entries(obj).forEach(([k, v]) => collectNumbers(v, k, out));
     return out;
   }
+  const MONTHS = "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec";
   function numberCheck(text, inputs) {
-    const allowed = [];
-    collectNumbers(inputs, []).forEach(v => { allowed.push(v); if (v > 0 && v < 1) allowed.push(v * 100); });
+    const allowed = collectNumbers(inputs, "", []);
     const clean = String(text)
-      .replace(/\b\d{4}-\d{2}(-\d{2})?\b/g, " ")                       // ISO dates
-      .replace(/\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.? \d{1,2}(st|nd|rd|th)?\b/gi, " ") // month-day
-      .replace(/\b\d{1,2}:\d{2}\b/g, " ")                                // times
-      .replace(/\b(19|20)\d{2}\b/g, " ")                                 // years
-      .replace(/\b[A-Z]{1,2}\d{1,3}\b/g, " ")                            // codes: K7, T1, A3, C101, Q3, H15
-      .replace(/\b\d+(st|nd|rd|th)\b/g, " ")                             // ordinals
+      .replace(/\b\d{4}-\d{2}(-\d{2})?\b/g, " ")                                            // ISO dates
+      .replace(new RegExp(`\\b(${MONTHS})[a-z]*\\.? \\d{1,2}(st|nd|rd|th)?\\b`, "gi"), " ")  // month and day
+      .replace(new RegExp(`\\b((${MONTHS})[a-z]*\\.?|since|in|of|for|by|from|until|before|after|Q[1-4]) (19|20)\\d{2}\\b`, "gi"), " ") // years, only where they read as dates
+      .replace(/\b\d{1,2}:\d{2}\b/g, " ")                                                   // times
+      .replace(/\b[A-Z]{1,2}\d{1,3}\b/g, " ")                                               // codes: K7, T1, A3, C101, Q3
+      .replace(/\b\d+(st|nd|rd|th)\b/g, " ")                                                // ordinals
       .replace(/\b\d+-(year|axis|month|day|week|minute)\b/gi, " ")
       .replace(/H\.15/g, " ");
     const found = [];
-    const re = /(\$)?(\d{1,3}(?:,\d{3})+|\d+(?:\.\d+)?)\s?(million|thousand|M\b|K\b|k\b|%|percent|points?|pts?)?/g;
+    const re = /(\$)?(\d{1,3}(?:,\d{3})+|\d+(?:\.\d+)?)\s?(million|thousand|billion|M\b|K\b|k\b|B\b|%|percent|points?|pts?)?/g;
     let m;
     while ((m = re.exec(clean))) {
       let v = parseFloat(m[2].replace(/,/g, "")); const unit = (m[3] || "").toLowerCase();
       if (!m[1] && !unit && Number.isInteger(v) && v < 10) continue;   // small counts ("3 talking points")
-      if (unit === "million" || unit === "m") v *= 1e6; else if (unit === "thousand" || unit === "k") v *= 1e3;
+      if (unit === "million" || unit === "m") v *= 1e6; else if (unit === "thousand" || unit === "k") v *= 1e3; else if (unit === "billion" || unit === "b") v *= 1e9;
       const ok = allowed.some(a => Math.abs(v - a) <= Math.max(0.051, Math.abs(a) * 0.02));
       found.push({ text: m[0].trim(), ok });
     }
+    // Amounts written in words can't be traced, so they're flagged.
+    (clean.match(/\b(one|two|three|four|five|six|seven|eight|nine|ten|a few|several|hundreds of|thousands of) (hundred|thousand|million|billion)\b/gi) || []).forEach(w => found.push({ text: w, ok: false }));
     const result = { total: found.length, traced: found.filter(f => f.ok).length, untraced: found.filter(f => !f.ok).map(f => f.text) };
     measures.numbersChecked += result.total; measures.numbersTraced += result.traced;
     return result;

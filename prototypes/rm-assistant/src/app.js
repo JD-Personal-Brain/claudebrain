@@ -88,8 +88,8 @@
     const { data } = A.a2Prompt(top);
     const box = $("#listResults"); box.innerHTML = "";
     top.forEach((t, i) => {
-      const ins = insights.find(x => x.clientId === t.clientId) || insights[i];
-      if (!ins) return;
+      const ins = insights.find(x => x.clientId === t.clientId);
+      if (!ins) return;   // never pair an insight with the wrong client
       const c = A.findClient(t.clientId);
       const text = [ins.headline, ins.why, ...(ins.talkingPoints || []), ins.nextStep].join(" ");
       const nc = A.numberCheck(text, data[i]);
@@ -207,6 +207,7 @@
     $("#useBrief").addEventListener("click", ev => { A.measures.used++; A.log("RM", "Used the brief", c.name, "K1"); ev.target.outerHTML = `<span class="done-note">Marked as used</span>`; changed(); });
     changed();
   }
+  const DRAFTING = `<p class="hint">Still drafting. The number check (K7) runs as soon as the draft is finished, before you can use it.</p>`;
   async function replayBrief(instant) {
     const c = A.findClient("C101"); briefClient = "C101"; renderMeetings();
     const list = $("#briefSteps"); list.innerHTML = ""; $("#briefDoc").innerHTML = `<p class="muted">Drafting…</p>`;
@@ -214,7 +215,7 @@
     for (const st of R.briefSteps) { await tools.find(t => t.name === st.tool).execute(st.input, {}); if (!instant) await wait(450); }
     if (!instant) {
       const words = R.brief.split(/(\s+)/); let shown = "";
-      for (let i = 0; i < words.length; i += 12) { shown += words.slice(i, i + 12).join(""); $("#briefDoc").innerHTML = md(shown); await wait(40); }
+      for (let i = 0; i < words.length; i += 12) { shown += words.slice(i, i + 12).join(""); $("#briefDoc").innerHTML = DRAFTING + md(shown); await wait(40); }
     }
     A.log("A3 Prep and follow-up", "Drafted the brief (recorded run)", c.name, "K7");
     finishBrief(R.brief, c, "replay");
@@ -228,10 +229,10 @@
       let result;
       if (AI.tools) {
         const tools = A.makeTools(({ tool, input }) => addToolStep(list, tool, input));
-        result = await AI.sample(A.a3BriefPrompt(c, true), { tools, modelTier: "quick", signal: briefCtl.signal, onText: ({ text }) => { doc.innerHTML = md(text); } });
+        result = await AI.sample(A.a3BriefPrompt(c, true), { tools, modelTier: "quick", signal: briefCtl.signal, onText: ({ text }) => { doc.innerHTML = DRAFTING + md(text); } });
       } else {
         const li = document.createElement("li"); li.textContent = "Read the client record, open insights, recent activity and market data (this view can't run page tools, so they're given in the prompt)"; list.appendChild(li);
-        result = await AI.sample(A.a3BriefPrompt(c, false), { modelTier: "quick", signal: briefCtl.signal, onText: ({ text }) => { doc.innerHTML = md(text); } });
+        result = await AI.sample(A.a3BriefPrompt(c, false), { modelTier: "quick", signal: briefCtl.signal, onText: ({ text }) => { doc.innerHTML = DRAFTING + md(text); } });
       }
       const text = result.text.slice(result.text.indexOf("##") >= 0 ? result.text.indexOf("##") : 0);
       A.measures.liveRuns++;
@@ -273,7 +274,7 @@
     </div>`;
     $("#copyEmail").addEventListener("click", () => {
       const txt = $("#emailSubject").value + "\n\n" + $("#emailBody").value;
-      const ok = () => { $("#copyState").textContent = "Copied. Send it yourself from Outlook: the assistant never sends email (K1)."; A.log("RM", "Copied the email to send", c.name, "K1"); };
+      const ok = () => { $("#copyState").textContent = "Copied. Send it yourself from your email: the assistant never sends email (K1)."; A.log("RM", "Copied the email to send", c.name, "K1"); };
       try { navigator.clipboard.writeText(txt).then(ok, () => { $("#emailBody").select(); $("#copyState").textContent = "Select-all done: press Ctrl+C or Cmd+C to copy. You send it yourself (K1)."; }); }
       catch (e) { $("#emailBody").select(); $("#copyState").textContent = "Press Ctrl+C or Cmd+C to copy. You send it yourself (K1)."; }
     });
@@ -294,12 +295,12 @@
     A.measures.runs++;
     if (mode !== "live") {
       if (mode !== "instant") { $("#followOut").innerHTML = '<div class="skeleton"></div>'; await wait(900); }
-      A.log("A3 Prep and follow-up", "Drafted recap, email and call note (recorded run)", c.name + ": from the RM's notes, no recording", "K24, K25");
+      A.log("A3 Prep and follow-up", "Drafted recap, email and call note (recorded run)", c.name + (B.meetingNotes.recordingConsent ? ": from the transcript" : ": from the RM's notes, no recording"), "K24, K25");
       renderFollow(R.followup, "replay"); state.textContent = ""; return;
     }
     const g = A.guard($("#notes").value);
     if (g.blocked && g.control === "K4") { state.textContent = g.reply; return; }
-    $("#followOut").innerHTML = `<div class="skeleton"></div><p class="muted">A3 is drafting from your notes on Claude. Consent check: no recording, so notes only (K24).</p>`;
+    $("#followOut").innerHTML = `<div class="skeleton"></div><p class="muted">A3 is drafting on Claude. Consent check (K24): ${B.meetingNotes.recordingConsent ? "the client agreed to recording" : "no recording, so it uses your notes only"}.</p>`;
     followCtl = new AbortController(); $("#stopFollow").hidden = false; $("#runFollow").disabled = true;
     const t0 = Date.now();
     try {
@@ -329,10 +330,10 @@
     if (c && /meet/i.test(q)) return c.nextMeeting ? `${c.name}: ${fmtDate(c.nextMeeting.date)} at ${c.nextMeeting.time}, ${c.nextMeeting.where} (${c.nextMeeting.purpose}). [Client record]` : `There's no meeting booked with ${c.name}. [Client record]`;
     return null;
   }
-  async function ask(q) {
+  async function ask(q, fromTour) {
     const out = $("#askOut"); const g = A.guard(q);
     if (g.blocked) {
-      A.measures.guardrailBlocks++; if (g.control === "K4") A.measures.permissionRefusals++;
+      if (!fromTour) { A.measures.guardrailBlocks++; if (g.control === "K4") A.measures.permissionRefusals++; }
       A.log("Guardrail", "Blocked a request before it reached Claude", `${g.kind}: "${q}"`, g.control);
       out.innerHTML = `<div class="blocked"><strong>Blocked by ${g.control} (${esc(g.kind)}).</strong> The request was stopped in code, before any AI saw it.<br>${esc(g.reply)}</div>`;
       changed(); return;
@@ -347,8 +348,9 @@
       const { text } = await AI.sample(A.guardPrompt(q), { modelTier: "quick", onText: ({ text }) => { out.innerHTML = `<div class="allowed">${inline(text)}</div>`; } });
       const refused = /^I can't help/i.test(text.trim());
       if (refused) { A.measures.guardrailBlocks++; A.log("RM Assistant", "Declined a request (Claude's own check)", q, "K8, K25"); }
-      else A.log("RM Assistant", "Answered from the RM's book", q, "K4, K7");
-      out.innerHTML = `<div class="${refused ? "blocked" : "allowed"}">${inline(text)}<br><span class="muted">${refused ? "Declined by Claude, the second line of defence after the guardrails in code." : "Live answer on Claude, from your own clients only."}</span></div>`;
+      const nc = refused ? null : A.numberCheck(text, A.myClients().map(c => A.clientRecord(c.id)));
+      if (!refused) A.log("RM Assistant", "Answered from the RM's book", q, "K4, K7");
+      out.innerHTML = `<div class="${refused ? "blocked" : "allowed"}">${nc ? markUntraced(inline(text), nc.untraced) : inline(text)}<br><span class="muted">${refused ? "Declined by Claude, the second line of defence after the guardrails in code." : "Live answer on Claude, from your own clients only."}</span> ${nc ? checkBadge(nc) : ""}</div>`;
     } catch (e) { out.innerHTML = `<div class="allowed">${esc(A.errText(e))}</div>`; dropToReplay(e); }
     changed();
   }
@@ -359,11 +361,11 @@
     ["K2", "Read-only unless approved", "The call note reaches the CRM only after you click approve."],
     ["K3", "AI drafts or flags; a named credit officer decides", "Anything about credit, like equipment financing, goes to the portfolio manager."],
     ["K4", "Users see only what they're allowed to see", "A1 scans only Jordan's 12 clients; A3's tools refuse another RM's clients."],
-    ["K7", "Every answer shows its source", "A source on every fact, and every number checked against the data before you see it."],
+    ["K7", "Every answer shows its source", "A source on every fact, and every number checked against the agent's data as soon as a draft is finished, before you can use it."],
     ["K8", "Guardrails", "Credit decisions, prices and contacting clients are blocked in code before Claude is asked."],
     ["K12", "An audit log", "Every agent action and every approval is logged below."],
     ["K22", "Simple rules first, and the AI explains", "A1 is plain rules the business owns; AI only explains what fired."],
-    ["K24", "Consent before recording", "No recording without the client's consent, so A3 drafts from your notes."],
+    ["K24", "Consent before recording", "A3 reads the meeting's consent flag: no consent, no transcript, so here it drafts from your notes."],
     ["K25", "Agents stop rather than guess", "Unclear dates and owners come back marked CHECK for you to confirm."]
   ];
   $("#ctlGrid").innerHTML = CONTROLS.map(([k, n, w]) => `<div class="ctl-card"><span><span class="ctl">${k}</span> <strong>${esc(n)}</strong></span><span class="where">${esc(w)}</span></div>`).join("");
@@ -393,6 +395,7 @@
   $("#marketLine").innerHTML = `<strong>Outside data:</strong> ${esc(M.name)}, ${esc(M.publisher)}, monthly from ${M.series[0].month} to ${M.latest.month}, public domain, through the datahub.io copy on GitHub. Saved copy fetched ${M.fetched}; latest value ${M.latest.yield}%.`;
 
   // ---------- Start ----------
+  $("#consent").innerHTML = `<span class="ctl">K24</span><span>Recording: ${B.meetingNotes.recordingConsent ? "<strong>the client agreed</strong>. In the real product A3 would use the Teams transcript; this prototype has notes only." : "<strong>the client didn't agree</strong>, so A3 drafts from your own notes."}</span>`;
   renderMeetings(); renderAudit(); renderMeasures();
   runList("instant"); replayBrief(true); runFollow("instant");
   A.measures.runs = 0; // the filled-in recorded runs at load don't count as runs

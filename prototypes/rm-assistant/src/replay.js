@@ -22,7 +22,7 @@ window.REPLAY = {
       talkingPoints: ["Ask how much staff time the branch runs take.", "Offer to show remote deposit on a laptop and scanner."],
       nextStep: "Offer Ruth Halvorsen a short remote deposit demo." },
     { clientId: "C104", headline: "Brewer's Row takes cards through another processor",
-      why: "The group runs 4 restaurants and has no merchant services with us. Andre said in September that he's unhappy with his current processor's fees.",
+      why: "The restaurant group takes card payments from diners and has no merchant services with us. Andre said in September that he's unhappy with his current processor's fees.",
       talkingPoints: ["Ask what bothers him most about his current card setup.", "Offer an introduction to the merchant services team."],
       nextStep: "Raise it at Thursday's 15:30 introduction to the new general manager." }
   ],

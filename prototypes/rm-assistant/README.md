@@ -31,10 +31,12 @@ The **guided tour** plays on a first visit (under 2 minutes), and anyone can pau
 - **Without live AI** (outside claude.ai, or if the viewer says no), every screen plays the **recorded run**
   in `src/replay.js`, written by Claude during the build and labeled "Recorded run" on screen. The tour
   always uses recorded runs, so it never spends anyone's usage.
-- **Number check (K7):** before an AI output is shown, every number in it is matched against the data the
-  agent was given; anything it can't trace is highlighted.
+- **Number check (K7):** as soon as an AI draft is finished, and before the RM can use it, every number in it
+  is matched against the numeric data the agent was given; anything it can't trace (including amounts written
+  in words) is highlighted. Small whole numbers under 10 are left unchecked, so counts like "3 talking points" pass.
 - **Guardrails (K8, K4, K1):** checked in code before Claude is asked; Claude's prompt carries the same
-  rules as a second line of defence.
+  rules as a second line of defence. The code check is pattern matching, so it catches common phrasings, not
+  every possible one; `tests/run-tests.js` lists the phrasings it must block and the innocent ones it must allow.
 - **Outside data:** the US 10-year Treasury yield (monthly average, Federal Reserve H.15, public domain),
   via the datahub.io copy on GitHub. A published page can't reach outside websites, so
   `scripts/fetch_market.py` saves a dated copy into `src/data/market.js` and the page shows that date.
