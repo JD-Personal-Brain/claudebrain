@@ -1,5 +1,7 @@
 # Tests
 
+> **Merged rules (2026-10-18).** Tests written for R1, R3, R5, R8, R10, R11, R13, R19, R20, R25 and R34 now test the rule each merged into (see the note at the end of `learning/rules.md`): R1, R11, R20 → R21; R3, R5, R34 → R31; R8, R13 → R2; R10 → R9; R19 → R26; R25 → R23.
+
 A simple scenario for each rule, to check that it really works.
 **How to run one:** start a new session in this repo, type "Say this,"
 and compare Claude's answer with "Pass if." Record the date and result.

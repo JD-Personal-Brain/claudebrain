@@ -48,7 +48,7 @@ Drop any proposal that breaks one of these:
 At a wrap-up, show only the top finding plus one line ("N more: say 'Elon mode'
 to see them"), so the wrap-up message stays short (rule R2). Otherwise, at most five findings, strongest first, each one line: what to cut, simplify,
 speed up or measure, why, and its source tag. Label each **Needed** or
-**Optional** (rule R8) and end with one question: which to apply. Record the
+**Optional** (rule R2) and end with one question: which to apply. Record the
 user's answers as open items or ideas only if they say yes (rule R31). If
 nothing is worth cutting, say so in one line.
 

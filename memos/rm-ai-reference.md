@@ -29,28 +29,21 @@ Later waves add early warning on clients who may leave, referral prompts and pro
 
 ### The value
 - **More revenue per RM:** pipeline and wins from the assistant's suggestions. McKinsey reports about 3–15% higher revenue per RM where banks rework a frontline area end to end (an outside benchmark, not our target).
-- **More time with clients:** hours saved each week, reported as hours, not turned into revenue.
-- **Proven, not assumed:** pilot RMs are compared with similar RMs not yet using it, and Finance agrees the method first. Targets are set from the bank's own numbers.
+- **More time with clients:** hours saved each week.
+- Both are proven against similar RMs not yet using it, with targets set from the bank's own numbers. [Outside evidence for each core use case](https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X)
 
-[Outside evidence for each core use case](https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X)
+### How fast, and what sets the pace
+Wave 1 is live in about six weeks: the meeting recap and email first (about weeks 2–4), then the client brief, Monday opportunity list and call notes (about weeks 4–6). The first read on closed revenue comes at about month 6. [The plan, week by week](https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk)
 
-### How fast
-| When (estimate) | What happens |
-|---|---|
-| Week 1 | A working prototype on sample data, shaped with RMs |
-| About weeks 2–4 | Meeting recap and email live with pilot RMs |
-| About weeks 4–6 | Client brief, Monday opportunity list and call notes into Salesforce live |
-| About month 6 | First read on closed revenue against the comparison group |
+**Limiting factor:** the client data owners' signature on the data contract, aimed for week 2 (ask 3 below); the bank's AI review comes next.
 
-**What sets the pace:** access to client data (the data owners' signatures, aimed for week 2) and the bank's AI review. Both start on day one; risk partners see every version as it's built. If either runs long, the meeting recap and email go first and the rest follows by about week 10.
-
-### What I need from you
+### What I need, and what I'd confirm
 1. A business sponsor for the RM work.
 2. Time with 6–10 RMs and their managers, and a willing pilot group.
-3. Named owners for the Salesforce and Snowflake client data.
+3. Named owners for the Salesforce and Snowflake client data, so the data contract can be signed in week 2.
 4. An early risk partner.
 
-[The delivery plan](https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk)
+To confirm in the first weeks: which revenue lever matters most now (new, growing or keeping clients); how RMs are measured and paid today; how long the AI review takes and whether recording client meetings in Teams is allowed; and what team and budget the pilot has.
 
 ## Part 2: The product: RM Assistant (short version for people)
 
@@ -179,10 +172,12 @@ Working file: `memos/rm-plan.md`.
 
 How The RM Assistant gets delivered to relationship managers (RMs) · Associated Bank · October 2026
 
-What the product is: [RM Assistant](https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2). The short version for leaders: [RM Executive Summary](https://claude.ai/artifact/LPPq2gt5PSoiB8GzX8ZBE2). Every detail (each step, the agent specs and the workflows) is in [RM Detail](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n), the fourth page in the RM section, for AI to read. The rules every product follows are in the [Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ).
+[RM Executive Summary](https://claude.ai/artifact/LPPq2gt5PSoiB8GzX8ZBE2) · [RM Assistant](https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2) · [RM Detail](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n) (everything in full, for AI to read) · [Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ) (the rules every product follows)
+
+**Limiting factor:** the Salesforce and Snowflake data owners' signature on the data contract [names needed], aimed for week 2. The product manager chases it from day one. Second: the bank's AI review.
 
 ### The plan at a glance
-The first 13 weeks (about 90 days), as estimates to confirm in the first days. Week 1 starts at kickoff.
+The first 13 weeks (about 90 days), as estimates to confirm in the first days. Week 1 starts at kickoff, and each row links to its detail in RM Detail.
 
 ```gantt
 weeks 13
@@ -198,35 +193,16 @@ Their sign-offs (call notes go back through step 4) | 3 | 5 | build | https://cl
 Small releases every week or two | 6 | 13 | ongoing | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-step-6-measure-and-iterate
 ```
 
-Waves 2 and 3 get dates at gate 2. The first read on closed revenue comes at about month 6. If data access or the AI review runs long, the recap and email still go first and the rest goes live by about week 10.
+Waves 2 and 3 get dates at gate 2, once data access and review times are known. The first read on closed revenue comes at about month 6.
 
-Each row's "detail" link opens that step in RM Detail, the full plan.
-
-### 1. Wave 1 in about six weeks
-Building starts on day one. Weeks are estimates to confirm in the first days.
-
-| When (estimate) | What gets done | Who |
-|---|---|---|
-| Days 1–5 | Sponsor kickoff; risk partner briefed; data access requested; working prototype on sample data | Product manager |
-| Week 1 | **Gate 1:** the sponsor sees the prototype and confirms wave 1 | Sponsor, with the risk partner |
-| Weeks 1–2 | Interviews and shadowing with RMs, using the prototype; size the opportunity | Product manager, pilot RMs |
-| Week 2 | **Gate 2:** data contract signed, early risk rating, value model, Finance's method for counting results, baseline confirmed, dates proposed for waves 2 and 3 | Sponsor, data owners, risk partner |
-| About weeks 2–4 | **Meeting recap and email live** with pilot RMs (in M365 Copilot), after their tests and sign-offs | Sponsor and risk partner |
-| About weeks 4–6 | **Client brief, Monday opportunity list and call notes into Salesforce live**, after their tests and sign-offs | Sponsor and risk partner |
-| About month 6 | First read on closed revenue against the comparison group | Sponsor, Finance |
-
-After wave 1: small releases every week or two. Wave 2 (early warning, referral prompts, prospect lookalikes) and wave 3 (client Q&A, AI sales coaching) get dates at gate 2, once data access and review times are known.
-
-Detail: [the full project plan, week by week](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-6-the-project-plan-estimate).
-
-### 2. What sets the pace
-- **Data access.** The data contract needs the Salesforce and Snowflake data owners' signatures, aimed for week 2. The product manager chases it from day one.
+### 1. What sets the pace
+- **Data access.** The data contract is the limiting factor above: nothing reaches pilot RMs on real client data until it's signed.
 - **The bank's AI review.** The risk partner sees every version as it's built, so sign-off confirms what they already know.
 - **Backup plan.** If either runs long, the meeting recap and email go first (they need the least new data and review), and the rest stays ready in the test environment, live by about week 10. The call is made at gate 2.
 
 Detail: [the backup plan and the six conditions for moving fast](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-6-the-project-plan-estimate).
 
-### 3. Who decides
+### 2. Who decides
 | Role | For the RM project |
 |---|---|
 | Sponsor | A commercial banking leader [name needed]: the outcome, funding and every gate |
@@ -238,7 +214,7 @@ Detail: [the backup plan and the six conditions for moving fast](https://claude.
 
 Detail: [who's involved and who decides](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-3-who-s-involved-and-who-decides).
 
-### 4. How we'll prove the value
+### 3. How we'll prove the value
 - **Revenue:** pipeline and wins from the assistant's suggestions, against similar RMs not yet using it. Every AI-sourced opportunity is tagged in Salesforce from day one, and Finance agrees the method before the pilot.
 - **Time:** hours saved per week and client-facing time, reported as hours, not turned into revenue.
 - **Use:** pilot RMs active each week, and the share of suggestions acted on.
@@ -246,26 +222,16 @@ Detail: [who's involved and who decides](https://claude.ai/artifact/PhUyGc16TmNN
 
 Detail: [the value model](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-2-the-value-model).
 
-### 5. Top risks
+### 4. Top risks
 | Risk | How I'd handle it |
 |---|---|
-| Data access or the AI review takes longer | Start both on day one; keep wave 1 internal, assistive and on approved platforms; use the backup plan |
+| Data access or the AI review takes longer | Start both on day one; keep wave 1 internal, assistive and on approved platforms (the backup plan is in section 1) |
 | RMs don't trust the insights | Show the reason and the numbers behind every insight; build it with pilot RMs; managers use it in their routines |
 | CRM data is incomplete | Lean on account data in Snowflake first; approved call notes improve CRM data over time |
 | Incentives don't reward acting on insights | Agree recognition for AI-sourced wins with sales leadership before launch |
 | Client privacy in recorded meetings | Record only with client consent and under the bank's recording policy; notes stay drafts until the RM approves |
 
 Detail: [every risk and how I'd handle it](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-7-top-risks-and-how-i-d-handle-them).
-
-### 6. What I'd confirm in the first weeks
-- Which revenue lever matters most now: new clients, growing clients or keeping them?
-- Which RM teams would make a good pilot group?
-- Who owns the client data in Salesforce and Snowflake?
-- How are RMs measured and paid today?
-- How long does the AI review take, and is recording client meetings in Teams allowed?
-- What team and budget are available for the pilot?
-
-Detail: [the full list of what to confirm](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-9-what-i-d-confirm-in-the-first-weeks).
 
 ## Part 5: The full delivery plan, with every step, agent spec and workflow
 

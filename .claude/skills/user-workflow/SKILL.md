@@ -42,7 +42,7 @@ List the guesses (every ⚠️) as questions for interviews and shadowing (playb
 ## 7. Check it (rule R7)
 - Every stage has a source or a ⚠️; every unknown number is [X].
 - Where the group has a plan, every AI product in it appears at one stage or more (step 3's check).
-- Words match `glossary.md` (rule R25): user workflow, AI product, core use case.
+- Words match `glossary.md` (rule R23): user workflow, AI product, core use case.
 - `python3 .claude/skills/audit/check.py` and `node designs/render-check.js` both report 0 problems; look at the page's screenshot, top and bottom.
 
 ## 8. Record it

@@ -21,27 +21,20 @@ Later waves add early warning on clients who may leave, referral prompts and pro
 
 ## The value
 - **More revenue per RM:** pipeline and wins from the assistant's suggestions. McKinsey reports about 3–15% higher revenue per RM where banks rework a frontline area end to end (an outside benchmark, not our target).
-- **More time with clients:** hours saved each week, reported as hours, not turned into revenue.
-- **Proven, not assumed:** pilot RMs are compared with similar RMs not yet using it, and Finance agrees the method first. Targets are set from the bank's own numbers.
+- **More time with clients:** hours saved each week.
+- Both are proven against similar RMs not yet using it, with targets set from the bank's own numbers. [Outside evidence for each core use case](https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X)
 
-[Outside evidence for each core use case](https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X)
+## How fast, and what sets the pace
+Wave 1 is live in about six weeks: the meeting recap and email first (about weeks 2–4), then the client brief, Monday opportunity list and call notes (about weeks 4–6). The first read on closed revenue comes at about month 6. [The plan, week by week](https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk)
 
-## How fast
-| When (estimate) | What happens |
-|---|---|
-| Week 1 | A working prototype on sample data, shaped with RMs |
-| About weeks 2–4 | Meeting recap and email live with pilot RMs |
-| About weeks 4–6 | Client brief, Monday opportunity list and call notes into Salesforce live |
-| About month 6 | First read on closed revenue against the comparison group |
+**Limiting factor:** the client data owners' signature on the data contract, aimed for week 2 (ask 3 below); the bank's AI review comes next.
 
-**What sets the pace:** access to client data (the data owners' signatures, aimed for week 2) and the bank's AI review. Both start on day one; risk partners see every version as it's built. If either runs long, the meeting recap and email go first and the rest follows by about week 10.
-
-## What I need from you
+## What I need, and what I'd confirm
 1. A business sponsor for the RM work.
 2. Time with 6–10 RMs and their managers, and a willing pilot group.
-3. Named owners for the Salesforce and Snowflake client data.
+3. Named owners for the Salesforce and Snowflake client data, so the data contract can be signed in week 2.
 4. An early risk partner.
 
-[The delivery plan](https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk)
+To confirm in the first weeks: which revenue lever matters most now (new, growing or keeping clients); how RMs are measured and paid today; how long the AI review takes and whether recording client meetings in Teams is allowed; and what team and budget the pilot has.
 
 _Last updated: 2026-10-18_

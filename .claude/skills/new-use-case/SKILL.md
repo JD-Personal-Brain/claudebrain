@@ -28,7 +28,7 @@ user group swapped in. In short:
 - Aim for a first version of about 300 to 400 lines. Leave out the RM memo's appendices (agent specs, workflows) and market scan unless the user asks; offer them as a next step.
 
 ## 3. Audit it, then fix it
-Check the draft against `memos/role-workflow.md` and `product-framework.md`, point by point (rule R11):
+Check the draft against `memos/role-workflow.md` and `product-framework.md`, point by point (rule R21):
 every step has a gate, governance runs through every step, all five kinds of
 measures are there, the quality bar is set, only `tech-stack.md` tools are named,
 unknown numbers are [X], and the accountability table is complete. List the gaps, fix them, and
