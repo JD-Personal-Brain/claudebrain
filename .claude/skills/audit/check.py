@@ -23,6 +23,7 @@
 14. Requirement sources (idea 52): every control has a "Comes from" line, and every sub-step that sets, builds, proves
     or watches a law, regulator or bank-policy control is in the playbook's "Where the requirements come from" table.
 16. The settings file (.claude/settings.json) is valid, so the startup and pre-merge checks keep working (lesson L32).
+18. One user group per people page (idea 61, from L38): the three short RM pages for people (executive summary, RM Assistant, plan) don't mention portfolio managers or PMs; cross-group notes go in RM Detail.
 15. Agent names: every "M<number> <Name>" in the Product Machine and the playbook steps matches the Agent Library.
 Prints each problem and a total. 0 problems means the mechanical checks pass.
 """
@@ -339,5 +340,15 @@ try:
     if not a or not b: print('check 17 could not read the capability tables'); probs+=1
 except Exception as e:
     print('check 17 (RM Assistant page vs its detail file build table) failed to run:',e); probs+=1
+
+# 18. One user group per people page (idea 61, from L38, rule R31): the three short RM pages for people
+# don't talk about the other user group. Cross-group notes belong in RM Detail or the shared pages.
+for f in ['memos/rm-executive-summary.md','memos/rm-assistant.md','memos/rm-plan.md']:
+    try:
+        for i,line in enumerate(open(f).read().splitlines(),1):
+            if re.search(r'portfolio manager', line, re.I) or re.search(r'\bPMs?\b', line):
+                print(f+':'+str(i),'a page for RMs mentions portfolio managers; move it to RM Detail or a shared page (rule R31)'); probs+=1
+    except FileNotFoundError:
+        print('check 18: missing',f); probs+=1
 
 print("problems:",probs)
