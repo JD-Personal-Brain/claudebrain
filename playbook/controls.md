@@ -302,7 +302,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 - **Watched in:** not covered in the playbook yet
 - **Tool (guess):** Teams meeting settings and M365 Copilot recaps
 - **Proof:** a test showing no recap is drafted from a meeting without recorded consent
-- **Comes from:** Law or regulator: call-recording consent laws, which differ by state, and the bank's recording policy. ⚠️ In the bank's footprint, Illinois generally requires every party's consent to record a private conversation, while Wisconsin, Minnesota and Missouri generally require one party's; compliance confirms. To change it, ask compliance.
+- **Comes from:** Law or regulator: call-recording consent laws, which differ by state, and any recording policy the bank has ⚠️. ⚠️ In the bank's footprint, Illinois generally requires every party's consent to record a private conversation, while Wisconsin, Minnesota and Missouri generally require one party's; compliance confirms. To change it, ask compliance.
 
 ### K25. Agents stop rather than guess
 - **Group:** Quality

@@ -71,7 +71,7 @@ for block in re.split(r"\n\*\*(?=B\d+\. )", appb)[1:]:
                   "logged": field(body, "Logged"), "measures": field(body, "Measures"),
                   "check": field(body, "Check"),
                   "agents": sorted(set(re.findall(r"\b(?:A\d|M\d{1,2})\b", body)), key=lambda a: int(a[1:])),
-                  "link": f"{RM_PLAN_URL}#part-5-the-full-delivery-plan-with-every"}
+                  "link": f"{RM_PLAN_URL}#part-5-the-full-delivery-plan-with-every-appendix-b-workflows"}
 
 # The RM's week as the main process. This grouping is my framing of the
 # memo's workflows; confirm it with RMs in Discover.

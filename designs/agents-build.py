@@ -68,7 +68,7 @@ for block in re.split(r"\n\*\*(?=A\d+\. )", appa.split("### Agents the team uses
 
 GROUPS = [("machine", "Run the product machine", "Handle the paperwork and routing that move any project through the six steps: kickoff, notes, gate packs, sign-offs and releases. Reused on every project."),
           ("team", "Do the team's analysis, testing and monitoring", "General agents for every project: sizing, research, requirements, data checks, testing, red-teaming, fairness, evidence, feedback and impact. The RM plan shows how it uses each one."),
-          ("product", "The product RMs use", "The agents inside The RM Assistant. Nothing reaches a client without the RM. Insights and alerts are shown to the RM and their manager; anything saved as the RM's own work, like a call note or an opportunity, needs the RM's approval."),
+          ("product", "The product RMs use", "The agents inside The RM Assistant. Nothing reaches a client without the RM. Insights and alerts are shown to the RM (and, if agreed, their manager); anything saved as the RM's own work, like a call note or an opportunity, needs the RM's approval."),
           ("helpers", "My research helpers", "Agents that keep my own reference pages current, such as the Bank Business Briefing. Not part of the product machine. Each runs on a schedule and only drafts: I decide what goes into main.")]
 counts = {g: sum(a["group"] == g for a in agents) for g, *_ in GROUPS}
 

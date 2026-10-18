@@ -71,7 +71,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
   - First time: **Me**. This is change management.
   - Note: which routine worked, and how managers phrased it. Reuse that for the next team.
   - Agent: none. This stays with a person. The product's **Monday send** of the opportunity list (a scheduled step in the RM plan's workflow B1) is part of the product and supports the routine, not an agent that runs it.
-- **For the RM Assistant:** managers run weekly pipeline meetings from the insights.
+- **For the RM Assistant:** managers use the insights in a routine they already run, such as a weekly pipeline meeting (⚠️ to confirm).
 
 ---
 

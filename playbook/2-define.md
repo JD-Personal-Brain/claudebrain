@@ -126,7 +126,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
   - First time: **Draft**.
   - Note: which story patterns repeat, such as permissions, logging and feedback. These become a story library for every project.
   - Agent: **M23 Requirements drafter** (agent library).
-- **For the RM Assistant:** "As an RM, each Monday I need my top 5 client opportunities, with the reason and a suggested next step, so I can plan my calls."
+- **For the RM Assistant:** "As an RM, each Monday I need my top [X] client opportunities, with the reason and a suggested next step, so I can plan my calls."
 
 ---
 

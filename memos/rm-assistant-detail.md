@@ -5,7 +5,7 @@ The detailed working file behind the RM Assistant page. People read the short pa
 > ⚠️ **A hypothesis, not a plan yet** (agreed as our working hypothesis on 2026-10-17). Built from McKinsey's research, the RM plan and public Associated job postings, not from how the bank works today. The first conversations with RM leaders test it; Discover confirms or changes the rest.
 
 ## The product in one line
-Each relationship manager (RM) gets **their own AI assistant**, inside Salesforce, Teams and Outlook. Its job is to help the RM win business and to free up the time they need to win it. It starts with three **capabilities**, each doing one specific job in the RM's work, and gains more feature wave by feature wave. It is the base everything else builds on: every later AI product for RMs is a new capability of the same assistant.
+Each relationship manager (RM) gets **their own AI assistant**, inside the tools we expect the RM already uses (Salesforce, Teams and Outlook; ⚠️ to confirm). Its job is to help the RM win business and to free up the time they need to win it. It starts with three **capabilities**, each doing one specific job in the RM's work, and gains more feature wave by feature wave. It is the base everything else builds on: every later AI product for RMs is a new capability of the same assistant.
 
 ## 1. A personal AI, with limits
 The assistant is personal to each RM, and it is constrained in five ways. These limits are what make it safe to give every RM one.
@@ -30,7 +30,7 @@ From Associated's public RM postings (seen through search results on job boards,
 | **The work around it all** | Meeting prep, follow-ups, call notes and CRM updates | Client brief, meeting follow-up |
 
 ## 3. Capabilities, by moment in the RM's work
-Each capability is one AI product (glossary). **Need it answers** says which need it answers: one of McKinsey's five frontline use cases, our own core use cases (admin off the RM's plate, keep clients), or the RM's job.
+Each capability is one AI product (glossary). The **Need it answers** column names one of McKinsey's five frontline use cases, our own core use cases (admin off the RM's plate, keep clients), or the RM's job.
 
 | Moment | Capability | What it does | Need it answers | Wave |
 |---|---|---|---|---|
@@ -43,7 +43,7 @@ Each capability is one AI product (glossary). **Need it answers** says which nee
 | | AI sales coaching (after calls) | Private guidance for the RM after a call, seen only by that RM | McKinsey: AI sales coaching | 3 |
 | **Keep the book** | Early warning | Flags clients who may be drifting away (falling balances, less activity) | Our own: keep clients | 2 |
 | **Credit hand-off** | Credit request draft | ⚠️ New idea, not decided: pulls the client's financials into a draft for the portfolio manager. Would take the higher-risk path (control K3) | The RM's job: credit and advice | Not planned |
-| **Left out on purpose** | Pricing suggestions; contacting prospects on its own | — | McKinsey: deal scoring and pricing; lead nurturing (full version) | Out (decided 2026-10-15) |
+| **Left out on purpose** | Pricing suggestions; contacting clients or prospects on its own | — | McKinsey: deal scoring and pricing; lead nurturing (full version) | Out (decided 2026-10-15) |
 
 **Wave 1 at a glance:** three capabilities: the pre-meeting client brief, the meeting follow-up and the Monday opportunity list. Together they cover the RM's whole meeting, before, during and after, plus the Monday call list. The order is the hypothesis; dates for waves 2 and 3 are proposed at gate 2 (the Define go/no-go) and confirmed at each wave's own quick-pass gates, once data access and review times are known. How the waves get delivered is in the [RM Assistant Plan](https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk).
 
@@ -51,7 +51,7 @@ Each capability is one AI product (glossary). **Need it answers** says which nee
 
 | Wave | Capability (AI product) | Core use case it answers | Agents | Built mainly on | Our measure (target set in Define) |
 |---|---|---|---|---|---|
-| **Wave 1** (follow-up about weeks 2–4; the rest about weeks 4–6) | Pre-meeting client brief | Account intelligence and meeting prep | A3 | Salesforce, Snowflake, Agentforce or M365 Copilot | Prep time per meeting; client-facing hours [X] |
+| **Wave 1** (follow-up about weeks 2–4; the rest about weeks 4–6) | Pre-meeting client brief | Account intelligence and meeting prep | A3 | Salesforce (Agentforce or Prompt Builder), Snowflake | Prep time per meeting; client-facing hours [X] |
 | | Meeting follow-up: recap, email draft and call notes into Salesforce (the RM approves) | Admin off the RM's plate | A3 | M365 Copilot in Teams and Outlook; Salesforce Agentforce for the notes | Hours saved per week; share of meetings logged [X] |
 | | Monday opportunity list (deposit and treasury gaps in wave 1) | Prospecting and next best opportunities | A1, A2, then a scheduled Monday send (workflow B1) | Snowflake signals, Power Automate | AI-sourced pipeline and wins, against the comparison group [X] |
 | **Wave 2** (dates proposed at gate 2) | Early warning: client may leave | Keep clients | A1, A2 | Snowflake signals, Salesforce | Clients kept, against the comparison group [X] |
@@ -59,7 +59,7 @@ Each capability is one AI product (glossary). **Need it answers** says which nee
 | | Prospect lookalikes | Prospecting and next best opportunities | A1, A2 | Snowflake, Salesforce | New clients, against the comparison group [X] |
 | **Wave 3** (dates proposed at gate 2) | Client Q&A ("what should I know about this client?") | Account intelligence and meeting prep | A5 | Salesforce Agentforce or Copilot Studio | Questions answered; answer ratings [X] |
 | | AI sales coaching (after calls; private to the RM, measured only in aggregate) | AI sales coaching | Spec to come | M365 Copilot (Teams transcripts), Copilot Studio | Coaching used after calls; win rate and new-RM ramp-up time [X] |
-| **Left out on purpose** | Pricing suggestions; contacting prospects on its own | Deal scoring and pricing; lead nurturing (the full version) | — | — | — |
+| **Left out on purpose** | Pricing suggestions; contacting clients or prospects on its own | Deal scoring and pricing; lead nurturing (the full version) | — | — | — |
 
 **Why wave 1's Monday list suggests only deposit and treasury gaps (decided 2026-10-18):** credit products, such as a line of credit, wait for the portfolio manager work, which avoids a fair-lending review in wave 1 (control K3).
 
@@ -96,7 +96,7 @@ Built once and shared by every capability, and later by portfolio managers.
 
 | Part | What it is | Used by |
 |---|---|---|
-| **Client data** | The Salesforce client record and activity; balances, products and trends, which we expect in Snowflake (⚠️ or Fabric; to confirm) (certified data only) | Every capability |
+| **Client data** | The Salesforce client record and activity; balances, products and trends, which we expect in Snowflake (⚠️ or Fabric; to confirm; certified data only) | Every capability |
 | **The RM's own work** | Their calendar, email and Teams meetings (transcripts only with client consent) | Brief, meeting follow-up, AI sales coaching |
 | **Outside prospect data** | ⚠️ To confirm: what the bank already licenses | Prospect lookalikes |
 | **Signals engine** (the "analytics") | Simple, explainable rules find opportunities and risks in the data; AI writes the reason in plain English and shows the numbers | Opportunity list, referral prompts, early warning, prospect lookalikes |

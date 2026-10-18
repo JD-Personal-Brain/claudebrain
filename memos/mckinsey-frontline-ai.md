@@ -1,7 +1,7 @@
 # McKinsey's frontline AI use cases for relationship managers
 
 The full McKinsey research behind the Use Case Library's relationship manager (RM) section. It summarizes McKinsey's
-article "Agentic AI is here. Is your bank's frontline team ready?". How the RM plan answers each use case is in the Use Case Library and the RM Assistant detail. Checked against the article's text, pasted
+article "Agentic AI is here. Is your bank's frontline team ready?". How the RM plan answers each use case is in the Use Case Library and RM Detail, Part 3. Checked against the article's text, pasted
 in by me on 2026-10-10.
 
 > **Source.** Kumar Kanagasabai, Chris Lu and Shital Chheda (McKinsey):

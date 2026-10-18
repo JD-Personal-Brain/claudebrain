@@ -12,10 +12,10 @@ Page 1 of the four "How we deliver" pages, read in this order:
 
 > **Source.** The six steps and gates were first taken from my RM analytics memo
 > (`memos/rm-analytics-framework.md`, memo v6, 2026-10-08) with the RM details
-> removed; the sub-steps below come from the Product Playbook. Memo v8 (2026-10-09) follows
-> the same six steps and gates and is the full worked example, with agent specs
-> and workflows in its appendices. Its sub-steps are
-> tailored to RM work and aren't yet numbered like the playbook's 44; that's part
+> removed; the sub-steps below come from the Product Playbook. The full RM plan (memo v11,
+> 2026-10-18, read in RM Detail) follows the same six steps and gates in one table,
+> with agent specs and workflows in its appendices. It links to the playbook's
+> sub-steps rather than repeating them; marking its tasks Auto, Draft or Me is part
 > of applying the product machine to the RM memo (work item W9 in the Open Items log).
 
 ## The six steps at a glance

@@ -120,7 +120,7 @@ log (see `README.md`) for every sub-step.
   - First time: **Me**, with platform teams.
   - Note: the feedback options users actually used.
   - Agent: the feedback saved here feeds **M30 Feedback triage** in step 5.
-- **For the RM Assistant:** insights on the Salesforce client record, plus the Monday send in Teams or Outlook.
+- **For the RM Assistant:** insights on the Salesforce client record, plus the Monday send in Teams or Outlook (⚠️ if RMs work mainly in Salesforce, to confirm in Discover).
 
 ---
 

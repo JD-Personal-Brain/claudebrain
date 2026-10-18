@@ -318,7 +318,7 @@ def _caps(md, head):
         return_cols=c
         if 'Capabilities' in head:   # The RM Assistant (short page and detail file): Moment | Capability | What it does | Core use case | Wave
             name,w=c[1],c[4]
-        else:                          # the plan: Wave | Capability | Core use case | Agents | Built on | Measure
+        else:                          # the detail file build table: Wave | Capability | Core use case | Agents | Built on | Measure
             m=re.match(r'\*\*Wave (\d)',c[0]); wave=m.group(1) if m else (wave if c[0]=='' else None); name,w=c[1],wave
         if w not in ('1','2','3'): continue
         for n in re.split(r' · ', name):
@@ -333,6 +333,6 @@ try:
     for x in sorted(b-a): print('the build table in memos/rm-assistant-detail.md lists capability',repr(x[0]),'in wave',x[1],'but the RM Assistant page does not'); probs+=1
     if not a or not b: print('check 17 could not read the capability tables'); probs+=1
 except Exception as e:
-    print('check 17 (RM Assistant page vs plan) failed to run:',e); probs+=1
+    print('check 17 (RM Assistant page vs its detail file build table) failed to run:',e); probs+=1
 
 print("problems:",probs)

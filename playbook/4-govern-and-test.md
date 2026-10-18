@@ -140,7 +140,7 @@ log (see `README.md`) for every sub-step.
   - First time: **Me**.
   - Note: which vendors were already approved. Keep a list, because the next project will likely reuse them.
   - Agent: none needed. A shared **approved vendors list** does the job.
-- **For the RM Assistant:** Salesforce, Microsoft and AWS (with the model provider behind Bedrock).
+- **For the RM Assistant:** Salesforce and Microsoft; AWS (and the model provider behind Bedrock) only if Bedrock is used.
 
 ---
 
