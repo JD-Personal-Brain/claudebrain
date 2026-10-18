@@ -5,6 +5,9 @@ it in designs/README.md."""
 import os, re
 from pagekit import CSS, E, inline, render_blocks, series, SERIES_CSS
 
+# Pages whose ### headings get ids, so other pages can link straight to them (RM Detail: the plan links into it).
+ANCHORED = {"memos/rm-ai-reference.md"}
+
 # Pages that are one of the four "How we deliver" pages get the reading-order strip.
 SERIES_KEY = {"product-framework.md": "framework"}
 
@@ -81,7 +84,7 @@ def build(src, out, name, label, lede, short=None):
         sid = slug(head)
         nav.append(f'<a href="#{sid}">{inline((short or {}).get(head, head))}</a>')
         secs.append(f'<section id="{sid}"><div class="stephead"><h2>{inline(head)}</h2></div>'
-                    f'<div class="mdbody">{render_blocks(text, kinds=True)}</div></section>')
+                    f'<div class="mdbody">{render_blocks(text, kinds=True, anchor=sid if src in ANCHORED else None)}</div></section>')
     page = f'''<title>{E(name)}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
