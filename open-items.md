@@ -233,5 +233,6 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C55 | RM gate 1 timing (said 2026-10-18: overlap, as recommended): the overlapping first pass is written into the Product Framework, so gate 1 can pass on a first sizing and a provisional baseline, with the rest of Discover and the final baseline finished by gate 2 | 2026-10-18 |
 | C56 | The checker rule for one user group per people page (idea 61, an open decision until now): yes on 2026-10-18 and built the same day as checker check 18 | 2026-10-18 |
 | C57 | The question sheet for my talk with the RM and credit leads (idea 59, parked until now): no (said 2026-10-18) | 2026-10-18 |
+| C58 | My workspace in the Document Library isn't private any more (said 2026-10-18: I don't mind people seeing my work): the "for me only" wording is gone from the library, and Open Items can be shared like any other page | 2026-10-18 |
 
 _Last updated: 2026-10-18_
