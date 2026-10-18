@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L39 · 2026-10-18 · Stated a "limiting factor" as fact on pages for leaders
+- **What happened:** the RM Executive Summary and plan said the limiting factor was the data owners' signature on the data contract. I asked who said so: nobody at the bank did. It was Claude's assumption from the 2026-10-17 review, and there may be many other blockers. The wording was also jargon.
+- **Root cause:** a repeat of L36. Rule R32 covers to-do lists but not claims about the bank written onto pages; when the Elon mode review asked "what's the limiting factor?", Claude answered with a guess and the guess became a headline.
+- **Fix:** the claim is gone from both pages; they now say the real hold-ups aren't known yet and ask about them. R32 moves to Level 2 and now covers anything written on a page.
+- **Rule:** R32 · **Test:** T45 · **Level:** 2 · **Times it happened:** 2
+
 ### L38 · 2026-10-18 · A "Portfolio managers next" section on the RM Assistant page
 - **What happened:** when I cut the RM pages down for people, Claude kept a "Portfolio managers next" section on the short RM Assistant page. I asked why a PM section was in an RM document: it made no sense there.
 - **Root cause:** the short page was cut from the long file section by section, and each section was shortened rather than asked "does this reader need it?" A note about the next user group belongs in the detail document, not on a page the RM business reads.

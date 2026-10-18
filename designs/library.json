@@ -82,7 +82,7 @@
         {
           "id": "rm-plan",
           "name": "RM Assistant Plan",
-          "what": "How The RM Assistant gets delivered: the limiting factor, the first 13 weeks as a chart, what sets the pace, who decides, how we prove the value and the risks.",
+          "what": "How The RM Assistant gets delivered: the first 13 weeks as a chart, what could slow us down, who decides, how we prove the value and the risks.",
           "status": "Waiting for review",
           "url": "https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk",
           "source": "memos/rm-plan.md",

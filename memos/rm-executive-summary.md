@@ -24,17 +24,17 @@ Later waves add early warning on clients who may leave, referral prompts and pro
 - **More time with clients:** hours saved each week.
 - Both are proven against similar RMs not yet using it, with targets set from the bank's own numbers. [Outside evidence for each core use case](https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X)
 
-## How fast, and what sets the pace
+## How fast
 Wave 1 is live in about six weeks: the meeting recap and email first (about weeks 2–4), then the client brief, Monday opportunity list and call notes (about weeks 4–6). The first read on closed revenue comes at about month 6. [The plan, week by week](https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk)
 
-**Limiting factor:** the client data owners' signature on the data contract, aimed for week 2 (ask 3 below); the bank's AI review comes next.
+**What could slow us down:** not known yet. Possible hold-ups include getting approval to use client data and the bank's AI review, but the real ones are a question for the first conversations (below).
 
 ## What I need, and what I'd confirm
 1. A business sponsor for the RM work.
 2. Time with 6–10 RMs and their managers, and a willing pilot group.
-3. Named owners for the Salesforce and Snowflake client data, so the data contract can be signed in week 2.
+3. Named owners for the Salesforce and Snowflake client data.
 4. An early risk partner.
 
-To confirm in the first weeks: which revenue lever matters most now (new, growing or keeping clients); how RMs are measured and paid today; how long the AI review takes and whether recording client meetings in Teams is allowed; and what team and budget the pilot has.
+To confirm in the first weeks: what usually holds up a new AI tool here; which revenue lever matters most now (new, growing or keeping clients); how RMs are measured and paid today; how long the AI review takes and whether recording client meetings in Teams is allowed; and what team and budget the pilot has.
 
 _Last updated: 2026-10-18_

@@ -4,8 +4,6 @@ How The RM Assistant gets delivered to relationship managers (RMs) · Associated
 
 [RM Executive Summary](https://claude.ai/artifact/LPPq2gt5PSoiB8GzX8ZBE2) · [RM Assistant](https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2) · [RM Detail](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n) (everything in full, for AI to read) · [Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ) (the rules every product follows)
 
-**Limiting factor:** the Salesforce and Snowflake data owners' signature on the data contract [names needed], aimed for week 2. The product manager chases it from day one. Second: the bank's AI review.
-
 ## The plan at a glance
 The first 13 weeks (about 90 days), as estimates to confirm in the first days. Week 1 starts at kickoff, and each row links to its detail in RM Detail.
 
@@ -25,9 +23,10 @@ Small releases every week or two | 6 | 13 | ongoing | https://claude.ai/artifact
 
 Waves 2 and 3 get dates at gate 2, once data access and review times are known. The first read on closed revenue comes at about month 6.
 
-## 1. What sets the pace
-- **Data access.** The data contract is the limiting factor above: nothing reaches pilot RMs on real client data until it's signed.
-- **The bank's AI review.** The risk partner sees every version as it's built, so sign-off confirms what they already know.
+## 1. What could slow us down (to confirm)
+The real blockers aren't known yet; they're a first question for the bank. Possible ones:
+- **Approval to use client data.** Nothing reaches pilot RMs on real client data until the people responsible for it approve which data the assistant may use.
+- **The bank's AI review.** The risk partner would see every version as it's built, so sign-off confirms what they already know.
 - **Backup plan.** If either runs long, the meeting recap and email go first (they need the least new data and review), and the rest stays ready in the test environment, live by about week 10. The call is made at gate 2.
 
 Detail: [the backup plan and the six conditions for moving fast](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-6-the-project-plan-estimate).
