@@ -71,7 +71,7 @@ for block in re.split(r"\n\*\*(?=B\d+\. )", appb)[1:]:
                   "logged": field(body, "Logged"), "measures": field(body, "Measures"),
                   "check": field(body, "Check"),
                   "agents": sorted(set(re.findall(r"\b(?:A\d|M\d{1,2})\b", body)), key=lambda a: int(a[1:])),
-                  "link": f"{RM_PLAN_URL}#part-5-the-full-delivery-plan-with-every"}
+                  "link": f"{RM_PLAN_URL}#part-5-the-full-delivery-plan-with-every-appendix-b-workflows"}
 
 # The RM's week as the main process. This grouping is my framing of the
 # memo's workflows; confirm it with RMs in Discover.
@@ -101,7 +101,7 @@ def chips(ts):
 def delivery_detail(b):
     tasks = "".join(f"<li>{chipify(k)} {inline(t)}</li>" for t, k in b["tasks"])
     auto = any(kind.split()[0] in ("Auto", "Draft") for _, kind in b["tasks"])
-    # Map 1 is for every product, so an RM plan product agent (A1 to A5) says where it comes from
+    # Map 1 is for every product, so an RM plan product agent (A1, A2, A3, A5) says where it comes from
     ag = ", ".join([a + " (a product agent in the RM plan)" if a.startswith("A") else a for a in b["agents"]] + [f"{a.replace(' (template)', '')} (a reusable template)" for a in b["assets"]])
     if not ag:
         ag = "No named agent yet" if auto else "None: this stays with a person"

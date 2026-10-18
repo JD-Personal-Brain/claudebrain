@@ -37,7 +37,7 @@ sub-step. At the end, run the automation review.
   - First time: **Me** (sponsor and risk conversations) and **Draft** (setting up the tracker and files).
   - Note: how long setting up the tracker took, and what you copied by hand.
   - Agent: **M1 Kickoff pack builder** (agent library) that creates the tracker, decision log, project file and who-decides template from one project statement. *Draft*: you check it.
-- **For the RM Assistant:** the plan for relationship managers (RMs). Sponsor = the commercial banking leader. The statement: "more new revenue from RMs, by finding opportunities and freeing time to act on them." The memo's "Who's involved" table (section 3) is the who-decides list.
+- **For the RM Assistant:** the plan for relationship managers (RMs). Sponsor = a commercial banking leader [name needed]. The statement: "more new revenue from RMs, by finding opportunities and freeing time to act on them." The memo's "Who's involved" table (section 3) is the who-decides list.
 
 ---
 
@@ -187,7 +187,7 @@ sub-step. At the end, run the automation review.
   - First time: **Draft** for the mock-up (Claude builds it with the `prototype` skill). **Me** for running the sessions and summarizing reactions.
   - Note: how long each version took to build, and what feedback came up every time.
   - Agent: **M4 Reaction summarizer** (agent library) that turns session notes into "what to change next". *Draft*.
-- **For the RM Assistant:** a pre-meeting client brief and the Monday opportunity list, built on sample clients.
+- **For the RM Assistant:** a pre-meeting client brief, the Monday opportunity list and the meeting follow-up, built on sample clients.
 
 ---
 
@@ -213,7 +213,7 @@ sub-step. At the end, run the automation review.
   - Agents:
     - **M5 Baseline recorder** (agent library; Power BI) that snapshots the measure for the target users on a schedule from today on (the pilot and comparison groups are confirmed in 2.8). *Auto*.
     - **M6 Gate pack drafter** (agent library) pulls each sub-step's outputs into one document. *Draft*.
-- **For the RM Assistant:** feature wave 1 = three capabilities: the pre-meeting client brief, the meeting follow-up (recap, email and call notes into Salesforce) and the Monday opportunity list (memo Step 1).
+- **For the RM Assistant:** feature wave 1 = three capabilities: the pre-meeting client brief, the meeting follow-up (recap, email and call notes into Salesforce) and the Monday opportunity list (RM Assistant detail, section 3).
 
 ---
 

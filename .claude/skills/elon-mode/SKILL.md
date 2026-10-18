@@ -1,6 +1,6 @@
 ---
 name: elon-mode
-description: Review a plan, a step of the product machine, or the machine as a whole through Elon Musk's lens (cut first, then automate; attack the limiting factor; measure the machine), with the bank guardrails built in. Runs at every fifth wrap-up (the wrap-up skill counts), and whenever the user says "Elon mode", "run Elon mode on X", "what would Musk cut?", "review this the Musk way" or "is this too heavy?".
+description: Review a plan, a step of the product machine, or the machine as a whole through Elon Musk's lens (cut first, then automate; attack the limiting factor; measure the machine), with the bank guardrails built in. Runs at every third wrap-up (the wrap-up skill counts), and whenever the user says "Elon mode", "run Elon mode on X", "what would Musk cut?", "review this the Musk way" or "is this too heavy?".
 ---
 
 # Elon mode review
@@ -11,9 +11,14 @@ user decides. Keep the message tiny (rule R2), and do only what's asked (rule R3
 
 ## 1. Pick the target
 - Asked by name: review what the user named.
-- At a wrap-up: review the product machine as a whole (the four "How we deliver"
-  pages, the agent library and the controls), plus anything the last five
-  sessions added to it.
+- At a wrap-up: review two things. **The product machine** as a whole (the four
+  "How we deliver" pages, the agent library and the controls), plus anything the
+  last three sessions added to it. **This system itself**, so it gets better and
+  smaller over time, not only bigger (decided 2026-10-18): the rules
+  (`learning/rules.md`), the skills (`.claude/skills/`), the audit checks
+  (`.claude/skills/audit/check.py`), the designed pages (`designs/library.json`)
+  and the open items. For each, ask the same cut-first questions: has it changed
+  a decision or caught a problem lately? Can two be merged? Is it still used?
 
 ## 2. Run the cut-first questions
 For each part of the target (a sub-step, task, agent, control, gate or page section):
@@ -43,14 +48,14 @@ Drop any proposal that breaks one of these:
 At a wrap-up, show only the top finding plus one line ("N more: say 'Elon mode'
 to see them"), so the wrap-up message stays short (rule R2). Otherwise, at most five findings, strongest first, each one line: what to cut, simplify,
 speed up or measure, why, and its source tag. Label each **Needed** or
-**Optional** (rule R8) and end with one question: which to apply. Record the
+**Optional** (rule R2) and end with one question: which to apply. Record the
 user's answers as open items or ideas only if they say yes (rule R31). If
 nothing is worth cutting, say so in one line.
 
 ## 5. Record the run
 If the target was the product machine (always true at a wrap-up), reset
 "Wrap-ups since the last Elon mode review" at the top of NOW.md to 0 and write
-the date, for example "0 (last run 2026-10-15; it runs at 5)". A run on a single
+the date, for example "0 (last run 2026-10-18; it runs at 3)". A run on a single
 plan doesn't reset the count. Add a line to the test results for T42 in `learning/tests.md`.
 
 ## Checks

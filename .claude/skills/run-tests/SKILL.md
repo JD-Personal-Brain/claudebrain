@@ -32,7 +32,7 @@ mid-task): give the helper both messages in order, and ask for its reply to
 each, labeled Turn 1 and Turn 2. Grade each part on the turn it belongs to.
 
 ## 3. Grade
-Compare each reply with "Pass if", point by point (rule R11). It passes only
+Compare each reply with "Pass if", point by point (rule R21). It passes only
 if every point is met. Quote the line from the reply that proves it.
 
 ## 4. Record and report

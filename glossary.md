@@ -22,7 +22,7 @@ documents against it.
 | **Credit counterpart** | The proposed credit-side version of an RM core use case, for portfolio managers and credit analysts; for example, credit memo and annual review drafts under account intelligence and meeting prep (see the Use Case Library's portfolio manager section). |
 | **Use case (on its own)** | A whole area of work for one user group, such as the RM use case or the credit use case. Not one AI product (say AI product) and not one of the seven lines (say core use case). |
 | **User workflow** | How a user group (RMs, portfolio managers) works today, and how that work changes with AI. Not the same as the RM plan's numbered workflows B1 to B9 on the Workflow Maps. |
-| **AI product** | A specific capability we build and release, such as the pre-meeting brief. Each sits under one core use case. |
+| **AI product** | A specific capability we build and release, such as the pre-meeting client brief. Each sits under one core use case. |
 | **RM Assistant** | The core RM product (a hypothesis since 2026-10-17): one personal AI assistant for each RM, with limits on its jobs, workflows, data and controls, and capabilities added feature wave by feature wave on a shared foundation (the RM Assistant page). The RM plan's "RM assistant" (wave 3) is now its **Client Q&A** capability. |
 | **Capability** | One specific job the RM Assistant does, such as the pre-meeting client brief. Each capability is one AI product. |
 | **Wave** | Used two ways, so say which: a **feature wave** is a set of AI products released together, after a quick pass through Discover and Define; a **user wave** is the next group of users when a product scales (sub-step 5.7). |
@@ -61,7 +61,7 @@ documents against it.
 | **Agent** | An AI helper with one job, a short list of allowed actions and a named person in charge. |
 | **Research helper** | An agent that keeps my own reference pages current, such as H1, the bank news scout. Numbered H1 and on, listed in the Agent Library, and not part of the product machine. |
 | **General agent** | One of the 33 agents (M1 to M33) that run the product machine on every project, specified in the agent library: M1 to M19 handle the paperwork and routing, M20 to M33 do the team's analysis, testing and monitoring. |
-| **Product agent** | An agent inside the product that users see, numbered per project (A1 to A5 in the RM plan; A6 was removed on 2026-10-17). Specified in that project's memo, Appendix A. |
+| **Product agent** | An agent inside the product that users see, numbered per project (A1, A2, A3 and A5 in the RM plan; A4 was merged into workflow B1 on 2026-10-18 and A6 removed on 2026-10-17). Specified in that project's memo, Appendix A. |
 | **Agent spec** | An agent's written definition: its job, inputs, allowed and forbidden actions, outputs, when it stops, proof it worked and the person in charge. |
 | **Ongoing mode** | An agent first used once in a sub-step that then keeps running until the product is retired (for example M24 on every data refresh). Agents built to run on a schedule from the start aren't counted as ongoing mode. |
 | **Control** | A safeguard built into a product so the bank can trust it (K1 to K25 in the Controls Catalog). Each says where it is set, built, proved and watched, and where it comes from (law or regulator, bank policy or our choice). |
@@ -95,7 +95,7 @@ documents against it.
 | **Evidence pack** | Everything reviewers sign in step 4: the outputs of 4.1 to 4.6 (risk rating, data and privacy review, test and red-team results, fairness, controls and vendor reviews) and the draft monitoring plan (4.8). |
 | **Decision log** | The record of each decision: what was decided, the options, who decided and why. For gates it also records the date the gate pack was ready and the decision date. |
 | **Risk and issue list** | The one list of a project's dependencies, risks and issues, each with an owner and a date, reviewed weekly. Its top item is the limiting factor. |
-| **Project file** | The project's working document (`memos/<project>.md`), created at kickoff (1.0): the plan, the who-decides list and the approved AI tools. People read it as a designed page. |
+| **Project file** | The project's working document (`memos/<project>.md`), created at kickoff (1.0): the plan, the who-decides list and the approved AI tools. People read the short pages built from it; the full file goes into the project's detail document for AI. |
 | **Automation review** | The table at the end of each playbook step that lists each sub-step's agent (or None) with its first-time kind and the kind to aim for; at the gate, the automation check runs through it. |
 | **Tracker** | The one task list for a project (its section of the one shared tracker): each task with its owner, date and status. |
 | **Open item** | Anything unfinished, kept in the Open Items log and numbered in priority order within its kind (W1 is the first piece of work). Numbers change when priorities change; closed items (C) keep theirs. |

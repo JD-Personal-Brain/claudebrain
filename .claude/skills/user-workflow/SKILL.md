@@ -14,7 +14,7 @@ workflow**, not the RM plan's numbered workflows B1 to B9.)*
 
 ## 1. Gather what we already have
 Read before asking the user anything (rule R6):
-- **The group's plan and use cases:** for RMs, `memos/rm-analytics-framework.md` (the AI products, the seven core use cases, and Appendix B, workflows B1 to B9) and `memos/mckinsey-frontline-ai.md`; for credit, `memos/credit-market-scan.md` (the full credit scan, summarized in the Use Case Library's portfolio manager section).
+- **The group's plan and use cases:** for RMs, `memos/rm-assistant-detail.md` (the capabilities by moment, the core use case each answers, and the RM's job, sections 2 and 3), the full plan's Appendix B (`memos/rm-analytics-framework.md`, workflows B1 to B9) and `memos/mckinsey-frontline-ai.md`; for credit, `memos/credit-market-scan.md` (the full credit scan, summarized in the Use Case Library's portfolio manager section).
 - **What the group's week looks like:** Map 2 on the Workflow Maps (`designs/workflows-build.py`, "How an RM uses the product") shows an RM's week with AI only; the user's notes in `job-notes.md`; the bank's terms in `glossary.md` ("Bank terms to map").
 - **The bank itself:** `memos/bank-business.md`, `tech-stack.md` (the tools the group works in).
 
@@ -42,7 +42,7 @@ List the guesses (every ⚠️) as questions for interviews and shadowing (playb
 ## 7. Check it (rule R7)
 - Every stage has a source or a ⚠️; every unknown number is [X].
 - Where the group has a plan, every AI product in it appears at one stage or more (step 3's check).
-- Words match `glossary.md` (rule R25): user workflow, AI product, core use case.
+- Words match `glossary.md` (rule R23): user workflow, AI product, core use case.
 - `python3 .claude/skills/audit/check.py` and `node designs/render-check.js` both report 0 problems; look at the page's screenshot, top and bottom.
 
 ## 8. Record it

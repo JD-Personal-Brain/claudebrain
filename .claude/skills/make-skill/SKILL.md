@@ -27,7 +27,7 @@ Tell the user the home in one line, with the reason, before building.
 ## 2. Build it
 **A new skill** has:
 - A `description` that says exactly when to use it, including the words the user is likely to say, so it triggers without being asked.
-- Numbered steps in plain English (rule R13).
+- Numbered steps in plain English (rule R2).
 - Its checks: how Claude proves each run worked (rule R7).
 - What it produces, and where it's saved. If a person reads the result, it's a designed page (rule R16, the **designed-doc** skill).
 - Any helper script inside the skill's own folder.

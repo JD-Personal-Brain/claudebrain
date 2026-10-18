@@ -203,8 +203,8 @@ only grade, rank and fix.
 
 **What changed:** version 1, first written 2026-10-17. Version 2 (2026-10-18): the inputs list the three short RM pages and RM Detail, and the kit is now agreed (C50): three short pages for people (an executive summary, the product, the plan) plus one detail document for AI; for the next use case, start from that kit.
 
-## Prompt 2: a full product memo (like the RM analytics memo)
-**Version 1** (2026-10-09).
+## Prompt 2: a full product memo (like the RM Assistant's full plan)
+**Version 2** (2026-10-18).
 
 Builds a plan for a new use case from my saved files. The five files go in as
 Inputs, in tags (tip 4), and the request comes last (tip 6). Step 4 is
@@ -221,16 +221,19 @@ Inputs:   <job_description> [job-description.md] </job_description>
 Role:     You are a Principal Applied AI Product Manager at a
           commercial bank, writing for its business and risk leaders.
 
-Context:  The first use case is AI-powered analytics for relationship
-          managers (RMs). Assume the goal is new revenue that more than
-          pays for the tool, because that's my working assumption. The
-          bank wants working versions quickly, so plan a standard base
-          of use cases rolled out in waves, then iterate.
+Context:  The first use case is The RM Assistant: one personal AI
+          assistant for each relationship manager (RM), with limits on
+          its jobs, workflows, data and controls, and capabilities added
+          feature wave by feature wave. Assume the goal is new revenue
+          that more than pays for the tool, because that's my working
+          assumption. The bank wants working versions quickly, so plan
+          for speed, paced by what really blocks us.
 
-Steps:    1. Organize the plan by the six steps in <workflow>, using
-             the write-up layout in <framework> for each step.
-          2. Add a table showing where the plan covers each
-             accountability in <job_description>.
+Steps:    1. Write the six steps in <workflow> as one table, the
+             layout in <framework>; link to what it already says
+             instead of repeating it.
+          2. Mark every fact about the bank (its people, data, tools,
+             policies) as an assumption to confirm.
           3. Use only tools named in <tech_stack>.
           4. Draft it, check it against the Goal and the checklist,
              then improve it.
@@ -244,14 +247,15 @@ Goal:     Using everything above, write a memo on how I'd deliver this
           first use case. Done means a business leader could read the
           summary in 2 minutes and approve a pilot.
 
-Output:   Executive summary, outcome, value model, who decides, the six
-          steps, project plan, risks, how the plan covers the role,
-          and what I'd confirm first.
+Output:   Outcome, value model, who's involved, how the work flows
+          (one table), how we deploy AI, project plan, risks, what
+          I'd confirm first, Appendix A (agents) and Appendix B
+          (workflows). The short pages for people are built from it.
 ```
 
 **For a different use case:** change the Context (the use case, its goal and any assumptions) and the user group named in the Rules. Everything else stays.
 
-**What changed:** version 1, written 2026-10-09 as Example 4 in the Prompting Guide; moved here 2026-10-17.
+**What changed:** version 1, written 2026-10-09 as Example 4 in the Prompting Guide; moved here 2026-10-17. Version 2 (2026-10-18): built around one product with capabilities, the six steps as one table, bank facts marked as assumptions, and the output matching the RM full plan (memo v11); the job-description table was dropped (the Product Framework maps it).
 
 ## Prompt 3: a business briefing on the bank (like the Bank Business Briefing)
 **Version 1** (2026-10-09).

@@ -50,7 +50,7 @@ How the work is cut up, so every gate knows what it decides (gaps 1 to 3 from th
 |---|---|---|
 | Project | All the work for one user group | The RM project |
 | Core use case | One of the seven needs the project's AI products answer | Account intelligence and meeting prep |
-| AI product | A capability we build and release | The pre-meeting brief |
+| AI product | A capability we build and release | The pre-meeting client brief |
 | Feature wave | A set of AI products released together | Feature wave 1 |
 
 | Gate | Passed for |
@@ -132,20 +132,17 @@ These apply to every agent and every AI product, in every step.
 - **Built where the work happens.** Use the tools people already work in (Outlook, Teams, Salesforce), and add a new platform only when it's needed.
 
 ## How each step is written up
-Every project plan writes each step the same way, so plans are easy to compare.
-The full RM plan (`memos/rm-analytics-framework.md`, read in RM Detail, Part 5) is the worked example.
+Every project plan writes its six steps as one table, so plans are easy to compare;
+the full RM plan does this in its section 4 (`memos/rm-analytics-framework.md`, read in RM Detail, Part 5).
+What the Product Workflow and the Product Playbook already say is linked, not repeated
+(simplified 2026-10-18, when the RM plan was cut back).
 
-| Heading | What goes there |
+| Column | What goes there |
 |---|---|
-| Goal | The question this step answers for this product |
-| Work | The sub-steps, and the tools that help with each |
-| AI strategy | How AI is used in this step, and the agents that do it |
-| AI for the team | What the agents do for the project team |
-| AI for users | What users see of the product in this step |
-| Data | The data this step uses, and who owns it |
-| Output | What the step produces |
-| Checks | The safeguards that must hold during the step |
-| Gate | What the go/no-go decision needs |
+| Step | One of the six steps |
+| Gate for this project | What the go/no-go decision needs, in this project's terms |
+| What's specific to this project | The work, AI, data and checks that differ from the playbook for this user group |
+| General agents used | The general agents (M numbers) this step uses |
 
 ## How the job description maps to this framework
 | From the job description (accountabilities and requirements, `job-description.md`) | Where it lives |
@@ -166,8 +163,9 @@ the outcome and the sponsor, fill in who's involved and who decides (above) with
 real names, copy the Product Machine's task tables into the shared tracker with
 an owner and a date for each task, brief the risk partner and create the project
 file, with this project's question, governance thread and gate for each of the
-six steps (from the Product Workflow). Then work through Discover with the playbook, writing each step up in the
-layout above. The plan's working copy is `memos/<project>.md`, as the RM memo
-does; people read it as a designed page in the Document Library.
+six steps (from the Product Workflow). Then work through Discover with the playbook, writing the steps up in the
+table above. The plan's working copy is `memos/<project>.md`, as the RM memo
+does. People read three short pages (executive summary, product, plan); the full
+plan goes into the project's detail document for AI (RM Detail for RMs).
 
 _Last updated: 2026-10-15_

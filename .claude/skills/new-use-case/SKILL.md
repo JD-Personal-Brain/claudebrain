@@ -20,18 +20,18 @@ Don't ask for anything already in the repo (rule R6).
 ## 2. Draft the memo
 Use Prompt 2 in `prompt-library.md` as the brief, with this use case's Context and
 user group swapped in. In short:
-- Organize by the six steps (`memos/role-workflow.md`), each with the write-up layout in `product-framework.md`.
-- Organize the AI products under the seven core use cases, as the RM plan does: for this user group, each core use case's counterpart (see `glossary.md`, and the Use Case Library's portfolio manager section for an example).
+- Start from the product: one AI assistant for the group, its limits and its capabilities by moment in the user's work, each tied to the core use case it answers (as `memos/rm-assistant-detail.md` does; for this user group, each core use case's counterpart, see `glossary.md`).
+- Write the six steps (`memos/role-workflow.md`) as one table, as `product-framework.md` sets out.
+- Deliver the kit: three short pages for people (executive summary, product, plan) plus one detail document for AI (decided 2026-10-18, C50).
 - Use only tools named in `tech-stack.md`. Keep the AI assistive (AI suggests, a person decides).
 - Use [X] for numbers we don't have, never invented ones. Every outside fact gets a source, or is marked "I do not have a verified source for this."
-- Include a table showing where the plan covers each accountability in `job-description.md`.
 - Aim for a first version of about 300 to 400 lines. Leave out the RM memo's appendices (agent specs, workflows) and market scan unless the user asks; offer them as a next step.
 
 ## 3. Audit it, then fix it
-Check the draft against `memos/role-workflow.md` and `product-framework.md`, point by point (rule R11):
+Check the draft against `memos/role-workflow.md` and `product-framework.md`, point by point (rule R21):
 every step has a gate, governance runs through every step, all five kinds of
 measures are there, the quality bar is set, only `tech-stack.md` tools are named,
-unknown numbers are [X], and the accountability table is complete. List the gaps, fix them, and
+unknown numbers are [X], and every capability is tied to a core use case. List the gaps, fix them, and
 show the user a pass or fail list with proof.
 
 ## 4. Save and hand over

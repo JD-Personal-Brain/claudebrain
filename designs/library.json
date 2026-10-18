@@ -82,7 +82,7 @@
         {
           "id": "rm-plan",
           "name": "RM Assistant Plan",
-          "what": "How The RM Assistant gets delivered: wave 1 in about six weeks, what sets the pace, who decides, how we prove the value, the risks and what to confirm.",
+          "what": "How The RM Assistant gets delivered: the first 13 weeks as a chart, what could slow us down, who decides, how we prove the value and the risks.",
           "status": "Waiting for review",
           "url": "https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk",
           "source": "memos/rm-plan.md",
@@ -180,7 +180,7 @@
           "id": "agents",
           "name": "Agent Library",
           "what": "Every agent in one place: what it does, what it may and may not do, and who's in charge. Filter by step or by who it serves.",
-          "count": "39 agents",
+          "count": "38 agents",
           "status": "Reference",
           "url": "https://claude.ai/artifact/Cn9nANQoqp2BP7yrmy61zn",
           "source": "playbook/agents.md, RM memo Appendix A"

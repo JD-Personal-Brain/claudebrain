@@ -318,7 +318,7 @@ def _caps(md, head):
         return_cols=c
         if 'Capabilities' in head:   # The RM Assistant (short page and detail file): Moment | Capability | What it does | Core use case | Wave
             name,w=c[1],c[4]
-        else:                          # the plan: Wave | Capability | Core use case | Agents | Built on | Measure
+        else:                          # the detail file build table: Wave | Capability | Core use case | Agents | Built on | Measure
             m=re.match(r'\*\*Wave (\d)',c[0]); wave=m.group(1) if m else (wave if c[0]=='' else None); name,w=c[1],wave
         if w not in ('1','2','3'): continue
         for n in re.split(r' · ', name):
@@ -328,11 +328,11 @@ try:
     a=_caps('memos/rm-assistant.md','## 2. Capabilities')
     d=_caps('memos/rm-assistant-detail.md','## 3. Capabilities')
     for x in sorted(a^d): print('The RM Assistant short page and its detail file differ on capability',repr(x[0]),'in wave',x[1]); probs+=1
-    b=_caps('memos/rm-analytics-framework.md',"## The assistant's capabilities")
-    for x in sorted(a-b): print('memos/rm-assistant.md lists capability',repr(x[0]),'in wave',x[1],'but the RM plan does not'); probs+=1
-    for x in sorted(b-a): print('memos/rm-analytics-framework.md lists capability',repr(x[0]),'in wave',x[1],'but The RM Assistant page does not'); probs+=1
+    b=_caps('memos/rm-assistant-detail.md',"**How each capability is built**")  # the build table (moved from the full plan on 2026-10-18)
+    for x in sorted(a-b): print('memos/rm-assistant.md lists capability',repr(x[0]),'in wave',x[1],'but the build table in the detail file does not'); probs+=1
+    for x in sorted(b-a): print('the build table in memos/rm-assistant-detail.md lists capability',repr(x[0]),'in wave',x[1],'but the RM Assistant page does not'); probs+=1
     if not a or not b: print('check 17 could not read the capability tables'); probs+=1
 except Exception as e:
-    print('check 17 (RM Assistant page vs plan) failed to run:',e); probs+=1
+    print('check 17 (RM Assistant page vs its detail file build table) failed to run:',e); probs+=1
 
 print("problems:",probs)
