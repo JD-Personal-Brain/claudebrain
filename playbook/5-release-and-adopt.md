@@ -195,4 +195,4 @@ table in `product-machine.md`.
 
 **Stays with a person:** working with managers on routines (5.3) and recruiting champions (5.5).
 
-_Last updated: 2026-10-15_
+_Last updated: 2026-10-18_

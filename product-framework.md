@@ -68,6 +68,8 @@ a new project, with the full pass:
 - **Reused unless something changed:** 1.0 to 1.7 (record a baseline in 1.7 for any new measure, and show users a short 1.6 mock-up of any new AI product), 2.1, 2.2 (redone if the wave needs a different platform or delivery path), 2.6, and 2.8, where only the wave's scope and pilot group are updated. The product manager lists in the gate pack what was reused and what was redone.
 - **Gates 1 and 2 together, in writing,** from one short gate pack, with a meeting only if a criterion is contested.
 
+**The overlapping first pass** (decided 2026-10-18, C55). On a project's first pass, gate 1 may be passed early in writing on a first sizing (1.2) and a provisional baseline, so building can start; the rest of Discover (interviews, the time map, the mock-up reactions, 1.3 to 1.6) keeps running, and the final baseline (1.7) is recorded before gate 2, which checks it. Comes from: our choice, so the pace is set by what really blocks us. The risk partner still agrees at gate 1, and no real client data is used before gate 2.
+
 **Change after launch.** A **material change** goes back through step 4 before
 it reaches users: new data, a new action the product can take, users outside the
 group step 4 approved, a new AI model we choose, or a vendor model change
@@ -168,4 +170,4 @@ table above. The plan's working copy is `memos/<project>.md`, as the RM memo
 does. People read three short pages (executive summary, product, plan); the full
 plan goes into the project's detail document for AI (RM Detail for RMs).
 
-_Last updated: 2026-10-15_
+_Last updated: 2026-10-18_

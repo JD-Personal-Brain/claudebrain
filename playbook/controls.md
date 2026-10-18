@@ -316,4 +316,4 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 - **Proof:** a test where an agent is given a missing or stale input on purpose and stops with an alert
 - **Comes from:** Our choice: our agent specs. To change it, ask the product manager.
 
-_Last updated: 2026-10-15_
+_Last updated: 2026-10-18_

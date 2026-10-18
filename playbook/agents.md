@@ -595,4 +595,4 @@ checking the live product until it's retired. Five agents have one:
 
 Agents built to run on a schedule from the start (M11, M17, M18, M26, M30 and M31) are not "ongoing mode": running repeatedly is their normal job.
 
-_Last updated: 2026-10-15_
+_Last updated: 2026-10-18_

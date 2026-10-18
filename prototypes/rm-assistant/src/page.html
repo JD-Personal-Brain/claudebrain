@@ -1,0 +1,240 @@
+<title>RM Assistant Prototype</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
+<style>
+/*CSS*/
+</style>
+<div class="app" id="app">
+  <header class="top">
+    <div class="top-in">
+      <div class="brand">
+        <span class="brand-name">The RM Assistant</span>
+        <span class="brand-sub">An AI assistant for every relationship manager (RM) · concept prototype by JD · version <span id="ver">1</span></span>
+      </div>
+      <div class="top-right">
+        <span class="chip chip-sample" title="Every client, person and number on this page is made up">Sample data</span>
+        <span class="chip" id="aiMode" data-mode="checking">Checking for live AI…</span>
+        <button class="btn btn-ghost-on-navy" id="tourBtn" type="button">Play the 2-minute tour</button>
+      </div>
+    </div>
+  </header>
+  <div class="persona"><div class="persona-in">
+    <span class="avatar" aria-hidden="true">JE</span>
+    <span>You're <strong>Jordan Ellis</strong>, a senior relationship manager (RM) with 12 business clients · <span id="today"></span></span>
+  </div></div>
+  <div class="shell">
+    <nav class="side" id="nav" aria-label="Screens">
+      <span class="nav-label">What the assistant does</span>
+      <button type="button" data-screen="list" class="on">Monday opportunity list</button>
+      <button type="button" data-screen="brief">Pre-meeting client brief</button>
+      <button type="button" data-screen="followup">Meeting follow-up</button>
+      <span class="nav-label">Why a bank can trust it</span>
+      <button type="button" data-screen="controls">Controls and audit log</button>
+      <button type="button" data-screen="measures">How we'd measure it</button>
+      <button type="button" data-screen="about">How it's built</button>
+    </nav>
+    <main class="main" id="main">
+
+      <!-- The Monday opportunity list (workflow B1, agents A1 and A2) -->
+      <section class="screen" id="s-list" data-screen="list">
+        <div class="shead">
+          <span class="eyebrow">Find business · workflow B1</span>
+          <h1>Monday opportunity list</h1>
+          <p class="lede">Every Monday, the clients worth a call this week, with the reason and the numbers behind it. You decide what to do with each one.</p>
+        </div>
+        <div class="hero" id="hero"></div>
+        <div class="runbar" id="listRunbar">
+          <button class="btn btn-primary" id="replayList" type="button">Watch it work</button>
+          <button class="btn" id="runList" type="button">Run live on Claude</button>
+          <button class="btn btn-quiet" id="stopList" type="button" hidden>Stop</button>
+          <span class="runstate" id="listState" role="status"></span>
+        </div>
+        <ol class="timeline" id="listTrace" aria-label="What the agents did"></ol>
+        <div class="cards" id="listResults"></div>
+        <p class="prod-note">In production (our assumption, to confirm): the list arrives in Teams or Outlook each Monday, and each card links to the client's Salesforce record.</p>
+      </section>
+
+      <!-- The pre-meeting client brief (workflow B2, agent A3) -->
+      <section class="screen" id="s-brief" data-screen="brief" hidden>
+        <div class="shead">
+          <span class="eyebrow">Before the meeting · workflow B2</span>
+          <h1>Pre-meeting client brief</h1>
+          <p class="lede">One page before each client meeting. The Prep and follow-up assistant gathers the facts itself, step by step, and shows where every fact came from.</p>
+        </div>
+        <div class="meetings" id="meetings" role="radiogroup" aria-label="Upcoming meetings"></div>
+        <div class="runbar">
+          <button class="btn btn-primary" id="replayBrief" type="button">Watch it work</button>
+          <button class="btn" id="runBrief" type="button">Run live on Claude</button>
+          <button class="btn btn-quiet" id="stopBrief" type="button" hidden>Stop</button>
+          <span class="runstate" id="briefState" role="status"></span>
+        </div>
+        <div class="split">
+          <div class="panel steps-panel">
+            <h2 class="h-small">What the agent did</h2>
+            <ol class="timeline" id="briefSteps"></ol>
+          </div>
+          <article class="panel doc" id="briefDoc" aria-live="polite"></article>
+        </div>
+        <p class="prod-note">In production (our assumption, to confirm): the brief reaches the RM in Teams or Outlook the day before the meeting.</p>
+      </section>
+
+      <!-- The meeting follow-up (workflows B3 and B4, agent A3) -->
+      <section class="screen" id="s-followup" data-screen="followup" hidden>
+        <div class="shead">
+          <span class="eyebrow">After the meeting · workflows B3 and B4</span>
+          <h1>Meeting follow-up</h1>
+          <p class="lede">After the meeting, the assistant turns your notes into a recap, a follow-up email and a CRM call note. Nothing is saved or sent until you approve it.</p>
+        </div>
+        <div class="split">
+          <div class="panel">
+            <h2 class="h-small">Your notes · Lakeshore Precision Tooling · Tuesday, October 20</h2>
+            <div class="consent" id="consent"></div>
+            <label class="sr" for="notes">Meeting notes</label>
+            <textarea id="notes" rows="12"></textarea>
+            <div class="runbar">
+              <button class="btn btn-primary" id="replayFollow" type="button">Watch it work</button>
+              <button class="btn" id="runFollow" type="button">Run live on Claude</button>
+              <button class="btn btn-quiet" id="stopFollow" type="button" hidden>Stop</button>
+              <span class="runstate" id="followState" role="status"></span>
+            </div>
+          </div>
+          <div class="panel" id="followOut"></div>
+        </div>
+        <p class="prod-note">In production (our assumption, to confirm): the drafts appear in Outlook and on the Salesforce record; the RM sends the email from their own mailbox.</p>
+      </section>
+
+      <!-- Controls and the audit log -->
+      <section class="screen" id="s-controls" data-screen="controls" hidden>
+        <div class="shead">
+          <span class="eyebrow">Why a bank can trust it</span>
+          <h1>Controls and audit log</h1>
+          <p class="lede">The safeguards that would let a bank give every RM an assistant. Try to break it, then see every action the agents took.</p>
+        </div>
+        <div class="panel" id="breakit">
+          <h2 class="h-small">Try to break it</h2>
+          <p class="muted">Pick a request the assistant must refuse, or type your own. Code checks catch common phrasings before Claude is asked; Claude's own rules are the second line; and every finished draft is scanned again.</p>
+          <div class="presets" id="presets"></div>
+          <form class="ask" id="askForm">
+            <label class="sr" for="askInput">Ask the assistant</label>
+            <input id="askInput" type="text" autocomplete="off" placeholder="Ask about one of your clients, or try something it shouldn't do">
+            <button class="btn btn-primary" type="submit">Ask</button>
+          </form>
+          <div class="answer" id="askOut" aria-live="polite"></div>
+        </div>
+        <div class="panel">
+          <h2 class="h-small">Controls you can see working here</h2>
+          <div class="ctl-grid" id="ctlGrid"></div>
+          <p class="muted small">Not shown yet: hiding sensitive data such as contact details before they reach the AI (K6), and the formal risk rating and sign-offs (K13, K15), which come in the Govern and test step.</p>
+        </div>
+        <div class="panel">
+          <h2 class="h-small">The Signal finder's rules, owned by the business</h2>
+          <div class="tw"><table id="ruleTable"><thead><tr><th>Rule</th><th>When it fires</th><th>Priority points</th></tr></thead><tbody></tbody></table></div>
+        </div>
+        <div class="panel">
+          <h2 class="h-small">Audit log · this session, newest first</h2>
+          <div class="tw"><table id="auditTable"><thead><tr><th>Time</th><th>Who</th><th>What happened</th><th>Detail</th><th>Control</th><th>Ran on</th></tr></thead><tbody></tbody></table></div>
+        </div>
+      </section>
+
+      <!-- How we'd measure it -->
+      <section class="screen" id="s-measures" data-screen="measures" hidden>
+        <div class="shead">
+          <span class="eyebrow">The five kinds of measures</span>
+          <h1>How we'd measure it</h1>
+          <p class="lede">How we'd know whether RMs use it, trust it and win more with it. The big numbers count what happened in this session, the tour included; in a pilot they come from a live dashboard, compared with a group of RMs who don't have the assistant yet.</p>
+        </div>
+        <div class="measure-grid" id="measureGrid"></div>
+        <div class="panel">
+          <h2 class="h-small">How we'd get RMs to use it</h2>
+          <ul class="plain">
+            <li><strong>Built into a routine managers already run:</strong> the Monday list could go into the weekly pipeline meeting (our assumption, to confirm with the bank).</li>
+            <li><strong>Trained on their own work:</strong> each RM's first session uses their own clients, not a demo.</li>
+            <li><strong>Use, change or reject on every output:</strong> each click steers what gets better next.</li>
+            <li><strong>Champions</strong> show peers how they use it, and wins get celebrated.</li>
+            <li><strong>This tour</strong> is the first-time guide: it plays once, and anyone can replay it.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- How it's built -->
+      <section class="screen" id="s-about" data-screen="about" hidden>
+        <div class="shead">
+          <span class="eyebrow">From the plan to working code</span>
+          <h1>How it's built</h1>
+          <p class="lede">This prototype shows the idea working. The real product would be shaped with RMs, data owners and risk partners, starting with interviews. Every fact about the bank here is an assumption to confirm.</p>
+        </div>
+        <div class="panel">
+          <h2 class="h-small">How a request flows</h2>
+          <div class="flow" role="list" aria-label="How a request flows">
+            <div class="fbox" role="listitem"><b>Data</b><span>12 sample clients, plus the Federal Reserve's 10-year Treasury yield</span></div>
+            <div class="farrow" aria-hidden="true">→</div>
+            <div class="fbox" role="listitem"><b>Signal finder (A1)</b><span>Plain rules in code. No AI.</span></div>
+            <div class="farrow" aria-hidden="true">→</div>
+            <div class="fbox fbox-ai" role="listitem"><b>Claude (A2, A3)</b><span>Explains, briefs and drafts, with sources</span></div>
+            <div class="farrow" aria-hidden="true">→</div>
+            <div class="fbox" role="listitem"><b>Checks</b><span>Numbers traced, guardrails, freshness, audit log</span></div>
+            <div class="farrow" aria-hidden="true">→</div>
+            <div class="fbox fbox-me" role="listitem"><b>The RM decides</b><span>Use, change or reject; approve before saving</span></div>
+            <div class="farrow" aria-hidden="true">→</div>
+            <div class="fbox" role="listitem"><b>CRM</b><span>Saved, tagged AI-sourced or AI-drafted</span></div>
+          </div>
+        </div>
+        <div class="panel">
+          <h2 class="h-small">The three agents</h2>
+          <div class="tw"><table class="about-table"><thead><tr><th>Agent</th><th>Job</th><th>In this prototype</th><th>In production (our assumption, to confirm)</th><th>Person in charge</th></tr></thead><tbody>
+            <tr><td>A1 Signal finder</td><td>Checks each client against simple rules the business owns</td><td>Rules in code, run in your browser. No AI. Stops if the data is too old.</td><td>Snowflake (Cortex), each night</td><td>The business owner of the rules; the data owner for the inputs</td></tr>
+            <tr><td>A2 Insight writer</td><td>Explains each client's signals in plain English, with the numbers</td><td>Claude, live, through this page. One insight per client, so the list reads as clients to call</td><td>Salesforce Prompt Builder, or AWS Bedrock</td><td>The RM decides; the product manager owns quality</td></tr>
+            <tr><td>A3 Prep and follow-up assistant</td><td>Drafts the brief, the recap, the email and the CRM call note</td><td>Claude, live, looking up four sources itself</td><td>Salesforce Agentforce or M365 Copilot</td><td>The RM approves before anything is saved or sent</td></tr>
+          </tbody></table></div>
+        </div>
+        <div class="panel">
+          <h2 class="h-small">The data</h2>
+          <ul class="plain">
+            <li><strong>Sample clients:</strong> 12 made-up business clients for one RM, plus 2 belonging to another RM, used only to show the refusal.</li>
+            <li id="marketLine"></li>
+            <li><strong>Why a saved copy:</strong> a published page can't reach outside websites, so the build fetches the data and saves it with its date. The outside feed is a prototype addition; a real build would add it to the data contract (K5). In production, our assumption (to confirm with the bank) is that the agents read certified data from the bank's own systems.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h2 class="h-small">How it's tested</h2>
+          <p>Automated tests click through every promise on this page, with a stand-in for Claude: the tour, each agent, the outside data, the guardrails (risky phrasings blocked and innocent questions allowed), approval before saving, the number check with planted made-up numbers, the stale-data stop, laptop and phone layouts, and the recorded-run fallback. In a real build this grows into the test set and quality bar (K9).</p>
+        </div>
+        <div class="panel" id="pilotNeeds">
+          <h2 class="h-small">What a pilot would need (our assumption, to confirm)</h2>
+          <ul class="plain">
+            <li><strong>Data:</strong> read access to certified client and CRM data for the pilot RMs' clients. This usually sets the pace, not the build.</li>
+            <li><strong>People:</strong> a sponsor, a risk partner from day one, a data owner, and a small pilot group of RMs with a comparison group.</li>
+            <li><strong>Next:</strong> interviews and shadowing with RMs, then the first capability in front of them within weeks. The plan is on the <a href="https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk" target="_blank" rel="noopener">RM Assistant Plan</a> page.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h2 class="h-small">Where it sits in the plan</h2>
+          <p>This is the early clickable mock-up the product workflow calls for, built to test reactions. It follows the RM plan: The RM Assistant's wave 1 capabilities, agents A1 to A3, workflows B1 to B4, and controls K1, K2, K3, K4, K7, K8, K12, K22, K24 and K25.</p>
+          <p class="muted">The code is kept like a real team's: source files, a build script, automated tests, a changelog, and every version saved.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+  <footer class="foot">Sample data only: every client, person and number is made up. A concept prototype, not a bank product.</footer>
+</div>
+
+<!-- The guided tour -->
+<div class="tour" id="tour" hidden>
+  <div class="spot" id="spot"></div>
+  <div class="tcard" id="tcard" role="dialog" aria-modal="false" aria-labelledby="tTitle">
+    <div class="tprog"><span id="tbar"></span></div>
+    <div class="tmeta"><span id="tcount"></span><span id="tclock"></span></div>
+    <h2 id="tTitle"></h2>
+    <p id="tText"></p>
+    <div class="tbtns">
+      <button class="btn btn-quiet" id="tBack" type="button">Back</button>
+      <button class="btn" id="tPause" type="button">Pause</button>
+      <button class="btn btn-primary" id="tNext" type="button">Next</button>
+      <button class="btn btn-quiet" id="tSkip" type="button" aria-label="Close the tour">Close ✕</button>
+    </div>
+  </div>
+</div>
+<script>
+/*JS*/
+</script>

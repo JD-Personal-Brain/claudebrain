@@ -17,12 +17,14 @@ Each RM gets **their own AI assistant**, inside the tools we expect they already
 | **Meeting follow-up** | The recap, the follow-up email and the call notes for Salesforce, drafted for the RM to approve: from the Teams transcript where recording is allowed and the client agrees, otherwise from the RM's own notes. Recap and email come first; saving call notes to Salesforce follows once it is signed off | Admin off the RM's plate; better client records |
 | **Monday opportunity list** | Each Monday, the clients to call this week, with the reason and the numbers behind it | New revenue from existing clients |
 
+**See it working:** the [RM Assistant Prototype](https://claude.ai/artifact/RFM2o7cdren3TxesQBsjky) runs all three on sample data, with a 2-minute tour.
+
 Later waves add early warning on clients who may leave, referral prompts and prospect lookalikes, then client Q&A and AI sales coaching.
 
 ## The value
 - **More revenue per RM:** pipeline and wins from the assistant's suggestions. McKinsey reports about 3–15% higher revenue per RM where banks rework a frontline area end to end (an outside benchmark, not our target).
 - **More time with clients:** hours saved each week.
-- Both are proven against similar RMs not yet using it, with targets set from the bank's own numbers. [Outside evidence for each core use case](https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X)
+- Revenue is proven against similar RMs not yet using it; time is reported as hours saved. Targets are set from the bank's own numbers. [Outside evidence for each core use case](https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X#relationship-managers)
 
 ## How fast
 Wave 1 is live in about six weeks: the meeting recap and email first (about weeks 2–4), then the client brief, Monday opportunity list and call notes (about weeks 4–6). The first read on closed revenue comes at about month 6. [The plan, week by week](https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk)

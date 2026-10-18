@@ -35,7 +35,7 @@ not the first time risk partners see the product.
 | 6. Measure and iterate | Is it delivering the outcome, and what comes next? | Ongoing monitoring | Each month (and at the end of each feature wave): keep, change or stop each AI product; each quarter: invest more, adjust or stop overall |
 
 **Building starts early:** a rough clickable mock-up within
-days of the first interviews (sub-step 1.6), on sample data. The pace is set by the
+days of kickoff, on sample data, tested in the first interviews (sub-step 1.6). The pace is set by the
 limiting factor (usually data access and review), not build time.
 
 ## What happens in each step
@@ -51,4 +51,4 @@ question, governance thread and gate from the table above, so they can't drift f
 - **5. Release and adopt:** confirm release readiness · launch the pilot, with a comparison group · build it into routines (the core of adoption) · train users on their own work · recruit champions and celebrate wins · fix fast · scale in user waves after a go/no-go check.
 - **6. Measure and iterate:** track the measures on a live dashboard · compare with the baseline and the comparison group · re-test after every change, and watch for quality slipping ("drift") · hold the monthly keep / change / stop review · feed the next feature wave · improve the machine itself.
 
-_Last updated: 2026-10-15_
+_Last updated: 2026-10-18_

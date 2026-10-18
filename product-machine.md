@@ -215,4 +215,4 @@ Every project keeps a light log per sub-step (start, finish, hours, waits); the 
 - **Stagger the gates.** No two gate packs from different projects land in the same week.
 - **Plan the product manager's week.** [X] hours on decisions and gates, [X] on users, [X] on partners and sign-offs, [X] checking drafts. If person-only work runs over, the automation check comes first.
 
-_Last updated: 2026-10-15_
+_Last updated: 2026-10-18_

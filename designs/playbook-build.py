@@ -98,7 +98,7 @@ sources = readme.split("## Where the requirements come from")[1].split("\n## ")[
 steps = [step(f) for f in sorted(os.listdir(PB)) if re.match(r"\d-.*\.md$", f)]
 nav = '<a href="#use">How to use it</a>' + "".join(f'<a href="#step{n}"><span class="num">{n}</span>{inline(t)}</a>' for n, t, _ in steps) + '<a href="#agents">Agents</a>'
 
-from pagekit import CSS, series, SERIES_CSS
+from pagekit import CSS, series, SERIES_CSS, link_refs
 
 
 page = f'''<title>Product Playbook</title>
@@ -140,4 +140,4 @@ page = f'''<title>Product Playbook</title>
 <footer>In use: all six steps reviewed 2026-10-14. Built from the working copy in <code>playbook/</code>; lines marked ⚠️ are guesses about the bank, and [X] marks numbers still to be set. Kinds: <span class="chip k-auto">Auto</span> runs on its own · <span class="chip k-draft">Draft</span> AI drafts, a person checks · <span class="chip k-me">Me</span> only a person · <span class="chip k-partner">Partner</span> a named partner's sign-off.</footer>
 </main>
 '''
-open(os.path.join(ROOT, "designs", "playbook.html"), "w").write(page)
+open(os.path.join(ROOT, "designs", "playbook.html"), "w").write(link_refs(page, "playbook.html"))

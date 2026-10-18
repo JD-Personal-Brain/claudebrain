@@ -94,7 +94,7 @@ log (see `README.md`) for every sub-step.
   - First time: **Draft**.
   - Note: the groups and thresholds compliance chose. Reuse them.
   - Agent: **M28 Fairness monitor** (agent library). *Auto* report; compliance reviews. Its ongoing mode runs it again monthly after launch.
-- **For the RM Assistant:** check that opportunities, especially credit-related ones, are spread fairly across segments and regions.
+- **For the RM Assistant:** check that opportunities are spread fairly across segments and regions. Wave 1 suggests only deposit and treasury gaps; credit-related suggestions arrive only with the portfolio manager work (C52).
 
 ---
 
@@ -220,4 +220,4 @@ table in `product-machine.md`.
 
 **Never automated:** the sign-offs themselves. Risk partners make every call.
 
-_Last updated: 2026-10-15_
+_Last updated: 2026-10-18_

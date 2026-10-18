@@ -4,7 +4,7 @@ One meaning for each word, used the same way in every plan, playbook page and
 agent spec. Claude loads this every session, and the audit checks the core
 documents against it.
 
-> **Two kinds of terms.** The first two sections are our own working words for
+> **Two kinds of terms.** The first three sections are our own working words for
 > how products are delivered: the bank won't supply these, so we define them.
 > The last section lists the bank's business terms our plans depend on. Those
 > are **not** defined here: each one is marked ⚠️ until the bank's own
@@ -90,7 +90,7 @@ documents against it.
 |---|---|
 | **Designed page** | A branded page a person reads. Everything a person reads is one. |
 | **Working copy** | The Markdown file behind a designed page. Claude edits it; people read the page. |
-| **Reference page** | A page built to look things up: the Agent Library, Workflow Maps, Steps Catalog, Controls Catalog and this glossary (the Document Library's Reference section also lists Open Items, the Audit Log, the Tech Stack Guide, the Job Description, the Prompting Guide, the Prompt Library and the Use Case Library, pages I read or act on). RM Detail, in the RM section, is built automatically for an AI to read, not for people. Claude keeps them aligned; they're never on the review list. |
+| **Reference page** | A page built to look things up: the Agent Library, Workflow Maps, Steps Catalog, Controls Catalog and this glossary (since 2026-10-18 they are the only pages in the Document Library's Reference section; the pages I read or act on sit elsewhere: the Job Description and Tech Stack Guide in "The bank and the role", the Use Case Library in Research, and Open Items, the Audit Log, the Prompting Guide and the Prompt Library in "My workspace"). RM Detail, in the RM section, is built automatically for an AI to read, not for people. Claude keeps them aligned; they're never on the review list. |
 | **Gate pack** | Everything the decider needs at a gate, put together in one document. |
 | **Evidence pack** | Everything reviewers sign in step 4: the outputs of 4.1 to 4.6 (risk rating, data and privacy review, test and red-team results, fairness, controls and vendor reviews) and the draft monitoring plan (4.8). |
 | **Decision log** | The record of each decision: what was decided, the options, who decided and why. For gates it also records the date the gate pack was ready and the decision date. |

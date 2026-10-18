@@ -1,7 +1,7 @@
 import html
 E=html.escape
 import re, os
-from pagekit import series, SERIES_CSS, STEPS_URL
+from pagekit import series, SERIES_CSS, STEPS_URL, link_refs, XREF_CSS
 # Reads the task tables straight from product-machine.md, and each step's question from the
 # Product Workflow (memos/role-workflow.md), so the page can't drift from its working copies.
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -240,4 +240,4 @@ footer{{color:var(--muted);font-size:14px;border-top:1px solid var(--line);paddi
 <footer>In use: reviewed 2026-10-14; cut-first check, gates in writing and the machine's measures added 2026-10-15. Tool choices are guesses until confirmed against the bank's setup. [X] marks numbers still to be set. The RM Assistant Plan is the first project to run through this machine.</footer>
 </main>
 '''
-open(os.path.join(ROOT,'designs','product-machine.html'),'w').write(page)
+open(os.path.join(ROOT,'designs','product-machine.html'),'w').write(link_refs(page.replace('</style>', XREF_CSS + '</style>', 1), 'product-machine.html'))

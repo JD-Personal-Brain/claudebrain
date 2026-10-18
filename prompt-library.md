@@ -17,6 +17,7 @@ holds the ones worth keeping.
 | 1 | The use case kit | The standard set of pieces every use case has (a leader layer and a working layer), the use case measured against it, and the gaps fixed | 2 (2026-10-18) |
 | 2 | A full product memo | A full product plan for a new use case, from my saved files | 1 (2026-10-09) |
 | 3 | A business briefing on the bank | The Bank Business Briefing, rebuilt from public sources each quarter | 1 (2026-10-09) |
+| 4 | A showcase prototype with live agents | A clickable prototype of a user group's AI assistant, with three agents running live on Claude, a guided tour and a video, built from our framework | 1 (2026-10-18) |
 
 ## Prompt 1: the use case kit (organize a use case, find its gaps, fix them)
 **Version 2** (2026-10-18). First run: relationship managers (RMs).
@@ -356,4 +357,144 @@ Tone:     An analyst's briefing: factual and direct, no selling.
 
 **What changed:** version 1, written 2026-10-09 as Example 5 in the Prompting Guide; moved here 2026-10-17.
 
-_Last updated: 2026-10-17_
+## Prompt 4: a showcase prototype with live agents (like the RM Assistant Prototype)
+**Version 1** (2026-10-18). First run: relationship managers (RMs).
+
+Builds a clickable prototype of a user group's AI assistant to show bank leaders
+we can turn the plan into working code: three agents running live on Claude, a
+guided tour and a short video for first-time users, and the code kept the way a
+real team would keep it. It is a showcase, not the product: the real product
+comes from the six steps after Discover. The inputs are files in the repo, so
+Claude reads them itself; they go first and the request comes last (tip 6).
+Step 9 is "draft, check, improve" (tip 9). Once I say yes to this prompt, Claude
+runs it end to end without stopping to ask, and reports back at the end.
+
+```
+Inputs:   <product> [memos/rm-assistant.md: the product, its limits
+          and its wave 1 capabilities] </product>
+          <agents_and_workflows> [Appendix A (agents A1, A2, A3) and
+          Appendix B (workflows B1 to B4) of
+          memos/rm-analytics-framework.md] </agents_and_workflows>
+          <controls> [playbook/controls.md] </controls>
+          <framework> [product-framework.md: AI principles, the five
+          kinds of measures, the quality bar] </framework>
+          <workflow> [memos/role-workflow.md] </workflow>
+          <tech_stack> [tech-stack.md] </tech_stack>
+          <glossary> [glossary.md] </glossary>
+          <prototype_rules> [the prototyping agreement in NOW.md and
+          .claude/skills/prototype/SKILL.md] </prototype_rules>
+
+Role:     You are a principal applied AI product manager who also
+          writes production-quality front-end code, building a
+          showcase for a commercial bank's executives.
+
+Context:  I'm interviewing for Principal Applied AI Product Manager
+          at Associated Bank. The executives who see this decide
+          whether to hire me to deploy AI. They must come away
+          thinking: this person can take the idea of [an RM's
+          work], package it as working code with live AI agents,
+          govern it, and get people to use it. It is a prototype
+          to prove we can build, not the product: the real one
+          comes from Discover onward, so every fact about the
+          bank stays an assumption. Viewers may be senior and
+          short of time, and may open it with no one to explain it.
+
+Steps:    1. Read the inputs. Write a "done" checklist (below,
+             plus anything you add) before building.
+          2. Build The [RM] Assistant's wave 1 screens: [the Monday
+             opportunity list, the pre-meeting client brief and
+             the meeting follow-up], for one made-up [RM] persona
+             with a book of about 12 made-up clients.
+          3. Run three agents live on Claude through the page's
+             "ask Claude" feature (the artifact `sample`
+             capability), each matching its spec in
+             <agents_and_workflows>: [A1 Signal finder, written as
+             simple, explainable rules in code (control K22), with
+             A2 Insight writer explaining each signal in plain
+             English; A3 drafting the brief; A3 drafting the
+             follow-up email and call note]. Show each agent
+             working: its steps, the data it read and its sources.
+          4. Feed the agents from one real public data source as
+             well as the sample data (for example, public company
+             filings or economic data), to show a live outside
+             feed. First test which sources the published page
+             can reach; if none, use a dated saved copy and say so
+             on screen.
+          5. Show the controls working on screen: the person
+             decides (K1), read-only until the [RM] approves (K2),
+             users see only their own clients (K4), every answer
+             shows its source (K7), guardrails (K8: it refuses a
+             credit decision or a price), the audit log (K12),
+             consent before recording (K24) and agents stop rather
+             than guess (K25). Add one-click feedback on every
+             output and a small "product manager view" with the
+             five kinds of measures, filled from this session.
+          6. Build a guided tour that plays like a video on first
+             visit (captions, highlighted steps, under 2 minutes,
+             skippable, replayable), then record it as a video
+             file. If live AI isn't available to a viewer, offer a
+             replay of a recorded run, clearly labeled.
+          7. Keep the code the way a real team would: source files
+             under prototypes/[rm-assistant]/ with a README (how
+             it works, how to run, how to change it), a build
+             script that writes prototype-v1.html, a changelog,
+             and automated tests that click through every
+             checklist item with Claude stood in by a test double.
+          8. Publish it as a designed page, add it to the Document
+             Library in the [RM] section, and save a draft to
+             GitHub.
+          9. Draft it, check it against the Goal and the
+             checklist, as an executive and as a first-time [RM],
+             then improve it. Run the audit at the size it picks.
+
+Rules:    Use made-up clients, people and numbers, marked "sample
+          data" on screen, because nothing real or non-public may
+          appear. Use the house style and no bank logo or brand
+          colors, and label it a concept by me, because the page
+          must never look like the bank's own product.
+          Keep the AI assistive: it drafts and suggests, and the
+          [RM] approves anything saved or sent, because the bank
+          will require it (K1, K2). Every number an agent states
+          must come from its inputs, because a made-up figure is
+          the top risk in banking AI. Use the words in <glossary>
+          and name agents, workflows and controls by their
+          numbers, so the prototype visibly ties to the plan.
+          Make your own best call on every open choice and keep
+          going, because I've asked for the full build without
+          check-ins; list each call in the final report. Say
+          plainly anything you couldn't test (such as a live
+          agent run inside claude.ai), because a claim I can't
+          trust is worse than a gap. Plain English on screen.
+
+Goal:     Using everything above, build the [RM] Assistant
+          Prototype. Done means an executive with no one beside
+          them opens one link, watches a short tour, runs three
+          live agents on a sample client and, in 5 minutes,
+          understands what the assistant does, how it stays safe
+          and how we'd get [RMs] to use it.
+
+Output:   The published page, the video file, the code in
+          prototypes/[rm-assistant]/ and a draft on GitHub. Then a
+          short report: the scope, the done checklist with pass or
+          fail and proof for each item, the calls I made, what I
+          couldn't test, and one question for me.
+
+Tone:     Confident and clear, like a product demo: impressive by
+          showing, never by selling.
+```
+
+**The done checklist it starts from** (step 1 adds to it):
+1. The tour starts on first visit, runs under 2 minutes, and can be skipped and replayed.
+2. Each of the three agents runs on a sample client and shows its steps, inputs and sources.
+3. The outside data source shows a live or dated value, labeled with where it came from.
+4. Asking for a credit decision or a price is refused, and every agent action lands in the audit log.
+5. Nothing is saved or sent until the persona clicks approve.
+6. Every screen says "sample data", and nothing looks like the bank's own product.
+7. The page passes the render check at laptop and phone widths, with screenshots of the top and bottom.
+8. The automated tests pass; the video file plays; the code has a README, a build script and a changelog.
+
+**For a different user group:** change the `[brackets]` (for portfolio managers: their assistant, their wave 1 capabilities and their agents). Everything else stays.
+
+**What changed:** version 1, written 2026-10-18.
+
+_Last updated: 2026-10-18_

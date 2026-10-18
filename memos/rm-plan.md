@@ -2,14 +2,14 @@
 
 How The RM Assistant gets delivered to relationship managers (RMs) · Associated Bank · October 2026
 
-[RM Executive Summary](https://claude.ai/artifact/LPPq2gt5PSoiB8GzX8ZBE2) · [RM Assistant](https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2) · [RM Detail](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n) (everything in full) · [Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ) (the rules every product follows)
+[RM Executive Summary](https://claude.ai/artifact/LPPq2gt5PSoiB8GzX8ZBE2) · [The RM Assistant](https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2) · [RM Assistant Prototype](https://claude.ai/artifact/RFM2o7cdren3TxesQBsjky) (see it working) · [RM Detail](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n) (everything in full) · [Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ) (the rules every product follows)
 
 ## The plan at a glance
 The first 13 weeks (about 90 days), as estimates to confirm in the first days. Week 1 starts at kickoff. Gates (◆) are go/no-go decisions; the data contract is the signed list of client data the assistant may use. Each row links to its detail in RM Detail.
 
 ```gantt
 weeks 13
-Kickoff and a working prototype on sample data | 0 | 1 | build | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-6-the-project-plan-estimate
+Kickoff and a working prototype on sample data | 0 | 1 | build | https://claude.ai/artifact/RFM2o7cdren3TxesQBsjky
 Gate 1: target, measure and baseline (from first sizing) agreed | 1 | 1 | gate | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-4-how-the-work-flows
 Interviews with RMs, improving the prototype every few days | 0 | 2 | build | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-6-the-project-plan-estimate
 Gate 2: client data approved, risk level rated, business case agreed | 2 | 2 | gate | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-4-how-the-work-flows
