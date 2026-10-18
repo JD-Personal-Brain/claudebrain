@@ -153,8 +153,8 @@ Output:   A subject line, then the email: a one-line thank-you,
 
 ## Saved prompts: the Prompt Library
 Our core prompts, the ones we reuse and improve over time, live in the Prompt
-Library (`prompt-library.md`): the use case kit, a full product memo and the
-business briefing on the bank. Examples 1 to 3 above are here to teach the
+Library (`prompt-library.md`): the use case kit, a full product memo, the
+business briefing on the bank and the showcase prototype with live agents. Examples 1 to 3 above are here to teach the
 template; the Prompt Library holds the prompts worth keeping.
 
 ## When the answer is off: ask for changes, don't start over
@@ -193,4 +193,4 @@ Add these to prompts written for me, when they fit:
 - [ ] Does each rule have a reason?
 - [ ] If the feel matters, is the tone specific (one main feel)?
 
-_Last updated: 2026-10-17_
+_Last updated: 2026-10-18_

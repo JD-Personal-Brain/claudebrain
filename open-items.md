@@ -57,7 +57,7 @@ every working file and kept current at each wrap-up, last on 2026-10-18 (this se
 | Ready-to-fill templates | Missing | The brief, data contract, risk intake, gate pack, evidence pack and monitoring plan are described, but none exists as a template yet. The Draft agents need these to fill in | W4 |
 | Tracker design | Missing | The reminders, status notes and progress view all read from one task list, but its fields aren't written down, and we don't know the bank's tool yet | W5, B23 |
 | Approvals | Partial | Who decides is clear for every step. There's no map of who signs what, how long it takes, or who to go to when a sign-off is stuck | W6, B21 |
-| Showing what an RM sees | Missing | The plan promises a working prototype in week 1, but there's nothing to show yet | W11 |
+| Showing what an RM sees | Partly | Built on 2026-10-18 as the RM Assistant Prototype, version 1 (https://claude.ai/artifact/RFM2o7cdren3TxesQBsjky); waiting for my review | W11 |
 | A version written for Andy | Drafted | The RM Executive Summary (2026-10-18) is the RM Leader Brief (C43): one page, waiting for my read | V1 |
 | Use case kit (RMs) | Partial | The kit is agreed (C40) and cut on 2026-10-18 to three short pages for people plus one detail document for AI (C50); all three RM pages exist. The RM work now centers on one product, The RM Assistant, a working hypothesis (C46) | W2, W3 |
 | Knowing the RM's real day | Partial | The Bank Business Briefing is done and read. The user workflow maps will show how RMs and PMs work today (Job Notes dropped as not required, 2026-10-14) | W2 |
@@ -110,7 +110,7 @@ What we're working on first: a quick check on the bank news scout, then stage 2 
 
 | # | Item | Who | Waits on |
 |---|---|---|---|
-| W11 | Build an RM mock-up: clickable screens of the Monday opportunity list, the pre-meeting client brief and the meeting follow-up, on made-up sample data, so Andy can see what an RM gets (the kit's mock-up piece, C40; brought forward to next, after this RM audit: said 2026-10-18) | Claude, with my review | Stage 1 |
+| W11 | Build an RM mock-up: clickable screens of the Monday opportunity list, the pre-meeting client brief and the meeting follow-up, on made-up sample data, so Andy can see what an RM gets (the kit's mock-up piece, C40; brought forward to next, after this RM audit: said 2026-10-18). Built on 2026-10-18 from Prompt 4: the RM Assistant Prototype, version 1 (https://claude.ai/artifact/RFM2o7cdren3TxesQBsjky), with three live agents and a guided tour; waiting for my review | Claude, with my review | Stage 1 |
 | B1 | Which revenue lever matters most to the business right now? (from: the full RM plan, section 8, in RM Detail) | Me, with Andy | Nothing |
 | B2 | How will success be judged in the first 6 months? (from: the full RM plan, section 8, in RM Detail) | Me, with Andy | Nothing |
 | B3 | What are Andy's first use cases, and how does the RM work (The RM Assistant) rank against portfolio managers' credit work and treasury and payments? (from: Bank Business Briefing, section 9) | Me, with Andy | Nothing |

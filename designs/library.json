@@ -89,6 +89,14 @@
           "kit": "plan"
         },
         {
+          "id": "rm-prototype",
+          "name": "RM Assistant Prototype",
+          "what": "The RM Assistant as a clickable prototype: three agents running live on Claude on sample data, the controls working, and a 2-minute guided tour.",
+          "status": "Waiting for review",
+          "url": "https://claude.ai/artifact/RFM2o7cdren3TxesQBsjky",
+          "source": "prototypes/rm-assistant/"
+        },
+        {
           "id": "rm-ai-reference",
           "name": "RM Detail",
           "what": "Everything about the RM work in one document, for an AI to read: give it to an AI for the full picture. Built from the working files.",
@@ -221,7 +229,7 @@
         {
           "id": "prompt-library",
           "name": "Prompt Library",
-          "what": "Our core prompts in one place, each with its version and what changed: the use case kit, a full product memo and the bank briefing.",
+          "what": "Our core prompts in one place, each with its version and what changed: the use case kit, a full product memo, the bank briefing and the showcase prototype.",
           "count": "3 prompts",
           "status": "In use",
           "url": "https://claude.ai/artifact/W96baXJf665MJ4qtHmkrks",
