@@ -22,13 +22,13 @@ this plan is how it gets delivered. It is a working hypothesis, to be tested in 
 Later waves add early warnings, referral prompts and prospect lookalikes (wave 2),
 then client Q&A and AI sales coaching (wave 3).
 
-**The limiting factor: data access.** The data contract (the signed list of data
-the product may use) needs the Salesforce and Snowflake data owners' signatures,
-aimed for week 2. Owner: the product manager, who chases it from day one; the
-signers are the Salesforce and Snowflake data owners [names needed]. The bank's
-AI review is the second thing that sets the pace; for the very first capability (the
-follow-up's recap and email, in M365 Copilot) it is the main one, together with the
-bank's recording policy.
+**The limiting factor: not known yet.** ⚠️ The real blockers are a first question
+for the bank (what usually holds up a new AI tool there?). Possible ones, our
+assumptions to confirm: approval to use client data (the data contract, the signed
+list of data the product may use, needs the Salesforce and Snowflake data owners'
+signatures [names needed]; aimed for week 2), and the bank's AI review, which for
+the very first capability (the follow-up's recap and email, in M365 Copilot) would
+matter most, together with the bank's recording policy.
 
 **The approach, in three points:**
 1. **Build from day one, aimed at revenue.** A working prototype in week 1, shaped with RMs, and the first capability live within weeks.
@@ -169,8 +169,8 @@ that suggests a credit product goes to compliance (control K3).
 
 **Keeping partners aligned.** Decisions go in the decision log, and dependencies,
 risks and issues in the risk and issue list (Product Framework). Its top item is
-the limiting factor: today, the data contract waiting for the data owners'
-signatures, owned by the product manager.
+the limiting factor, named with its owner once the bank confirms what is actually
+holding the work up (⚠️ not known yet).
 
 ---
 
