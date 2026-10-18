@@ -7,7 +7,7 @@
   const $ = s => document.querySelector(s);
   const go = s => window.APP.show(s);
   const STEPS = [
-    { screen: "list", title: "Meet The RM Assistant", text: "One AI assistant for every relationship manager (RM): it finds the clients worth calling, prepares each meeting and writes the follow-up. The aim is more revenue per RM and more hours with clients. Sample data throughout.", dur: 7500 },
+    { screen: "today", target: "#todayStats", title: "Meet The RM Assistant", text: "One AI assistant for every relationship manager (RM): it finds the clients worth calling, prepares each meeting and writes the follow-up. The aim is more revenue per RM and more hours with clients. Sample data throughout.", dur: 7500 },
     { screen: "list", target: ".persona", title: "You're Jordan Ellis", text: "A senior RM with 12 business clients, all made up. The assistant only ever sees Jordan's own clients.", dur: 6000 },
     { screen: "list", target: "#hero", title: "This week at a glance", text: "Each Monday starts here: the clients worth a call, how many signals were found, and every number checked against its source.", dur: 7000 },
     { screen: "list", target: "#listTrace", title: "The Signal finder spots opportunities", text: "Plain rules the business owns, such as idle cash or check fraud exposure, run against each client. It also reads real outside data: the Federal Reserve's 10-year Treasury yield.", dur: 7500, before: () => window.APP.runList("replay") },
@@ -18,10 +18,12 @@
     { screen: "brief", target: "#briefDoc", title: "A one-page brief with sources", text: "Every fact carries its source, and the watch-outs keep the RM away from pricing and credit commitments.", dur: 7000 },
     { screen: "followup", target: "#consent", title: "After the meeting", text: "The assistant drafts the recap, the follow-up email and the CRM call note. No recording without the client's consent, so here it works from Jordan's notes.", dur: 8500, before: () => window.APP.runFollow("instant") },
     { screen: "followup", target: ".approvebar", title: "Nothing is saved or sent until Jordan approves", text: "Unclear items come back marked CHECK instead of guessed. The note reaches the CRM only after Jordan's click, and Jordan sends the email.", dur: 9000 },
+    { screen: "warn", target: "#warnList .wcard", title: "Coming next: early warning", text: "Wave 2 adds early warning: plain rules flag clients who may be drifting away, like falling balances or payroll moved to another bank, with the numbers behind each flag. It's a reason to call, never a credit signal.", dur: 9000 },
+    { screen: "refer", target: "#refList .rcard", title: "Refer to treasury", text: "It also spots needs the treasury team serves and drafts the hand-off. Jordan sends it, and the referral is tracked from spotted to accepted.", dur: 8000, before: () => window.WAVE2.sendFirstReferral() },
     { screen: "controls", target: "#breakit", title: "Try to break it", text: "Ask for a credit decision, a price or another RM's client: code checks stop common phrasings before any AI sees them, Claude's rules are the second line, and every action is logged.", dur: 8500, before: () => window.APP.ask("Should we approve Lakeshore's line increase?") },
     { screen: "measures", target: "#measureGrid", title: "How we'd know it works", text: "Five measures from day one: usage, quality, business impact, adoption, and risk and controls. In a pilot, RMs with the assistant are compared with RMs without it.", dur: 8500 },
     { screen: "about", target: "#pilotNeeds", title: "What it would take", text: "A pilot needs read access to client and CRM data, a risk partner from day one and a small group of RMs. Our assumption, to confirm: data access sets the pace, not the build.", dur: 8500 },
-    { screen: "list", title: "Your turn", text: "Run the agents live on Claude from any screen (inside claude.ai, the first run asks your permission). Replay this tour any time.", dur: 5500, before: () => go("list") }
+    { screen: "today", title: "Your turn", text: "Start from Today, and run the agents live on Claude from any screen (inside claude.ai, the first run asks your permission). Replay this tour any time.", dur: 5500 }
   ];
   if (Array.isArray(window.TOUR_DURS)) STEPS.forEach((s, n) => { if (window.TOUR_DURS[n]) s.dur = window.TOUR_DURS[n]; });   // the narrated video sets each step to its voiceover's length
   // The voiceover (same voice as the tour video): each step lasts at least as long as its line.

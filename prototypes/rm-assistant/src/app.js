@@ -54,10 +54,12 @@
     document.querySelectorAll(".screen").forEach(s => { s.hidden = s.dataset.screen !== name; });
     document.querySelectorAll("#nav button").forEach(b => { b.classList.toggle("on", b.dataset.screen === name); if (b.dataset.screen === name && window.innerWidth <= 860) b.scrollIntoView({ inline: "center", block: "nearest" }); });
     if (name === "measures") renderMeasures();
+    if (name === "today" && window.WAVE2) window.WAVE2.renderToday();
     window.scrollTo({ top: 0 });
   }
   document.querySelectorAll("#nav button").forEach(b => b.addEventListener("click", () => show(b.dataset.screen)));
   $("#today").textContent = B.todayLabel + " (sample)";
+  $("#todayDate").textContent = B.todayLabel + " · sample data";
 
   // ---------- Live AI or recorded runs ----------
   let liveOK = false;
@@ -473,9 +475,9 @@
     const cards = [
       ["Usage", `${m.used.size} of ${m.outputs.size}`, "drafts and insights used, of those on screen", "31 of 48 used (65%)", [`${plural(m.runs, "agent run")} you started, ${m.liveRuns} live on Claude`]],
       ["Quality", pct(m.answersWithSources, m.answers), "of briefs and answers show their sources", "100% with sources; 2 numbers flagged by the check", [`${pct(m.numbersTraced, m.numbersChecked)} of numbers traced to the data (K7)`, "Accuracy on the test set: target set with the business before the pilot"]],
-      ["Business impact", String(m.opportunities), "opportunities created, tagged AI-sourced", "9 opportunities; about 2 hours saved per RM", ["Hours saved and pipeline per RM: measured in the pilot", "Against a comparison group of RMs"]],
+      ["Business impact", String(m.opportunities + (m.referrals || 0)), "opportunities and referrals created, tagged AI-sourced", "9 opportunities; about 2 hours saved per RM", ["Hours saved and pipeline per RM: measured in the pilot", "Against a comparison group of RMs"]],
       ["Adoption", `${caps} of 3`, "capabilities used this session", "7 of 8 pilot RMs active", ["Weekly active RMs and repeat use: targets set before the pilot"]],
-      ["Risk and controls", String(m.guardrailBlocks + m.outputFlags), "requests blocked or drafts flagged by guardrails", "3 blocked, 0 incidents, 11 overrides", [`${m.permissionRefusals} refused outside the RM's book (K4)`, `${m.changed + m.rejected} overrides (changed or rejected)`, `${m.approvals} approved before saving (K2)`, `${m.stops} agent stops (K25)`]]
+      ["Risk and controls", String(m.guardrailBlocks + m.outputFlags), "requests blocked or drafts flagged by guardrails", "3 blocked, 0 incidents, 11 overrides", [`${m.warningsActed || 0} early warnings followed up`, `${m.permissionRefusals} refused outside the RM's book (K4)`, `${m.changed + m.rejected} overrides (changed or rejected)`, `${m.approvals} approved before saving (K2)`, `${m.stops} agent stops (K25)`]]
     ];
     $("#measureGrid").innerHTML = cards.map(([k, big, what, sample, list]) => `<div class="mcard"><span class="kind">${k}</span><span class="big">${esc(big)}</span><span class="what">${esc(what)} <em>(this session)</em></span><p class="sample-week"><strong>Sample pilot week:</strong> ${esc(sample)}</p><ul>${list.map(l => `<li>${esc(l)}</li>`).join("")}</ul></div>`).join("");
   }
@@ -486,8 +488,8 @@
   // ---------- Start: fill every screen with the recorded run, without logging it as anyone's action ----------
   A.setQuiet(true);
   renderMeetings(); renderAudit();
-  Promise.all([runList("instant"), replayBrief(true), runFollow("instant")]).then(() => { A.setQuiet(false); renderAudit(); renderMeasures(); });
+  Promise.all([runList("instant"), replayBrief(true), runFollow("instant")]).then(() => { A.setQuiet(false); renderAudit(); renderMeasures(); if (window.WAVE2) window.WAVE2.renderToday(); });
   AI.ready.then(setMode);
   setMode();
-  window.APP = { show, runList, replayBrief, runFollow, ask, acceptFirst: () => { const c = document.querySelector("#listResults .card"); if (c && !c.classList.contains("dismissed")) accept(c); } };
+  window.APP = { refreshMeasures: () => renderMeasures(), show, runList, replayBrief, runFollow, ask, acceptFirst: () => { const c = document.querySelector("#listResults .card"); if (c && !c.classList.contains("dismissed")) accept(c); } };
 })();

@@ -15,7 +15,7 @@
       <div class="top-right">
         <span class="chip chip-sample" title="Every client, person and number on this page is made up">Sample data</span>
         <span class="chip" id="aiMode" data-mode="checking">Checking for live AI…</span>
-        <button class="btn btn-ghost-on-navy" id="tourBtn" type="button">Play the 2-minute tour</button>
+        <button class="btn btn-ghost-on-navy" id="tourBtn" type="button">Play the tour (2½ min)</button>
       </div>
     </div>
   </header>
@@ -25,10 +25,14 @@
   </div></div>
   <div class="shell">
     <nav class="side" id="nav" aria-label="Screens">
+      <button type="button" data-screen="today" class="on nav-today">Today</button>
       <span class="nav-label">What the assistant does</span>
-      <button type="button" data-screen="list" class="on">Monday opportunity list</button>
+      <button type="button" data-screen="list">Monday opportunity list</button>
       <button type="button" data-screen="brief">Pre-meeting client brief</button>
       <button type="button" data-screen="followup">Meeting follow-up</button>
+      <span class="nav-label">Coming in wave 2 · preview</span>
+      <button type="button" data-screen="warn">Early warning</button>
+      <button type="button" data-screen="refer">Refer to treasury</button>
       <span class="nav-label">Why a bank can trust it</span>
       <button type="button" data-screen="controls">Controls and audit log</button>
       <button type="button" data-screen="measures">How we'd measure it</button>
@@ -36,8 +40,46 @@
     </nav>
     <main class="main" id="main">
 
+      <!-- Today: the RM's day on one screen (version 4) -->
+      <section class="screen" id="s-today" data-screen="today">
+        <div class="today-hero">
+          <span class="eyebrow on-dark" id="todayDate"></span>
+          <h1 id="todayHello">Good morning</h1>
+          <p class="lede">Here's your week. The assistant did the digging overnight; you decide what happens next.</p>
+          <div class="tstats" id="todayStats"></div>
+        </div>
+        <div class="today-grid">
+          <div class="panel"><h2 class="h-small">This week's meetings</h2><ol class="agenda" id="todayAgenda"></ol></div>
+          <div class="panel"><h2 class="h-small">For you to decide</h2><ul class="todo" id="todayTodo"></ul></div>
+        </div>
+        <p class="prod-note">In production (our assumption, to confirm): this is the assistant's home in Teams or Salesforce, and each item opens the client's record.</p>
+      </section>
+
+      <!-- Early warning (workflow B5, wave 2): clients who may be drifting away -->
+      <section class="screen" id="s-warn" data-screen="warn" hidden>
+        <div class="shead">
+          <span class="eyebrow" title="Workflow B5 in the RM plan, wave 2">Keep the book · wave 2 preview</span>
+          <h1>Early warning</h1>
+          <p class="lede">Clients who may be drifting away, found by plain rules the business owns, with the numbers behind every flag. It's a reason to call, never a credit signal.</p>
+        </div>
+        <div class="w2sum" id="warnSummary"></div>
+        <div class="wlist" id="warnList"></div>
+      </section>
+
+      <!-- Refer to treasury (workflow B6, wave 2): referral prompts -->
+      <section class="screen" id="s-refer" data-screen="refer" hidden>
+        <div class="shead">
+          <span class="eyebrow" title="Workflow B6 in the RM plan, wave 2">Grow the book · wave 2 preview</span>
+          <h1>Refer to treasury</h1>
+          <p class="lede">Clients with a need the treasury team serves. The assistant drafts the hand-off; you change it, send it or say not now, and the referral is tracked to close.</p>
+        </div>
+        <div class="w2sum" id="refSummary"></div>
+        <div class="wlist" id="refList"></div>
+        <p class="prod-note">In production (our assumption, to confirm): sending creates the referral in Salesforce and notifies the specialist; here nothing leaves the page.</p>
+      </section>
+
       <!-- The Monday opportunity list (workflow B1, agents A1 and A2) -->
-      <section class="screen" id="s-list" data-screen="list">
+      <section class="screen" id="s-list" data-screen="list" hidden>
         <div class="shead">
           <span class="eyebrow" title="Workflow B1 in the RM plan">Find business</span>
           <h1>Monday opportunity list</h1>

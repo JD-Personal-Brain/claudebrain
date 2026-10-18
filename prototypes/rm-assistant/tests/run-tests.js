@@ -5,7 +5,7 @@
 // Screenshots go to $SHOTS (default /tmp/rm-assistant-shots).
 const path = require("path"), fs = require("fs");
 const { chromium } = require(process.env.PW || "playwright");
-const FILE = path.resolve(process.argv[2] || "prototype-v3.html");
+const FILE = path.resolve(process.argv[2] || "prototype-v4.html");
 const SHOTS = process.env.SHOTS || "/tmp/rm-assistant-shots";
 fs.mkdirSync(SHOTS, { recursive: true });
 const URL = "file://" + FILE;
@@ -48,7 +48,7 @@ const check = (name, ok, proof) => { results.push({ name, ok: !!ok, proof }); co
   const browser = await chromium.launch();
   const errors = [];
 
-  // 1. The tour: starts on a first visit, about 2 minutes (under 2:10 with the voice), can be skipped and replayed, and speaks each step.
+  // 1. The tour: starts on a first visit, about 2½ minutes with the voice (under 2:40), can be skipped and replayed, and speaks each step.
   {
     const ctx = await browser.newContext({ viewport: { width: 1280, height: 800 } });
     const p = await ctx.newPage(); p.on("pageerror", e => errors.push("tour: " + e.message));
@@ -65,7 +65,7 @@ const check = (name, ok, proof) => { results.push({ name, ok: !!ok, proof }); co
     await p.click("#tVoice"); const muted = await p.evaluate(() => window.TOUR.audio.paused && document.querySelector("#tVoice").textContent === "Voice off");
     await p.click("#tVoice");
     await p.screenshot({ path: `${SHOTS}/tour-step3.png` });
-    check("1. Tour starts on first visit, about 2 minutes, skippable, replayable and spoken", visible && total < 130000 && hidden && notAgain && replay && step3.includes("3 of") && voice.playing && voice.src && muted,
+    check("1. Tour starts on first visit, about 2½ minutes, skippable, replayable and spoken", visible && total < 160000 && hidden && notAgain && replay && step3.includes("3 of") && voice.playing && voice.src && muted,
       `starts=${visible}, length=${(total / 1000).toFixed(1)} s, skip=${hidden}, not again after skip=${notAgain}, replay=${replay}, ${step3}, voice playing=${voice.playing} (${voice.btn}), voice off works=${muted}`);
     await ctx.close();
   }
@@ -75,6 +75,8 @@ const check = (name, ok, proof) => { results.push({ name, ok: !!ok, proof }); co
   await ctx.addInitScript(STUB);
   const p = await ctx.newPage(); p.on("pageerror", e => errors.push("live: " + e.message)); p.on("console", m => { if (m.type() === "error") errors.push("console: " + m.text()); });
   await p.goto(URL + "#notour"); await p.waitForTimeout(600);
+  const todayFirst = await p.isVisible("#s-today") && (await p.$$eval("#todayStats .tstat", n => n.length)) === 4;
+  await p.click('#nav button[data-screen="list"]');
   const mode = await p.getAttribute("#aiMode", "data-mode");
 
   // 2. Each agent runs and shows its steps, inputs and sources.
@@ -172,8 +174,31 @@ const check = (name, ok, proof) => { results.push({ name, ok: !!ok, proof }); co
     `stale data stops the Signal finder: ${stale}; empty notes stop the follow-up: ${emptyStop}; opportunities after re-run: ${oppsAfter} (not double-counted); a draft with a rate and a credit promise is flagged, the recorded drafts aren't: ${flagged}`);
   await ctx.close();
 
+  // 10. Version 4: Today, early warning and referrals work end to end.
+  {
+    const c4 = await browser.newContext({ viewport: { width: 1280, height: 800 } }); const q = await c4.newPage();
+    q.on("pageerror", e => errors.push("wave 2: " + e.message));
+    await q.goto(URL + "#notour"); await q.waitForTimeout(800);
+    const today = await q.evaluate(() => ({ stats: [...document.querySelectorAll("#todayStats .big")].map(x => x.textContent), agenda: document.querySelectorAll("#todayAgenda li").length, todo: document.querySelectorAll("#todayTodo li").length }));
+    await q.click('#todayStats [data-go="warn"]'); const warnShown = await q.isVisible("#s-warn");
+    const warn = await q.evaluate(() => ({ n: document.querySelectorAll("#warnList .wcard").length, high: document.querySelectorAll("#warnList .wcard.high").length, text: document.querySelector("#warnList").innerText }));
+    await q.click('#warnList .wcard [data-w="call"]'); const planned = /added to your plan/.test(await q.textContent("#warnList"));
+    await q.click('#nav button[data-screen="refer"]');
+    const refs = await q.$$eval("#refList .rcard", n => n.length);
+    const note = await q.inputValue("#refList textarea");
+    const g = await q.evaluate(t => window.AGENTS.outputGuard(t).length, note);
+    await q.click('#refList [data-r="send"]'); await q.waitForTimeout(1900);
+    const accepted = /accepted it/.test(await q.textContent("#refList"));
+    const logged = await q.evaluate(() => window.AGENTS.audit.filter(a => /referral|early warning/i.test(a.action)).length);
+    await q.click('#nav button[data-screen="today"]'); const after = await q.evaluate(() => [...document.querySelectorAll("#todayStats .big")].map(x => x.textContent));
+    const noCredit = !/approv|credit limit|loan amount/i.test(warn.text);
+    check("10. Today, early warning and referrals: flags with their numbers, the RM decides, every action logged", todayFirst && today.agenda >= 2 && today.todo >= 3 && warnShown && warn.n >= 2 && warn.high >= 1 && planned && refs >= 2 && g === 0 && accepted && logged >= 2 && after[2] !== today.stats[2] && noCredit,
+      `Today opens first with 4 numbers (${today.stats.join(", ")}), ${today.agenda} meetings, ${today.todo} to-dos; ${warn.n} early warnings (${warn.high} to check this week); ${refs} referrals, the draft passes the guardrail scan, sent and accepted; ${logged} actions logged; Today updates after (${after.join(", ")})`);
+    await c4.close();
+  }
+
   // 7. Laptop and phone: no sideways scrolling; top and bottom screenshots of every screen.
-  const screens = ["list", "brief", "followup", "controls", "measures", "about"];
+  const screens = ["today", "list", "brief", "followup", "warn", "refer", "controls", "measures", "about"];
   let overflow = [];
   for (const [w, h] of [[1280, 800], [390, 844]]) {
     const c2 = await browser.newContext({ viewport: { width: w, height: h } }); const q = await c2.newPage();
@@ -197,6 +222,7 @@ const check = (name, ok, proof) => { results.push({ name, ok: !!ok, proof }); co
     q.on("pageerror", e => errors.push("replay: " + e.message));
     await q.goto(URL + "#notour"); await q.waitForTimeout(800);
     const m = await q.getAttribute("#aiMode", "data-mode"); const dis = await q.isDisabled("#runList");
+    await q.click('#nav button[data-screen="list"]');
     const rec = await q.$$eval("#listResults .rec-tag", n => n.length);
     await q.click("#replayList"); await q.waitForSelector("#listResults .card", { timeout: 5000 });
     await q.click('#nav button[data-screen="brief"]'); await q.click("#replayBrief");
