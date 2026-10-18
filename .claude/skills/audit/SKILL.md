@@ -13,6 +13,7 @@ Say which size and why in one line, then run it. When unsure, go one size up.
 - **Quick:** a small fix that doesn't change what any page says about the process, a count or a name (a typo, a date, one row). Run the three scripts in section 2 (checker, render check, nothing-lost) and look at the changed page. No reviewers.
 - **Standard:** a normal session's work. Sections 1 to 7 below: the scripts, one fresh reviewer, fixes, a second reviewer.
 - **Deep:** a reorganization, a rename across pages, new rules or controls, or before a milestone (sharing with the bank, applying the machine to a new user group). Standard, plus the full alignment sweep (2b) with one reviewer per reference page, and a walk-through reviewer who takes a made-up product through the steps to find where the work would stall.
+- **Size by risk, not by habit** (Elon mode, 2026-10-18): don't run a second deep audit of the same files on the same day unless the first one failed or the files changed in a way that would need deep size on their own. A new prototype version is a quick audit when its own tests pass. `python3 .claude/skills/wrap-up/run.py` runs the quick size and drafts the Audit Log row.
 
 ## 1. Scope
 - List every file changed since main: `git fetch origin main` then `git diff --name-only origin/main...HEAD`, plus any uncommitted changes.

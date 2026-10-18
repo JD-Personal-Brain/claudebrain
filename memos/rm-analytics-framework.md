@@ -162,8 +162,9 @@ the first days.
 | **6. Fast decisions** | Each gate is decided within days, in writing when every criterion is met, because waiting for decisions adds weeks. | Sponsor, with the people named for each gate |
 
 **Backup plan if data access or review runs long.** The meeting follow-up's
-recap and email go first: they run in M365 Copilot on the RM's own meetings and email, so they
-need the least new data and review. RMs keep shaping the brief,
+recap and email go first: they're drafted from the RM's own notes in M365 Copilot (Teams transcripts
+come later, only where recording is allowed and the client agrees, control K24), so we assume they
+need the least new data and review (⚠️ to confirm). RMs keep shaping the brief,
 opportunity list and call notes in the test environment, so they're ready the day access and
 sign-off land, by about week 10. The dates for later waves, proposed at gate 2, allow for it. The
 call is made at gate 2 (week 2).

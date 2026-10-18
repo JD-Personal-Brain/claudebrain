@@ -35,7 +35,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 - **Set in:** 3.1 ("keep every agent read-only unless a user clicks to approve an action"; it comes from the AI principles in my product framework, and the risk intake doesn't name it yet)
 - **Built in:** 3.1, 3.4 (a test that a blocked action fails)
 - **Proved in:** 3.4, 4.5
-- **Watched in:** not covered in the playbook yet
+- **Watched in:** 4.8 (the control watch list in the monitoring plan; M11 Controls checker re-runs it monthly after launch)
 - **Tool (guess):** the agent's permissions on each platform
 - **Proof:** the agent spec's "allowed" and "not allowed" lists, and a test that a blocked action fails
 - **Comes from:** Our choice: our AI principle, one job each. To change it, ask the product manager.
@@ -83,7 +83,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 - **Set in:** 2.3 (who may see each field)
 - **Built in:** 3.2, 3.4
 - **Proved in:** 4.2
-- **Watched in:** not covered in the playbook yet
+- **Watched in:** 4.8 (the control watch list in the monitoring plan; M11 Controls checker re-runs it monthly after launch)
 - **Tool (guess):** Snowflake masking and Microsoft Purview labels
 - **Proof:** a test showing a masked field stays hidden from a user without the right access
 - **Comes from:** Bank policy: the bank's data classification rules ⚠️, which rest on customer privacy law. To change it, ask the policy's owner at the bank [name needed].
@@ -131,7 +131,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 - **Set in:** 3.6 (the must-refuse cases seed the red-team plan), 4.3
 - **Built in:** 4.3
 - **Proved in:** 4.3
-- **Watched in:** not covered in the playbook yet
+- **Watched in:** 4.8 (the control watch list in the monitoring plan; M11 Controls checker re-runs it monthly after launch)
 - **Tool (guess):** a red-team agent, with risk reviewing every failure
 - **Proof:** the red-team report, with each failure fixed or accepted by risk
 - **Comes from:** Our choice: our testing approach. ⚠️ The bank's AI policy may also require it. To change it, ask the product manager.
@@ -155,7 +155,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 - **Set in:** 2.4
 - **Built in:** 3.4
 - **Proved in:** 4.5
-- **Watched in:** not covered in the playbook yet
+- **Watched in:** 4.8 (the control watch list in the monitoring plan; M11 Controls checker re-runs it monthly after launch)
 - **Tool (guess):** each platform's own activity log
 - **Proof:** the log for a sample of actions
 - **Comes from:** Bank policy: the bank's record-keeping and audit rules ⚠️. To change it, ask the policy's owner at the bank [name needed].
@@ -179,7 +179,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 - **Set in:** 2.2 (check the approved vendors list; start any missing review now)
 - **Built in:** 2.2 (missing reviews started), 4.6
 - **Proved in:** 4.6
-- **Watched in:** not covered in the playbook yet
+- **Watched in:** 4.8 (the control watch list in the monitoring plan; M11 Controls checker re-runs it monthly after launch)
 - **Tool (guess):** the bank's approved vendors list
 - **Proof:** confirmation from vendor risk for each vendor
 - **Comes from:** Law or regulator: the US banking regulators' guidance on third-party risk (2023), carried out through the bank's vendor risk policy. To change it, ask vendor risk.
@@ -239,7 +239,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 - **Set in:** 3.1 (the design names the approved model)
 - **Built in:** 3.1, 3.3 (both name the approved model)
 - **Proved in:** 4.6 (the model's provider is confirmed as an approved vendor; a check against the bank's list of approved models is not covered in the playbook yet)
-- **Watched in:** not covered in the playbook yet
+- **Watched in:** 4.8 (the control watch list in the monitoring plan; M11 Controls checker re-runs it monthly after launch)
 - **Tool (guess):** AWS Bedrock's model list, and the models inside Microsoft and Salesforce
 - **Proof:** the model named in the design, matched to the bank's approved list
 - **Comes from:** Bank policy: the bank's list of approved AI models ⚠️. To change it, ask the policy's owner at the bank [name needed].
@@ -251,7 +251,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 - **Set in:** 2.2
 - **Built in:** 2.2 (checked there, not built)
 - **Proved in:** 4.5 (the frozen version reached test by the agreed path, there is a named approver and an agreed route for the move to live (the approval itself is recorded in 5.2), and IT has approved every connection)
-- **Watched in:** not covered in the playbook yet
+- **Watched in:** 4.8 (the control watch list in the monitoring plan; M11 Controls checker re-runs it monthly after launch)
 - **Tool (guess):** Power Platform data policies
 - **Proof:** IT's confirmation that every connection the product uses is allowed
 - **Comes from:** Bank policy: IT's data loss prevention rules. To change it, ask the policy's owner at the bank [name needed].
@@ -263,7 +263,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 - **Set in:** 2.8
 - **Built in:** 2.8
 - **Proved in:** 5.7
-- **Watched in:** not covered in the playbook yet
+- **Watched in:** 4.8 (the control watch list in the monitoring plan; M11 Controls checker re-runs it monthly after launch)
 - **Tool (guess):** the decision log
 - **Proof:** the owner's name recorded, or "to be decided" with a date
 - **Comes from:** Our choice: our framework (the product manager owns each product until a long-term owner is named). To change it, ask the product manager.
@@ -287,7 +287,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 - **Set in:** 1.0 (the approved list is written in the project file)
 - **Built in:** 1.0
 - **Proved in:** not covered in the playbook yet
-- **Watched in:** not covered in the playbook yet
+- **Watched in:** 4.8 (the control watch list in the monitoring plan; M11 Controls checker re-runs it monthly after launch)
 - **Tool (guess):** the bank's list of approved AI tools
 - **Proof:** the approved list in the project file, and every agent's "Runs on" matching it
 - **Comes from:** Bank policy: the bank's list of approved AI tools ⚠️. To change it, ask the policy's owner at the bank [name needed].
@@ -299,7 +299,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 - **Set in:** 1.3 (for the team's own interviews), 2.4 (as a control requirement for the product)
 - **Built in:** 3.4
 - **Proved in:** 4.5
-- **Watched in:** not covered in the playbook yet
+- **Watched in:** 4.8 (the control watch list in the monitoring plan; M11 Controls checker re-runs it monthly after launch)
 - **Tool (guess):** Teams meeting settings and M365 Copilot recaps
 - **Proof:** a test showing no recap is drafted from a meeting without recorded consent
 - **Comes from:** Law or regulator: call-recording consent laws, which differ by state, and any recording policy the bank has ⚠️. ⚠️ In the bank's footprint, Illinois generally requires every party's consent to record a private conversation, while Wisconsin, Minnesota and Missouri generally require one party's; compliance confirms. To change it, ask compliance.
@@ -311,7 +311,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 - **Set in:** 3.1
 - **Built in:** 3.1, 3.4 (a test with a missing or stale input on purpose)
 - **Proved in:** 3.4, 4.5
-- **Watched in:** not covered in the playbook yet
+- **Watched in:** 4.8 (the control watch list in the monitoring plan; M11 Controls checker re-runs it monthly after launch)
 - **Tool (guess):** each agent's stop rule, with alerts through Power Automate
 - **Proof:** a test where an agent is given a missing or stale input on purpose and stops with an alert
 - **Comes from:** Our choice: our agent specs. To change it, ask the product manager.

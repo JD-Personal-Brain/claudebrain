@@ -51,7 +51,7 @@ Each capability is one AI product (glossary). The **Need it answers** column nam
 
 | Wave | Capability (AI product) | Core use case it answers | Agents | Built mainly on | Our measure (target set in Define) |
 |---|---|---|---|---|---|
-| **Wave 1** (follow-up about weeks 2–4; the rest about weeks 4–6) | Pre-meeting client brief | Account intelligence and meeting prep | A3 | Salesforce (Agentforce or Prompt Builder), Snowflake | Prep time per meeting; client-facing hours [X] |
+| **Wave 1** (follow-up live by about week 4; the rest by about week 6; each once its approvals are in) | Pre-meeting client brief | Account intelligence and meeting prep | A3 | Salesforce (Agentforce or Prompt Builder), Snowflake | Prep time per meeting; client-facing hours [X] |
 | | Meeting follow-up: recap, email draft and call notes into Salesforce (the RM approves) | Admin off the RM's plate | A3 | M365 Copilot in Teams and Outlook; Salesforce Agentforce for the notes | Hours saved per week; share of meetings logged [X] |
 | | Monday opportunity list (deposit and treasury gaps in wave 1) | Prospecting and next best opportunities | A1, A2, then a scheduled Monday send (workflow B1) | Snowflake signals, Power Automate | AI-sourced pipeline and wins, against the comparison group [X] |
 | **Wave 2** (dates proposed at gate 2) | Early warning: client may leave | Keep clients | A1, A2 | Snowflake signals, Salesforce | Clients kept, against the comparison group [X] |
@@ -65,9 +65,11 @@ Each capability is one AI product (glossary). The **Need it answers** column nam
 
 **Why the follow-up and call notes are one capability (decided 2026-10-17):** both
 come from the same meeting recap and the same agent (A3), so RMs get one flow:
-the recap and email first (about weeks 2–4, since they run in M365 Copilot on the
-RM's own meetings and need the least new data and review), then saving the call
-notes to Salesforce once that's signed off (about weeks 4–6). Call notes are in
+the recap and email first (live by about week 4: drafted from the RM's own notes,
+which we assume needs the least new data and review, ⚠️ to confirm), then saving the call
+notes to Salesforce once that's signed off (by about week 6). Teams transcripts come
+later, only where the bank allows recording and the client agrees (control K24), so
+recording isn't on wave 1's critical path (Elon mode, 2026-10-18). Call notes are in
 wave 1 because in McKinsey's survey of about 400 bankers, admin is one of the top
 two problems at every stage of the sales funnel (decided 2026-10-10).
 

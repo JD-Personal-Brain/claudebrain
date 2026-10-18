@@ -23,7 +23,7 @@ Each capability is one AI product and answers one core use case (see the [Use Ca
 | | Referral prompts | Flags a client need for a partner team, such as treasury management | Lead nurturing, including cross-sell | 2 |
 | **Before the meeting** | Pre-meeting client brief | One page before each client meeting | Account intelligence and meeting prep | 1 |
 | | Client Q&A | Answers the RM's own questions about a client at any time, with the source for each answer | Account intelligence and meeting prep | 3 |
-| **During and after** | Meeting follow-up | Drafts the recap, the follow-up email and the call notes for Salesforce, from the Teams transcript where recording is allowed and the client agrees, otherwise from the RM's own notes; the RM approves before anything is saved or sent | Admin off the RM's plate | 1 |
+| **During and after** | Meeting follow-up | Drafts the recap, the follow-up email and the call notes for Salesforce from the RM's own notes (from the Teams transcript later, only where recording is allowed and the client agrees); the RM approves before anything is saved or sent | Admin off the RM's plate | 1 |
 | | AI sales coaching | Private guidance for the RM after a call | AI sales coaching | 3 |
 | **Keep the book** | Early warning | Flags clients who may be drifting away | Keep clients | 2 |
 | **Left out on purpose** | Pricing suggestions; contacting clients or prospects on its own | Kept out to protect fair lending and client trust | Deal scoring and pricing; lead nurturing (the full, automated version) | Out |

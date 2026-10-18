@@ -317,7 +317,7 @@ its person in charge; a monitor never reports a pass on missing data.
 - **For:** the team
 - **Kind:** Me → Draft
 - **Job:** total time spent and waits from the sub-step logs (the full first-time log on the first project), work out each sub-step's wait index, and list the candidates to cut and to automate.
-- **Starts when:** at the end of each project's first full pass through all six steps (sub-step 6.6).
+- **Starts when:** at each gate, as a light total of time, waits and wait index so far (so the limiting factor can be steered while the project runs; Elon mode, 2026-10-18), and in full at the end of each project's first full pass through all six steps (sub-step 6.6).
 - **Inputs:** the sub-step logs from every sub-step; the tracker (dates); the decision log (the dates each gate pack was ready and each decision was made); the release notes.
 - **Allowed actions:** read; write a draft summary.
 - **Not allowed:** deciding what to delete or which agents to build.

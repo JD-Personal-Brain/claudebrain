@@ -30,7 +30,7 @@ Claude updates it at every wrap-up: finished items move to "Closed" with the dat
 | Stage 2. Make the machine runnable | 4 | What Claude builds so a real run is possible |
 | Stage 3. Dry run and fix | 3 | Running the machine once and fixing it |
 | Stage 4. Get ready for Andy | 8 | What Andy sees, and what I ask him |
-| Alongside the path | 10 | Useful any time; doesn't block a stage. Dated items first |
+| Alongside the path | 11 | Useful any time; doesn't block a stage. Dated items first |
 | Inside the bank | 21 | Questions only someone at the bank can answer |
 | Parked on purpose | 4 | Not forgotten; waiting for a signal from me |
 
@@ -57,7 +57,7 @@ every working file and kept current at each wrap-up, last on 2026-10-18 (this se
 | Ready-to-fill templates | Missing | The brief, data contract, risk intake, gate pack, evidence pack and monitoring plan are described, but none exists as a template yet. The Draft agents need these to fill in | W4 |
 | Tracker design | Missing | The reminders, status notes and progress view all read from one task list, but its fields aren't written down, and we don't know the bank's tool yet | W5, B23 |
 | Approvals | Partial | Who decides is clear for every step. There's no map of who signs what, how long it takes, or who to go to when a sign-off is stuck | W6, B21 |
-| Showing what an RM sees | Partly | Built on 2026-10-18 as the RM Assistant Prototype, version 1 (https://claude.ai/artifact/RFM2o7cdren3TxesQBsjky); waiting for my review | W11 |
+| Showing what an RM sees | Partly | Built on 2026-10-18 as the RM Assistant Prototype, now version 4 (https://claude.ai/artifact/RFM2o7cdren3TxesQBsjky); waiting for my review | W11 |
 | A version written for Andy | Drafted | The RM Executive Summary (2026-10-18) is the RM Leader Brief (C43): one page, waiting for my read | V1 |
 | Use case kit (RMs) | Partial | The kit is agreed (C40) and cut on 2026-10-18 to three short pages for people plus one detail document for AI (C50); all three RM pages exist. The RM work now centers on one product, The RM Assistant, a working hypothesis (C46) | W2, W3 |
 | Knowing the RM's real day | Partial | The Bank Business Briefing is done and read. The user workflow maps will show how RMs and PMs work today (Job Notes dropped as not required, 2026-10-14) | W2 |
@@ -88,10 +88,10 @@ What we're working on first: a quick check on the bank news scout, then stage 2 
 
 | # | Item | Who | Waits on |
 |---|---|---|---|
-| W4 | Ready-to-fill templates: brief, data contract, risk intake, gate pack, decision log, evidence pack, monitoring plan, release-readiness checklist | Claude drafts, I review | My yes |
+| W4 | Ready-to-fill templates, built as the dry run reaches them (Elon mode, 2026-10-18): first the brief, the data contract and the gate pack; then risk intake, decision log, evidence pack, monitoring plan (with the control watch list) and release-readiness checklist | Claude drafts, I review | The first three: nothing; the rest: the dry run (W8) |
 | W5 | Tracker design: the fields every task carries, written to work in any tool (bank question B23 is still open). Each project's tracker opens with its limiting factor and owner, and records each sub-step's start and finish dates and hours, so the wait index and the machine's measures come straight from it (Elon mode, agreed 2026-10-15) | Claude drafts, I review | My yes |
 | W6 | Approvals map for one product: who signs what at each gate, typical turnaround ⚠️, and who to go to when a sign-off is stuck | Claude drafts, I review | My yes |
-| W7 | Close the gaps the Controls Catalog found in my playbook: 12 of the 25 controls have a stage marked "not covered in the playbook yet", such as who proves that only approved AI models are used. Each needs a line added to the right playbook step, or a decision that it isn't needed | Claude, with my yes for each playbook change | Nothing |
+| W7 | Close the gaps the Controls Catalog found in my playbook: 3 of the 25 controls still have a stage marked "not covered in the playbook yet" (K3's guardrails and named credit officer, K19's check against the approved-model list, K23's proof); the other 9 were closed on 2026-10-18 by the control watch list in the monitoring plan (sub-step 4.8). Each needs a line added to the right playbook step, or a decision that it isn't needed | Claude, with my yes for each playbook change | Nothing |
 
 ## Stage 3. Dry run and fix
 
@@ -99,7 +99,7 @@ What we're working on first: a quick check on the bank news scout, then stage 2 
 
 | # | Item | Who | Waits on |
 |---|---|---|---|
-| W8 | Dry run of the machine: take one small made-up product through all six steps with the templates and two or three agents built as Claude skills, and log where it breaks. Include a **deletion pass** (Elon mode, agreed 2026-10-15): mark every sub-step, agent and control "did it change a decision or catch a problem?" and delete what didn't, until about 1 in 10 has to come back. Law and bank-policy items are never cut. Record each sub-step's wait index and the machine's measures as the first baseline | Claude and me | W4 and W5, and my read of the pages (V1) |
+| W8 | Dry run of the machine: take one small made-up product through all six steps with the templates and two or three agents built as Claude skills, and log where it breaks. Include a **deletion pass** (Elon mode, agreed 2026-10-15): mark every sub-step, agent and control "did it change a decision or catch a problem?" and delete what didn't, until about 1 in 10 has to come back. Law and bank-policy items are never cut. Record each sub-step's wait index and the machine's measures as the first baseline. Merge overlapping agents in the deletion pass, not on paper first: M32 into M26 (as an ongoing mode), and M2, M4, M8 and M20 into one notes-to-draft agent (Elon mode, 2026-10-18) | Claude and me | The first three W4 templates only (Elon mode, 2026-10-18: the dry run starts now, and reading V1 runs alongside) |
 | W9 | Apply the product machine to the RM plan as the first worked example: mark every RM task Auto, Draft or Me (not the per-AI-product blocks, which are in W3) | Claude, with me | V1 and W8 |
 | W10 | Support model and incident runbook for one product: who users call, how issues are logged and fixed, and the steps to pause or roll back the product | Claude drafts, I review | W8 (the dry run shows what support is needed) |
 
@@ -109,7 +109,7 @@ What we're working on first: a quick check on the bank news scout, then stage 2 
 
 | # | Item | Who | Waits on |
 |---|---|---|---|
-| W11 | Build an RM mock-up: clickable screens of the Monday opportunity list, the pre-meeting client brief and the meeting follow-up, on made-up sample data, so Andy can see what an RM gets (the kit's mock-up piece, C40; brought forward to next, after this RM audit: said 2026-10-18). Built on 2026-10-18 from Prompt 4: the RM Assistant Prototype, version 1 (https://claude.ai/artifact/RFM2o7cdren3TxesQBsjky), with three live agents and a guided tour; waiting for my review | Claude, with my review | Stage 1 |
+| W11 | Build an RM mock-up: clickable screens of the Monday opportunity list, the pre-meeting client brief and the meeting follow-up, on made-up sample data, so Andy can see what an RM gets (the kit's mock-up piece, C40; brought forward to next, after this RM audit: said 2026-10-18). Built on 2026-10-18 from Prompt 4: the RM Assistant Prototype (https://claude.ai/artifact/RFM2o7cdren3TxesQBsjky), now version 4: Today, three live agents, a wave 2 preview and a spoken tour. Before Tuesday: run one agent live inside claude.ai once (every automatic test uses a stand-in for Claude); waiting for my review | Claude, with my review | Stage 1 |
 | B1 | Which revenue lever matters most to the business right now? (from: the full RM plan, section 8, in RM Detail) | Me, with Andy | Nothing |
 | B2 | How will success be judged in the first 6 months? (from: the full RM plan, section 8, in RM Detail) | Me, with Andy | Nothing |
 | B3 | What are Andy's first use cases, and how does the RM work (The RM Assistant) rank against portfolio managers' credit work and treasury and payments? (from: Bank Business Briefing, section 9) | Me, with Andy | Nothing |
@@ -134,6 +134,7 @@ Useful any time; none of these blocks a stage. Dated ones first.
 | W19 | Try the newer skills on real work: "prototype X", "write a prompt for X", "new use case: X" | Me | Nothing |
 | W20 | Playbooks for my everyday tools (idea 3, approved): name two or three tasks I repeat in email, calendar or documents. Claude turns each into a step-by-step skill | Me, then Claude | Nothing |
 | W21 | Give the portfolio manager section of the Document Library the same plain numbered rows as the other sections (the RM section got them on 2026-10-18, C50), and write the group names the glossary's way: spelled out with the short form the first time on a page ("relationship managers (RMs)", "portfolio managers (PMs)"), then RM and PM | Me, with Claude | Nothing |
+| W22 | Process fixes from the Elon mode reviews of 2026-10-18 not built yet (the wrap-up script, a lighter wrap-up, a shorter NOW.md and audit sizing are done): one list of pages (the library file only); counts inserted from one source; turn repeated reviewer findings into checks (links that don't resolve, a footer date older than the file); a rename command; build the Product Workflow page from its working file; count what each checker check catches and drop the silent ones; run or retire the 30 rule tests never run (one test per rule); one home for repeated rules ("in writing; a meeting only if contested" is in about 35 lines across 11 files). Needs my yes: the GitHub check also runs the render check and the prototype tests | Claude | Nothing (the GitHub check: my yes) |
 
 ## Inside the bank
 

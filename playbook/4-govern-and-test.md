@@ -171,7 +171,7 @@ log (see `README.md`) for every sub-step.
 - **Why it matters:** approval usually depends on it, and it's what step 6 runs on.
 - **Know first:** the measures (2.7) and what risk wants to monitor.
 - **First time, step by step:**
-  1. List what's watched: quality, guardrail blocks, user overrides, incidents, fairness, data use against the data contract (M13) and data quality on each refresh (M24).
+  1. List what's watched: quality, guardrail blocks, user overrides, incidents, fairness, data use against the data contract (M13) and data quality on each refresh (M24). Add the **control watch list**: one line per control that no other step watches after launch (K2, K6, K10, K12, K14, K19, K20, K21, K23, K24 and K25 in the Controls Catalog), each with how it's checked; M11 Controls checker re-runs the list monthly (Elon mode, 2026-10-18).
   2. For each one: how often, the alert threshold, who's alerted and what they do.
   3. Write the incident process: who to call, who may pause the product (the product manager or operations, per the plan) and how. A serious incident is [X], set in the plan with the risk partner.
   4. Agree it with risk and operations.

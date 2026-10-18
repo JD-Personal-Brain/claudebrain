@@ -5,7 +5,7 @@ How The RM Assistant gets delivered to relationship managers (RMs) · Associated
 [RM Executive Summary](https://claude.ai/artifact/LPPq2gt5PSoiB8GzX8ZBE2) · [The RM Assistant](https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2) · [RM Assistant Prototype](https://claude.ai/artifact/RFM2o7cdren3TxesQBsjky) (see it working) · [RM Detail](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n) (everything in full) · [Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ) (the rules every product follows)
 
 ## The plan at a glance
-The first 13 weeks (about 90 days), as estimates to confirm in the first days. Week 1 starts at kickoff. Gates (◆) are go/no-go decisions; the data contract is the signed list of client data the assistant may use. Each row links to its detail in RM Detail.
+The first 13 weeks (about 90 days), as estimates to confirm in the first days. Each live bar starts only once its client data is approved and the bank's AI review signs it off, so the bars move with those approvals. Week 1 starts at kickoff. Gates (◆) are go/no-go decisions; the data contract is the signed list of client data the assistant may use. Each row links to its detail in RM Detail.
 
 ```gantt
 weeks 13
@@ -21,13 +21,13 @@ Sign-offs for the brief and list, plus a separate one to save call notes in Sale
 Small releases every week or two | 6 | 13 | ongoing | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-6-the-project-plan-estimate
 ```
 
-The recap and email can move first because they use only the RM's own meetings and notes, not client account data, and the risk partner reviews each version as it's built. Interviews keep going after gate 1 to refine the target. Waves 2 and 3 get proposed dates at gate 2, once data access and review times are known.
+The recap and email can move first because they're drafted from the RM's own notes, not client account data or meeting recordings (our assumption, to confirm: it needs the least review), and the risk partner reviews each version as it's built. Interviews keep going after gate 1 to refine the target. Waves 2 and 3 get proposed dates at gate 2, once data access and review times are known.
 
 ## 1. What could slow us down (to confirm)
 The real blockers aren't known yet; they're a first question for the bank. Possible ones:
 - **Approval to use client data.** Nothing reaches pilot RMs on real client data until the people responsible for it approve which data the assistant may use.
 - **The bank's AI review.** Nothing goes live until risk, compliance, privacy and security sign off. To keep that short, the risk partner reviews each version as it's built, so the sign-off has no surprises.
-- **Backup plan.** If either runs long, the meeting recap and email go first (they need the least new data and review), and the rest stays ready in the test environment, live by about week 10. The call is made at gate 2.
+- **Backup plan.** If either runs long, the meeting recap and email go first (drafted from the RM's own notes, which we assume needs the least new data and review), and the rest stays ready in the test environment, live by about week 10. The call is made at gate 2.
 
 Detail: [the backup plan and the six conditions for moving fast](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-6-the-project-plan-estimate).
 
