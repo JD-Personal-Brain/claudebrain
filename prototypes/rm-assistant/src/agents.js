@@ -56,10 +56,7 @@
       facts: c => ({ wiresElsewherePerMonth: c.wiresElsewherePerMonth, loansWithUs: c.loans.map(l => ({ type: l.type, amount: l.balance || l.committed })) }) },
     { id: "T5", name: "Card acceptance gap", test: c => c.consumerFacing && !c.merchant,
       plain: "A business that takes payments from consumers and has no merchant services with us.",
-      score: () => 15, facts: c => ({ merchantServicesWithUs: false, consumerFacing: true }) },
-    { id: "G1", name: "Growing balances", test: c => growth(c) >= 25 && !c.seasonal,
-      plain: "Balances up 25% or more over 6 months, for a business that isn't seasonal. A reason to ask about plans, never a credit signal.",
-      score: () => 10, facts: c => ({ balanceApril: c.balances[0], balanceSeptember: c.balances[5], growthPct: growth(c) }) }
+      score: () => 15, facts: c => ({ merchantServicesWithUs: false, consumerFacing: true }) }
   ];
   const MARKET_RULE = { id: "Rates", name: "Rates context", plain: "When the 10-year Treasury yield is up 0.25 points or more over 6 months, idle-cash signals (T1) carry the rates context.", bonus: 5 };
   function nonInterestAvg(c) { const b = c.balances.slice(-3); return Math.round(b.reduce((a, v) => a + v, 0) / 3 * c.nonInterestShare / 10000) * 10000; }
@@ -257,7 +254,7 @@
     return { data, prompt: `You are A2, the Insight writer inside "The RM Assistant", a prototype AI assistant for a commercial bank relationship manager (RM) named ${B.rm.name}. Today is ${B.todayLabel}. All data is made-up sample data.
 Your job: turn the signals that agent A1 found (simple rules the business owns) into short insights ${B.rm.name.split(" ")[0]} can act on this week.
 ${RULES_TEXT}
-- Each "why" is at most 45 words and names the numbers behind the signal. Say "sits" once at most; vary the wording.
+- Each "why" is at most 45 words and names the numbers behind the signal. Market data may explain why the signal matters now, but no talking point quotes a rate or yield. (control K8) Say "sits" once at most; vary the wording.
 
 <data>
 ${JSON.stringify(data, null, 1)}
@@ -272,6 +269,7 @@ Draft a one-page pre-meeting brief for ${B.rm.name} (${B.rm.title}) for the meet
 ${RULES_TEXT}
 - End every fact with its source in square brackets: [Client record], [Activity, Sep 12] (the activity's month and day), [Insight: idle operating cash] (the insight's rule name) or [Market: Fed H.15]. Advice that isn't a fact (like a watch-out) needs no source.
 - Write times like 10:00 a.m. and dates like Tuesday, October 20.
+- Market data is background for the RM only: put it under a heading "Background for you (not to quote)", never in the talking points, and never as a rate to offer the client. (control K8)
 - Partner names you may use: portfolio manager ${B.rm.partnerPM}; treasury specialist ${B.rm.treasurySpecialist}.`;
     const fmt = `Write it in exactly this Markdown layout, under 300 words, nothing before or after:
 ## At a glance

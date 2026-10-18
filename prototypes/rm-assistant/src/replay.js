@@ -6,7 +6,7 @@ window.REPLAY = {
   recorded: "2026-10-18",
   insights: [
     { clientId: "C101", headline: "Idle cash is building at Lakeshore",
-      why: "About $2.88M a month is held in accounts that earn no interest (last 3 months), and balances are up 31% since April. The 10-year Treasury yield is up 0.55 points in six months, so idle cash is worth a conversation.",
+      why: "About $2.88M a month is held in accounts that earn no interest (last 3 months). The 10-year Treasury yield is up 0.55 points in six months, so idle cash is worth a conversation.",
       talkingPoints: ["Maria asked in September whether we offer anything better for cash that isn't working.", "Ask how much cash they want to keep on hand day to day."],
       nextStep: "Bring sweep and money market options to Tuesday's 10:00 a.m. check-in, and offer to bring in Priya Natarajan." },
     { clientId: "C105", headline: "Northern Pines pays its bills through another bank",
@@ -42,13 +42,15 @@ Cash is building with nowhere to go, and Maria already asked about it in Septemb
 
 ## Talking points
 1. Options for idle cash: a sweep or a money market, and how quickly funds come back when they need them. [Insight: idle operating cash]
-2. Rates context: the 10-year Treasury yield averaged 4.68% in August 2026, up 0.55 points in six months. [Market: Fed H.15]
-3. Tom's automation plans for 2027: listen, and bring in Sam Okafor (portfolio manager) for anything that needs credit. [Activity, Jun 10]
+2. Tom's automation plans for 2027: listen, and bring in Sam Okafor (portfolio manager) for anything that needs credit. [Activity, Jun 10]
 
 ## Questions to ask
 - How much cash do you want to keep on hand day to day?
 - What's behind the strong Q3, and will it last? [Activity, Sep 12]
 - Who else at the company should hear about treasury options?
+
+## Background for you (not to quote)
+- Market rates have risen: the 10-year Treasury yield averaged 4.68% in August 2026, up 0.55 points in six months. It's why idle cash matters more now; don't quote it or any rate to the client. [Market: Fed H.15]
 
 ## Watch-outs
 - Don't quote rates or prices for our products; that's for the team that owns pricing.
