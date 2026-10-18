@@ -4,6 +4,7 @@
 window.BOOK = {
   today: "2026-10-19",            // a Monday: the day the Monday opportunity list goes out
   todayLabel: "Monday, October 19, 2026",
+  dataAsOf: "2026-10-18",         // when the client data was last refreshed; A1 stops if it is too old (K25)
   rm: { id: "rm-07", name: "Jordan Ellis", title: "Senior Relationship Manager, Commercial Banking", market: "Milwaukee and Green Bay", partnerPM: "Sam Okafor (portfolio manager)", treasurySpecialist: "Priya Natarajan (treasury management officer)" },
   months: ["2026-04", "2026-05", "2026-06", "2026-07", "2026-08", "2026-09"],
   clients: [
@@ -44,7 +45,7 @@ window.BOOK = {
       checksPerMonth: 40, positivePay: false, branchDepositsPerMonth: 6, remoteDeposit: false, merchant: false, consumerFacing: true, wiresElsewherePerMonth: 3,
       loans: [{ type: "Term loan", balance: 1100000, maturity: "2028-05-31" }],
       lastContact: "2026-09-30",
-      nextMeeting: { date: "2026-10-22", time: "15:30", where: "Third Ward location", purpose: "Intro to new GM", attendees: ["Andre Wallace, owner", "Keisha Monroe, new general manager"] },
+      nextMeeting: { date: "2026-10-22", time: "15:30", where: "Third Ward location", purpose: "Introduction to the new general manager", attendees: ["Andre Wallace, owner", "Keisha Monroe, new general manager"] },
       contacts: [{ name: "Andre Wallace", role: "Owner" }, { name: "Keisha Monroe", role: "General manager" }],
       activity: [{ date: "2026-09-30", type: "Call", note: "Andre unhappy with card processing fees from their current processor." }] },
     { id: "C105", rm: "rm-07", name: "Northern Pines Logistics", industry: "Trucking and freight", city: "Wausau, WI", revenueM: 57, employees: 330, since: 2021,

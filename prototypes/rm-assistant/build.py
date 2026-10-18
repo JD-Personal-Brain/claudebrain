@@ -19,7 +19,8 @@ def build(version, force=False):
     js = "\n".join(f"// ===== src/{s} =====\n" + read(s) for s in SCRIPTS)
     page = page.replace("/*JS*/", js).replace('<span id="ver">1</span>', f'<span id="ver">{version}</span>')
     # The published page may load only Google Fonts; anything else would be blocked, so fail here.
-    hosts = set(re.findall(r'(?:src|href)="https?://([^/"]+)', page))
+    # Only what the page loads counts (scripts, images, stylesheets); plain <a> links to other pages are fine.
+    hosts = set(re.findall(r'src="https?://([^/"]+)', page)) | set(re.findall(r'<link[^>]*href="https?://([^/"]+)', page))
     bad = hosts - {"fonts.googleapis.com", "fonts.gstatic.com"}
     if bad: raise SystemExit(f"external hosts not allowed on a published page: {sorted(bad)}")
     if "</script" in js.replace("<\\/script", ""): raise SystemExit("a script contains </script>")

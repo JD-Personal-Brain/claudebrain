@@ -10,3 +10,4 @@ First version, built from Prompt 4 in the Prompt Library.
 - Outside data: the Federal Reserve's 10-year Treasury yield, as a dated copy (fetched 2026-10-18, latest August 2026).
 - Controls shown working: K1, K2, K3, K4, K7 (number check), K8 (guardrails), K12 (audit log), K22, K24 and K25.
 - Product manager view with the five kinds of measures; a guided tour under 2 minutes, and the tour as a video.
+- Before delivery, a deep audit (words, plan alignment, design, an executive walk-through) led to: plain names instead of codes on screen, an opening summary, a step-by-step agent timeline, use / change / reject on every output, wider guardrails with innocent questions allowed, a scan of every finished draft for prices and credit promises, a stale-data stop and an empty-notes stop (K25), decisions kept across re-runs, the approval line stamped only when the RM approves, a flow diagram, what a pilot would need, and a dark-mode fix.

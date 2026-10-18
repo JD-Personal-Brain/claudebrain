@@ -89,14 +89,6 @@
           "kit": "plan"
         },
         {
-          "id": "rm-prototype",
-          "name": "RM Assistant Prototype",
-          "what": "The RM Assistant as a clickable prototype: three agents running live on Claude on sample data, the controls working, and a 2-minute guided tour.",
-          "status": "Waiting for review",
-          "url": "https://claude.ai/artifact/RFM2o7cdren3TxesQBsjky",
-          "source": "prototypes/rm-assistant/"
-        },
-        {
           "id": "rm-ai-reference",
           "name": "RM Detail",
           "what": "Everything about the RM work in one document, for an AI to read: give it to an AI for the full picture. Built from the working files.",
@@ -104,6 +96,14 @@
           "url": "https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n",
           "source": "designs/rm-ai-build.py",
           "kit": "detail"
+        },
+        {
+          "id": "rm-prototype",
+          "name": "RM Assistant Prototype",
+          "what": "The RM Assistant as a clickable prototype: three agents running live on Claude on sample data, the controls working, and a 2-minute guided tour.",
+          "status": "Waiting for review",
+          "url": "https://claude.ai/artifact/RFM2o7cdren3TxesQBsjky",
+          "source": "prototypes/rm-assistant/"
         }
       ],
       "numbered": true,
