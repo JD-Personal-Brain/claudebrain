@@ -29,10 +29,7 @@ Each capability is one AI product and answers one core use case (see the [Use Ca
 | **Left out on purpose** | Pricing suggestions; contacting prospects on its own | — | Deal scoring and pricing; lead nurturing (full version) | Out |
 
 ## 3. What it's built on
-One shared foundation, built once for every capability and later reused for portfolio managers: client data from Salesforce and Snowflake, the RM's own work (calendar, email, meetings; transcripts only with client consent), outside prospect data the bank licenses (to confirm), a **signals engine** (simple, explainable rules find opportunities and risks; AI explains them in plain English with the numbers), drafting, and the controls and feedback above.
-
-## 4. Portfolio managers next
-Portfolio managers (PMs) get the same kind of assistant on the same foundation, starting with credit memo and annual review drafts, then early warning (decided 2026-10-15).
+One shared foundation, built once for every capability: client data from Salesforce and Snowflake, the RM's own work (calendar, email, meetings; transcripts only with client consent), outside prospect data the bank licenses (to confirm), a **signals engine** (simple, explainable rules find opportunities and risks; AI explains them in plain English with the numbers), drafting, and the controls and feedback above.
 
 Every detail (the RM's job, the foundation part by part, what to confirm) is in [RM Detail](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n), the fourth page in the RM section.
 
