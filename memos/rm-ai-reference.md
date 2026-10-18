@@ -22,7 +22,7 @@ Each RM gets **their own AI assistant**, inside the tools we expect they already
 | Capability | What the RM gets | Why it matters |
 |---|---|---|
 | **Pre-meeting client brief** | One page before each client meeting: the relationship, recent activity, open opportunities, talking points | Less prep time, better meetings |
-| **Meeting follow-up** | The recap, the follow-up email and the call notes for Salesforce, drafted for the RM to approve: from the Teams transcript where recording is allowed and the client agrees, otherwise from the RM's own notes. Recap and email come first; saving call notes to Salesforce follows once it is signed off | Admin off the RM's plate; better client records |
+| **Meeting follow-up** | The recap, the follow-up email and the call notes for Salesforce, drafted for the RM to approve from the RM's own notes; from the Teams transcript later, only where recording is allowed and the client agrees. Recap and email come first; saving call notes to Salesforce follows once it is signed off | Admin off the RM's plate; better client records |
 | **Monday opportunity list** | Each Monday, the clients to call this week, with the reason and the numbers behind it | New revenue from existing clients |
 
 **See it working:** the [RM Assistant Prototype](https://claude.ai/artifact/RFM2o7cdren3TxesQBsjky) runs all three on sample data, with a 2-minute tour.
@@ -35,7 +35,7 @@ Later waves add early warning on clients who may leave, referral prompts and pro
 - Revenue is proven against similar RMs not yet using it; time is reported as hours saved. Targets are set from the bank's own numbers. [Outside evidence for each core use case](https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X#relationship-managers)
 
 ### How fast
-Wave 1 is live in about six weeks: the meeting recap and email first (about weeks 2–4), then the client brief, Monday opportunity list and call notes (about weeks 4–6). The first read on closed revenue comes at about month 6. [The plan, week by week](https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk)
+The build takes days. What sets the pace is approval: each piece goes live once its client data is approved and the bank's AI review signs it off. On our first estimates, to confirm, that's the meeting recap and email by about week 4, then the client brief, Monday opportunity list and call notes by about week 6. The first read on closed revenue comes at about month 6. [The plan, week by week](https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk)
 
 **What could slow us down:** not known yet. Possible hold-ups include getting approval to use client data and the bank's AI review, but the real ones are a question for the first conversations (below). If they run long, the meeting recap and email still go first and the rest follows by about week 10.
 
@@ -74,7 +74,7 @@ Each capability is one AI product and answers one core use case (see the [Use Ca
 | | Referral prompts | Flags a client need for a partner team, such as treasury management | Lead nurturing, including cross-sell | 2 |
 | **Before the meeting** | Pre-meeting client brief | One page before each client meeting | Account intelligence and meeting prep | 1 |
 | | Client Q&A | Answers the RM's own questions about a client at any time, with the source for each answer | Account intelligence and meeting prep | 3 |
-| **During and after** | Meeting follow-up | Drafts the recap, the follow-up email and the call notes for Salesforce, from the Teams transcript where recording is allowed and the client agrees, otherwise from the RM's own notes; the RM approves before anything is saved or sent | Admin off the RM's plate | 1 |
+| **During and after** | Meeting follow-up | Drafts the recap, the follow-up email and the call notes for Salesforce from the RM's own notes (from the Teams transcript later, only where recording is allowed and the client agrees); the RM approves before anything is saved or sent | Admin off the RM's plate | 1 |
 | | AI sales coaching | Private guidance for the RM after a call | AI sales coaching | 3 |
 | **Keep the book** | Early warning | Flags clients who may be drifting away | Keep clients | 2 |
 | **Left out on purpose** | Pricing suggestions; contacting clients or prospects on its own | Kept out to protect fair lending and client trust | Deal scoring and pricing; lead nurturing (the full, automated version) | Out |
@@ -144,7 +144,7 @@ Each capability is one AI product (glossary). The **Need it answers** column nam
 
 | Wave | Capability (AI product) | Core use case it answers | Agents | Built mainly on | Our measure (target set in Define) |
 |---|---|---|---|---|---|
-| **Wave 1** (follow-up about weeks 2–4; the rest about weeks 4–6) | Pre-meeting client brief | Account intelligence and meeting prep | A3 | Salesforce (Agentforce or Prompt Builder), Snowflake | Prep time per meeting; client-facing hours [X] |
+| **Wave 1** (follow-up live by about week 4; the rest by about week 6; each once its approvals are in) | Pre-meeting client brief | Account intelligence and meeting prep | A3 | Salesforce (Agentforce or Prompt Builder), Snowflake | Prep time per meeting; client-facing hours [X] |
 | | Meeting follow-up: recap, email draft and call notes into Salesforce (the RM approves) | Admin off the RM's plate | A3 | M365 Copilot in Teams and Outlook; Salesforce Agentforce for the notes | Hours saved per week; share of meetings logged [X] |
 | | Monday opportunity list (deposit and treasury gaps in wave 1) | Prospecting and next best opportunities | A1, A2, then a scheduled Monday send (workflow B1) | Snowflake signals, Power Automate | AI-sourced pipeline and wins, against the comparison group [X] |
 | **Wave 2** (dates proposed at gate 2) | Early warning: client may leave | Keep clients | A1, A2 | Snowflake signals, Salesforce | Clients kept, against the comparison group [X] |
@@ -158,9 +158,11 @@ Each capability is one AI product (glossary). The **Need it answers** column nam
 
 **Why the follow-up and call notes are one capability (decided 2026-10-17):** both
 come from the same meeting recap and the same agent (A3), so RMs get one flow:
-the recap and email first (about weeks 2–4, since they run in M365 Copilot on the
-RM's own meetings and need the least new data and review), then saving the call
-notes to Salesforce once that's signed off (about weeks 4–6). Call notes are in
+the recap and email first (live by about week 4: drafted from the RM's own notes,
+which we assume needs the least new data and review, ⚠️ to confirm), then saving the call
+notes to Salesforce once that's signed off (by about week 6). Teams transcripts come
+later, only where the bank allows recording and the client agrees (control K24), so
+recording isn't on wave 1's critical path (Elon mode, 2026-10-18). Call notes are in
 wave 1 because in McKinsey's survey of about 400 bankers, admin is one of the top
 two problems at every stage of the sales funnel (decided 2026-10-10).
 
@@ -222,7 +224,7 @@ How The RM Assistant gets delivered to relationship managers (RMs) · Associated
 [RM Executive Summary](https://claude.ai/artifact/LPPq2gt5PSoiB8GzX8ZBE2) · [The RM Assistant](https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2) · [RM Assistant Prototype](https://claude.ai/artifact/RFM2o7cdren3TxesQBsjky) (see it working) · [RM Detail](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n) (everything in full) · [Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ) (the rules every product follows)
 
 ### The plan at a glance
-The first 13 weeks (about 90 days), as estimates to confirm in the first days. Week 1 starts at kickoff. Gates (◆) are go/no-go decisions; the data contract is the signed list of client data the assistant may use. Each row links to its detail in RM Detail.
+The first 13 weeks (about 90 days), as estimates to confirm in the first days. Each live bar starts only once its client data is approved and the bank's AI review signs it off, so the bars move with those approvals. Week 1 starts at kickoff. Gates (◆) are go/no-go decisions; the data contract is the signed list of client data the assistant may use. Each row links to its detail in RM Detail.
 
 ```gantt
 weeks 13
@@ -238,13 +240,13 @@ Sign-offs for the brief and list, plus a separate one to save call notes in Sale
 Small releases every week or two | 6 | 13 | ongoing | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-6-the-project-plan-estimate
 ```
 
-The recap and email can move first because they use only the RM's own meetings and notes, not client account data, and the risk partner reviews each version as it's built. Interviews keep going after gate 1 to refine the target. Waves 2 and 3 get proposed dates at gate 2, once data access and review times are known.
+The recap and email can move first because they're drafted from the RM's own notes, not client account data or meeting recordings (our assumption, to confirm: it needs the least review), and the risk partner reviews each version as it's built. Interviews keep going after gate 1 to refine the target. Waves 2 and 3 get proposed dates at gate 2, once data access and review times are known.
 
 ### 1. What could slow us down (to confirm)
 The real blockers aren't known yet; they're a first question for the bank. Possible ones:
 - **Approval to use client data.** Nothing reaches pilot RMs on real client data until the people responsible for it approve which data the assistant may use.
 - **The bank's AI review.** Nothing goes live until risk, compliance, privacy and security sign off. To keep that short, the risk partner reviews each version as it's built, so the sign-off has no surprises.
-- **Backup plan.** If either runs long, the meeting recap and email go first (they need the least new data and review), and the rest stays ready in the test environment, live by about week 10. The call is made at gate 2.
+- **Backup plan.** If either runs long, the meeting recap and email go first (drafted from the RM's own notes, which we assume needs the least new data and review), and the rest stays ready in the test environment, live by about week 10. The call is made at gate 2.
 
 Detail: [the backup plan and the six conditions for moving fast](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-6-the-project-plan-estimate).
 
@@ -447,8 +449,9 @@ the first days.
 | **6. Fast decisions** | Each gate is decided within days, in writing when every criterion is met, because waiting for decisions adds weeks. | Sponsor, with the people named for each gate |
 
 **Backup plan if data access or review runs long.** The meeting follow-up's
-recap and email go first: they run in M365 Copilot on the RM's own meetings and email, so they
-need the least new data and review. RMs keep shaping the brief,
+recap and email go first: they're drafted from the RM's own notes in M365 Copilot (Teams transcripts
+come later, only where recording is allowed and the client agrees, control K24), so we assume they
+need the least new data and review (⚠️ to confirm). RMs keep shaping the brief,
 opportunity list and call notes in the test environment, so they're ready the day access and
 sign-off land, by about week 10. The dates for later waves, proposed at gate 2, allow for it. The
 call is made at gate 2 (week 2).
@@ -736,7 +739,7 @@ made-up sample data. It's a prototype to show we can build; the real product com
 steps (Discover onward), so every fact about the bank in it is an assumption to confirm.
 
 - **Live page:** https://claude.ai/artifact/RFM2o7cdren3TxesQBsjky (private until shared from its Share menu)
-- **The tour as a video:** `rm-assistant-tour-v1.mp4` (about 2 minutes, with a voiceover read by Kokoro, an open-source voice; the script is `video/narration.json`)
+- **The tour as a video:** `rm-assistant-tour-v4.mp4` (version 4, about 2½ minutes, with a voiceover read by Kokoro, an open-source voice; the script is `video/narration.json`). The version 1 video is kept as `rm-assistant-tour-v1.mp4`.
 - **Built from:** Prompt 4 in `prompt-library.md`; the product page (`memos/rm-assistant.md`), agents A1 to A3 and
   workflows B1 to B4 in the full plan (`memos/rm-analytics-framework.md`); controls in `playbook/controls.md`.
 - **Added for the prototype only:** the outside data feed (the 10-year Treasury yield) and its "Rates context" rule. They

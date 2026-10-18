@@ -207,7 +207,7 @@ else:
         if m: bad.append(m.group(1).strip())
         else: print('glossary.md: could not read this "Words we don\'t use" row:',row[:60]); probs+=1
     if not bad: print('glossary.md: the "Words we don\'t use" table is empty'); probs+=1
-core=['product-framework.md','product-machine.md','open-items.md','tech-stack.md','memos/rm-analytics-framework.md','memos/rm-analytics-summary.md','memos/role-workflow.md']+sorted(glob.glob('playbook/*.md'))
+core=['product-framework.md','product-machine.md','open-items.md','tech-stack.md','memos/rm-analytics-framework.md','memos/role-workflow.md']+sorted(glob.glob('playbook/*.md'))
 for f in core:
     for i,line in enumerate(open(f).read().split('\n'),1):
         for w in bad:
