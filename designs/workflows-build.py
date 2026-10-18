@@ -9,7 +9,7 @@ from pagekit import CSS, E, inline, chipify, six_steps, WORKFLOW_URL, STEPS_URL,
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 read = lambda p: open(os.path.join(ROOT, p)).read()
-RM_PLAN_URL = "https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk"
+RM_PLAN_URL = "https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n"  # RM Detail, which holds the full plan and its Appendix B
 SIX = six_steps()  # each step's question, governance thread and gate come from the Product Workflow, their one home
 
 # ---------- Map 1: delivering a product (six steps -> 44 sub-steps) ----------
@@ -71,7 +71,7 @@ for block in re.split(r"\n\*\*(?=B\d+\. )", appb)[1:]:
                   "logged": field(body, "Logged"), "measures": field(body, "Measures"),
                   "check": field(body, "Check"),
                   "agents": sorted(set(re.findall(r"\b(?:A\d|M\d{1,2})\b", body)), key=lambda a: int(a[1:])),
-                  "link": f"{RM_PLAN_URL}#appendix-b-workflows"}
+                  "link": f"{RM_PLAN_URL}#part-5-the-full-delivery-plan-with-every"}
 
 # The RM's week as the main process. This grouping is my framing of the
 # memo's workflows; confirm it with RMs in Discover.
@@ -128,7 +128,7 @@ def rm_detail(f):
             f'<h5>Step by step</h5><ol class="flow">{steps}</ol>'
             f'<dl class="facts"><div><dt>Logged</dt><dd>{inline(f["logged"][:1].upper() + f["logged"][1:])}</dd></div>'
             f'<div><dt>Measured by</dt><dd>{inline(f["measures"][:1].upper() + f["measures"][1:])}</dd></div></dl>'
-            f'<a class="more" href="{E(f["link"])}" target="_blank" rel="noopener">Open the RM plan\'s workflows</a>')
+            f'<a class="more" href="{E(f["link"])}" target="_blank" rel="noopener">Open the workflows in RM Detail</a>')
 
 def spine_map(mid, stages, branch_html, detail_html, tag):
     cols = ""

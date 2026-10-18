@@ -14,12 +14,12 @@ holds the ones worth keeping.
 
 | # | Prompt | What it gives me | Version |
 |---|---|---|---|
-| 1 | The use case kit | The standard set of pieces every use case has (a leader layer and a working layer), the use case measured against it, and the gaps fixed | 1 (2026-10-17) |
+| 1 | The use case kit | The standard set of pieces every use case has (a leader layer and a working layer), the use case measured against it, and the gaps fixed | 2 (2026-10-18) |
 | 2 | A full product memo | A full product plan for a new use case, from my saved files | 1 (2026-10-09) |
 | 3 | A business briefing on the bank | The Bank Business Briefing, rebuilt from public sources each quarter | 1 (2026-10-09) |
 
 ## Prompt 1: the use case kit (organize a use case, find its gaps, fix them)
-**Version 1** (2026-10-17). First run: relationship managers (RMs).
+**Version 2** (2026-10-18). First run: relationship managers (RMs).
 
 Sets the standard set of pieces every use case should have, in two layers: a
 **leader layer** I communicate from (for Andy and bank leaders) and a **working
@@ -36,10 +36,12 @@ Inputs:   <use_case_work>
           Everything already built for [relationship managers (RMs)]:
           [memos/rm-analytics-framework.md] (the full plan, with
           Appendix A agent specs and Appendix B workflows),
-          [memos/rm-assistant.md], [memos/mckinsey-frontline-ai.md]
-          (the RM Core Use Cases page), [memos/rm-analytics-audit.md],
-          [memos/rm-analytics-market-scan.md], the scrolling page
-          [designs/rm-analytics-plan.html], [Map 2 on the Workflow Maps
+          [memos/rm-ai-reference.md] (RM Detail:
+          every RM working file in one document), [memos/use-case-library.md]
+          (the Use Case Library), [memos/mckinsey-frontline-ai.md], [memos/rm-analytics-audit.md],
+          [memos/rm-analytics-market-scan.md], the three short pages
+          [memos/rm-executive-summary.md], [memos/rm-assistant.md]
+          and [memos/rm-plan.md], [Map 2 on the Workflow Maps
           (an RM's week with AI, built by designs/workflows-build.py)],
           the [RM product agents] on the Agent Library
           (designs/agents.html), and the [rm] section of
@@ -199,7 +201,7 @@ section in the library (portfolio managers' section id is `credit`). Change each
 `{next group: ...}` to the group after it, or delete those words if none is planned. In stage 1, start from the agreed kit instead of proposing one, and
 only grade, rank and fix.
 
-**What changed:** version 1, first written 2026-10-17.
+**What changed:** version 1, first written 2026-10-17. Version 2 (2026-10-18): the inputs list the three short RM pages and RM Detail, and the kit is now agreed (C50): three short pages for people (an executive summary, the product, the plan) plus one detail document for AI; for the next use case, start from that kit.
 
 ## Prompt 2: a full product memo (like the RM analytics memo)
 **Version 1** (2026-10-09).

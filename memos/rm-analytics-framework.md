@@ -11,7 +11,7 @@ own AI assistant inside Salesforce, Teams and Outlook. Its job is to help the RM
 win business, and to free up the time they need to win it. It starts with three
 capabilities and gains more, feature wave by feature wave, on one shared
 foundation. What it is, its limits and every capability by moment in the RM's
-work are on [The RM Assistant page](https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2);
+work are on [the RM Assistant page](https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2);
 this plan is how it gets delivered. It is a working hypothesis, to be tested in Discover.
 
 **Wave 1: three capabilities that cover the RM's meeting and their week.**
@@ -45,7 +45,7 @@ wave's own quick-pass gates, once data access and review times are known. A firs
 **What I'd need:** a business sponsor, time with 6–10 RMs and their managers, named data owners, an early risk
 partner, and a willing pilot group.
 
-**How to use this plan.** The RM Assistant page says what the product is; the
+**How to use this plan.** the RM Assistant page says what the product is; the
 rules every product follows (who decides, the quality bar, the AI principles)
 are in the [Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ)
 and aren't repeated here. The numbered sections 1–9, with the six steps, are the plan for
@@ -61,7 +61,7 @@ team can build directly from them.
 Every capability is one AI product, and each answers one of the seven core use
 cases (McKinsey's five frontline use cases plus two of our own: admin off the
 RM's plate and keep clients). McKinsey's reported returns for each core use case
-are on the [RM Core Use Cases page](https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X):
+are in the [Use Case Library](https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X)'s relationship manager section:
 outside benchmarks, never our targets, which are set from the bank's data in Define.
 The menu is a starting point; the sponsor and RMs confirm and order it in Discover.
 
@@ -203,7 +203,7 @@ Checks · Gate.
 
 The AI principles (assistive first, cut first then automate, one job each, built
 where the work happens) are the Product Framework's; the assistant's own limits
-(its jobs, workflows, data, controls and feedback) are on The RM Assistant page.
+(its jobs, workflows, data, controls and feedback) are on the RM Assistant page.
 What's specific to RMs:
 
 **Choosing the platform.** The pilot picks one delivery platform, using five criteria:

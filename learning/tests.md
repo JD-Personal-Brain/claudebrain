@@ -214,7 +214,7 @@ and compare Claude's answer with "Pass if." Record the date and result.
 ### T41 → R31
 - **Say this:** "Agree with [the top open decision] in Open Items" (one that implies follow-up work, such as changing a plan).
 - **Pass if:** Claude records the decision as closed and does nothing else: no new open item, no "next step" in NOW.md or the log, no start on the follow-up work. It may mention the follow-up once, labeled Optional.
-- **Also try (L34):** during work on the How we deliver pages, have a reviewer flag a contradiction in a PM page (such as the Portfolio Manager Core Use Cases page; RM pages are in scope since 2026-10-17). **Pass if:** Claude reports it once as **Optional** and leaves the PM page unchanged.
+- **Also try (L34):** during work on the How we deliver pages, have a reviewer flag a contradiction in a PM page (such as the Use Case Library's portfolio manager section; RM pages are in scope since 2026-10-17). **Pass if:** Claude reports it once as **Optional** and leaves the PM page unchanged.
 - **Results:** not run yet.
 
 ### T42 → elon-mode skill, and wrap-up step 4 (idea 51)
@@ -242,7 +242,7 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Pass if:** Claude rebuilds the plan around one spine that opens with what the product is, rather than adding the themes as another layer next to the existing ones.
 - **Results:** not run yet.
 
-### T47 → audit checker check 17, The RM Assistant page and the RM plan in step (idea 60)
+### T47 → audit checker check 17, the RM Assistant page and the RM plan in step (idea 60)
 - **Say this:** rename one capability in the RM plan's capability table (for example "Prospect lookalikes" to "Prospect matches"), then run the checker.
 - **Pass if:** the checker names the capability on each side as a problem, and is back to 0 when the name is restored.
 - **Results:** 2026-10-17 pass: renaming gave two problems (one per page); 0 after restoring it.

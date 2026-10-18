@@ -43,7 +43,7 @@ assistive first, one job each, read-only by default, every action logged.
 ## 4. Update the references
 - In the playbook review table, change "Already specified?" from "New" to "Yes, M#" (or "Yes, A#").
 - If the agent changes how a task is done, update that task row's tool in `product-machine.md`.
-- Rebuild and republish the designed pages: the playbook page (`python3 designs/playbook-build.py`; it lists the general agents) and the Agent Library (`python3 designs/agents-build.py`). For a project agent in a memo's Appendix A, also rebuild that project's plan page from the memo (`python3 designs/md-page-build.py`). Then run `python3 .claude/skills/audit/check.py`.
+- Rebuild and republish the designed pages: the playbook page (`python3 designs/playbook-build.py`; it lists the general agents) and the Agent Library (`python3 designs/agents-build.py`). For a project agent in a memo's Appendix A, also rebuild RM Detail, which holds the full memo (`python3 designs/rm-ai-build.py`, then `python3 designs/md-page-build.py`). Then run `python3 .claude/skills/audit/check.py`.
 
 ## 5. Audit, then merge
 Run the **audit** skill (rule R18) before offering to merge.
