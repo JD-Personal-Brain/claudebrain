@@ -31,7 +31,7 @@ PAGES = [
      {"Relationship managers": "Relationship managers", "Portfolio managers": "Portfolio managers"}),
     ("memos/rm-plan.md", "rm-analytics-plan.html", "RM Assistant Plan", "Relationship managers · the plan",
      "How The RM Assistant gets delivered: wave 1 in about six weeks, what sets the pace, who decides, how we prove the value, the risks and what to confirm.",
-     {"1. Wave 1 in about six weeks": "Wave 1", "2. What sets the pace": "Pace", "3. Who decides": "Who decides",
+     {"The plan at a glance": "At a glance", "1. Wave 1 in about six weeks": "Wave 1", "2. What sets the pace": "Pace", "3. Who decides": "Who decides",
       "4. How we'll prove the value": "Value", "5. Top risks": "Risks", "6. What I'd confirm in the first weeks": "To confirm"}),
     ("memos/rm-ai-reference.md", "rm-ai-reference.html", "RM Detail", "Relationship managers · the detail, for AI to read",
      "Everything about the RM work in one document, built from the working files, to give an AI the full picture. People read the shorter RM pages.",
