@@ -221,7 +221,7 @@ sub-step. At the end, run the automation review.
 
 - **Who decides:** the sponsor, with the risk partner's agreement (in writing when the gate is clean; a meeting only if a criterion is contested or a decider asks for one; see the Product Machine).
 - **Bring:** the gate pack from 1.7.
-- **Go means:** the sponsor agrees on the target, the measure and today's baseline. The risk partner has no blocking concern.
+- **Go means:** the sponsor agrees on the target, the measure and today's baseline. The risk partner has no blocking concern. On a project's first pass, the gate may pass early on a first sizing and a provisional baseline (the overlapping first pass, in the Product Framework); the final baseline is then recorded before gate 2.
 - **No-go means:** go back to the sub-step that fell short (usually 1.2 or 1.7), or stop the project and record why.
 - **Record:** the date the gate pack was ready, the decision date, the decision, who decided and any conditions, in the decision log.
 

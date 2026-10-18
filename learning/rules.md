@@ -24,6 +24,7 @@ Rules at Level 2 or higher go at the top.
 - **R29 (automatic).** When content moves between pages or files, list every removed line and find each one in its new home, or say it was cut on purpose and why, before review: the audit runs `lost-lines.py`, which lists every sentence that disappeared. Facts copied into a new table are checked against their source. *(from L25; automatic list added with idea 46)*
 - **R30.** When I ask to connect or integrate pages, link summary to detail first: each item on a summary page links to its exact card or section on the deeper page, and related pages link to each other. Each piece of content keeps one home; suggest moving or copying content between pages only if I ask. *(from L27)*
 - **R33.** When a new way of organizing a plan is agreed, rebuild the plan around one spine, opening with what the product is, instead of adding the new scheme on top of the old ones. *(from L37)*
+- **R35.** Never send my email address or any personal detail to an outside website or service (a download request, a form, a search) unless I ask for that exact use; identify tools by a generic name instead. *(from L40)*
 
 _Retired on 2026-10-09: R4 and R15, the rules about explaining approval pop-ups. They were training wheels from when I was new, and I asked for them to be removed. Their numbers are not reused._
 

@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L40 · 2026-10-18 · Put my personal email in a web request
+- **What happened:** while downloading the outside data for the RM prototype, Claude put my personal email address in a download request's header, which sent it to an outside website. Claude caught it later and told me.
+- **Root cause:** some public data sites ask for a contact address, and Claude reached for the one it had without asking whether that site needed it. No rule said contact details never go into a request.
+- **Fix:** never send my email address (or any personal detail) to an outside service unless I ask for that exact use; use a generic tool name instead.
+- **Rule:** R35 · **Test:** T50 · **Level:** 1 · **Times it happened:** 1
+
 ### L39 · 2026-10-18 · Stated a "limiting factor" as fact on pages for leaders
 - **What happened:** the RM Executive Summary and plan said the limiting factor was the data owners' signature on the data contract. I asked who said so: nobody at the bank did. It was Claude's assumption from the 2026-10-17 review, and there may be many other blockers. The wording was also jargon.
 - **Root cause:** a repeat of L36. Rule R32 covers to-do lists but not claims about the bank written onto pages; when the Elon mode review asked "what's the limiting factor?", Claude answered with a guess and the guess became a headline.

@@ -1,6 +1,6 @@
 # NOW: start here
 
-_Last updated: 2026-10-18 · Last review: none yet (first one due around 2026-10-21; I said not yet on 2026-10-14) · Wrap-ups since the last Elon mode review: 1 (last run 2026-10-18; it runs at 3)_
+_Last updated: 2026-10-18 · Last review: none yet (first one due around 2026-10-21; I said not yet on 2026-10-14) · Wrap-ups since the last Elon mode review: 2 (last run 2026-10-18; it runs at 3)_
 
 ## Where things stand
 _Current state only (cut to this on 2026-10-18; the dated history is in git, the Open Items log's closed items and `learning/lessons.md`)._
@@ -34,6 +34,7 @@ _Date to work toward: on Tuesday October 20, 2026 I talk with the credit lead an
 14. Sharing with Associated: not yet (decided 2026-10-09). Open Items stays out of any shared edition (it's for me only). No separate "Associated edition" (decided 2026-10-15): we're building these pages to share as they are. When I'm ready, Claude lists which pages I must share one by one from each page's Share menu (sharing the library doesn't share the pages it links to).
 
 ## Current agreements (and why)
+- **The overlapping first pass** (decided 2026-10-18, C55): on a project's first pass, gate 1 can pass early on a first sizing and a provisional baseline, with the rest of Discover and the final baseline finished by gate 2. Why: the pace is set by what really blocks us, not by finishing every interview first.
 - **Cut first, then automate** (Elon mode, decided 2026-10-15): at every gate, ask whether each task should exist, can be deleted, simplified or made faster before automating it; law and bank policy are never cut. Why: automating work that shouldn't exist locks in the waste, and I want a machine that gets smaller as well as faster.
 - **Base first, then RM, then PM** (said 2026-10-15; moved into RM on 2026-10-17): the base (How we deliver, the audit, the reference pages) came first, and RM work is now open; PM pages stay untouched until I say we're moving into PM. Why: the RM and PM plans will copy the base, so it must be solid first.
 - **Claude explains, I decide.** Why: I'm not a developer and want to stay in control.
