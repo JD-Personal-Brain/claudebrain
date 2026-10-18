@@ -1,6 +1,6 @@
 # NOW: start here
 
-_Last updated: 2026-10-18 · Last review: none yet (first one due around 2026-10-21; I said not yet on 2026-10-14) · Wrap-ups since the last Elon mode review: 3, due (the third wrap-up came on 2026-10-18, the same day as the full Elon mode review in the deep audit, so that review counts; it runs at 3)_
+_Last updated: 2026-10-18 · Last review: none yet (first one due around 2026-10-21; I said not yet on 2026-10-14) · Wrap-ups since the last Elon mode review: 0 (last run 2026-10-18, evening, on everything; it runs at 3)_
 
 ## Where things stand
 _Current state only (cut to this on 2026-10-18; the dated history is in git, the Open Items log's closed items and `learning/lessons.md`)._

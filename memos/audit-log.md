@@ -196,4 +196,32 @@ Each is a rule the machine needs and doesn't have. My recommendation is in the l
 - A fresh second reviewer checked every fix and found about 25 follow-ons, all fixed, including one rule an editor had changed by mistake (which steps are capped when many projects run at once), now put back as I set it.
 - 12 pages were republished after checking that none had newer live edits: Product Workflow, Product Framework, Product Machine, Product Playbook, Steps Catalog, Workflow Maps, Agent Library, Controls Catalog, Glossary, Tech Stack Guide, Elon Mode and the Document Library.
 
+
+## Entry: 2026-10-18 (evening), Elon mode on everything
+
+Three reviewers, read-only: the product machine and reference pages, the RM work and prototype, and this system. Nothing touches law, bank policy or a control.
+
+**Limiting factors:** the machine has never run, even on a made-up product (the dry run, W8, waits on templates and on reading); the RM timeline rests on two things only the bank knows (how long AI review takes, and whether client meetings may be recorded); and this system spends most of its time keeping files in sync.
+
+**Product machine**
+1. **Needed:** start the dry run now, with only the three templates it needs first (brief, data contract, gate pack), not all eight in W4; take V1 off its waits.
+2. **Optional:** merge overlapping agents before any is built: M32 into M26 (ongoing mode), and M2, M4, M8 and M20 into one notes-to-draft agent.
+3. **Needed:** one "control watch" list in the monitoring plan (4.8) for the 11 controls with no "Watched in" step (K2, K6, K10, K12, K14, K19, K20, K21, K23, K24, K25), 7 of them law or bank policy (W7).
+4. **Optional:** one home for repeated rules ("in writing; a meeting only if contested" appears in about 35 lines across 11 files), linked everywhere else.
+5. **Optional:** run M19 at every gate, not only after step 6, so the wait index steers the first project.
+
+**RM work and prototype**
+6. **Needed:** tie the "live in about six weeks" headline to the approvals ("each piece goes live about a week after its data approval and AI sign-off"), since review time is unknown; ask it first on Tuesday.
+7. **Needed:** take meeting recording off wave 1's critical path: the first follow-up drafts from the RM's own notes, transcripts later (K24 unchanged).
+8. **Optional:** one home for dates and waves; the copies disagree (the full plan says the recap is live "from about week 4", other pages "weeks 2–4"); retire memos/rm-analytics-summary.md.
+9. **Needed before Tuesday:** run one agent live inside claude.ai once (every live test uses a stand-in); remake or retire the version 1 tour video.
+10. **Optional:** cut the prototype's Treasury yield feed and rates rule (not in the plan; my own Prompt 4 asked for outside data, so it's my call).
+
+**This system**
+11. **Needed:** turn today's ten process recommendations into tracked items, starting with the wrap-up script and the one publish command.
+12. **Needed:** a lighter wrap-up for quick sessions (16 of 21 quick audits found nothing); scrub the whole Open Items log once a day, not every wrap-up.
+13. **Needed:** NOW.md (2,609 words, read every session) points to the Open Items log instead of repeating it; the copies already drift.
+14. **Optional:** run or retire the 30 of 50 rule tests never run; one test per rule.
+15. **Optional:** count what each checker check catches, and merge or drop the silent ones.
+
 _Last updated: 2026-10-18_
