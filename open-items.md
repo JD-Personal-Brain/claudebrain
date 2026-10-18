@@ -14,7 +14,7 @@ Claude updates it at every wrap-up: finished items move to "Closed" with the dat
 
 ## The path (agreed 2026-10-10)
 
-1. **Read and lock the core** (me): the three RM pages and the Use Case Library (V1 and V2).
+1. **Read and lock the core** (me): the three RM pages (V1); the Use Case Library is read and in use (C51).
 2. **Make the machine runnable** (Claude): templates, tracker design, approvals map, control gaps.
 3. **Dry run and fix** (both): one made-up product through all six steps; fix what breaks.
 4. **Get ready for Andy** (Claude builds, I decide): the RM mock-up, the Andy edition and my questions for him.
@@ -26,7 +26,7 @@ Claude updates it at every wrap-up: finished items move to "Closed" with the dat
 | Stage | Open | What it is |
 |---|---|---|
 | Now | 3 | What we're working on first |
-| Stage 1. Read and lock the core | 3 | What I read, then the decision on the RM framework |
+| Stage 1. Read and lock the core | 2 | What I read, then the decision on the RM framework |
 | Stage 2. Make the machine runnable | 4 | What Claude builds so a real run is possible |
 | Stage 3. Dry run and fix | 3 | Running the machine once and fixing it |
 | Stage 4. Get ready for Andy | 8 | What Andy sees, and what I ask him |
@@ -80,7 +80,6 @@ What we're working on first: a quick check on the bank news scout, then stage 2 
 | # | Item | Who | Waits on |
 |---|---|---|---|
 | V1 | Read the three RM pages, now short and in reading order (reorganized 2026-10-18, C50): the RM Executive Summary, The RM Assistant and the RM Assistant Plan. The full detail is in RM Detail, the fourth RM row, which is for AI to read, not me | Me | Nothing |
-| V2 | Read the Use Case Library: where the value is for RMs and for PMs, and the outside research behind it (it replaced the RM Core Use Cases and Portfolio Manager Core Use Cases pages on 2026-10-18, C50) | Me | Nothing |
 | D1 | Is the RM framework ready to copy to other use cases? My answer on 2026-10-09: not yet. The reading in stage 1 and the work in stages 2 and 3 come first | Me | Credit, the next use case, waits on this |
 
 ## Stage 2. Make the machine runnable
@@ -228,5 +227,6 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C48 | A check that The RM Assistant page and the RM plan list the same capabilities in the same waves (idea 60): yes (said 2026-10-17), built as check 17 of the audit checker; it fails if either page lists a capability or wave the other doesn't | 2026-10-17 |
 | C49 | An automatic length warning on Claude's replies (idea 57): yes (said 2026-10-17), built. A Stop hook (`.claude/hooks/reply-length.py`, switched on in `.claude/settings.json`) stops Claude once when a reply runs past 8 lines and asks for a short follow-up: the outcome, what it means and at most one step | 2026-10-17 |
 | C50 | Reorganize the RM work (said 2026-10-18): yes. The RM section holds only three short pages for people, read in order: the RM Executive Summary (one page for the leaders of the RM business; it is the RM Leader Brief, C43), The RM Assistant (the product, cut short) and the RM Assistant Plan (cut from about 15 pages to a few). Everything in full goes into RM Detail (a fourth row in the RM section, for AI to read; first put in Reference as RM Product Information for AI), one document to give an AI, built from the working files. The core use case pages became one Use Case Library in Reference, with a section for RMs and one for PMs. The use case kit check now asks for those three pages (summary, product, plan) | 2026-10-18 |
+| C51 | I read the Use Case Library: good to go, now marked In use | 2026-10-18 |
 
 _Last updated: 2026-10-18_
