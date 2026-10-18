@@ -81,7 +81,7 @@ What we're working on first: a quick check on the bank news scout, then stage 2 
 |---|---|---|---|
 | V1 | Read the three RM pages, now short and in reading order (reorganized 2026-10-18, C50): the RM Executive Summary, RM Assistant and the RM Assistant Plan. The full detail is in RM Detail, the fourth RM row, which is for AI to read, not me | Me | Nothing |
 | D1 | Is the RM framework ready to copy to other use cases? My answer on 2026-10-09: not yet. The reading in stage 1 and the work in stages 2 and 3 come first | Me | Credit, the next use case, waits on this |
-| D2 | A checker rule (idea 61) so the people pages for one user group never mention another group (from lesson L38). Put to me at the 2026-10-18 wrap-up | Me | Nothing |
+| D2 | A checker rule (idea 61) so the people pages for one user group never mention another group (from lesson L38). Put to me at the 2026-10-18 wrap-ups; not yet (said 2026-10-18) | Me | Me saying it is time |
 
 ## Stage 2. Make the machine runnable
 
