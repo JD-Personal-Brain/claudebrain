@@ -15,7 +15,7 @@ Where we think the value of AI is for each group of bankers we serve, and the ou
 | **Account intelligence and meeting prep** | Better meetings in less prep time | About 25% less prep time; 10% more time with clients. Bank of America's CTO: AI prep lets a banker cover about 50 clients instead of 15 in some cases (not audited) | Pre-meeting client brief (1); client Q&A (3) |
 | **Deal scoring and pricing** | Better margins, faster approvals | 10% margin gains; one bank cut deal turnaround from five days to two | Out on purpose: the AI never sets or suggests a price (fair-lending rules) |
 | **AI sales coaching** | Better calls; new RMs up to speed sooner | Customer satisfaction up seven points; new bankers up to speed 20% faster | AI sales coaching (3) |
-| **Admin off the RM's plate** (our own) | Hours back for clients; better CRM data | Admin ranks first or second of RMs' problems at every stage of a sale (survey of 406 bankers, October 2025); McKinsey expects 10–12 hours a week back per banker and about 40% better coverage | Meeting follow-up, with call notes into Salesforce (1) |
+| **Admin off the RM's plate** (our own) | Hours back for clients; better CRM data | Admin ranks first or second of bankers' problems at every stage of a sale (survey of 406 bankers, October 2025); it earns part of the 10–12 hours a week McKinsey expects back per banker, and about 40% better coverage | Meeting follow-up, with call notes into Salesforce (1) |
 | **Keep clients** (our own) | Clients kept before they drift away | No outside figure; set from the bank's own retention data | Early warning (2) |
 
 **The headline numbers.** Banks that rework one frontline area end to end see about 3–15% higher revenue per RM and 20–40% lower cost to serve. 53% of bankers cite a shortage of high-quality leads as their biggest barrier. McKinsey's warning: "Banks are moving fastest on the least valuable tools."
@@ -32,7 +32,7 @@ The pattern: signals from data, shown inside the CRM, with the reason visible an
 
 ## Portfolio managers
 
-**The need in one line:** PMs (the bank's credit people paired with RMs) spend much of their time assembling credit files, memos and reviews. DBS estimates credit memos and related work take up to 40% of an RM's time at DBS. The value is in drafting and monitoring, with a person always deciding.
+**The need in one line:** PMs are the bank's credit people paired with RMs. The value is in drafting credit memos and reviews and in monitoring credit quality, with a person always deciding. At DBS, credit memos and related work take up to 40% of an RM's time (DBS's estimate); ⚠️ how much of a PM's time goes to them here is to confirm.
 
 > ⚠️ **A proposal, not yet agreed.** Each RM core use case has a credit counterpart; the pairing is our own. Built from a web scan on 2026-10-13 through search summaries; the primary pages would not open.
 
@@ -40,13 +40,13 @@ The pattern: signals from data, shown inside the CRM, with the reason visible an
 |---|---|---|---|
 | **Credit memo and annual review drafts** (account intelligence) | A review-ready first draft from many systems, with sources | DBS: live for about 1,500 bankers (August 2026), targets at least 30% less time. Moody's: writes about 35–40% of each memo at a tier-one US bank. nCino, S&P and Microsoft all offer it | **Strongest.** First in our order |
 | **Early warning on credit quality** (keep clients) | Spotting a weakening borrower early | Nearly 60% of credit risk leaders are pursuing it, more than any other area (McKinsey survey of 24 institutions). Moody's live across 19 countries at a large Asian bank | **Strong.** Second in our order |
-| **Spreading, document intake and covenant tracking** (admin) | Analyst hours back | Vendors claim 40–60% less analyst time per deal (Evalueserve, nCino) | Vendor claims |
+| **Spreading, document intake and covenant tracking** (admin) | Analyst hours back | Vendors claim 40–60% less analyst time per deal (vendor claims; Evalueserve and nCino sell these tools) | Vendor claims |
 | **Renewals and line changes** (lead nurturing) | Renewals caught on time; lines matched to results | Part of most memo tools (vendor material) | Thin |
 | **Credit policy Q&A and coaching** (coaching) | Newer analysts up to speed faster | nCino Banking Advisor answers policy questions; American Banker reports AI helps newer bankers most | Thin |
 | **Deal screening** (prospecting) | Checking fit with credit appetite before the RM pitches | Vendor claims only | Thin |
 | **Risk rating support** (deal scoring) | Faster, consistent rationale | Little public evidence | Out of the first waves: closest to a credit decision |
 
-**What the market shows.** No bank reports letting AI make the credit decision: every example has the AI draft or flag and a person decide. No large US bank has announced an AI tool for commercial credit memos (as of 2026-10-13).
+**What the market shows.** No bank reports letting AI make the credit decision: every example has the AI draft or flag and a person decide. We found no public announcement from a large US bank naming its own AI tool for commercial credit memos (search of 2026-10-13); Moody's reports one unnamed tier-one US bank using its agents.
 
 **Order agreed 2026-10-15:** credit memo and annual review drafts first, early warning second, risk ratings out of the first waves. The full scan, with every source, is kept in the working files (`memos/credit-market-scan.md`).
 

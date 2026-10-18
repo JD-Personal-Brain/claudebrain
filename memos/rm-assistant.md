@@ -1,16 +1,16 @@
-# The RM Assistant
+# RM Assistant
 
-> ⚠️ **A working hypothesis** (agreed 2026-10-17), built from outside research and public Associated job postings. Conversations with RM leaders and Discover confirm or change it.
+> ⚠️ **A working hypothesis** (agreed 2026-10-17), built from outside research and public Associated job postings. Conversations with the leaders of relationship managers (RMs) and Discover confirm or change it.
 
 ## The product in one line
-Each relationship manager (RM) gets **their own AI assistant**, inside Salesforce, Teams and Outlook, to help them win business and free up the time to win it. It starts with three **capabilities** and gains more, feature wave by feature wave. Every later AI product for RMs is a new capability of the same assistant.
+Each RM gets **their own AI assistant**, inside Salesforce, Teams and Outlook, to help them win business and free up the time to win it. It starts with three **capabilities** and gains more, feature wave by feature wave. Every later AI product for RMs is a new capability of the same assistant.
 
 ## 1. Its limits
 These limits make it safe to give every RM one.
 - **Jobs:** only the capabilities below. Anything else, it says so and stops.
 - **Where it works:** the Salesforce client record, Teams and Outlook. No new app.
 - **Data:** certified client data, only for the clients the RM may already see, plus the RM's own calendar, email and meetings.
-- **Controls:** it drafts and suggests; the RM approves anything saved or sent. It never contacts a client, never makes a credit decision and never sets a price. Meetings are recorded only with client consent. Everything is logged.
+- **Controls:** it drafts and suggests; the RM approves anything saved or sent. It never contacts a client, never makes a credit decision and never sets or suggests a price. Meetings are recorded only with client consent. Everything is logged.
 - **Feedback:** one click on every output (use, change or reject), which steers what gets better next.
 
 ## 2. Capabilities, by moment in the RM's work
@@ -29,7 +29,7 @@ Each capability is one AI product and answers one core use case (see the [Use Ca
 | **Left out on purpose** | Pricing suggestions; contacting prospects on its own | — | Deal scoring and pricing; lead nurturing (full version) | Out |
 
 ## 3. What it's built on
-One shared foundation, built once for every capability and later reused for portfolio managers: client data from Salesforce and Snowflake, the RM's own work (calendar, email, meetings), a **signals engine** (simple, explainable rules find opportunities and risks; AI explains them in plain English with the numbers), drafting, and the controls and feedback above.
+One shared foundation, built once for every capability and later reused for portfolio managers: client data from Salesforce and Snowflake, the RM's own work (calendar, email, meetings; transcripts only with client consent), outside prospect data the bank licenses (to confirm), a **signals engine** (simple, explainable rules find opportunities and risks; AI explains them in plain English with the numbers), drafting, and the controls and feedback above.
 
 ## 4. Portfolio managers next
 Portfolio managers (PMs) get the same kind of assistant on the same foundation, starting with credit memo and annual review drafts, then early warning (decided 2026-10-15).

@@ -10,7 +10,7 @@ OUT = "memos/rm-ai-reference.md"
 # part title, working file, the one section to keep (None = the whole file)
 PARTS = [
     ("Executive summary", "memos/rm-executive-summary.md", None),
-    ("The product: The RM Assistant (short version for people)", "memos/rm-assistant.md", None),
+    ("The product: RM Assistant (short version for people)", "memos/rm-assistant.md", None),
     ("The RM Assistant in full detail", "memos/rm-assistant-detail.md", None),
     ("The plan (short version for people)", "memos/rm-plan.md", None),
     ("The full delivery plan, with every step, agent spec and workflow", "memos/rm-analytics-framework.md", None),
@@ -35,8 +35,8 @@ def build():
     out = ["# RM Detail", "",
            "Everything about the relationship manager (RM) work at Associated Bank in one document, for an AI to read. "
            "Give this whole document to an AI model so it has the full context: the product, the plan, every step, "
-           "the agent specs, the workflows and the research. People should read the three short pages above it in the RM section: "
-           "the RM Executive Summary, The RM Assistant and the RM Assistant Plan.", "",
+           "the agent specs, the workflows and the McKinsey research (the earlier RM audit and market scan are kept as separate working files). People should read the three short pages above it in the RM section: "
+           "the RM Executive Summary, RM Assistant and the RM Assistant Plan.", "",
            "> **How to read it (for the AI).** The parts below are the working files, copied in whole and in this order. "
            "Later parts give more detail on earlier ones. Lines marked ⚠️ are guesses or hypotheses to confirm at the bank; "
            "[X] marks a number not yet known: never invent a value for it. The product is a working hypothesis until Discover "

@@ -133,7 +133,7 @@ These apply to every agent and every AI product, in every step.
 
 ## How each step is written up
 Every project plan writes each step the same way, so plans are easy to compare.
-The RM plan (`memos/rm-analytics-framework.md`) is the worked example.
+The full RM plan (`memos/rm-analytics-framework.md`, read in RM Detail, Part 5) is the worked example.
 
 | Heading | What goes there |
 |---|---|

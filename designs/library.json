@@ -72,7 +72,7 @@
         },
         {
           "id": "rm-assistant",
-          "name": "The RM Assistant",
+          "name": "RM Assistant",
           "what": "The product: one AI assistant for each RM, its limits, its capabilities by moment in the RM's work and the core use case each answers.",
           "status": "Waiting for review",
           "url": "https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2",

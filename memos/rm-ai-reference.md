@@ -1,6 +1,6 @@
 # RM Detail
 
-Everything about the relationship manager (RM) work at Associated Bank in one document, for an AI to read. Give this whole document to an AI model so it has the full context: the product, the plan, every step, the agent specs, the workflows and the research. People should read the three short pages above it in the RM section: the RM Executive Summary, The RM Assistant and the RM Assistant Plan.
+Everything about the relationship manager (RM) work at Associated Bank in one document, for an AI to read. Give this whole document to an AI model so it has the full context: the product, the plan, every step, the agent specs, the workflows and the McKinsey research (the earlier RM audit and market scan are kept as separate working files). People should read the three short pages above it in the RM section: the RM Executive Summary, RM Assistant and the RM Assistant Plan.
 
 > **How to read it (for the AI).** The parts below are the working files, copied in whole and in this order. Later parts give more detail on earlier ones. Lines marked ⚠️ are guesses or hypotheses to confirm at the bank; [X] marks a number not yet known: never invent a value for it. The product is a working hypothesis until Discover with the bank's RMs. Built automatically from the working files; never edit this file by hand.
 
@@ -10,13 +10,13 @@ Working file: `memos/rm-executive-summary.md`.
 
 For the leaders of the relationship manager business · Associated Bank · October 2026
 
-> ⚠️ **A working hypothesis.** Built from outside research and public Associated job postings, not yet from how the bank's RMs work today. The first conversations with RM leaders test it.
+> ⚠️ **A working hypothesis.** Built from outside research and public Associated job postings, not yet from how the bank's relationship managers (RMs) work today. The first conversations with RM leaders test it.
 
 ### The problem
-Relationship managers (RMs) win the bank's commercial business, but at many commercial banks they spend only about 25–30% of their time with clients (McKinsey). The rest goes to meeting prep, call notes, CRM updates and hunting for the next opportunity. Better insight only pays off if RMs have the time to act on it.
+RMs win the bank's commercial business, but at many commercial banks they spend only about 25–30% of their time with clients (McKinsey). The rest goes to meeting prep, call notes, CRM updates and hunting for the next opportunity. Better insight only pays off if RMs have the time to act on it.
 
 ### The product: The RM Assistant
-Each RM gets **their own AI assistant**, inside the tools they already use: Salesforce, Teams and Outlook. It helps the RM win business and frees up the time to win it. It drafts and suggests; **the RM always decides**. It never contacts a client on its own, never sets a price and never makes a credit decision. [What it is and all its capabilities](https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2).
+Each RM gets **their own AI assistant**, inside the tools they already use: Salesforce, Teams and Outlook. It helps the RM win business and frees up the time to win it. It drafts and suggests; **the RM always decides**. It never contacts a client on its own, never sets or suggests a price and never makes a credit decision. [What it is and all its capabilities](https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2).
 
 ### What RMs get first (wave 1)
 | Capability | What the RM gets | Why it matters |
@@ -32,7 +32,7 @@ Later waves add early warning on clients who may leave, referral prompts and pro
 - **More time with clients:** hours saved each week, reported as hours, not turned into revenue.
 - **Proven, not assumed:** pilot RMs are compared with similar RMs not yet using it, and Finance agrees the method first. Targets are set from the bank's own numbers.
 
-[Outside evidence for each use case](https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X)
+[Outside evidence for each core use case](https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X)
 
 ### How fast
 | When (estimate) | What happens |
@@ -42,7 +42,7 @@ Later waves add early warning on clients who may leave, referral prompts and pro
 | About weeks 4–6 | Client brief, Monday opportunity list and call notes into Salesforce live |
 | About month 6 | First read on closed revenue against the comparison group |
 
-**What sets the pace:** access to client data (the data owners' signatures, aimed for week 2) and the bank's AI review. Both start on day one; risk partners see every version as it's built.
+**What sets the pace:** access to client data (the data owners' signatures, aimed for week 2) and the bank's AI review. Both start on day one; risk partners see every version as it's built. If either runs long, the meeting recap and email go first and the rest follows by about week 10.
 
 ### What I need from you
 1. A business sponsor for the RM work.
@@ -50,23 +50,23 @@ Later waves add early warning on clients who may leave, referral prompts and pro
 3. Named owners for the Salesforce and Snowflake client data.
 4. An early risk partner.
 
-[The full delivery plan](https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk)
+[The delivery plan](https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk)
 
-## Part 2: The product: The RM Assistant (short version for people)
+## Part 2: The product: RM Assistant (short version for people)
 
 Working file: `memos/rm-assistant.md`.
 
-> ⚠️ **A working hypothesis** (agreed 2026-10-17), built from outside research and public Associated job postings. Conversations with RM leaders and Discover confirm or change it.
+> ⚠️ **A working hypothesis** (agreed 2026-10-17), built from outside research and public Associated job postings. Conversations with the leaders of relationship managers (RMs) and Discover confirm or change it.
 
 ### The product in one line
-Each relationship manager (RM) gets **their own AI assistant**, inside Salesforce, Teams and Outlook, to help them win business and free up the time to win it. It starts with three **capabilities** and gains more, feature wave by feature wave. Every later AI product for RMs is a new capability of the same assistant.
+Each RM gets **their own AI assistant**, inside Salesforce, Teams and Outlook, to help them win business and free up the time to win it. It starts with three **capabilities** and gains more, feature wave by feature wave. Every later AI product for RMs is a new capability of the same assistant.
 
 ### 1. Its limits
 These limits make it safe to give every RM one.
 - **Jobs:** only the capabilities below. Anything else, it says so and stops.
 - **Where it works:** the Salesforce client record, Teams and Outlook. No new app.
 - **Data:** certified client data, only for the clients the RM may already see, plus the RM's own calendar, email and meetings.
-- **Controls:** it drafts and suggests; the RM approves anything saved or sent. It never contacts a client, never makes a credit decision and never sets a price. Meetings are recorded only with client consent. Everything is logged.
+- **Controls:** it drafts and suggests; the RM approves anything saved or sent. It never contacts a client, never makes a credit decision and never sets or suggests a price. Meetings are recorded only with client consent. Everything is logged.
 - **Feedback:** one click on every output (use, change or reject), which steers what gets better next.
 
 ### 2. Capabilities, by moment in the RM's work
@@ -85,7 +85,7 @@ Each capability is one AI product and answers one core use case (see the [Use Ca
 | **Left out on purpose** | Pricing suggestions; contacting prospects on its own | — | Deal scoring and pricing; lead nurturing (full version) | Out |
 
 ### 3. What it's built on
-One shared foundation, built once for every capability and later reused for portfolio managers: client data from Salesforce and Snowflake, the RM's own work (calendar, email, meetings), a **signals engine** (simple, explainable rules find opportunities and risks; AI explains them in plain English with the numbers), drafting, and the controls and feedback above.
+One shared foundation, built once for every capability and later reused for portfolio managers: client data from Salesforce and Snowflake, the RM's own work (calendar, email, meetings; transcripts only with client consent), outside prospect data the bank licenses (to confirm), a **signals engine** (simple, explainable rules find opportunities and risks; AI explains them in plain English with the numbers), drafting, and the controls and feedback above.
 
 ### 4. Portfolio managers next
 Portfolio managers (PMs) get the same kind of assistant on the same foundation, starting with credit memo and annual review drafts, then early warning (decided 2026-10-15).
@@ -96,7 +96,7 @@ Every detail (the RM's job, the foundation part by part, what to confirm) is in 
 
 Working file: `memos/rm-assistant-detail.md`.
 
-The detailed working file behind The RM Assistant page. People read the short page (`memos/rm-assistant.md`); this file goes into RM Detail.
+The detailed working file behind the RM Assistant page. People read the short page (`memos/rm-assistant.md`); this file goes into RM Detail.
 
 > ⚠️ **A hypothesis, not a plan yet** (agreed as our working hypothesis on 2026-10-17). Built from McKinsey's research, the RM plan and public Associated job postings, not from how the bank works today. The first test is the talk with the RM lead on Tuesday October 20; Discover confirms or changes the rest.
 
@@ -180,19 +180,19 @@ The RM Assistant Plan (rebuilt around the assistant on 2026-10-17) delivers this
 
 Working file: `memos/rm-plan.md`.
 
-How The RM Assistant gets delivered · Associated Bank · October 2026
+How The RM Assistant gets delivered to relationship managers (RMs) · Associated Bank · October 2026
 
-What the product is: [The RM Assistant](https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2). The short version for leaders: [RM Executive Summary](https://claude.ai/artifact/LPPq2gt5PSoiB8GzX8ZBE2). Every detail (each step, the agent specs and the workflows) is in [RM Detail](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n), the fourth page in the RM section, for AI to read. The rules every product follows are in the [Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ).
+What the product is: [RM Assistant](https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2). The short version for leaders: [RM Executive Summary](https://claude.ai/artifact/LPPq2gt5PSoiB8GzX8ZBE2). Every detail (each step, the agent specs and the workflows) is in [RM Detail](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n), the fourth page in the RM section, for AI to read. The rules every product follows are in the [Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ).
 
 ### 1. Wave 1 in about six weeks
 Building starts on day one. Weeks are estimates to confirm in the first days.
 
-| When (estimate) | What gets done | Decided by |
+| When (estimate) | What gets done | Who |
 |---|---|---|
 | Days 1–5 | Sponsor kickoff; risk partner briefed; data access requested; working prototype on sample data | Product manager |
 | Week 1 | **Gate 1:** the sponsor sees the prototype and confirms wave 1 | Sponsor, with the risk partner |
 | Weeks 1–2 | Interviews and shadowing with RMs, using the prototype; size the opportunity | Product manager, pilot RMs |
-| Week 2 | **Gate 2:** data contract signed, early risk rating, value model, dates proposed for waves 2 and 3 | Sponsor, data owners, risk partner |
+| Week 2 | **Gate 2:** data contract signed, early risk rating, value model, Finance's method for counting results, baseline confirmed, dates proposed for waves 2 and 3 | Sponsor, data owners, risk partner |
 | About weeks 2–4 | **Meeting recap and email live** with pilot RMs (in M365 Copilot), after their tests and sign-offs | Sponsor and risk partner |
 | About weeks 4–6 | **Client brief, Monday opportunity list and call notes into Salesforce live**, after their tests and sign-offs | Sponsor and risk partner |
 | About month 6 | First read on closed revenue against the comparison group | Sponsor, Finance |
@@ -252,7 +252,7 @@ own AI assistant inside Salesforce, Teams and Outlook. Its job is to help the RM
 win business, and to free up the time they need to win it. It starts with three
 capabilities and gains more, feature wave by feature wave, on one shared
 foundation. What it is, its limits and every capability by moment in the RM's
-work are on [The RM Assistant page](https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2);
+work are on [the RM Assistant page](https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2);
 this plan is how it gets delivered. It is a working hypothesis, to be tested in Discover.
 
 **Wave 1: three capabilities that cover the RM's meeting and their week.**
@@ -286,7 +286,7 @@ wave's own quick-pass gates, once data access and review times are known. A firs
 **What I'd need:** a business sponsor, time with 6–10 RMs and their managers, named data owners, an early risk
 partner, and a willing pilot group.
 
-**How to use this plan.** The RM Assistant page says what the product is; the
+**How to use this plan.** the RM Assistant page says what the product is; the
 rules every product follows (who decides, the quality bar, the AI principles)
 are in the [Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ)
 and aren't repeated here. The numbered sections 1–9, with the six steps, are the plan for
@@ -302,7 +302,7 @@ team can build directly from them.
 Every capability is one AI product, and each answers one of the seven core use
 cases (McKinsey's five frontline use cases plus two of our own: admin off the
 RM's plate and keep clients). McKinsey's reported returns for each core use case
-are on the [RM Core Use Cases page](https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X):
+are in the [Use Case Library](https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X)'s relationship manager section:
 outside benchmarks, never our targets, which are set from the bank's data in Define.
 The menu is a starting point; the sponsor and RMs confirm and order it in Discover.
 
@@ -444,7 +444,7 @@ Checks · Gate.
 
 The AI principles (assistive first, cut first then automate, one job each, built
 where the work happens) are the Product Framework's; the assistant's own limits
-(its jobs, workflows, data, controls and feedback) are on The RM Assistant page.
+(its jobs, workflows, data, controls and feedback) are on the RM Assistant page.
 What's specific to RMs:
 
 **Choosing the platform.** The pilot picks one delivery platform, using five criteria:
@@ -977,7 +977,7 @@ Working file: `memos/use-case-library.md`.
 | **Account intelligence and meeting prep** | Better meetings in less prep time | About 25% less prep time; 10% more time with clients. Bank of America's CTO: AI prep lets a banker cover about 50 clients instead of 15 in some cases (not audited) | Pre-meeting client brief (1); client Q&A (3) |
 | **Deal scoring and pricing** | Better margins, faster approvals | 10% margin gains; one bank cut deal turnaround from five days to two | Out on purpose: the AI never sets or suggests a price (fair-lending rules) |
 | **AI sales coaching** | Better calls; new RMs up to speed sooner | Customer satisfaction up seven points; new bankers up to speed 20% faster | AI sales coaching (3) |
-| **Admin off the RM's plate** (our own) | Hours back for clients; better CRM data | Admin ranks first or second of RMs' problems at every stage of a sale (survey of 406 bankers, October 2025); McKinsey expects 10–12 hours a week back per banker and about 40% better coverage | Meeting follow-up, with call notes into Salesforce (1) |
+| **Admin off the RM's plate** (our own) | Hours back for clients; better CRM data | Admin ranks first or second of bankers' problems at every stage of a sale (survey of 406 bankers, October 2025); it earns part of the 10–12 hours a week McKinsey expects back per banker, and about 40% better coverage | Meeting follow-up, with call notes into Salesforce (1) |
 | **Keep clients** (our own) | Clients kept before they drift away | No outside figure; set from the bank's own retention data | Early warning (2) |
 
 **The headline numbers.** Banks that rework one frontline area end to end see about 3–15% higher revenue per RM and 20–40% lower cost to serve. 53% of bankers cite a shortage of high-quality leads as their biggest barrier. McKinsey's warning: "Banks are moving fastest on the least valuable tools."

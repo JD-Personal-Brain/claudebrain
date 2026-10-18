@@ -5,9 +5,9 @@ Edit here, publish to the same link, then save a draft.
 
 | Page | Link | Source |
 |---|---|---|
-| RM Executive Summary (the RM work on one page, for the leaders of the RM business; page 1 of the three RM pages) | https://claude.ai/artifact/LPPq2gt5PSoiB8GzX8ZBE2 | `rm-executive-summary.html` (built by `md-page-build.py` from `memos/rm-executive-summary.md`) |
-| RM Assistant Plan (the short plan for people: how The RM Assistant gets delivered; page 3 of the three RM pages) | https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk | `rm-analytics-plan.html` (built by `md-page-build.py` from `memos/rm-plan.md` since 2026-10-18; the full plan, `memos/rm-analytics-framework.md`, now goes only into RM Detail) |
-| The RM Assistant (the core RM product, short version; page 2 of the three RM pages) | https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2 | `rm-assistant.html` (built by `md-page-build.py` from `memos/rm-assistant.md`; the full text is `memos/rm-assistant-detail.md`, which goes only into RM Detail) |
+| RM Executive Summary (the RM work on one page, for the leaders of the RM business; page 1 of the three RM pages for people) | https://claude.ai/artifact/LPPq2gt5PSoiB8GzX8ZBE2 | `rm-executive-summary.html` (built by `md-page-build.py` from `memos/rm-executive-summary.md`) |
+| RM Assistant Plan (the short plan for people: how The RM Assistant gets delivered; page 3 of the three RM pages for people) | https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk | `rm-analytics-plan.html` (built by `md-page-build.py` from `memos/rm-plan.md` since 2026-10-18; the full plan, `memos/rm-analytics-framework.md`, now goes only into RM Detail) |
+| RM Assistant (the core RM product, short version; page 2 of the three RM pages for people) | https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2 | `rm-assistant.html` (built by `md-page-build.py` from `memos/rm-assistant.md`; the full text is `memos/rm-assistant-detail.md`, which goes only into RM Detail) |
 | RM Detail (the fourth row of the RM section: everything about the RM work in one document, for an AI to read) | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n | `rm-ai-reference.html` (built by `md-page-build.py` from `memos/rm-ai-reference.md`, which `rm-ai-build.py` stitches together from the RM working files; never edit it by hand) |
 | Product Workflow (How we deliver, page 1 of 4) | https://claude.ai/artifact/8Nm5fkdicn2Gu5VmNVTvYv | `role-workflow.html` (made by hand from `memos/role-workflow.md`; its "How we deliver" strip comes from `series()` in `pagekit.py`) |
 | Product Framework | https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ | `product-framework.html` (built by `md-page-build.py` from `product-framework.md`; How we deliver, page 2 of 4) |
@@ -29,7 +29,7 @@ Edit here, publish to the same link, then save a draft.
 | Glossary (reference: the words we use) | https://claude.ai/artifact/LRQHSz65beh9XewB6qsQvQ | `glossary.html` (built by `md-page-build.py` from `glossary.md`) |
 | **Document Library** (pinned to my sidebar; lists every page above) | https://claude.ai/artifact/LTpbCT4kN4LcyEoYnh7vgj | `library.html` (built by `library-build.py` from `library.json`) |
 
-**Retired pages:** Portfolio Manager Core Use Cases (`credit-market-scan.html`, from `memos/credit-market-scan.md`) left the library on 2026-10-18; its content is in the Use Case Library, and the working file stays as the full research record. Its old link still works until it's deleted.
+**Retired pages (2026-10-18):** the Portfolio Manager Core Use Cases page (`credit-market-scan.html`, from `memos/credit-market-scan.md`) left the library; its content is summarized in the Use Case Library, and it is still built on purpose, so its old link keeps working as the full credit research record until I say to delete it. The RM Core Use Cases page became the Use Case Library at the same link; its source, `memos/mckinsey-frontline-ai.md`, is now Part 7 of RM Detail.
 
 **Shared page kit:** `pagekit.py` holds the house style and the Markdown-to-page code used by `playbook-build.py` and `md-page-build.py`. To give another working file a designed page, add it to `PAGES` in `md-page-build.py`.
 

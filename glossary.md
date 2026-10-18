@@ -23,7 +23,7 @@ documents against it.
 | **Use case (on its own)** | A whole area of work for one user group, such as the RM use case or the credit use case. Not one AI product (say AI product) and not one of the seven lines (say core use case). |
 | **User workflow** | How a user group (RMs, portfolio managers) works today, and how that work changes with AI. Not the same as the RM plan's numbered workflows B1 to B9 on the Workflow Maps. |
 | **AI product** | A specific capability we build and release, such as the pre-meeting brief. Each sits under one core use case. |
-| **RM Assistant** | The core RM product (a hypothesis since 2026-10-17): one personal AI assistant for each RM, with limits on its jobs, workflows, data and controls, and capabilities added feature wave by feature wave on a shared foundation (The RM Assistant page). The RM plan's "RM assistant" (wave 3) is now its **Client Q&A** capability. |
+| **RM Assistant** | The core RM product (a hypothesis since 2026-10-17): one personal AI assistant for each RM, with limits on its jobs, workflows, data and controls, and capabilities added feature wave by feature wave on a shared foundation (the RM Assistant page). The RM plan's "RM assistant" (wave 3) is now its **Client Q&A** capability. |
 | **Capability** | One specific job the RM Assistant does, such as the pre-meeting client brief. Each capability is one AI product. |
 | **Wave** | Used two ways, so say which: a **feature wave** is a set of AI products released together, after a quick pass through Discover and Define; a **user wave** is the next group of users when a product scales (sub-step 5.7). |
 | **Quick pass** | How each new feature wave goes through Discover and Define after the first pass: four sub-steps always done (2.3, 2.4, 2.5, 2.7), the rest reused unless something changed, and gates 1 and 2 decided together in writing (Product Framework). |
@@ -43,7 +43,7 @@ documents against it.
 | **Wait index** | For a sub-step: calendar days from start to finish, divided by hours of real work, from the sub-step log. A high number means waiting, not working. |
 | **Machine measures** | How well the product machine itself works, per project: days from kickoff to pilot, days at each gate, releases per month in the pilot, and the wait index (Product Machine). |
 | **Gate in writing** | A gate decided by the decider approving the gate pack in writing, used when every criterion is met; a meeting is held only when a criterion is contested or someone who decides asks for one. |
-| **Use case kit** | The standard set of pieces every use case should have, in two layers: the **leader layer** I communicate from (for Andy and bank leaders) and the **working layer** I and the team work from. Set by Prompt 1 in the Prompt Library, run first on RMs, and agreed 2026-10-17 (closed item C40): 4 leader pieces (the case, the plan on a page, the value, the ask) and 10 working pieces, listed on the use case kit review page. |
+| **Use case kit** | The standard set of pieces every use case should have, in two layers: the **leader layer** I communicate from (for Andy and bank leaders) and the **working layer** I and the team work from. Set by Prompt 1 in the Prompt Library, run first on RMs, and agreed 2026-10-17 (closed item C40): 4 leader pieces (the case, the plan on a page, the value, the ask) and 10 working pieces, listed on the use case kit review page. Cut on 2026-10-18 (C50): people get three short pages (an executive summary, the product and the plan), and every working piece goes into one detail document for AI to read (RM Detail for RMs). |
 | **Elon mode review** | A review of a plan or of the product machine through Elon Musk's lens (the Elon Mode page): the cut-first questions, the limiting factor and the machine's measures, plus the bank guardrails. Run by the elon-mode skill. |
 
 ## People, agents and safeguards
@@ -118,7 +118,7 @@ The audit flags these in the core documents. Use the word on the right.
 
 When we rename something or change a count, the old wording goes here. The
 audit checker fails on any of it left in a core document, a memo, NOW.md, the
-working copy of a designed page, the Document Library or the scrolling RM plan, so a rename can't stop halfway. A line
+working copy of a designed page, the Document Library or the RM Assistant Plan page, so a rename can't stop halfway. A line
 that also says the new wording (a note about the change) is allowed.
 
 | Retired wording | Use instead | Retired on |
@@ -136,9 +136,9 @@ that also says the new wording (a note about the change) is allowed.
 | Agent idea: | Agent: (with the agent's M number) | 2026-10-10 |
 | (spec M | (agent library) | 2026-10-10 |
 | 19-agent library | the agent library (33 general agents) | 2026-10-10 |
-| McKinsey Use Cases | RM Core Use Cases (the page name) | 2026-10-14 |
-| Credit Market Scan | Portfolio Manager Core Use Cases (the page name) | 2026-10-14 |
-| Credit Core Use Cases | Portfolio Manager Core Use Cases (the page name) | 2026-10-14 |
+| McKinsey Use Cases | Use Case Library (the page name since 2026-10-18) | 2026-10-14 |
+| Credit Market Scan | the Use Case Library's portfolio manager section (since 2026-10-18) | 2026-10-14 |
+| Credit Core Use Cases | the Use Case Library's portfolio manager section (since 2026-10-18) | 2026-10-14 |
 | Credit user workflow | Portfolio manager user workflow (the page name) | 2026-10-14 |
 | Product manager (PM | product manager (spelled out; PM means portfolio manager) | 2026-10-14 |
 | one PM runs | one product manager runs | 2026-10-14 |

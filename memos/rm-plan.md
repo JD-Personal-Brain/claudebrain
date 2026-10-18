@@ -1,18 +1,18 @@
 # RM Assistant Plan
 
-How The RM Assistant gets delivered · Associated Bank · October 2026
+How The RM Assistant gets delivered to relationship managers (RMs) · Associated Bank · October 2026
 
-What the product is: [The RM Assistant](https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2). The short version for leaders: [RM Executive Summary](https://claude.ai/artifact/LPPq2gt5PSoiB8GzX8ZBE2). Every detail (each step, the agent specs and the workflows) is in [RM Detail](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n), the fourth page in the RM section, for AI to read. The rules every product follows are in the [Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ).
+What the product is: [RM Assistant](https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2). The short version for leaders: [RM Executive Summary](https://claude.ai/artifact/LPPq2gt5PSoiB8GzX8ZBE2). Every detail (each step, the agent specs and the workflows) is in [RM Detail](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n), the fourth page in the RM section, for AI to read. The rules every product follows are in the [Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ).
 
 ## 1. Wave 1 in about six weeks
 Building starts on day one. Weeks are estimates to confirm in the first days.
 
-| When (estimate) | What gets done | Decided by |
+| When (estimate) | What gets done | Who |
 |---|---|---|
 | Days 1–5 | Sponsor kickoff; risk partner briefed; data access requested; working prototype on sample data | Product manager |
 | Week 1 | **Gate 1:** the sponsor sees the prototype and confirms wave 1 | Sponsor, with the risk partner |
 | Weeks 1–2 | Interviews and shadowing with RMs, using the prototype; size the opportunity | Product manager, pilot RMs |
-| Week 2 | **Gate 2:** data contract signed, early risk rating, value model, dates proposed for waves 2 and 3 | Sponsor, data owners, risk partner |
+| Week 2 | **Gate 2:** data contract signed, early risk rating, value model, Finance's method for counting results, baseline confirmed, dates proposed for waves 2 and 3 | Sponsor, data owners, risk partner |
 | About weeks 2–4 | **Meeting recap and email live** with pilot RMs (in M365 Copilot), after their tests and sign-offs | Sponsor and risk partner |
 | About weeks 4–6 | **Client brief, Monday opportunity list and call notes into Salesforce live**, after their tests and sign-offs | Sponsor and risk partner |
 | About month 6 | First read on closed revenue against the comparison group | Sponsor, Finance |

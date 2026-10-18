@@ -128,7 +128,7 @@ def rm_detail(f):
             f'<h5>Step by step</h5><ol class="flow">{steps}</ol>'
             f'<dl class="facts"><div><dt>Logged</dt><dd>{inline(f["logged"][:1].upper() + f["logged"][1:])}</dd></div>'
             f'<div><dt>Measured by</dt><dd>{inline(f["measures"][:1].upper() + f["measures"][1:])}</dd></div></dl>'
-            f'<a class="more" href="{E(f["link"])}" target="_blank" rel="noopener">Open the RM plan\'s workflows</a>')
+            f'<a class="more" href="{E(f["link"])}" target="_blank" rel="noopener">Open the workflows in RM Detail</a>')
 
 def spine_map(mid, stages, branch_html, detail_html, tag):
     cols = ""

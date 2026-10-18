@@ -37,7 +37,7 @@ List the guesses (every ⚠️) as questions for interviews and shadowing (playb
 ## 6. Show a sample, then build the page (rule R27)
 1. Before the first page for any group, make a small sample of the layout from real content (for example, three stages with today → AI → with AI), send a screenshot, and wait for a yes. Later groups reuse the approved layout.
 2. Build the page with the **designed-doc** skill. Working copy: `memos/<group>-user-workflow.md`.
-3. In `designs/library.json`, replace the group's placeholder row ("RM user workflow: today and with AI", "Portfolio manager user workflow: today and with AI") with the real page (id, name, what, status "Waiting for review", url, source, and remove `"todo": true`), add its .html file to `PAGE_FILE` in `designs/library-build.py`, and add it to `designs/README.md`. Rebuild and republish the library.
+3. In `designs/library.json`, for PMs replace the placeholder row ("Portfolio manager user workflow: today and with AI") with the real page; for RMs, ask me where it goes first (since 2026-10-18 the RM section holds only three pages for people plus RM Detail, C50), then add it there (id, name, what, status "Waiting for review", url, source, and remove `"todo": true`), add its .html file to `PAGE_FILE` in `designs/library-build.py`, and add it to `designs/README.md`. Rebuild and republish the library.
 
 ## 7. Check it (rule R7)
 - Every stage has a source or a ⚠️; every unknown number is [X].
