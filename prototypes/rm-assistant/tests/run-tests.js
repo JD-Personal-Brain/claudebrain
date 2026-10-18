@@ -5,7 +5,7 @@
 // Screenshots go to $SHOTS (default /tmp/rm-assistant-shots).
 const path = require("path"), fs = require("fs");
 const { chromium } = require(process.env.PW || "playwright");
-const FILE = path.resolve(process.argv[2] || "prototype-v2.html");
+const FILE = path.resolve(process.argv[2] || "prototype-v3.html");
 const SHOTS = process.env.SHOTS || "/tmp/rm-assistant-shots";
 fs.mkdirSync(SHOTS, { recursive: true });
 const URL = "file://" + FILE;
@@ -48,7 +48,7 @@ const check = (name, ok, proof) => { results.push({ name, ok: !!ok, proof }); co
   const browser = await chromium.launch();
   const errors = [];
 
-  // 1. The tour: starts on a first visit, under 2 minutes, can be skipped and replayed.
+  // 1. The tour: starts on a first visit, about 2 minutes (under 2:10 with the voice), can be skipped and replayed, and speaks each step.
   {
     const ctx = await browser.newContext({ viewport: { width: 1280, height: 800 } });
     const p = await ctx.newPage(); p.on("pageerror", e => errors.push("tour: " + e.message));
@@ -61,9 +61,12 @@ const check = (name, ok, proof) => { results.push({ name, ok: !!ok, proof }); co
     await p.click("#tourBtn"); await p.waitForTimeout(300); const replay = await p.isVisible("#tour");
     await p.click("#tNext"); await p.click("#tNext"); await p.waitForTimeout(600);
     const step3 = await p.textContent("#tcount");
+    const voice = await p.evaluate(() => { const a = window.TOUR.audio; return { playing: !!a && !a.paused, src: !!a && a.src.startsWith("data:audio/mpeg"), btn: document.querySelector("#tVoice").textContent }; });
+    await p.click("#tVoice"); const muted = await p.evaluate(() => window.TOUR.audio.paused && document.querySelector("#tVoice").textContent === "Voice off");
+    await p.click("#tVoice");
     await p.screenshot({ path: `${SHOTS}/tour-step3.png` });
-    check("1. Tour starts on first visit, under 2 minutes, skippable and replayable", visible && total < 120000 && hidden && notAgain && replay && step3.includes("3 of"),
-      `starts=${visible}, length=${(total / 1000).toFixed(1)} s, skip=${hidden}, not again after skip=${notAgain}, replay=${replay}, ${step3}`);
+    check("1. Tour starts on first visit, about 2 minutes, skippable, replayable and spoken", visible && total < 130000 && hidden && notAgain && replay && step3.includes("3 of") && voice.playing && voice.src && muted,
+      `starts=${visible}, length=${(total / 1000).toFixed(1)} s, skip=${hidden}, not again after skip=${notAgain}, replay=${replay}, ${step3}, voice playing=${voice.playing} (${voice.btn}), voice off works=${muted}`);
     await ctx.close();
   }
 

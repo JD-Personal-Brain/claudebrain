@@ -801,5 +801,6 @@ The **guided tour** plays on a first visit (under 2 minutes), and anyone can pau
 3. Test it: `PW=/opt/node-tools/node_modules/playwright node tests/run-tests.js prototype-v2.html`
    (screenshots go to `$SHOTS`).
 4. Add a line to `CHANGELOG.md`, publish the new file to the same page link, and save a draft to GitHub.
+- **Voice:** `voice/` holds the tour's voice, one MP3 per step (Kokoro, from `video/narration.json`) and their lengths; `build.py` puts them into the page.
 
 _Last updated: 2026-10-18_

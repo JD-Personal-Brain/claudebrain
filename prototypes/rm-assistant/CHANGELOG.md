@@ -21,3 +21,6 @@ The six open items from the version 1 audits.
 - Screen labels no longer show workflow codes (B1 to B4); they're in the label's tooltip and on "How it's built".
 - The brief's Use it / Change it / Reject buttons moved to a bar at the bottom, the same place as the follow-up's approve buttons.
 - The measures screen shows a labeled, made-up sample pilot week under each session number, instead of a screen of zeros.
+
+## Version 3 (2026-10-18)
+- The tour on the page now speaks: the same voice as the tour video (Kokoro, an open-source voice) reads each step. A "Voice on / Voice off" button in the tour card turns it off, and the choice is remembered. Steps last as long as their line, so the tour runs about 2 minutes 5 seconds.

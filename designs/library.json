@@ -224,13 +224,13 @@
     {
       "id": "workspace",
       "name": "My workspace",
-      "why": "For me only, never shared: what's still open, the record of every audit, and how we write and keep our prompts.",
+      "why": "How I work: what's still open, the record of every audit, and how we write and keep our prompts.",
       "bulleted": true,
       "items": [
         {
           "id": "open-items",
           "name": "Open Items",
-          "what": "Everything still open in one list: decisions and reading waiting on me, work to do, questions for the bank, and what's parked. For me only.",
+          "what": "Everything still open in one list: decisions and reading waiting on me, work to do, questions for the bank, and what's parked.",
           "status": "In use",
           "url": "https://claude.ai/artifact/NsW5AH5XFNHmDNYJvmVDMb",
           "source": "open-items.md"
