@@ -2,8 +2,8 @@
   "groups": [
     {
       "id": "bank",
-      "name": "The bank",
-      "why": "How the bank makes money, and where AI can help.",
+      "name": "The bank and the role",
+      "why": "How the bank makes money and where AI can help, the job itself, and the technology it names.",
       "items": [
         {
           "id": "bank-business",
@@ -12,6 +12,22 @@
           "status": "In use",
           "url": "https://claude.ai/artifact/7ZVT7LtdqxwAma4UrBgTPX",
           "source": "memos/bank-business.md"
+        },
+        {
+          "id": "job-description",
+          "name": "Job Description",
+          "what": "The Principal Applied AI Product Manager posting: what the role owns, what it requires and the tools it names.",
+          "status": "In use",
+          "url": "https://claude.ai/artifact/9CUyQt1EDbmu1R7DVRyvkM",
+          "source": "job-description.md"
+        },
+        {
+          "id": "tech-stack",
+          "name": "Tech Stack Guide",
+          "what": "Every technology named in the job: what it is, how the bank likely uses it, and what I need to know.",
+          "status": "In use",
+          "url": "https://claude.ai/artifact/DDmD65zw7LjnP5v2nHDFW2",
+          "source": "tech-stack.md"
         }
       ],
       "numbered": true
@@ -131,32 +147,8 @@
     {
       "id": "reference",
       "name": "Reference",
-      "why": "Pages to look things up in: what's still open, our words, the process catalogs, the job and how we write prompts. Claude keeps the catalogs and the glossary in line with the plans.",
+      "why": "Pages to look things up in, in the order of the process: our words, the steps, the workflows, the agents and the controls. Claude keeps them in line with the plans.",
       "items": [
-        {
-          "id": "open-items",
-          "name": "Open Items",
-          "what": "Everything still open in one list: decisions and reading waiting on me, work to do, questions for the bank, and what's parked. For me only.",
-          "status": "In use",
-          "url": "https://claude.ai/artifact/NsW5AH5XFNHmDNYJvmVDMb",
-          "source": "open-items.md"
-        },
-        {
-          "id": "use-case-library",
-          "name": "Use Case Library",
-          "what": "Where the value of AI is for each group of bankers we serve, and the outside research behind it: a section for relationship managers and one for portfolio managers.",
-          "status": "In use",
-          "url": "https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X",
-          "source": "memos/use-case-library.md"
-        },
-        {
-          "id": "audit-log",
-          "name": "Audit Log",
-          "what": "How we audit our work: the method, every check and when it runs, the record of every audit so far, and what to improve.",
-          "status": "In use",
-          "url": "https://claude.ai/artifact/QnPL82PBx6AfGKB5VgqUPf",
-          "source": "memos/audit-log.md"
-        },
         {
           "id": "glossary",
           "name": "Glossary",
@@ -201,22 +193,55 @@
           "status": "Reference",
           "url": "https://claude.ai/artifact/7GmH3iBG6jcDkdacUysUrQ",
           "source": "playbook/controls.md"
+        }
+      ],
+      "bulleted": true
+    },
+    {
+      "id": "research",
+      "name": "Research",
+      "why": "Outside research we study and borrow from: where the value of AI is for each group we serve, and how to engineer a lean system.",
+      "bulleted": true,
+      "items": [
+        {
+          "id": "use-case-library",
+          "name": "Use Case Library",
+          "what": "Where the value of AI is for each group of bankers we serve, and the outside research behind it: a section for relationship managers and one for portfolio managers.",
+          "status": "In use",
+          "url": "https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X",
+          "source": "memos/use-case-library.md"
         },
         {
-          "id": "tech-stack",
-          "name": "Tech Stack Guide",
-          "what": "Every technology named in the job: what it is, how the bank likely uses it, and what I need to know.",
+          "id": "elon-mode",
+          "name": "Elon Mode",
+          "what": "How Elon Musk engineers and improves systems: his five-rule algorithm, eight thinking habits, where the method went wrong, and the eight changes we made to our system.",
           "status": "In use",
-          "url": "https://claude.ai/artifact/DDmD65zw7LjnP5v2nHDFW2",
-          "source": "tech-stack.md"
+          "url": "https://claude.ai/artifact/NMxzPEotPQcM2KPUmsBbsX",
+          "source": "memos/elon-mode-research.md"
+        }
+      ]
+    },
+    {
+      "id": "workspace",
+      "name": "My workspace",
+      "why": "For me only, never shared: what's still open, the record of every audit, and how we write and keep our prompts.",
+      "bulleted": true,
+      "items": [
+        {
+          "id": "open-items",
+          "name": "Open Items",
+          "what": "Everything still open in one list: decisions and reading waiting on me, work to do, questions for the bank, and what's parked. For me only.",
+          "status": "In use",
+          "url": "https://claude.ai/artifact/NsW5AH5XFNHmDNYJvmVDMb",
+          "source": "open-items.md"
         },
         {
-          "id": "job-description",
-          "name": "Job Description",
-          "what": "The Principal Applied AI Product Manager posting: what the role owns, what it requires and the tools it names.",
+          "id": "audit-log",
+          "name": "Audit Log",
+          "what": "How we audit our work: the method, every check and when it runs, the record of every audit so far, and what to improve.",
           "status": "In use",
-          "url": "https://claude.ai/artifact/9CUyQt1EDbmu1R7DVRyvkM",
-          "source": "job-description.md"
+          "url": "https://claude.ai/artifact/QnPL82PBx6AfGKB5VgqUPf",
+          "source": "memos/audit-log.md"
         },
         {
           "id": "prompting",
@@ -234,23 +259,6 @@
           "status": "In use",
           "url": "https://claude.ai/artifact/W96baXJf665MJ4qtHmkrks",
           "source": "prompt-library.md"
-        }
-      ],
-      "bulleted": true
-    },
-    {
-      "id": "research",
-      "name": "Research",
-      "why": "Outside thinking we study and borrow from, to sharpen how we work.",
-      "bulleted": true,
-      "items": [
-        {
-          "id": "elon-mode",
-          "name": "Elon Mode",
-          "what": "How Elon Musk engineers and improves systems: his five-rule algorithm, eight thinking habits, where the method went wrong, and the eight changes we made to our system.",
-          "status": "In use",
-          "url": "https://claude.ai/artifact/NMxzPEotPQcM2KPUmsBbsX",
-          "source": "memos/elon-mode-research.md"
         }
       ]
     }

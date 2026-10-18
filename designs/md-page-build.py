@@ -29,7 +29,7 @@ PAGES = [
      "How we write prompts: Anthropic's advice in plain English, a fill-in template, three worked examples and a checklist."),
     ("prompt-library.md", "prompt-library.html", "Prompt Library", "Working with Claude",
      "Our core prompts in one place, each with its version and what changed, so we can reuse them and improve them over time."),
-    ("memos/use-case-library.md", "use-case-library.html", "Use Case Library", "Reference · use cases",
+    ("memos/use-case-library.md", "use-case-library.html", "Use Case Library", "Research · use cases",
      "Where the value of AI is for each group of bankers we serve, and the outside research behind it: relationship managers (RMs) and portfolio managers (PMs).",
      {"Relationship managers": "Relationship managers", "Portfolio managers": "Portfolio managers"}),
     ("memos/rm-plan.md", "rm-analytics-plan.html", "RM Assistant Plan", "Relationship managers · the plan",
