@@ -1,4 +1,4 @@
-"""Builds RM Product Information for AI (memos/rm-ai-reference.md): every RM working
+"""Builds RM Detail (memos/rm-ai-reference.md): every RM working
 file stitched into one document, so someone can give an AI the whole RM picture in
 one go (decided 2026-10-18). It is generated: edit the working files, never this
 output. Run: python3 designs/rm-ai-build.py, then python3 designs/md-page-build.py."""
@@ -32,10 +32,10 @@ def body(src, keep):
 
 def build():
     dates = [re.search(r"_Last updated: ([^_]+)_", read(f)).group(1) for _, f, _ in PARTS]
-    out = ["# RM Product Information for AI", "",
+    out = ["# RM Detail", "",
            "Everything about the relationship manager (RM) work at Associated Bank in one document, for an AI to read. "
            "Give this whole document to an AI model so it has the full context: the product, the plan, every step, "
-           "the agent specs, the workflows and the research. People should read the shorter pages instead: "
+           "the agent specs, the workflows and the research. People should read the three short pages above it in the RM section: "
            "the RM Executive Summary, The RM Assistant and the RM Assistant Plan.", "",
            "> **How to read it (for the AI).** The parts below are the working files, copied in whole and in this order. "
            "Later parts give more detail on earlier ones. Lines marked ⚠️ are guesses or hypotheses to confirm at the bank; "

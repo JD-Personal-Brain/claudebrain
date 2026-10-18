@@ -33,7 +33,7 @@ PAGES = [
      "How The RM Assistant gets delivered: wave 1 in about six weeks, what sets the pace, who decides, how we prove the value, the risks and what to confirm.",
      {"1. Wave 1 in about six weeks": "Wave 1", "2. What sets the pace": "Pace", "3. Who decides": "Who decides",
       "4. How we'll prove the value": "Value", "5. Top risks": "Risks", "6. What I'd confirm in the first weeks": "To confirm"}),
-    ("memos/rm-ai-reference.md", "rm-ai-reference.html", "RM Product Information for AI", "Reference · for AI to read",
+    ("memos/rm-ai-reference.md", "rm-ai-reference.html", "RM Detail", "Relationship managers · the detail, for AI to read",
      "Everything about the RM work in one document, built from the working files, to give an AI the full picture. People read the shorter RM pages.",
      {"Part 1: Executive summary": "1 Summary", "Part 2: The product: The RM Assistant": "2 Product",
       "Part 4: The plan (short version for people)": "4 Plan", "Part 5: The full delivery plan, with every step, agent spec and workflow": "5 Full plan",

@@ -90,7 +90,7 @@ documents against it.
 |---|---|
 | **Designed page** | A branded page a person reads. Everything a person reads is one. |
 | **Working copy** | The Markdown file behind a designed page. Claude edits it; people read the page. |
-| **Reference page** | A page built to look things up: the Agent Library, Workflow Maps, Steps Catalog, Controls Catalog and this glossary (the Document Library's Reference section also lists Open Items, the Audit Log, the Tech Stack Guide, the Job Description, the Prompting Guide, the Prompt Library and the Use Case Library, pages I read or act on, and RM Product Information for AI, built automatically for an AI to read). Claude keeps them aligned; they're never on the review list. |
+| **Reference page** | A page built to look things up: the Agent Library, Workflow Maps, Steps Catalog, Controls Catalog and this glossary (the Document Library's Reference section also lists Open Items, the Audit Log, the Tech Stack Guide, the Job Description, the Prompting Guide, the Prompt Library and the Use Case Library, pages I read or act on). RM Detail, in the RM section, is built automatically for an AI to read, not for people. Claude keeps them aligned; they're never on the review list. |
 | **Gate pack** | Everything the decider needs at a gate, put together in one document. |
 | **Evidence pack** | Everything reviewers sign in step 4: the outputs of 4.1 to 4.6 (risk rating, data and privacy review, test and red-team results, fairness, controls and vendor reviews) and the draft monitoring plan (4.8). |
 | **Decision log** | The record of each decision: what was decided, the options, who decided and why. For gates it also records the date the gate pack was ready and the decision date. |
@@ -152,6 +152,7 @@ that also says the new wording (a note about the change) is allowed.
 | How We Deliver Audit | Audit Log (the page name) | 2026-10-15 |
 | Elon Mode Research | Elon Mode (the page name; it sits in the library's Research section) | 2026-10-15 |
 | RM Analytics Plan | RM Assistant Plan (the page name) | 2026-10-17 |
+| RM Product Information for AI | RM Detail (the page name; it sits in the RM section) | 2026-10-18 |
 | three-question check | the automation check (seven questions: cut first, then automate) | 2026-10-15 |
 
 ## Bank terms to map

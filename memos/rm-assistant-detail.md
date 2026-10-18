@@ -1,6 +1,6 @@
 # The RM Assistant: full detail
 
-The detailed working file behind The RM Assistant page. People read the short page (`memos/rm-assistant.md`); this file goes into RM Product Information for AI.
+The detailed working file behind The RM Assistant page. People read the short page (`memos/rm-assistant.md`); this file goes into RM Detail.
 
 > ⚠️ **A hypothesis, not a plan yet** (agreed as our working hypothesis on 2026-10-17). Built from McKinsey's research, the RM plan and public Associated job postings, not from how the bank works today. The first test is the talk with the RM lead on Tuesday October 20; Discover confirms or changes the rest.
 

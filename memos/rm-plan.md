@@ -2,7 +2,7 @@
 
 How The RM Assistant gets delivered · Associated Bank · October 2026
 
-What the product is: [The RM Assistant](https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2). The short version for leaders: [RM Executive Summary](https://claude.ai/artifact/LPPq2gt5PSoiB8GzX8ZBE2). Every detail (each step, the agent specs and the workflows) is in [RM Product Information for AI](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n) in Reference. The rules every product follows are in the [Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ).
+What the product is: [The RM Assistant](https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2). The short version for leaders: [RM Executive Summary](https://claude.ai/artifact/LPPq2gt5PSoiB8GzX8ZBE2). Every detail (each step, the agent specs and the workflows) is in [RM Detail](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n), the fourth page in the RM section, for AI to read. The rules every product follows are in the [Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ).
 
 ## 1. Wave 1 in about six weeks
 Building starts on day one. Weeks are estimates to confirm in the first days.

@@ -34,6 +34,6 @@ One shared foundation, built once for every capability and later reused for port
 ## 4. Portfolio managers next
 Portfolio managers (PMs) get the same kind of assistant on the same foundation, starting with credit memo and annual review drafts, then early warning (decided 2026-10-15).
 
-Every detail (the RM's job, the foundation part by part, what to confirm) is in [RM Product Information for AI](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n), in Reference.
+Every detail (the RM's job, the foundation part by part, what to confirm) is in [RM Detail](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n), the fourth page in the RM section.
 
 _Last updated: 2026-10-18_

@@ -1,6 +1,6 @@
-# RM Product Information for AI
+# RM Detail
 
-Everything about the relationship manager (RM) work at Associated Bank in one document, for an AI to read. Give this whole document to an AI model so it has the full context: the product, the plan, every step, the agent specs, the workflows and the research. People should read the shorter pages instead: the RM Executive Summary, The RM Assistant and the RM Assistant Plan.
+Everything about the relationship manager (RM) work at Associated Bank in one document, for an AI to read. Give this whole document to an AI model so it has the full context: the product, the plan, every step, the agent specs, the workflows and the research. People should read the three short pages above it in the RM section: the RM Executive Summary, The RM Assistant and the RM Assistant Plan.
 
 > **How to read it (for the AI).** The parts below are the working files, copied in whole and in this order. Later parts give more detail on earlier ones. Lines marked ⚠️ are guesses or hypotheses to confirm at the bank; [X] marks a number not yet known: never invent a value for it. The product is a working hypothesis until Discover with the bank's RMs. Built automatically from the working files; never edit this file by hand.
 
@@ -90,13 +90,13 @@ One shared foundation, built once for every capability and later reused for port
 ### 4. Portfolio managers next
 Portfolio managers (PMs) get the same kind of assistant on the same foundation, starting with credit memo and annual review drafts, then early warning (decided 2026-10-15).
 
-Every detail (the RM's job, the foundation part by part, what to confirm) is in [RM Product Information for AI](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n), in Reference.
+Every detail (the RM's job, the foundation part by part, what to confirm) is in [RM Detail](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n), the fourth page in the RM section.
 
 ## Part 3: The RM Assistant in full detail
 
 Working file: `memos/rm-assistant-detail.md`.
 
-The detailed working file behind The RM Assistant page. People read the short page (`memos/rm-assistant.md`); this file goes into RM Product Information for AI.
+The detailed working file behind The RM Assistant page. People read the short page (`memos/rm-assistant.md`); this file goes into RM Detail.
 
 > ⚠️ **A hypothesis, not a plan yet** (agreed as our working hypothesis on 2026-10-17). Built from McKinsey's research, the RM plan and public Associated job postings, not from how the bank works today. The first test is the talk with the RM lead on Tuesday October 20; Discover confirms or changes the rest.
 
@@ -182,7 +182,7 @@ Working file: `memos/rm-plan.md`.
 
 How The RM Assistant gets delivered · Associated Bank · October 2026
 
-What the product is: [The RM Assistant](https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2). The short version for leaders: [RM Executive Summary](https://claude.ai/artifact/LPPq2gt5PSoiB8GzX8ZBE2). Every detail (each step, the agent specs and the workflows) is in [RM Product Information for AI](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n) in Reference. The rules every product follows are in the [Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ).
+What the product is: [The RM Assistant](https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2). The short version for leaders: [RM Executive Summary](https://claude.ai/artifact/LPPq2gt5PSoiB8GzX8ZBE2). Every detail (each step, the agent specs and the workflows) is in [RM Detail](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n), the fourth page in the RM section, for AI to read. The rules every product follows are in the [Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ).
 
 ### 1. Wave 1 in about six weeks
 Building starts on day one. Weeks are estimates to confirm in the first days.
@@ -990,7 +990,7 @@ Working file: `memos/use-case-library.md`.
 
 The pattern: signals from data, shown inside the CRM, with the reason visible and the banker in control. Results against a comparison group are rare.
 
-**Source:** McKinsey, "Agentic AI is here. Is your bank's frontline team ready?" (Kumar Kanagasabai, Chris Lu, Shital Chheda; [link](https://www.mckinsey.com/industries/financial-services/our-insights/agentic-ai-is-here-is-your-banks-frontline-team-ready)), based on a survey of about 400 US and Canadian bankers; checked against the article's text on 2026-10-10. ⚠️ Publication date not confirmed. Full exhibit data and every RM detail: [RM Product Information for AI](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n).
+**Source:** McKinsey, "Agentic AI is here. Is your bank's frontline team ready?" (Kumar Kanagasabai, Chris Lu, Shital Chheda; [link](https://www.mckinsey.com/industries/financial-services/our-insights/agentic-ai-is-here-is-your-banks-frontline-team-ready)), based on a survey of about 400 US and Canadian bankers; checked against the article's text on 2026-10-10. ⚠️ Publication date not confirmed. Full exhibit data and every RM detail: [RM Detail](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n).
 
 
 ## Part 7: McKinsey's research in full

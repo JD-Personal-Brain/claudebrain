@@ -9,7 +9,7 @@ from pagekit import CSS, E, inline, chipify, six_steps, WORKFLOW_URL, STEPS_URL,
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 read = lambda p: open(os.path.join(ROOT, p)).read()
-RM_PLAN_URL = "https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n"  # RM Product Information for AI, which holds the full plan and its Appendix B
+RM_PLAN_URL = "https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n"  # RM Detail, which holds the full plan and its Appendix B
 SIX = six_steps()  # each step's question, governance thread and gate come from the Product Workflow, their one home
 
 # ---------- Map 1: delivering a product (six steps -> 44 sub-steps) ----------

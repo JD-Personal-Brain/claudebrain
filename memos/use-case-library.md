@@ -28,7 +28,7 @@ Where we think the value of AI is for each group of bankers we serve, and the ou
 
 The pattern: signals from data, shown inside the CRM, with the reason visible and the banker in control. Results against a comparison group are rare.
 
-**Source:** McKinsey, "Agentic AI is here. Is your bank's frontline team ready?" (Kumar Kanagasabai, Chris Lu, Shital Chheda; [link](https://www.mckinsey.com/industries/financial-services/our-insights/agentic-ai-is-here-is-your-banks-frontline-team-ready)), based on a survey of about 400 US and Canadian bankers; checked against the article's text on 2026-10-10. ⚠️ Publication date not confirmed. Full exhibit data and every RM detail: [RM Product Information for AI](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n).
+**Source:** McKinsey, "Agentic AI is here. Is your bank's frontline team ready?" (Kumar Kanagasabai, Chris Lu, Shital Chheda; [link](https://www.mckinsey.com/industries/financial-services/our-insights/agentic-ai-is-here-is-your-banks-frontline-team-ready)), based on a survey of about 400 US and Canadian bankers; checked against the article's text on 2026-10-10. ⚠️ Publication date not confirmed. Full exhibit data and every RM detail: [RM Detail](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n).
 
 ## Portfolio managers
 
