@@ -150,6 +150,7 @@ TEAM=M-MACH; PROD=A  # team agents (M20+) live in the agent library; Appendix A 
 B=len(re.findall(r'^\*\*B\d+\. ',memo.split('## Appendix B')[1],re.M))
 lib=_json.load(open('designs/library.json'))
 want={'agents':f'{M+A+H} agents','steps':f'{SUB} sub-steps','controls':f'{CTL} controls','workflows':f'2 maps · {SUB+B} branches'}
+_PR=len(re.findall(r'^## Prompt \d+:', open('prompt-library.md').read(), re.M)); want['prompt-library']=f'{_PR} prompts'  # 2026-10-18: the count went stale when Prompt 4 was added
 for b in lib_docs:
     if b['id'] in want and b['count']!=want[b['id']]: print('designs/library.json count for',b['name'],'is',repr(b['count']),'but the sources give',repr(want[b['id']])); probs+=1
 # Each count is read with up to one word in front of the noun ("25 governance controls"). A total is

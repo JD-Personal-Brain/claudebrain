@@ -230,7 +230,7 @@
           "id": "prompt-library",
           "name": "Prompt Library",
           "what": "Our core prompts in one place, each with its version and what changed: the use case kit, a full product memo, the bank briefing and the showcase prototype.",
-          "count": "3 prompts",
+          "count": "4 prompts",
           "status": "In use",
           "url": "https://claude.ai/artifact/W96baXJf665MJ4qtHmkrks",
           "source": "prompt-library.md"
