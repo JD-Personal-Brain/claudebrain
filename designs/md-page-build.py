@@ -44,7 +44,7 @@ PAGES = [
     ("memos/rm-assistant.md", "rm-assistant.html", "RM Assistant", "Relationship managers · the product",
      "One AI assistant for each RM: its limits, its capabilities by moment in the RM's work and the core use case each answers, and what it's built on.",
      {"The product in one line": "The product", "1. Its limits": "Limits", "2. Capabilities, by moment in the RM's work": "Capabilities",
-      "3. What it's built on": "Foundation", "4. Portfolio managers next": "PMs next"}),
+      "3. What it's built on": "Foundation"}),
     ("memos/credit-market-scan.md", "credit-market-scan.html", "Portfolio Manager Core Use Cases", "Portfolio managers · core use cases",
      "What banks are deploying in commercial credit, and the credit counterpart of each of the seven core use cases."),
     ("memos/elon-mode-research.md", "elon-mode.html", "Elon Mode", "Research · how Musk builds and improves systems",

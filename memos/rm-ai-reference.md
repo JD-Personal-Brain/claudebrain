@@ -85,10 +85,7 @@ Each capability is one AI product and answers one core use case (see the [Use Ca
 | **Left out on purpose** | Pricing suggestions; contacting prospects on its own | — | Deal scoring and pricing; lead nurturing (full version) | Out |
 
 ### 3. What it's built on
-One shared foundation, built once for every capability and later reused for portfolio managers: client data from Salesforce and Snowflake, the RM's own work (calendar, email, meetings; transcripts only with client consent), outside prospect data the bank licenses (to confirm), a **signals engine** (simple, explainable rules find opportunities and risks; AI explains them in plain English with the numbers), drafting, and the controls and feedback above.
-
-### 4. Portfolio managers next
-Portfolio managers (PMs) get the same kind of assistant on the same foundation, starting with credit memo and annual review drafts, then early warning (decided 2026-10-15).
+One shared foundation, built once for every capability: client data from Salesforce and Snowflake, the RM's own work (calendar, email, meetings; transcripts only with client consent), outside prospect data the bank licenses (to confirm), a **signals engine** (simple, explainable rules find opportunities and risks; AI explains them in plain English with the numbers), drafting, and the controls and feedback above.
 
 Every detail (the RM's job, the foundation part by part, what to confirm) is in [RM Detail](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n), the fourth page in the RM section.
 
@@ -183,6 +180,25 @@ Working file: `memos/rm-plan.md`.
 How The RM Assistant gets delivered to relationship managers (RMs) · Associated Bank · October 2026
 
 What the product is: [RM Assistant](https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2). The short version for leaders: [RM Executive Summary](https://claude.ai/artifact/LPPq2gt5PSoiB8GzX8ZBE2). Every detail (each step, the agent specs and the workflows) is in [RM Detail](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n), the fourth page in the RM section, for AI to read. The rules every product follows are in the [Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ).
+
+### The plan at a glance
+The first 13 weeks (about 90 days), as estimates to confirm in the first days. Week 1 starts at kickoff.
+
+```gantt
+weeks 13
+Kickoff and a working prototype on sample data | 0 | 1 | build
+Gate 1: the sponsor confirms wave 1 | 1 | 1 | gate
+Interviews and sizing with RMs | 0 | 2 | build
+Gate 2: data contract, risk rating, value model | 2 | 2 | gate
+Meeting recap and email: tests and sign-offs | 1 | 3 | build
+**Meeting recap and email live** | 3 | 13 | live
+Brief, opportunity list and call notes: built and tested on real data | 1 | 5 | build
+Their sign-offs (call notes go back through step 4) | 3 | 5 | build
+**Brief, opportunity list and call notes live** | 5 | 13 | live
+Small releases every week or two | 6 | 13 | ongoing
+```
+
+Waves 2 and 3 get dates at gate 2. The first read on closed revenue comes at about month 6. If data access or the AI review runs long, the recap and email still go first and the rest goes live by about week 10.
 
 ### 1. Wave 1 in about six weeks
 Building starts on day one. Weeks are estimates to confirm in the first days.

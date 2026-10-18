@@ -89,6 +89,8 @@ def render_blocks(text, kinds=False):
     return "".join(out)
 
 
+GANTT_CSS = """.gantt{padding:12px 16px}.ginner{min-width:620px;display:flex;flex-direction:column;gap:6px}.grow{display:grid;grid-template-columns:230px 1fr;gap:12px;align-items:center;font-size:14px}.glab{line-height:1.3}.gtrack{position:relative;height:18px;background:repeating-linear-gradient(90deg,transparent 0,transparent calc(100%/13 - 1px),var(--line) calc(100%/13 - 1px),var(--line) calc(100%/13))}.gweeks{display:grid;grid-template-columns:repeat(13,1fr);background:none;height:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}.gw{text-align:center}.ghead{border-bottom:1px solid var(--line);padding-bottom:4px}.gbar{position:absolute;top:3px;height:12px;border-radius:3px;display:inline-block}.g-build{background:var(--amber)}.g-live{background:var(--teal)}.g-ongoing{background:repeating-linear-gradient(45deg,var(--teal) 0 6px,var(--teal-bg) 6px 12px)}.gdia{position:absolute;top:2px;width:14px;height:14px;background:var(--me);transform:rotate(45deg);display:inline-block}.gkey{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--muted);margin-top:6px}.gkey span{display:flex;align-items:center;gap:6px}.gkey i{position:static;width:22px;height:10px}.gkey i.gdia{width:10px;height:10px;transform:rotate(45deg)}"""
+
 def render_gantt(lines):
     """A ```gantt block: one row per line, "Label | start week | end week | kind" (kind: build, live, gate,
     ongoing). A gate is a diamond at its start week. The first line "weeks N" sets the axis length."""
@@ -110,27 +112,10 @@ def render_gantt(lines):
         body += f'<div class="grow"><span class="glab">{inline(lab)}</span><span class="gtrack">{bar}</span></div>'
     key = ('<div class="gkey"><span><i class="gbar g-build"></i>Build and test</span><span><i class="gbar g-live"></i>Live with pilot RMs</span>'
            '<span><i class="gbar g-ongoing"></i>Ongoing</span><span><i class="gdia"></i>Gate (go/no-go)</span></div>')
-    return (f'<div class="tw gantt"><div class="ginner"><div class="grow ghead"><span class="glab">Week</span><span class="gtrack gweeks">{head}</span></div>'
+    return (f'<style>{GANTT_CSS}</style><div class="tw gantt"><div class="ginner"><div class="grow ghead"><span class="glab">Week</span><span class="gtrack gweeks">{head}</span></div>'
             f'{body}</div></div>{key}')
 
 CSS = """
-.gantt{padding:12px 16px}
-.ginner{min-width:620px;display:flex;flex-direction:column;gap:6px}
-.grow{display:grid;grid-template-columns:230px 1fr;gap:12px;align-items:center;font-size:14px}
-.glab{line-height:1.3}
-.gtrack{position:relative;height:18px;background:repeating-linear-gradient(90deg,transparent 0,transparent calc(100%/13 - 1px),var(--line) calc(100%/13 - 1px),var(--line) calc(100%/13))}
-.gweeks{display:grid;grid-template-columns:repeat(13,1fr);background:none;height:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
-.gw{text-align:center}
-.ghead{border-bottom:1px solid var(--line);padding-bottom:4px}
-.gbar{position:absolute;top:3px;height:12px;border-radius:3px;display:inline-block}
-.g-build{background:var(--amber)}
-.g-live{background:var(--teal)}
-.g-ongoing{background:repeating-linear-gradient(45deg,var(--teal) 0 6px,var(--teal-bg) 6px 12px)}
-.gdia{position:absolute;top:2px;width:14px;height:14px;background:var(--me);transform:rotate(45deg);display:inline-block}
-.gkey{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--muted);margin-top:6px}
-.gkey span{display:flex;align-items:center;gap:6px}
-.gkey i{position:static;width:22px;height:10px}
-.gkey i.gdia{width:10px;height:10px;transform:rotate(45deg)}
 /* Layout: navy header band, a pill nav of the six steps, then one reading column; each sub-step is a card with a two-column body. */
 :root{--bg:#F4F6F8;--card:#FFFFFF;--line:#D9DEE5;--fg:#1B2433;--muted:#4D5868;--navy:#14213D;--onnavy:#FFFFFF;--onnavy-muted:#C9D3E3;--teal:#0F5F59;--teal-bg:#E1F0EE;--amber-bg:#FDF3E1;--amber:#8A4B00;--me:#14213D;--me-fg:#FFFFFF;--partner-bg:#E6E9EE;--partner:#3B4656;--label-on-navy:#8FD3CA;
 --serif:"IBM Plex Serif",Georgia,"Times New Roman",serif;--sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace}
