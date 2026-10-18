@@ -79,7 +79,7 @@ What we're working on first: a quick check on the bank news scout, then stage 2 
 
 | # | Item | Who | Waits on |
 |---|---|---|---|
-| V1 | Read the three RM pages, now short and in reading order (reorganized 2026-10-18, C50): the RM Executive Summary, RM Assistant and the RM Assistant Plan. The full detail is in RM Detail, the fourth RM row, which is for AI to read, not me | Me | Nothing |
+| V1 | Read the three RM pages, now short and in reading order (reorganized 2026-10-18, C50): the RM Executive Summary, RM Assistant and the RM Assistant Plan. The full detail is in RM Detail, the fifth RM row (after the RM Assistant Prototype), which is for AI to read, not me | Me | Nothing |
 | D1 | Is the RM framework ready to copy to other use cases? My answer on 2026-10-09: not yet. The reading in stage 1 and the work in stages 2 and 3 come first | Me | Credit, the next use case, waits on this |
 | D2 | A checker rule (idea 61) so the people pages for one user group never mention another group (from lesson L38). Put to me at the 2026-10-18 wrap-ups; not yet (said 2026-10-18) | Me | Me saying it is time |
 
@@ -230,5 +230,6 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C50 | Reorganize the RM work (said 2026-10-18): yes. The RM section holds only three short pages for people, read in order: the RM Executive Summary (one page for the leaders of the RM business; it is the RM Leader Brief, C43), The RM Assistant (the product, cut short) and the RM Assistant Plan (cut from about 15 pages to a few). Everything in full goes into RM Detail (a fourth row in the RM section, for AI to read; first put in Reference as RM Product Information for AI), one document to give an AI, built from the working files. The core use case pages became one Use Case Library in Reference, with a section for RMs and one for PMs. The use case kit check now asks for those three pages (summary, product, plan) | 2026-10-18 |
 | C51 | I read the Use Case Library: good to go, now marked In use | 2026-10-18 |
 | C52 | The deep audit and Elon mode review of the RM work (said 2026-10-18: go with the recommendations): about 35 fixes made (bank facts marked as assumptions, plainer words, wording aligned with the How we deliver pages); gate 1 aligned with the Product Workflow (target, measure and today's baseline agreed at gate 1); the full plan cut from about 10,500 to about 5,100 words (one step table, no duplicate summary, capabilities or team-agent table); agent A4 merged into workflow B1; wave 1's Monday list suggests only deposit and treasury gaps (credit products wait for the PM work). What the prototype shows is next | 2026-10-18 |
+| C53 | The RM section's order (said 2026-10-18): the RM Assistant Prototype is row 4 and RM Detail row 5, after the three short pages for people (C50) | 2026-10-18 |
 
 _Last updated: 2026-10-18_

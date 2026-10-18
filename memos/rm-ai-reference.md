@@ -85,7 +85,7 @@ Every capability runs on one shared foundation, built once:
 - a **signals engine**: simple, explainable rules spot opportunities and risks, and AI explains each one in plain English with the numbers;
 - drafting, and the controls and feedback above.
 
-Every detail (the RM's job, the foundation part by part, what to confirm) is in [RM Detail](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n), the fourth page in the RM section.
+Every detail (the RM's job, the foundation part by part, what to confirm) is in [RM Detail](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n), the fifth page in the RM section, after the RM Assistant Prototype.
 
 ## Part 3: The RM Assistant in full detail
 
