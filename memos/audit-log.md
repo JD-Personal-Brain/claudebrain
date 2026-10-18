@@ -34,7 +34,7 @@ Seven principles, drawn from what we already do and the lessons behind it.
 | Every wrap-up | Audit first (wrap-up step 0) | Everything above, plus a scrub of every open item | Claude |
 | Every pull request | GitHub audit check | Any checker problem; the pull request shows a red mark and can't be merged (a required check since 2026-10-15, closed item C38) | Automatic, on GitHub |
 | Merging into main | Pre-merge check (idea 36) | Any checker or render problem; it blocks the merge | Automatic, when Claude merges |
-| Every fifth wrap-up | Elon mode review | Work that should be cut or simplified before it's automated | Claude (elon-mode skill) |
+| Every third wrap-up (every fifth until 2026-10-18) | Elon mode review | Work that should be cut or simplified before it's automated, in the product machine and in this system itself (rules, skills, checks, pages, open items) | Claude (elon-mode skill) |
 | About weekly | Rule tests (run-tests) and the weekly review | Rules that no longer work; what's annoying | Claude and me |
 | After any mistake | Lesson, rule and test (log-lesson) | The same mistake happening twice; a repeat raises the fix a level | Claude |
 
