@@ -18,8 +18,8 @@ documents against it.
 | **Sub-step** | A numbered piece of a step, from 1.0 to 6.6 (44 in all). Each has its own section in the playbook and its own card in the Steps Catalog. |
 | **Gate** | The go/no-go decision at the end of each step. A named person decides, and the decision goes in the decision log. |
 | **Governance thread** | The risk and control work that runs through every step, so that step 4 confirms what risk partners have already seen. |
-| **Core use case** | One of the seven needs a plan's AI products answer (in the RM plan, each of The RM Assistant's capabilities answers one). The RM plan set them: McKinsey's five frontline use cases (prospecting and next best opportunities, lead nurturing, account intelligence and meeting prep, deal scoring and pricing, AI sales coaching) plus two of our own (admin off the RM's plate, keep clients). The credit work is proposed to reuse the same seven needs through each one's credit counterpart (Portfolio Manager Core Use Cases page; not yet agreed). Say **RM core use case** or **credit core use case** when it matters which. Each has a user problem and a return profile. |
-| **Credit counterpart** | The proposed credit-side version of an RM core use case, for portfolio managers and credit analysts; for example, credit memo and annual review drafts under account intelligence and meeting prep (see the Portfolio Manager Core Use Cases page). |
+| **Core use case** | One of the seven needs a plan's AI products answer (in the RM plan, each of The RM Assistant's capabilities answers one). The RM plan set them: McKinsey's five frontline use cases (prospecting and next best opportunities, lead nurturing, account intelligence and meeting prep, deal scoring and pricing, AI sales coaching) plus two of our own (admin off the RM's plate, keep clients). The credit work is proposed to reuse the same seven needs through each one's credit counterpart (the Use Case Library's portfolio manager section; not yet agreed). Say **RM core use case** or **credit core use case** when it matters which. Each has a user problem and a return profile. |
+| **Credit counterpart** | The proposed credit-side version of an RM core use case, for portfolio managers and credit analysts; for example, credit memo and annual review drafts under account intelligence and meeting prep (see the Use Case Library's portfolio manager section). |
 | **Use case (on its own)** | A whole area of work for one user group, such as the RM use case or the credit use case. Not one AI product (say AI product) and not one of the seven lines (say core use case). |
 | **User workflow** | How a user group (RMs, portfolio managers) works today, and how that work changes with AI. Not the same as the RM plan's numbered workflows B1 to B9 on the Workflow Maps. |
 | **AI product** | A specific capability we build and release, such as the pre-meeting brief. Each sits under one core use case. |
@@ -90,7 +90,7 @@ documents against it.
 |---|---|
 | **Designed page** | A branded page a person reads. Everything a person reads is one. |
 | **Working copy** | The Markdown file behind a designed page. Claude edits it; people read the page. |
-| **Reference page** | A page built to look things up: the Agent Library, Workflow Maps, Steps Catalog, Controls Catalog and this glossary (the Document Library's Reference section also lists Open Items, the Audit Log, the Tech Stack Guide, the Job Description, the Prompting Guide and the Prompt Library, pages I read or act on). Claude keeps them aligned; they're never on the review list. |
+| **Reference page** | A page built to look things up: the Agent Library, Workflow Maps, Steps Catalog, Controls Catalog and this glossary (the Document Library's Reference section also lists Open Items, the Audit Log, the Tech Stack Guide, the Job Description, the Prompting Guide, the Prompt Library and the Use Case Library, pages I read or act on, and RM Product Information for AI, built automatically for an AI to read). Claude keeps them aligned; they're never on the review list. |
 | **Gate pack** | Everything the decider needs at a gate, put together in one document. |
 | **Evidence pack** | Everything reviewers sign in step 4: the outputs of 4.1 to 4.6 (risk rating, data and privacy review, test and red-team results, fairness, controls and vendor reviews) and the draft monitoring plan (4.8). |
 | **Decision log** | The record of each decision: what was decided, the options, who decided and why. For gates it also records the date the gate pack was ready and the decision date. |
@@ -183,4 +183,4 @@ Our plans depend on these, but the definitions belong to the bank. Each stays
 | Hours saved | Time a product frees up each week, and how it's measured (Finance agrees the method) | ⚠️ to map |
 | Client attrition, at-risk client | A client who leaves or reduces business, and early signs that one might | ⚠️ to map |
 
-_Last updated: 2026-10-17_
+_Last updated: 2026-10-18_

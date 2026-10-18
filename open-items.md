@@ -14,19 +14,19 @@ Claude updates it at every wrap-up: finished items move to "Closed" with the dat
 
 ## The path (agreed 2026-10-10)
 
-1. **Read and lock the core** (me): the RM plan and the two core use case pages (V1 to V3).
+1. **Read and lock the core** (me): the three RM pages and the Use Case Library (V1 and V2).
 2. **Make the machine runnable** (Claude): templates, tracker design, approvals map, control gaps.
 3. **Dry run and fix** (both): one made-up product through all six steps; fix what breaks.
 4. **Get ready for Andy** (Claude builds, I decide): the RM mock-up, the Andy edition and my questions for him.
 
-**First, high priority:** on October 19, check that the bank news scout's first notice reached my personal email (W1, under "Now" below). **Then, stage 2 of the use case kit for RMs, in the agreed order (C44):** the RM user workflow (W2), then the RM Leader Brief and the per-AI-product work (W3). Stages 1 and 2 of the path (V1; W4 and W5) carry on alongside; none waits on another.
+**First, high priority:** on October 19, check that the bank news scout's first notice reached my personal email (W1, under "Now" below). **Then, stage 2 of the use case kit for RMs, in the agreed order (C44):** the RM user workflow (W2), then the per-AI-product work (W3). Stages 1 and 2 of the path (V1; W4 and W5) carry on alongside; none waits on another.
 
 ## At a glance
 
 | Stage | Open | What it is |
 |---|---|---|
 | Now | 3 | What we're working on first |
-| Stage 1. Read and lock the core | 4 | What I read, then the decision on the RM framework |
+| Stage 1. Read and lock the core | 3 | What I read, then the decision on the RM framework |
 | Stage 2. Make the machine runnable | 4 | What Claude builds so a real run is possible |
 | Stage 3. Dry run and fix | 3 | Running the machine once and fixing it |
 | Stage 4. Get ready for Andy | 8 | What Andy sees, and what I ask him |
@@ -58,20 +58,20 @@ every working file and kept current at each wrap-up, last on 2026-10-17 (this se
 | Tracker design | Missing | The reminders, status notes and progress view all read from one task list, but its fields aren't written down, and we don't know the bank's tool yet | W5, B23 |
 | Approvals | Partial | Who decides is clear for every step. There's no map of who signs what, how long it takes, or who to go to when a sign-off is stuck | W6, B21 |
 | Showing what an RM sees | Missing | The plan promises a working prototype in week 1, but there's nothing to show yet | W11 |
-| A version written for Andy | Missing | The RM Leader Brief is agreed (C43) and comes after the RM user workflow (the Elon mode review is done, 2026-10-17) | W3 |
+| A version written for Andy | Drafted | The RM Executive Summary (2026-10-18) is the RM Leader Brief (C43): one page, waiting for my read | V1 |
 | Use case kit (RMs) | Partial | The kit is agreed (C40); step 1 done 2026-10-17 (the RM plan is current and has one source). The RM work now centers on one product, The RM Assistant, a working hypothesis (C46) | W2, W3 |
 | Knowing the RM's real day | Partial | The Bank Business Briefing is done and read. The user workflow maps will show how RMs and PMs work today (Job Notes dropped as not required, 2026-10-14) | W2 |
 | After launch: support and incidents | Partial | Incident steps exist (who to call, how to pause). No support model or runbook yet. Needed before the first product goes live, not before Andy | W10 |
 
 ## Now
 
-What we're working on first: a quick check on the bank news scout, then stage 2 of the use case kit for RMs in the agreed order (C44): the RM user workflow, then the RM Leader Brief and the per-AI-product work. Date to work toward: on Tuesday October 20, 2026 I talk with the credit lead and the RM lead, so I'm going down this log from the top before then (said 2026-10-14).
+What we're working on first: a quick check on the bank news scout, then stage 2 of the use case kit for RMs in the agreed order (C44): the RM user workflow, then the per-AI-product work. Date to work toward: on Tuesday October 20, 2026 I talk with the credit lead and the RM lead, so I'm going down this log from the top before then (said 2026-10-14).
 
 | # | Item | Who | Waits on |
 |---|---|---|---|
 | W1 | **High priority.** Check that the bank news scout's first weekly run (Monday October 19) reached my personal email, jeremydrane2021@gmail.com. The scout no longer uses Gmail or my work address: its summary arrives as the scheduled task's own notice (email and phone). If the notice goes somewhere else, tell Claude. Optionally, allow sec.gov, investor.associatedbank.com and associatedbank.com in the cloud environment's Network access settings, so the scout can open the bank's pages. **Also turn on automatic approval:** both scout tasks ("Bank news scout (weekly)" and "(after Q3 results)") are set to stop and wait whenever a step needs approval, and nobody is there to approve on a Monday morning, so the run could stall without sending anything. How (checked 2026-10-14, button names not confirmed): in the Claude desktop app, open the **Code** tab, click **Routines** in the left sidebar (or under **More**), click the task, click **Edit**, set the permission mode to automatic approval and save; then the other task. Claude can't turn this on itself. If the setting isn't there, skip it: Anthropic's help page says cloud tasks don't ask for approval, and a missing Monday notice would show a stalled run. | Me | Monday October 19, 2026 (first weekly run) |
-| W2 | Map the RM user workflow (step 2 of the use case kit's agreed order, C44; first agreed 2026-10-14). How RMs work today can only come from the bank, so this is a draft of assumptions with questions to confirm, tested with the RM lead on October 20 and in Discover (said 2026-10-17): how RMs work today, where each AI product fits, and how the work changes. It starts from Map 2 on the Workflow Maps (an RM's week with AI, which shows only the with-AI side). Show a sample of the page layout first, then build it with the user-workflow routine (idea 41, built 2026-10-14) as a page in the Document Library, where a placeholder row waits. The portfolio manager map follows once I say we're moving into PM | Claude and me | Nothing |
-| W3 | **Stage 2 of the use case kit for RMs, steps 3 and 4** (the agreed order, C44; step 1 done 2026-10-17, step 2 is W2). Step 3 (the Elon mode review of the RM plan was done and applied on 2026-10-17, C47): the RM Leader Brief, which is the "Andy edition" of the RM plan (decided 2026-10-17, C43): one page in his terms, no internal labels, in four parts (the case, the plan on a page, the value, the ask), each line linking down to its detail, with one line that credit comes next; it replaces the one-page RM summary and follows Sample 1 on the use case kit review page. Step 4, in the RM plan: one block per AI product, exact measures and controls for each AI product, and the AI sales coaching product's agent spec and workflow | Claude, then me | W2 (the agreed order, C44); my read of V1 comes before anything is shared |
+| W2 | Map the RM user workflow (step 2 of the use case kit's agreed order, C44; first agreed 2026-10-14). How RMs work today can only come from the bank, so this is a draft of assumptions with questions to confirm, tested with the RM lead on October 20 and in Discover (said 2026-10-17): how RMs work today, where each AI product fits, and how the work changes. It starts from Map 2 on the Workflow Maps (an RM's week with AI, which shows only the with-AI side). Show a sample of the page layout first, then build it with the user-workflow routine (idea 41, built 2026-10-14) as a page; where it sits in the Document Library is decided when it's built, since the RM section now holds only three pages (C50). The portfolio manager map follows once I say we're moving into PM | Claude and me | Nothing |
+| W3 | **Stage 2 of the use case kit for RMs, step 4** (the agreed order, C44). Step 3, the RM Leader Brief (the Andy edition, C43), is built as the RM Executive Summary (2026-10-18, C50). Step 4: one block per AI product, exact measures and controls for each AI product, and the AI sales coaching product's agent spec and workflow, written in the full plan (`memos/rm-analytics-framework.md`), which feeds RM Product Information for AI | Claude, then me | W2 (the agreed order, C44); my read of V1 comes before anything is shared |
 
 ## Stage 1. Read and lock the core
 
@@ -79,9 +79,8 @@ What we're working on first: a quick check on the bank news scout, then stage 2 
 
 | # | Item | Who | Waits on |
 |---|---|---|---|
-| V1 | Read the RM Assistant Plan (the long scrolling page): everything after the executive summary. It was brought up to date and rebuilt from its working file on 2026-10-17 (the 2026-10-15 decisions, the agreed waves and the How we deliver rules), so read it fresh | Me | Nothing |
-| V2 | Read the RM Core Use Cases page: McKinsey's five frontline AI use cases and their returns, how the RM plan covers them, and the three decisions made on 2026-10-15 (C30 to C32) | Me | Nothing |
-| V3 | Read the Portfolio Manager Core Use Cases page: what banks are deploying in commercial credit, and the credit counterpart proposed for each of the seven core use cases | Me | Nothing |
+| V1 | Read the three RM pages, now short and in reading order (reorganized 2026-10-18, C50): the RM Executive Summary, The RM Assistant and the RM Assistant Plan. The full detail is in RM Product Information for AI, which is for AI to read, not me | Me | Nothing |
+| V2 | Read the Use Case Library: where the value is for RMs and for PMs, and the outside research behind it (it replaced the RM Core Use Cases and Portfolio Manager Core Use Cases pages on 2026-10-18, C50) | Me | Nothing |
 | D1 | Is the RM framework ready to copy to other use cases? My answer on 2026-10-09: not yet. The reading in stage 1 and the work in stages 2 and 3 come first | Me | Credit, the next use case, waits on this |
 
 ## Stage 2. Make the machine runnable
@@ -131,11 +130,11 @@ Useful any time; none of these blocks a stage. Dated ones first.
 | W14 | Two loose ends from the McKinsey article: confirm its publication date (the pasted page showed none), and decide whether role redesign (new RM roles as agents take on work, McKinsey's fifth principle) belongs in the playbook; it isn't covered yet | Claude, then me | Nothing |
 | W15 | Loose ends in the Bank Business Briefing: check the exact wording of the bank's AI announcement before quoting it; replace the 2016 description of who the segment serves once the annual report for the 2025 financial year can be opened in full; and confirm two of my guesses, the RM headcount read from an unclear chart and that Omaha came with American National | Claude | Nothing |
 | W16 | Run the tests of Claude's rules that need a real session. Each test is a short scenario in `learning/tests.md` that checks one rule still works. Not yet run in a live session: T7, T10, T13, T14 and T17, and the second parts of T2, T3, T9 and T16. Never run at all: T18 to T22, T24 to T27 (including T27's new second part, from 2026-10-14), T30 to T33, T36 to T38, T40, T41 and T44; finish T35 after the bank news scout's first scheduled run on October 19. Re-run T8 (does Claude label every suggestion Needed or Optional?), which failed on 2026-10-09 before its rule was tightened, and T5, whose first run wasn't a fair test | Claude, in a new session | Nothing |
-| W17 | Check the product details marked "(verify)" in the Tech Stack Guide: product names, prices, vendor terms and any update to the regulators' model-risk guidance. Eleven lines carry the mark. New lead (2026-10-13, Portfolio Manager Core Use Cases page): SR 26-2, issued 17 April 2026, reportedly replaces SR 11-7, which our files cite; sources disagree on whether it covers generative AI, so read the Fed's own text before changing anything | Claude | Nothing |
+| W17 | Check the product details marked "(verify)" in the Tech Stack Guide: product names, prices, vendor terms and any update to the regulators' model-risk guidance. Eleven lines carry the mark. New lead (2026-10-13, the credit scan now summarized in the Use Case Library): SR 26-2, issued 17 April 2026, reportedly replaces SR 11-7, which our files cite; sources disagree on whether it covers generative AI, so read the Fed's own text before changing anything | Claude | Nothing |
 | W18 | Claude Mastery course: paste in the next page (Module 3: Projects, Connectors and Skills). Claude starts a course notes file when it arrives (idea 14, approved) | Me, then Claude | Nothing |
 | W19 | Try the newer skills on real work: "prototype X", "write a prompt for X", "new use case: X" | Me | Nothing |
 | W20 | Playbooks for my everyday tools (idea 3, approved): name two or three tasks I repeat in email, calendar or documents. Claude turns each into a step-by-step skill | Me, then Claude | Nothing |
-| W21 | Give the RM and portfolio manager sections of the Document Library the same plain numbered rows as the other sections, and write the group names the glossary's way: spelled out with the short form the first time on a page ("relationship managers (RMs)", "portfolio managers (PMs)"), then RM and PM. Planned for 2026-10-16, not done yet | Me, with Claude | Nothing |
+| W21 | Give the portfolio manager section of the Document Library the same plain numbered rows as the other sections (the RM section got them on 2026-10-18, C50), and write the group names the glossary's way: spelled out with the short form the first time on a page ("relationship managers (RMs)", "portfolio managers (PMs)"), then RM and PM | Me, with Claude | Nothing |
 
 ## Inside the bank
 
@@ -228,5 +227,6 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C47 | The five Elon mode findings on the RM plan (said 2026-10-17): yes to all five, applied in memo v10. No week dates for waves 2 and 3 until gate 2; wave 1 is three capabilities (the pre-meeting client brief; the meeting follow-up, with call notes into Salesforce; the Monday opportunity list); the how-to helper (A6) removed and its number not reused; what the Product Framework says is linked, not repeated; freed-up time counted as hours, not revenue; the limiting factor named at the top. The page is renamed the RM Assistant Plan, and its wave 3 "RM assistant" is now Client Q&A (A5) | 2026-10-17 |
 | C48 | A check that The RM Assistant page and the RM plan list the same capabilities in the same waves (idea 60): yes (said 2026-10-17), built as check 17 of the audit checker; it fails if either page lists a capability or wave the other doesn't | 2026-10-17 |
 | C49 | An automatic length warning on Claude's replies (idea 57): yes (said 2026-10-17), built. A Stop hook (`.claude/hooks/reply-length.py`, switched on in `.claude/settings.json`) stops Claude once when a reply runs past 8 lines and asks for a short follow-up: the outcome, what it means and at most one step | 2026-10-17 |
+| C50 | Reorganize the RM work (said 2026-10-18): yes. The RM section holds only three short pages for people, read in order: the RM Executive Summary (one page for the leaders of the RM business; it is the RM Leader Brief, C43), The RM Assistant (the product, cut short) and the RM Assistant Plan (cut from about 15 pages to a few). Everything in full goes into RM Product Information for AI in Reference, one document to give an AI, built from the working files. The core use case pages became one Use Case Library in Reference, with a section for RMs and one for PMs. The use case kit check now asks for those three pages (summary, product, plan) | 2026-10-18 |
 
-_Last updated: 2026-10-17_
+_Last updated: 2026-10-18_

@@ -30,7 +30,7 @@ for _, _, ds, _ in groups:
 PAGE_FILE = {"open-items": "open-items.html", "job-description": "job-description.html", "bank-business": "bank-business.html",
              "tech-stack": "tech-stack.html", "framework": "product-framework.html",
              "product-machine": "product-machine.html", "playbook": "playbook.html", "workflow": "role-workflow.html",
-             "rm-plan": "rm-analytics-plan.html", "rm-assistant": "rm-assistant.html", "mckinsey-use-cases": "mckinsey-use-cases.html",
+             "rm-plan": "rm-analytics-plan.html", "rm-assistant": "rm-assistant.html", "use-case-library": "use-case-library.html", "rm-executive-summary": "rm-executive-summary.html", "rm-ai-reference": "rm-ai-reference.html",
              "prompting": "prompting.html", "credit-market-scan": "credit-market-scan.html", "workflows": "workflows.html", "agents": "agents.html", "steps": "steps.html",
              "controls": "controls.html", "glossary": "glossary.html", "elon-mode": "elon-mode.html", "audit-log": "audit-log.html",
              "prompt-library": "prompt-library.html"}

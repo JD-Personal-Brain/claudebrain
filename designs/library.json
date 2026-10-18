@@ -62,53 +62,34 @@
       "why": "Relationship managers (RMs): the bankers who own business client relationships and win new business.",
       "items": [
         {
-          "todo": true,
+          "id": "rm-executive-summary",
           "kit": "leader-brief",
-          "name": "RM Leader Brief",
-          "what": "The case, the plan on a page, the value and the ask, for Andy and bank leaders; every line links down to its detail.",
-          "status": "To build"
+          "name": "RM Executive Summary",
+          "what": "Start here. The RM work on one page for the leaders of the RM business: the problem, the product, what RMs get first, the value, how fast and what I need.",
+          "status": "Waiting for review",
+          "url": "https://claude.ai/artifact/LPPq2gt5PSoiB8GzX8ZBE2",
+          "source": "memos/rm-executive-summary.md"
         },
         {
           "id": "rm-assistant",
           "name": "The RM Assistant",
-          "what": "The core RM product, as a hypothesis: one AI assistant for each RM, with limits, capabilities for each moment of the RM's work, added feature wave by feature wave on a shared foundation.",
+          "what": "The product: one AI assistant for each RM, its limits, its capabilities by moment in the RM's work and the core use case each answers.",
           "status": "Waiting for review",
           "url": "https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2",
-          "source": "memos/rm-assistant.md"
-        },
-        {
-          "todo": true,
-          "name": "RM user workflow: today and with AI",
-          "what": "How RMs work today, where each AI product fits, and how their work changes.",
-          "status": "To build",
-          "kit": "user-workflow"
-        },
-        {
-          "id": "mckinsey-use-cases",
-          "name": "RM Core Use Cases",
-          "what": "The seven core use cases The RM Assistant's capabilities answer: McKinsey's five frontline AI use cases and their reported returns, plus admin off the RM's plate and keep clients.",
-          "status": "Waiting for review",
-          "url": "https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X",
-          "source": "memos/mckinsey-frontline-ai.md",
-          "kit": "core-use-cases"
+          "source": "memos/rm-assistant.md",
+          "kit": "product"
         },
         {
           "id": "rm-plan",
           "name": "RM Assistant Plan",
-          "what": "How The RM Assistant gets delivered, on one scrolling page built from its working file: the capabilities wave by wave, value, who decides, the six steps, the project plan, risks, agent specs and workflows.",
+          "what": "How The RM Assistant gets delivered: wave 1 in about six weeks, what sets the pace, who decides, how we prove the value, the risks and what to confirm.",
           "status": "Waiting for review",
           "url": "https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk",
-          "source": "memos/rm-analytics-framework.md",
+          "source": "memos/rm-plan.md",
           "kit": "plan"
-        },
-        {
-          "todo": true,
-          "kit": "mock-up",
-          "name": "RM mock-up",
-          "what": "Clickable screens of the Monday opportunity list and the pre-meeting client brief, on made-up data.",
-          "status": "Later"
         }
       ],
+      "numbered": true,
       "kit": true
     },
     {
@@ -121,14 +102,6 @@
           "name": "Portfolio manager user workflow: today and with AI",
           "what": "How PMs work today, where each AI product fits, and how their work changes.",
           "status": "To build"
-        },
-        {
-          "id": "credit-market-scan",
-          "name": "Portfolio Manager Core Use Cases",
-          "what": "What banks are deploying in commercial credit, and the credit counterpart of each of the seven core use cases. A proposal, not yet agreed.",
-          "status": "Waiting for review",
-          "url": "https://claude.ai/artifact/2tySJZL41pf72igzanYbaT",
-          "source": "memos/credit-market-scan.md"
         },
         {
           "todo": true,
@@ -150,6 +123,22 @@
           "status": "In use",
           "url": "https://claude.ai/artifact/NsW5AH5XFNHmDNYJvmVDMb",
           "source": "open-items.md"
+        },
+        {
+          "id": "use-case-library",
+          "name": "Use Case Library",
+          "what": "Where the value of AI is for each group of bankers we serve, and the outside research behind it: a section for relationship managers and one for portfolio managers.",
+          "status": "Waiting for review",
+          "url": "https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X",
+          "source": "memos/use-case-library.md"
+        },
+        {
+          "id": "rm-ai-reference",
+          "name": "RM Product Information for AI",
+          "what": "Everything about the RM work in one document, built from the working files, to give an AI the full picture. People read the three short RM pages.",
+          "status": "In use",
+          "url": "https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n",
+          "source": "designs/rm-ai-build.py"
         },
         {
           "id": "audit-log",

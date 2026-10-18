@@ -21,7 +21,7 @@ Don't ask for anything already in the repo (rule R6).
 Use Prompt 2 in `prompt-library.md` as the brief, with this use case's Context and
 user group swapped in. In short:
 - Organize by the six steps (`memos/role-workflow.md`), each with the write-up layout in `product-framework.md`.
-- Organize the AI products under the seven core use cases, as the RM plan does: for this user group, each core use case's counterpart (see `glossary.md`, and the Portfolio Manager Core Use Cases page for an example).
+- Organize the AI products under the seven core use cases, as the RM plan does: for this user group, each core use case's counterpart (see `glossary.md`, and the Use Case Library's portfolio manager section for an example).
 - Use only tools named in `tech-stack.md`. Keep the AI assistive (AI suggests, a person decides).
 - Use [X] for numbers we don't have, never invented ones. Every outside fact gets a source, or is marked "I do not have a verified source for this."
 - Include a table showing where the plan covers each accountability in `job-description.md`.

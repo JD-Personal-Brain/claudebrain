@@ -64,7 +64,7 @@ for f in glob.glob('designs/*.html'):
     for m in re.findall(r'<(?:p|li|td|dd|dt|span|div|h\d)[^>]*>_[^<]{0,40}|[^<]{0,40}_</(?:p|li|td|dd|dt|span|div|h\d)>',open(f).read()):
         print(f,"shows a stray underscore:",m); probs+=1
 # 3. pages built from working copies are up to date
-for page,builder in [('designs/product-machine.html','designs/product-machine-build.py'),('designs/playbook.html','designs/playbook-build.py'),('designs/product-framework.html','designs/md-page-build.py'),('designs/tech-stack.html','designs/md-page-build.py'),('designs/job-description.html','designs/md-page-build.py'),('designs/prompting.html','designs/md-page-build.py'),('designs/prompt-library.html','designs/md-page-build.py'),('designs/rm-analytics-plan.html','designs/md-page-build.py'),('designs/bank-business.html','designs/md-page-build.py'),('designs/open-items.html','designs/md-page-build.py'),('designs/library.html','designs/library-build.py'),('designs/workflows.html','designs/workflows-build.py'),('designs/agents.html','designs/agents-build.py'),('designs/steps.html','designs/catalogs-build.py'),('designs/controls.html','designs/catalogs-build.py'),('designs/glossary.html','designs/md-page-build.py'),('designs/mckinsey-use-cases.html','designs/md-page-build.py'),('designs/credit-market-scan.html','designs/md-page-build.py'),('designs/elon-mode.html','designs/md-page-build.py'),('designs/audit-log.html','designs/md-page-build.py')]:
+for page,builder in [('designs/product-machine.html','designs/product-machine-build.py'),('designs/playbook.html','designs/playbook-build.py'),('designs/product-framework.html','designs/md-page-build.py'),('designs/tech-stack.html','designs/md-page-build.py'),('designs/job-description.html','designs/md-page-build.py'),('designs/prompting.html','designs/md-page-build.py'),('designs/prompt-library.html','designs/md-page-build.py'),('designs/rm-analytics-plan.html','designs/md-page-build.py'),('designs/bank-business.html','designs/md-page-build.py'),('designs/open-items.html','designs/md-page-build.py'),('designs/library.html','designs/library-build.py'),('designs/workflows.html','designs/workflows-build.py'),('designs/agents.html','designs/agents-build.py'),('designs/steps.html','designs/catalogs-build.py'),('designs/controls.html','designs/catalogs-build.py'),('designs/glossary.html','designs/md-page-build.py'),('memos/rm-ai-reference.md','designs/rm-ai-build.py'),('designs/use-case-library.html','designs/md-page-build.py'),('designs/rm-executive-summary.html','designs/md-page-build.py'),('designs/rm-assistant.html','designs/md-page-build.py'),('designs/rm-ai-reference.html','designs/md-page-build.py'),('designs/credit-market-scan.html','designs/md-page-build.py'),('designs/elon-mode.html','designs/md-page-build.py'),('designs/audit-log.html','designs/md-page-build.py')]:
     before=open(page).read()
     subprocess.run(['python3',builder],check=True)
     if open(page).read()!=before: print(page,"was out of date: rebuilt it, republish it"); probs+=1
@@ -77,9 +77,9 @@ readme_urls=set(re.findall(r'https://claude\.ai/artifact/\w+',open('designs/READ
 library_url='https://claude.ai/artifact/LTpbCT4kN4LcyEoYnh7vgj'
 for u in sorted(readme_urls-lib_urls-{library_url}): print("designs/library.json is missing",u); probs+=1
 for u in sorted(lib_urls-readme_urls): print("designs/README.md is missing",u); probs+=1
-# 4b. the use case kit (idea 58, decided 2026-10-17, closed item C45): every library section marked "kit": true
+# 4b. the use case kit (idea 58, decided 2026-10-17, closed item C45; cut to three pages for people on 2026-10-18): every library section marked "kit": true
 # lists each kit piece, as a page or a "to build" row, so no use case skips one. Mark a section once its use case starts the kit.
-KIT_PIECES=['leader-brief','user-workflow','core-use-cases','plan','mock-up']
+KIT_PIECES=['leader-brief','product','plan']
 for g in lib['groups']:
     if g.get('kit'):
         have=[d.get('kit') for d in g['items']]
@@ -316,7 +316,7 @@ def _caps(md, head):
         c=[x.strip() for x in row.split('|')]
         if set(''.join(c))<=set('-: ') or c[0].lower().startswith(('wave','moment')) and c[-1].lower() in ('wave','our measure (target set in define)'): continue
         return_cols=c
-        if head.startswith('## 3.'):   # The RM Assistant: Moment | Capability | What it does | Comes from | Wave
+        if 'Capabilities' in head:   # The RM Assistant (short page and detail file): Moment | Capability | What it does | Core use case | Wave
             name,w=c[1],c[4]
         else:                          # the plan: Wave | Capability | Core use case | Agents | Built on | Measure
             m=re.match(r'\*\*Wave (\d)',c[0]); wave=m.group(1) if m else (wave if c[0]=='' else None); name,w=c[1],wave
@@ -325,7 +325,9 @@ def _caps(md, head):
             out.add((re.split(r'[:(]', n)[0].strip().lower(), w))
     return out
 try:
-    a=_caps('memos/rm-assistant.md','## 3. Capabilities')
+    a=_caps('memos/rm-assistant.md','## 2. Capabilities')
+    d=_caps('memos/rm-assistant-detail.md','## 3. Capabilities')
+    for x in sorted(a^d): print('The RM Assistant short page and its detail file differ on capability',repr(x[0]),'in wave',x[1]); probs+=1
     b=_caps('memos/rm-analytics-framework.md',"## The assistant's capabilities")
     for x in sorted(a-b): print('memos/rm-assistant.md lists capability',repr(x[0]),'in wave',x[1],'but the RM plan does not'); probs+=1
     for x in sorted(b-a): print('memos/rm-analytics-framework.md lists capability',repr(x[0]),'in wave',x[1],'but The RM Assistant page does not'); probs+=1
