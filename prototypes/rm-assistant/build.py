@@ -2,7 +2,7 @@
 inlined, written to prototype-v<N>.html. Every version is kept: the build refuses to overwrite
 a version that's already been delivered (listed in CHANGELOG.md) unless you pass --force.
 Run: python3 build.py 1        (builds prototype-v1.html)"""
-import os, re, sys
+import base64, glob, json, os, re, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(HERE, "src")
@@ -17,6 +17,11 @@ def build(version, force=False):
         raise SystemExit(f"prototype-v{version}.html was delivered already; build the next version instead (or pass --force while fixing it before delivery).")
     page = read("page.html").replace("/*CSS*/", read("styles.css"))
     js = "\n".join(f"// ===== src/{s} =====\n" + read(s) for s in SCRIPTS)
+    # The tour's voice: one MP3 per step (voice/stepNN.mp3, read by Kokoro from video/narration.json), inlined as data URIs.
+    clips = sorted(glob.glob(os.path.join(HERE, "voice", "step*.mp3")))
+    lens = json.load(open(os.path.join(HERE, "voice", "lens.json")))["lens"]
+    uris = ["data:audio/mpeg;base64," + base64.b64encode(open(c, "rb").read()).decode() for c in clips]
+    js = f"// ===== voice/ (the tour's voiceover) =====\nwindow.TOUR_VOICE = {{ lens: {json.dumps(lens)}, clips: {json.dumps(uris)} }};\n" + js
     page = page.replace("/*JS*/", js).replace('<span id="ver">1</span>', f'<span id="ver">{version}</span>')
     # The published page may load only Google Fonts; anything else would be blocked, so fail here.
     # Only what the page loads counts (scripts, images, stylesheets); plain <a> links to other pages are fine.

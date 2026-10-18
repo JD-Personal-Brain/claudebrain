@@ -24,6 +24,21 @@
     { screen: "list", title: "Your turn", text: "Run the agents live on Claude from any screen (inside claude.ai, the first run asks your permission). Replay this tour any time.", dur: 5500, before: () => go("list") }
   ];
   if (Array.isArray(window.TOUR_DURS)) STEPS.forEach((s, n) => { if (window.TOUR_DURS[n]) s.dur = window.TOUR_DURS[n]; });   // the narrated video sets each step to its voiceover's length
+  // The voiceover (same voice as the tour video): each step lasts at least as long as its line.
+  const V = window.TOUR_VOICE && !Array.isArray(window.TOUR_DURS) ? window.TOUR_VOICE : null;
+  if (V) STEPS.forEach((s, n) => { if (V.lens[n]) s.dur = Math.max(s.dur, Math.round(V.lens[n] * 1000) + 400); });
+  const audio = V ? new Audio() : null;
+  let voiceOn = true; try { voiceOn = localStorage.getItem("rmTourVoice") !== "off"; } catch (e) {}
+  function speak(n) {
+    if (!audio) return;
+    audio.pause();
+    if (!voiceOn || !V.clips[n]) return;
+    audio.src = V.clips[n]; audio.currentTime = 0;
+    blocked = false;
+    audio.play().catch(() => { blocked = true; showVoice(); });   // browsers block sound until the viewer clicks (the tour starts by itself on a first visit): the button turns it on
+  }
+  let blocked = false;
+  function showVoice() { const b = $("#tVoice"); if (!b) return; b.hidden = !audio; b.textContent = blocked && voiceOn ? "Turn on the voice" : voiceOn ? "Voice on" : "Voice off"; b.setAttribute("aria-pressed", String(voiceOn && !blocked)); }
   const TOTAL = STEPS.reduce((a, s) => a + s.dur, 0);
   let i = 0, t = 0, last = 0, paused = false, raf = 0, running = false, entering = false, token = 0;
   const fmt = ms => { const s = Math.round(ms / 1000); return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0"); };
@@ -51,7 +66,7 @@
     $("#tBack").disabled = i === 0;
     if (st.before) { try { await st.before(); } catch (e) {} }
     if (my !== token) return;
-    t = startOf(i);
+    t = startOf(i); speak(i);
     (window.__tourLog = window.__tourLog || []).push({ step: i, at: performance.now() });   // the step's clock starts once its screen is ready
     const el = st.target && document.querySelector(st.target);
     if (el) el.scrollIntoView({ block: "center", behavior: reduce() ? "auto" : "smooth" });
@@ -70,12 +85,12 @@
   }
   function start() {
     if (running) return;
-    $("#tour").hidden = false; running = true; paused = false; $("#tPause").textContent = "Pause";
+    $("#tour").hidden = false; running = true; paused = false; $("#tPause").textContent = "Pause"; showVoice();
     enter(0); last = performance.now(); raf = requestAnimationFrame(frame);
     window.AGENTS.log("Tour", "Started the guided tour", "", "Adoption");
   }
   function stop() {
-    running = false; token++; cancelAnimationFrame(raf); $("#tour").hidden = true;
+    running = false; token++; cancelAnimationFrame(raf); $("#tour").hidden = true; if (audio) audio.pause();
     try { localStorage.setItem("rmTourSeen", "1"); } catch (e) {}
     window.AGENTS.log("Tour", "Finished or closed the tour", "", "Adoption");
   }
@@ -83,7 +98,12 @@
   $("#tSkip").addEventListener("click", stop);
   $("#tNext").addEventListener("click", () => { if (entering) return; if (i === STEPS.length - 1) stop(); else enter(i + 1); });
   $("#tBack").addEventListener("click", () => { if (!entering) enter(i - 1); });
-  $("#tPause").addEventListener("click", () => { paused = !paused; $("#tPause").textContent = paused ? "Play" : "Pause"; });
+  $("#tPause").addEventListener("click", () => { paused = !paused; $("#tPause").textContent = paused ? "Play" : "Pause"; if (audio && voiceOn) { if (paused) audio.pause(); else audio.play().catch(() => {}); } });
+  if ($("#tVoice")) $("#tVoice").addEventListener("click", () => {
+    if (blocked && voiceOn) { speak(i); showVoice(); return; }   // the click itself lets the browser play sound
+    voiceOn = !voiceOn; try { localStorage.setItem("rmTourVoice", voiceOn ? "on" : "off"); } catch (e) {}
+    showVoice(); if (voiceOn && !paused) speak(i); else if (audio) audio.pause();
+  });
   document.addEventListener("keydown", e => { if (running && e.key === "Escape") stop(); });
   window.addEventListener("resize", () => running && place());
   window.addEventListener("scroll", () => running && place(), { passive: true });
@@ -91,5 +111,5 @@
   let seen = false; try { seen = localStorage.getItem("rmTourSeen") === "1"; } catch (e) {}
   const hash = location.hash.replace("#", "");
   if (hash === "tour" || (!seen && hash !== "notour")) setTimeout(start, 900);
-  window.TOUR = { start, stop, STEPS, TOTAL };
+  window.TOUR = { start, stop, STEPS, TOTAL, audio };
 })();
