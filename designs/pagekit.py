@@ -55,8 +55,9 @@ def render_table(lines, kinds=False):
         tb += "<tr>" + "".join(cells) + "</tr>"
     return f'<div class="tw"><table><thead><tr>{th}</tr></thead><tbody>{tb}</tbody></table></div>'
 
-def render_blocks(text, kinds=False):
-    """Paragraphs, lists, tables and quotes."""
+def render_blocks(text, kinds=False, anchor=None):
+    """Paragraphs, lists, tables and quotes. With anchor, ### and #### headings get an id
+    (anchor + "-" + the heading as a slug), so other pages can link straight to them."""
     out, buf, mode = [], [], None
     def flush():
         nonlocal buf, mode
@@ -78,7 +79,8 @@ def render_blocks(text, kinds=False):
             fence.append(ln); continue
         h = re.match(r"^(#{3,4}) (.+)$", ln)
         if h:
-            flush(); out.append(f"<h{len(h.group(1))} class=\"md-h\">{inline(h.group(2))}</h{len(h.group(1))}>"); continue
+            hid = f' id="{anchor}-{re.sub(r"[^a-z0-9]+", "-", h.group(2).lower()).strip("-")[:40]}"' if anchor else ""
+            flush(); out.append(f"<h{len(h.group(1))} class=\"md-h\"{hid}>{inline(h.group(2))}</h{len(h.group(1))}>"); continue
         if not ln.strip() or ln.strip() == "---":
             flush(); continue
         kind = "table" if ln.lstrip().startswith("|") else "quote" if ln.startswith(">") else "list" if re.match(r"^\s*(-|\d+\.)\s", ln) else ("list" if mode == "list" and ln.startswith("  ") else "para")
@@ -89,27 +91,28 @@ def render_blocks(text, kinds=False):
     return "".join(out)
 
 
-GANTT_CSS = """.gantt{padding:12px 16px}.ginner{min-width:620px;display:flex;flex-direction:column;gap:6px}.grow{display:grid;grid-template-columns:230px 1fr;gap:12px;align-items:center;font-size:14px}.glab{line-height:1.3}.gtrack{position:relative;height:18px;background:repeating-linear-gradient(90deg,transparent 0,transparent calc(100%/13 - 1px),var(--line) calc(100%/13 - 1px),var(--line) calc(100%/13))}.gweeks{display:grid;grid-template-columns:repeat(13,1fr);background:none;height:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}.gw{text-align:center}.ghead{border-bottom:1px solid var(--line);padding-bottom:4px}.gbar{position:absolute;top:3px;height:12px;border-radius:3px;display:inline-block}.g-build{background:var(--amber)}.g-live{background:var(--teal)}.g-ongoing{background:repeating-linear-gradient(45deg,var(--teal) 0 6px,var(--teal-bg) 6px 12px)}.gdia{position:absolute;top:2px;width:14px;height:14px;background:var(--me);transform:rotate(45deg);display:inline-block}.gkey{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--muted);margin-top:6px}.gkey span{display:flex;align-items:center;gap:6px}.gkey i{position:static;width:22px;height:10px}.gkey i.gdia{width:10px;height:10px;transform:rotate(45deg)}"""
+GANTT_CSS = """.gantt{padding:12px 16px}.ginner{min-width:620px;display:flex;flex-direction:column;gap:6px}.grow{display:grid;grid-template-columns:230px 1fr;gap:12px;align-items:center;font-size:14px}.glab{line-height:1.3}.gtrack{position:relative;height:18px;background:repeating-linear-gradient(90deg,transparent 0,transparent calc(100%/13 - 1px),var(--line) calc(100%/13 - 1px),var(--line) calc(100%/13))}.gweeks{display:grid;grid-template-columns:repeat(13,1fr);background:none;height:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}.gw{text-align:center}.ghead{border-bottom:1px solid var(--line);padding-bottom:4px}.gbar{position:absolute;top:3px;height:12px;border-radius:3px;display:inline-block}.g-build{background:var(--amber)}.g-live{background:var(--teal)}.g-ongoing{background:repeating-linear-gradient(45deg,var(--teal) 0 6px,var(--teal-bg) 6px 12px)}.gdia{position:absolute;top:2px;width:14px;height:14px;background:var(--me);transform:rotate(45deg);display:inline-block}.gmore{font-size:12px;white-space:nowrap}.gkey{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--muted);margin-top:6px}.gkey span{display:flex;align-items:center;gap:6px}.gkey i{position:static;width:22px;height:10px}.gkey i.gdia{width:10px;height:10px;transform:rotate(45deg)}"""
 
 def render_gantt(lines):
     """A ```gantt block: one row per line, "Label | start week | end week | kind" (kind: build, live, gate,
-    ongoing). A gate is a diamond at its start week. The first line "weeks N" sets the axis length."""
+    ongoing), and optionally "| link" to the detail behind the row. A gate is a diamond at its start week. The first line "weeks N" sets the axis length."""
     n = 13; rows = []
     for ln in lines:
         ln = ln.strip()
         if not ln: continue
         if ln.startswith("weeks "): n = int(ln.split()[1]); continue
-        lab, a, b, k = [x.strip() for x in ln.split("|")]
-        rows.append((lab, float(a), float(b), k))
+        f = [x.strip() for x in ln.split("|")]
+        rows.append((f[0], float(f[1]), float(f[2]), f[3], f[4] if len(f) > 4 else ""))
     head = "".join(f'<span class="gw">{w}</span>' for w in range(1, n + 1))
     body = ""
-    for lab, a, b, k in rows:
+    for lab, a, b, k, url in rows:
         left = a / n * 100
         if k == "gate":
             bar = f'<span class="gdia" style="left:calc({left:.2f}% - 7px)"></span>'
         else:
             bar = f'<span class="gbar g-{k}" style="left:{left:.2f}%;width:{(b - a) / n * 100:.2f}%"></span>'
-        body += f'<div class="grow"><span class="glab">{inline(lab)}</span><span class="gtrack">{bar}</span></div>'
+        more = f' <a class="gmore" href="{E(url)}" target="_blank" rel="noopener" title="Open the detail in RM Detail">detail&nbsp;↗</a>' if url else ""
+        body += f'<div class="grow"><span class="glab">{inline(lab)}{more}</span><span class="gtrack">{bar}</span></div>'
     key = ('<div class="gkey"><span><i class="gbar g-build"></i>Build and test</span><span><i class="gbar g-live"></i>Live with pilot RMs</span>'
            '<span><i class="gbar g-ongoing"></i>Ongoing</span><span><i class="gdia"></i>Gate (go/no-go)</span></div>')
     return (f'<style>{GANTT_CSS}</style><div class="tw gantt"><div class="ginner"><div class="grow ghead"><span class="glab">Week</span><span class="gtrack gweeks">{head}</span></div>'
