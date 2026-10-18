@@ -10,7 +10,7 @@ OUT = "memos/rm-ai-reference.md"
 # part title, working file, the one section to keep (None = the whole file)
 PARTS = [
     ("Executive summary", "memos/rm-executive-summary.md", None),
-    ("The product: RM Assistant (short version for people)", "memos/rm-assistant.md", None),
+    ("The product: The RM Assistant (short version for people)", "memos/rm-assistant.md", None),
     ("The RM Assistant in full detail", "memos/rm-assistant-detail.md", None),
     ("The plan (short version for people)", "memos/rm-plan.md", None),
     ("The full delivery plan, with every step, agent spec and workflow", "memos/rm-analytics-framework.md", None),

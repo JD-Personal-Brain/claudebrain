@@ -45,7 +45,7 @@ Wave 1 is live in about six weeks: the meeting recap and email first (about week
 
 To confirm in the first weeks: what usually holds up a new AI tool here; which revenue lever matters most now (new, growing or keeping clients); how RMs are measured and paid today; how long the AI review takes and whether recording client meetings in Teams is allowed; and what team and budget the pilot has.
 
-## Part 2: The product: RM Assistant (short version for people)
+## Part 2: The product: The RM Assistant (short version for people)
 
 Working file: `memos/rm-assistant.md`.
 

@@ -1,4 +1,4 @@
-# RM Assistant
+# The RM Assistant
 
 > ⚠️ **A working hypothesis** (agreed 2026-10-17), built from outside research and public Associated job postings. The first interviews with the leaders of relationship managers (RMs) and with RMs confirm or change it.
 

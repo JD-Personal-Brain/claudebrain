@@ -246,6 +246,10 @@ for f in sorted(set(core+glob.glob('memos/*.md')+['NOW.md','glossary.md','open-i
 # 11. page names the user set (2026-10-14, lesson L26): Product Workflow, Product Framework, Product Machine,
 # Product Playbook. Every old name fails, in any case, in the working files and on the built pages (checked as plain text).
 import html as _h2
+# The product page's name, set 2026-10-18: 'The RM Assistant' in the library and on the page itself.
+for _row in [d for g in json.load(open('designs/library.json'))['groups'] for d in g['items'] if d.get('id')=='rm-assistant']:
+    if _row['name']!='The RM Assistant': print('designs/library.json names the product page',repr(_row['name']),'- the name is "The RM Assistant"'); probs+=1
+if '<title>The RM Assistant</title>' not in open('designs/rm-assistant.html').read(): print('designs/rm-assistant.html: the page title must be "The RM Assistant"'); probs+=1
 OLD_NAMES=['six-step product workflow','six-step workflow','delivery machine','delivery playbook','elon mode research']
 _named=['NOW.md','CLAUDE.md','open-items.md','product-framework.md','product-machine.md','tech-stack.md','prompting.md','prompt-library.md','designs/library.json','designs/README.md']+glob.glob('memos/*.md')+glob.glob('playbook/*.md')+glob.glob('learning/rules.md')+glob.glob('learning/tests.md')+glob.glob('designs/*.py')+glob.glob('designs/*.html')+glob.glob('.claude/skills/*/SKILL.md')
 for f in _named+['glossary.md']:

@@ -43,7 +43,7 @@ PAGES = [
     ("memos/rm-executive-summary.md", "rm-executive-summary.html", "RM Executive Summary", "Relationship managers · executive summary",
      "The RM work on one page, for the leaders of the RM business: the problem, the product, what RMs get first, the value, how fast, and the asks.",
      {"The product: The RM Assistant": "The product", "What RMs get first (wave 1)": "Wave 1", "How fast": "How fast", "What I need, and what I'd confirm": "The asks"}),
-    ("memos/rm-assistant.md", "rm-assistant.html", "RM Assistant", "Relationship managers · the product",
+    ("memos/rm-assistant.md", "rm-assistant.html", "The RM Assistant", "Relationship managers · the product",
      "One AI assistant for each RM: its limits, its capabilities by moment in the RM's work and the core use case each answers, and what it's built on.",
      {"The product in one line": "The product", "1. Its limits": "Limits", "2. Capabilities, by moment in the RM's work": "Capabilities",
       "3. What it's built on": "Foundation"}),
