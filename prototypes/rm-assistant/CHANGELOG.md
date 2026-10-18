@@ -12,3 +12,12 @@ First version, built from Prompt 4 in the Prompt Library.
 - Product manager view with the five kinds of measures; a guided tour under 2 minutes, and the tour as a video.
 - Before delivery, a deep audit (words, plan alignment, design, an executive walk-through) led to: plain names instead of codes on screen, an opening summary, a step-by-step agent timeline, use / change / reject on every output, wider guardrails with innocent questions allowed, a scan of every finished draft for prices and credit promises, a stale-data stop and an empty-notes stop (K25), decisions kept across re-runs, the approval line stamped only when the RM approves, a flow diagram, what a pilot would need, and a dark-mode fix.
 - The tour video now has a voiceover (Kokoro, an open-source voice), with each step timed to its line.
+
+## Version 2 (2026-10-18)
+The six open items from the version 1 audits.
+- The Monday list no longer shows "Growing balances": it isn't a product gap, and wave 1 suggests only deposit and treasury gaps.
+- Market rates are background for the RM only ("Background for you (not to quote)"), never a talking point, so the brief can't read as quoting a rate (K8). The agents' instructions say the same.
+- The brief arrives a set number of hours before each meeting ([X], as in the RM plan), not "the day before".
+- Screen labels no longer show workflow codes (B1 to B4); they're in the label's tooltip and on "How it's built".
+- The brief's Use it / Change it / Reject buttons moved to a bar at the bottom, the same place as the follow-up's approve buttons.
+- The measures screen shows a labeled, made-up sample pilot week under each session number, instead of a screen of zeros.

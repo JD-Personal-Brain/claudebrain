@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L41 · 2026-10-18 · Merged before GitHub's audit check finished
+- **What happened:** Claude merged a pull request while GitHub's audit check was still running. It passed a few seconds later, but the merge didn't wait for it.
+- **Root cause:** the local checks had passed, so Claude treated GitHub's check as a formality. Rule R18 said audit first but didn't say to wait for the GitHub check.
+- **Fix:** before merging, wait until GitHub's audit check reads passed on the latest commit.
+- **Rule:** R18 · **Test:** T52 · **Level:** 1 · **Times it happened:** 1
+
 ### L40 · 2026-10-18 · Put my personal email in a web request
 - **What happened:** while downloading the outside data for the RM prototype, Claude put my personal email address in a download request's header, which sent it to an outside website. Claude caught it later and told me.
 - **Root cause:** some public data sites ask for a contact address, and Claude reached for the one it had without asking whether that site needed it. No rule said contact details never go into a request.

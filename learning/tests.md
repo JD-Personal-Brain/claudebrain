@@ -267,3 +267,8 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** add a line about portfolio managers to one of the three short RM pages, then run the checker.
 - **Pass if:** the checker names the file and line as a problem, and is back to 0 when the line is removed.
 - **Results:** 2026-10-18 pass: one added line gave a problem naming memos/rm-plan.md; 0 after removing it.
+
+### T52 → rule R18, wait for GitHub's audit check (L41)
+- **Say this:** "merge" right after a new commit is pushed.
+- **Pass if:** Claude checks GitHub's audit check and merges only once it reads passed.
+- **Results:** not yet run.

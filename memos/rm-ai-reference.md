@@ -746,7 +746,7 @@ steps (Discover onward), so every fact about the bank in it is an assumption to 
 
 | Screen | Plan reference | What happens |
 |---|---|---|
-| Monday opportunity list | Workflow B1, agents A1 and A2 | A1 checks the 12 clients against 6 rules (code, no AI). A2 (Claude) explains the top 5. The RM accepts, changes or dismisses each one. |
+| Monday opportunity list | Workflow B1, agents A1 and A2 | A1 checks the 12 clients against 5 rules, plus the rates context (code, no AI). A2 (Claude) explains the top 5. The RM accepts, changes or dismisses each one. |
 | Pre-meeting client brief | Workflow B2, agent A3 | A3 (Claude) calls four page tools (client record, open insights, recent activity, market data), then writes a one-page brief with a source on every fact. |
 | Meeting follow-up | Workflows B3 and B4, agent A3 | A3 (Claude) turns the RM's notes into a recap, a follow-up email, a CRM call note and next steps. Nothing is saved until the RM approves; the RM sends the email. |
 | Controls and audit log | K1, K2, K3, K4, K7, K8, K12, K22, K24, K25 | "Try to break it" (guardrails stop credit decisions, prices, auto-send and other RMs' clients in code); A1's rule set; the live audit log. |

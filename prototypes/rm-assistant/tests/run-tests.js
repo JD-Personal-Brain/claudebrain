@@ -5,7 +5,7 @@
 // Screenshots go to $SHOTS (default /tmp/rm-assistant-shots).
 const path = require("path"), fs = require("fs");
 const { chromium } = require(process.env.PW || "playwright");
-const FILE = path.resolve(process.argv[2] || "prototype-v1.html");
+const FILE = path.resolve(process.argv[2] || "prototype-v2.html");
 const SHOTS = process.env.SHOTS || "/tmp/rm-assistant-shots";
 fs.mkdirSync(SHOTS, { recursive: true });
 const URL = "file://" + FILE;

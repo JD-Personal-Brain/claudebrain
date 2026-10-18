@@ -249,9 +249,9 @@
     const nc = A.numberCheck(text, inputs); const hits = A.outputGuard(text); A.sourceCheck(text);
     const id = `brief:${c.id}`; outputSeen(id);
     if (hits.length) A.log("Guardrail", "Flagged the brief and sent it to the product manager", `${c.name}: ${hits.join("; ")}`, "K8", mode === "live" ? "Claude, live" : "Recorded run");
-    $("#briefDoc").innerHTML = `<div class="docbar">${modeTag(mode)}${checkBadge(nc)}<span class="sp"></span>
-      <span class="uses" data-out="${id}"><button type="button" class="btn btn-sm btn-primary" data-use="use"${hits.length ? " disabled" : ""}>Use it</button><button type="button" class="btn btn-sm" data-use="change">Change it</button><button type="button" class="btn btn-sm btn-quiet" data-use="reject">Reject</button></span></div>
-      <p class="muted">For ${esc(B.rm.name)} · ${esc(c.name)} · ${fmtDate(c.nextMeeting.date)}, ${fmtTime(c.nextMeeting.time)} · ${esc(c.nextMeeting.where)}</p>${flagBanner(hits)}<div class="docbody">${markUntraced(md(text), nc.untraced)}</div>`;
+    $("#briefDoc").innerHTML = `<div class="docbar">${modeTag(mode)}${checkBadge(nc)}</div>
+      <p class="muted">For ${esc(B.rm.name)} · ${esc(c.name)} · ${fmtDate(c.nextMeeting.date)}, ${fmtTime(c.nextMeeting.time)} · ${esc(c.nextMeeting.where)}</p>${flagBanner(hits)}<div class="docbody">${markUntraced(md(text), nc.untraced)}</div>
+      <div class="approvebar"><span class="uses" data-out="${id}"><button type="button" class="btn btn-primary" data-use="use"${hits.length ? " disabled" : ""}>Use it</button><button type="button" class="btn" data-use="change">Change it</button><button type="button" class="btn btn-quiet" data-use="reject">Reject</button></span></div>`;
     changed();
   }
   $("#briefDoc").addEventListener("click", e => {
@@ -471,13 +471,13 @@
     const pct = (a, b) => b ? Math.round(a / b * 100) + "%" : "–";
     const caps = new Set([...m.used].map(x => x.split(":")[0])).size;
     const cards = [
-      ["Usage", `${m.used.size} of ${m.outputs.size}`, "drafts and insights used, of those shown", [`${plural(m.runs, "agent run")} you started, ${m.liveRuns} live on Claude`]],
-      ["Quality", pct(m.answersWithSources, m.answers), "of briefs and answers show their sources", [`${pct(m.numbersTraced, m.numbersChecked)} of numbers traced to the data (K7)`, "Accuracy on the test set: target set with the business before the pilot"]],
-      ["Business impact", String(m.opportunities), "opportunities created, tagged AI-sourced", ["Hours saved and pipeline per RM: measured in the pilot", "Against a comparison group of RMs"]],
-      ["Adoption", `${caps} of 3`, "capabilities used this session", ["Weekly active RMs and repeat use: targets set before the pilot"]],
-      ["Risk and controls", String(m.guardrailBlocks + m.outputFlags), "requests blocked or drafts flagged by guardrails", [`${m.permissionRefusals} refused outside the RM's book (K4)`, `${m.changed + m.rejected} overrides (changed or rejected)`, `${m.approvals} approved before saving (K2)`, `${m.stops} agent stops (K25)`]]
+      ["Usage", `${m.used.size} of ${m.outputs.size}`, "drafts and insights used, of those on screen", "31 of 48 used (65%)", [`${plural(m.runs, "agent run")} you started, ${m.liveRuns} live on Claude`]],
+      ["Quality", pct(m.answersWithSources, m.answers), "of briefs and answers show their sources", "100% with sources; 2 numbers flagged by the check", [`${pct(m.numbersTraced, m.numbersChecked)} of numbers traced to the data (K7)`, "Accuracy on the test set: target set with the business before the pilot"]],
+      ["Business impact", String(m.opportunities), "opportunities created, tagged AI-sourced", "9 opportunities; about 2 hours saved per RM", ["Hours saved and pipeline per RM: measured in the pilot", "Against a comparison group of RMs"]],
+      ["Adoption", `${caps} of 3`, "capabilities used this session", "7 of 8 pilot RMs active", ["Weekly active RMs and repeat use: targets set before the pilot"]],
+      ["Risk and controls", String(m.guardrailBlocks + m.outputFlags), "requests blocked or drafts flagged by guardrails", "3 blocked, 0 incidents, 11 overrides", [`${m.permissionRefusals} refused outside the RM's book (K4)`, `${m.changed + m.rejected} overrides (changed or rejected)`, `${m.approvals} approved before saving (K2)`, `${m.stops} agent stops (K25)`]]
     ];
-    $("#measureGrid").innerHTML = cards.map(([k, big, what, list]) => `<div class="mcard"><span class="kind">${k}</span><span class="big">${esc(big)}</span><span class="what">${esc(what)}</span><ul>${list.map(l => `<li>${esc(l)}</li>`).join("")}</ul></div>`).join("");
+    $("#measureGrid").innerHTML = cards.map(([k, big, what, sample, list]) => `<div class="mcard"><span class="kind">${k}</span><span class="big">${esc(big)}</span><span class="what">${esc(what)} <em>(this session)</em></span><p class="sample-week"><strong>Sample pilot week:</strong> ${esc(sample)}</p><ul>${list.map(l => `<li>${esc(l)}</li>`).join("")}</ul></div>`).join("");
   }
 
   // ---------- How it's built ----------
