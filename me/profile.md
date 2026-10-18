@@ -23,7 +23,7 @@ when it learns something new.
 - I didn't like a dark, terminal-style page (2026-10-13). Keep the house style unless I ask for something else, and show a small sample before building a whole page in a new look.
 - The program is organized around the two groups I serve: relationship managers and credit (each with its own core use cases). Organize plans and pages by who they serve, not by my process. (2026-10-14)
 - Meet users where they are: start from how RMs and credit people work today, then show where each AI product fits and how their work changes. My product process matters to me and my boss, not to them. (2026-10-14)
-- Lists where each page needs its description and sections (the RM and portfolio manager sections of the library) use collapsible rows (twisties) I click to open. (2026-10-14, narrowed 2026-10-15)
+- Lists where each page needs its description and sections (the portfolio manager section of the library) use collapsible rows (twisties) I click to open; the RM section has been plain numbered rows since 2026-10-18. (2026-10-14, narrowed 2026-10-15 and 2026-10-18)
 - A short list read in order (like the four "How we deliver" pages) is plain numbered rows, no twisties: click the name to open the page. A list to look things up in (like Reference) is plain rows with a dot. Names you can click are a different color, so people know to click them. (2026-10-15)
 - Open items are listed by priority; numbers follow the priority and can change. (2026-10-14)
 - Claudebrain uses my personal email only (jeremydrane2021@gmail.com), never my work address. (2026-10-14)
@@ -32,6 +32,7 @@ when it learns something new.
 - Lock down the base first (the How we deliver pages, the audit, the reference pages), then move into the RM work, then the PM work. Leave PM pages alone until I say we're moving into PM. (2026-10-15; moved into RM on 2026-10-17)
 - Every use case is presented the same way: a leader layer a third party can follow at a glance, and the working plan to deliver it, tied into the product machine. Build it cleanly once for RMs, then reuse it for portfolio managers. (2026-10-17)
 - I think of the product for each user group as one personal AI assistant per person, with capabilities for specific jobs added over time, constrained by its jobs, workflows, data and controls. Plans start from that product, not from analytics or use case lists. (2026-10-17)
+- Pages for people are short, aggregated and actionable (each user group gets an executive summary, the product and the plan); everything in full goes into one detail document meant for AI to read. A page for one group talks only about that group. Plans open with a Gantt chart so the timeline is visual. (2026-10-18)
 - I push for speed: plans should be paced by what really blocks us (data access, approvals), not traditional phases.
 
 ## Tools I use
@@ -46,4 +47,4 @@ when it learns something new.
 - Learning to write good prompts (see `prompting.md`), and working through a "Claude Mastery" course I bought.
 - (more to add)
 
-_Last updated: 2026-10-17_
+_Last updated: 2026-10-18_
