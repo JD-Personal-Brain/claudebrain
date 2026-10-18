@@ -47,6 +47,7 @@ saved history, so their counts are approximate.
 
 | Date | What was audited | Size and how | Findings (and lost lines by reason) | Result |
 |---|---|---|---|---|
+| 2026-10-18 | Wrap-up (later): NOW.md; the Open Items log rechecked | Quick: checker, render check, nothing-lost | 0 findings; lost lines: 0 | Waiting for my yes to merge |
 | 2026-10-18 | Detail links from the RM Assistant Plan into RM Detail: a link on every Gantt row and at the end of each plan section; RM Detail's headings now have link targets | Quick: checker (with a test that a broken detail link fails it), render check, nothing-lost; sample screenshot approved | 0 findings; lost lines: 0 | Merged into main |
 | 2026-10-18 | Wrap-up: lesson L38 and rule R34, test T49, profile, NOW.md, idea 61 (added to the Open Items log as D2); the Open Items log scrubbed | Quick: checker, render check, nothing-lost | 1 checker problem fixed before saving (idea 61 missing from the log); lost lines: 2, both reworded (the profile's library rows line, NOW.md's library rows item) | Waiting for my yes to merge |
 | 2026-10-18 | The Gantt chart at the top of the RM Assistant Plan (a new chart block in the page kit, its styles only on pages that use it) and the portfolio manager section removed from the RM Assistant page | Quick: checker, render check, nothing-lost; screenshot checked before publishing | 0 findings; lost lines: the RM Assistant page's "Portfolio managers next" lines, cut on purpose at my request (the full text stays in RM Detail) | Merged into main |
