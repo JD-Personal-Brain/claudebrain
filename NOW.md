@@ -1,6 +1,6 @@
 # NOW: start here
 
-_Last updated: 2026-10-18 · Last review: none yet (first one due around 2026-10-21; I said not yet on 2026-10-14) · Wrap-ups since the last Elon mode review: 0 (last run 2026-10-18, evening, on everything; it runs at 3)_
+_Last updated: 2026-10-18 · Last review: none yet (first one due around 2026-10-21; I said not yet on 2026-10-14) · Wrap-ups since the last Elon mode review: 1 (last run 2026-10-18, evening, on everything; it runs at 3)_
 
 _Kept short on purpose (Elon mode, 2026-10-18): this note says where things stand and points to the one home of everything else. Open work lives in the Open Items log; how Claude works lives in `CLAUDE.md` and `learning/rules.md`; history lives in git, the log's closed items and `learning/lessons.md`._
 
