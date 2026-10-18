@@ -16,12 +16,15 @@ steps (Discover onward), so every fact about the bank in it is an assumption to 
 
 | Screen | Plan reference | What happens |
 |---|---|---|
+| Today (since version 4) | Ties the wave 1 capabilities together | The RM's day on one screen: four numbers to click, this week's meetings with their briefs, and what's waiting for a decision. |
 | Monday opportunity list | Workflow B1, agents A1 and A2 | A1 checks the 12 clients against 5 rules, plus the rates context (code, no AI). A2 (Claude) explains the top 5. The RM accepts, changes or dismisses each one. |
 | Pre-meeting client brief | Workflow B2, agent A3 | A3 (Claude) calls four page tools (client record, open insights, recent activity, market data), then writes a one-page brief with a source on every fact. |
 | Meeting follow-up | Workflows B3 and B4, agent A3 | A3 (Claude) turns the RM's notes into a recap, a follow-up email, a CRM call note and next steps. Nothing is saved until the RM approves; the RM sends the email. |
 | Controls and audit log | K1, K2, K3, K4, K7, K8, K12, K22, K24, K25 | "Try to break it" (guardrails stop credit decisions, prices, auto-send and other RMs' clients in code); A1's rule set; the live audit log. |
 | Product manager view | The five kinds of measures | Usage, quality, business impact, adoption, and risk and controls, counted from the session. |
 | How it's built | | The agents, the data, and where this sits in the product machine (sub-step 1.6). |
+| Early warning (wave 2 preview, version 4) | Workflow B5 | Three rules in code (falling balances, payroll moved out, gone quiet) flag clients who may be drifting away, with a balance chart and the numbers. Never a credit signal. The RM plans a call or dismisses it. |
+| Refer to treasury (wave 2 preview, version 4) | Workflow B6 | The Signal finder's treasury rules spot needs the treasury team serves; a drafted hand-off the RM changes, sends or skips, tracked from spotted to accepted (sample: nothing leaves the page). |
 
 The **guided tour** plays on a first visit (under 2 minutes), and anyone can pause, skip or replay it.
 

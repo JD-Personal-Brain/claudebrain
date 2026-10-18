@@ -24,3 +24,10 @@ The six open items from the version 1 audits.
 
 ## Version 3 (2026-10-18)
 - The tour on the page now speaks: the same voice as the tour video (Kokoro, an open-source voice) reads each step. A "Voice on / Voice off" button in the tour card turns it off, and the choice is remembered. Steps last as long as their line, so the tour runs about 2 minutes 5 seconds.
+
+## Version 4 (2026-10-18)
+Three additions, picked from the sample of six.
+- **Today**, the new home screen: a greeting and four numbers you can click (clients worth a call, meetings this week, clients who may be drifting, referrals to make), this week's meetings with their briefs, and what's waiting for a decision.
+- **Early warning** (wave 2 preview, workflow B5): three plain rules (falling balances, payroll moved out, gone quiet) flag clients who may be drifting away, each with a balance chart and the numbers behind it. It's a reason to call, never a credit signal. The RM plans a call or says it's not a concern.
+- **Refer to treasury** (wave 2 preview, workflow B6): clients with a need the treasury team serves, from the Signal finder's own rules, each with a drafted hand-off the RM can change, send or skip, and a tracker from spotted to referred to accepted (sample: nothing leaves the page).
+- The tour gains two voiced steps for the wave 2 preview and starts on Today; it now runs about 2½ minutes. The sample data gives one client (Menomonee Valley Printing) falling balances and payroll at another bank.
