@@ -2,7 +2,7 @@
 
 The detailed working file behind The PM Assistant page. People read the short page (The PM Assistant); this file goes into PM Detail.
 
-> ⚠️ **A hypothesis, not a plan yet** (first cut, 2026-10-19). Built from our commercial credit research, the Use Case Library and public Associated job postings, not from how the bank's portfolio managers work today. The first conversations with credit leaders test it; Discover confirms or changes the rest.
+> ⚠️ **A hypothesis, not a plan yet** (reviewed and agreed 2026-10-19). Built from our commercial credit research, the Use Case Library and public Associated job postings, not from how the bank's portfolio managers work today. The first conversations with credit leaders test it; Discover confirms or changes the rest.
 
 ## The product in one line
 Each portfolio manager (PM) gets **their own AI assistant**, inside the tools we expect the PM already uses (Word, Teams, the loan system and the bank's data; ⚠️ to confirm). Its job is to take the gathering and routine writing off the PM's plate, so the PM's time goes to credit judgment, and to spot weakening borrowers sooner. It starts with three **capabilities**, each doing one specific job in the PM's work, and gains more feature wave by feature wave. Every later AI product for PMs is a new capability of the same assistant.
