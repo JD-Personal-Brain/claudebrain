@@ -13,7 +13,7 @@ fs.mkdirSync(OUT, { recursive: true });
   const lens = process.env.NARRATION ? JSON.parse(fs.readFileSync(process.env.NARRATION, "utf8")).lens : null;
   const browser = await chromium.launch(process.env.CHROMIUM ? { executablePath: process.env.CHROMIUM } : {});
   const ctx = await browser.newContext({ viewport: { width: 1280, height: 800 }, recordVideo: { dir: OUT, size: { width: 1280, height: 800 } } });
-  if (lens) await ctx.addInitScript(d => { window.TOUR_DURS = d; }, lens.map(s => Math.max(3500, Math.round(s * 1000) + 700)));
+  if (lens) await ctx.addInitScript(d => { window.TOUR_DURS = d; }, lens.map(s => Math.max(3500, Math.round(s * 1000) + 600)));
   const t0 = Date.now();                       // the recording starts with the page
   const p = await ctx.newPage();
   await p.goto("file://" + FILE + "#tour");
