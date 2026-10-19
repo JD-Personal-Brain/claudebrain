@@ -1,8 +1,7 @@
 # Glossary: the words we use
 
 One meaning for each word, used the same way in every plan, playbook page and
-agent spec. Claude loads this every session, and the audit checks the core
-documents against it.
+agent spec. The audit checks the core documents against it.
 
 > **Two kinds of terms.** The first three sections are our own working words for
 > how products are delivered: the bank won't supply these, so we define them.
@@ -51,8 +50,8 @@ documents against it.
 | **Wait index** | For a sub-step: calendar days from start to finish, divided by hours of real work, from the sub-step log. A high number means waiting, not working. |
 | **Machine measures** | How well the product machine itself works, per project: days from kickoff to pilot, days at each gate, releases per month in the pilot, and the wait index (Product Machine). |
 | **Gate in writing** | A gate decided by the decider approving the gate pack in writing, used when every criterion is met; a meeting is held only when a criterion is contested or someone who decides asks for one. |
-| **Use case kit** | The standard set of pieces every use case should have, in two layers: the **leader layer** I communicate from (for Andy and bank leaders) and the **working layer** I and the team work from. Set by Prompt 1 in the Prompt Library, run first on RMs, and agreed 2026-10-17 (closed item C40): 4 leader pieces (the case, the plan on a page, the value, the ask) and 10 working pieces, listed on the use case kit review page. Cut on 2026-10-18 (C50): people get three short pages (an executive summary, the product and the plan), and every working piece goes into one detail document for AI to read (RM Detail for RMs). |
-| **Elon mode review** | A review of a plan or of the product machine through Elon Musk's lens (the Elon Mode page): the cut-first questions, the limiting factor and the machine's measures, plus the bank guardrails. Run by the elon-mode skill. |
+| **Use case kit** | The standard set of pieces every use case should have, in two layers: the **leader layer** I communicate from (for bank leaders) and the **working layer** I and the team work from. Set by Prompt 1 in the Prompt Library, run first on RMs, and agreed 2026-10-17: 4 leader pieces (the case, the plan on a page, the value, the ask) and 10 working pieces. Cut on 2026-10-18: people get three short pages (an executive summary, the product and the plan), and every working piece goes into one detail document for AI to read (RM Detail for RMs). |
+| **Elon mode review** | A review of a plan or of the product machine through Elon Musk's lens (the Elon Mode page): the cut-first questions, the limiting factor and the machine's measures, plus the bank guardrails. |
 
 ## People, agents and safeguards
 
@@ -90,14 +89,14 @@ documents against it.
 | **Leading and lagging measures** | Leading measures show up within weeks (use, insights acted on, pipeline created); lagging ones take months (closed revenue). |
 | **Data contract** | The signed list of exact fields a product may use, how fresh they must be and the checks they must pass. |
 | **The five kinds of measures** | Usage, quality, business impact, adoption, and risk and controls. Set in Define, tracked in Measure. |
-| **Value model** | The calculation of what a product earns against what it costs, with unknown numbers shown as [X]. The PM plan's model also counts costs saved and tracks loan losses avoided, not counted until Finance and credit risk agree a method (C62). |
+| **Value model** | The calculation of what a product earns against what it costs, with unknown numbers shown as [X]. The PM plan's model also counts costs saved and tracks loan losses avoided, not counted until Finance and credit risk agree a method (agreed 2026-10-19). |
 
 ## Pages and records
 
 | Term | What it means |
 |---|---|
 | **Designed page** | A branded page a person reads. Everything a person reads is one. |
-| **Working copy** | The Markdown file behind a designed page. Claude edits it; people read the page. |
+| **Working copy** | The Markdown file behind a designed page. people read the page. |
 | **Reference page** | A page built to look things up: the Agent Library, Workflow Maps, Steps Catalog, Controls Catalog and this glossary (since 2026-10-18 they are the only pages in the Document Library's Reference section; the pages I read or act on sit elsewhere: the Job Description and Tech Stack Guide in "The bank and the role", the Use Case Library in Research, and Open Items, the Audit Log, the Prompting Guide and the Prompt Library in "My workspace"). RM Detail, in the RM section, and PM Detail, in the PM section, are built automatically for an AI to read, not for people. Claude keeps them aligned; they're never on the review list. |
 | **Gate pack** | Everything the decider needs at a gate, put together in one document. |
 | **Evidence pack** | Everything reviewers sign in step 4: the outputs of 4.1 to 4.6 (risk rating, data and privacy review, test and red-team results, fairness, controls and vendor reviews) and the draft monitoring plan (4.8). |
@@ -124,7 +123,7 @@ The audit flags these in the core documents. Use the word on the right.
 
 ## Old wording we've retired
 
-When we rename something or change a count, the old wording goes here. The
+An editing aid: when we rename something or change a count, the old wording goes here, so no page keeps an outdated name. The
 audit checker fails on any of it left in a core document, a memo, NOW.md, the
 working copy of a designed page, the Document Library or the RM Assistant Plan page, so a rename can't stop halfway. A line
 that also says the new wording (a note about the change) is allowed.

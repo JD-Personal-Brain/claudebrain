@@ -233,7 +233,7 @@ else:
         if m: ret.append((m.group(1).strip(),m.group(2).strip()))
         else: print('glossary.md: could not read this "Old wording we\'ve retired" row:',row[:60]); probs+=1
     if not ret: print('glossary.md: the "Old wording we\'ve retired" table is empty'); probs+=1
-    where=sorted(set(core+glob.glob('memos/*.md')+['NOW.md','glossary.md','prompting.md','prompt-library.md','job-notes.md','job-description.md','designs/library.json','designs/README.md','designs/role-workflow.html','designs/rm-analytics-plan.html']+glob.glob('designs/*-build.py')+glob.glob('.claude/skills/*/SKILL.md')))
+    where=sorted(set(core+glob.glob('memos/*.md')+['NOW.md','glossary.md','prompting.md','prompt-library.md','job-description.md','designs/library.json','designs/README.md','designs/role-workflow.html','designs/rm-analytics-plan.html']+glob.glob('designs/*-build.py')+glob.glob('.claude/skills/*/SKILL.md')))
     for f in where:
         txt=open(f).read()
         if f=='glossary.md': txt=txt.split("## Old wording we've retired")[0]

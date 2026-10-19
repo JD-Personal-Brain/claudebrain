@@ -140,7 +140,7 @@ page = f'''<title>Document Library</title>
 <main class="wrap">
 <section id="index"><div class="index">{index}</div></section>
 <p class="empty" id="none" hidden>No documents match that word.</p>
-<footer>Built from <code>designs/library.json</code>. Say <strong>/documents</strong> to Claude to refresh it. Every page is private until you share it from its Share menu.</footer>
+<footer>Built from the working files; every page is listed here.</footer>
 </main>
 <script>
 (function(){{

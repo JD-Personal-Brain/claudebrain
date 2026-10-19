@@ -1,4 +1,4 @@
-# Associated Bank: the business behind the role
+# Associated Bank: the corporate and commercial business
 
 **As of October 9, 2026, through Q2 2026** (the quarter that ended June 30, 2026). News checked through October 14, 2026 by the bank news scout.
 Built with Prompt 3 in the Prompt Library (`prompt-library.md`). Public information only.
@@ -36,7 +36,7 @@ Built with Prompt 3 in the Prompt Library (`prompt-library.md`). Public informat
 
 | Segment | Revenue, Q2 2026 | Net income, Q2 2026 | Loans, June 30, 2026 |
 |---|---|---|---|
-| **Corporate and Commercial Specialty** (where this role sits) | $177.3 million | $80.1 million | $21.7 billion |
+| **Corporate and Commercial Specialty** (where this AI work sits) | $177.3 million | $80.1 million | $21.7 billion |
 | Community, Consumer, and Business (branches, consumer lending, small business, wealth) | $279.0 million | $77.3 million | $14.2 billion |
 | Risk Management and Shared Services (treasury, central functions, unallocated costs) | −$5.9 million | −$33.8 million | $0.5 billion |
 | **Whole bank** | $450.4 million | $123.6 million | $36.5 billion |
@@ -183,7 +183,7 @@ Three notes on the table:
 
 ## 6. Alignment map
 
-Each revenue line, which bankers it helps (RMs or PMs), the job outcome it serves, and the part of my value model it feeds (section 2 of `memos/rm-analytics-framework.md` for RMs, and `memos/pm-assistant-framework.md` section 2 for PMs). The four job outcomes are from `job-description.md`: revenue workflows, banker capacity, operating efficiency and adoption. Everything in this table is ⚠️ my judgment. The value model's own inputs (win rate, revenue per win, hours saved) are internal, so they stay [X].
+Each revenue line, which bankers it helps (RMs or PMs), the job outcome it serves, and the part of my value model it feeds (the value model in RM Detail for RMs, and in PM Detail for PMs). The four outcomes are revenue workflows, banker capacity, operating efficiency and adoption. Everything in this table is ⚠️ my judgment. The value model's own inputs (win rate, revenue per win, hours saved) are internal, so they stay [X].
 
 | Revenue line | Which bankers | Job outcome | Value model part | AI work that could move it | Room to move ⚠️ |
 |---|---|---|---|---|---|
@@ -217,7 +217,7 @@ Each revenue line, which bankers it helps (RMs or PMs), the job outcome it serve
 - **It depends on interest income.** 82% of bank revenue was net interest income in Q2 2026 (my arithmetic from [S2](https://www.sec.gov/Archives/edgar/data/7789/000000778926000202/R23.htm)), so earnings move with interest rates and loan growth.
 - **Credit costs are rising from a low base.** Loans written off were $23.2 million in Q2 2026 (0.26% of loans at a yearly rate), up from $5.3 million in Q1. Loans no longer earning interest were $150.0 million, or 0.41% of loans [S1](https://www.sec.gov/Archives/edgar/data/0000007789/000000778926000191/asb06302026ex991.htm). Loans the bank is watching closely ("criticized loans") rose to $1.74 billion from $1.45 billion a quarter earlier [S3](https://www.sec.gov/Archives/edgar/data/7789/000000778926000191/asb2q2026earningspresent.htm). Management tied much of the increase to American National [S12](https://finance.yahoo.com/markets/stocks/articles/associated-banc-corp-asb-q2-050044339.html).
 - **Concentration.** Two-thirds of loans are commercial, and one industry (power and utilities) is 21% of commercial and business loans [S3](https://www.sec.gov/Archives/edgar/data/7789/000000778926000191/asb2q2026earningspresent.htm).
-- **The integration competes for attention.** ⚠️ A systems conversion this month means data, technology and risk teams are busy, and acquired clients' data may not sit in the same systems yet. That affects any product that needs clean client data.
+- **The integration competes for attention.** ⚠️ The planned October 2026 systems conversion means data, technology and risk teams are busy, and acquired clients' data may not sit in the same systems yet. That affects any product that needs clean client data.
 - **Many new bankers.** ⚠️ Fast hiring makes it harder to keep sales tracking and record-keeping in Salesforce consistent. It is also the reason capacity tools matter.
 - **AI is a named risk.** The FY2025 annual report includes a risk factor on the bank's use of AI and notes that states have started to regulate AI [S4](https://www.sec.gov/Archives/edgar/data/7789/000000778926000071/asb-20251231.htm).
 
@@ -226,11 +226,11 @@ Each revenue line, which bankers it helps (RMs or PMs), the job outcome it serve
 - The split of fee lines between segments is public only once a year (FY2025, [S5](https://www.sec.gov/Archives/edgar/data/7789/000000778926000071/R29.htm)), and capital markets and loan fees are not split out at all.
 - The FY2025 annual report was too long to open in full. Its segment description and segment tables came through cut off, so I used the Q2 2026 quarterly report for segment figures and the bank's website for products.
 - Three sources are news summaries, not the bank's own documents: [S9], [S10] and [S12]. One news summary of the Q2 slides gave fee figures that disagreed with the earnings release, so I used the release and left that summary out.
-- The Q2 2026 earnings call transcript was not available to me, only a summary. As of October 14, 2026, third-party sites list a transcript, but the pages could not be opened from Claude's workspace.
+- The Q2 2026 earnings call transcript was not available to me, only a summary. As of October 14, 2026, third-party sites list a transcript, but the pages could not be opened from my research tools.
 
 ## 9. To confirm inside the bank
 
-1. Does "Corporate & Commercial Banking" under Phillip Trier include commercial real estate and the specialty industries? Where does the role sit in that structure?
+1. Does "Corporate & Commercial Banking" under Phillip Trier include commercial real estate and the specialty industries?
 2. How many RMs, treasury management officers and PMs are there today, by market, including American National?
 3. What is the segment's fee income by line today? Public figures stop at FY2025: service charges $12.9 million and cards $0.6 million, with capital markets and loan fees not split out.
 4. What are the segment's deposits, and what share of borrowing clients keep their main operating accounts with the bank?
@@ -238,7 +238,7 @@ Each revenue line, which bankers it helps (RMs or PMs), the job outcome it serve
 6. How are RMs paid and measured, and how are referrals to treasury, capital markets and wealth credited?
 7. The value model's inputs: win rate, average first-year revenue per win by product, and today's client-facing hours per RM.
 8. Has the American National conversion happened, and are acquired clients in Salesforce and Snowflake?
-9. What are Andy Miner's first use cases, and how do The RM Assistant and The PM Assistant rank against portfolio management and treasury and payments?
+9. Which use cases come first, and how do The RM Assistant and The PM Assistant rank against portfolio management and treasury and payments?
 10. Does Finance accept costs saved and loan losses avoided as returns, as well as new revenue?
 
 ## 10. Sources
@@ -266,14 +266,14 @@ All opened on October 9, 2026, except S16 (see its row). The Brandon White and S
 
 ## 11. How this page stays current
 
-Three things keep this briefing up to date. None of them changes main on its own: every update reaches main only after my yes.
+Three things keep this briefing up to date. None of them changes this page on its own: every update is reviewed first.
 
 | What | When | What it does | What I get |
 |---|---|---|---|
-| **H1 Bank news scout**, an agent in the Agent Library | Every Monday at 7:46 am Central (6:46 am after clocks change on November 1), and once on Friday October 23, 2026, the morning after the Q3 results (that run swaps in the Q3 figures throughout, using the briefing prompt) | Searches public sources for new facts about the bank, keeps only what changes this page, drafts the edits on a draft branch and logs what it found | An email and phone notice from the scheduled task, at my personal address, with a 2-minute summary. Then I say "merge the news scout update" in a session |
-| **The briefing prompt** (Prompt 3 in the Prompt Library) | Each quarter, after new results | Rebuilds the whole briefing from the latest filings, with every number from one period | A full refresh, audited before it goes into main |
-| **The audit** | Before every merge | Checks every number has a source, the page renders fully, and the names match the glossary | Nothing reaches main with a known error |
+| **H1 Bank news scout**, an agent in the Agent Library | Every Monday at 7:46 am Central (6:46 am after clocks change on November 1), and once on Friday October 23, 2026, the morning after the Q3 results (that run swaps in the Q3 figures throughout, using the briefing prompt) | Searches public sources for new facts about the bank, keeps only what changes this page, drafts the edits on a draft branch and logs what it found | A short summary of what changed, sent for review |
+| **The briefing prompt** (Prompt 3 in the Prompt Library) | Each quarter, after new results | Rebuilds the whole briefing from the latest filings, with every number from one period | A full refresh, audited before it's published |
+| **The audit** | Before every update | Checks every number has a source, the page renders fully, and the names match the glossary | Nothing is published with a known error |
 
-⚠️ The scout's pages come from search results, because the bank's own sites are blocked from Claude's workspace. Each item it reports says so.
+⚠️ The scout's pages come from search results, because the bank's own sites are blocked from my research tools. Each item it reports says so.
 
 _Last updated: 2026-10-19_

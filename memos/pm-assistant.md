@@ -22,7 +22,7 @@ Each capability is one AI product and answers one credit core use case (our prop
 | | Borrower file | Everything about one borrower in one place, every figure with its source, and what's missing or late | Credit memo and annual review drafts | 1 |
 | | Annual review and credit memo drafts | The routine sections drafted in the bank's template; the borrower risk rating and the recommendation left for the PM | Credit memo and annual review drafts | 1 |
 | | Renewal radar | Loans coming up for renewal, and borrowers whose results suggest a different line (higher-risk path, our assumption) | Renewals and line changes | 3 |
-| **Watch the portfolio** | Early warning flags | Flags borrowers whose signals are weakening, with the numbers; the PM decides whether a flag goes to the bank's own watchlist or rating review (⚠️ to confirm how that runs today) | Early warning on credit quality | 2 |
+| **Watch the portfolio** | Early warning flags | Flags borrowers whose signals are weakening, with the numbers (higher-risk path, our assumption); the PM decides whether a flag goes to the bank's own watchlist or rating review (⚠️ to confirm how that runs today) | Early warning on credit quality | 2 |
 | | Covenant and statement tracker | Covenant tests, and statements and certificates due or late | Spreading, document intake and covenant tracking | 2 |
 | **New requests** | Deal screening | A quick check that a request fits the bank's credit appetite (higher-risk path, our assumption; the risk partner rates it at 2.4); it never declines, only notes where a request sits against the appetite | Deal screening | 3 |
 | **Know the policy** | Credit policy Q&A | Answers from the credit policy, citing the section | Credit policy Q&A and coaching | 3 |
@@ -32,7 +32,7 @@ Each capability is one AI product and answers one credit core use case (our prop
 Every capability runs on one shared foundation, built once:
 - borrower data: loans, covenants, deposits and payments (⚠️ where they live is to confirm);
 - the credit file: financial statements, the spread (the borrower's statements entered in the bank's standard format), prior reviews and other documents, read with the page cited. Wave 1 reads the spread already in the bank's spreading tool; it doesn't spread statements itself (⚠️ to confirm);
-- an approved list of industry sources, each with its licence terms;
+- an approved list of industry sources, each with its license terms;
 - the bank's review and memo templates and its credit policy;
 - a set of warning rules (simple, explainable, agreed with credit risk; ⚠️ which team owns early warning rules is to confirm), with AI explaining each flag in plain English;
 - drafting, with every number checked against its source, and the controls and feedback above.

@@ -160,7 +160,7 @@
         {
           "id": "pm-prototype",
           "name": "PM Assistant Prototype",
-          "what": "The PM Assistant as a clickable prototype: three agents running live on Claude on sample borrowers, the controls working, and a 2-minute guided tour.",
+          "what": "The PM Assistant as a clickable prototype (version 5): the industry background draft, the borrower file, the review and memo drafts and an early warning preview, with at least three agents running live on Claude on sample borrowers, the controls working, and a 2-minute voiced tour.",
           "status": "Draft",
           "url": "https://claude.ai/artifact/8vFxUWVwtZbzZs7pL162HE",
           "source": "prototypes/pm-assistant/"
@@ -181,7 +181,7 @@
     {
       "id": "reference",
       "name": "Reference",
-      "why": "Pages to look things up in, in the order of the process: our words, the steps, the workflows, the agents and the controls. Claude keeps them in line with the plans.",
+      "why": "Pages to look things up in, in the order of the process: our words, the steps, the workflows, the agents and the controls. Kept in line with the plans by the audit.",
       "items": [
         {
           "id": "glossary",
@@ -288,7 +288,7 @@
         {
           "id": "prompt-library",
           "name": "Prompt Library",
-          "what": "Our core prompts in one place, each with its version and what changed: the use case kit, a full product memo, the bank briefing and the showcase prototype.",
+          "what": "Our core prompts in one place, each with its version and what changed: the use case kit, a full product memo, the bank briefing, the showcase prototype, and copying a user group's work to the next.",
           "count": "5 prompts",
           "status": "In use",
           "url": "https://claude.ai/artifact/W96baXJf665MJ4qtHmkrks",

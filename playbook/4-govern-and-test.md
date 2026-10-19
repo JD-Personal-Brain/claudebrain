@@ -8,7 +8,7 @@ This is the formal approval, not the first time risk partners see the
 product: they've been involved since 1.0. The product is **frozen** during
 this step, so reviewers test what will actually ship. Several reviews can run
 at once, so start 4.1, 4.2 and 4.6 on the first day. Fill in the first-time
-log (see `README.md`) for every sub-step.
+log (see the Product Playbook's opening page) for every sub-step.
 
 > ⚠️ **How much to trust this.** Written 2026-10-09 from my framework, the RM
 > memo and general US banking practice (SR 11-7 model risk guidance, possibly replaced by SR 26-2: item W16
@@ -94,7 +94,7 @@ log (see `README.md`) for every sub-step.
   - First time: **Draft**.
   - Note: the groups and thresholds compliance chose. Reuse them.
   - Agent: **M28 Fairness monitor** (agent library). *Auto* report; compliance reviews. Its ongoing mode runs it again monthly after launch.
-- **For the RM Assistant:** check that opportunities are spread fairly across segments and regions. Wave 1 suggests only deposit and treasury gaps; credit-related suggestions arrive only with the portfolio manager work (C52).
+- **For the RM Assistant:** check that opportunities are spread fairly across segments and regions. Wave 1 suggests only deposit and treasury gaps; credit-related suggestions arrive only with the portfolio manager work (agreed 2026-10-18).
 
 ---
 
@@ -171,7 +171,7 @@ log (see `README.md`) for every sub-step.
 - **Why it matters:** approval usually depends on it, and it's what step 6 runs on.
 - **Know first:** the measures (2.7) and what risk wants to monitor.
 - **First time, step by step:**
-  1. List what's watched: quality, guardrail blocks, user overrides, incidents, fairness, data use against the data contract (M13) and data quality on each refresh (M24). Add the **control watch list**: one line per control that no other step watches after launch (K2, K6, K10, K12, K14, K19, K20, K21, K23, K24 and K25 in the Controls Catalog), each with how it's checked; M11 Controls checker re-runs the list monthly (Elon mode, 2026-10-18).
+  1. List what's watched: quality, guardrail blocks, user overrides, incidents, fairness, data use against the data contract (M13) and data quality on each refresh (M24). Add the **control watch list**: one line per control that no other step watches after launch (K2, K6, K10, K12, K14, K19, K20, K21, K23, K24 and K25 in the Controls Catalog), each with how it's checked; M11 Controls checker re-runs the list monthly (added 2026-10-18).
   2. For each one: how often, the alert threshold, who's alerted and what they do.
   3. Write the incident process: who to call, who may pause the product (the product manager or operations, per the plan) and how. A serious incident is [X], set in the plan with the risk partner.
   4. Agree it with risk and operations.
@@ -200,7 +200,7 @@ log (see `README.md`) for every sub-step.
 Run the automation check from the Product Machine on every Me and Draft task,
 using your first-time logs: cut first (should it exist, delete, simplify, make
 it faster), then automate what's left (repeat? stable? safe alone?). Then update this shortlist and the Govern and test
-table in `product-machine.md`.
+table on the Product Machine page.
 
 | Sub-step | Agent | First time | Aim for | Already specified? |
 |---|---|---|---|---|
@@ -216,7 +216,7 @@ table in `product-machine.md`.
 | 4.7 | None: unblocking a stuck sign-off stays with a person | Me | Me | — |
 | 4.8 | None (the monitoring plan template, an asset) | Draft | Draft | Asset: agent library |
 
-**First time** = how the task is done on the first project. **Aim for** = its kind in `product-machine.md`.
+**First time** = how the task is done on the first project. **Aim for** = its kind on the Product Machine page.
 
 **Never automated:** the sign-offs themselves. Risk partners make every call.
 

@@ -85,7 +85,7 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Retired on 2026-10-09:** rule R15, about pop-up notes, was removed with R4, so this test no longer runs.
 
 ### T16 → R16
-- **Say this:** "Write a one-page brief I can send to the hiring leader."
+- **Say this:** "Write a one-page brief I can send to a bank leader."
 - **Pass if:** Claude delivers a designed, branded document or page (not a .md file) and says where the working copy is kept.
 - **Also try:** "Write me a step-by-step guide for running user interviews." (for me, not someone else) **Pass if:** Claude delivers it as a designed page without being asked (from L13b).
 - **Results:** 2026-10-09 ✅ pass (run-tests helper): offered a designed one-page document, "not a .md file", with the working copy in `memos/hiring-leader-brief.md`.

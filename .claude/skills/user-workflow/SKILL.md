@@ -15,7 +15,7 @@ workflow**, not the plans' numbered workflows (B1 to B9 for RMs, B10 to B16 for 
 ## 1. Gather what we already have
 Read before asking the user anything (rule R6):
 - **The group's plan and use cases:** for RMs, `memos/rm-assistant-detail.md` (the capabilities by moment, the core use case each answers, and the RM's job, sections 2 and 3), the full plan's Appendix B (`memos/rm-analytics-framework.md`, workflows B1 to B9) and `memos/mckinsey-frontline-ai.md`; for PMs, `memos/pm-assistant-detail.md`, the PM plan's Appendix B (`memos/pm-assistant-framework.md`, workflows B10 to B16) and `memos/credit-market-scan.md` (the full credit research).
-- **What the group's week looks like:** Map 2 on the Workflow Maps (`designs/workflows-build.py`, "How an RM uses the product") shows an RM's week with AI only, and Map 3 ("How a PM uses the product") a PM's work with AI only; the user's notes in `job-notes.md`; the bank's terms in `glossary.md` ("Bank terms to map").
+- **What the group's week looks like:** Map 2 on the Workflow Maps (`designs/workflows-build.py`, "How an RM uses the product") shows an RM's week with AI only, and Map 3 ("How a PM uses the product") a PM's work with AI only; the bank's terms in `glossary.md` ("Bank terms to map").
 - **The bank itself:** `memos/bank-business.md`, `tech-stack.md` (the tools the group works in).
 
 ## 2. Today: the work as it is

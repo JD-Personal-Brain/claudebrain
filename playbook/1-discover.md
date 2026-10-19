@@ -5,12 +5,12 @@
 **Governance thread:** risk partner briefed on the idea.
 
 Work through 1.0 to 1.7 in order. The risk partner is briefed on the idea before any build uses real client data. Some can overlap: 1.3, 1.4 and 1.5 usually
-run in the same weeks. Fill in the first-time log (see `README.md`) for every
+run in the same weeks. Fill in the first-time log (see the Product Playbook's opening page) for every
 sub-step. At the end, run the automation review.
 
 > ⚠️ **How much to trust this.** Written 2026-10-09 from my framework, the relationship managers (RMs)
 > memo and general practice, not from Associated Bank. Lines marked ⚠️ are
-> guesses about how the bank works. Tools are named from `tech-stack.md`.
+> guesses about how the bank works. Tools are named from the Tech Stack Guide.
 
 ---
 
@@ -21,15 +21,15 @@ sub-step. At the end, run the automation review.
 - **Know first:**
   - Who is asking for this, and who owns the budget.
   - The bank's process for starting an AI project: is there an intake form or a review board? ⚠️ Not known yet.
-  - Which tracker the bank uses for projects. ⚠️ Not known yet (see "Things to find out" in `tech-stack.md`).
+  - Which tracker the bank uses for projects. ⚠️ Not known yet (see "Things to find out" in the Tech Stack Guide).
 - **First time, step by step:**
   1. Write one sentence about the project: "We want to [outcome] for [users], measured by [measure]."
   2. Meet the sponsor (30 minutes). Confirm that they own the outcome and the funding, and that they make the go/no-go call at each gate.
-  3. Fill in "who's involved and who decides" (from `product-framework.md`) with real names. Mark gaps as [name needed].
-  4. Set up the tracker: copy the six steps' task tables from `product-machine.md`, then give every Discover task an owner and a date. Name the first limiting factor and its owner at the top of the tracker.
+  3. Fill in "who's involved and who decides" (from the Product Framework) with real names. Mark gaps as [name needed].
+  4. Set up the tracker: copy the six steps' task tables from the Product Machine, then give every Discover task an owner and a date. Name the first limiting factor and its owner at the top of the tracker.
   5. Brief the risk partner (from model risk) in 15 minutes: what the idea is, what data it might use, and that nothing touches clients yet. Ask what they'll need to see in Define. If the product is likely to take the higher-risk path (its output would inform a credit decision, control K3), brief the credit policy owner too ⚠️ [name needed].
   6. Start the decision log and the risk and issue list, dependencies included (both empty is fine).
-  7. Create the project file: `memos/<project>.md`.
+  7. Create the project file.
   8. Confirm which AI tools the team may use with bank data, and write the list in the project file. No client data goes into any other tool, even for a quick test.
 - **Output:** a one-line project statement, the who-decides list, the tracker, the risk partner briefed, the decision log, and the list of AI tools the team may use.
 - **Done when:** the sponsor has confirmed their role, every Discover task has an owner and a date, the risk partner has been briefed, and the approved AI tools list is in the project file.
@@ -52,7 +52,7 @@ sub-step. At the end, run the automation review.
   1. Ask the sponsor: "If this works, what number moves, and by how much in a year?" Write their words down exactly.
   2. List the possible levers. Each is one way the outcome could move.
   3. Agree on one measure per lever, using a number the bank already tracks where possible.
-  4. Agree on what is **out of scope**, such as credit decisions, which carry a much higher legal bar (see Governance in `tech-stack.md`).
+  4. Agree on what is **out of scope**, such as credit decisions, which carry a much higher legal bar (see Governance in the Tech Stack Guide).
   5. Write a one-page outcome note and send it to the sponsor to confirm.
 - **Output:** the outcome note: goal, levers, one measure each, out of scope.
 - **Done when:** the sponsor has confirmed the note in writing (an email reply is enough).
@@ -101,7 +101,7 @@ sub-step. At the end, run the automation review.
   - Use only AI tools on the approved list from 1.0 (K23).
 - **First time, step by step:**
   1. Start from the user group's workflow map (how they work today and with AI) if one exists: the interviews and shadowing test its "today" side and correct it. If there is no map yet, the interviews build its first version.
-  2. Write a 30-minute interview guide of 8 to 10 open questions. Use `prompting.md` Example 1 to draft it, for example "Walk me through what you did after your last client meeting."
+  2. Write a 30-minute interview guide of 8 to 10 open questions. Use Example 1 in the Prompting Guide to draft it, for example "Walk me through what you did after your last client meeting."
   3. Ask user leaders to nominate a mix of people: strong performers, average ones and skeptics.
   4. Send invitations and book the interviews.
   5. Run each interview. Listen more than you talk, and ask "show me" rather than "tell me".
@@ -184,7 +184,7 @@ sub-step. At the end, run the automation review.
 - **Output:** the prototype versions and a reaction log (version, user, what they did, what changed).
 - **Done when:** users can say what they'd use it for in their own words, or you've learned it's the wrong problem.
 - **Automation watch:**
-  - First time: **Draft** for the mock-up (Claude builds it with the `prototype` skill). **Me** for running the sessions and summarizing reactions.
+  - First time: **Draft** for the mock-up (built with the prototype routine). **Me** for running the sessions and summarizing reactions.
   - Note: how long each version took to build, and what feedback came up every time.
   - Agent: **M4 Reaction summarizer** (agent library) that turns session notes into "what to change next". *Draft*.
 - **For the RM Assistant:** a pre-meeting client brief, the Monday opportunity list and the meeting follow-up, built on sample clients.
@@ -232,7 +232,7 @@ sub-step. At the end, run the automation review.
 Run the automation check from the Product Machine on every Me and Draft task,
 using your first-time logs: cut first (should it exist, delete, simplify, make
 it faster), then automate what's left (repeat? stable? safe alone?). Then update this shortlist and the Discover
-table in `product-machine.md`.
+table on the Product Machine page.
 
 | Sub-step | Agent | First time | Aim for | Already specified? |
 |---|---|---|---|---|
@@ -247,11 +247,11 @@ table in `product-machine.md`.
 | 1.7 | M5 Baseline recorder | Me | Auto ⚠️ | Yes, M5 (ongoing mode) |
 | 1.7 | M6 Gate pack drafter | Draft | Draft | Yes, M6 |
 
-**First time** = how the task is done on the first project. **Aim for** = its kind in `product-machine.md`.
+**First time** = how the task is done on the first project. **Aim for** = its kind on the Product Machine page.
 
 **Rule for this table:** a new agent gets a full spec (mission, inputs,
 allowed actions, outputs, stop condition, proof it worked, person in charge)
 in the agent library (or, for an agent only one project needs, in that project memo's Appendix A) before it's built, following "One job each"
-in `product-framework.md`.
+in the Product Framework.
 
 _Last updated: 2026-10-19_

@@ -1,6 +1,6 @@
 # Product Machine: how one product manager runs many projects
 
-Claude loads this every session. It is the operating model: every task in
+It is the operating model: every task in
 every step, marked by who does it, and how the work moves toward automation.
 Page 3 of the four "How we deliver" pages: the Product Workflow
 (`memos/role-workflow.md`) shows the steps, the Product Framework
@@ -164,13 +164,12 @@ The step 4 gate is a Partner decision: the risk partner's approval can't be over
 
 ## The automation check at every gate
 At each gate, before go/no-go, take every **Me** and **Draft** task through the
-check in this order: **cut first, then automate** (the order Elon Musk's
-"algorithm" uses; see the Elon Mode page). Automating a task that
+check in this order: **cut first, then automate** (see the Elon Mode page). Automating a task that
 shouldn't exist only locks in the waste.
 
 **First, cut:**
 1. **Should it exist?** Who required it, and where does the requirement come from: law or regulator, bank policy, or our choice (each control's "Comes from" line in the Controls Catalog or, for sub-steps and gates, "Where the requirements come from" in the Product Playbook)? Law and bank policy stay. Our choices can be challenged.
-2. **Can we delete it?** If yes, delete it, and record in the decision log what it did and who agreed. If nothing we delete ever has to come back, we aren't cutting enough (Musk's rule of thumb: about 1 in 10 comes back; ⚠️ sources give 10% or 20%).
+2. **Can we delete it?** If yes, delete it, and record in the decision log what it did and who agreed. If nothing we delete ever has to come back, we aren't cutting enough (a rule of thumb: about 1 in 10 comes back; ⚠️ sources give 10% or 20%, Elon Mode page).
 3. **Can we simplify it?** Fewer steps, fewer hand-offs, fewer people to wait on.
 4. **Can we make it faster?** Shorten the longest wait first; the wait index (below) shows where.
 

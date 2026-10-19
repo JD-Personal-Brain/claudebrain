@@ -32,7 +32,7 @@ The pattern: signals from data, shown inside the CRM, with the reason visible an
 
 ## Portfolio managers
 
-**The need in one line:** PMs are the bank's credit people paired with RMs. The value is in drafting credit memos and reviews and in monitoring credit quality, with a person always deciding. At DBS, credit memos and related work take up to 40% of an RM's time (DBS's estimate); ⚠️ how much of a PM's time goes to them here is to confirm.
+**The need in one line:** PMs are the bank's credit people paired with RMs. The value is in drafting credit memos and reviews and in monitoring credit quality, with a person always deciding. At DBS, credit memos and related work take up to 40% of its bankers' time (DBS's estimate); ⚠️ how much of a PM's time goes to them here is to confirm.
 
 > ⚠️ **A proposal, not yet agreed.** Each RM core use case has a credit counterpart; the pairing is our own, used in the PM plan's first cut (2026-10-19), not yet reviewed. Built from a web scan on 2026-10-13 through search summaries; the primary pages would not open.
 
@@ -48,6 +48,6 @@ The pattern: signals from data, shown inside the CRM, with the reason visible an
 
 **What the market shows.** No bank reports letting AI make the credit decision: every example has the AI draft or flag and a person decide. We found no public announcement from a large US bank naming its own AI tool for commercial credit memos (search of 2026-10-13); Moody's reports one unnamed tier-one US bank using its agents.
 
-**Order agreed 2026-10-15:** credit memo and annual review drafts first, early warning second, risk ratings out of the first waves. The full scan, with every source, is kept in the working files (`memos/credit-market-scan.md`).
+**Order agreed 2026-10-15:** credit memo and annual review drafts first, early warning second, risk ratings out of the first waves. The full scan, with every source, is in PM Detail, Part 7.
 
 _Last updated: 2026-10-19_

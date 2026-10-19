@@ -1,6 +1,6 @@
 # The PM Assistant: full detail
 
-The detailed working file behind The PM Assistant page. People read the short page (`memos/pm-assistant.md`); this file goes into PM Detail.
+The detailed working file behind The PM Assistant page. People read the short page (The PM Assistant); this file goes into PM Detail.
 
 > ⚠️ **A hypothesis, not a plan yet** (first cut, 2026-10-19). Built from our commercial credit research, the Use Case Library and public Associated job postings, not from how the bank's portfolio managers work today. The first conversations with credit leaders test it; Discover confirms or changes the rest.
 
@@ -44,13 +44,13 @@ Each capability is one AI product (glossary) and answers one credit core use cas
 | **Know the policy** | Credit policy Q&A | Answers from the bank's credit policy, citing the section | Credit policy Q&A and coaching | 3 |
 | **Left out on purpose** | Borrower risk rating support; approve or decline; pricing | Closest to the credit decision; kept out under control K3 | Risk rating support | Out |
 
-**Wave 1 at a glance:** three capabilities. The industry background draft goes first: it drafts the section of the credit memo an outside firm writes today, and needs no borrower data. Then two that work as one flow: the borrower file, then the draft built from it. Together they cover the PM's most frequent writing job, the annual review, and the credit memo for a request. The order follows the agreed credit order (closed item C33): memo and review drafts first, early warning second, borrower risk ratings out of the first waves.
+**Wave 1 at a glance:** three capabilities. The industry background draft goes first: it drafts the section of the credit memo an outside firm writes today, and needs no borrower data. Then two that work as one flow: the borrower file, then the draft built from it. Together they cover the PM's most frequent writing job, the annual review, and the credit memo for a request. The order follows the credit order agreed on 2026-10-15: memo and review drafts first, early warning second, borrower risk ratings out of the first waves.
 
 **How each capability is built.** Our measures' targets are set in Define; outside figures are benchmarks in the Use Case Library, never our targets.
 
 | Wave | Capability (AI product) | Credit core use case | Agents | Built mainly on | Our measure (target set in Define) |
 |---|---|---|---|---|---|
-| **Wave 1** (industry background draft by about week 6; borrower file by about week 7; drafts by about week 12; each once its approvals are in) | Industry background draft | Credit memo and annual review drafts | A11 | AWS Bedrock (Knowledge Bases over the approved industry sources) or Copilot Studio | Outside fees replaced; turnaround; share of each section kept with light edits [X] |
+| **Wave 1** (industry background draft by about week 6; borrower file by about week 7; drafts by about week 12; each once its approvals are in) | Industry background draft | Credit memo and annual review drafts | A11 | AWS Bedrock (Knowledge Bases over the approved industry sources) or Copilot Studio | Outside fees we could replace; turnaround; share of each section kept with light edits [X] |
 | | Borrower file | Credit memo and annual review drafts | A7 | Snowflake, AWS Bedrock (Knowledge Bases) | Hours spent gathering per review [X] |
 | | Annual review and credit memo drafts (higher-risk path) | Credit memo and annual review drafts | A7, A8 | AWS Bedrock or Copilot Studio; Word templates | Hours per review; share of sections used with light edits [X] |
 | **Wave 2** (dates set once the wave 1 drafts' review is signed, about week 11) | Early warning flags (higher-risk path) | Early warning on credit quality | A9 | Snowflake signals, Teams | Flags acted on; how much earlier than today [X] |
@@ -58,7 +58,7 @@ Each capability is one AI product (glossary) and answers one credit core use cas
 | **Wave 3** (dates set once the wave 1 drafts' review is signed, about week 11) | Credit policy Q&A | Credit policy Q&A and coaching | A10 | Copilot Studio or Bedrock Knowledge Bases | Questions answered; answer ratings [X] |
 | | Renewal radar; deal screening (higher-risk path, our assumption) | Renewals and line changes; deal screening | Specs to come | Snowflake, the loan system | Renewals on time; screening turnaround [X] |
 
-**Why the industry background draft goes first (2026-10-19):** The bank pays an outside firm to write the industry background section of its credit memos, and wants AI to draft that section as one of the first use cases (the credit lead, told to me on 2026-10-19; ⚠️ details to confirm: which firm, cost per section, how many a year, turnaround, the contract's terms, and which sources the firm uses). It uses no borrower data and makes no credit judgment, so we assume a lighter review (⚠️ the risk partner decides at 2.4 whether it takes the higher-risk path, since it sits inside a credit memo). It replaces a cost the bank pays today, so the saving is direct and measurable: outside fees replaced. And the credit lead named it. Because it needs no client data, it can be built and tested on public sources before gate 2. If its review runs long, it is no worse than today: the outside firm keeps writing the section.
+**Why the industry background draft goes first (2026-10-19):** The bank's credit lead (2026-10-19; ⚠️ details to confirm: which firm, cost per section, how many a year, turnaround, the contract's terms, and which sources the firm uses) told us the bank pays an outside firm to write the industry background section of its credit memos, and wants AI to draft that section as one of the first use cases. It uses no borrower data and makes no credit judgment, so we assume a lighter review (⚠️ the risk partner decides at 2.4 whether it takes the higher-risk path, since it sits inside a credit memo). It could replace a cost the bank pays today, so the saving would be direct and measurable: outside fees saved, counted once the contract changes (its terms are to confirm). And the bank's credit lead named it. Because it needs no client data, it can be built and tested on public sources before gate 2. If its review runs long, it is no worse than today: the outside firm keeps writing the section.
 
 **Why the borrower file is its own capability (our call, 2026-10-19):** it gathers and cites but writes no judgment, so we assume it needs less review than the drafts (⚠️ the risk partner decides) and can go live ahead of them if the higher-risk review of the drafts runs long. It also saves PMs time on its own. K3's wording (output that informs a credit decision) could cover it, which is why it is the first question for the risk partner at 2.4, and why the backup plan covers it.
 
@@ -75,7 +75,7 @@ Built once and shared by every capability.
 |---|---|---|
 | **Borrower data** | Loans, covenants, deposits and payments, which we expect in Snowflake (⚠️ or Fabric; certified data only) | Every capability |
 | **The credit file** | Financial statements, the spread (the statements in the bank's standard format), prior reviews, appraisals and other documents (⚠️ where they live is to confirm), read with their page cited | Borrower file, drafts |
-| **An approved industry source list** | The industry sources the industry background draft may read, each with its licence terms; part of the data contract (K5), with any licensed source reviewed by vendor risk (K14) (⚠️ which sources is to confirm) | Industry background draft |
+| **An approved industry source list** | The industry sources the industry background draft may read, each with its license terms; part of the data contract (K5), with any licensed source reviewed by vendor risk (K14) (⚠️ which sources is to confirm) | Industry background draft |
 | **The bank's templates and policy** | The annual review and credit memo templates; the credit policy | Drafts, policy Q&A |
 | **Signals engine** | Simple, explainable rules agreed with credit risk (⚠️ which team owns early warning rules is to confirm); AI explains each flag with the numbers | Early warning, covenant tracker, renewal radar |
 | **Drafting** | Drafts marked as AI drafts, with every number checked against its source in code | Drafts |
@@ -85,7 +85,7 @@ Built once and shared by every capability.
 Spreading and document intake stay with the bank's spreading tool (⚠️ to confirm); the tracker reads its spread, as the Evalueserve covenant case does (vendor case study).
 
 ## 5. How we'll know it works
-- **An outside cost replaced:** outside fees for industry sections replaced, and the section's turnaround [X].
+- **An outside cost we could replace:** outside fees for industry sections (counted once the contract changes; its terms are to confirm), and the section's turnaround [X].
 - **More PM time for judgment:** hours per annual review and credit memo, against PMs not yet using it [X].
 - **Faster answers:** days from a complete request to a decision [X].
 - **Earlier sight of trouble:** flags acted on, and how early (wave 2) [X].

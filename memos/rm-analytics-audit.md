@@ -7,7 +7,7 @@ before sharing it with Associated Bank._
 
 ## The verdict
 The six steps, the agent breakdown and the evidence are solid. What's missing
-is mostly what a **hiring panel** looks for: a point of view on value, time,
+is mostly what **bank leaders** look for: a point of view on value, time,
 people and risk. Today the memo explains *how* the work flows. A world-class
 version also says *how much it's worth, how fast, who's involved and what
 could go wrong*.
@@ -16,7 +16,7 @@ could go wrong*.
 
 1. **A one-page executive summary up front.** Readers decide in about 60 seconds. Lead with the outcome, the approach in 3 bullets, the first 90 days and what I'd need from them.
 2. **A simple value model.** Show how revenue would be estimated: RMs × opportunities per RM × conversion rate × average revenue per opportunity, minus costs (licenses, build, run). Use placeholders like [X], not invented numbers. This shows commercial thinking and links to "offset the cost."
-3. **A 30/60/90-day plan and pilot timeline.** Panels want to know what happens in month one. For example: 30 days to listen and size, 60 to define and design, 90 to have a pilot approved and building. Mark it as an estimate to confirm with the team.
+3. **A 30/60/90-day plan and pilot timeline.** Leaders want to know what happens in month one. For example: 30 days to listen and size, 60 to define and design, 90 to have a pilot approved and building. Mark it as an estimate to confirm with the team.
 4. **Stakeholders and decision rights.** The job is about aligning business, technology, data, risk, compliance and operations. Add a short "who's involved and who decides" table: business sponsor, RM leaders, data owners, Salesforce and Microsoft platform teams, model risk, compliance, privacy.
 5. **Top risks and how I'd handle them.** For example: incomplete CRM data, RMs not trusting insights, governance taking longer than planned, costs growing with usage, and incentives that don't reward acting on insights.
 

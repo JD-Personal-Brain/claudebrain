@@ -1,7 +1,6 @@
 # Product Framework: the rules every product follows
 
-Claude loads this every session and applies these rules whenever we plan or
-work on a product.
+These rules apply whenever we plan or work on a product.
 
 Page 2 of the four "How we deliver" pages, read in this order:
 1. **Product Workflow** (`memos/role-workflow.md`): the six steps (Discover, Define, Build, Govern and test, Release and adopt, Measure and iterate), what happens in each, and their go/no-go gates.
@@ -45,8 +44,7 @@ factor**: the one thing holding the project back right now, named with its
 owner. It opens the tracker and the weekly status note.
 
 ## Projects, AI products and feature waves
-How the work is cut up, so every gate knows what it decides (gaps 1 to 3 from the
-2026-10-15 audit, decided 2026-10-15).
+How the work is cut up, so every gate knows what it decides (agreed 2026-10-15).
 
 | Level | What it is | Example (RM plan) |
 |---|---|---|
@@ -70,7 +68,7 @@ a new project, with the full pass:
 - **Reused unless something changed:** 1.0 to 1.7 (record a baseline in 1.7 for any new measure, and show users a short 1.6 mock-up of any new AI product), 2.1, 2.2 (redone if the wave needs a different platform or delivery path), 2.6, and 2.8, where only the wave's scope and pilot group are updated. The product manager lists in the gate pack what was reused and what was redone.
 - **Gates 1 and 2 together, in writing,** from one short gate pack, with a meeting only if a criterion is contested.
 
-**The overlapping first pass** (decided 2026-10-18, C55). On a project's first pass, gate 1 may be passed early in writing on a first sizing (1.2) and a provisional baseline, so building can start; the rest of Discover (interviews, the time map, the mock-up reactions, 1.3 to 1.6) keeps running, and the final baseline (1.7) is recorded before gate 2, which checks it. Comes from: our choice, so the pace is set by what really blocks us. The risk partner still agrees at gate 1, and no real client data is used before gate 2.
+**The overlapping first pass** (agreed 2026-10-18). On a project's first pass, gate 1 may be passed early in writing on a first sizing (1.2) and a provisional baseline, so building can start; the rest of Discover (interviews, the time map, the mock-up reactions, 1.3 to 1.6) keeps running, and the final baseline (1.7) is recorded before gate 2, which checks it. Comes from: our choice, so the pace is set by what really blocks us. The risk partner still agrees at gate 1, and no real client data is used before gate 2.
 
 **Change after launch.** A **material change** goes back through step 4 before
 it reaches users: new data, a new action the product can take, users outside the
@@ -149,7 +147,7 @@ These apply to every agent and every AI product, in every step.
 
 ## How each step is written up
 Every project plan writes its six steps as one table, so plans are easy to compare;
-the full RM plan does this in its section 4 (`memos/rm-analytics-framework.md`, read in RM Detail, Part 5).
+the full RM plan does this in RM Detail, Part 5, and the PM plan in PM Detail, Part 5.
 What the Product Workflow and the Product Playbook already say is linked, not repeated
 (simplified 2026-10-18, when the RM plan was cut back).
 

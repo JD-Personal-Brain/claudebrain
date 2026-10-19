@@ -18,7 +18,7 @@ RMs win the bank's commercial business, but at many commercial banks they spend 
 ### The product: The RM Assistant
 Each RM gets **their own AI assistant**, inside the tools we expect they already use (Salesforce, Teams and Outlook; ⚠️ to confirm). It helps the RM win business and frees up the time to win it. It drafts and suggests; **the RM always decides**. It never contacts a client on its own, never sets or suggests a price and never makes a credit decision. [What it is and all its capabilities](https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2).
 
-### What RMs get first (wave 1)
+### What RMs get first (feature wave 1)
 | Capability | What the RM gets | Why it matters |
 |---|---|---|
 | **Pre-meeting client brief** | One page before each client meeting: the relationship, recent activity, open opportunities, talking points | Less prep time, better meetings |
@@ -287,7 +287,7 @@ Detail: [every risk and how I'd handle it](https://claude.ai/artifact/PhUyGc16Tm
 
 Working file: `memos/rm-analytics-framework.md`.
 
-Principal Applied AI Product Manager · Associated Bank · October 2026 (memo v11, 2026-10-18)
+Associated Bank · Corporate and Commercial Banking · October 2026
 
 The detail behind the three short RM pages (the RM Executive Summary, The RM Assistant and the RM
 Assistant Plan), read in RM Detail. What the product is, its capabilities and waves, and the decisions
@@ -387,7 +387,7 @@ not the first time risk partners see the product. What's different for RMs:
 | **1. Discover** | The sponsor, with the risk partner, agrees the target lever, the main measure and today's baseline (from a first rough sizing; confirmed at gate 2), and confirms the wave 1 capabilities | Frame "new revenue" as three levers (section 1) and two goals; size them with pipeline, win/loss, balances and products; interview and shadow RMs and managers, starting from the RM user workflow (how they find opportunities today, and what gets in the way); learn how RMs are measured and paid; test the prototype on sample data every few days | M20 interview synthesizer (Teams transcripts only with consent), M21 opportunity sizer, M22 time-use analyst |
 | **2. Define** | The brief, data contract and risk rating agreed; the full set of measures and the value model show payback within [X] months; dates proposed for waves 2 and 3 | The data contract covers documents too (meeting recaps and call transcripts: their source, owner, re-indexing and who may see them); the risk intake lists consent before recording (control K24) for the meeting follow-up; Finance agrees how AI-sourced revenue is tagged and compared; any insight that suggests a credit product, such as a line of credit, is reviewed by compliance (control K3: the AI never makes a credit decision and never sets or suggests a price; fair-lending rules apply to business credit too) | M23 requirements drafter, M24 data contract checker (then on every data refresh), M25 risk intake assistant |
 | **3. Build** | Meets the quality bar in testing; every control is built and passes its control test | Simple, explainable rules find the opportunities and AI only explains them (K22); every insight shows the numbers behind it (K7); one-click use, change or reject with a reason (K1); each RM sees only clients they may already see (K4); filters block sensitive data and off-topic answers (K8); every AI action logged (K12); the test set uses real client examples graded by experienced RMs | M26 test grader |
-| **4. Govern and test** | All sign-offs recorded and the monitoring plan agreed, for each AI product | Register the product in the bank's model inventory (⚠️ to confirm) and confirm its rating (model risk guidance SR 11-7; ⚠️ SR 26-2 may replace it, item W16); red-team for other RMs' clients and credit requests; check opportunities are spread fairly across client segments and regions; show consent captured before any recording (K24); the monitoring plan watches the share of recaps from consented recordings versus the RM's own notes | M27 red-team agent, M28 fairness monitor (then monthly), M29 evidence pack assembler |
+| **4. Govern and test** | All sign-offs recorded and the monitoring plan agreed, for each AI product | Register the product in the bank's model inventory (⚠️ to confirm) and confirm its rating (model risk guidance SR 11-7; ⚠️ SR 26-2 may replace it; to check); red-team for other RMs' clients and credit requests; check opportunities are spread fairly across client segments and regions; show consent captured before any recording (K24); the monitoring plan watches the share of recaps from consented recordings versus the RM's own notes | M27 red-team agent, M28 fairness monitor (then monthly), M29 evidence pack assembler |
 | **5. Release and adopt** | Weekly use and leading results hit targets (at least [X]% of pilot RMs active weekly, at least [X]% of insights acted on); no serious incidents; long-term owner confirmed before scaling | A pilot group of RMs and their managers, with a comparison group; build it into a routine managers already run, such as a weekly pipeline meeting (⚠️ to confirm), so use becomes a habit; train on RMs' own clients; champions and a Teams channel answer "how do I…?"; recognize AI-sourced wins with sales leadership | M30 feedback triage |
 | **6. Measure and iterate** | Each month, keep, change or stop each AI product; each quarter, the sponsor with Finance decides to invest more, adjust or stop, on results against the comparison group | Leading measures first (insights acted on, pipeline created, client time gained), visible within weeks; closed revenue against the comparison group from about month 6; plus cost per active RM and per acted-on insight, because the goal is a product that pays for itself | M31 impact analyst, M32 quality watchdog, M33 improvement scout |
 
@@ -507,7 +507,7 @@ builds on them. I'd confirm early (this is the one full list; the Executive Summ
 ### Appendix A: Agent specs
 
 The product's own agents. AI sales coaching (wave 3): agent spec not written
-yet (step 4 of the use case kit, item W3 in the Open Items log). The product's agents (A1, A2, A3 and A5) are written so a
+yet. The product's agents (A1, A2, A3 and A5) are written so a
 platform team can build them and a risk partner can review them; the team's
 agents are the product machine's general agents, specified in full in the
 agent library. **[X]** values are set in Define.
@@ -577,7 +577,7 @@ quality watchdog, improvement scout). Which ones each step uses is in section 4.
 Each RM-facing capability as a step-by-step flow. Every RM-facing flow (B1–B8)
 has one **decision point** where the RM decides, and everything is logged.
 B9 is the release routine behind them. AI sales coaching (wave 3): workflow not
-written yet (step 4 of the use case kit, item W3 in the Open Items log).
+written yet.
 
 **B1. Monday opportunity list** (wave 1)
 - **Trigger:** every night (signals); every Monday morning (the Monday send).

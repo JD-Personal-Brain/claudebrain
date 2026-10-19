@@ -33,7 +33,7 @@ Everything about how I work with Claude is kept here, not just in chat history. 
 | `learning/lessons.md` | The full story of each mistake: what happened, the root cause and the fix |
 | `learning/rules.md` | One-line rules drawn from those lessons |
 | `learning/tests.md` | A test scenario for each rule, so we can check that it works |
-| `job-description.md` | The Associated Bank job I'm going after |
+| `job-description.md` | The Associated Bank role |
 | `tech-stack.md` | Each technology in that job: what it is and how the bank likely uses it |
 | `memos/role-workflow.md` | Product Workflow: the six steps every product goes through, what happens in each, and their gates (How we deliver, page 1) |
 | `product-framework.md` | Product Framework: the rules every product follows: who decides, measures, quality bar, AI principles, write-up layout (page 2) |

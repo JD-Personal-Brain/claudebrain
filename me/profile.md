@@ -26,7 +26,7 @@ when it learns something new.
 - Lists where each page needs its description and sections use collapsible rows (twisties) I click to open; the RM section (since 2026-10-18) and the PM section (since 2026-10-19, C63) are plain numbered rows. (2026-10-14, narrowed 2026-10-15, 2026-10-18 and 2026-10-19)
 - A short list read in order (like the four "How we deliver" pages) is plain numbered rows, no twisties: click the name to open the page. A list to look things up in (like Reference) is plain rows with a dot. Names you can click are a different color, so people know to click them. (2026-10-15)
 - Open items are listed by priority; numbers follow the priority and can change. (2026-10-14)
-- Claudebrain uses my personal email only (jeremydrane2021@gmail.com), never my work address. (2026-10-14)
+- Claudebrain uses my personal email only, never my work address. (2026-10-14)
 - Summary pages should link down to the detailed layer (the exact card or section), not repeat it. Each piece of information has one home. (2026-10-15)
 - When I give a decision or ask for one change, do just that. Don't queue up the follow-up work in my files; mention it once at most. (2026-10-15)
 - Lock down the base first (the How we deliver pages, the audit, the reference pages), then move into the RM work, then the PM work. Leave PM pages alone until I say we're moving into PM. (2026-10-15; moved into RM on 2026-10-17; moved into PM on 2026-10-19)
@@ -42,7 +42,7 @@ when it learns something new.
 
 ## What I want Claude to help with
 - Getting better at working with Claude.
-- Thinking through how I would actually do the Principal Applied AI Product Manager job at Associated Bank (I'm interviewing for it now). The focus is doing the job, not interview prep.
+- Thinking through how I would actually do the Principal Applied AI Product Manager job at Associated Bank. The focus is doing the job, not interview prep.
 - Prototyping screens (UI) for my new job.
 - Learning to write good prompts (see `prompting.md`), and working through a "Claude Mastery" course I bought.
 - (more to add)

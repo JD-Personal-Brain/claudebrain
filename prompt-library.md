@@ -24,7 +24,7 @@ holds the ones worth keeping.
 **Version 2** (2026-10-18). First run: relationship managers (RMs).
 
 Sets the standard set of pieces every use case should have, in two layers: a
-**leader layer** I communicate from (for Andy and bank leaders) and a **working
+**leader layer** I communicate from (for bank leaders) and a **working
 layer** I and the team work from. It runs first on the RM work, where most of
 the material already exists, so the kit is tested against real work before it's
 copied to portfolio managers (PMs). It runs in two stages and stops between them
@@ -75,9 +75,8 @@ Context:  I'm thinking through how I'd do the Principal Applied AI
           the standard set of pieces every use case should have? I want
           that answer, the use case kit, so every use case we turn on
           starts from the same kit. The kit has two layers:
-          - The leader layer: what I communicate from. Mainly for Andy
-            (the hiring leader) and bank leaders deciding whether to
-            back and fund the work. Short, in their terms, no internal
+          - The leader layer: what I communicate from. Mainly for bank
+            leaders deciding whether to back and fund the work. Short, in their terms, no internal
             labels.
           - The working layer: what I and the team work from day to
             day: plans, specs, workflows, measures, decisions.
@@ -145,8 +144,7 @@ Rules:    Change no existing files in stage 1; the only new thing is
           designs/README.md and the Document Library until stage 2,
           because I approve the structure before anything is built.
           Keep the order of work already agreed in <decisions> (for
-          [RMs]: the [Elon mode review comes before the Andy
-          edition (W3), and the workflow map is W2]) and say which
+          [RMs]: [the workflow map is W2]) and say which
           open items the kit covers, because those are already
           planned.
           Give every fact one home and link to it from everywhere
@@ -218,7 +216,7 @@ Inputs:   <job_description> [job-description.md] </job_description>
           <workflow> [memos/role-workflow.md] </workflow>
           <framework> [product-framework.md] </framework>
           <tech_stack> [tech-stack.md] </tech_stack>
-          <my_notes> [what the hiring leader told me] </my_notes>
+          <my_notes> [what the business leader told me] </my_notes>
 
 Role:     You are a Principal Applied AI Product Manager at a
           commercial bank, writing for its business and risk leaders.
@@ -389,10 +387,10 @@ Role:     You are a principal applied AI product manager who also
           writes production-quality front-end code, building a
           showcase for a commercial bank's executives.
 
-Context:  I'm interviewing for Principal Applied AI Product Manager
-          at Associated Bank. The executives who see this decide
-          whether to hire me to deploy AI. They must come away
-          thinking: this person can take the idea of [an RM's
+Context:  I'm planning how I'd deliver AI for Associated Bank's
+          commercial bankers. The executives who see this decide
+          whether to back the work. They must come away
+          thinking: this can take the idea of [an RM's
           work], package it as working code with live AI agents,
           govern it, and get people to use it. It is a prototype
           to prove we can build, not the product: the real one
