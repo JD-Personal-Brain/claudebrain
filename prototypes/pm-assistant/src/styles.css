@@ -306,3 +306,39 @@ textarea.grow{field-sizing:content;max-height:340px;min-height:120px}
 .refnote{width:100%;border:1px solid var(--line);border-radius:8px;padding:10px;background:var(--bg);resize:vertical}
 @media (max-width:860px){.tstats{grid-template-columns:repeat(2,minmax(0,1fr))}.today-grid{grid-template-columns:1fr}.agenda li{grid-template-columns:minmax(0,1fr) auto}.agenda .when{grid-column:1/-1}}
 @media (prefers-reduced-motion:reduce){.tstat{transition:none}}
+
+/* ---------- PM Assistant additions: the borrower file, the draft and its judgment sections ---------- */
+.docmeta{font-size:13px;color:var(--muted);margin:0 0 8px}
+.docmeta-box{position:relative;border:1px solid var(--line);border-left:4px solid var(--amber);border-radius:8px;padding:10px 14px 8px;margin:6px 0 4px;background:var(--bg);font-size:14px}
+.docmeta-box p{margin:0 0 4px;max-width:none}
+.aidraft{float:right;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber);padding:2px 8px;border-radius:4px;margin:0 0 4px 8px}
+.dsec{border-radius:6px;padding:2px 0}
+.dsec.gap{background:var(--amber-bg);padding:4px 10px 8px;margin:6px 0}
+.needs{background:var(--amber-bg);border-radius:6px;padding:8px 12px;font-size:14px;margin:6px 0}
+.needs strong{color:var(--amber)}
+.needs-tag{background:var(--card);color:var(--amber);border:1px dashed var(--amber);border-radius:4px;padding:0 5px;font-weight:600}
+.judgment{border:2px dashed var(--line);border-radius:8px;padding:10px 14px;margin:12px 0 0}
+.judgment h2{font-size:17px;margin:0 0 4px;display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
+.pmonly{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;background:var(--teal-bg);color:var(--teal);padding:2px 8px;border-radius:4px;font-weight:500}
+.jtext{min-height:70px;margin:4px 0 0}
+.stamp{font-size:13px;color:var(--green);border-top:1px solid var(--line);padding-top:8px;margin-top:10px}
+.missing{border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:8px;padding:10px 14px;margin:10px 0}
+.missing h2{margin:0 0 6px!important;font-size:16px;display:flex;gap:8px;align-items:baseline}
+.missing ul{margin:0;padding-left:20px}
+.ftable td.num,.ftable th.num{text-align:right;white-space:nowrap}
+.ftable tr.calc td{color:var(--muted);font-size:13px}
+.ftable tr.srcrow td{font-size:12px}
+.cov{font-family:var(--mono);font-size:11px;padding:2px 8px;border-radius:4px;white-space:nowrap}
+.cov.pass{background:var(--green-bg);color:var(--green)}.cov.near{background:var(--amber-bg);color:var(--amber)}.cov.breach{background:var(--red-bg);color:var(--red)}
+.fdep{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center}
+.spark.flat{color:var(--teal)}.spark.down{color:var(--red)}
+.wcard .headline{margin:0}
+.wact .sp{flex:1}
+.doc .tw table{font-size:13.5px}
+#trackTable{min-width:560px}
+.doc .tw{margin-bottom:4px}
+.split.wide{grid-template-columns:minmax(0,1fr) minmax(0,2fr)}
+.approvebar.static{position:static}
+.meetings .meet small{white-space:nowrap}
+@media (max-width:860px){.split.wide{grid-template-columns:minmax(0,1fr)}.meetings .meet small{white-space:normal}}
+@media (max-width:860px){#borrowerPick{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;scroll-snap-type:x mandatory}#borrowerPick .meet{flex:none;scroll-snap-align:start}}

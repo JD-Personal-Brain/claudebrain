@@ -1,5 +1,5 @@
 """Turns the raw tour recording into the final narrated video.
-Inputs: the folder that tests/record-video.js wrote (rm-assistant-tour.webm and timing.json) and the
+Inputs: the folder that tests/record-video.js wrote (pm-assistant-tour.webm and timing.json) and the
 folder of voice clips from narrate.py (stepNN.wav and lens.json).
 The raw recording runs a little slower than real time, so it is retimed to real time first; then each
 voice clip is laid down at the moment its tour step really started.
@@ -8,7 +8,7 @@ import json, os, subprocess, sys, wave, array
 
 rec, clips, out = sys.argv[1], sys.argv[2], sys.argv[3]
 timing = json.load(open(os.path.join(rec, "timing.json")))
-raw = os.path.join(rec, "rm-assistant-tour.webm")
+raw = os.path.join(rec, "pm-assistant-tour.webm")
 dur = float(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", raw]).decode())
 factor = timing["realSeconds"] / dur          # < 1 when the recording ran slow
 lens = json.load(open(os.path.join(clips, "lens.json")))

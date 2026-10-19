@@ -215,7 +215,7 @@
   // Allowed numbers come from numeric fields, plus the numbers written inside rate and terms text ("Prime + 0.50%").
   function collectNumbers(obj, key, out) {
     if (obj == null) return out;
-    if (typeof obj === "number") { out.push(obj); if (/pct/i.test(key || "")) out.push(Math.abs(obj)); }
+    if (typeof obj === "number") { if (/^(fy|since|clientSince|latestFiscalYear)$/.test(key || "")) return out; out.push(obj); if (/pct/i.test(key || "")) out.push(Math.abs(obj)); }   // years read as dates, not amounts
     else if (typeof obj === "string") { if (/^(rate|termsAsWritten|what)$/i.test(key || "")) (obj.match(/\d+(\.\d+)?/g) || []).forEach(n => out.push(parseFloat(n))); if (/^(what|termsAsWritten)$/.test(key || "")) (obj.match(/\$(\d+(\.\d+)?)M/g) || []).forEach(n => out.push(parseFloat(n.slice(1)) * 1e6)); }
     else if (Array.isArray(obj)) obj.forEach(v => collectNumbers(v, key, out));
     else if (typeof obj === "object") Object.entries(obj).forEach(([k, v]) => collectNumbers(v, k, out));
@@ -229,7 +229,7 @@
       .replace(/\b\d{4}-\d{2}(-\d{2})?\b/g, " ")                                            // ISO dates
       .replace(/\bFY ?\d{4}\b|\bQ[1-4] \d{4}\b/g, " ")                                      // fiscal years and quarters
       .replace(new RegExp(`\\b(${MONTHS})[a-z]*\\.? \\d{1,2}(st|nd|rd|th)?(, \\d{4})?\\b`, "gi"), " ")
-      .replace(new RegExp(`\\b((${MONTHS})[a-z]*\\.?|since|in|of|for|by|from|until|before|after|through|to) (19|20)\\d{2}\\b`, "gi"), " ")
+      .replace(new RegExp(`\\b((${MONTHS})[a-z]*\\.?|since|in|of|for|by|from|until|before|after|through|to|spring|summer|fall|autumn|winter|early|late|mid) (19|20)\\d{2}\\b`, "gi"), " ")
       .replace(/\b[A-Z]{1,2}-?\d{1,4}\b/g, " ")                                             // codes: K7, A8, C101, L-1011
       .replace(/\b\d+(st|nd|rd|th)\b/g, " ")
       .replace(/\b\d+-(year|month|day|week)\b/gi, " ")
@@ -281,11 +281,9 @@
 Your job: gather the file for borrower ${b.name} (id ${b.id}) and write a short summary of what's in it, so the PM can start a review.
 ${RULES_TEXT}
 - ${SRC}`;
-    const fmt = `Then write exactly this Markdown, under 130 words, nothing before or after:
+    const fmt = `Then write exactly this Markdown, under 110 words, nothing before or after (the page lists what's missing or late itself, from code):
 ## What's in the file
-(4 bullets: the business and relationship; the financial trend; loans and covenants; deposits and payments)
-## Missing or late
-(1 bullet per item that is missing, late or old, or one bullet "Nothing missing or late.")`;
+(4 bullets: the business and relationship; the financial trend, saying plainly if a year is missing; loans and covenants; deposits and payments)`;
     if (withTools) return `${head}\nUse your tools first: get_financials, get_loans_and_covenants, get_deposits_and_payments and get_documents_and_notes for ${b.id}, and get_market_context. If a tool refuses, say so in one line and don't use that borrower.\n\n${fmt}`;
     const f = buildFile(b.id);
     return `${head}\n\n<data>\n${JSON.stringify({ ...f, gaps: undefined }, null, 1)}\n</data>\n\n${fmt}`;

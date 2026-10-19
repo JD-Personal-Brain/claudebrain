@@ -11,25 +11,17 @@ window.REPLAY = {
 - Metal fabrication in Milwaukee, a client since 2014 with 210 employees; RM is Jordan Ellis. [Loan system]
 - Revenue grew from $41.2M in FY2023 to $48.0M in FY2025, up 7.6% last year, with EBITDA of $6.2M (a 12.9% margin). [FS FY2025, p. 4] [A7 calculation]
 - A $3M line ($0.4M drawn) and a $1.85M equipment term loan; debt service coverage of 2.4x against a 1.25x minimum. [Compliance certificate Q2 2026]
-- Deposits rose from $2.41M in April to $3.16M in September; 24 of 24 payments on time. [Deposit system]
-## Missing or late
-- Nothing missing or late.`,
+- Deposits rose from $2.41M in April to $3.16M in September; 24 of 24 payments on time. [Deposit system]`,
     C109: `## What's in the file
 - Sawmill and lumber in Ashland, a client since 2015 with 110 employees; RM is Jordan Ellis. [Loan system]
 - Only FY2023 and FY2024 are on file: revenue of $32.8M in FY2024, up 7.5%, with EBITDA of $4.1M. [FS FY2024, p. 4]
 - A $2.5M line with $1.2M drawn; debt service coverage was 1.9x at its last test, on December 31, 2024. [FY2024 compliance certificate]
-- Deposits eased from $1.24M in June to $1.12M in September, down 9.7%; payments on time. [Deposit system]
-## Missing or late
-- FY2025 audited statements: 172 days late. [Documents]
-- Q2 2026 compliance certificate: 66 days late. [Documents]
-- Debt service coverage: no test in 21 months. [A7 calculation]`,
+- Deposits eased from $1.24M in June to $1.12M in September, down 9.7%; payments on time. [Deposit system]`,
     C111: `## What's in the file
 - Industrial distribution in Superior, a client since 2010 with 150 employees; RM is Jordan Ellis. [Loan system]
 - Revenue grew from $36.0M in FY2023 to $41.0M in FY2025, up 5.4% last year; EBITDA of $4.2M, a 10.2% margin. [FS FY2025, p. 4] [A7 calculation]
 - A $3.5M line with $1.9M drawn and a $5.2M borrowing base; debt to EBITDA of 0.45x against a 3.0x maximum. [Compliance certificate Q2 2026]
-- Open request: increase the line to $4.5M. Deposits up 18.6% over 3 months; payments on time. [Request, Oct 14] [Deposit system]
-## Missing or late
-- Nothing missing or late.`
+- Open request: increase the line to $4.5M. Deposits up 18.6% over 3 months; payments on time. [Request, Oct 14] [Deposit system]`
   },
   // A8: the routine sections of each draft. The risk rating and recommendation are never drafted.
   drafts: {
