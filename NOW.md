@@ -14,7 +14,7 @@ _Kept short on purpose (Elon mode, 2026-10-18): this note says where things stan
 - **Use cases:** the Use Case Library (https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X, in use).
 - **The bank:** the Bank Business Briefing (https://claude.ai/artifact/7ZVT7LtdqxwAma4UrBgTPX), updated by the bank news scout every Monday (first run October 19) and after the Q3 results (October 23), by email notice to my personal address.
 - **Quality:** every change is audited before main (the audit skill, the GitHub audit check, the Audit Log https://claude.ai/artifact/QnPL82PBx6AfGKB5VgqUPf). The mechanical part of each wrap-up runs by script (`.claude/skills/wrap-up/run.py`).
-- **Working with Claude:** the Prompting Guide and the Prompt Library (five core prompts); the Claude Mastery course comes in by paste (next up: Module 3, Projects, Connectors and Skills).
+- **Working with Claude:** the Prompting Guide and the Prompt Library (six core prompts); the Claude Mastery course comes in by paste (next up: Module 3, Projects, Connectors and Skills).
 
 ## What's next
 _Everything open, in priority order, is in the Open Items log (https://claude.ai/artifact/NsW5AH5XFNHmDNYJvmVDMb). Before Tuesday October 20 I'm going down it from the top, one item at a time. The top two:_

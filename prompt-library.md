@@ -19,6 +19,7 @@ holds the ones worth keeping.
 | 3 | A business briefing on the bank | The Bank Business Briefing, rebuilt from public sources each quarter | 1 (2026-10-09) |
 | 4 | A showcase prototype with live agents | A clickable prototype of a user group's AI assistant, with three agents running live on Claude, a guided tour and a video, built from our framework | 2 (2026-10-19) |
 | 5 | Copy a user group's work to the next group | The whole section for a new user group (such as portfolio managers) as a first cut: plan, three short pages, workflow map, agents, prototype and detail document, copied from the RM section | 1 (2026-10-19) |
+| 6 | The full program audit | Every page read and checked against the reference pages, the Open Items log and each other; numbers, timings and Gantt charts traced; summaries trimmed; pages rendered; then Elon mode cuts what isn't needed | 1 (2026-10-19) |
 
 ## Prompt 1: the use case kit (organize a use case, find its gaps, fix them)
 **Version 2** (2026-10-18). First run: relationship managers (RMs).
@@ -712,5 +713,169 @@ Tone:     A senior product leader's working draft: clear, direct and
 **For the next group:** Change the group (PMs to the next one, such as treasury management officers), its material in `<pm_material>`, its product name, its first waves and its starting agent and workflow numbers. Everything else stays.
 
 **What changed:** version 1, written and approved 2026-10-19.
+
+## Prompt 6: the full program audit (every document, every link, then Elon mode)
+**Version 1** (2026-10-19). Say "run the audit prompt".
+
+A complete review of everything in the program, not only what changed: every
+designed page read word by word, every page checked against the reference pages
+and the Open Items log, every number, date, workflow and Gantt chart checked
+against its one home, every page rendered, and every summary trimmed so it is
+easy to read. Then Elon mode runs over the cleaned program to cut and simplify
+further. It builds on the **audit** skill at the deep size (so it doesn't repeat
+it) and adds a page-by-page read and a trim pass. Inputs go first and the request
+last (tip 6); the reviewers work in parallel, each on its own slice, because no
+single reader can hold the whole program; steps 8 and 10 are "draft, check,
+improve" (tip 9). Claude runs it end to end, saves a draft and reports back;
+nothing goes into main without my yes.
+
+```
+Inputs:   <program>
+          Every page in designs/library.json (each "source" is its
+          working file) and every page in designs/README.md: the bank
+          and the role, How we deliver (memos/role-workflow.md,
+          product-framework.md, product-machine.md, playbook/), the
+          reference pages (Agent Library, Workflow Maps, Steps
+          Catalog, Controls Catalog, Glossary), the RM section, the
+          PM section, Research, and My workspace (Open Items, Audit
+          Log, Prompting Guide, Prompt Library). Also the hand-made
+          pages in designs/, the builders (designs/*-build.py,
+          designs/pagekit.py) and both prototypes (prototypes/).
+          </program>
+          <sources_of_truth>
+          glossary.md (one meaning per word, the retired wording);
+          the reference pages for agents, workflows, sub-steps and
+          controls; open-items.md for what is open, closed and who
+          owns it; NOW.md for where things stand; each plan's detail
+          document (RM Detail, PM Detail) for its weeks and waves.
+          </sources_of_truth>
+          <how_to_check>
+          .claude/skills/audit/SKILL.md (the deep size),
+          .claude/skills/audit/check.py, designs/render-check.js,
+          .claude/skills/audit/lost-lines.py,
+          .claude/skills/elon-mode/SKILL.md and
+          memos/elon-mode-research.md, learning/rules.md, me/profile.md
+          </how_to_check>
+
+Role:     You are a senior editor and product operations lead
+          auditing a bank AI product program before it is shown to
+          bank leaders.
+
+Context:  I'm one person building how I'd run AI products at
+          Associated Bank. The program has grown fast: many pages,
+          long summaries, numbers and dates repeated in several
+          places. Leaders and I must be able to read any page fast
+          and trust that every page agrees with every other. Each
+          fact has one home; summaries link down to it.
+
+Steps:    1. Write a "done" checklist (below, plus your own items).
+             Run the scripts first (check.py, render-check.js,
+             lost-lines.py) so the reviewers start from a known state.
+          2. Build the inventory: one row per page (name, working
+             file, built page, live link, section). Flag any page in
+             one list and not the other.
+          3. Start read-only reviewers in parallel (Agent tool), each
+             on a slice, each reading every word of its pages and
+             ending with a written report (file, line, quote, fix,
+             severity Must, Should or Minor), within about 40 steps:
+             a. How we deliver and the reference pages.
+             b. The RM section, its prototype and RM Detail.
+             c. The PM section, its prototype and PM Detail.
+             d. The bank and the role, Research, My workspace,
+                NOW.md and CLAUDE.md.
+             e. Numbers and time: every count, week, date, wave,
+                gate and Gantt chart, traced to its one home.
+             f. Integration: every link, number reference (agents,
+                workflows, controls, sub-steps, open items) and
+                summary-to-detail jump, clicked or traced.
+          4. Each reviewer checks its pages for:
+             - Words: plain English, glossary terms only, no retired
+               wording, RMs and PMs spelled out first, no shorthand.
+             - Trim: every summary, intro and "why" line cut to what
+               the reader needs; repeated text replaced by a link to
+               its one home; any paragraph a reader would skim cut.
+             - Integration: each item links to its reference card;
+               related pages link to each other; nothing listed in
+               one place is missing from another.
+             - Open items: every open item matches the pages it
+               touches; nothing a page calls open is closed in the
+               log (or the reverse); owners and "waits on" current.
+             - Workflows and timings: workflow numbers, steps, weeks,
+               waves and gates agree between plan, Gantt chart,
+               detail document, Workflow Maps and prototype; each
+               Gantt chart starts at kickoff, puts gates in order,
+               shows the limiting factor and uses [X] where the bank
+               sets the date.
+             - Bank facts: anything only the bank knows is a question
+               or an assumption to confirm, never a fact.
+             - Design and layout: the house style, numbered rows and
+               twisties used as agreed, nothing cut off, readable at
+               phone width, top and bottom of each page in the
+               screenshots.
+          5. Merge the reports into one findings list, removing
+             duplicates, ranked by severity.
+          6. Fix every Must and Should and the Minor ones, in the
+             working files, then rebuild and republish every page
+             whose source changed. Anything that changes a decision
+             I made goes on a short decision list instead.
+          7. Re-run the scripts. Add a check to check.py for any
+             finding a script could catch next time.
+          8. Second reviewer: confirm each fix (pass or fail, with
+             a quote) and look for new problems; fix them.
+          9. Elon mode over the cleaned program (the elon-mode
+             skill, whole program as the target): for every page,
+             section, rule, skill, agent, control and open item,
+             should it exist, can it be deleted, merged, simplified?
+             Apply the cuts that only remove repetition or words
+             (no decision changes); list the rest for me.
+          10. Re-run the scripts and the render check after the
+             Elon mode cuts, then add one row to the Audit Log
+             (memos/audit-log.md) and an Entry section, and
+             republish it.
+
+Rules:    Read every word of every page, not a sample, because the
+          errors that matter sit in pages nobody changed lately.
+          Trim, don't rewrite: keep each page's structure and every
+          fact, because I've approved these layouts (rule R27); if a
+          page needs a new structure, show me a sample first.
+          Never cut law, bank policy or a control, because the bank
+          requires them. Keep one home for each fact and link to it,
+          because copies drift. Every removed sentence must appear in
+          lost-lines.py's list with a reason (moved, reworded, cut on
+          purpose), because nothing may be lost silently (rule R29).
+          Never ask me to proofread reference pages (rule R22).
+          Never state a bank fact as fact (rule R32). Save a draft to
+          the session's branch after each stage, because a long run
+          can be cut off; update NOW.md with what's done and the one
+          next step. Never merge into main, because merges need my
+          yes after GitHub's audit check passes (rule R18).
+
+Goal:     Using everything above, audit and clean the whole program.
+          Done means every page reads short and clear, every page
+          agrees with the reference pages, the Open Items log and
+          every other page, every number and timing traces to one
+          home, every page renders cleanly, and Elon mode has cut
+          what isn't needed.
+
+Output:   A draft on GitHub and the republished pages. Then a short
+          report (rule R2): findings by severity, the three that
+          mattered most, how much was trimmed (lines before and
+          after), what Elon mode cut, the decision list (each with
+          your recommendation), and one question for me.
+
+Tone:     A demanding editor: precise, plain and calm.
+```
+
+**The done checklist it starts from** (step 1 adds to it):
+1. Every page in the library and in `designs/README.md` was read in full by a reviewer, with the inventory to prove it.
+2. `check.py` passes; the render check reports `problems: 0`; every lost line has a reason.
+3. Every agent, workflow, control, sub-step and open item number on every page points to the right item.
+4. Every count, week, wave, gate and Gantt chart matches its one home.
+5. Every open item agrees with the pages it touches.
+6. Summaries are shorter (lines before and after, per page), with no fact lost.
+7. A second reviewer passed every fix; Elon mode ran and its safe cuts are applied.
+8. Every changed page is republished; the Audit Log has the row and Entry; a draft is saved; nothing is merged.
+
+**What changed:** version 1, written 2026-10-19.
 
 _Last updated: 2026-10-19_

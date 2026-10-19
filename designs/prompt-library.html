@@ -101,11 +101,11 @@ footer{color:var(--muted);font-size:14px;border-top:1px solid var(--line);paddin
 <span class="label">My workspace · working with Claude</span>
 <h1>Prompt Library: our core prompts</h1>
 <p class="lede">Our core prompts in one place, each with its version and what changed, so we can reuse them and improve them over time.</p>
-<nav class="stepnav" aria-label="Sections"><a href="#how-to-use-this-page">How to use this page</a><a href="#prompt-1-the-use-case-kit-organize-a-use">Prompt 1: the use case kit (organize a use case, find its gaps, fix them)</a><a href="#prompt-2-a-full-product-memo-like-the-rm">Prompt 2: a full product memo (like the RM Assistant's full plan)</a><a href="#prompt-3-a-business-briefing-on-the-bank">Prompt 3: a business briefing on the bank (like the Bank Business Briefing)</a><a href="#prompt-4-a-showcase-prototype-with-live-">Prompt 4: a showcase prototype with live agents (like the RM Assistant Prototype)</a><a href="#prompt-5-copy-a-user-group-s-work-to-the">Prompt 5: copy a user group's work to the next group (like the portfolio manager section)</a></nav>
+<nav class="stepnav" aria-label="Sections"><a href="#how-to-use-this-page">How to use this page</a><a href="#prompt-1-the-use-case-kit-organize-a-use">Prompt 1: the use case kit (organize a use case, find its gaps, fix them)</a><a href="#prompt-2-a-full-product-memo-like-the-rm">Prompt 2: a full product memo (like the RM Assistant's full plan)</a><a href="#prompt-3-a-business-briefing-on-the-bank">Prompt 3: a business briefing on the bank (like the Bank Business Briefing)</a><a href="#prompt-4-a-showcase-prototype-with-live-">Prompt 4: a showcase prototype with live agents (like the RM Assistant Prototype)</a><a href="#prompt-5-copy-a-user-group-s-work-to-the">Prompt 5: copy a user group's work to the next group (like the portfolio manager section)</a><a href="#prompt-6-the-full-program-audit-every-do">Prompt 6: the full program audit (every document, every link, then Elon mode)</a></nav>
 </div></div>
 <main class="wrap">
 <div class="intro-block"><p>The prompts we use again and again, kept in one place so we can find them, reuse them and improve them over time. Each one is built from the <a class="xref" href="https://claude.ai/artifact/Secfj5fBtpVA1veroUU7A7" target="_blank" rel="noopener">Prompting Guide</a> (<code>prompting.md</code>): its template, a reason for every rule, long material first and the request last. The <a class="xref" href="https://claude.ai/artifact/Secfj5fBtpVA1veroUU7A7" target="_blank" rel="noopener">Prompting Guide</a> teaches how to write a prompt; this page holds the ones worth keeping.</p></div>
-<section id="how-to-use-this-page"><div class="stephead"><h2>How to use this page</h2></div><div class="mdbody"><ul><li><strong>To run a prompt:</strong> copy it into a new session, fill in the <code>[brackets]</code>, and send it (leave any <code>{next group: ...}</code> as written; it names the group that comes after). Or just ask Claude by name, for example "run the use case kit prompt for RMs".</li><li><strong>To improve one:</strong> say what to keep and what to change ("When the answer is off" in the <a class="xref" href="https://claude.ai/artifact/Secfj5fBtpVA1veroUU7A7" target="_blank" rel="noopener">Prompting Guide</a>). Claude updates the prompt here, raises its version number and adds a line to its "What changed" note.</li><li><strong>To add one:</strong> when a prompt is worth reusing, Claude asks whether to save it here.</li><li><strong>Tip numbers</strong> (tip 4, tip 6, tip 9) point to "Anthropic's advice, in plain English" in the <a class="xref" href="https://claude.ai/artifact/Secfj5fBtpVA1veroUU7A7" target="_blank" rel="noopener">Prompting Guide</a>: tip 4 is tags, tip 6 is long material first, tip 9 is draft, check, improve.</li></ul><div class="tw"><table><thead><tr><th>#</th><th>Prompt</th><th>What it gives me</th><th>Version</th></tr></thead><tbody><tr><td>1</td><td>The use case kit</td><td>The standard set of pieces every use case has (a leader layer and a working layer), the use case measured against it, and the gaps fixed</td><td>2 (2026-10-18)</td></tr><tr><td>2</td><td>A full product memo</td><td>A full product plan for a new use case, from my saved files</td><td>1 (2026-10-09)</td></tr><tr><td>3</td><td>A business briefing on the bank</td><td>The <a class="xref" href="https://claude.ai/artifact/7ZVT7LtdqxwAma4UrBgTPX" target="_blank" rel="noopener">Bank Business Briefing</a>, rebuilt from public sources each quarter</td><td>1 (2026-10-09)</td></tr><tr><td>4</td><td>A showcase prototype with live agents</td><td>A clickable prototype of a user group's AI assistant, with three agents running live on Claude, a guided tour and a video, built from our framework</td><td>2 (2026-10-19)</td></tr><tr><td>5</td><td>Copy a user group's work to the next group</td><td>The whole section for a new user group (such as portfolio managers) as a first cut: plan, three short pages, workflow map, agents, prototype and detail document, copied from the RM section</td><td>1 (2026-10-19)</td></tr></tbody></table></div></div></section><section id="prompt-1-the-use-case-kit-organize-a-use"><div class="stephead"><h2>Prompt 1: the use case kit (organize a use case, find its gaps, fix them)</h2></div><div class="mdbody"><p><strong>Version 2</strong> (2026-10-18). First run: relationship managers (RMs).</p><p>Sets the standard set of pieces every use case should have, in two layers: a <strong>leader layer</strong> I communicate from (for bank leaders) and a <strong>working layer</strong> I and the team work from. It runs first on the RM work, where most of the material already exists, so the kit is tested against real work before it's copied to portfolio managers (PMs). It runs in two stages and stops between them for my yes, because a new structure needs a sample before anything is built (rule R27). The inputs are files in the repo, so Claude reads them itself; the paths are listed in tags (tip 4) and the request comes last (tip 6). Stage 1 step 7 and stage 2 step 5 are "draft, check, improve" (tip 9).</p><pre class="diagram">Inputs:   &lt;use_case_work&gt;
+<section id="how-to-use-this-page"><div class="stephead"><h2>How to use this page</h2></div><div class="mdbody"><ul><li><strong>To run a prompt:</strong> copy it into a new session, fill in the <code>[brackets]</code>, and send it (leave any <code>{next group: ...}</code> as written; it names the group that comes after). Or just ask Claude by name, for example "run the use case kit prompt for RMs".</li><li><strong>To improve one:</strong> say what to keep and what to change ("When the answer is off" in the <a class="xref" href="https://claude.ai/artifact/Secfj5fBtpVA1veroUU7A7" target="_blank" rel="noopener">Prompting Guide</a>). Claude updates the prompt here, raises its version number and adds a line to its "What changed" note.</li><li><strong>To add one:</strong> when a prompt is worth reusing, Claude asks whether to save it here.</li><li><strong>Tip numbers</strong> (tip 4, tip 6, tip 9) point to "Anthropic's advice, in plain English" in the <a class="xref" href="https://claude.ai/artifact/Secfj5fBtpVA1veroUU7A7" target="_blank" rel="noopener">Prompting Guide</a>: tip 4 is tags, tip 6 is long material first, tip 9 is draft, check, improve.</li></ul><div class="tw"><table><thead><tr><th>#</th><th>Prompt</th><th>What it gives me</th><th>Version</th></tr></thead><tbody><tr><td>1</td><td>The use case kit</td><td>The standard set of pieces every use case has (a leader layer and a working layer), the use case measured against it, and the gaps fixed</td><td>2 (2026-10-18)</td></tr><tr><td>2</td><td>A full product memo</td><td>A full product plan for a new use case, from my saved files</td><td>1 (2026-10-09)</td></tr><tr><td>3</td><td>A business briefing on the bank</td><td>The <a class="xref" href="https://claude.ai/artifact/7ZVT7LtdqxwAma4UrBgTPX" target="_blank" rel="noopener">Bank Business Briefing</a>, rebuilt from public sources each quarter</td><td>1 (2026-10-09)</td></tr><tr><td>4</td><td>A showcase prototype with live agents</td><td>A clickable prototype of a user group's AI assistant, with three agents running live on Claude, a guided tour and a video, built from our framework</td><td>2 (2026-10-19)</td></tr><tr><td>5</td><td>Copy a user group's work to the next group</td><td>The whole section for a new user group (such as portfolio managers) as a first cut: plan, three short pages, workflow map, agents, prototype and detail document, copied from the RM section</td><td>1 (2026-10-19)</td></tr><tr><td>6</td><td>The full program audit</td><td>Every page read and checked against the reference pages, the Open Items log and each other; numbers, timings and Gantt charts traced; summaries trimmed; pages rendered; then Elon mode cuts what isn't needed</td><td>1 (2026-10-19)</td></tr></tbody></table></div></div></section><section id="prompt-1-the-use-case-kit-organize-a-use"><div class="stephead"><h2>Prompt 1: the use case kit (organize a use case, find its gaps, fix them)</h2></div><div class="mdbody"><p><strong>Version 2</strong> (2026-10-18). First run: relationship managers (RMs).</p><p>Sets the standard set of pieces every use case should have, in two layers: a <strong>leader layer</strong> I communicate from (for bank leaders) and a <strong>working layer</strong> I and the team work from. It runs first on the RM work, where most of the material already exists, so the kit is tested against real work before it's copied to portfolio managers (PMs). It runs in two stages and stops between them for my yes, because a new structure needs a sample before anything is built (rule R27). The inputs are files in the repo, so Claude reads them itself; the paths are listed in tags (tip 4) and the request comes last (tip 6). Stage 1 step 7 and stage 2 step 5 are "draft, check, improve" (tip 9).</p><pre class="diagram">Inputs:   &lt;use_case_work&gt;
           Everything already built for [relationship managers (RMs)]:
           [memos/rm-analytics-framework.md] (the full plan, with
           Appendix A agent specs and Appendix B workflows),
@@ -671,6 +671,139 @@ Output:   The new working files, pages, prototype and a draft on
           start), and one question for me.
 
 Tone:     A senior product leader&#x27;s working draft: clear, direct and
-          complete, no selling.</pre><p><strong>The done checklist it starts from</strong> (step 1 adds to it):</p><ol><li>The library's Portfolio managers section has five numbered rows, matching the RM section: <a class="xref" href="https://claude.ai/artifact/Cvw3mkUohNFLwVr4H2wURd" target="_blank" rel="noopener">PM Executive Summary</a>, The PM Assistant, <a class="xref" href="https://claude.ai/artifact/UKMBCCxBns8YuCJyEo4Zkv" target="_blank" rel="noopener">PM Assistant Plan</a>, <a class="xref" href="https://claude.ai/artifact/8vFxUWVwtZbzZs7pL162HE" target="_blank" rel="noopener">PM Assistant Prototype</a>, <a class="xref" href="https://claude.ai/artifact/KZ4PEbhCPAj6uWKXmJMCeg" target="_blank" rel="noopener">PM Detail</a>. Each opens.</li><li>Each short page has the same sections as its RM twin; the plan opens with a Gantt chart.</li><li>The full plan has the six steps as one table, Appendix A (agents from <a class="xref" href="https://claude.ai/artifact/Cn9nANQoqp2BP7yrmy61zn#a7" target="_blank" rel="noopener">A7</a>) and Appendix B (workflows from B10).</li><li>Wave 1 is the borrower file, then credit memo and annual review drafts on the higher-risk path (<a class="xref" href="https://claude.ai/artifact/7GmH3iBG6jcDkdacUysUrQ#k3" target="_blank" rel="noopener">K3</a>); wave 2 is early warning; risk ratings are out.</li><li>The product's workflows are a map on the <a class="xref" href="https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX" target="_blank" rel="noopener">Workflow Maps</a> (Map 3, like Map 2); the user workflow (how PMs work today) comes later, as for RMs (W2); the PM agents are in the <a class="xref" href="https://claude.ai/artifact/Cn9nANQoqp2BP7yrmy61zn" target="_blank" rel="noopener">Agent Library</a>.</li><li>The prototype runs three agents on a sample borrower, refuses a credit decision or a borrower risk rating, logs every action, has a tour under 2 minutes, a video, passing tests, a README and a changelog.</li><li>Every bank fact is an assumption with a question; every outside number has a source.</li><li>The render check passes on every changed page; the audit passes; a draft is saved on GitHub; nothing is merged.</li></ol><p><strong>For the next group:</strong> Change the group (PMs to the next one, such as treasury management officers), its material in <code>&lt;pm_material&gt;</code>, its product name, its first waves and its starting agent and workflow numbers. Everything else stays.</p><p><strong>What changed:</strong> version 1, written and approved 2026-10-19.</p></div></section>
+          complete, no selling.</pre><p><strong>The done checklist it starts from</strong> (step 1 adds to it):</p><ol><li>The library's Portfolio managers section has five numbered rows, matching the RM section: <a class="xref" href="https://claude.ai/artifact/Cvw3mkUohNFLwVr4H2wURd" target="_blank" rel="noopener">PM Executive Summary</a>, The PM Assistant, <a class="xref" href="https://claude.ai/artifact/UKMBCCxBns8YuCJyEo4Zkv" target="_blank" rel="noopener">PM Assistant Plan</a>, <a class="xref" href="https://claude.ai/artifact/8vFxUWVwtZbzZs7pL162HE" target="_blank" rel="noopener">PM Assistant Prototype</a>, <a class="xref" href="https://claude.ai/artifact/KZ4PEbhCPAj6uWKXmJMCeg" target="_blank" rel="noopener">PM Detail</a>. Each opens.</li><li>Each short page has the same sections as its RM twin; the plan opens with a Gantt chart.</li><li>The full plan has the six steps as one table, Appendix A (agents from <a class="xref" href="https://claude.ai/artifact/Cn9nANQoqp2BP7yrmy61zn#a7" target="_blank" rel="noopener">A7</a>) and Appendix B (workflows from B10).</li><li>Wave 1 is the borrower file, then credit memo and annual review drafts on the higher-risk path (<a class="xref" href="https://claude.ai/artifact/7GmH3iBG6jcDkdacUysUrQ#k3" target="_blank" rel="noopener">K3</a>); wave 2 is early warning; risk ratings are out.</li><li>The product's workflows are a map on the <a class="xref" href="https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX" target="_blank" rel="noopener">Workflow Maps</a> (Map 3, like Map 2); the user workflow (how PMs work today) comes later, as for RMs (W2); the PM agents are in the <a class="xref" href="https://claude.ai/artifact/Cn9nANQoqp2BP7yrmy61zn" target="_blank" rel="noopener">Agent Library</a>.</li><li>The prototype runs three agents on a sample borrower, refuses a credit decision or a borrower risk rating, logs every action, has a tour under 2 minutes, a video, passing tests, a README and a changelog.</li><li>Every bank fact is an assumption with a question; every outside number has a source.</li><li>The render check passes on every changed page; the audit passes; a draft is saved on GitHub; nothing is merged.</li></ol><p><strong>For the next group:</strong> Change the group (PMs to the next one, such as treasury management officers), its material in <code>&lt;pm_material&gt;</code>, its product name, its first waves and its starting agent and workflow numbers. Everything else stays.</p><p><strong>What changed:</strong> version 1, written and approved 2026-10-19.</p></div></section><section id="prompt-6-the-full-program-audit-every-do"><div class="stephead"><h2>Prompt 6: the full program audit (every document, every link, then Elon mode)</h2></div><div class="mdbody"><p><strong>Version 1</strong> (2026-10-19). Say "run the audit prompt".</p><p>A complete review of everything in the program, not only what changed: every designed page read word by word, every page checked against the reference pages and the Open Items log, every number, date, workflow and Gantt chart checked against its one home, every page rendered, and every summary trimmed so it is easy to read. Then Elon mode runs over the cleaned program to cut and simplify further. It builds on the <strong>audit</strong> skill at the deep size (so it doesn't repeat it) and adds a page-by-page read and a trim pass. Inputs go first and the request last (tip 6); the reviewers work in parallel, each on its own slice, because no single reader can hold the whole program; steps 8 and 10 are "draft, check, improve" (tip 9). Claude runs it end to end, saves a draft and reports back; nothing goes into main without my yes.</p><pre class="diagram">Inputs:   &lt;program&gt;
+          Every page in designs/library.json (each &quot;source&quot; is its
+          working file) and every page in designs/README.md: the bank
+          and the role, How we deliver (memos/role-workflow.md,
+          product-framework.md, product-machine.md, playbook/), the
+          reference pages (Agent Library, Workflow Maps, Steps
+          Catalog, Controls Catalog, Glossary), the RM section, the
+          PM section, Research, and My workspace (Open Items, Audit
+          Log, Prompting Guide, Prompt Library). Also the hand-made
+          pages in designs/, the builders (designs/*-build.py,
+          designs/pagekit.py) and both prototypes (prototypes/).
+          &lt;/program&gt;
+          &lt;sources_of_truth&gt;
+          glossary.md (one meaning per word, the retired wording);
+          the reference pages for agents, workflows, sub-steps and
+          controls; open-items.md for what is open, closed and who
+          owns it; NOW.md for where things stand; each plan&#x27;s detail
+          document (RM Detail, PM Detail) for its weeks and waves.
+          &lt;/sources_of_truth&gt;
+          &lt;how_to_check&gt;
+          .claude/skills/audit/SKILL.md (the deep size),
+          .claude/skills/audit/check.py, designs/render-check.js,
+          .claude/skills/audit/lost-lines.py,
+          .claude/skills/elon-mode/SKILL.md and
+          memos/elon-mode-research.md, learning/rules.md, me/profile.md
+          &lt;/how_to_check&gt;
+
+Role:     You are a senior editor and product operations lead
+          auditing a bank AI product program before it is shown to
+          bank leaders.
+
+Context:  I&#x27;m one person building how I&#x27;d run AI products at
+          Associated Bank. The program has grown fast: many pages,
+          long summaries, numbers and dates repeated in several
+          places. Leaders and I must be able to read any page fast
+          and trust that every page agrees with every other. Each
+          fact has one home; summaries link down to it.
+
+Steps:    1. Write a &quot;done&quot; checklist (below, plus your own items).
+             Run the scripts first (check.py, render-check.js,
+             lost-lines.py) so the reviewers start from a known state.
+          2. Build the inventory: one row per page (name, working
+             file, built page, live link, section). Flag any page in
+             one list and not the other.
+          3. Start read-only reviewers in parallel (Agent tool), each
+             on a slice, each reading every word of its pages and
+             ending with a written report (file, line, quote, fix,
+             severity Must, Should or Minor), within about 40 steps:
+             a. How we deliver and the reference pages.
+             b. The RM section, its prototype and RM Detail.
+             c. The PM section, its prototype and PM Detail.
+             d. The bank and the role, Research, My workspace,
+                NOW.md and CLAUDE.md.
+             e. Numbers and time: every count, week, date, wave,
+                gate and Gantt chart, traced to its one home.
+             f. Integration: every link, number reference (agents,
+                workflows, controls, sub-steps, open items) and
+                summary-to-detail jump, clicked or traced.
+          4. Each reviewer checks its pages for:
+             - Words: plain English, glossary terms only, no retired
+               wording, RMs and PMs spelled out first, no shorthand.
+             - Trim: every summary, intro and &quot;why&quot; line cut to what
+               the reader needs; repeated text replaced by a link to
+               its one home; any paragraph a reader would skim cut.
+             - Integration: each item links to its reference card;
+               related pages link to each other; nothing listed in
+               one place is missing from another.
+             - Open items: every open item matches the pages it
+               touches; nothing a page calls open is closed in the
+               log (or the reverse); owners and &quot;waits on&quot; current.
+             - Workflows and timings: workflow numbers, steps, weeks,
+               waves and gates agree between plan, Gantt chart,
+               detail document, Workflow Maps and prototype; each
+               Gantt chart starts at kickoff, puts gates in order,
+               shows the limiting factor and uses [X] where the bank
+               sets the date.
+             - Bank facts: anything only the bank knows is a question
+               or an assumption to confirm, never a fact.
+             - Design and layout: the house style, numbered rows and
+               twisties used as agreed, nothing cut off, readable at
+               phone width, top and bottom of each page in the
+               screenshots.
+          5. Merge the reports into one findings list, removing
+             duplicates, ranked by severity.
+          6. Fix every Must and Should and the Minor ones, in the
+             working files, then rebuild and republish every page
+             whose source changed. Anything that changes a decision
+             I made goes on a short decision list instead.
+          7. Re-run the scripts. Add a check to check.py for any
+             finding a script could catch next time.
+          8. Second reviewer: confirm each fix (pass or fail, with
+             a quote) and look for new problems; fix them.
+          9. Elon mode over the cleaned program (the elon-mode
+             skill, whole program as the target): for every page,
+             section, rule, skill, agent, control and open item,
+             should it exist, can it be deleted, merged, simplified?
+             Apply the cuts that only remove repetition or words
+             (no decision changes); list the rest for me.
+          10. Re-run the scripts and the render check after the
+             Elon mode cuts, then add one row to the Audit Log
+             (memos/audit-log.md) and an Entry section, and
+             republish it.
+
+Rules:    Read every word of every page, not a sample, because the
+          errors that matter sit in pages nobody changed lately.
+          Trim, don&#x27;t rewrite: keep each page&#x27;s structure and every
+          fact, because I&#x27;ve approved these layouts (rule R27); if a
+          page needs a new structure, show me a sample first.
+          Never cut law, bank policy or a control, because the bank
+          requires them. Keep one home for each fact and link to it,
+          because copies drift. Every removed sentence must appear in
+          lost-lines.py&#x27;s list with a reason (moved, reworded, cut on
+          purpose), because nothing may be lost silently (rule R29).
+          Never ask me to proofread reference pages (rule R22).
+          Never state a bank fact as fact (rule R32). Save a draft to
+          the session&#x27;s branch after each stage, because a long run
+          can be cut off; update NOW.md with what&#x27;s done and the one
+          next step. Never merge into main, because merges need my
+          yes after GitHub&#x27;s audit check passes (rule R18).
+
+Goal:     Using everything above, audit and clean the whole program.
+          Done means every page reads short and clear, every page
+          agrees with the reference pages, the Open Items log and
+          every other page, every number and timing traces to one
+          home, every page renders cleanly, and Elon mode has cut
+          what isn&#x27;t needed.
+
+Output:   A draft on GitHub and the republished pages. Then a short
+          report (rule R2): findings by severity, the three that
+          mattered most, how much was trimmed (lines before and
+          after), what Elon mode cut, the decision list (each with
+          your recommendation), and one question for me.
+
+Tone:     A demanding editor: precise, plain and calm.</pre><p><strong>The done checklist it starts from</strong> (step 1 adds to it):</p><ol><li>Every page in the library and in <code>designs/README.md</code> was read in full by a reviewer, with the inventory to prove it.</li><li><code>check.py</code> passes; the render check reports <code>problems: 0</code>; every lost line has a reason.</li><li>Every agent, workflow, control, sub-step and open item number on every page points to the right item.</li><li>Every count, week, wave, gate and Gantt chart matches its one home.</li><li>Every open item agrees with the pages it touches.</li><li>Summaries are shorter (lines before and after, per page), with no fact lost.</li><li>A second reviewer passed every fix; Elon mode ran and its safe cuts are applied.</li><li>Every changed page is republished; the Audit Log has the row and Entry; a draft is saved; nothing is merged.</li></ol><p><strong>What changed:</strong> version 1, written 2026-10-19.</p></div></section>
 <footer>Built from the working copy <code>prompt-library.md</code> · last updated 2026-10-19. Lines marked ⚠️ are guesses to confirm; [X] marks numbers still to be set.</footer>
 </main>
