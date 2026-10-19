@@ -168,10 +168,10 @@ rating and the recommendation stay with the PM.
 | 1–3 | Shadow 4–6 PMs and analysts through a real review (our estimate); time each part, which gives the final baseline; improve the prototype every few days | Product manager, pilot PMs, analyst | Time map; feedback log |
 | 1–4 | Borrower file and drafts built and tested on sample borrowers | Platform team | Prototype test results |
 | About 4 | **Gate 2:** final baseline, data contract, early risk rating (which capabilities take the higher-risk path), what drafts may contain (credit policy owner), measures and value model. Aimed for weeks 2 to 4, paced by the data owners' signatures (⚠️) | Sponsor, data owners, content owner of the credit file, risk partner, credit policy owner | Signed data contract; decision log |
-| 4–6 | Borrower file on real data: test set, controls tested, frozen version, sign-offs | Platform team, risk partner | Gate 3 and 4 entries |
+| 5–6 | Borrower file on real data, after gate 2: test set, controls tested, frozen version, sign-offs | Platform team, risk partner | Gate 3 and 4 entries |
 | About 7 | **Borrower file live with pilot PMs** | Product manager | First weekly usage report |
-| 4–9 | Review and memo drafts on real past reviews; test set graded by PMs, with must-refuse cases; fairness check agreed with compliance; evidence pack | Platform teams, product manager, compliance | Test results against the quality bar |
-| 9–11 | Higher-risk review of the frozen drafts: sign-offs, including the credit policy owner's; readiness (training, incident process, comparison group) | Risk, compliance, privacy, security, credit policy owner | Sign-offs recorded |
+| 5–9 | Review and memo drafts on real past reviews, after gate 2; test set graded by PMs, with must-refuse cases; fairness check agreed with compliance; evidence pack | Platform teams, product manager, compliance | Test results against the quality bar |
+| 10–11 | Higher-risk review of the frozen drafts: sign-offs, including the credit policy owner's; readiness (training, incident process, comparison group) | Risk, compliance, privacy, security, credit policy owner | Sign-offs recorded |
 | About 12 | **Annual review and credit memo drafts live with pilot PMs** | Product manager | Drafts used; sections kept with light edits |
 
 **By day 90 (about week 13):** the borrower file has been live for about six weeks and the

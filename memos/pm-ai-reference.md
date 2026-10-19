@@ -35,9 +35,9 @@ Later waves add early warning flags and a covenant and statement tracker, then c
 - Time is proven against similar PMs not yet using it; targets are set from the bank's own numbers. [Outside evidence for each credit core use case](https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X#portfolio-managers)
 
 ### How fast
-The build takes days. What sets the pace is approval: drafts inform credit decisions, so they take the bank's deeper review, including the credit policy owner's sign-off. On our first estimates, to confirm, that's the borrower file by about week 7 and the drafts by about week 12. [The plan, week by week](https://claude.ai/artifact/UKMBCCxBns8YuCJyEo4Zkv)
+A first prototype takes days. What sets the pace is approval: drafts inform credit decisions, so they take the bank's deeper review, including the credit policy owner's sign-off. On our first estimates, to confirm, that's the borrower file by about week 7 and the drafts by about week 12. [The plan, week by week](https://claude.ai/artifact/UKMBCCxBns8YuCJyEo4Zkv)
 
-**What could slow us down:** not known yet. Possible hold-ups include approval to use borrower data and the deeper credit review. If the review runs long, the borrower file still goes first, because it gathers and cites but writes no judgment; if data approval runs long, the prototype keeps running on sample borrowers until it lands.
+**What could slow us down:** not known yet. Possible hold-ups include approval to use borrower data and the deeper credit review. If the review runs long, the borrower file still goes first (unless the risk partner puts it on the deeper review too), because it gathers and cites but writes no judgment; if data approval runs long, the prototype keeps running on sample borrowers until it lands.
 
 ### What I need, and what I'd confirm
 1. A sponsor for the PM work: about an hour a week, plus each go/no-go decision (our estimate).
@@ -428,10 +428,10 @@ rating and the recommendation stay with the PM.
 | 1–3 | Shadow 4–6 PMs and analysts through a real review (our estimate); time each part, which gives the final baseline; improve the prototype every few days | Product manager, pilot PMs, analyst | Time map; feedback log |
 | 1–4 | Borrower file and drafts built and tested on sample borrowers | Platform team | Prototype test results |
 | About 4 | **Gate 2:** final baseline, data contract, early risk rating (which capabilities take the higher-risk path), what drafts may contain (credit policy owner), measures and value model. Aimed for weeks 2 to 4, paced by the data owners' signatures (⚠️) | Sponsor, data owners, content owner of the credit file, risk partner, credit policy owner | Signed data contract; decision log |
-| 4–6 | Borrower file on real data: test set, controls tested, frozen version, sign-offs | Platform team, risk partner | Gate 3 and 4 entries |
+| 5–6 | Borrower file on real data, after gate 2: test set, controls tested, frozen version, sign-offs | Platform team, risk partner | Gate 3 and 4 entries |
 | About 7 | **Borrower file live with pilot PMs** | Product manager | First weekly usage report |
-| 4–9 | Review and memo drafts on real past reviews; test set graded by PMs, with must-refuse cases; fairness check agreed with compliance; evidence pack | Platform teams, product manager, compliance | Test results against the quality bar |
-| 9–11 | Higher-risk review of the frozen drafts: sign-offs, including the credit policy owner's; readiness (training, incident process, comparison group) | Risk, compliance, privacy, security, credit policy owner | Sign-offs recorded |
+| 5–9 | Review and memo drafts on real past reviews, after gate 2; test set graded by PMs, with must-refuse cases; fairness check agreed with compliance; evidence pack | Platform teams, product manager, compliance | Test results against the quality bar |
+| 10–11 | Higher-risk review of the frozen drafts: sign-offs, including the credit policy owner's; readiness (training, incident process, comparison group) | Risk, compliance, privacy, security, credit policy owner | Sign-offs recorded |
 | About 12 | **Annual review and credit memo drafts live with pilot PMs** | Product manager | Drafts used; sections kept with light edits |
 
 **By day 90 (about week 13):** the borrower file has been live for about six weeks and the
