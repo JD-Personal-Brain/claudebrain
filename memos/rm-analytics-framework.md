@@ -2,20 +2,18 @@
 
 Associated Bank · Corporate and Commercial Banking · October 2026
 
-The detail behind the three short RM pages (the RM Executive Summary, The RM Assistant and the RM
-Assistant Plan), read in RM Detail. What the product is, its capabilities and waves, and the decisions
-behind them are in RM Detail, Part 3 (The RM Assistant in full detail); the rules every product follows are in the
-[Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ) and aren't repeated here.
-Appendix A specifies the product's agents and Appendix B its workflows (B1 to B9), so the team can
-build directly from them. It is a working hypothesis until Discover with the bank's RMs.
+The detail behind the three short RM pages, read in RM Detail. The product, its capabilities, waves and
+decisions are in RM Detail, Part 3; the rules every product follows are in the
+[Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ). Appendix A specifies the product's
+agents and Appendix B its workflows (B1 to B9), so the team can build from them. A working hypothesis
+until Discover with the bank's RMs.
 
-**The limiting factor: not known yet.** ⚠️ The real blockers are a first question
-for the bank (what usually holds up a new AI tool there?). Possible ones, our
-assumptions to confirm: approval to use client data (the data contract, the signed
-list of data the product may use, needs the data owners' signatures [names needed];
-aimed for week 2), and the bank's AI review, which for the very first capability
-(the follow-up's recap and email, in M365 Copilot) would matter most, together with
-any recording policy the bank has.
+**The limiting factor: our working assumption is the length of the bank's AI review (Open Items PL7); not
+confirmed yet.** ⚠️ The real blockers are a first question for the bank (what usually holds up a new AI
+tool there?). The review would matter most for the very first capability (the follow-up's recap and email,
+in M365 Copilot), together with any recording policy the bank has. The other likely one, also to confirm:
+approval to use client data (the data contract, the signed list of data the product may use, needs the
+data owners' signatures [names needed]; aimed for week 2).
 
 ---
 
@@ -66,23 +64,17 @@ The roles, what each one decides and the gates each joins are set once in the
 | Role (Product Framework) | For the RM project |
 |---|---|
 | Sponsor | A commercial banking leader [name needed] |
-| User leaders | RM leaders and market managers: they choose the pilot group, use the assistant's insights in the weekly pipeline meeting, or whatever team meeting managers already run (⚠️ to confirm), and decide with the sponsor whether to scale (gate 5) |
+| User leaders | RM leaders and market managers (⚠️ titles to confirm): they choose the pilot group, use the assistant's insights in the weekly pipeline meeting, or whatever team meeting managers already run (⚠️ to confirm), and decide with the sponsor whether to scale (gate 5) |
 | Pilot users | Pilot RMs: they co-design and test, and their feedback steers the backlog |
 | Data owners | The owners of the client data, which we expect sits in Salesforce and Snowflake (⚠️ to confirm) [names needed] |
 | Platform teams | Salesforce, Microsoft, AWS and data engineering (⚠️ to confirm how the bank's teams are set up) |
 | Long-term owner | To be decided by a date set in Define (sub-step 2.8); confirmed before scaling (5.7); for example, someone in a revenue line |
 | Also for RMs: sales leadership and HR | Whether acting on the assistant's insights is recognized in how RMs are measured and paid |
 
-The risk partner, compliance, privacy and security (who sign off at step 4), vendor risk, IT, Finance
-(who joins the sponsor for the quarterly invest, adjust or stop call), Analytics and Operations join as the Product Framework sets out; the risk partner's
-step 4 approval can't be overruled by the sponsor. No planned RM capability
+The risk partner, compliance, privacy and security, vendor risk, IT, Finance, Analytics and Operations
+join as the Product Framework sets out. No planned RM capability
 takes the higher-risk path, so the credit policy owner isn't involved; any insight
 that suggests a credit product goes to compliance (control K3; none in wave 1, whose list suggests only deposit and treasury gaps).
-
-**Keeping partners aligned.** Decisions go in the decision log, and dependencies,
-risks and issues in the risk and issue list (Product Framework). Its top item is
-the limiting factor, named with its owner once the bank confirms what is actually
-holding the work up (⚠️ not known yet).
 
 ---
 
@@ -90,10 +82,9 @@ holding the work up (⚠️ not known yet).
 
 Six steps, each ending in a go/no-go gate, run as the [Product Workflow](https://claude.ai/artifact/8Nm5fkdicn2Gu5VmNVTvYv)
 sets out: its questions, gates and sub-steps (the Product Playbook) aren't repeated here. The first pass
-overlaps: a working prototype in week 1, wave 1 live in about weeks 2–6 (the meeting follow-up first);
+overlaps: a working prototype in week 1, wave 1 live in about weeks 4–6 (the meeting follow-up first);
 then steps 3–6 repeat in cycles of a week or two, and each new feature wave takes the quick pass through
-Discover and Define (Product Framework). Governance runs through every step; step 4 is the formal approval,
-not the first time risk partners see the product. What's different for RMs:
+Discover and Define (Product Framework). What's different for RMs:
 
 | Step | Gate for RMs | What's specific to RMs | General agents used (the analysis agents, M20 to M33; M1 to M19 run every step as the Product Machine sets out) |
 |---|---|---|---|
@@ -144,13 +135,11 @@ client they aren't allowed to see (zero tolerance).
 
 ## 6. The project plan (estimate)
 
-Building starts on day one. With today's AI tools, a working version takes
-days, not months, so the plan is organized around what most often holds banks
-up (our assumption for Associated, to confirm): access to real client data and sign-off from the AI review. The risk
-partner sees each version as it is built. Weeks are estimates to confirm in
-the first days.
+Building starts on day one: a working version takes days, so the plan is paced by what most often holds
+banks up (our assumption for Associated, to confirm): access to real client data and sign-off from the AI
+review. The risk partner sees each version as it is built. Weeks are estimates to confirm in the first days.
 
-**What lets us move this fast.** The six conditions in the [Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ#what-lets-a-project-move-fast), each checked in the first days. For RMs: condition 2 means features already in Salesforce, M365 Copilot and Power Platform (⚠️ to confirm with IT and risk in week 1); condition 3 holds, because wave 1 suggests only deposit and treasury gaps, so we expect a low rating (⚠️ the risk partner decides); data owners sign the data contract in week 2.
+**What lets us move this fast.** The six conditions in the [Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ#what-lets-a-project-move-fast), each checked in the first days. For RMs: condition 2 means features already in Salesforce, M365 Copilot and Power Platform (⚠️ to confirm with IT and risk in week 1); condition 3 holds, because wave 1 suggests only deposit and treasury gaps, so we expect a low rating (⚠️ the risk partner decides); data owners are asked to sign the data contract by week 2 (⚠️ their timing, to confirm).
 
 **Backup plan if data access or review runs long.** The meeting follow-up's
 recap and email go first: they're drafted from the RM's own notes in M365 Copilot (Teams transcripts
@@ -168,9 +157,9 @@ call is made at gate 2 (week 2).
 | 1 | **Gate 1:** the sponsor, with the risk partner, sees the prototype and agrees the target lever, the main measure and today's baseline (from a first rough sizing in days 1–5; confirmed at gate 2), and confirms wave 1 | Sponsor, with the risk partner | Decision log entry |
 | 1–2 | RM interviews and shadowing with 6–10 RMs and their managers (our estimate), using the prototype; improve it every few days; sizing of the levers refined | Product manager, pilot RMs, analyst | RM feedback log; sized levers |
 | 2 | **Gate 2:** data contract, early risk rating, the full set of measures and the value model, Finance attribution method, dates proposed for waves 2 and 3; split decision if needed | Sponsor, data owners, risk partner | Signed data contract; early risk rating |
-| 2–3 | Recap and email set up in M365 Copilot: a small test set graded by RMs (gate 3); controls tested, including consent before recording (K24); evidence pack and sign-offs (gate 4); readiness for this part: incident dry run, comparison group, training | Platform team, risk partner, operations | Gate 3 and gate 4 entries in the decision log; readiness checklist |
-| About 2–4 | **Meeting follow-up live with pilot RMs** | Product manager | First weekly usage report |
-| 2–5 | Connect real data in the test environment; build the test set and evidence pack; risk partner reviews each version | Platform teams, product manager | Test results against the quality bar |
+| 2–3 | Recap and email set up in M365 Copilot on sample notes (week 2); after gate 2, a small test set graded by RMs (gate 3); controls tested, including consent before recording (K24); evidence pack and sign-offs (gate 4); readiness for this part: incident dry run, comparison group, training | Platform team, risk partner, operations | Gate 3 and gate 4 entries in the decision log; readiness checklist |
+| About 4 | **Meeting follow-up live with pilot RMs** | Product manager | First weekly usage report |
+| 3–5 | After gate 2, connect real data in the test environment; build the test set and evidence pack; risk partner reviews each version | Platform teams, product manager | Test results against the quality bar |
 | 4–5 | Sign-offs for the brief, the opportunity list and saving call notes (a material change to the follow-up, back through step 4); release readiness (training, support, incident process, comparison group) | Risk, compliance, privacy, security, operations | Sign-offs recorded; readiness checklist complete |
 | About 4–6 | **Client brief, Monday opportunity list and call notes into Salesforce live with pilot RMs** | Product manager | Usage and act-on rates in Power BI; share of meetings logged |
 
@@ -208,6 +197,8 @@ builds on them. I'd confirm early (this is the one full list; the Executive Summ
 - Which RM teams would make a good pilot group?
 - Who owns the client data in Snowflake and Salesforce?
 - How are RMs measured and rewarded today?
+- How many RMs and treasury management officers are there, by market, and how are referrals to treasury, capital markets and wealth credited?
+- The value model's inputs: win rate, first-year revenue per win, client-facing hours per RM, fee income by line, deposits and treasury management use?
 - How long does AI governance review usually take?
 - Is recording client meetings in Teams allowed, how is consent captured, and who owns the recording policy?
 - What team and budget are available for the pilot?
@@ -219,11 +210,8 @@ builds on them. I'd confirm early (this is the one full list; the Executive Summ
 
 ## Appendix A: Agent specs
 
-The product's own agents. AI sales coaching (wave 3): agent spec not written
-yet. The product's agents (A1, A2, A3 and A5) are written so a
-platform team can build them and a risk partner can review them; the team's
-agents are the product machine's general agents, specified in full in the
-agent library. **[X]** values are set in Define.
+The product's own agents (A1, A2, A3 and A5), written so a platform team can build them and a risk
+partner can review them. AI sales coaching (wave 3): agent spec not written yet. **[X]** values are set in Define.
 
 **Rules for every agent:**
 - **One job.** If a request falls outside it, the agent says so and stops.
@@ -278,12 +266,8 @@ A4 (the weekly opportunity digest) was merged into workflow B1 on 2026-10-18: it
 
 ### Agents the team uses
 
-The team uses the product machine's general agents, specified in full in the
-[Agent Library](https://claude.ai/artifact/Cn9nANQoqp2BP7yrmy61zn): for RMs, M20 to M22 in Discover
-(interviews, sizing, time use), M23 to M25 in Define (requirements, data contract, risk intake),
-M26 in Build (test grading), M27 to M29 in Govern and test (red-teaming, fairness, evidence pack),
-M30 in Release and adopt (feedback triage) and M31 to M33 in Measure and iterate (impact,
-quality watchdog, improvement scout). Which ones each step uses is in section 4.
+The team uses the product machine's general agents (M20 to M33 for RMs), specified in full in the
+[Agent Library](https://claude.ai/artifact/Cn9nANQoqp2BP7yrmy61zn); which ones each step uses is in section 4.
 
 ## Appendix B: Workflows
 
@@ -347,4 +331,4 @@ written yet.
 - **Logged:** test scores, approvals, release notes.
 - **Measures:** quality trend; releases rolled back.
 
-_Last updated: 2026-10-18_
+_Last updated: 2026-10-19_

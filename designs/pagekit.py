@@ -267,7 +267,9 @@ def six_steps():
 # ---------- Cross-links (added 2026-10-18, from the deep audit and Elon mode review) ----------
 # Every built page links its references automatically, so no link has to be added by hand:
 # control numbers (K1 to K25) to their card in the Controls Catalog, agent numbers (M1 to M33,
-# A1/A2/A3/A5, H1) to their card in the Agent Library, and page names to their page. The links
+# A1 to A11 as they exist, H1) to their card in the Agent Library, workflow numbers (B1 to B16) to their card
+# on the Workflow Maps, sub-step numbers (1.0 to 6.6, when written "sub-step 2.4", "(2.4", "at 2.4" or
+# "in 2.4") to their card in the Steps Catalog, and page names to their page. The links
 # come from the page list in designs/README.md, so a page's address lives in one place. Text inside
 # links, code, headings, card summaries and table headers is left alone.
 import os as _os
@@ -286,7 +288,12 @@ PAGE_NAMES = [  # name as people write it -> the page's built file
     ("PM Executive Summary", "pm-executive-summary.html"),
     ("Product Workflow", "role-workflow.html"), ("Product Framework", "product-framework.html"), ("Product Machine", "product-machine.html"),
     ("Product Playbook", "playbook.html"), ("Elon Mode", "elon-mode.html"), ("Glossary", "glossary.html"), ("Bank Business Briefing", "bank-business.html"),
-    ("Tech Stack Guide", "tech-stack.html"), ("Prompt Library", "prompt-library.html"), ("Prompting Guide", "prompting.html")]
+    ("Tech Stack Guide", "tech-stack.html"), ("Prompt Library", "prompt-library.html"), ("Prompting Guide", "prompting.html"),
+    ("Open Items", "open-items.html"), ("The RM Assistant", "rm-assistant.html"), ("The PM Assistant", "pm-assistant.html"),
+    ("Audit Log", "audit-log.html"), ("Document Library", "library.html"), ("Job Description", "job-description.html")]
+# The sub-steps that exist (1.0 to 6.6), read from the playbook so the list can't drift from it.
+SUBSTEPS = set(re.findall(r"^## (\d\.\d) ", "".join(open(f).read() for f in sorted(__import__("glob").glob(_os.path.join(_ROOT, "playbook", "[1-6]-*.md")))), re.M))
+_SUB_NO_LINK = {"steps.html", "playbook.html"}  # these pages hold the sub-steps themselves
 _SKIP = {"a", "code", "pre", "script", "style", "title", "summary", "th", "h1", "nav", "button", "label", "select", "option"}
 def link_refs(page, here):
     """here: this page's built file name (links to itself become in-page jumps)."""
@@ -297,16 +304,29 @@ def link_refs(page, here):
         return (u + ("#" + anchor if anchor else "")) if u else None
     names = sorted(PAGE_NAMES, key=lambda x: -len(x[0]))
     name_re = re.compile(r"\b(" + "|".join(re.escape(n) for n, _ in names) + r")\b")
-    code_re = re.compile(r"(?<![\w.$-])(K(?:2[0-5]|1\d|[1-9])|M(?:3[0-3]|[12]\d|[1-9])|A(?:1[01]|[1235789])|H1)(?![\w.%-])")
+    # A full stop after a code still links it ("control K3."), but "K3.5"-style tokens don't.
+    code_re = re.compile(r"(?<![\w.$-])(K(?:2[0-5]|1\d|[1-9])|M(?:3[0-3]|[12]\d|[1-9])|A(?:1[01]|[1235789])|B(?:1[0-6]|[1-9])|H1)(?![\w%-]|\.\d)")
+    # Sub-steps: only after "sub-step(s) ", "(", "at " or "in ", plus any that follow in a list ("2.3, 2.4 and 2.7",
+    # "4.2 to 4.7"), and never before a digit, "%", or a unit ("1.5 million", "2.5 hours"), so other decimals stay plain.
+    _ss = r"[1-6]\.\d(?![\d%]|\.\d|\s*(?:million|billion|bn|m\b|k\b|x\b|times|hours?|days?|weeks?|months?|years?|percent|points?)|\s*(?:to|or|and|[–-])\s*\d+(?![.\d]))"
+    sub_re = re.compile(r"((?:\bsub-steps?\s+|\(|\bat\s+|\bin\s+))(" + _ss + r"(?:(?:,\s*|,?\s+and\s+|,?\s+or\s+|\s+to\s+|\s*[–-]\s*)" + _ss + r")*)")
     def repl_text(t):
         def code(m):
-            c = m.group(1); href = target("controls.html" if c[0] == "K" else "agents.html", c.lower())
+            c = m.group(1); href = target({"K": "controls.html", "B": "workflows.html"}.get(c[0], "agents.html"), c.lower())
             return f'<a class="xref" href="{href}"{"" if href.startswith("#") else " target=\"_blank\" rel=\"noopener\""}>{c}</a>' if href else c
+        def sub(m):
+            def one(n):
+                href = target("steps.html", "s" + n.group(0).replace(".", "-")) if n.group(0) in SUBSTEPS else None
+                return f'<a class="xref" href="{href}" target="_blank" rel="noopener">{n.group(0)}</a>' if href and not href.startswith("#") else n.group(0)
+            return m.group(1) + re.sub(r"[1-6]\.\d", one, m.group(2))
         def name(m):
             f = dict(names)[m.group(1)]; href = target(f)
             return f'<a class="xref" href="{href}" target="_blank" rel="noopener">{m.group(1)}</a>' if href and not href.startswith("#") else m.group(1)
         parts = re.split(r"(<a\b[^>]*>.*?</a>)", name_re.sub(name, t))   # names first, then codes outside the new links
-        return "".join(p if p.startswith("<a") else code_re.sub(code, p) for p in parts)
+        t = "".join(p if p.startswith("<a") else code_re.sub(code, p) for p in parts)
+        if here in _SUB_NO_LINK: return t
+        parts = re.split(r"(<a\b[^>]*>.*?</a>)", t)
+        return "".join(p if p.startswith("<a") else sub_re.sub(sub, p) for p in parts)
     out, depth = [], 0
     for tok in re.split(r"(<[^>]+>)", page):
         if tok.startswith("<"):

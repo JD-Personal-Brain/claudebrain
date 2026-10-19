@@ -21,11 +21,11 @@ Each RM gets **their own AI assistant**, inside the tools we expect they already
 ### What RMs get first (feature wave 1)
 | Capability | What the RM gets | Why it matters |
 |---|---|---|
-| **Pre-meeting client brief** | One page before each client meeting: the relationship, recent activity, open opportunities, talking points | Less prep time, better meetings |
-| **Meeting follow-up** | The recap, the follow-up email and the call notes for Salesforce, drafted for the RM to approve from the RM's own notes; from the Teams transcript later, only where recording is allowed and the client agrees. Recap and email come first; saving call notes to Salesforce follows once it is signed off | Admin off the RM's plate; better client records |
-| **Monday opportunity list** | Each Monday, the clients to call this week, with the reason and the numbers behind it | New revenue from existing clients |
+| **[Pre-meeting client brief](https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX#b2)** | One page before each client meeting: the relationship, recent activity, open opportunities, talking points | Less prep time, better meetings |
+| **[Meeting follow-up](https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX#b3)** | The recap, follow-up email and Salesforce call notes, drafted from the RM's own notes for the RM to approve (from the Teams transcript later, only where recording is allowed and the client agrees). Recap and email come first; saving call notes follows once signed off | Admin off the RM's plate; better client records |
+| **[Monday opportunity list](https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX#b1)** | Each Monday, the clients to call this week, with the reason and the numbers behind it | New revenue from existing clients |
 
-**See it working:** the [RM Assistant Prototype](https://claude.ai/artifact/RFM2o7cdren3TxesQBsjky) runs all three on sample data, with a 2-minute tour.
+**See it working:** the [RM Assistant Prototype](https://claude.ai/artifact/RFM2o7cdren3TxesQBsjky) runs all three on sample data, with a tour under 2 minutes.
 
 Later waves add early warning on clients who may leave, referral prompts and prospect lookalikes, then client Q&A and AI sales coaching.
 
@@ -37,7 +37,7 @@ Later waves add early warning on clients who may leave, referral prompts and pro
 ### How fast
 The build takes days. What sets the pace is approval: each piece goes live once its client data is approved and the bank's AI review signs it off. On our first estimates, to confirm, that's the meeting recap and email by about week 4, then the client brief, Monday opportunity list and call notes by about week 6. The first read on closed revenue comes at about month 6. [The plan, week by week](https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk)
 
-**What could slow us down:** not known yet. Possible hold-ups include getting approval to use client data and the bank's AI review, but the real ones are a question for the first conversations (below). If they run long, the meeting recap and email still go first and the rest follows by about week 10.
+**What could slow us down:** our working assumption, to confirm with the bank (a first question, below): the bank's AI review, with approval to use client data close behind. If they run long, the recap and email still go first and the rest follows by about week 10.
 
 ### What I need, and what I'd confirm
 1. A business sponsor for the RM work: about an hour a week, plus each go/no-go decision (our estimate).
@@ -45,7 +45,7 @@ The build takes days. What sets the pace is approval: each piece goes live once 
 3. Named owners for the client data (in Salesforce and Snowflake; ⚠️ to confirm).
 4. An early risk partner, reviewing each version as it's built.
 
-To confirm in the first weeks: what usually holds up a new AI tool here; which revenue lever matters most now (new, growing or keeping clients); how RMs are measured and paid today; how long the AI review takes and whether recording client meetings in Teams is allowed; and what team and budget the pilot has.
+To confirm in the first weeks: what usually holds up a new AI tool here; which revenue lever matters most now (new, growing or keeping clients); how RMs are measured and paid today; how long the AI review takes and whether recording client meetings in Teams is allowed; and what team and budget the pilot has. [Everything to confirm](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-8-what-i-d-confirm-in-the-first-weeks).
 
 ## Part 2: The product: The RM Assistant (short version for people)
 
@@ -69,14 +69,14 @@ Each capability is one AI product and answers one core use case (see the [Use Ca
 
 | Moment | Capability | What it does | Core use case | Wave |
 |---|---|---|---|---|
-| **Find business** | Monday opportunity list | Each Monday, the top clients to call, with the reason and the numbers | Prospecting and next best opportunities | 1 |
-| | Prospect lookalikes | Companies that look like the bank's best clients | Prospecting and next best opportunities | 2 |
-| | Referral prompts | Flags a client need for a partner team, such as treasury management | Lead nurturing, including cross-sell | 2 |
-| **Before the meeting** | Pre-meeting client brief | One page before each client meeting | Account intelligence and meeting prep | 1 |
-| | Client Q&A | Answers the RM's own questions about a client at any time, with the source for each answer | Account intelligence and meeting prep | 3 |
-| **During and after** | Meeting follow-up | Drafts the recap, the follow-up email and the call notes for Salesforce from the RM's own notes (from the Teams transcript later, only where recording is allowed and the client agrees); the RM approves before anything is saved or sent | Admin off the RM's plate | 1 |
+| **Find business** | Monday opportunity list | Each Monday, the top clients to call, with the reason and the numbers ([how it works](https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX#b1)) | Prospecting and next best opportunities | 1 |
+| | Prospect lookalikes | Companies that look like the bank's best clients ([how it works](https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX#b8)) | Prospecting and next best opportunities | 2 |
+| | Referral prompts | Flags a client need for a partner team, such as treasury management ([how it works](https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX#b6)) | Lead nurturing, including cross-sell | 2 |
+| **Before the meeting** | Pre-meeting client brief | One page before each client meeting ([how it works](https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX#b2)) | Account intelligence and meeting prep | 1 |
+| | Client Q&A | Answers the RM's own questions about a client at any time, with the source for each answer ([how it works](https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX#b7)) | Account intelligence and meeting prep | 3 |
+| **During and after** | Meeting follow-up | Drafts the recap, the follow-up email and the call notes for Salesforce from the RM's own notes (from the Teams transcript later, only where recording is allowed and the client agrees); the RM approves before anything is saved or sent ([how it works](https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX#b3)) | Admin off the RM's plate | 1 |
 | | AI sales coaching | Private guidance for the RM after a call | AI sales coaching | 3 |
-| **Keep the book** | Early warning | Flags clients who may be drifting away | Keep clients | 2 |
+| **Keep the book** | Early warning | Flags clients who may be drifting away ([how it works](https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX#b5)) | Keep clients | 2 |
 | **Left out on purpose** | Pricing suggestions; contacting clients or prospects on its own | Kept out to protect fair lending and client trust | Deal scoring and pricing; lead nurturing (the full, automated version) | Out |
 
 ### 3. What it's built on
@@ -140,7 +140,7 @@ Each capability is one AI product (glossary). The **Need it answers** column nam
 
 **Wave 1 at a glance:** three capabilities: the pre-meeting client brief, the meeting follow-up and the Monday opportunity list. Together they cover the RM's whole meeting, before, during and after, plus the Monday call list. The order is the hypothesis; dates for waves 2 and 3 are proposed at gate 2 (the Define go/no-go) and confirmed at each wave's own quick-pass gates, once data access and review times are known. How the waves get delivered is in the [RM Assistant Plan](https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk).
 
-**How each capability is built** (moved here from the full plan on 2026-10-18). Our measures' targets are set in Define; McKinsey's returns for each core use case are outside benchmarks in the [Use Case Library](https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X), never our targets.
+**How each capability is built**, with our measures, whose targets are set in Define; McKinsey's returns for each core use case are outside benchmarks in the [Use Case Library](https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X), never our targets.
 
 | Wave | Capability (AI product) | Core use case it answers | Agents | Built mainly on | Our measure (target set in Define) |
 |---|---|---|---|---|---|
@@ -157,16 +157,15 @@ Each capability is one AI product (glossary). The **Need it answers** column nam
 **Why wave 1's Monday list suggests only deposit and treasury gaps (decided 2026-10-18):** credit products, such as a line of credit, wait for the portfolio manager work, which avoids a fair-lending review in wave 1 (control K3).
 
 **Why the follow-up and call notes are one capability (decided 2026-10-17):** both
-come from the same meeting recap and the same agent (A3), so RMs get one flow:
-the recap and email first (live by about week 4: drafted from the RM's own notes,
-which we assume needs the least new data and review, ⚠️ to confirm), then saving the call
-notes to Salesforce once that's signed off (by about week 6). Teams transcripts come
-later, only where the bank allows recording and the client agrees (control K24), so
-recording isn't on wave 1's critical path (Elon mode, 2026-10-18). Call notes are in
+come from the same meeting recap and the same agent (A3), so RMs get one flow: the recap
+and email first (about week 4), then saving call notes once signed off (about week 6).
+Teams transcripts come later, only where the bank allows recording and the client agrees
+(control K24), so recording isn't on wave 1's critical path (Elon mode, 2026-10-18; why the
+recap goes first: the full plan, section 6). Call notes are in
 wave 1 because in McKinsey's survey of about 400 bankers, admin is one of the top
 two problems at every stage of the sales funnel (decided 2026-10-10).
 
-**How the follow-up passes its gates.** Because the recap and email go live first, the follow-up passes gates 3 and 4 twice: first for the recap and email (weeks 2–3), then for saving call notes to Salesforce, which is a material change (a new action, a record write) and goes back through step 4 (weeks 4–5; Product Framework, change after launch). Gate 5 is decided once, for wave 1 as a whole, after the brief, the list and call notes have been live for [X] weeks.
+**How the follow-up passes its gates.** Because the recap and email go live first, the follow-up passes gates 3 and 4 twice: first for the recap and email (week 3, after gate 2), then for saving call notes to Salesforce, which is a material change (a new action, a record write) and goes back through step 4 (weeks 4–5; Product Framework, change after launch). Gate 5 is decided once, for wave 1 as a whole, after the brief, the list and call notes have been live for [X] weeks.
 
 **Why there's no how-to helper (decided 2026-10-17):** a pilot group of a few RMs
 learns from training on their own clients, champions and a Teams channel. A
@@ -200,20 +199,16 @@ Built once and shared by every capability, and later by portfolio managers.
 | **Feedback loop** | One-click feedback on every output, sorted and fed into the next release | Every capability |
 
 ### 5. How we'll know it works
-- **More revenue per RM:** pipeline and wins from the assistant's suggestions, against RMs not yet using it [X].
-- **More time with clients:** hours saved per week and client-facing hours [X].
-- **Use:** RMs using it every week, and the share of suggestions acted on [X].
-
-Targets are [X] until the bank's own numbers are in.
+The measures and value model are in the full plan (sections 2 and 4); targets are [X] until the bank's own numbers are in.
 
 ### 6. Portfolio managers next
-Portfolio managers (PMs) get the same kind of assistant on the same foundation, with their own capabilities: credit memo and annual review drafts first, early warning second (decided 2026-10-15). It now exists, reviewed (2026-10-19): The PM Assistant page and PM Detail. The credit request draft (section 3) would be where the two assistants meet.
+Portfolio managers (PMs) get the same kind of assistant on the same foundation, with their own capabilities (wave 1: the industry background draft and the borrower file, then annual review and credit memo drafts; early warning flags in wave 2). Details: [The PM Assistant](https://claude.ai/artifact/BrBLWQzQggQPtqCgLLGf3C) page and PM Detail. The credit request draft (section 3) would be where the two assistants meet.
 
 ### 7. What to confirm
 The one full list is in the full plan, section 8 ("What I'd confirm in the first weeks").
 
 ### 8. How it maps to the agents
-The seven core use cases are the **needs** the capabilities answer, and each capability is one AI product. The product agents do the work: A1 finds signals and A2 writes the reason for each (the **signals engine**); A3 does the **drafting** (briefs, recaps, emails and call notes); A5 answers client questions (wave 3). The Monday send is a scheduled step in workflow B1, not an agent (A4 was merged into B1 on 2026-10-18).
+The seven core use cases are the **needs** the capabilities answer, and each capability is one AI product. The product agents do the work: A1 finds signals and A2 writes the reason for each (the **signals engine**); A3 does the **drafting** (briefs, recaps, emails and call notes); A5 answers client questions (wave 3). The Monday send is a step in workflow B1, not an agent (full plan, Appendix A).
 
 ## Part 4: The plan (short version for people)
 
@@ -224,7 +219,7 @@ How The RM Assistant gets delivered to relationship managers (RMs) · Associated
 [RM Executive Summary](https://claude.ai/artifact/LPPq2gt5PSoiB8GzX8ZBE2) · [The RM Assistant](https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2) · [RM Assistant Prototype](https://claude.ai/artifact/RFM2o7cdren3TxesQBsjky) (see it working) · [RM Detail](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n) (everything in full) · [Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ) (the rules every product follows)
 
 ### The plan at a glance
-The first 13 weeks (about 90 days), as estimates to confirm in the first days. Each live bar starts only once its client data is approved and the bank's AI review signs it off, so the bars move with those approvals. Week 1 starts at kickoff. Gates (◆) are go/no-go decisions; the data contract is the signed list of client data the assistant may use. Each row links to its detail in RM Detail.
+The first 13 weeks, as estimates to confirm. Week 1 starts at kickoff; gates (◆) are go/no-go decisions. Each live bar starts once its client data is approved and the bank's AI review signs it off, so the bars move with those approvals. Each row links to its detail in RM Detail.
 
 ```gantt
 weeks 13
@@ -232,21 +227,23 @@ Kickoff and a working prototype on sample data | 0 | 1 | build | https://claude.
 Gate 1: target, measure and baseline (from first sizing) agreed | 1 | 1 | gate | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-4-how-the-work-flows
 Interviews with RMs, improving the prototype every few days | 0 | 2 | build | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-6-the-project-plan-estimate
 Gate 2: client data approved, risk level rated, business case agreed | 2 | 2 | gate | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-4-how-the-work-flows
-Meeting recap and email: set up and tested, signed off after gate 2 | 1 | 3 | build | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-6-the-project-plan-estimate
+Meeting recap and email: set up on sample notes, then tested and signed off after gate 2 | 1 | 3 | build | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-6-the-project-plan-estimate
 **Meeting recap and email live** | 3 | 13 | live | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-6-the-project-plan-estimate
-Brief, opportunity list and call notes: built and tested on real data | 1 | 5 | build | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-6-the-project-plan-estimate
+Brief, opportunity list and call notes: built and tested on real data, after gate 2 | 2 | 5 | build | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-6-the-project-plan-estimate
 Sign-offs for the brief and list, plus a separate one to save call notes in Salesforce | 3 | 5 | build | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-6-the-project-plan-estimate
 **Brief, opportunity list and call notes live** | 5 | 13 | live | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-6-the-project-plan-estimate
 Small releases every week or two | 6 | 13 | ongoing | https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-6-the-project-plan-estimate
 ```
 
+**Limiting factor (our assumption, to confirm):** how long the bank's AI review takes; every live bar moves with it (section 1).
+
 The recap and email can move first because they're drafted from the RM's own notes, not client account data or meeting recordings (our assumption, to confirm: it needs the least review), and the risk partner reviews each version as it's built. Interviews keep going after gate 1 to refine the target. Waves 2 and 3 get proposed dates at gate 2, once data access and review times are known.
 
 ### 1. What could slow us down (to confirm)
-The real blockers aren't known yet; they're a first question for the bank. Possible ones:
+Our working assumption is the AI review, then approval to use client data; the real blockers are a first question for the bank.
 - **Approval to use client data.** Nothing reaches pilot RMs on real client data until the people responsible for it approve which data the assistant may use.
-- **The bank's AI review.** Nothing goes live until risk, compliance, privacy and security sign off. To keep that short, the risk partner reviews each version as it's built, so the sign-off has no surprises.
-- **Backup plan.** If either runs long, the meeting recap and email go first (drafted from the RM's own notes, which we assume needs the least new data and review), and the rest stays ready in the test environment, live by about week 10. The call is made at gate 2.
+- **The bank's AI review.** Nothing goes live until risk, compliance, privacy and security sign off; the risk partner sees each version as it's built, so the sign-off has no surprises.
+- **Backup plan.** If either runs long, the meeting recap and email go first, and the rest stays ready in the test environment, live by about week 10. The call is made at gate 2.
 
 Detail: [the backup plan and the six conditions for moving fast](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-5-the-full-delivery-plan-with-every-6-the-project-plan-estimate).
 
@@ -254,9 +251,9 @@ Detail: [the backup plan and the six conditions for moving fast](https://claude.
 | Role | For the RM project |
 |---|---|
 | Sponsor | A commercial banking leader [name needed]: the outcome, funding and every gate |
-| User leaders | RM leaders and market managers: choose the pilot group, use the assistant in a team meeting they already run, such as a weekly pipeline meeting (⚠️ to confirm), and decide with the sponsor whether to scale |
+| User leaders | RM leaders and market managers (⚠️ titles to confirm): choose the pilot group, use the assistant in a team meeting they already run, such as a weekly pipeline meeting (⚠️ to confirm), and decide with the sponsor whether to scale |
 | Pilot RMs | Co-design and test; their feedback steers what gets built |
-| Data owners | The client data, in Salesforce and Snowflake (⚠️ to confirm) [names needed]: sign the data contract |
+| Data owners | The client data, in Salesforce and Snowflake (⚠️ to confirm) [names needed]: sign the data contract (the signed list of client data the assistant may use) |
 | Risk partner | Rates the product's risk and approves it before it reaches RMs; the sponsor can't overrule that approval |
 | Compliance, privacy and security | Sign off before it reaches RMs |
 | Finance | Agrees how results are counted, and joins the sponsor for the quarterly call to invest more, adjust or stop |
@@ -289,20 +286,18 @@ Working file: `memos/rm-analytics-framework.md`.
 
 Associated Bank · Corporate and Commercial Banking · October 2026
 
-The detail behind the three short RM pages (the RM Executive Summary, The RM Assistant and the RM
-Assistant Plan), read in RM Detail. What the product is, its capabilities and waves, and the decisions
-behind them are in RM Detail, Part 3 (The RM Assistant in full detail); the rules every product follows are in the
-[Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ) and aren't repeated here.
-Appendix A specifies the product's agents and Appendix B its workflows (B1 to B9), so the team can
-build directly from them. It is a working hypothesis until Discover with the bank's RMs.
+The detail behind the three short RM pages, read in RM Detail. The product, its capabilities, waves and
+decisions are in RM Detail, Part 3; the rules every product follows are in the
+[Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ). Appendix A specifies the product's
+agents and Appendix B its workflows (B1 to B9), so the team can build from them. A working hypothesis
+until Discover with the bank's RMs.
 
-**The limiting factor: not known yet.** ⚠️ The real blockers are a first question
-for the bank (what usually holds up a new AI tool there?). Possible ones, our
-assumptions to confirm: approval to use client data (the data contract, the signed
-list of data the product may use, needs the data owners' signatures [names needed];
-aimed for week 2), and the bank's AI review, which for the very first capability
-(the follow-up's recap and email, in M365 Copilot) would matter most, together with
-any recording policy the bank has.
+**The limiting factor: our working assumption is the length of the bank's AI review (Open Items PL7); not
+confirmed yet.** ⚠️ The real blockers are a first question for the bank (what usually holds up a new AI
+tool there?). The review would matter most for the very first capability (the follow-up's recap and email,
+in M365 Copilot), together with any recording policy the bank has. The other likely one, also to confirm:
+approval to use client data (the data contract, the signed list of data the product may use, needs the
+data owners' signatures [names needed]; aimed for week 2).
 
 ---
 
@@ -353,23 +348,17 @@ The roles, what each one decides and the gates each joins are set once in the
 | Role (Product Framework) | For the RM project |
 |---|---|
 | Sponsor | A commercial banking leader [name needed] |
-| User leaders | RM leaders and market managers: they choose the pilot group, use the assistant's insights in the weekly pipeline meeting, or whatever team meeting managers already run (⚠️ to confirm), and decide with the sponsor whether to scale (gate 5) |
+| User leaders | RM leaders and market managers (⚠️ titles to confirm): they choose the pilot group, use the assistant's insights in the weekly pipeline meeting, or whatever team meeting managers already run (⚠️ to confirm), and decide with the sponsor whether to scale (gate 5) |
 | Pilot users | Pilot RMs: they co-design and test, and their feedback steers the backlog |
 | Data owners | The owners of the client data, which we expect sits in Salesforce and Snowflake (⚠️ to confirm) [names needed] |
 | Platform teams | Salesforce, Microsoft, AWS and data engineering (⚠️ to confirm how the bank's teams are set up) |
 | Long-term owner | To be decided by a date set in Define (sub-step 2.8); confirmed before scaling (5.7); for example, someone in a revenue line |
 | Also for RMs: sales leadership and HR | Whether acting on the assistant's insights is recognized in how RMs are measured and paid |
 
-The risk partner, compliance, privacy and security (who sign off at step 4), vendor risk, IT, Finance
-(who joins the sponsor for the quarterly invest, adjust or stop call), Analytics and Operations join as the Product Framework sets out; the risk partner's
-step 4 approval can't be overruled by the sponsor. No planned RM capability
+The risk partner, compliance, privacy and security, vendor risk, IT, Finance, Analytics and Operations
+join as the Product Framework sets out. No planned RM capability
 takes the higher-risk path, so the credit policy owner isn't involved; any insight
 that suggests a credit product goes to compliance (control K3; none in wave 1, whose list suggests only deposit and treasury gaps).
-
-**Keeping partners aligned.** Decisions go in the decision log, and dependencies,
-risks and issues in the risk and issue list (Product Framework). Its top item is
-the limiting factor, named with its owner once the bank confirms what is actually
-holding the work up (⚠️ not known yet).
 
 ---
 
@@ -377,10 +366,9 @@ holding the work up (⚠️ not known yet).
 
 Six steps, each ending in a go/no-go gate, run as the [Product Workflow](https://claude.ai/artifact/8Nm5fkdicn2Gu5VmNVTvYv)
 sets out: its questions, gates and sub-steps (the Product Playbook) aren't repeated here. The first pass
-overlaps: a working prototype in week 1, wave 1 live in about weeks 2–6 (the meeting follow-up first);
+overlaps: a working prototype in week 1, wave 1 live in about weeks 4–6 (the meeting follow-up first);
 then steps 3–6 repeat in cycles of a week or two, and each new feature wave takes the quick pass through
-Discover and Define (Product Framework). Governance runs through every step; step 4 is the formal approval,
-not the first time risk partners see the product. What's different for RMs:
+Discover and Define (Product Framework). What's different for RMs:
 
 | Step | Gate for RMs | What's specific to RMs | General agents used (the analysis agents, M20 to M33; M1 to M19 run every step as the Product Machine sets out) |
 |---|---|---|---|
@@ -431,13 +419,11 @@ client they aren't allowed to see (zero tolerance).
 
 ### 6. The project plan (estimate)
 
-Building starts on day one. With today's AI tools, a working version takes
-days, not months, so the plan is organized around what most often holds banks
-up (our assumption for Associated, to confirm): access to real client data and sign-off from the AI review. The risk
-partner sees each version as it is built. Weeks are estimates to confirm in
-the first days.
+Building starts on day one: a working version takes days, so the plan is paced by what most often holds
+banks up (our assumption for Associated, to confirm): access to real client data and sign-off from the AI
+review. The risk partner sees each version as it is built. Weeks are estimates to confirm in the first days.
 
-**What lets us move this fast.** The six conditions in the [Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ#what-lets-a-project-move-fast), each checked in the first days. For RMs: condition 2 means features already in Salesforce, M365 Copilot and Power Platform (⚠️ to confirm with IT and risk in week 1); condition 3 holds, because wave 1 suggests only deposit and treasury gaps, so we expect a low rating (⚠️ the risk partner decides); data owners sign the data contract in week 2.
+**What lets us move this fast.** The six conditions in the [Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ#what-lets-a-project-move-fast), each checked in the first days. For RMs: condition 2 means features already in Salesforce, M365 Copilot and Power Platform (⚠️ to confirm with IT and risk in week 1); condition 3 holds, because wave 1 suggests only deposit and treasury gaps, so we expect a low rating (⚠️ the risk partner decides); data owners are asked to sign the data contract by week 2 (⚠️ their timing, to confirm).
 
 **Backup plan if data access or review runs long.** The meeting follow-up's
 recap and email go first: they're drafted from the RM's own notes in M365 Copilot (Teams transcripts
@@ -455,9 +441,9 @@ call is made at gate 2 (week 2).
 | 1 | **Gate 1:** the sponsor, with the risk partner, sees the prototype and agrees the target lever, the main measure and today's baseline (from a first rough sizing in days 1–5; confirmed at gate 2), and confirms wave 1 | Sponsor, with the risk partner | Decision log entry |
 | 1–2 | RM interviews and shadowing with 6–10 RMs and their managers (our estimate), using the prototype; improve it every few days; sizing of the levers refined | Product manager, pilot RMs, analyst | RM feedback log; sized levers |
 | 2 | **Gate 2:** data contract, early risk rating, the full set of measures and the value model, Finance attribution method, dates proposed for waves 2 and 3; split decision if needed | Sponsor, data owners, risk partner | Signed data contract; early risk rating |
-| 2–3 | Recap and email set up in M365 Copilot: a small test set graded by RMs (gate 3); controls tested, including consent before recording (K24); evidence pack and sign-offs (gate 4); readiness for this part: incident dry run, comparison group, training | Platform team, risk partner, operations | Gate 3 and gate 4 entries in the decision log; readiness checklist |
-| About 2–4 | **Meeting follow-up live with pilot RMs** | Product manager | First weekly usage report |
-| 2–5 | Connect real data in the test environment; build the test set and evidence pack; risk partner reviews each version | Platform teams, product manager | Test results against the quality bar |
+| 2–3 | Recap and email set up in M365 Copilot on sample notes (week 2); after gate 2, a small test set graded by RMs (gate 3); controls tested, including consent before recording (K24); evidence pack and sign-offs (gate 4); readiness for this part: incident dry run, comparison group, training | Platform team, risk partner, operations | Gate 3 and gate 4 entries in the decision log; readiness checklist |
+| About 4 | **Meeting follow-up live with pilot RMs** | Product manager | First weekly usage report |
+| 3–5 | After gate 2, connect real data in the test environment; build the test set and evidence pack; risk partner reviews each version | Platform teams, product manager | Test results against the quality bar |
 | 4–5 | Sign-offs for the brief, the opportunity list and saving call notes (a material change to the follow-up, back through step 4); release readiness (training, support, incident process, comparison group) | Risk, compliance, privacy, security, operations | Sign-offs recorded; readiness checklist complete |
 | About 4–6 | **Client brief, Monday opportunity list and call notes into Salesforce live with pilot RMs** | Product manager | Usage and act-on rates in Power BI; share of meetings logged |
 
@@ -495,6 +481,8 @@ builds on them. I'd confirm early (this is the one full list; the Executive Summ
 - Which RM teams would make a good pilot group?
 - Who owns the client data in Snowflake and Salesforce?
 - How are RMs measured and rewarded today?
+- How many RMs and treasury management officers are there, by market, and how are referrals to treasury, capital markets and wealth credited?
+- The value model's inputs: win rate, first-year revenue per win, client-facing hours per RM, fee income by line, deposits and treasury management use?
 - How long does AI governance review usually take?
 - Is recording client meetings in Teams allowed, how is consent captured, and who owns the recording policy?
 - What team and budget are available for the pilot?
@@ -506,11 +494,8 @@ builds on them. I'd confirm early (this is the one full list; the Executive Summ
 
 ### Appendix A: Agent specs
 
-The product's own agents. AI sales coaching (wave 3): agent spec not written
-yet. The product's agents (A1, A2, A3 and A5) are written so a
-platform team can build them and a risk partner can review them; the team's
-agents are the product machine's general agents, specified in full in the
-agent library. **[X]** values are set in Define.
+The product's own agents (A1, A2, A3 and A5), written so a platform team can build them and a risk
+partner can review them. AI sales coaching (wave 3): agent spec not written yet. **[X]** values are set in Define.
 
 **Rules for every agent:**
 - **One job.** If a request falls outside it, the agent says so and stops.
@@ -565,12 +550,8 @@ A4 (the weekly opportunity digest) was merged into workflow B1 on 2026-10-18: it
 
 #### Agents the team uses
 
-The team uses the product machine's general agents, specified in full in the
-[Agent Library](https://claude.ai/artifact/Cn9nANQoqp2BP7yrmy61zn): for RMs, M20 to M22 in Discover
-(interviews, sizing, time use), M23 to M25 in Define (requirements, data contract, risk intake),
-M26 in Build (test grading), M27 to M29 in Govern and test (red-teaming, fairness, evidence pack),
-M30 in Release and adopt (feedback triage) and M31 to M33 in Measure and iterate (impact,
-quality watchdog, improvement scout). Which ones each step uses is in section 4.
+The team uses the product machine's general agents (M20 to M33 for RMs), specified in full in the
+[Agent Library](https://claude.ai/artifact/Cn9nANQoqp2BP7yrmy61zn); which ones each step uses is in section 4.
 
 ### Appendix B: Workflows
 
@@ -661,7 +642,7 @@ Working file: `memos/use-case-library.md`.
 
 The pattern: signals from data, shown inside the CRM, with the reason visible and the banker in control. Results against a comparison group are rare.
 
-**Source:** McKinsey, "Agentic AI is here. Is your bank's frontline team ready?" (Kumar Kanagasabai, Chris Lu, Shital Chheda; [link](https://www.mckinsey.com/industries/financial-services/our-insights/agentic-ai-is-here-is-your-banks-frontline-team-ready)), based on a survey of about 400 US and Canadian bankers; checked against the article's text on 2026-10-10. ⚠️ Publication date not confirmed. Full exhibit data and every RM detail: [RM Detail](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n).
+**Source:** McKinsey, "Agentic AI is here. Is your bank's frontline team ready?" (Kumar Kanagasabai, Chris Lu, Shital Chheda; [link](https://www.mckinsey.com/industries/financial-services/our-insights/agentic-ai-is-here-is-your-banks-frontline-team-ready)), based on a survey of about 400 US and Canadian bankers; checked against the article's text on 2026-10-10. ⚠️ Publication date not confirmed.
 
 
 ## Part 7: McKinsey's research in full
@@ -725,7 +706,7 @@ covered yet.
 Working file: `prototypes/rm-assistant/README.md`.
 
 A clickable concept of **The RM Assistant**: one AI assistant for each relationship manager (RM).
-It shows the plan's wave 1 capabilities working, with three agents running live on Claude, on
+It shows the plan's wave 1 capabilities working, with three agents (A1 in code, A2 and A3 live on Claude), on
 made-up sample data. Current version: **5** (`prototype-v5.html`; versions 1 to 4 are kept unchanged). It's a prototype to show we can build; the real product comes from the six
 steps (Discover onward), so every fact about the bank in it is an assumption to confirm.
 
@@ -733,7 +714,7 @@ steps (Discover onward), so every fact about the bank in it is an assumption to 
 - **The tour as a video:** `rm-assistant-tour-v5.mp4` (version 5, under 2 minutes, with a voiceover read by Kokoro, an open-source voice; the script is `video/narration.json`). The version 1 and 4 videos are kept as `rm-assistant-tour-v1.mp4` and `rm-assistant-tour-v4.mp4`.
 - **One set with the PM Assistant Prototype** (`prototypes/pm-assistant/`, version 5): the same house style, a tour under 2 minutes, wave 2 items tagged "Wave 2 preview" on Today, and the same sticky approve bar.
 - **Built from:** Prompt 4 in `prompt-library.md`; the product page (`memos/rm-assistant.md`), agents A1 to A3 and
-  workflows B1 to B4 in the full plan (`memos/rm-analytics-framework.md`); controls in `playbook/controls.md`.
+  workflows B1 to B4 (B5 and B6 as wave 2 previews) in the full plan (`memos/rm-analytics-framework.md`); controls in `playbook/controls.md`.
 - **Added for the prototype only:** the outside data feed (the 10-year Treasury yield) and its "Rates context" rule. They
   aren't in the plan's agent specs or data contract; a real build would add them through the data contract (K5) first.
 

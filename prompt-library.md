@@ -15,8 +15,8 @@ holds the ones worth keeping.
 | # | Prompt | What it gives me | Version |
 |---|---|---|---|
 | 1 | The use case kit | The standard set of pieces every use case has (a leader layer and a working layer), the use case measured against it, and the gaps fixed | 2 (2026-10-18) |
-| 2 | A full product memo | A full product plan for a new use case, from my saved files | 1 (2026-10-09) |
-| 3 | A business briefing on the bank | The Bank Business Briefing, rebuilt from public sources each quarter | 1 (2026-10-09) |
+| 2 | A full product memo | A full product plan for a new use case, from my saved files | 2 (2026-10-18) |
+| 3 | A business briefing on the bank | The Bank Business Briefing, rebuilt from public sources each quarter | 2 (2026-10-19) |
 | 4 | A showcase prototype with live agents | A clickable prototype of a user group's AI assistant, with three agents running live on Claude, a guided tour and a video, built from our framework | 2 (2026-10-19) |
 | 5 | Copy a user group's work to the next group | The whole section for a new user group (such as portfolio managers) as a first cut: plan, three short pages, workflow map, agents, prototype and detail document, copied from the RM section | 1 (2026-10-19) |
 | 6 | The full program audit | Every page read and checked against the reference pages, the Open Items log and each other; numbers, timings and Gantt charts traced; summaries trimmed; pages rendered; then Elon mode cuts what isn't needed | 1 (2026-10-19) |
@@ -259,7 +259,7 @@ Output:   Outcome, value model, who's involved, how the work flows
 **What changed:** version 1, written 2026-10-09 as Example 4 in the Prompting Guide; moved here 2026-10-17. Version 2 (2026-10-18): built around one product with capabilities, the six steps as one table, bank facts marked as assumptions, and the output matching the RM full plan (memo v11); the job-description table was dropped (the Product Framework maps it).
 
 ## Prompt 3: a business briefing on the bank (like the Bank Business Briefing)
-**Version 1** (2026-10-09).
+**Version 2** (2026-10-19).
 
 Gathers the public facts about the bank's business and maps each revenue line
 to my work. The saved files go in as Inputs, in tags (tip 4), and the request
@@ -269,17 +269,21 @@ quarter when new results come out; the output is `memos/bank-business.md`.
 ```
 Inputs:   <job_description> [job-description.md] </job_description>
           <value_model> [section 2, "The value model", of
-          memos/rm-analytics-framework.md] </value_model>
+          memos/rm-analytics-framework.md and of
+          memos/pm-assistant-framework.md] </value_model>
           <tech_stack> [tech-stack.md] </tech_stack>
 
 Role:     You are a bank analyst who also knows how commercial
           bankers work day to day, briefing a new product manager.
 
-Context:  I'm going after the Principal Applied AI Product Manager
-          role at Associated Bank, which sits in [Corporate and
+Context:  I'm planning how I'd do the Principal Applied AI Product
+          Manager role at Associated Bank, which sits in [Corporate and
           Commercial Banking]. I need one business picture of the
           bank, so every AI product I plan ties to a real revenue
-          line and I can say where the return comes from. Business
+          line and I can say where the return comes from. The work
+          serves two groups: relationship managers (RMs), who own
+          client relationships, and portfolio managers (PMs), the
+          credit partners paired with them. Business
           and risk leaders may read it, so it has to hold up with
           people who know the bank well.
 
@@ -293,10 +297,12 @@ Steps:    1. Gather from public sources, in this order: the latest
              income against fee income).
           3. Go deep on [Corporate and Commercial Banking]: who it
              serves, its units, every product and service, its
-             specialty industries, its leaders and its growth plan.
+             specialty industries, its leaders and its growth plan,
+             and what public sources say about its RMs and PMs.
           4. List each revenue line in that business. For each one:
-             how it earns money, its size and trend, who sells it,
-             and what limits its growth today.
+             how it earns money, its size and trend, which bankers
+             serve it (RMs or PMs), and what limits its growth
+             today.
           5. Map each revenue line to the four outcomes in
              <job_description> (revenue workflows, banker capacity,
              operating efficiency, adoption) and to the terms of
@@ -344,6 +350,7 @@ Output:   1. Summary (5 lines)
           8. Risks and limits
           9. To confirm inside the bank
           10. Sources, with dates
+          11. How this page stays current (the bank news scout)
           Stamp it "as of [date], through [latest quarter]". Save
           the working copy as memos/bank-business.md, then make
           the designed page and add it to the Document Library.
@@ -355,7 +362,7 @@ Tone:     An analyst's briefing: factual and direct, no selling.
 
 **Tip from the first run (2026-10-09):** the annual report is too long to open in one go. The segment's own results are in the quarterly report's "Segment Reporting" note.
 
-**What changed:** version 1, written 2026-10-09 as Example 5 in the Prompting Guide; moved here 2026-10-17.
+**What changed:** version 1, written 2026-10-09 as Example 5 in the Prompting Guide; moved here 2026-10-17. Version 2 (2026-10-19): covers both groups the work serves (RMs and PMs), takes the PM plan's value model too, adds section 11 (how the page stays current), so a rebuild keeps what the briefing already has; the context is doing the job, not applying for it.
 
 ## Prompt 4: a showcase prototype with live agents (like the RM Assistant Prototype)
 **Version 2** (2026-10-19). First run: relationship managers (RMs).
@@ -373,7 +380,7 @@ runs it end to end without stopping to ask, and reports back at the end.
 Inputs:   <product> [memos/rm-assistant.md: the product, its limits
           and its wave 1 capabilities] </product>
           <agents_and_workflows> [Appendix A (agents A1, A2, A3) and
-          Appendix B (workflows B1 to B4) of
+          Appendix B (the wave 1 workflows) of
           memos/rm-analytics-framework.md] </agents_and_workflows>
           <controls> [playbook/controls.md] </controls>
           <framework> [product-framework.md: AI principles, the five
@@ -527,7 +534,7 @@ Inputs:   <model_to_copy>
           product, short and full), memos/rm-executive-summary.md,
           memos/rm-plan.md (the plan, opening with a Gantt chart),
           designs/rm-ai-build.py and memos/rm-ai-reference.md (RM
-          Detail), prototypes/rm-assistant/ (version 4: source,
+          Detail), prototypes/rm-assistant/ (the latest version: source,
           build.py, tests, tour, video, README, changelog), Map 2 on
           the Workflow Maps (designs/workflows-build.py), the RM
           product agents in designs/agents-build.py, and the rm
@@ -704,7 +711,7 @@ Tone:     A senior product leader's working draft: clear, direct and
 1. The library's Portfolio managers section has five numbered rows, matching the RM section: PM Executive Summary, The PM Assistant, PM Assistant Plan, PM Assistant Prototype, PM Detail. Each opens.
 2. Each short page has the same sections as its RM twin; the plan opens with a Gantt chart.
 3. The full plan has the six steps as one table, Appendix A (agents from A7) and Appendix B (workflows from B10).
-4. Wave 1 is the borrower file, then credit memo and annual review drafts on the higher-risk path (K3); wave 2 is early warning; risk ratings are out.
+4. Wave 1 is the industry background draft and the borrower file, then credit memo and annual review drafts on the higher-risk path (K3); wave 2 is early warning; risk ratings are out.
 5. The product's workflows are a map on the Workflow Maps (Map 3, like Map 2); the user workflow (how PMs work today) comes later, as for RMs (RM2 and PM2); the PM agents are in the Agent Library.
 6. The prototype runs three agents on a sample borrower, refuses a credit decision or a borrower risk rating, logs every action, has a tour under 2 minutes, a video, passing tests, a README and a changelog.
 7. Every bank fact is an assumption with a question; every outside number has a source.

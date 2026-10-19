@@ -3,7 +3,7 @@
 > ⚠️ **A working hypothesis** (reviewed and agreed 2026-10-19), built from outside research and public Associated job postings. The first interviews with the leaders of portfolio managers (PMs) and with PMs confirm or change it.
 
 ## The product in one line
-Each PM gets **their own AI assistant**, inside the tools we expect they use (Word, Teams, the loan system and the bank's data; ⚠️ to confirm), to take the gathering and routine writing off their plate, so their time goes to credit judgment, and to spot weakening borrowers sooner. Its users are PMs and the credit analysts who support them; what they get back is time for judgment and for watching the portfolio. It starts with three **capabilities** and gains more, feature wave by feature wave. Every later AI product for PMs is a new capability of the same assistant.
+Each PM gets **their own AI assistant**, inside the tools we expect they use (Word, Teams, the loan system and the bank's data; ⚠️ to confirm), to take the gathering and routine writing off their plate, so their time goes to credit judgment, and to spot weakening borrowers sooner. Its users are PMs and the credit analysts who support them. It starts with three **capabilities** and gains more, feature wave by feature wave. Every later AI product for PMs is a new capability of the same assistant.
 
 ## 1. Its limits
 These limits make it safe to give every PM one.
@@ -18,13 +18,13 @@ Each capability is one AI product and answers one credit core use case (our prop
 
 | Moment | Capability | What it does | Credit core use case | Wave |
 |---|---|---|---|---|
-| **Review and renew** (and new requests) | Industry background draft | The industry background section of a credit memo (the industry's size and trend, main drivers and risks, outlook), from approved sources only, every statement cited and dated, for the PM to edit and approve; it uses no borrower data and writes no judgment about the borrower | Credit memo and annual review drafts | 1 |
-| | Borrower file | Everything about one borrower in one place, every figure with its source, and what's missing or late | Credit memo and annual review drafts | 1 |
-| | Annual review and credit memo drafts | The routine sections drafted in the bank's template; the borrower risk rating and the recommendation left for the PM | Credit memo and annual review drafts | 1 |
-| | Renewal radar | Loans coming up for renewal, and borrowers whose results suggest a different line (higher-risk path, our assumption) | Renewals and line changes | 3 |
-| **Watch the portfolio** | Early warning flags | Flags borrowers whose signals are weakening, with the numbers (higher-risk path, our assumption); the PM decides whether a flag goes to the bank's own watchlist or rating review (⚠️ to confirm how that runs today) | Early warning on credit quality | 2 |
-| | Covenant and statement tracker | Covenant tests, and statements and certificates due or late | Spreading, document intake and covenant tracking | 2 |
-| **New requests** | Deal screening | A quick check that a request fits the bank's credit appetite (higher-risk path, our assumption; the risk partner rates it at 2.4); it never declines, only notes where a request sits against the appetite | Deal screening | 3 |
+| **Review and renew** (and new requests) | [Industry background draft](https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX#b16) | The industry background section of a credit memo (the industry's size and trend, main drivers and risks, outlook), from approved sources only, every statement cited and dated, for the PM to edit and approve; it uses no borrower data and writes no judgment about the borrower | Credit memo and annual review drafts | 1 |
+| | [Borrower file](https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX#b10) | Everything about one borrower in one place, every figure with its source, and what's missing or late | Credit memo and annual review drafts | 1 |
+| | Annual review and credit memo drafts ([review](https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX#b11), [memo](https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX#b12)) | The routine sections drafted in the bank's template; the borrower risk rating and the recommendation left for the PM | Credit memo and annual review drafts | 1 |
+| | Renewal radar | Loans coming up for renewal, and borrowers whose results suggest a bigger or smaller line (higher-risk path, our assumption) | Renewals and line changes | 3 |
+| **Watch the portfolio** | [Early warning flags](https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX#b13) | Flags borrowers whose signals are weakening, with the numbers (higher-risk path, our assumption); the PM decides whether a flag goes to the bank's own watchlist or rating review (⚠️ to confirm how that runs today) | Early warning on credit quality | 2 |
+| | [Covenant and statement tracker](https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX#b14) | Covenant tests, and statements and certificates due or late | Spreading, document intake and covenant tracking | 2 |
+| **New requests** | Deal screening | A quick check that a request fits the bank's credit appetite (higher-risk path, our assumption); it never declines, only notes where a request sits against the appetite | Deal screening | 3 |
 | **Know the policy** | Credit policy Q&A | Answers from the credit policy, citing the section | Credit policy Q&A and coaching | 3 |
 | **Left out on purpose** | Borrower risk rating support; approve or decline; pricing | Kept out because they are the credit decision itself | Risk rating support | Out |
 

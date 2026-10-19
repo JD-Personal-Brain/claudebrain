@@ -2,22 +2,20 @@
 
 Associated Bank · Corporate and Commercial Banking · October 2026
 
-The detail behind the three short portfolio manager (PM) pages (the PM Executive Summary, The PM Assistant
-and the PM Assistant Plan), read in PM Detail. What the product is, its capabilities and waves, and the
-decisions behind them are in PM Detail, Part 3 (The PM Assistant in full detail); the rules every product
-follows are in the [Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ) and aren't repeated here.
-Appendix A specifies the product's agents (A7 to A11) and Appendix B its workflows (B10 to B16), so the
-team can build directly from them. It is a working hypothesis until Discover with the bank's PMs.
+The full plan behind the three short portfolio manager (PM) pages (the PM Executive Summary, The PM Assistant
+and the PM Assistant Plan), read in PM Detail. The product itself (its capabilities, waves and the decisions
+behind them) is in PM Detail, Part 3; the rules every product follows are in the
+[Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ). Appendix A specifies agents A7 to A11
+and Appendix B workflows B10 to B16, ready to build from. A working hypothesis until Discover with the bank's PMs.
 
-**The limiting factor: not known yet.** ⚠️ The real blockers are a first question
+**The limiting factor: our working assumption is the length of the bank's AI review (Open Items PL7); not confirmed yet.** ⚠️ The real blockers are a first question
 for the bank (what usually holds up a new AI tool there, and how long does the
 credit policy owner's review take?). Possible ones, our assumptions to confirm:
-approval to use borrower financials and credit files (the data contract, signed by
-the data owners [names needed]; aimed for weeks 2 to 4), and the higher-risk review. Credit
-memo and annual review drafts inform a credit decision, so the feature wave 1 drafts take the
-higher-risk path (control K3): a fairness check, must-refuse tests and the credit
-policy owner's sign-off as well as the usual ones. The industry background draft, the first capability, uses
-no borrower data, so it doesn't wait for the data contract's borrower fields.
+approval to use borrower data (the data contract, signed by the data owners [names needed];
+aimed for weeks 2 to 4) and the higher-risk review of the drafts (control K3: a fairness check,
+must-refuse tests and the credit policy owner's sign-off as well as the usual ones), because
+they inform a credit decision. The industry background draft uses no borrower data, so it
+doesn't wait for the first. Section 6 has the backup plan.
 
 ---
 
@@ -46,7 +44,7 @@ and the **[X]** values are filled in with the bank's numbers, not invented here.
 Unlike the RM model, the PM model counts **costs saved** and tracks **loan losses
 avoided**, because the bank has said its first AI work in this business includes
 portfolio management (we read this as loan portfolio management, PMs' work; to confirm), with goals that include faster loan processing (Bank
-Business Briefing, section 4; ⚠️ check the release's exact wording). The bank's credit lead (2026-10-19; ⚠️ details to confirm: which firm, cost per section, how many a year, turnaround, the contract's terms, and which sources the firm uses) told us the bank pays an outside firm to write the industry background section of its credit memos, and wants AI to draft that section as one of the first use cases.
+Business Briefing, section 4; ⚠️ check the release's exact wording). The bank's credit lead told us the bank pays an outside firm to write the industry background section of its credit memos, and wants AI to draft it among the first use cases (2026-10-19; ⚠️ details to confirm, section 8).
 
 | Part | How it's calculated |
 |---|---|
@@ -89,7 +87,7 @@ risk, IT, Finance, Analytics and Operations join as the Product Framework sets o
 the risk partner's step 4 approval can't be overruled by the sponsor. **The review and memo drafts take
 the higher-risk path**, so the credit policy owner joins at 2.4 and signs at 4.7, and
 compliance runs the fairness check (4.4). We assume the borrower file does not, because
-it gathers and cites but writes no judgment (⚠️ the risk partner decides at 2.4). K3's wording (output that informs a credit decision) could cover it, which is why it is the first question for the risk partner at 2.4, and why the backup plan covers it. We also assume the industry background draft does not, because it uses no borrower data and writes no judgment about the borrower; but it sits inside a credit memo, so the risk partner decides that at 2.4 too ⚠️.
+it gathers and cites but writes no judgment (⚠️ the risk partner decides at 2.4, the first question for them; the backup plan covers it if not). We also assume the industry background draft does not, because it uses no borrower data and writes no judgment about the borrower; but it sits inside a credit memo, so the risk partner decides that at 2.4 too ⚠️.
 
 **Keeping partners aligned.** Decisions go in the decision log, and dependencies,
 risks and issues in the risk and issue list (Product Framework). Its top item is the
@@ -102,15 +100,15 @@ holding the work up (⚠️ not known yet).
 
 Six steps, each ending in a go/no-go gate, run as the [Product Workflow](https://claude.ai/artifact/8Nm5fkdicn2Gu5VmNVTvYv)
 sets out: its questions, gates and sub-steps aren't repeated here. The first pass overlaps:
-a working prototype in week 1, the industry background draft and the borrower file live in weeks set at gate 2, once the bank says how long its AI review takes (B21),
+a working prototype in week 1, the industry background draft and the borrower file live in weeks set at gate 2, once the bank says how long its AI review takes (PL7 in the Open Items log),
 and the drafts in about week 12 (later than for RMs, because of the higher-risk path); then steps 3–6
 repeat in cycles of a week or two, and each new feature wave takes the quick pass through
 Discover and Define. What's different for PMs:
 
 | Step | Gate for PMs | What's specific to PMs | General agents used (M20 to M33; M1 to M19 run every step as the Product Machine sets out) |
 |---|---|---|---|
-| **1. Discover** | The sponsor, with the risk partner, agrees the target lever, the main measure (hours per review is our first guess) and today's baseline (provisional, from the first sizing in 1.2; final baseline checked at gate 2), and confirms wave 1 | Count reviews and memos per PM per year and time each part, and count the industry sections the outside firm writes, their fee and turnaround (⚠️ to confirm) (gathering, spreading, writing, approvals); interview and shadow PMs and credit analysts through one real annual review (with consent before recording any shadowing session, K24), starting from Map 3 on the Workflow Maps (the PM user workflow, how PMs work today, is not written yet); collect the bank's review and memo templates; learn how PMs are measured; test the prototype on sample borrowers every few days | M20 interview synthesizer, M21 opportunity sizer, M22 time-use analyst |
-| **2. Define** | The brief, data contract (K5) and the product's risk rating agreed (higher-risk path set); the final baseline; the credit policy owner agrees what drafts may contain; the order of feature waves 2 and 3 agreed; their dates set once the wave 1 drafts' higher-risk review is signed (about week 11), when its real length is known; the value model shows payback within [X] months | The data contract includes the approved industry source list for the industry background draft, with each source's license terms (K5; vendor risk reviews any licensed source, K14), and covers documents (financial statements, tax returns, appraisals, prior reviews: their source, owner and who may see them), which fields are sensitive and hidden or labeled (K6: guarantors' personal financial statements, tax-return identifiers; privacy confirms which laws apply ⚠️), and the bank's approval-authority list ⚠️ (to confirm); M24 checks the data fields; the content owner of the credit file checks the documents' re-indexing and permissions by hand until M24 gains a documents mode; the risk intake marks the drafts for the higher-risk path (K3) and lists the must-refuse cases (a borrower risk rating, approve or decline, a price, and a recommendation: always in wave 1, later if the policy owner says no); Finance agrees how hours are valued | M23 requirements drafter, M24 data contract checker (then on every data refresh), M25 risk intake assistant |
+| **1. Discover** | The sponsor, with the risk partner, agrees the target lever, the main measure (hours per review is our first guess) and today's baseline (provisional, from the first sizing in 1.2; final baseline checked at gate 2), and confirms wave 1 | Count reviews and memos per PM per year and time each part (gathering, spreading, writing, approvals), and count the industry sections the outside firm writes, their fee and turnaround (⚠️ to confirm); interview and shadow PMs and credit analysts through one real annual review (with consent before recording any shadowing session, K24), starting from Map 3 on the Workflow Maps (the PM user workflow, how PMs work today, is not written yet); collect the bank's review and memo templates; learn how PMs are measured; test the prototype on sample borrowers every few days | M20 interview synthesizer, M21 opportunity sizer, M22 time-use analyst |
+| **2. Define** | The brief, data contract (K5) and the product's risk rating agreed (higher-risk path set); the final baseline; the credit policy owner agrees what drafts may contain; the order of feature waves 2 and 3 agreed (dates come once the drafts' higher-risk review is signed, about week 11); the value model shows payback within [X] months | The data contract includes the approved industry source list for the industry background draft, with each source's license terms (K5; vendor risk reviews any licensed source, K14), and covers documents (financial statements, tax returns, appraisals, prior reviews: their source, owner and who may see them), which fields are sensitive and hidden or labeled (K6: guarantors' personal financial statements, tax-return identifiers; privacy confirms which laws apply ⚠️), and the bank's approval-authority list ⚠️ (to confirm); M24 checks the data fields; the content owner of the credit file checks the documents' re-indexing and permissions by hand until M24 gains a documents mode; the risk intake marks the drafts for the higher-risk path (K3) and lists the must-refuse cases (a borrower risk rating, approve or decline, a price, and a recommendation: always in wave 1, later if the policy owner says no); Finance agrees how hours are valued | M23 requirements drafter, M24 data contract checker (then on every data refresh), M25 risk intake assistant |
 | **3. Build** | Meets the quality bar in testing; every control is built and passes its control test | The industry background draft is built and tested on public sources from week 1, every statement cited and dated (K7); every number in a draft traces to a source document or system (K7) and is checked in code; the "judgment" sections (borrower risk rating, recommendation) are left for the PM, clearly marked; each PM sees only borrowers they may already see (K4); the test set uses real past reviews graded by experienced PMs, with must-refuse cases | M26 test grader |
 | **4. Govern and test** | All sign-offs recorded, including the credit policy owner's, and the monitoring plan agreed | Register the product in the model inventory (⚠️ to confirm) and confirm its rating (SR 11-7; ⚠️ SR 26-2 may replace it; to check); privacy compares the documents retrieved with the contract's sources by hand (M13 doesn't cover documents yet); red-team for a credit decision, a borrower risk rating, a price, other PMs' borrowers, instructions hidden inside a borrower-supplied document, one borrower's figures leaking into another's draft, a number with no source, and borrower data, a judgment about the borrower or an uncited statement in the industry background section (M27, K10); fairness check (4.4; compliance sets the fair-lending groups and what data exists for them ⚠️; we'd also compare draft accuracy and completeness across borrower types and sizes as a quality check); every draft names the credit officer who decides, from the bank's approval-authority list | M26 test grader (on the frozen version), M27 red-team agent, M28 fairness monitor (then monthly), M29 evidence pack assembler |
 | **5. Release and adopt** | Weekly use and leading results hit targets (at least [X]% of pilot PMs using the assistant weekly; at least [X]% of draft sections kept with light edits); no serious incidents; long-term owner confirmed before scaling. Hours per review and turnaround are judged in step 6, once enough reviews are done | A pilot group of PMs, with a comparison group; build it into the annual review cycle and the portfolio review managers already run (⚠️ to confirm); train on PMs' own borrowers; champions show peers how they use it (5.5) | M30 feedback triage |
@@ -169,19 +167,18 @@ as it is built. No real borrower data goes into the assistant or its tests befor
 | 1 | **Gate 1:** target lever, main measure and provisional baseline agreed; wave 1 confirmed | Sponsor, with the risk partner | Decision log entry |
 | 1–3 | Shadow 4–6 PMs and analysts through a real review (our estimate); time each part, which gives the final baseline; improve the prototype every few days | Product manager, pilot PMs, analyst | Time map; feedback log |
 | 1–4 | Borrower file and drafts built and tested on sample borrowers | Platform team | Prototype test results |
-| 1–5 | Industry background draft built and tested on public sources (it needs no client data): test set graded by PMs, every statement cited and dated (K7); the approved source list and its license terms agreed with the content owner and vendor risk (K5, K14); evidence pack | Platform team, product manager, vendor risk | Test results against the quality bar |
-| About 4 | **Gate 2:** final baseline, data contract (with the approved industry source list), the product's early risk rating (which capabilities take the higher-risk path), what drafts may contain (credit policy owner), measures and value model; the order of feature waves 2 and 3 agreed; their dates set once the wave 1 drafts' higher-risk review is signed (about week 11), when its real length is known. Aimed for weeks 2 to 4, paced by the data owners' signatures (⚠️) | Sponsor, data owners, content owner of the credit file, risk partner, credit policy owner | Signed data contract; decision log |
-| After gate 2 | Industry background draft: frozen version, sign-offs (as long as the bank's AI review takes, B21); monitoring plan (4.8); readiness: training, incident process (5.1) | Risk partner, vendor risk, product manager | Gate 3 and 4 entries |
+| 1–5 | Industry background draft built and tested on public sources (it needs no borrower data): test set graded by PMs, every statement cited and dated (K7); the approved source list and its license terms agreed with the content owner and vendor risk (K5, K14); evidence pack | Platform team, product manager, vendor risk | Test results against the quality bar |
+| About 4 | **Gate 2:** final baseline, data contract (with the approved industry source list), the product's early risk rating (which capabilities take the higher-risk path), what drafts may contain (credit policy owner), measures and value model; the order of feature waves 2 and 3 agreed (dates come once the drafts' higher-risk review is signed, about week 11). Aimed for weeks 2 to 4, paced by the data owners' signatures (⚠️) | Sponsor, data owners, content owner of the credit file, risk partner, credit policy owner | Signed data contract; decision log |
+| After gate 2 | Industry background draft: frozen version, sign-offs (as long as the bank's AI review takes, PL7); monitoring plan (4.8); readiness: training, incident process (5.1) | Risk partner, vendor risk, product manager | Gate 3 and 4 entries |
 | Week [X] | **Industry background draft live with pilot PMs** (set at gate 2, once the review's length is known) | Product manager | Sections drafted; sections kept with light edits |
-| After gate 2 | Borrower file on real data (as long as the bank's AI review takes, B21): test set, controls tested, frozen version, sign-offs; monitoring plan (4.8); readiness: training, incident process, comparison group (5.1) | Platform team, risk partner | Gate 3 and 4 entries |
+| After gate 2 | Borrower file on real data (as long as the bank's AI review takes, PL7): test set, controls tested, frozen version, sign-offs; monitoring plan (4.8); readiness: training, incident process, comparison group (5.1) | Platform team, risk partner | Gate 3 and 4 entries |
 | Week [X] | **Borrower file live with pilot PMs** (set at gate 2, once the review's length is known) | Product manager | First weekly usage report |
 | 5–9 | Review and memo drafts on real past reviews, after gate 2; test set graded by PMs, with must-refuse cases; fairness check agreed with compliance; evidence pack | Platform teams, product manager, compliance | Test results against the quality bar |
 | 10–11 | Higher-risk review of the frozen drafts: sign-offs, including the credit policy owner's; readiness (training, incident process, comparison group) | Risk, compliance, privacy, security, credit policy owner | Sign-offs recorded |
 | About 12 | **Annual review and credit memo drafts live with pilot PMs** | Product manager | Drafts used; sections kept with light edits |
 
-**By day 90 (about week 13):** the industry background draft and the borrower file should be live (their weeks are set at gate 2),
-and the drafts for about one or two weeks; the first leading measures are coming in. Feature waves 2 and 3 get
-dates once the drafts' higher-risk review is signed (about week 11), when its real length is known.
+**By day 90 (about week 13):** all three wave 1 capabilities should be live (the first two in weeks set at gate 2),
+the drafts for a week or two, and the first leading measures coming in.
 
 ---
 
@@ -298,7 +295,7 @@ The team uses the product machine's general agents, specified in full in the
 ## Appendix B: Workflows
 
 Each PM-facing capability as a step-by-step flow. Every PM-facing flow (B10–B14 and B16) has one
-**decision point** where the PM decides, and everything is logged. B15 is the release routine.
+**decision point** where the PM decides, and everything is logged. B15 is the release routine (listed last).
 
 **B10. Borrower file** (wave 1; first in the backup plan)
 - **Trigger:** a review comes due in [X] days, a credit request arrives, or the PM asks.

@@ -1,7 +1,7 @@
 # RM Assistant Prototype
 
 A clickable concept of **The RM Assistant**: one AI assistant for each relationship manager (RM).
-It shows the plan's wave 1 capabilities working, with three agents running live on Claude, on
+It shows the plan's wave 1 capabilities working, with three agents (A1 in code, A2 and A3 live on Claude), on
 made-up sample data. Current version: **5** (`prototype-v5.html`; versions 1 to 4 are kept unchanged). It's a prototype to show we can build; the real product comes from the six
 steps (Discover onward), so every fact about the bank in it is an assumption to confirm.
 
@@ -9,7 +9,7 @@ steps (Discover onward), so every fact about the bank in it is an assumption to 
 - **The tour as a video:** `rm-assistant-tour-v5.mp4` (version 5, under 2 minutes, with a voiceover read by Kokoro, an open-source voice; the script is `video/narration.json`). The version 1 and 4 videos are kept as `rm-assistant-tour-v1.mp4` and `rm-assistant-tour-v4.mp4`.
 - **One set with the PM Assistant Prototype** (`prototypes/pm-assistant/`, version 5): the same house style, a tour under 2 minutes, wave 2 items tagged "Wave 2 preview" on Today, and the same sticky approve bar.
 - **Built from:** Prompt 4 in `prompt-library.md`; the product page (`memos/rm-assistant.md`), agents A1 to A3 and
-  workflows B1 to B4 in the full plan (`memos/rm-analytics-framework.md`); controls in `playbook/controls.md`.
+  workflows B1 to B4 (B5 and B6 as wave 2 previews) in the full plan (`memos/rm-analytics-framework.md`); controls in `playbook/controls.md`.
 - **Added for the prototype only:** the outside data feed (the 10-year Treasury yield) and its "Rates context" rule. They
   aren't in the plan's agent specs or data contract; a real build would add them through the data contract (K5) first.
 

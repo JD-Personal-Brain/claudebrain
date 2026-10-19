@@ -107,7 +107,7 @@
         {
           "id": "rm-prototype",
           "name": "RM Assistant Prototype",
-          "what": "The RM Assistant as a clickable prototype: three agents running live on Claude on sample data, the controls working, and a 2-minute guided tour.",
+          "what": "The RM Assistant as a clickable prototype: three agents (A1 in plain rules, A2 and A3 live on Claude) on sample data, the controls working, and a 2-minute guided tour.",
           "status": "In use",
           "url": "https://claude.ai/artifact/RFM2o7cdren3TxesQBsjky",
           "source": "prototypes/rm-assistant/"

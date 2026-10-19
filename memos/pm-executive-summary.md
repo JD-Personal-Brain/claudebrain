@@ -31,9 +31,9 @@ Later waves add early warning flags and a covenant and statement tracker, then c
 - Time is proven against similar PMs not yet using it; targets are set from the bank's own numbers. [Outside evidence for each credit core use case](https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X#portfolio-managers)
 
 ## How fast
-A first prototype takes days. We expect approval to set the pace (our assumption, to confirm): drafts inform credit decisions, so we expect them to need a deeper review (we call it the higher-risk path), including the credit policy owner's sign-off. On our first estimates, to confirm, that's the industry background draft and the borrower file by weeks we set once the bank says how long its AI review takes, and the drafts by about week 12. [The plan, week by week](https://claude.ai/artifact/UKMBCCxBns8YuCJyEo4Zkv)
+A first prototype takes days. We expect approval to set the pace (our assumption, to confirm): drafts inform credit decisions, so we expect them to need a deeper review (we call it the [higher-risk path](https://claude.ai/artifact/7GmH3iBG6jcDkdacUysUrQ#k3)), including the credit policy owner's sign-off. On our first estimates, to confirm, that's the industry background draft and the borrower file by weeks we set once the bank says how long its AI review takes, and the drafts by about week 12. [The plan, week by week](https://claude.ai/artifact/UKMBCCxBns8YuCJyEo4Zkv)
 
-**What could slow us down:** not known yet. Possible hold-ups include approval to use borrower data and the deeper credit review. If the review runs long, the borrower file still goes ahead of the drafts (unless the risk partner puts it on the deeper review too), because it gathers and cites but writes no judgment; if data approval runs long, the prototype keeps running on sample borrowers until it lands.
+**What could slow us down:** not confirmed yet; our working assumption is how long the bank's AI review takes. Possible hold-ups include approval to use borrower data and the deeper credit review. If the review runs long, the borrower file still goes ahead of the drafts (unless the risk partner puts it on the deeper review too), because it gathers and cites but writes no judgment; if data approval runs long, the prototype keeps running on sample borrowers until it lands.
 
 ## What I need, and what I'd confirm
 1. A sponsor for the PM work: about an hour a week, plus each go/no-go decision (our estimate).
@@ -41,6 +41,6 @@ A first prototype takes days. We expect approval to set the pace (our assumption
 3. The credit policy owner, early: what a draft may contain, and their sign-off.
 4. Named owners for borrower data and the credit file, and the review and memo templates.
 
-To confirm in the first weeks: which firm writes the industry sections today, what they cost, how many a year and the contract's terms; how long the bank's AI and model review takes; what usually holds up a new AI tool here; how many reviews and memos PMs write a year and how long each takes; which loan system and spreading tool the bank uses; and whether a later draft may carry a recommendation.
+To confirm first: today's industry sections (the firm, cost, volume, contract); how long the bank's AI and model review takes and what usually holds up a new AI tool here; how many reviews and memos PMs write a year and how long each takes; the loan system and spreading tool; and whether a later draft may carry a recommendation. [Everything to confirm](https://claude.ai/artifact/KZ4PEbhCPAj6uWKXmJMCeg#part-5-the-full-delivery-plan-with-every-8-what-i-d-confirm-in-the-first-weeks).
 
 _Last updated: 2026-10-19_

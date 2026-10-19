@@ -3,10 +3,9 @@
 These agents help the team run any project through the six steps. They're
 reused on every project, so they're specified once here: M1 to M19 run the
 machine's own paperwork and routing, and M20 to M33 do the team's analysis,
-testing and monitoring work (they started as the RM project's helpers and were
-made general on 2026-10-10). A project's own agents (the product users see, or
+testing and monitoring work. A project's own agents (the product users see, or
 agents only that project needs) go in its memo's Appendix A, like A7 to A11 in the PM memo and A1, A2, A3 and A5 in
-the RM memo. H1 and on are my own research helpers (see "My research helpers" near the end of the Agent Library page):
+the RM memo. H1 and on are my own research helpers:
 they keep my reference pages current and are not part of the product machine.
 
 Written with the agent-spec routine. Every agent follows the AI principles in
@@ -220,7 +219,7 @@ its person in charge; a monitor never reports a pass on missing data.
 - **Used in:** 4.2
 - **For:** the team
 - **Kind:** Draft → Auto ⚠️
-- **Job:** compare the data the product actually reads with the signed data contract. Documents: not covered yet (the PM project, the first that runs on documents, checks them by hand until this is added; privacy compares the documents retrieved with the contract's sources by hand).
+- **Job:** compare the data the product actually reads with the signed data contract. Documents: not covered yet; until they are, privacy compares the documents retrieved with the contract's sources by hand.
 - **Starts when:** each new frozen version, and monthly after launch.
 - **Inputs:** the access logs or query history; the data contract.
 - **Allowed actions:** read; report differences.
@@ -398,7 +397,7 @@ its person in charge; a monitor never reports a pass on missing data.
 - **Used in:** 2.3, 3.2
 - **For:** the team
 - **Kind:** Draft → Draft (2.3); Me → Auto ⚠️ (3.2, ongoing mode)
-- **Job:** check that every field in the data contract exists, is fresh enough and passes its quality checks. Documents: not covered yet (the PM project, the first that runs on documents, checks them by hand until this is added; for a product built on documents, the content owner checks re-indexing and permissions by hand until this agent gains a documents mode).
+- **Job:** check that every field in the data contract exists, is fresh enough and passes its quality checks. Documents: not covered yet; until they are, the content owner checks re-indexing and permissions by hand.
 - **Starts when:** the field list is drafted in 2.3; after that, on every data refresh.
 - **Inputs:** the data contract; the tables and their quality and access records.
 - **Allowed actions:** read-only checks; alert the data owner on failure.
@@ -461,7 +460,7 @@ its person in charge; a monitor never reports a pass on missing data.
 ### M28. Fairness monitor
 - **Used in:** 4.4
 - **For:** the team
-- **Kind:** Draft → Auto
+- **Kind:** Draft → Auto ⚠️
 - **Job:** check that the product treats similar clients and users alike, across the groups compliance chose.
 - **Starts when:** compliance agrees the groups and thresholds in 4.4; after that, monthly after launch (its ongoing mode).
 - **Inputs:** the product's outputs; the group definitions and thresholds.
@@ -514,11 +513,11 @@ its person in charge; a monitor never reports a pass on missing data.
 - **Starts when:** monthly.
 - **Inputs:** the tagged results data; the baseline; the method Finance agreed in 2.7.
 - **Allowed actions:** read-only queries; write a draft impact note.
-- **Not allowed:** changing the method; sharing figures before analytics checks them.
+- **Not allowed:** changing the method; sharing figures before Analytics checks them.
 - **Outputs:** monthly impact figures and a three-line note.
 - **Stops when:** the note is complete.
-- **Proof it worked:** analytics validates the numbers before reporting.
-- **Person in charge:** analytics.
+- **Proof it worked:** Analytics validates the numbers before reporting.
+- **Person in charge:** Analytics.
 - **Runs on (guess):** Snowflake Cortex Analyst, Power BI.
 - **To confirm:** none.
 
@@ -572,7 +571,7 @@ AI task, from a written routine.
 - **Stops when:** the summary is written, including a short "nothing new" summary when nothing changed. A page that won't open is named in the summary and left as a gap.
 - **Proof it worked:** the scheduled task's notice, the log entry and the draft branch.
 - **Person in charge:** me.
-- **Runs on (guess):** a scheduled AI task, from the bank news scout routine (confirmed: set up and running).
+- **Runs on:** a scheduled AI task, from the bank news scout routine.
 - **To confirm:** none (the first weekly run succeeded on 2026-10-19).
 
 ## Not agents, but reusable assets
@@ -586,13 +585,12 @@ a library, built once and reused.
 
 ## Agents with an ongoing mode
 Ongoing mode means an agent first used once in a sub-step that then keeps
-checking the live product until it's retired. Five agents have one:
+checking the live product until it's retired. Four agents have one:
 - **M5 Baseline recorder:** set up in 1.7; it keeps recording each measure on a schedule until the product is retired or the measure is replaced, and alerts the data owner if the source is missing or late.
 - **M13 Data-use checker:** it runs again monthly after launch (4.2) and alerts privacy on any difference.
 - **M24 Data contract checker:** after Define, it runs on every data refresh (3.2) and alerts the data owner on failure.
 - **M28 Fairness monitor:** set up in 4.4; its ongoing mode re-runs the check monthly after launch (4.4), and fairness is in the monitoring plan (4.8).
-- **M32 Quality watchdog:** re-runs the test set on every change and at least monthly (6.3), and alerts the product manager when quality slips.
 
-Agents built to run on a schedule from the start (M11, M17, M18, M26, M30 and M31) are not "ongoing mode": running repeatedly is their normal job.
+Agents built to run on a schedule from the start (M11, M17, M18, M26, M30, M31 and M32) are not "ongoing mode": running repeatedly is their normal job.
 
 _Last updated: 2026-10-19_

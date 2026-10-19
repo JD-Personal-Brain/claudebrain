@@ -6,11 +6,6 @@
 
 Work through 2.1 to 2.8. 2.3 (data) and 2.4 (risk) take the longest because
 they wait on other people, so **start both in your first week**, alongside 2.1.
-Fill in the first-time log (see the Product Playbook's opening page) for every sub-step.
-
-> ⚠️ **How much to trust this.** Written 2026-10-09 from my framework, the RM
-> memo and general practice, not from Associated Bank. Lines marked ⚠️ are
-> guesses about how the bank works.
 
 ---
 
@@ -200,7 +195,7 @@ Fill in the first-time log (see the Product Playbook's opening page) for every s
 
 ## The Define gate
 
-- **Who decides:** the sponsor, with the risk partner and the data owner, and on the higher-risk path the credit policy owner (in writing when the gate is clean; a meeting only if a criterion is contested or a decider asks for one; see the Product Machine).
+- **Who decides:** the sponsor, with the risk partner and the data owner, and on the higher-risk path the credit policy owner (in writing when the gate is clean: Product Machine).
 - **Bring:** the gate pack from 2.8.
 - **Go means:** brief, data contract and risk rating agreed, and the value model shows payback within [X] months.
 - **No-go means:** fix the gap (often data or risk), or narrow the scope.
@@ -210,10 +205,9 @@ Fill in the first-time log (see the Product Playbook's opening page) for every s
 
 ## Define automation review (do this at the gate)
 
-Run the automation check from the Product Machine on every Me and Draft task,
-using your first-time logs: cut first (should it exist, delete, simplify, make
-it faster), then automate what's left (repeat? stable? safe alone?). Then update this shortlist and the Define
-table on the Product Machine page.
+Run the automation check (Product Machine) on every Me and Draft task, using
+your first-time logs, then update this shortlist and the Define table on the
+Product Machine page.
 
 | Sub-step | Agent | First time | Aim for | Already specified? |
 |---|---|---|---|---|
@@ -227,7 +221,5 @@ table on the Product Machine page.
 | 2.7 | M9 Measures sheet builder | Draft | Draft | Yes, M9 |
 | 2.8 | None: recording the long-term owner stays with a person | Me | Me | — |
 | 2.8 | M6 Gate pack drafter (shared with Discover) | Draft | Draft | Yes, M6 |
-
-**First time** = how the task is done on the first project. **Aim for** = its kind on the Product Machine page.
 
 _Last updated: 2026-10-19_
