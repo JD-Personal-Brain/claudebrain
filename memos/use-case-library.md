@@ -34,20 +34,20 @@ The pattern: signals from data, shown inside the CRM, with the reason visible an
 
 **The need in one line:** PMs are the bank's credit people paired with RMs. The value is in drafting credit memos and reviews and in monitoring credit quality, with a person always deciding. At DBS, credit memos and related work take up to 40% of an RM's time (DBS's estimate); ⚠️ how much of a PM's time goes to them here is to confirm.
 
-> ⚠️ **A proposal, not yet agreed.** Each RM core use case has a credit counterpart; the pairing is our own. Built from a web scan on 2026-10-13 through search summaries; the primary pages would not open.
+> ⚠️ **A proposal, not yet agreed.** Each RM core use case has a credit counterpart; the pairing is our own, used in the PM plan's first cut (2026-10-19), not yet reviewed. Built from a web scan on 2026-10-13 through search summaries; the primary pages would not open.
 
-| Core use case (credit counterpart) | Where the value is | Outside evidence | Strength |
-|---|---|---|---|
-| **Credit memo and annual review drafts** (account intelligence) | A review-ready first draft from many systems, with sources | DBS: live for about 1,500 bankers (August 2026), targets at least 30% less time. Moody's: writes about 35–40% of each memo at a tier-one US bank. nCino, S&P and Microsoft all offer it | **Strongest.** First in our order |
-| **Early warning on credit quality** (keep clients) | Spotting a weakening borrower early | Nearly 60% of credit risk leaders are pursuing it, more than any other area (McKinsey survey of 24 institutions). Moody's live across 19 countries at a large Asian bank | **Strong.** Second in our order |
-| **Spreading, document intake and covenant tracking** (admin) | Analyst hours back | Vendors claim 40–60% less analyst time per deal (vendor claims; Evalueserve and nCino sell these tools) | Vendor claims |
-| **Renewals and line changes** (lead nurturing) | Renewals caught on time; lines matched to results | Part of most memo tools (vendor material) | Thin |
-| **Credit policy Q&A and coaching** (coaching) | Newer analysts up to speed faster | nCino Banking Advisor answers policy questions; American Banker reports AI helps newer bankers most | Thin |
-| **Deal screening** (prospecting) | Checking fit with credit appetite before the RM pitches | Vendor claims only | Thin |
-| **Risk rating support** (deal scoring) | Faster, consistent rationale | Little public evidence | Out of the first waves: closest to a credit decision |
+| Core use case (credit counterpart) | Where the value is | Outside evidence | Strength | Our AI product (wave) |
+|---|---|---|---|---|
+| **Credit memo and annual review drafts** (account intelligence) | A review-ready first draft from many systems, with sources | DBS: live for about 1,500 bankers (August 2026), targets at least 30% less time. Moody's: writes about 35–40% of each memo at a tier-one US bank (Moody's investor remarks; bank not named). nCino, S&P and Microsoft all offer it | **Strongest** | Borrower file (1); annual review and credit memo drafts (1) |
+| **Early warning on credit quality** (keep clients) | Spotting a weakening borrower early | Nearly 60% of credit risk leaders are pursuing it, more than any other area (McKinsey survey of 24 institutions). Moody's live across 19 countries at a large Asian bank (Moody's earnings call) | **Strong** | Early warning flags (2) |
+| **Spreading, document intake and covenant tracking** (admin) | Analyst hours back | Vendors claim 40–60% less analyst time per deal (vendor pages: multimodal.dev, V7 Labs). Evalueserve's covenant module is live at a Middle East commercial bank (vendor case study); nCino also sells these tools | Vendor claims | Covenant and statement tracker (2) |
+| **Renewals and line changes** (lead nurturing) | Renewals caught on time; lines matched to results | Part of most memo tools (vendor material) | Thin | Renewal radar (3) |
+| **Credit policy Q&A and coaching** (coaching) | Newer analysts up to speed faster | nCino Banking Advisor answers policy questions; American Banker reports AI helps newer bankers most | Thin | Credit policy Q&A (3) |
+| **Deal screening** (prospecting) | Checking fit with credit appetite before the RM pitches | Vendor claims only | Thin | Deal screening (3) |
+| **Risk rating support** (deal scoring) | Faster, consistent rationale | Little public evidence | Closest to a credit decision | Out on purpose (control K3) |
 
 **What the market shows.** No bank reports letting AI make the credit decision: every example has the AI draft or flag and a person decide. We found no public announcement from a large US bank naming its own AI tool for commercial credit memos (search of 2026-10-13); Moody's reports one unnamed tier-one US bank using its agents.
 
 **Order agreed 2026-10-15:** credit memo and annual review drafts first, early warning second, risk ratings out of the first waves. The full scan, with every source, is kept in the working files (`memos/credit-market-scan.md`).
 
-_Last updated: 2026-10-18_
+_Last updated: 2026-10-19_

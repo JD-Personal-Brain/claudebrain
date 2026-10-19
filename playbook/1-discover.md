@@ -27,7 +27,7 @@ sub-step. At the end, run the automation review.
   2. Meet the sponsor (30 minutes). Confirm that they own the outcome and the funding, and that they make the go/no-go call at each gate.
   3. Fill in "who's involved and who decides" (from `product-framework.md`) with real names. Mark gaps as [name needed].
   4. Set up the tracker: copy the six steps' task tables from `product-machine.md`, then give every Discover task an owner and a date. Name the first limiting factor and its owner at the top of the tracker.
-  5. Brief the risk partner (from model risk) in 15 minutes: what the idea is, what data it might use, and that nothing touches clients yet. Ask what they'll need to see in Define.
+  5. Brief the risk partner (from model risk) in 15 minutes: what the idea is, what data it might use, and that nothing touches clients yet. Ask what they'll need to see in Define. If the product is likely to take the higher-risk path (its output would inform a credit decision, control K3), brief the credit policy owner too ⚠️ [name needed].
   6. Start the decision log and the risk and issue list, dependencies included (both empty is fine).
   7. Create the project file: `memos/<project>.md`.
   8. Confirm which AI tools the team may use with bank data, and write the list in the project file. No client data goes into any other tool, even for a quick test.
@@ -254,4 +254,4 @@ allowed actions, outputs, stop condition, proof it worked, person in charge)
 in the agent library (or, for an agent only one project needs, in that project memo's Appendix A) before it's built, following "One job each"
 in `product-framework.md`.
 
-_Last updated: 2026-10-18_
+_Last updated: 2026-10-19_

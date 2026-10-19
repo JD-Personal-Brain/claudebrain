@@ -78,7 +78,7 @@ for block in re.split(r"\n\*\*(?=A\d+\. )", pm_appa.split("### Agents the team u
                    "source": "PM Detail · full plan, Appendix A"})
 
 GROUPS = [("machine", "Run the product machine", "Handle the paperwork and routing that move any project through the six steps: kickoff, notes, gate packs, sign-offs and releases. Reused on every project."),
-          ("team", "Do the team's analysis, testing and monitoring", "General agents for every project: sizing, research, requirements, data checks, testing, red-teaming, fairness, evidence, feedback and impact. The RM plan shows how it uses each one."),
+          ("team", "Do the team's analysis, testing and monitoring", "General agents for every project: sizing, research, requirements, data checks, testing, red-teaming, fairness, evidence, feedback and impact. The RM and PM plans show how they use each one."),
           ("product", "The product RMs use", "The agents inside The RM Assistant. Nothing reaches a client without the RM. Insights and alerts are shown to the RM (and, if agreed, their manager); anything saved as the RM's own work, like a call note or an opportunity, needs the RM's approval."),
           ("pm-product", "The product PMs use", "The agents inside The PM Assistant, for portfolio managers (PMs). They gather, draft and flag; the PM writes the judgment and a named credit officer decides. None of them sets a risk rating, approves or declines credit, or sets a price."),
           ("helpers", "My research helpers", "Agents that keep my own reference pages current, such as the Bank Business Briefing. Not part of the product machine. Each runs on a schedule and only drafts: I decide what goes into main.")]
@@ -120,7 +120,7 @@ page = f'''<title>Agent Library</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
 <style>{CSS}
 [hidden]{{display:none!important}}
-/* Layout: navy band with filters; three groups of agent cards; each card opens to its full spec. */
+/* Layout: navy band with filters; five groups of agent cards (general agents in two, the RM and PM product agents, my research helpers); each card opens to its full spec. */
 .filters{{display:flex;flex-wrap:wrap;gap:14px;margin-top:20px}}
 .filters label{{display:flex;flex-direction:column;gap:6px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--label-on-navy);flex:1 1 200px;max-width:320px}}
 .filters input,.filters select{{font:inherit;font-size:15px;text-transform:none;letter-spacing:0;padding:9px 12px;border-radius:8px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:var(--onnavy)}}

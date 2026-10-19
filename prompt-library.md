@@ -503,7 +503,7 @@ Tone:     Confident and clear, like a product demo: impressive by
 
 Lays down a whole user group's section of the Document Library in one run, built
 exactly like the RM section, with a first cut of every document: the full plan,
-the three short pages for people, the user workflow map, the product agents, a
+the three short pages for people, the product's workflows map, the product agents, a
 prototype with live agents and the detail document for AI. Later sessions improve
 each document one at a time. It runs Prompt 2 (the full memo) and Prompt 4 (the
 prototype) for the new group and checks the result against the use case kit
@@ -514,7 +514,8 @@ main without my yes.
 
 Its first run set three things: the product's name ("The PM Assistant"), agent and
 workflow numbers that carry on from the RM ones (A7 and B10 onward), and wave 1 as
-credit memo and annual review drafts on the higher-risk path (control K3).
+the borrower file, then credit memo and annual review drafts on the higher-risk
+path (control K3).
 
 ```
 Inputs:   <model_to_copy>
@@ -608,10 +609,11 @@ Steps:    1. Read everything above. Write a "done" checklist (below,
           6. The executive summary: memos/pm-executive-summary.md,
              written last of the three short pages, for the leaders of
              the credit business, in the RM summary's layout.
-          7. The user workflow: a PM's week today and with AI, built
-             with the user-workflow skill as a new map on the Workflow
-             Maps, beside the RM map, every bank fact a question to
-             confirm.
+          7. The product's workflows: the PM workflows (from B10)
+             as a new map on the Workflow Maps (Map 3, like the RM
+             product's Map 2), every bank fact a question to confirm.
+             The user workflow (how PMs work today, with the
+             user-workflow skill) comes later, as for RMs (W2).
           8. The agents: add the PM product agents to the Agent
              Library (designs/agents-build.py), linking to PM Detail.
           9. The prototype: run Prompt 4 for PMs, building The PM
@@ -701,8 +703,8 @@ Tone:     A senior product leader's working draft: clear, direct and
 1. The library's Portfolio managers section has five numbered rows, matching the RM section: PM Executive Summary, The PM Assistant, PM Assistant Plan, PM Assistant Prototype, PM Detail. Each opens.
 2. Each short page has the same sections as its RM twin; the plan opens with a Gantt chart.
 3. The full plan has the six steps as one table, Appendix A (agents from A7) and Appendix B (workflows from B10).
-4. Wave 1 is credit memo and annual review drafts on the higher-risk path (K3); wave 2 is early warning; risk ratings are out.
-5. A PM's week, today and with AI, is a map on the Workflow Maps; the PM agents are in the Agent Library.
+4. Wave 1 is the borrower file, then credit memo and annual review drafts on the higher-risk path (K3); wave 2 is early warning; risk ratings are out.
+5. The product's workflows are a map on the Workflow Maps (Map 3, like Map 2); the user workflow (how PMs work today) comes later, as for RMs (W2); the PM agents are in the Agent Library.
 6. The prototype runs three agents on a sample borrower, refuses a credit decision or a risk rating, logs every action, has a tour under 2 minutes, a video, passing tests, a README and a changelog.
 7. Every bank fact is an assumption with a question; every outside number has a source.
 8. The render check passes on every changed page; the audit passes; a draft is saved on GitHub; nothing is merged.

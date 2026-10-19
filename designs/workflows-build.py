@@ -96,9 +96,10 @@ if missing:
 
 # A portfolio manager's (PM's) work as the main process: my framing too, to confirm with PMs in Discover.
 PM_STAGES = [
-    ("1", "Watch the portfolio", "Which borrowers need my attention, and why?", ["B13", "B14"]),
-    ("2", "Gather the file", "Do I have everything about this borrower, with its source?", ["B10"]),
-    ("3", "Write the review or memo", "What do the numbers say, and what is my judgment?", ["B11", "B12"]),
+    # Stage 1 is wave 1's first capability, so Map 3 opens on wave 1 like Map 2
+    ("1", "Gather the file", "Do I have everything about this borrower, with its source?", ["B10"]),
+    ("2", "Write the review or memo", "What do the numbers say, and what is my judgment?", ["B11", "B12"]),
+    ("3", "Watch the portfolio", "Which borrowers need my attention, and why?", ["B13", "B14"]),
 ]
 pflat = [b for *_, bs in PM_STAGES for b in bs] + ["B15"]
 if len(pflat) != len(set(pflat)) or set(pm_flows) - set(pflat):
@@ -116,8 +117,11 @@ def chips(ts):
 def delivery_detail(b):
     tasks = "".join(f"<li>{chipify(k)} {inline(t)}</li>" for t, k in b["tasks"])
     auto = any(kind.split()[0] in ("Auto", "Draft") for _, kind in b["tasks"])
-    # Map 1 is for every product, so an RM plan product agent (A1, A2, A3, A5) says where it comes from
-    ag = ", ".join([a + " (a product agent in the RM plan)" if a.startswith("A") else a for a in b["agents"]] + [f"{a.replace(' (template)', '')} (a reusable template)" for a in b["assets"]])
+    # Map 1 is for every product, so a product agent says which plan it comes from: A1 to A6 RM, A7 and up PM
+    def plan_of(a):
+        m = re.match(r"A(\d+)", a)
+        return "PM" if m and int(m.group(1)) >= 7 else "RM"
+    ag = ", ".join([a + f" (a product agent in the {plan_of(a)} plan)" if a.startswith("A") else a for a in b["agents"]] + [f"{a.replace(' (template)', '')} (a reusable template)" for a in b["assets"]])
     if not ag:
         ag = "No named agent yet" if auto else "None: this stays with a person"
     return (f'<h4><span class="num">{b["num"]}</span> {inline(b["title"])}</h4>'
@@ -173,14 +177,14 @@ rm_stages = [{"n": n, "name": nm, "q": q, "gate": "", "branches": [flows[b] for 
 map2 = spine_map("rm", rm_stages, r_branch, rm_detail, "Stage")
 b9 = flows["B9"]
 loop = (f'<div class="loop"><span class="label">Behind the scenes, every release</span>'
-        f'<button type="button" class="branch wide" data-map="rm" data-id="{b9["id"]}" aria-controls="rm-panel">{r_branch(b9)}</button>'
+        f'<button type="button" class="branch wide" id="{b9["id"]}" data-map="rm" data-id="{b9["id"]}" aria-controls="rm-panel">{r_branch(b9)}</button>'
         f'<p>Runs under every workflow above: no change reaches RMs until it passes the test set.</p></div>'
         f'<template id="t-{b9["id"]}">{rm_detail(b9)}</template>')
 pm_stages = [{"n": n, "name": nm, "q": q, "gate": "", "branches": [pm_flows[b] for b in bs]} for n, nm, q, bs in PM_STAGES]
 map3 = spine_map("pm", pm_stages, r_branch, rm_detail, "Stage")
 b15 = pm_flows["B15"]
 loop3 = (f'<div class="loop"><span class="label">Behind the scenes, every release</span>'
-        f'<button type="button" class="branch wide" data-map="pm" data-id="{b15["id"]}" aria-controls="pm-panel">{r_branch(b15)}</button>'
+        f'<button type="button" class="branch wide" id="{b15["id"]}" data-map="pm" data-id="{b15["id"]}" aria-controls="pm-panel">{r_branch(b15)}</button>'
         f'<p>Runs under every workflow above: no change reaches PMs until it passes the test set, including every must-refuse case.</p></div>'
         f'<template id="t-{b15["id"]}">{rm_detail(b15)}</template>')
 n_sub = sum(len(s["branches"]) for s in stages1)

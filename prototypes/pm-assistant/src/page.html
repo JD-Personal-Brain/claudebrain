@@ -82,7 +82,7 @@
         <div class="shead">
           <span class="eyebrow" title="Workflows B11 and B12 in the PM plan, agent A8">Review and renew · workflows B11 and B12</span>
           <h1>Review and memo drafts</h1>
-          <p class="lede">The Review and memo drafter writes the routine sections from the borrower file. The risk rating and the recommendation are left blank for you, and the credit officer who decides is named at the top.</p>
+          <p class="lede">The Review and memo drafter writes the routine sections from the borrower file. The borrower risk rating and the recommendation are left blank for you, and the credit officer who decides is named at the top.</p>
         </div>
         <div class="meetings" id="draftPick" role="radiogroup" aria-label="Drafts"></div>
         <div class="runbar">
@@ -107,6 +107,7 @@
           <span class="eyebrow" title="Workflows B13 and B14 in the PM plan, agent A9, wave 2">Watch the portfolio · wave 2 preview</span>
           <h1>Early warning flags</h1>
           <p class="lede">Borrowers whose signals are weakening, found by plain rules credit risk owns, with the numbers behind every flag. You dismiss a flag with a reason, watch it, or raise it through the bank's own process.</p>
+          <p class="muted small" id="sampleNote">Sample borrowers chosen to show every rule; a real book would flag far fewer.</p>
         </div>
         <div class="w2sum" id="watchSummary"></div>
         <div class="runbar">
@@ -122,7 +123,7 @@
           <p class="muted small">Every covenant's latest test and every statement or certificate due, across your portfolio. You confirm each result; reminders are drafted for you to send.</p>
           <div class="tw"><table id="trackTable"><thead><tr><th>Borrower</th><th>Covenant or item</th><th>Latest</th><th>Status</th><th>Source</th></tr></thead><tbody></tbody></table></div>
         </div>
-        <p class="prod-note">In production (our assumption, to confirm): A9 runs each night on Snowflake (Cortex). It never changes a risk rating or the bank's watchlist status, and never tells the borrower.</p>
+        <p class="prod-note">In production (our assumption, to confirm): A9 runs each night on Snowflake (Cortex). It never changes a borrower risk rating or the bank's watchlist status, and never tells the borrower.</p>
       </section>
 
       <!-- Controls and the audit log -->
@@ -196,7 +197,7 @@
             <div class="farrow" aria-hidden="true">→</div>
             <div class="fbox" role="listitem"><b>Checks</b><span>Numbers traced, guardrails, gaps marked, audit log</span></div>
             <div class="farrow" aria-hidden="true">→</div>
-            <div class="fbox fbox-me" role="listitem"><b>The PM decides</b><span>Writes the rating and recommendation; approves</span></div>
+            <div class="fbox fbox-me" role="listitem"><b>The PM decides</b><span>Writes the borrower risk rating and recommendation; approves</span></div>
             <div class="farrow" aria-hidden="true">→</div>
             <div class="fbox" role="listitem"><b>Credit officer</b><span>Decides, through the bank's own route</span></div>
           </div>

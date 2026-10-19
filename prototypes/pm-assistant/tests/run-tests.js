@@ -31,8 +31,8 @@ const STUB = () => {
     if (text.includes("You are A8")) {
       const id = text.match(/\(id (C\d+)\)/)[1]; const key = (text.includes("credit memo for") ? "memo:" : "review:") + id;
       let out = window.REPLAY.drafts[key];
-      if (window.__marketDraft) out = out.replace("## Risks the numbers show\n", "## Risks the numbers show\n- The 10-year Treasury yield was 4.68% in August 2026, so rates are rising. [Market: Fed H.15]\n");
-      if (window.__badDraft) out = out.replace("## Risks the numbers show\n", "## Risks the numbers show\n- We recommend approval of the renewal.\n") + "\n\n## Risk rating\n- A rating of 4 fits.";
+      if (window.__marketDraft) out = out.replace("## Changes and items to note\n", "## Changes and items to note\n- The 10-year Treasury yield was 4.68% in August 2026, so rates are rising. [Market: Fed H.15]\n");
+      if (window.__badDraft) out = out.replace("## Changes and items to note\n", "## Changes and items to note\n- We recommend approval of the renewal.\n") + "\n\n## Risk rating\n- A rating of 4 fits.";
       opts.onText && opts.onText({ text: out, delta: out });
       return { text: out, truncated: false };
     }
@@ -122,7 +122,7 @@ const check = (name, ok, proof) => { results.push({ name, ok: !!ok, proof }); co
   const auditRows = await p.$$eval("#auditTable tbody tr", n => n.map(x => x.textContent));
   const k4tool = await p.evaluate(() => window.__k4 || "");
   await p.screenshot({ path: `${SHOTS}/controls.png`, fullPage: true });
-  check("4. Ratings, decisions and prices are refused, and every action is in the audit log", /Blocked: a risk rating/.test(rating) && /Blocked: a credit decision/.test(approve) && /Blocked: a price or rate/.test(price) && /Blocked: a borrower outside your portfolio/.test(other) && /Blocked/.test(rec) && /Rock County/.test(allowed) && !/Blocked/.test(allowed)
+  check("4. Ratings, decisions and prices are refused, and every action is in the audit log", /Blocked: a borrower risk rating/.test(rating) && /Blocked: a credit decision/.test(approve) && /Blocked: a price or rate/.test(price) && /Blocked: a borrower outside your portfolio/.test(other) && /Blocked/.test(rec) && /Rock County/.test(allowed) && !/Blocked/.test(allowed)
     && auditRows.length >= 15 && auditRows.some(r => /Blocked/.test(r)) && auditRows.some(r => /Read the financial statements/.test(r)) && /K4/.test(k4tool) && fileRefused.length === 1,
     `rating, approval, price, another PM's borrower and "write the recommendation" all blocked; an ordinary covenant question answered; ${auditRows.length} audit rows; A7's tool refused C201: "${k4tool}"`);
 
@@ -133,14 +133,19 @@ const check = (name, ok, proof) => { results.push({ name, ok: !!ok, proof }); co
   const recNote = /Required only if the bank's credit policy asks for a recommendation \(to confirm\)/.test(await p.textContent("#reviewDoc"));
   const judgmentEmpty = await p.$$eval("#reviewDoc .jtext", n => n.length === 2 && n.every(x => x.value === ""));
   await p.click("#approveDraft"); const held = await p.textContent("#approveState"); const still = await p.textContent("#draftStatus");
-  await p.fill("#j-Riskrating", "Written by the PM."); await p.fill("#j-Recommendation", "Written by the PM.");
+  await p.fill("#j-Borrowerriskrating", "Written by the PM."); await p.fill("#j-Recommendation", "Written by the PM.");
   await p.click("#approveDraft"); await p.waitForTimeout(150);
   const after = await p.textContent("#draftStatus"); const stamp = await p.textContent("#reviewDoc .stamp");
   const submittedLog = await p.evaluate(() => window.AGENTS.audit.filter(a => /Approved the draft as final/.test(a.action)).length);
   const noSubmitLog = await p.evaluate(() => !window.AGENTS.audit.some(a => /submitted/i.test(a.action)));
   await p.screenshot({ path: `${SHOTS}/review-approved.png`, fullPage: true });
-  check("5. The assistant never submits: the PM approves as final after writing the judgment", /not approved/.test(before) && btnLabel === "Approve as final" && recNote && judgmentEmpty && /risk rating and the recommendation/.test(held) && still === before && after === "Approved by Sam Okafor; the PM submits it through the bank's normal approval route" && noSubmitLog && /AI draft, completed and approved by Sam Okafor/.test(stamp) && submittedLog === 1,
-    `before: "${before}"; button "${btnLabel}"; recommendation note shown: ${recNote}; judgment sections blank; approve with them empty: held ("${held.slice(0, 60)}…"); after the PM writes them: "${after}"; stamped "${stamp.slice(0, 50)}…"`);
+  // The tour and the video's voiceover must say the same: the PM submits, never the assistant.
+  const tourText = await p.evaluate(() => window.TOUR.STEPS.map(s => s.title + " " + s.text).join(" "));
+  const narration = JSON.parse(fs.readFileSync(path.join(path.dirname(FILE), "video", "narration.json"), "utf8")).lines.join(" ");
+  const implySubmit = t => /\b(nothing|it|the draft) (is|gets) submitted\b|submitted until|\b(assistant|agent|A8|it) (will )?submits?\b(?! anything)|\bsubmits? (it|the draft) for (you|sam|the pm)\b/i.test(t.replace(/never submits/gi, ""));
+  const tourOK = [tourText, narration].every(t => !implySubmit(t) && /The assistant never submits/.test(t) && /submits it through the bank's normal route/.test(t));
+  check("5. The assistant never submits: the PM approves as final after writing the judgment", tourOK && /not approved/.test(before) && btnLabel === "Approve as final" && recNote && judgmentEmpty && /risk rating and the recommendation/.test(held) && still === before && after === "Approved by Sam Okafor; the PM submits it through the bank's normal approval route" && noSubmitLog && /AI draft, completed and approved by Sam Okafor/.test(stamp) && submittedLog === 1,
+    `tour and narration: PM submits, assistant never submits (${tourOK}); before: "${before}"; button "${btnLabel}"; recommendation note shown: ${recNote}; judgment sections blank; approve with them empty: held ("${held.slice(0, 60)}…"); after the PM writes them: "${after}"; stamped "${stamp.slice(0, 50)}…"`);
 
   // K3: the credit officer is named, the judgment is never drafted, and a smuggled rating or recommendation is removed or flagged.
   await p.evaluate(() => { window.__badDraft = true; });
@@ -155,8 +160,8 @@ const check = (name, ok, proof) => { results.push({ name, ok: !!ok, proof }); co
   const factsOnly = await p.evaluate(() => {
     const d = Object.values(window.REPLAY.drafts).join("\n");
     const a8 = window.AGENTS.a8Prompt({ kind: "review", borrowerId: "C101" });
-    return { noMarket: !/treasury|fed h\.15|\[market/i.test(d), noConclusions: !/no warning signs|not enough to raise|for the PM to judge/i.test(d), a8NoMarket: !("market" in a8.data) && !/Market: Fed/.test(a8.prompt),
-      factRule: /Never draw conclusions for the PM/.test(a8.prompt) && /never comment on rates/.test(a8.prompt), fileKeepsMarket: "market" in window.AGENTS.buildFile("C101"),
+    return { noMarket: !/treasury|fed h\.15|\[market/i.test(d), noConclusions: !/no warning signs|not enough to raise|for the PM to judge|would be close to|would add|close to the|so the latest|Risks the numbers show/i.test(d) && (d.match(/## Changes and items to note/g) || []).length === Object.keys(window.REPLAY.drafts).length, a8NoMarket: !("market" in a8.data) && !/Market: Fed/.test(a8.prompt),
+      factRule: /Never draw conclusions for the PM/.test(a8.prompt) && /never comment on rates/.test(a8.prompt) && /## Changes and items to note/.test(a8.prompt) && /plain facts only/.test(a8.prompt) && !/Risks the numbers show/.test(a8.prompt), fileKeepsMarket: "market" in window.AGENTS.buildFile("C101"),
       rules: window.AGENTS.WARN.map(r => r.id).join() };
   });
   await p.evaluate(() => { window.__marketDraft = true; }); await p.click("#runReview"); await p.waitForSelector("#reviewDoc .live-tag", { timeout: 6000 });
@@ -166,7 +171,12 @@ const check = (name, ok, proof) => { results.push({ name, ok: !!ok, proof }); co
   factsOnly.flagged = mk.flagged && mk.off;
   const nav = await p.textContent('#nav button[data-screen="watch"]'); const onScreen = await p.evaluate(() => document.body.innerText);
   check("K3. Drafts state facts with sources: no market data, rate commentary or conclusions; market data stays in the borrower file", factsOnly.noMarket && factsOnly.noConclusions && factsOnly.a8NoMarket && factsOnly.factRule && factsOnly.fileKeepsMarket && factsOnly.flagged,
-    `recorded drafts free of Treasury lines and conclusions; a live draft that adds a Treasury line is flagged and approval turned off (${factsOnly.flagged}; untraced: ${mk.untraced.join(", ") || "none"}); A8's data has no market block; its prompt says never draw conclusions or comment on rates; the borrower file still carries the market background`);
+    `every draft's last section is "Changes and items to note", plain facts only; recorded drafts free of Treasury lines and conclusions; a live draft that adds a Treasury line is flagged and approval turned off (${factsOnly.flagged}; untraced: ${mk.untraced.join(", ") || "none"}); A8's data has no market block; its prompt says never draw conclusions or comment on rates; the borrower file still carries the market background`);
+  const tags = await p.evaluate(() => [...document.querySelectorAll("#watchList .wcard")].map(c => ({ b: c.dataset.b, tag: c.querySelector(".wlvl").textContent, breach: [...c.querySelectorAll(".rule")].some(r => /Rule EW3/.test(r.title)), acts: [...c.querySelectorAll(".wact button")].map(x => x.dataset.w).join() })));
+  const breachOK = tags.some(t => t.breach) && tags.every(t => t.breach === (t.tag === "Breach: the bank's waiver and rating process applies")) && tags.filter(t => !t.acts.includes("raise")).length === 0 && tags.filter(t => t.breach).every(t => t.acts === "watch,raise,dismiss");
+  const sampleNote = /Sample borrowers chosen to show every rule; a real book would flag far fewer\./.test(await p.textContent("#s-watch"));
+  check("Early warning: a covenant breach (EW3) gets its own tag, the PM's choices unchanged; the screen says the sample shows every rule", breachOK && sampleNote,
+    tags.map(t => `${t.b}: "${t.tag}"`).join("; ") + `; sample note shown: ${sampleNote}`);
   check("Early warning naming: \"Early warning flags\" on screen, rules EW1 to EW5", /^Early warning flags$/.test(nav.trim()) && !/watchlist/i.test(onScreen.replace(/the bank's watchlist status/g, "")) && factsOnly.rules === "EW1,EW2,EW3,EW4,EW5",
     `nav "${nav.trim()}"; "watchlist" appears only as "the bank's watchlist status"; rules ${factsOnly.rules}`);
 
@@ -199,7 +209,7 @@ const check = (name, ok, proof) => { results.push({ name, ok: !!ok, proof }); co
   // K25: the missing statement marks sections "needs input" and holds approval; stale data stops A9; the file lists, never fills.
   await p.click('#draftPick [data-k="review:C109"]'); await p.waitForTimeout(400);
   const gaps = await p.evaluate(() => [...document.querySelectorAll("#reviewDoc .dsec.gap h2")].map(h => h.textContent));
-  await p.fill("#j-Riskrating", "x"); await p.fill("#j-Recommendation", "x"); await p.click("#approveDraft");
+  await p.fill("#j-Borrowerriskrating", "x"); await p.fill("#j-Recommendation", "x"); await p.click("#approveDraft");
   const heldNeeds = await p.textContent("#approveState");
   const stale = await p.evaluate(() => { const was = window.PORTFOLIO.dataAsOf; window.PORTFOLIO.dataAsOf = "2026-10-01"; const r = window.AGENTS.runA9(); window.PORTFOLIO.dataAsOf = was; return r.stopped === true && window.AGENTS.audit[0].action.startsWith("Stopped"); });
   const fileGap = await p.evaluate(() => { const f = window.AGENTS.buildFile("C109"); return { years: f.financials.years.map(y => y.fy).join(), missing: f.missing.map(m => m.what) }; });

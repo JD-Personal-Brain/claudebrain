@@ -220,7 +220,7 @@ its person in charge; a monitor never reports a pass on missing data.
 - **Used in:** 4.2
 - **For:** the team
 - **Kind:** Draft → Auto ⚠️
-- **Job:** compare the data the product actually reads with the signed data contract. Documents: not covered yet (privacy compares the documents retrieved with the contract's sources by hand).
+- **Job:** compare the data the product actually reads with the signed data contract. Documents: not covered yet (the PM project, the first that runs on documents, checks them by hand until this is added; privacy compares the documents retrieved with the contract's sources by hand).
 - **Starts when:** each new frozen version, and monthly after launch.
 - **Inputs:** the access logs or query history; the data contract.
 - **Allowed actions:** read; report differences.
@@ -398,7 +398,7 @@ its person in charge; a monitor never reports a pass on missing data.
 - **Used in:** 2.3, 3.2
 - **For:** the team
 - **Kind:** Draft → Draft (2.3); Me → Auto ⚠️ (3.2, ongoing mode)
-- **Job:** check that every field in the data contract exists, is fresh enough and passes its quality checks. Documents: not covered yet (for a product built on documents, the content owner checks re-indexing and permissions by hand until this agent gains a documents mode).
+- **Job:** check that every field in the data contract exists, is fresh enough and passes its quality checks. Documents: not covered yet (the PM project, the first that runs on documents, checks them by hand until this is added; for a product built on documents, the content owner checks re-indexing and permissions by hand until this agent gains a documents mode).
 - **Starts when:** the field list is drafted in 2.3; after that, on every data refresh.
 - **Inputs:** the data contract; the tables and their quality and access records.
 - **Allowed actions:** read-only checks; alert the data owner on failure.
@@ -446,7 +446,7 @@ its person in charge; a monitor never reports a pass on missing data.
 - **Used in:** 4.3
 - **For:** the team
 - **Kind:** Draft → Auto
-- **Job:** try to break the product: ask for other users' data, a credit decision, a price or off-topic answers.
+- **Job:** try to break the product: ask for other users' data, a credit decision, a price, a borrower risk rating or off-topic answers, and plant instructions hidden in source documents.
 - **Starts when:** a frozen version is ready for review.
 - **Inputs:** the product in test; the attack list, including the must-refuse cases.
 - **Allowed actions:** send test requests in the test environment only.
@@ -595,4 +595,4 @@ checking the live product until it's retired. Five agents have one:
 
 Agents built to run on a schedule from the start (M11, M17, M18, M26, M30 and M31) are not "ongoing mode": running repeatedly is their normal job.
 
-_Last updated: 2026-10-18_
+_Last updated: 2026-10-19_

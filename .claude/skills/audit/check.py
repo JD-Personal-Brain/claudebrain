@@ -24,6 +24,7 @@
     or watches a law, regulator or bank-policy control is in the playbook's "Where the requirements come from" table.
 16. The settings file (.claude/settings.json) is valid, so the startup and pre-merge checks keep working (lesson L32).
 18. One user group per people page (idea 61, from L38): the three short RM pages for people (executive summary, RM Assistant, plan) don't mention portfolio managers or PMs; cross-group notes go in RM Detail.
+    18b. The PM twin: the three short PM pages don't mention the RM Assistant, the RM core use cases or the RM plan.
 15. Agent names: every "M<number> <Name>" in the Product Machine and the playbook steps matches the Agent Library.
 Prints each problem and a total. 0 problems means the mechanical checks pass.
 """
@@ -356,5 +357,16 @@ for f in ['memos/rm-executive-summary.md','memos/rm-assistant.md','memos/rm-plan
                 print(f+':'+str(i),'a page for RMs mentions portfolio managers; move it to RM Detail or a shared page (rule R31)'); probs+=1
     except FileNotFoundError:
         print('check 18: missing',f); probs+=1
+
+# 18b. The PM twin (added 2026-10-19): the three short PM pages for people don't talk about the RM product or plan.
+# PMs work with RMs, so plain mentions of RMs ("the RM's notes", "relationship manager (RM)") stay allowed;
+# the RM Assistant, the RM core use cases and the RM plan belong in PM Detail or the shared pages.
+for f in ['memos/pm-executive-summary.md','memos/pm-assistant.md','memos/pm-plan.md']:
+    try:
+        for i,line in enumerate(open(f).read().splitlines(),1):
+            if re.search(r'RM Assistant|RM core use case|RM side|RM plan', line):
+                print(f+':'+str(i),'a page for PMs talks about the RM product or plan; move it to PM Detail or a shared page (rule R31)'); probs+=1
+    except FileNotFoundError:
+        print('check 18b: missing',f); probs+=1
 
 print("problems:",probs)

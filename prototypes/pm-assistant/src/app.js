@@ -240,7 +240,7 @@
   function shapeDraft(text, f) {
     const secs = []; let cur = null;
     String(text).split("\n").forEach(line => { const m = line.trim().match(/^#{1,3}\s+(.*)/); if (m) { cur = { title: m[1].trim(), body: [] }; secs.push(cur); } else if (cur) cur.body.push(line); });
-    const removed = secs.filter(s => A.JUDGMENT.some(j => s.title.toLowerCase().startsWith(j.toLowerCase())));
+    const removed = secs.filter(s => /^(borrower )?(risk )?rating|^recommendation/i.test(s.title.trim()));   // any rating or recommendation section the AI writes (K3)
     const out = A.SECTIONS.map(name => {
       const s = secs.find(x => x.title.toLowerCase() === name.toLowerCase());
       let body = s ? s.body.join("\n").trim() : "";
@@ -272,7 +272,7 @@
       ${shaped.removed.length ? `<p class="flagged"><strong>Removed (K3):</strong> the AI wrote a "${esc(shaped.removed.join(", "))}" section. Those sections are the PM's, so the code took it out.</p>` : ""}
       ${gaps ? `<p class="needs"><strong>${plural(gaps, "section")} ${gaps === 1 ? "needs" : "need"} input (K25).</strong> A8 stopped at the gap instead of guessing. Get the missing items (the borrower file lists them), then replace the "Needs input" lines.</p>` : ""}
       <div class="docbody" id="draftBody">${shaped.sections.map(s => `<section class="dsec${s.gap ? " gap" : ""}"><h2>${esc(s.name)}</h2>${markUntraced(md(s.body), nc.untraced)}</section>`).join("")}</div>
-      ${A.JUDGMENT.map(j => `<section class="judgment"><h2>${j} <span class="pmonly">For the PM's judgment</span></h2><p class="muted small">The assistant doesn't draft this section (K3). ${j === "Risk rating" ? "You set the rating under the bank's rating policy." : "You write the recommendation; " + esc(P.pm.creditOfficer) + " decides. <span class=\"tbc\">Required only if the bank's credit policy asks for a recommendation (to confirm).</span>"}</p><label class="sr" for="j-${j.replace(" ", "")}">${j}</label><textarea id="j-${j.replace(" ", "")}" class="jtext" rows="3" placeholder="Written by you, the PM"${st ? " readonly" : ""}></textarea></section>`).join("")}
+      ${A.JUDGMENT.map(j => `<section class="judgment"><h2>${j} <span class="pmonly">For the PM's judgment</span></h2><p class="muted small">The assistant doesn't draft this section (K3). ${j === "Borrower risk rating" ? "You set the borrower risk rating under the bank's rating policy." : "You write the recommendation; " + esc(P.pm.creditOfficer) + " decides. <span class=\"tbc\">Required only if the bank's credit policy asks for a recommendation (to confirm).</span>"}</p><label class="sr" for="j-${j.replace(/ /g, "")}">${j}</label><textarea id="j-${j.replace(/ /g, "")}" class="jtext" rows="3" placeholder="Written by you, the PM"${st ? " readonly" : ""}></textarea></section>`).join("")}
       <div class="approvebar" data-out="draft:${item.key}">${st ? `<span class="done-note">${st === "approved" ? `Approved as final. The assistant never submits: you submit it through the bank's normal approval route.` : "Rejected. The reason goes to the product manager."}</span>` :
         `<button type="button" class="btn" id="editDraft">Change it</button><button type="button" class="btn btn-primary" id="approveDraft"${hits.length ? " disabled" : ""}>Approve as final</button><button type="button" class="btn btn-quiet" id="rejectDraft">Reject the draft</button><span class="runstate" id="approveState"></span>`}</div>`;
     current = { item, f, untraced: nc.untraced };
@@ -294,9 +294,9 @@
       if (body.isContentEditable) $("#editDraft").click();
       const needs = (body.innerText.match(/Needs input:/g) || []).length;
       const j = [...document.querySelectorAll("#reviewDoc .jtext")].map(x => x.value.trim());
-      const msg = needs ? `${plural(needs, "line")} still ${needs === 1 ? "says" : "say"} "Needs input". Get the missing items first, then change the draft.` : current.untraced.length ? `Check the highlighted ${plural(current.untraced.length, "number")} first: change the draft so every number matches the file.` : j.some(x => !x) ? "Write the risk rating and the recommendation first: they're yours to write, and the assistant never drafts them (K3)." : "";
+      const msg = needs ? `${plural(needs, "line")} still ${needs === 1 ? "says" : "say"} "Needs input". Get the missing items first, then change the draft.` : current.untraced.length ? `Check the highlighted ${plural(current.untraced.length, "number")} first: change the draft so every number matches the file.` : j.some(x => !x) ? "Write the borrower risk rating and the recommendation first: they're yours to write, and the assistant never drafts them (K3)." : "";
       if (msg) { $("#approveState").innerHTML = `<span class="hint">${esc(msg)}</span>`; A.log("PM", "Approval held back", `${b.name}: ${msg}`, needs ? "K25" : current.untraced.length ? "K7" : "K3"); return; }
-      draftState[item.key] = "approved"; A.measures.approvals++; A.measures.submitted++; A.measures.used.add(`draft:${item.key}`);
+      draftState[item.key] = "approved"; A.measures.approvals++; A.measures.approvedFinal++; A.measures.used.add(`draft:${item.key}`);
       document.querySelectorAll("#reviewDoc .jtext").forEach(x => { x.readOnly = true; });
       body.insertAdjacentHTML("beforeend", `<p class="stamp">AI draft, completed and approved by ${esc(P.pm.name)} on ${fmtLong(P.today)}; the PM submits it through the bank's normal approval route, and ${esc(officer)} decides.</p>`);
       A.log("PM", "Approved the draft as final", `${b.name}: ${item.kind === "memo" ? "credit memo" : "annual review"}; the PM submits it through the bank's normal approval route (the assistant never submits)`, "K1, K2, K3");
@@ -322,7 +322,7 @@
       const s = addStep(list, "Drafter", `Drafting the ${item.kind === "memo" ? "memo" : "review"}'s five routine sections…`);
       const words = text.split(/(\s+)/); let shown = "";
       for (let i = 0; i < words.length; i += 16) { if (token !== reviewToken) return; shown += words.slice(i, i + 16).join(""); $("#reviewDoc").innerHTML = DRAFTING + md(shown); await wait(30); }
-      s.done("Drafted five routine sections; the risk rating and recommendation left for you (recorded run)");
+      s.done("Drafted five routine sections; the borrower risk rating and recommendation left for you (recorded run)");
     }
     if (token !== reviewToken) return;
     addChecks(list, text, f);
@@ -377,9 +377,9 @@
       const text = x ? [x.headline, x.explanation, x.toCheck].join(" ") : "";
       const nc = x ? A.numberCheck(text, data[i]) : null; const hits = x ? A.outputGuard(text) : [];
       outputSeen(`watch:${b.id}`);
-      const lvl = fl.score >= 30 ? "high" : "watch"; const d = watchDone[b.id];
+      const breach = fl.hits.some(h => h.rule === "EW3"); const lvl = breach ? "breach" : fl.score >= 30 ? "high" : "watch"; const d = watchDone[b.id];
       return `<article class="wcard ${lvl}${d ? " done" : ""}" data-b="${b.id}">
-        <div class="whead"><h3>${esc(b.name)}</h3><span class="wlvl">${lvl === "high" ? "Look at this week" : "Keep an eye on"}</span></div>
+        <div class="whead"><h3>${esc(b.name)}</h3><span class="wlvl">${breach ? "Breach: the bank's waiver and rating process applies" : lvl === "high" ? "Look at this week" : "Keep an eye on"}</span></div>
         <p class="wmeta">${esc(b.industry)} · ${esc(b.city)} · RM ${esc(b.rm)}</p>
         <div class="rules">${fl.hits.map(h => `<span class="rule" title="Rule ${h.rule}: ${esc(A.WARN.find(r => r.id === h.rule).plain)}">${esc(h.name)}</span>`).join("")}</div>
         ${spark(b.balances, fl.hits.some(h => h.rule === "EW4") ? "down" : "flat")}
@@ -395,7 +395,7 @@
     if (t.dataset.w === "dismiss") { act.innerHTML = `<span class="muted">Why dismiss it?</span>` + ["Seasonal pattern", "Already known", "Not a concern"].map(r => `<button type="button" class="btn btn-sm" data-w="reason" data-r="${r}">${r}</button>`).join(""); return; }
     if (t.dataset.w === "reason") { watchDone[b.id] = `Dismissed: ${t.dataset.r}. The reason goes to credit risk, who own the rules.`; A.measures.rejected++; A.log("PM", "Dismissed an early warning", `${b.name}: ${t.dataset.r}`, "K1, K22"); }
     else if (t.dataset.w === "watch") { watchDone[b.id] = "Watching. It stays in your early warning flags, and A9 tells you if it changes."; A.measures.flagsActed++; A.log("PM", "Chose to watch an early warning", b.name, "K1"); }
-    else if (t.dataset.w === "raise") { watchDone[b.id] = `Raised through the bank's own process, and ${b.rm} told (sample: nothing leaves the page). The assistant never changes a rating or the bank's watchlist status.`; A.measures.flagsActed++; A.log("PM", "Raised an early warning through the bank's process", `${b.name}; RM ${b.rm} told`, "K1, K2, K3"); }
+    else if (t.dataset.w === "raise") { watchDone[b.id] = `Raised through the bank's own process, and ${b.rm} told (sample: nothing leaves the page). The assistant never changes a borrower risk rating or the bank's watchlist status.`; A.measures.flagsActed++; A.log("PM", "Raised an early warning through the bank's process", `${b.name}; RM ${b.rm} told`, "K1, K2, K3"); }
     A.measures.used.add(`watch:${b.id}`);
     act.innerHTML = `<span class="done-note">${esc(watchDone[b.id])}</span>`; card.classList.add("done");
     renderWatchSummaryOnly(); changed();
@@ -494,7 +494,7 @@
 
   // ---------- Controls, rules and the audit log ----------
   const CONTROLS = [
-    ["The person decides", [["K1", "A person decides", "You use, change or reject every file, draft and flag, and you send every note yourself."], ["K2", "Read-only unless approved", "Nothing is final until you approve, and the assistant never submits: you do, through the bank's normal approval route; the agents never change a record, a rating or the bank's watchlist status."], ["K3", "AI drafts or flags; a named credit officer decides", `Every draft names ${P.pm.creditOfficer}; the risk rating and recommendation are left blank for you.`]]],
+    ["The person decides", [["K1", "A person decides", "You use, change or reject every file, draft and flag, and you send every note yourself."], ["K2", "Read-only unless approved", "Nothing is final until you approve, and the assistant never submits: you do, through the bank's normal approval route; the agents never change a record, a borrower risk rating or the bank's watchlist status."], ["K3", "AI drafts or flags; a named credit officer decides", `Every draft names ${P.pm.creditOfficer}; the borrower risk rating and recommendation are left blank for you.`]]],
     ["Data stays in bounds", [["K4", "Users see only what they're allowed to see", "A7's page tools refuse another PM's borrowers; the early warning flags cover only your 12."], ["K25", "Agents stop rather than guess", "A missing statement marks a section \"needs input\"; old data stops the early warning flags."], ["K22", "Simple rules first, and the AI explains", "Early warning is five plain rules credit risk owns; AI only explains what fired."]]],
     ["Every fact traced", [["K7", "Every answer shows its source", "A document and page, or a system and date, on every figure; every number checked against the file."], ["K8", "Guardrails", "Code checks block ratings, decisions, prices, other PMs' borrowers and off-topic requests; every draft is scanned again."], ["K12", "An audit log", "Every agent action and every decision is logged below, with what it ran on."]]]
   ];
@@ -514,7 +514,7 @@
     const cards = [
       ["Usage", `${m.used.size} of ${m.outputs.size}`, "files, drafts and flag explanations used, of those on screen", "41 of 58 used (71%)", [`${plural(m.runs, "agent run")} you started, ${m.liveRuns} live on Claude`]],
       ["Quality", pct(m.answersWithSources, m.answers), "of summaries, drafts and answers show their sources", "100% with sources; 3 numbers flagged and fixed", [`${pct(m.numbersTraced, m.numbersChecked)} of numbers traced to the file (K7)`, "Accuracy on the test set: zero tolerance on figures, set with the risk partner before the pilot"]],
-      ["Business impact", String(m.submitted), "reviews and memos approved as final from AI drafts", "14 drafts approved as final; hours per review measured against the baseline", ["Hours per review and request-to-decision time: measured in the pilot", "Against a comparison group of PMs"]],
+      ["Business impact", String(m.approvedFinal), "reviews and memos approved as final from AI drafts", "14 drafts approved as final; hours per review measured against the baseline", ["Hours per review and request-to-decision time: measured in the pilot", "Against a comparison group of PMs"]],
       ["Adoption", `${caps} of 3`, "capabilities used this session", "5 of 6 pilot PMs active", ["Weekly active PMs and share of reviews started from a draft: targets set before the pilot"]],
       ["Risk and controls", String(m.guardrailBlocks + m.outputFlags), "requests blocked or drafts flagged by guardrails", "4 blocked, 0 incidents, 9 overrides", [`${m.needsInput} sections marked "needs input" (K25)`, `${m.flagsActed} early warnings watched or raised`, `${m.permissionRefusals} refused outside the PM's portfolio (K4)`, `${m.changed + m.rejected} overrides (changed, rejected or dismissed)`, `${m.approvals} approved as final by the PM (K2; the assistant never submits)`]]
     ];

@@ -23,7 +23,7 @@ window.REPLAY = {
 - A $3.5M line with $1.9M drawn and a $5.2M borrowing base; debt to EBITDA of 0.45x against a 3.0x maximum. [Compliance certificate Q2 2026]
 - Open request: increase the line to $4.5M. Deposits up 18.6% over 3 months; payments on time. [Request, Oct 14] [Deposit system]`
   },
-  // A8: the routine sections of each draft. The risk rating and recommendation are never drafted.
+  // A8: the routine sections of each draft. The borrower risk rating and recommendation are never drafted.
   drafts: {
     "review:C101": `## Borrower and relationship
 - Lakeshore Precision Tooling is a metal fabricator in Milwaukee with 210 employees, a client since 2014. [Loan system]
@@ -45,9 +45,10 @@ window.REPLAY = {
 - Equipment term loan: $1.85M, Fixed 5.85%, matures March 31, 2029. [Loan system]
 - Secured by a blanket lien on business assets, and CNC equipment appraised at $2.6M on March 15, 2024. [Equipment appraisal, 2024]
 
-## Risks the numbers show
-- New equipment financing in 2027 would add debt to a balance sheet that now carries $2.25M. [RM note, Sep 12] [FS FY2025, p. 4]
-- Deposits rose 13.7% over the last 3 months and every payment was on time. [Deposit system] [Loan system]`,
+## Changes and items to note
+- Possible equipment financing for a CNC line in spring 2027, per the RM; no request made. [RM note, Sep 12]
+- Total debt $2.25M at FY2025. [FS FY2025, p. 4]
+- Deposits up 13.7% over the last 3 months; every payment on time. [Deposit system] [Loan system]`,
     "review:C109": `## Borrower and relationship
 - Chequamegon Timber Works runs a sawmill and lumber business in Ashland with 110 employees, a client since 2015. [Loan system]
 - Jordan Ellis is the relationship manager. The RM notes the CFO left in July, and the new controller expects the delayed FY2025 audit in November. [RM note, Oct 2]
@@ -66,10 +67,10 @@ window.REPLAY = {
 - Line of credit: $2.5M committed, $1.2M drawn, Prime + 0.50% (floating), matures May 31, 2027. [Loan system]
 - Secured by timber inventory and mill equipment. [Security agreement, 2015]
 
-## Risks the numbers show
-- The FY2025 audited statements are 172 days late, so the latest full year can't be reviewed yet. [Documents]
-- Deposits eased from $1.24M in June to $1.12M in September, down 9.7%. [Deposit system]
-- All payments in the last 12 months were on time. [Loan system]`,
+## Changes and items to note
+- FY2025 audited statements: 172 days late. [Documents]
+- Deposits $1.24M in June, $1.12M in September, down 9.7%. [Deposit system]
+- Payments in the last 12 months: all on time. [Loan system]`,
     "memo:C111": `## Borrower and relationship
 - The request, as written by Jordan Ellis on October 14: increase the line of credit from $3.5M to $4.5M and extend its maturity to 2028-09-30, at Prime + 0.50% (floating), unchanged. [Request, Oct 14]
 - The purpose, as written: carry more inventory for two new mining-equipment supply contracts starting in January. [Request, Oct 14] [RM note, Oct 14]
@@ -88,9 +89,9 @@ window.REPLAY = {
 - Line of credit today: $3.5M committed, $1.9M drawn, Prime + 0.50% (floating), matures September 30, 2027. [Loan system]
 - Secured by eligible receivables and inventory, with a borrowing base of $5.2M on September 30, 2026. [Borrowing base certificate, Sep]
 
-## Risks the numbers show
-- The requested $4.5M line would be close to the $5.2M borrowing base. [Request, Oct 14] [Borrowing base certificate, Sep]
-- Deposits rose 18.6% over the last 3 months, and every payment was on time. [Deposit system]`
+## Changes and items to note
+- Requested line $4.5M; borrowing base $5.2M (Sep 30). [Request, Oct 14] [Borrowing base certificate, Sep]
+- Deposits up 18.6% over the last 3 months; every payment on time. [Deposit system]`
   },
   // A9: plain-English explanations of the top flags.
   watch: [

@@ -27,6 +27,11 @@ documents against it.
 | **PM Assistant** | The core portfolio manager product (a first cut since 2026-10-19): one personal AI assistant for each PM, the credit counterpart of the RM Assistant, with the same kinds of limits and capabilities added feature wave by feature wave (The PM Assistant page). It gathers, drafts and flags; the PM writes the judgment and a named credit officer decides. |
 | **Capability** | One specific job an assistant does, such as the RM Assistant's pre-meeting client brief or the PM Assistant's borrower file. Each capability is one AI product. |
 | **Borrower file** | The PM Assistant's first capability: everything about one borrower (financials, loans, covenants, deposits, payments, the last review, the RM's notes) in one place, every figure with its source, and a list of what's missing or late. |
+| **Early warning flags** | The PM Assistant's feature wave 2 capability: flags on a borrower, with the numbers behind each, for the PM to look at; never a watchlist or rating change. Named so it can't be mistaken for the bank's watchlist. |
+| **Signals engine** | Simple, explainable rules that spot opportunities or risks, with AI explaining each one; shared by both assistants. |
+| **Must-refuse case** | A test case the product must refuse, such as a request for a credit decision, a borrower risk rating or a price; required on the higher-risk path. |
+| **Judgment sections** | The parts of a credit draft only the PM writes: the borrower risk rating and, in wave 1, the recommendation. |
+| **Content owner** | The person who signs which documents a product may read, such as the credit file's owner; part of the data contract (sub-step 2.3). |
 | **Wave** | Used two ways, so say which: a **feature wave** is a set of AI products released together, after a quick pass through Discover and Define; a **user wave** is the next group of users when a product scales (sub-step 5.7). |
 | **Quick pass** | How each new feature wave goes through Discover and Define after the first pass: four sub-steps always done (2.3, 2.4, 2.5, 2.7), the rest reused unless something changed, and gates 1 and 2 decided together in writing (Product Framework). |
 | **Material change** | A change to a live product that goes back through step 4: new data, a new action, users outside the full user group step 4 approved, a new AI model we choose, or a vendor model change the vendor announces as major (smaller vendor updates are re-tested in 6.3). User waves inside the approved group aren't material. The product manager proposes and the risk partner confirms; the bank's model risk policy has the final word ⚠️ (Product Framework). |
@@ -84,7 +89,7 @@ documents against it.
 | **Leading and lagging measures** | Leading measures show up within weeks (use, insights acted on, pipeline created); lagging ones take months (closed revenue). |
 | **Data contract** | The signed list of exact fields a product may use, how fresh they must be and the checks they must pass. |
 | **The five kinds of measures** | Usage, quality, business impact, adoption, and risk and controls. Set in Define, tracked in Measure. |
-| **Value model** | The calculation of what a product earns against what it costs, with unknown numbers shown as [X]. Savings may be added with the credit use case. |
+| **Value model** | The calculation of what a product earns against what it costs, with unknown numbers shown as [X]. The PM plan's model also counts costs saved and tracks loan losses avoided, not counted until Finance and credit risk agree a method (C62). |
 
 ## Pages and records
 
@@ -179,12 +184,26 @@ Our plans depend on these, but the definitions belong to the bank. Each stays
 | Product gap | A product a client would likely need but doesn't have with the bank | ⚠️ to map |
 | Referral | One banker passing a client need to another team | ⚠️ to map |
 | Certified data | Data the bank has approved as trusted for use | ⚠️ to map |
-| Risk rating | The level the bank's model risk process assigns to an AI use | ⚠️ to map |
+| Risk rating (of an AI use) | The level the bank's model risk process assigns to an AI use | ⚠️ to map |
 | Model inventory | The bank's register of models and AI uses | ⚠️ to map |
 | Qualified opportunity | An opportunity good enough to count in the value model ("qualified opportunities surfaced per RM") | ⚠️ to map |
 | Pipeline, closed won | Open opportunities, and opportunities that closed as won | ⚠️ to map |
 | RMs in scope, book size | How many RMs a product covers, and how many clients each RM covers | ⚠️ to map |
 | Hours saved | Time a product frees up each week, and how it's measured (Finance agrees the method) | ⚠️ to map |
 | Client attrition, at-risk client | A client who leaves or reduces business, and early signs that one might | ⚠️ to map |
+| Borrower risk rating | The bank's credit grade of a borrower; not the model risk rating of an AI use | ⚠️ to map |
+| Annual review | The yearly credit review of a borrower | ⚠️ to map |
+| Credit memo | The written case for a credit decision | ⚠️ to map |
+| Credit file | Everything the bank keeps on a borrower's credit | ⚠️ to map |
+| Spread, spreading tool | A borrower's financial statements put into the bank's standard layout, and the tool that does it | ⚠️ to map |
+| Covenant, compliance certificate | A condition a borrower agrees to in its loan, and the borrower's signed statement that it meets them | ⚠️ to map |
+| Watchlist | The bank's own list of borrowers under closer watch; our early warning flags are separate | ⚠️ to map |
+| Credit policy, credit appetite | The bank's credit rules, and the kinds and amount of credit risk it is willing to take | ⚠️ to map |
+| Approval-authority list | Who may approve which credit decisions, and up to what size | ⚠️ to map |
+| Credit administration | The team that books, documents and services loans | ⚠️ to map |
+| Credit risk, credit risk review | The team that owns credit risk, and its independent review of loans | ⚠️ to map |
+| Credit analyst | The person who spreads statements and drafts credit analysis for a portfolio manager | ⚠️ to map |
+| Renewal, line change | Extending a loan or line when it matures, and changing its size or terms | ⚠️ to map |
+| Loan system | The bank's system of record for loans | ⚠️ to map |
 
 _Last updated: 2026-10-19_

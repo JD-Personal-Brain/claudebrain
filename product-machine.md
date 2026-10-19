@@ -74,7 +74,7 @@ partners and users are outside it. Dashboards people open themselves don't count
 | 2.8 | Scope release 1 and the pilot group | Me | Backlog tool | Sponsor, user leaders |
 | 2.8 | Record the long-term owner, or "to be decided" with a date to decide by | Me | Meeting | Sponsor |
 | 2.8 | Complete the brief and the gate pack | Draft | M6 Gate pack drafter | Sponsor |
-| Gate | Go/no-go | Me | In writing; a meeting only if contested | Sponsor, risk, data owner |
+| Gate | Go/no-go | Me | In writing; a meeting only if contested | Sponsor, risk, data owner; the credit policy owner on the higher-risk path |
 
 On the quick pass for a later feature wave, gates 1 and 2 are decided together in writing (Product Framework).
 
@@ -107,7 +107,7 @@ On the quick pass for a later feature wave, gates 1 and 2 are decided together i
 | 4.5 | Show the controls working to risk; confirm the release route and IT's approval of every connection | Me | Meeting, audit log | Risk, IT |
 | 4.6 | Confirm the vendor reviews | Me | Approved vendors list | Vendor risk |
 | 4.7 | Put together the evidence pack | Draft | M29 Evidence pack assembler | Me, then risk |
-| 4.7 | Send sign-off requests and chase them | Auto ⚠️ | M14 Sign-off router (Power Automate approvals) | Risk, compliance, privacy, security; the credit policy owner on the higher-risk path |
+| 4.7 | Send sign-off requests and chase them | Auto ⚠️ | M14 Sign-off router (Power Automate approvals) | Risk, compliance, privacy, security; the credit policy owner on the higher-risk path; credit risk for early warning rules |
 | 4.7 | The sign-offs themselves | Partner | — | Recorded in the tracker |
 | 4.7 | Unblock a stuck sign-off | Me | Meeting | — |
 | 4.8 | Draft the monitoring plan alongside 4.5 (it goes into the evidence pack), then finalise it | Draft | Monitoring plan template | Risk, operations |
@@ -215,4 +215,4 @@ Every project keeps a light log per sub-step (start, finish, hours, waits); the 
 - **Stagger the gates.** No two gate packs from different projects land in the same week.
 - **Plan the product manager's week.** [X] hours on decisions and gates, [X] on users, [X] on partners and sign-offs, [X] checking drafts. If person-only work runs over, the automation check comes first.
 
-_Last updated: 2026-10-18_
+_Last updated: 2026-10-19_

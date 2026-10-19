@@ -17,7 +17,7 @@ Built with Prompt 3 in the Prompt Library (`prompt-library.md`). Public informat
 - **The corporate segment** (the bank reports it as "Corporate and Commercial Specialty") made $177.3 million of revenue and $80.1 million of net income in Q2 2026, on $21.7 billion of loans, which is 60% of the bank's loans [S2](https://www.sec.gov/Archives/edgar/data/7789/000000778926000202/R23.htm).
 - **Its revenue lines:** loan interest (general commercial lending, commercial real estate and specialty industries), deposits, treasury management fees, commercial cards, capital markets fees and loan fees. Fees were only $15.6 million, about 9% of segment revenue, in Q2 2026 [S2](https://www.sec.gov/Archives/edgar/data/7789/000000778926000202/R23.htm).
 - ⚠️ **Where AI work has the most room:** selling treasury management and deposits to clients who only borrow, and giving a fast-growing team of RMs more selling time. Both fit wave 1 of The RM Assistant (the RM plan).
-- **Watch:** the bank's own announcement says its AI work in this business starts with portfolio management and treasury and payments [S8](https://investor.associatedbank.com/news/news-details/2026/Associated-Bank-Hires-Andy-Miner-as-senior-director-AI-for-Corporate--Commercial-Banking). My value model has no line yet for costs saved or loan losses avoided.
+- **Watch:** the bank's own announcement says its AI work in this business starts with portfolio management and treasury and payments [S8](https://investor.associatedbank.com/news/news-details/2026/Associated-Bank-Hires-Andy-Miner-as-senior-director-AI-for-Corporate--Commercial-Banking). The PM plan's value model (first cut, 2026-10-19) counts PM time saved and tracks loan losses avoided.
 
 ## 2. The bank at a glance
 
@@ -183,7 +183,7 @@ Three notes on the table:
 
 ## 6. Alignment map
 
-Each revenue line, which bankers it helps (RMs or PMs), the job outcome it serves, and the part of my value model it feeds (section 2 of `memos/rm-analytics-framework.md`). The four job outcomes are from `job-description.md`: revenue workflows, banker capacity, operating efficiency and adoption. Everything in this table is ⚠️ my judgment. The value model's own inputs (win rate, revenue per win, hours saved) are internal, so they stay [X].
+Each revenue line, which bankers it helps (RMs or PMs), the job outcome it serves, and the part of my value model it feeds (section 2 of `memos/rm-analytics-framework.md` for RMs, and `memos/pm-assistant-framework.md` section 2 for PMs). The four job outcomes are from `job-description.md`: revenue workflows, banker capacity, operating efficiency and adoption. Everything in this table is ⚠️ my judgment. The value model's own inputs (win rate, revenue per win, hours saved) are internal, so they stay [X].
 
 | Revenue line | Which bankers | Job outcome | Value model part | AI work that could move it | Room to move ⚠️ |
 |---|---|---|---|---|---|
@@ -191,15 +191,15 @@ Each revenue line, which bankers it helps (RMs or PMs), the job outcome it serve
 | **General commercial (C&I) lending** | RMs | Banker capacity; revenue workflows | Time freed (hours, not revenue); revenue from insights | Client briefs, meeting follow-ups and call notes into Salesforce (wave 1), prospect lookalikes (wave 2) | **High.** Many new RMs in new markets need to become productive quickly |
 | **Capital markets** | RMs | Revenue workflows | Revenue from insights | Not in wave 1 (the Monday opportunity list suggests only deposit and treasury gaps, decided 2026-10-18). A later wave could add hedging and foreign exchange gaps (⚠️ not planned yet) | **Medium.** Small bank-wide ($7.5 million in Q2 2026) and growing. Its size inside the segment is [X] |
 | **Specialty industries** | RMs | Revenue workflows | Revenue from insights | Prospect lookalikes within one industry, where clients resemble each other | **Medium.** Fewer bankers, but the pattern repeats nationally |
-| **Commercial real estate lending** | PMs (real estate RMs sell it) | Operating efficiency | Not in the model today | Help with portfolio reviews and loan monitoring | **Medium.** Growth is capped by concentration limits, so the gain is cost and time |
-| **Credit quality** (the $21.3 million quarterly provision) | PMs | Operating efficiency | Not in the model today | A credit early-warning signal for PMs. This is not in my RM plan today: the plan's wave 2 early warning flags clients who may leave, not loans that may go bad | **Unknown.** Potentially large, but hard to prove and higher risk to govern |
+| **Commercial real estate lending** | PMs (real estate RMs sell it) | Operating efficiency | PM time saved | The PM Assistant: borrower file and review drafts (feature wave 1) | **Medium.** Growth is capped by concentration limits, so the gain is cost and time |
+| **Credit quality** (the $21.3 million quarterly provision) | PMs | Operating efficiency | Loan losses avoided (tracked, not counted) | The PM Assistant's early warning flags (feature wave 2); separate from the RM plan's "client may leave" flags | **Unknown.** Potentially large, but hard to prove and higher risk to govern |
 | **All lines** | RMs and PMs | Adoption | Every part: nothing counts until RMs and PMs use it weekly | Training on RMs' own clients, champions, usage reporting | Decides whether any of the above shows up |
 
 **What this means for my plan** ⚠️:
 
 1. **The first wave fits.** Client briefs, follow-ups and the product-gap list aim at the two lines with the most room.
 2. **Put treasury management first on the product-gap list.** It answers the segment's two weak spots at once: low fees and what looks like a shortage of deposits.
-3. **The value model is missing two parts.** It counts new revenue only. The bank has said its AI work here starts with portfolio management and treasury and payments, which pay back through costs saved and loan losses avoided. I decided on 2026-10-09 to settle this with the credit use case, which is PMs' work: RMs first, PMs second.
+3. **The value model's two missing parts.** The RM plan counts new revenue only. The bank has said its AI work here starts with portfolio management and treasury and payments, which pay back through costs saved and loan losses avoided. Settled in the PM plan's first cut (2026-10-19): costs saved counted, loan losses avoided tracked until Finance and credit risk agree a method; Finance's acceptance is still to confirm (question 10).
 4. **What a point is worth.** One percentage point of segment revenue is about $1.8 million a quarter (1% of $177.3 million, my arithmetic). This is a sense of scale only. It is not a forecast.
 
 ## 7. Strategy and what's changing
@@ -238,7 +238,7 @@ Each revenue line, which bankers it helps (RMs or PMs), the job outcome it serve
 6. How are RMs paid and measured, and how are referrals to treasury, capital markets and wealth credited?
 7. The value model's inputs: win rate, average first-year revenue per win by product, and today's client-facing hours per RM.
 8. Has the American National conversion happened, and are acquired clients in Salesforce and Snowflake?
-9. What are Andy Miner's first use cases, and how does The RM Assistant rank against portfolio management and treasury and payments?
+9. What are Andy Miner's first use cases, and how do The RM Assistant and The PM Assistant rank against portfolio management and treasury and payments?
 10. Does Finance accept costs saved and loan losses avoided as returns, as well as new revenue?
 
 ## 10. Sources
@@ -276,4 +276,4 @@ Three things keep this briefing up to date. None of them changes main on its own
 
 ⚠️ The scout's pages come from search results, because the bank's own sites are blocked from Claude's workspace. Each item it reports says so.
 
-_Last updated: 2026-10-14_
+_Last updated: 2026-10-19_

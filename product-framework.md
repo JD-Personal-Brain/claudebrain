@@ -20,10 +20,12 @@ written as [name needed] until they're filled.
 | Product manager (this role) | Scope, priorities and trade-offs; owns the product until a long-term owner is named; brings the gate pack and recommends at every gate | Every step |
 | Long-term owner | Holds the product after launch, for example someone in a revenue line; identified during the project | Named in Define if known (2.8), confirmed before scaling (5.7) |
 | Data owners | What data may be used; they sign the data contract | Define (2.3; they agree at the Define gate), Build (3.2) |
+| Content owner | Which documents a product may read; signs that list with the data contract | Define (2.3) |
 | Platform teams | The technical design | Define (2.2), Build |
 | Model risk (the risk partner) | The risk rating and the approval | Briefed in Discover (1.0); agrees at the Discover and Define gates; rating in Define (2.4); approval at the step 4 gate, which the sponsor can't overrule |
 | Compliance, privacy and security | The controls and their sign-off | Told the control requirements in Define (2.4); sign-off in Govern and test (4.2 to 4.7) |
-| Credit policy owner (higher-risk path only) | Whether a product that informs credit decisions may go live, and what its drafts may contain (control K3) ⚠️ [name needed] | Define (2.4), Govern and test (4.7) |
+| Credit policy owner (higher-risk path only) | Whether a product that informs credit decisions may go live, and what its drafts may contain (control K3) ⚠️ [name needed] | Briefed at 1.0 when a higher-risk path is likely; Define (2.4; agrees at the Define gate), Govern and test (4.7) |
+| Credit risk (when a product has early warning rules) | Owns the rules and signs them at 4.7 | Define (2.4), Govern and test (4.7) |
 | Vendor risk | Whether the vendors and AI models we use are approved | Define (2.2, starts any missing review), Govern and test (4.6) |
 | IT | The AI tools the team may use, and every connection the product makes | Discover (1.0), Define (2.2), Govern and test (4.5) |
 | Finance | How impact is counted, and the impact numbers | Define (2.7), the Measure and iterate gate |
@@ -170,4 +172,4 @@ table above. The plan's working copy is `memos/<project>.md`, as the RM memo
 does. People read three short pages (executive summary, product, plan); the full
 plan goes into the project's detail document for AI (RM Detail for RMs).
 
-_Last updated: 2026-10-18_
+_Last updated: 2026-10-19_

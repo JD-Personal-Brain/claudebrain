@@ -200,7 +200,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
 
 ## The Define gate
 
-- **Who decides:** the sponsor, with the risk partner and the data owner (in writing when the gate is clean; a meeting only if a criterion is contested or a decider asks for one; see the Product Machine).
+- **Who decides:** the sponsor, with the risk partner and the data owner, and on the higher-risk path the credit policy owner (in writing when the gate is clean; a meeting only if a criterion is contested or a decider asks for one; see the Product Machine).
 - **Bring:** the gate pack from 2.8.
 - **Go means:** brief, data contract and risk rating agreed, and the value model shows payback within [X] months.
 - **No-go means:** fix the gap (often data or risk), or narrow the scope.
@@ -230,4 +230,4 @@ table in `product-machine.md`.
 
 **First time** = how the task is done on the first project. **Aim for** = its kind in `product-machine.md`.
 
-_Last updated: 2026-10-18_
+_Last updated: 2026-10-19_
