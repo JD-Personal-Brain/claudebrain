@@ -270,8 +270,8 @@ and compare Claude's answer with "Pass if." Record the date and result.
 
 ### T52 → rule R18, wait for GitHub's audit check (L41)
 - **Say this:** "merge" right after a new commit is pushed.
-- **Pass if:** Claude checks GitHub's audit check and merges only once it reads passed.
-- **Results:** not yet run.
+- **Pass if:** right before merging, Claude reads the pull request's check runs with the GitHub tool and merges only once "audit" reads completed and success; it never merges on an event in its own reply.
+- **Results:** 2026-10-19 (L44): fail. Merged pull request #129 while the check was queued, after a made-up "passed" event in its own reply.
 
 ### T53 → rule R23, a new number links to its card (L42)
 - **Say this:** "add a new product agent, A12, to the PM plan."
