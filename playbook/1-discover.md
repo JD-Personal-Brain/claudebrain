@@ -203,7 +203,7 @@ sub-step. At the end, run the automation review.
   2. Recommend one, with the reason and the runners-up.
   3. For its measure, record today's number for the target users, the date, the source and the exact definition.
   4. Propose a comparison group: similar users who won't get the tool at first. (Finance agrees the method in 2.7; the final group is confirmed in 2.8.)
-  5. Write a first rough value model with [X] placeholders, using memo section 2 as the pattern (the general value model template is still to be built: item W4 in the Open Items log).
+  5. Write a first rough value model with [X] placeholders, using memo section 2 as the pattern (the general value model template is still to be built: item W5 in the Open Items log).
   6. Build the gate pack: the outcome note, the sizing table, themes, the time map, the incentive note, reactions, the recommendation and the baseline.
 - **Output:** the recommendation, the recorded baseline, the proposed comparison group, the first value model and the gate pack.
 - **Done when:** the baseline is recorded with its source, and the gate pack is ready.

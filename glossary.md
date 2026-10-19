@@ -24,7 +24,9 @@ documents against it.
 | **User workflow** | How a user group (RMs, portfolio managers) works today, and how that work changes with AI. Not the same as the RM plan's numbered workflows B1 to B9 on the Workflow Maps. |
 | **AI product** | A specific capability we build and release, such as the pre-meeting client brief. Each sits under one core use case. |
 | **RM Assistant** | The core RM product (a hypothesis since 2026-10-17): one personal AI assistant for each RM, with limits on its jobs, workflows, data and controls, and capabilities added feature wave by feature wave on a shared foundation (the RM Assistant page). The RM plan's "RM assistant" (wave 3) is now its **Client Q&A** capability. |
-| **Capability** | One specific job the RM Assistant does, such as the pre-meeting client brief. Each capability is one AI product. |
+| **PM Assistant** | The core portfolio manager product (a first cut since 2026-10-19): one personal AI assistant for each PM, the credit counterpart of the RM Assistant, with the same limits and capabilities added feature wave by feature wave (The PM Assistant page). It gathers, drafts and flags; the PM writes the judgment and a named credit officer decides. |
+| **Capability** | One specific job an assistant does, such as the RM Assistant's pre-meeting client brief or the PM Assistant's borrower file. Each capability is one AI product. |
+| **Borrower file** | The PM Assistant's first capability: everything about one borrower (financials, loans, covenants, deposits, payments, the last review, the RM's notes) in one place, every figure with its source, and a list of what's missing or late. |
 | **Wave** | Used two ways, so say which: a **feature wave** is a set of AI products released together, after a quick pass through Discover and Define; a **user wave** is the next group of users when a product scales (sub-step 5.7). |
 | **Quick pass** | How each new feature wave goes through Discover and Define after the first pass: four sub-steps always done (2.3, 2.4, 2.5, 2.7), the rest reused unless something changed, and gates 1 and 2 decided together in writing (Product Framework). |
 | **Material change** | A change to a live product that goes back through step 4: new data, a new action, users outside the full user group step 4 approved, a new AI model we choose, or a vendor model change the vendor announces as major (smaller vendor updates are re-tested in 6.3). User waves inside the approved group aren't material. The product manager proposes and the risk partner confirms; the bank's model risk policy has the final word ⚠️ (Product Framework). |
@@ -61,7 +63,7 @@ documents against it.
 | **Agent** | An AI helper with one job, a short list of allowed actions and a named person in charge. |
 | **Research helper** | An agent that keeps my own reference pages current, such as H1, the bank news scout. Numbered H1 and on, listed in the Agent Library, and not part of the product machine. |
 | **General agent** | One of the 33 agents (M1 to M33) that run the product machine on every project, specified in the agent library: M1 to M19 handle the paperwork and routing, M20 to M33 do the team's analysis, testing and monitoring. |
-| **Product agent** | An agent inside the product that users see, numbered per project (A1, A2, A3 and A5 in the RM plan; A4 was merged into workflow B1 on 2026-10-18 and A6 removed on 2026-10-17). Specified in that project's memo, Appendix A. |
+| **Product agent** | An agent inside the product that users see, numbered per project, each number used once across projects (A1, A2, A3 and A5 in the RM plan; A4 was merged into workflow B1 on 2026-10-18 and A6 removed on 2026-10-17; A7 to A10 in the PM plan, from 2026-10-19). Workflows are numbered the same way: B1 to B9 in the RM plan, B10 to B15 in the PM plan. Specified in that project's memo, Appendix A. |
 | **Agent spec** | An agent's written definition: its job, inputs, allowed and forbidden actions, outputs, when it stops, proof it worked and the person in charge. |
 | **Ongoing mode** | An agent first used once in a sub-step that then keeps running until the product is retired (for example M24 on every data refresh). Agents built to run on a schedule from the start aren't counted as ongoing mode. |
 | **Control** | A safeguard built into a product so the bank can trust it (K1 to K25 in the Controls Catalog). Each says where it is set, built, proved and watched, and where it comes from (law or regulator, bank policy or our choice). |
@@ -90,7 +92,7 @@ documents against it.
 |---|---|
 | **Designed page** | A branded page a person reads. Everything a person reads is one. |
 | **Working copy** | The Markdown file behind a designed page. Claude edits it; people read the page. |
-| **Reference page** | A page built to look things up: the Agent Library, Workflow Maps, Steps Catalog, Controls Catalog and this glossary (since 2026-10-18 they are the only pages in the Document Library's Reference section; the pages I read or act on sit elsewhere: the Job Description and Tech Stack Guide in "The bank and the role", the Use Case Library in Research, and Open Items, the Audit Log, the Prompting Guide and the Prompt Library in "My workspace"). RM Detail, in the RM section, is built automatically for an AI to read, not for people. Claude keeps them aligned; they're never on the review list. |
+| **Reference page** | A page built to look things up: the Agent Library, Workflow Maps, Steps Catalog, Controls Catalog and this glossary (since 2026-10-18 they are the only pages in the Document Library's Reference section; the pages I read or act on sit elsewhere: the Job Description and Tech Stack Guide in "The bank and the role", the Use Case Library in Research, and Open Items, the Audit Log, the Prompting Guide and the Prompt Library in "My workspace"). RM Detail, in the RM section, and PM Detail, in the PM section, are built automatically for an AI to read, not for people. Claude keeps them aligned; they're never on the review list. |
 | **Gate pack** | Everything the decider needs at a gate, put together in one document. |
 | **Evidence pack** | Everything reviewers sign in step 4: the outputs of 4.1 to 4.6 (risk rating, data and privacy review, test and red-team results, fairness, controls and vendor reviews) and the draft monitoring plan (4.8). |
 | **Decision log** | The record of each decision: what was decided, the options, who decided and why. For gates it also records the date the gate pack was ready and the decision date. |
@@ -184,4 +186,4 @@ Our plans depend on these, but the definitions belong to the bank. Each stays
 | Hours saved | Time a product frees up each week, and how it's measured (Finance agrees the method) | ⚠️ to map |
 | Client attrition, at-risk client | A client who leaves or reduces business, and early signs that one might | ⚠️ to map |
 
-_Last updated: 2026-10-18_
+_Last updated: 2026-10-19_

@@ -18,6 +18,7 @@ holds the ones worth keeping.
 | 2 | A full product memo | A full product plan for a new use case, from my saved files | 1 (2026-10-09) |
 | 3 | A business briefing on the bank | The Bank Business Briefing, rebuilt from public sources each quarter | 1 (2026-10-09) |
 | 4 | A showcase prototype with live agents | A clickable prototype of a user group's AI assistant, with three agents running live on Claude, a guided tour and a video, built from our framework | 1 (2026-10-18) |
+| 5 | Copy a user group's work to the next group | The whole section for a new user group (such as portfolio managers) as a first cut: plan, three short pages, workflow map, agents, prototype and detail document, copied from the RM section | 1 (2026-10-19) |
 
 ## Prompt 1: the use case kit (organize a use case, find its gaps, fix them)
 **Version 2** (2026-10-18). First run: relationship managers (RMs).
@@ -497,4 +498,217 @@ Tone:     Confident and clear, like a product demo: impressive by
 
 **What changed:** version 1, written 2026-10-18.
 
-_Last updated: 2026-10-18_
+## Prompt 5: copy a user group's work to the next group (like the portfolio manager section)
+**Version 1** (2026-10-19). First run: portfolio managers (PMs), copied from the relationship manager (RM) work.
+
+Lays down a whole user group's section of the Document Library in one run, built
+exactly like the RM section, with a first cut of every document: the full plan,
+the three short pages for people, the user workflow map, the product agents, a
+prototype with live agents and the detail document for AI. Later sessions improve
+each document one at a time. It runs Prompt 2 (the full memo) and Prompt 4 (the
+prototype) for the new group and checks the result against the use case kit
+(Prompt 1), so it doesn't repeat them. Inputs go first and the request last
+(tip 6); step 12 is "draft, check, improve" (tip 9). Once I say yes, Claude runs
+it end to end without stopping, saves a draft and reports back; nothing goes into
+main without my yes.
+
+Its first run set three things: the product's name ("The PM Assistant"), agent and
+workflow numbers that carry on from the RM ones (A7 and B10 onward), and wave 1 as
+credit memo and annual review drafts on the higher-risk path (control K3).
+
+```
+Inputs:   <model_to_copy>
+          The finished RM section, which is the pattern for every
+          piece: memos/rm-analytics-framework.md (the full plan, with
+          Appendix A agent specs and Appendix B workflows),
+          memos/rm-assistant.md and memos/rm-assistant-detail.md (the
+          product, short and full), memos/rm-executive-summary.md,
+          memos/rm-plan.md (the plan, opening with a Gantt chart),
+          designs/rm-ai-build.py and memos/rm-ai-reference.md (RM
+          Detail), prototypes/rm-assistant/ (version 4: source,
+          build.py, tests, tour, video, README, changelog), Map 2 on
+          the Workflow Maps (designs/workflows-build.py), the RM
+          product agents in designs/agents-build.py, and the rm
+          section of designs/library.json
+          </model_to_copy>
+          <pm_material>
+          The Use Case Library's "Portfolio managers" section
+          (memos/use-case-library.md), the full credit scan
+          (memos/credit-market-scan.md), the PM section of the Bank
+          Business Briefing (memos/bank-business.md), the credit
+          section of designs/library.json, and every open item and
+          closed decision about credit or PMs in open-items.md
+          (for PMs: the parked credit plan, the open decision on
+          copying the RM framework, W2, B3, B4, B8, C22, C33 and the rest)
+          </pm_material>
+          <base>
+          memos/role-workflow.md, product-framework.md,
+          product-machine.md, playbook/ (above all
+          playbook/controls.md: K3, the higher-risk path), glossary.md,
+          tech-stack.md, job-description.md
+          </base>
+          <prompts_to_run>
+          prompt-library.md: Prompt 1 (the use case kit, as the
+          checklist), Prompt 2 (the full memo) and Prompt 4 (the
+          prototype), each with its "for a different user group" note
+          </prompts_to_run>
+          <how_i_work>
+          me/profile.md, learning/rules.md, NOW.md, designs/README.md,
+          .claude/skills/ (prototype, user-workflow, designed-doc,
+          audit)
+          </how_i_work>
+
+Role:     You are a Principal Applied AI Product Manager at a
+          commercial bank who knows commercial credit well: how
+          portfolio managers underwrite, write credit memos and annual
+          reviews, monitor borrowers and partner with RMs. You also
+          build working prototypes and keep a document set
+          consistent, so each fact has one home.
+
+Context:  I'm thinking through how I'd do the Principal Applied AI
+          Product Manager job at Associated Bank. The RM section is
+          finished and reviewed (C59, C60), so the RM framework is now
+          ready to copy (this closes the open decision and starts the parked
+          credit plan). Portfolio
+          managers (PMs) are the bank's credit people paired with RMs.
+          I want the PM section built exactly like the RM section, so
+          a leader who has seen one recognizes the other at once:
+          same pieces, same layouts, same order, same house style.
+          This run is a first cut of every document, not the final
+          version: later sessions improve each one with me. I talk
+          with the bank's credit lead on Tuesday October 20, so what
+          the bank does today stays an open question until then.
+
+Steps:    1. Read everything above. Write a "done" checklist (below,
+             plus anything you add) and save it in NOW.md before
+             building. Update NOW.md after each finished stage with
+             what's done and the next step, so the work survives if
+             the session stops.
+          2. Take stock: list every RM piece in <model_to_copy> and
+             name its PM twin, its file and its page. Treat it as the
+             kit (C50): three short pages for people, one detail
+             document for AI, plus the prototype and the workflow map.
+          3. The full plan: run Prompt 2 for PMs, writing
+             memos/pm-assistant-framework.md in the same sections as
+             the RM plan, with the product agents (Appendix A, from
+             A7) and workflows (Appendix B, from B10). Wave 1: credit
+             memo and annual review drafts; wave 2: early warning;
+             risk ratings out of the first waves (C33). Set wave 1 on
+             the higher-risk path (K3) with the credit policy owner.
+          4. The product: memos/pm-assistant-detail.md (full) and
+             memos/pm-assistant.md (short), the same layout as the RM
+             Assistant pages: the product in one line, its limits,
+             capabilities by moment in the PM's work (each tied to its
+             credit core use case) and what it's built on.
+          5. The plan: memos/pm-plan.md, opening with a Gantt chart of
+             the first weeks, paced by what really blocks us (data
+             access, model risk and credit policy review), then what
+             could slow us down, who decides, how we prove the value
+             and the top risks.
+          6. The executive summary: memos/pm-executive-summary.md,
+             written last of the three short pages, for the leaders of
+             the credit business, in the RM summary's layout.
+          7. The user workflow: a PM's week today and with AI, built
+             with the user-workflow skill as a new map on the Workflow
+             Maps, beside the RM map, every bank fact a question to
+             confirm.
+          8. The agents: add the PM product agents to the Agent
+             Library (designs/agents-build.py), linking to PM Detail.
+          9. The prototype: run Prompt 4 for PMs, building The PM
+             Assistant Prototype as prototypes/pm-assistant/
+             prototype-v1.html, from source the way the RM prototype
+             is built: one made-up PM persona with about 12 made-up
+             borrowers; three agents live on Claude (for example: one
+             gathers each borrower's financials and documents, one
+             drafts the annual review or credit memo with a source on
+             every number, one flags early warning signs as simple,
+             explainable rules); one public data source; the controls
+             working on screen, above all K3 (it refuses to rate risk,
+             approve or decline credit, or set a price); a guided
+             tour, its video, tests, README and changelog.
+          10. PM Detail: designs/pm-ai-build.py, copied from
+              rm-ai-build.py, stitching every PM working file into
+              memos/pm-ai-reference.md.
+          11. The library and the rules around it: build every page
+              (md-page-build.py and the other build scripts), publish
+              each new page, give the credit section of
+              designs/library.json the same five numbered rows as the
+              RM section and mark it as following the kit,
+              list each page in designs/README.md, add the new page
+              names to the checker's page-name check, add new terms
+              to glossary.md, and update open-items.md (close the decision,
+              move the parked plan into work) and NOW.md.
+          12. Check every document against the RM twin and <base>,
+              then improve it (draft, check, improve). Run the render
+              check on every page and the audit at the size it picks;
+              fix what they find. Save a draft on GitHub.
+
+Rules:    Copy the RM pattern piece for piece, and copy layouts that
+          are already approved, because I approved them and want the
+          two sections to match; if a PM piece needs a new layout,
+          use the nearest RM one and list it in the report instead of
+          inventing a new look.
+          Give every fact one home and link to it, because copies
+          drift apart: shared rules stay on the How we deliver pages,
+          the market evidence stays in the Use Case Library.
+          A page for PMs talks only about PMs (R31); notes about
+          working with RMs go in PM Detail, because each group's pages
+          must stand on their own.
+          Never state as fact anything only the bank knows (how its
+          PMs work, its credit policy, its systems, its review times):
+          write it as "our assumption, to confirm with the bank" with
+          the question to ask (R32), because I haven't seen inside
+          the bank yet.
+          Keep the AI assistive and away from the credit decision: it
+          drafts and flags, and a named person decides, because credit
+          decisions carry fair-lending law and a much higher review
+          bar (K3).
+          Use [X] for numbers we don't have, treat outside figures as
+          benchmarks and never as targets, and cite a source for every
+          outside fact, because leaders will check every number.
+          Use made-up borrowers, people and numbers, marked "sample
+          data", and no bank logo or colors, because nothing real may
+          appear and nothing may look like the bank's own product.
+          Use the glossary's words, spell out "portfolio managers
+          (PMs)" the first time on each page, and write "product
+          manager" in full, because "PM" means portfolio manager.
+          Leave the RM pages unchanged except for shared pages that
+          must list both groups (the library, the Agent Library, the
+          Workflow Maps), because the RM work is reviewed.
+          Make your own best call on every open choice and keep going,
+          because I've asked for a full first cut while I'm away; list
+          each call in the report. Never merge into main.
+          Plain English throughout.
+
+Goal:     Using everything above, build the whole portfolio manager
+          section as a first cut. Done means the Document Library's
+          Portfolio managers section has the same five rows as the RM
+          section, each opening a real first draft, the prototype runs
+          its three agents on a sample borrower, and I can pick any one
+          document and start improving it with you.
+
+Output:   The new working files, pages, prototype and a draft on
+          GitHub. Then a short report: the done checklist with pass
+          or fail and proof for each item, the calls you made, what
+          you couldn't test, the weakest document (where we should
+          start), and one question for me.
+
+Tone:     A senior product leader's working draft: clear, direct and
+          complete, no selling.
+```
+
+**The done checklist it starts from** (step 1 adds to it):
+1. The library's Portfolio managers section has five numbered rows, matching the RM section: PM Executive Summary, The PM Assistant, PM Assistant Plan, PM Assistant Prototype, PM Detail. Each opens.
+2. Each short page has the same sections as its RM twin; the plan opens with a Gantt chart.
+3. The full plan has the six steps as one table, Appendix A (agents from A7) and Appendix B (workflows from B10).
+4. Wave 1 is credit memo and annual review drafts on the higher-risk path (K3); wave 2 is early warning; risk ratings are out.
+5. A PM's week, today and with AI, is a map on the Workflow Maps; the PM agents are in the Agent Library.
+6. The prototype runs three agents on a sample borrower, refuses a credit decision or a risk rating, logs every action, has a tour under 2 minutes, a video, passing tests, a README and a changelog.
+7. Every bank fact is an assumption with a question; every outside number has a source.
+8. The render check passes on every changed page; the audit passes; a draft is saved on GitHub; nothing is merged.
+
+**For the next group:** Change the group (PMs to the next one, such as treasury management officers), its material in `<pm_material>`, its product name, its first waves and its starting agent and workflow numbers. Everything else stays.
+
+**What changed:** version 1, written and approved 2026-10-19.
+
+_Last updated: 2026-10-19_

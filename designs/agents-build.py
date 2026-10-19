@@ -1,7 +1,7 @@
 """Builds designs/agents.html, the Agent Library: every agent in one place,
 filterable, each opening to its full spec. Reads playbook/agents.md (M1-M33,
-the product machine's general agents) and the RM memo's Appendix A (A1, A2, A3, A5;
-the product RMs use). Run: python3 designs/agents-build.py"""
+the product machine's general agents) and the RM and PM memos' Appendix A (A1, A2, A3, A5, the product RMs use;
+A7 to A10, the product PMs use). Run: python3 designs/agents-build.py"""
 import os, re
 from pagekit import CSS, E, inline, chipify, render_blocks, link_refs
 
@@ -66,16 +66,29 @@ for block in re.split(r"\n\*\*(?=A\d+\. )", appa.split("### Agents the team uses
                    "fields": [(k, f[k]) for k in ["Inputs", "Allowed actions", "Not allowed", "Outputs", "Stops when", "Proof it worked", "Person in charge"] if k in f],
                    "source": "RM Detail · full plan, Appendix A"})
 
+# A7 to A10: the product PMs use (numbered on from the RM ones, so no number means two things)
+pm_appa = read("memos/pm-assistant-framework.md").split("## Appendix A: Agent specs")[1].split("## Appendix B")[0]
+for block in re.split(r"\n\*\*(?=A\d+\. )", pm_appa.split("### Agents the team uses")[0])[1:]:
+    head, _, body = block.partition("\n")
+    m = re.match(r"(A\d+)\. (.+?)\*\*\s*·\s*(.+)", head)
+    f = dict(re.findall(r"^- \*\*([^*]+):\*\*\s*(.*)$", body, re.M))
+    agents.append({"id": m.group(1), "name": m.group(2), "group": "pm-product", "steps": ["Used by PMs"], "aim": "",
+                   "job": f["Job"], "meta": cap(m.group(3).strip()),
+                   "fields": [(k, f[k]) for k in ["Inputs", "Allowed actions", "Not allowed", "Outputs", "Stops when", "Proof it worked", "Person in charge"] if k in f],
+                   "source": "PM Detail · full plan, Appendix A"})
+
 GROUPS = [("machine", "Run the product machine", "Handle the paperwork and routing that move any project through the six steps: kickoff, notes, gate packs, sign-offs and releases. Reused on every project."),
           ("team", "Do the team's analysis, testing and monitoring", "General agents for every project: sizing, research, requirements, data checks, testing, red-teaming, fairness, evidence, feedback and impact. The RM plan shows how it uses each one."),
           ("product", "The product RMs use", "The agents inside The RM Assistant. Nothing reaches a client without the RM. Insights and alerts are shown to the RM (and, if agreed, their manager); anything saved as the RM's own work, like a call note or an opportunity, needs the RM's approval."),
+          ("pm-product", "The product PMs use", "The agents inside The PM Assistant, for portfolio managers (PMs). They gather, draft and flag; the PM writes the judgment and a named credit officer decides. None of them sets a risk rating, approves or declines credit, or sets a price."),
           ("helpers", "My research helpers", "Agents that keep my own reference pages current, such as the Bank Business Briefing. Not part of the product machine. Each runs on a schedule and only drafts: I decide what goes into main.")]
 counts = {g: sum(a["group"] == g for a in agents) for g, *_ in GROUPS}
 
 RM_DETAIL = "https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n"
+PM_DETAIL = "https://claude.ai/artifact/KZ4PEbhCPAj6uWKXmJMCeg"
 def spec_link(src):
     # Product agents' full specs live in RM Detail (the full plan's Appendix A): link straight to it
-    if "Appendix A" in src: return f'<a href="{RM_DETAIL}#part-5-the-full-delivery-plan-with-every-appendix-a-agent-specs" target="_blank" rel="noopener">{E(src)}</a>'
+    if "Appendix A" in src: return f'<a href="{PM_DETAIL if src.startswith("PM") else RM_DETAIL}#part-5-the-full-delivery-plan-with-every-appendix-a-agent-specs" target="_blank" rel="noopener">{E(src)}</a>'
     return E(src)
 
 def card(a):
@@ -101,7 +114,7 @@ notes = (f'<section class="notesec" id="notes"><div class="ahead"><h2>Two notes 
          f'<div class="note"><h3>Agents with an ongoing mode</h3>{render_blocks(_ongoing)}</div>'
          f'<div class="note"><h3>Not agents, but reusable assets</h3>{render_blocks(_assets)}</div></div></section>')
 
-step_opts = "".join(f'<option value="{E(s)}">{E(s)}</option>' for s in list(STEPS.values()) + ["Used by RMs", "My research helpers"])
+step_opts = "".join(f'<option value="{E(s)}">{E(s)}</option>' for s in list(STEPS.values()) + ["Used by RMs", "Used by PMs", "My research helpers"])
 page = f'''<title>Agent Library</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
@@ -159,7 +172,7 @@ page = f'''<title>Agent Library</title>
 {sections}
 <p class="empty" id="none" hidden>No agents match. Try another word or clear the filters.</p>
 {notes}
-<footer>Built from <code>playbook/agents.md</code> and the RM memo's Appendix A by <code>designs/agents-build.py</code>. "Runs on" tools are guesses until confirmed at the bank.</footer>
+<footer>Built from <code>playbook/agents.md</code> and the RM and PM memos' Appendix A by <code>designs/agents-build.py</code>. "Runs on" tools are guesses until confirmed at the bank.</footer>
 </main>
 <script>
 (function(){{

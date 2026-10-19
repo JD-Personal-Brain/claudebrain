@@ -6,7 +6,7 @@ import os, re
 from pagekit import CSS, E, inline, render_blocks, series, SERIES_CSS, link_refs
 
 # Pages whose ### headings get ids, so other pages can link straight to them (RM Detail: the plan links into it).
-ANCHORED = {"memos/rm-ai-reference.md"}
+ANCHORED = {"memos/rm-ai-reference.md", "memos/pm-ai-reference.md"}
 
 # Pages that are one of the four "How we deliver" pages get the reading-order strip.
 SERIES_KEY = {"product-framework.md": "framework"}
@@ -47,6 +47,21 @@ PAGES = [
      "One AI assistant for each RM: its limits, its capabilities by moment in the RM's work and the core use case each answers, and what it's built on.",
      {"The product in one line": "The product", "1. Its limits": "Limits", "2. Capabilities, by moment in the RM's work": "Capabilities",
       "3. What it's built on": "Foundation"}),
+    ("memos/pm-executive-summary.md", "pm-executive-summary.html", "PM Executive Summary", "Portfolio managers · executive summary",
+     "The portfolio manager work on one page, for the leaders of the credit business: the problem, the product, what PMs get first, the value, how fast, and the asks.",
+     {"The product: The PM Assistant": "The product", "What PMs get first (wave 1)": "Wave 1", "How fast": "How fast", "What I need, and what I'd confirm": "The asks"}),
+    ("memos/pm-assistant.md", "pm-assistant.html", "The PM Assistant", "Portfolio managers · the product",
+     "One AI assistant for each portfolio manager: its limits, its capabilities by moment in the PM's work and the credit core use case each answers, and what it's built on.",
+     {"The product in one line": "The product", "1. Its limits": "Limits", "2. Capabilities, by moment in the PM's work": "Capabilities",
+      "3. What it's built on": "Foundation"}),
+    ("memos/pm-plan.md", "pm-assistant-plan.html", "PM Assistant Plan", "Portfolio managers · the plan",
+     "How The PM Assistant gets delivered: the first 13 weeks as a chart, what could slow us down, who decides, how we prove the value and the risks.",
+     {"The plan at a glance": "At a glance", "1. What could slow us down (to confirm)": "Hold-ups", "2. Who decides": "Who decides", "3. How we'll prove the value": "Value", "4. Top risks": "Risks"}),
+    ("memos/pm-ai-reference.md", "pm-ai-reference.html", "PM Detail", "Portfolio managers · the detail, for AI to read",
+     "Everything about the portfolio manager work in one document, built from the working files, to give an AI the full picture. People read the shorter PM pages.",
+     {"Part 1: Executive summary": "1 Summary", "Part 2: The product: The PM Assistant (short version for people)": "2 Product", "Part 3: The PM Assistant in full detail": "3 Product detail",
+      "Part 4: The plan (short version for people)": "4 Plan", "Part 5: The full delivery plan, with every step, agent spec and workflow": "5 Full plan",
+      "Part 6: Core use cases and outside research": "6 Use cases", "Part 7: What banks are deploying in commercial credit, in full": "7 Credit research", "Part 8: The prototype: what it shows and how it's built": "8 Prototype"}),
     ("memos/credit-market-scan.md", "credit-market-scan.html", "Portfolio Manager Core Use Cases", "Portfolio managers · core use cases",
      "What banks are deploying in commercial credit, and the credit counterpart of each of the seven core use cases."),
     ("memos/elon-mode-research.md", "elon-mode.html", "Elon Mode", "Research · how Musk builds and improves systems",

@@ -1,0 +1,95 @@
+# The PM Assistant: full detail
+
+The detailed working file behind The PM Assistant page. People read the short page (`memos/pm-assistant.md`); this file goes into PM Detail.
+
+> ⚠️ **A hypothesis, not a plan yet** (first cut, 2026-10-19). Built from our commercial credit research, the Use Case Library and public Associated job postings, not from how the bank's portfolio managers work today. The first conversations with credit leaders test it; Discover confirms or changes the rest.
+
+## The product in one line
+Each portfolio manager (PM) gets **their own AI assistant**, inside the tools we expect the PM already uses (Word, Teams, the loan system and the bank's data; ⚠️ to confirm). Its job is to take the gathering and routine writing off the PM's plate, so the PM's time goes to credit judgment, and to spot weakening borrowers sooner. It starts with two **capabilities**, each doing one specific job in the PM's work, and gains more feature wave by feature wave. Every later AI product for PMs is a new capability of the same assistant.
+
+## 1. A personal AI, with limits
+The assistant is personal to each PM, and it is constrained in five ways. These limits are what make it safe to give every PM one.
+
+| Limit | What it means |
+|---|---|
+| **Jobs** | It does only the capabilities listed on this page. Anything else, it says so and stops. |
+| **Workflows** | It works where we expect the PM already works (to confirm in Discover): Word from the bank's templates, Teams, the loan system. No new app to learn. |
+| **Data** | Certified borrower data only (financials, loans, covenants, deposits, payments), the credit file's documents and the RM's approved notes, always limited to the borrowers the PM may already see. |
+| **Controls** | It gathers, drafts and flags; the PM writes the judgment and submits. It never sets or suggests a risk rating, never approves or declines credit, never sets a price, and writes a recommendation only if the credit policy owner allows it. Every draft names the credit officer who decides. Everything is logged. |
+| **Feedback** | Every output has one-click feedback (use, change or reject, with a reason). The feedback steers what gets better next. |
+
+## 2. What a PM's job is
+From Associated's public PM postings (seen through search results on job boards, 2026-10-14; ⚠️ check against the bank's own careers site):
+
+| Part of the job | What it means | Where the assistant helps |
+|---|---|---|
+| **Underwrite new credit** | Analyze a borrower's financials and write the credit memo for a new loan, renewal or line change | Borrower file, credit memo draft |
+| **Review the portfolio** | Annual reviews of each borrower: financial performance, covenants, collateral, risk rating | Borrower file, annual review draft |
+| **Monitor credit quality** | Watch for weakening borrowers; track statements, compliance certificates and covenants | Early warning watchlist, covenant and statement tracker |
+| **Partner with RMs** | Work closely with the RM on each relationship and each request | Faster drafts mean faster answers for the RM |
+| **Know the policy** | Apply the bank's credit policy and procedures | Credit policy Q&A |
+
+## 3. Capabilities, by moment in the PM's work
+Each capability is one AI product (glossary) and answers one credit core use case, the credit counterpart of an RM core use case (the Use Case Library's portfolio manager section).
+
+| Moment | Capability | What it does | Credit core use case | Wave |
+|---|---|---|---|---|
+| **Review and renew** | Borrower file | Everything about one borrower in one place, every figure with its source, and what's missing or late | Credit memo and annual review drafts | 1 |
+| | Annual review and credit memo drafts | The routine sections drafted in the bank's template; the rating and recommendation left for the PM | Credit memo and annual review drafts | 1 |
+| | Renewal radar | Loans coming up for renewal, and borrowers whose results suggest a bigger or smaller line | Renewals and line changes | 3 |
+| **Watch the portfolio** | Early warning watchlist | Flags borrowers whose signals are weakening, with the numbers | Early warning on credit quality | 2 |
+| | Covenant and statement tracker | Covenant tests from the spread, and statements and certificates due or late | Spreading, document intake and covenant tracking | 2 |
+| **New requests** | Deal screening | A quick check that a request fits the bank's credit appetite before the RM pitches | Deal screening | 3 |
+| **Know the policy** | Credit policy Q&A | Answers from the bank's credit policy, citing the section | Credit policy Q&A and coaching | 3 |
+| **Left out on purpose** | Risk rating support; approve or decline; pricing | Closest to the credit decision; kept out under control K3 | Risk rating support | Out |
+
+**Wave 1 at a glance:** two capabilities that work as one flow: the borrower file, then the draft built from it. Together they cover the PM's most frequent writing job, the annual review, and the credit memo for a request. The order follows the agreed credit order (closed item C33): memo and review drafts first, early warning second, risk ratings out of the first waves.
+
+**How each capability is built.** Our measures' targets are set in Define; outside figures are benchmarks in the Use Case Library, never our targets.
+
+| Wave | Capability (AI product) | Credit core use case | Agents | Built mainly on | Our measure (target set in Define) |
+|---|---|---|---|---|---|
+| **Wave 1** (borrower file by about week 5; drafts by about week 9; each once its approvals are in) | Borrower file | Credit memo and annual review drafts | A7 | Snowflake, AWS Bedrock (Knowledge Bases) | Hours spent gathering per review [X] |
+| | Annual review and credit memo drafts (higher-risk path) | Credit memo and annual review drafts | A7, A8 | AWS Bedrock or Copilot Studio; Word templates | Hours per review; share of sections used with light edits [X] |
+| **Wave 2** (dates proposed at gate 2) | Early warning watchlist (higher-risk path) | Early warning on credit quality | A9 | Snowflake signals, Teams | Flags acted on; how much earlier than today [X] |
+| | Covenant and statement tracker | Spreading, document intake and covenant tracking | Rules in code (workflow B14) | Snowflake, the spreading tool (⚠️ to confirm) | Late items; analyst hours saved [X] |
+| **Wave 3** (dates proposed at gate 2) | Credit policy Q&A | Credit policy Q&A and coaching | A10 | Copilot Studio or Bedrock Knowledge Bases | Questions answered; answer ratings [X] |
+| | Renewal radar; deal screening | Renewals and line changes; deal screening | Specs to come | Snowflake, the loan system | Renewals on time; screening turnaround [X] |
+
+**Why the borrower file is its own capability (our call, 2026-10-19):** it gathers and cites but writes no judgment, so we assume it needs the least review (⚠️ the risk partner decides) and can go live first if the higher-risk review of the drafts runs long. It also saves PMs time on its own.
+
+**Why the judgment sections stay blank:** the risk rating and the recommendation are where the credit decision lives. Leaving them to the PM keeps the AI on the right side of control K3 and keeps the PM accountable. Whether a draft may carry a recommendation at all is the credit policy owner's call at sub-step 2.4.
+
+**Why early warning is wave 2:** it is where most banks are working (the Use Case Library), but it needs agreed rules from credit risk and its own fairness check, and it touches the bank's own watchlist process, which we don't know yet.
+
+## 4. The foundation underneath
+Built once and shared by every capability.
+
+| Part | What it is | Used by |
+|---|---|---|
+| **Borrower data** | Loans, covenants, deposits and payments, which we expect in Snowflake (⚠️ or Fabric; certified data only) | Every capability |
+| **The credit file** | Financial statements, the spread, prior reviews, appraisals and other documents (⚠️ where they live is to confirm), read with their page cited | Borrower file, drafts |
+| **The bank's templates and policy** | The annual review and credit memo templates; the credit policy | Drafts, policy Q&A |
+| **Signals engine** | Simple, explainable rules agreed with credit risk; AI explains each flag with the numbers | Early warning, covenant tracker, renewal radar |
+| **Drafting** | Drafts marked as AI drafts, with every number checked against its source in code | Drafts |
+| **Controls and logs** | The limits in section 1, built once and tested for every capability | Every capability |
+| **Feedback loop** | One-click feedback on every output, sorted and fed into the next release | Every capability |
+
+## 5. How we'll know it works
+- **More PM time for judgment:** hours per annual review and credit memo, against PMs not yet using it [X].
+- **Faster answers:** days from a complete request to a decision [X].
+- **Earlier sight of trouble:** flags acted on, and how early (wave 2) [X].
+- **Use:** PMs using it every week, and the share of drafts used with light edits [X].
+
+Targets are [X] until the bank's own numbers are in.
+
+## 6. Working with the RM side
+The PM and the RM work each relationship together. The RM Assistant's approved call notes are one input to the borrower file, and early warning on credit quality shares its signals engine with the RM side's "client may leave" early warning, while each flag goes only to its own user group. A credit request draft from the RM (an idea on the RM side, not decided) would be where the two assistants meet. These links are notes for the detail document; each group's pages stand on their own.
+
+## 7. What to confirm
+The one full list is in the full plan, section 8 ("What I'd confirm in the first weeks").
+
+## 8. How it maps to the agents
+The core use cases, in their credit counterparts, are the **needs** the capabilities answer, and each capability is one AI product. The product agents do the work: A7 builds the borrower file; A8 drafts reviews and memos; A9 watches for early warning signs (the **signals engine**); A10 answers credit policy questions (wave 3). The covenant tracker is rules in code inside workflow B14, not an agent.
+
+_Last updated: 2026-10-19_

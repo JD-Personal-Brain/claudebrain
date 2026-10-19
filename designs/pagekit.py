@@ -275,12 +275,15 @@ _ROOT = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
 def _page_urls():
     urls = {}
     for m in re.finditer(r"\| *([^|]+?) *\| *(https://claude\.ai/artifact/\w+) *\| *`([^`]+)`", open(_os.path.join(_ROOT, "designs", "README.md")).read()):
-        urls[_os.path.basename(m.group(3))] = m.group(2)
+        urls[m.group(3)] = m.group(2)  # the full source path, so two prototypes both named prototype-v1.html stay apart
+        urls.setdefault(_os.path.basename(m.group(3)), m.group(2))
     return urls
 PAGE_NAMES = [  # name as people write it -> the page's built file
     ("Controls Catalog", "controls.html"), ("Agent Library", "agents.html"), ("Steps Catalog", "steps.html"),
     ("Workflow Maps", "workflows.html"), ("Use Case Library", "use-case-library.html"), ("RM Detail", "rm-ai-reference.html"),
     ("RM Assistant Plan", "rm-analytics-plan.html"), ("RM Assistant Prototype", "prototype-v1.html"), ("RM Executive Summary", "rm-executive-summary.html"),
+    ("PM Detail", "pm-ai-reference.html"), ("PM Assistant Plan", "pm-assistant-plan.html"), ("PM Assistant Prototype", "prototypes/pm-assistant/prototype-v1.html"),
+    ("PM Executive Summary", "pm-executive-summary.html"),
     ("Product Workflow", "role-workflow.html"), ("Product Framework", "product-framework.html"), ("Product Machine", "product-machine.html"),
     ("Product Playbook", "playbook.html"), ("Elon Mode", "elon-mode.html"), ("Glossary", "glossary.html"), ("Bank Business Briefing", "bank-business.html"),
     ("Tech Stack Guide", "tech-stack.html"), ("Prompt Library", "prompt-library.html"), ("Prompting Guide", "prompting.html")]
@@ -294,7 +297,7 @@ def link_refs(page, here):
         return (u + ("#" + anchor if anchor else "")) if u else None
     names = sorted(PAGE_NAMES, key=lambda x: -len(x[0]))
     name_re = re.compile(r"\b(" + "|".join(re.escape(n) for n, _ in names) + r")\b")
-    code_re = re.compile(r"(?<![\w.$-])(K(?:2[0-5]|1\d|[1-9])|M(?:3[0-3]|[12]\d|[1-9])|A[1235]|H1)(?![\w.%-])")
+    code_re = re.compile(r"(?<![\w.$-])(K(?:2[0-5]|1\d|[1-9])|M(?:3[0-3]|[12]\d|[1-9])|A(?:10|[1235789])|H1)(?![\w.%-])")
     def repl_text(t):
         def code(m):
             c = m.group(1); href = target("controls.html" if c[0] == "K" else "agents.html", c.lower())

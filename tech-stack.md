@@ -182,7 +182,7 @@ The same technologies, sorted by the six steps I'll use in this job.
 The job says "governed release" again and again. In a bank, *how* you ship
 matters as much as *what* you ship.
 
-- **Model risk management:** US bank regulators expect banks to check, test and monitor their models. The key guidance is **SR 11-7** (Federal Reserve, 2011, with the OCC's matching Bulletin 2011-12). Banks increasingly apply it to AI. It may have been replaced by **SR 26-2** (April 2026, reportedly; item W16 in the Open Items log) **(verify)**.
+- **Model risk management:** US bank regulators expect banks to check, test and monitor their models. The key guidance is **SR 11-7** (Federal Reserve, 2011, with the OCC's matching Bulletin 2011-12). Banks increasingly apply it to AI. It may have been replaced by **SR 26-2** (April 2026, reportedly; item W17 in the Open Items log) **(verify)**.
 - **Third-party risk:** using Microsoft, AWS, Salesforce or an AI vendor needs vendor risk reviews (US interagency guidance, 2023).
 - **Privacy:** customer financial data is protected by law (for example, the **Gramm-Leach-Bliley Act**). Decide early what data an AI may see.
 - **Fair lending:** if AI touches credit decisions, fair-lending laws apply (for example, the **Equal Credit Opportunity Act**). That's a much higher bar, so keep early products away from credit decisions.

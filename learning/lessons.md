@@ -111,7 +111,7 @@ If a mistake happens again, its fix moves up a level:
 - **Rule:** R29 · **Test:** T36 · **Level:** 1 · **Times it happened:** 1
 
 ### L24 · 2026-10-14 · A merged branch kept an item number from the old numbering
-- **What happened:** I merged the bank news scout branch, which was written before the Open Items log was renumbered. I shifted the item numbers only in the files that clashed, so the scout's new news log still said "W4" for the Briefing re-run (by then W12, later W13). The audit's reviewer caught it as a Must fix.
+- **What happened:** I merged the bank news scout branch, which was written before the Open Items log was renumbered. I shifted the item numbers only in the files that clashed, so the scout's new news log still said "W5" for the Briefing re-run (by then W13, later W14). The audit's reviewer caught it as a Must fix.
 - **Root cause:** rule R23 says to sweep the whole repo when numbers change, but I swept only the files I was resolving. The files the branch added never clashed, so I never looked at them. Rule R23 failed, so this is a repeat of L20.
 - **Fix:** rule R23 is sharper and moves to the top: after any renumbering, and whenever a branch written under older numbers is merged, search every file (including files the branch adds) for each item number and check that each one still points to the right item.
 - **Rule:** R23 · **Test:** T27 · **Level:** 2 · **Times it happened:** 2
@@ -125,7 +125,7 @@ If a mistake happens again, its fix moves up a level:
 ### L22 · 2026-10-14 · Kept a rule you never set, then worked around it
 - **What happened:** The audit found three numbers used twice in the Open Items log under the old numbering (one for an open item and a closed item's history note; two others each in two closed items' history notes). I "marked" the problem instead of fixing it, citing the log's promise that a number never changes. You corrected me twice: when something is wrong we fix it right, and you never asked for fixed numbers. You want the items listed by priority, with numbers that can be swapped and added.
 - **Root cause:** I wrote "every item keeps a number that never changes" into the log myself when I built it (2026-10-09), then treated my own design choice as your rule. Because nobody checked the numbering, it had drifted out of order and been reused.
-- **Fix:** the log is renumbered in priority order within each kind (W1 the first piece of work, D1 the first decision, and so on for each letter), with a new "Now" section at the top. Every file that points to an item was updated. The "never changes" wording is gone from the log, NOW.md and the glossary. The audit checker now fails if a kind's numbers don't run 1, 2, 3 in order down the page.
+- **Fix:** the log is renumbered in priority order within each kind (W1 the first piece of work, C61 the first decision, and so on for each letter), with a new "Now" section at the top. Every file that points to an item was updated. The "never changes" wording is gone from the log, NOW.md and the glossary. The audit checker now fails if a kind's numbers don't run 1, 2, 3 in order down the page.
 - **Rule:** R26 · **Test:** T31 · **Level:** 1 · **Times it happened:** 1
 
 ### L21 · 2026-10-14 · A new page name used a glossary word with a new meaning

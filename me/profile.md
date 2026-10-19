@@ -29,7 +29,7 @@ when it learns something new.
 - Claudebrain uses my personal email only (jeremydrane2021@gmail.com), never my work address. (2026-10-14)
 - Summary pages should link down to the detailed layer (the exact card or section), not repeat it. Each piece of information has one home. (2026-10-15)
 - When I give a decision or ask for one change, do just that. Don't queue up the follow-up work in my files; mention it once at most. (2026-10-15)
-- Lock down the base first (the How we deliver pages, the audit, the reference pages), then move into the RM work, then the PM work. Leave PM pages alone until I say we're moving into PM. (2026-10-15; moved into RM on 2026-10-17)
+- Lock down the base first (the How we deliver pages, the audit, the reference pages), then move into the RM work, then the PM work. Leave PM pages alone until I say we're moving into PM. (2026-10-15; moved into RM on 2026-10-17; moved into PM on 2026-10-19)
 - Every use case is presented the same way: a leader layer a third party can follow at a glance, and the working plan to deliver it, tied into the product machine. Build it cleanly once for RMs, then reuse it for portfolio managers. (2026-10-17)
 - I think of the product for each user group as one personal AI assistant per person, with capabilities for specific jobs added over time, constrained by its jobs, workflows, data and controls. Plans start from that product, not from analytics or use case lists. (2026-10-17)
 - Pages for people are short, aggregated and actionable (each user group gets an executive summary, the product and the plan); everything in full goes into one detail document meant for AI to read. A page for one group talks only about that group. Plans open with a Gantt chart so the timeline is visual. (2026-10-18)
