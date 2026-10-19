@@ -352,3 +352,26 @@ html{scroll-padding-bottom:84px}
 .meetings .meet small{white-space:nowrap}
 @media (max-width:860px){.split.wide{grid-template-columns:minmax(0,1fr)}.meetings .meet small{white-space:normal}}
 @media (max-width:860px){#borrowerPick{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;scroll-snap-type:x mandatory}#borrowerPick .meet{flex:none;scroll-snap-align:start}}
+
+/* ---------- v5: the industry background (A11, workflow B16) ---------- */
+.reads{display:inline-block;margin:10px 0 0;padding:8px 12px;border:1px solid var(--teal);border-left:4px solid var(--teal);border-radius:8px;background:var(--teal-bg);font-size:14.5px;max-width:none}
+.reads strong{color:var(--teal)}
+.docmeta-box .reads{display:block;margin:6px 0 2px;padding:4px 8px;font-size:13px}
+.indnote{padding-top:12px;padding-bottom:12px}
+.indnote .presets{margin-top:8px}
+.indnote .answer:empty{display:none}
+mark.uncited{background:var(--amber-bg);color:inherit;border-bottom:2px dashed var(--amber);padding:0 2px}
+.srclist{border-top:1px solid var(--line);margin-top:12px;padding-top:6px}
+.srclist ol{margin:4px 0 0;padding-left:20px;font-size:13.5px}
+.srclist li{margin:2px 0}
+.srclist h2{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.inserted{border:1px solid var(--green);border-left:4px solid var(--green);border-radius:8px;padding:10px 14px;margin:12px 0 0;background:var(--green-bg)}
+.inserted h3{margin:0 0 6px}
+.memo-outline{margin:0 0 6px;padding-left:22px;font-size:14px}
+.memo-outline li{margin:3px 0}
+.memo-outline li.ok strong{color:var(--green)}
+.indsec{border:1px solid var(--green);border-left:4px solid var(--green);border-radius:8px;padding:8px 14px;margin:10px 0}
+.indsec.pending{border-color:var(--line);border-left-color:var(--amber);border-style:dashed}
+.indsec h2{font-size:17px;margin:0 0 4px;display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
+.indsec .indbody h2{font-size:15px}
+.pmok{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;background:var(--green-bg);color:var(--green);padding:2px 8px;border-radius:4px;font-weight:500}

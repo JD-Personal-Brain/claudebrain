@@ -110,5 +110,57 @@ window.REPLAY = {
     { borrowerId: "C109", headline: "Chequamegon's statements are months late",
       explanation: "The FY2025 audited statements are 172 days late and the Q2 2026 compliance certificate is 66 days late. The RM note says the CFO left in July and the new controller expects the audit in November.",
       toCheck: "Ask the controller for a firm date for the audit, and for interim figures in the meantime." }
-  ]
+  ],
+  // A11 (version 5): the industry background sections, drafted from the approved industry source pack only
+  // (src/data/industries.js). No borrower data was given; every sentence ends with its source tag.
+  industry: {
+    restaurants: `## Industry size and trend
+- Upper Midwest full-service restaurant sales were $14.2B in 2025, up 3.1% from 2024. [S1]
+- Sales are forecast to grow 2.5% a year through 2028. [S1]
+
+## Main drivers
+- Dinner service brings in about 62% of sales. [S1]
+- Menu prices have risen: food-away-from-home prices were up 4.0% in the year to October 2025, against 2.4% for grocery prices. [S3]
+
+## Main risks
+- Labor is 33% of sales at the median full-service restaurant, up from 30% in 2022. [S2]
+- Food costs are 31% of sales at the median full-service restaurant. [S4]
+- Closures rose to 6.8% of locations in 2025, from 5.9% in 2024, and operators with several locations closed less often than single-location operators. [S4]
+
+## Outlook
+- Sales are forecast to grow 2.5% a year through 2028. [S1]
+- 71% of operators surveyed expect staffing to stay hard to find in 2026. [S2]`,
+    distribution: `## Industry size and trend
+- Upper Midwest industrial distribution sales were $38.5B in 2025, up 1.8% from 2024. [S1]
+- Sales are forecast to grow 2.2% a year through 2028. [S1]
+
+## Main drivers
+- Distributor sales tend to follow factory output, with a lag of about one quarter. [S4]
+- The sample regional manufacturing index averaged 49.6 in the first half of 2026, under the 50 line that marks shrinking activity. [S2]
+- New orders in the index rose for three months in a row to September 2026. [S2]
+
+## Main risks
+- Distributors surveyed held 74 days of inventory on average in 2025, up from 66 days in 2023. [S3]
+- 38% of distributors surveyed said online competitors had taken business from them. [S3]
+- Customer concentration is the most common weakness listed for small distributors. [S4]
+
+## Outlook
+- Sales are forecast to grow 2.2% a year through 2028, with gross margins averaging 24.5% of sales. [S1] [S3]`,
+    metalfab: `## Industry size and trend
+- Upper Midwest metal fabrication shipments were $21.7B in 2025, up 2.9% from 2024. [S1]
+- Shipments are forecast to grow 2.0% a year through 2028. [S1]
+
+## Main drivers
+- Steel is about 35% of the cost of a typical fabricated part. [S2]
+- Steel mill product prices were down 6.5% in the year to August 2026. [S2]
+- 64% of fabricators surveyed plan to buy automated equipment by 2027. [S3]
+
+## Main risks
+- Skilled welders and machinists were the hardest roles to fill for 58% of fabricators surveyed. [S3]
+- Fabricators that sell mainly to agriculture and construction see larger swings in orders than those selling to medical and aerospace customers. [S4]
+
+## Outlook
+- Shipments are forecast to grow 2.0% a year through 2028. [S1]
+- Hiring skilled staff stays the hardest constraint for 58% of fabricators surveyed. [S3]`
+  }
 };

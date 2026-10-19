@@ -27,6 +27,7 @@
     <nav class="side" id="nav" aria-label="Screens">
       <button type="button" data-screen="today" class="on nav-today">Today</button>
       <span class="nav-label">What the assistant does</span>
+      <button type="button" data-screen="industry">Industry background</button>
       <button type="button" data-screen="file">Borrower file</button>
       <button type="button" data-screen="review">Review and memo drafts</button>
       <span class="nav-label">Coming in wave 2 · preview</span>
@@ -189,13 +190,13 @@
         <div class="panel">
           <h2 class="h-small">How a request flows</h2>
           <div class="flow" role="list" aria-label="How a request flows">
-            <div class="fbox" role="listitem"><b>Data</b><span>12 sample borrowers, made up; no outside data feed</span></div>
+            <div class="fbox" role="listitem"><b>Data</b><span>12 sample borrowers and a sample industry source pack, made up; no outside data feed</span></div>
             <div class="farrow" aria-hidden="true">→</div>
             <div class="fbox" role="listitem"><b>Borrower file (A7)</b><span>Page tools gather it; code lists what's missing</span></div>
             <div class="farrow" aria-hidden="true">→</div>
-            <div class="fbox fbox-ai" role="listitem"><b>Claude (A7, A8, A9)</b><span>Summarizes, drafts routine sections, explains flags</span></div>
+            <div class="fbox fbox-ai" role="listitem"><b>Claude (A7, A8, A9, A11)</b><span>Drafts industry sections, summarizes, drafts routine sections, explains flags</span></div>
             <div class="farrow" aria-hidden="true">→</div>
-            <div class="fbox" role="listitem"><b>Checks</b><span>Numbers traced, guardrails, gaps marked, audit log</span></div>
+            <div class="fbox" role="listitem"><b>Checks</b><span>Numbers traced, sources cited, guardrails, gaps marked, audit log</span></div>
             <div class="farrow" aria-hidden="true">→</div>
             <div class="fbox fbox-me" role="listitem"><b>The PM decides</b><span>Writes the borrower risk rating and recommendation; approves</span></div>
             <div class="farrow" aria-hidden="true">→</div>
@@ -203,8 +204,9 @@
           </div>
         </div>
         <div class="panel">
-          <h2 class="h-small">The three agents</h2>
+          <h2 class="h-small">The four agents</h2>
           <div class="tw"><table class="about-table"><thead><tr><th>Agent</th><th>Job</th><th>In this prototype</th><th>In production (our assumption, to confirm)</th><th>Person in charge</th></tr></thead><tbody>
+            <tr><td>A11 Industry background drafter</td><td>Drafts a credit memo's industry section (size and trend, drivers, risks, outlook), the section an outside firm writes today (to confirm)</td><td>Claude, live, from a made-up approved source pack only, never borrower data. Code checks that every sentence cites a source and every number is in the sources, and flags any borrower named or judged</td><td>AWS Bedrock (Knowledge Bases) over the bank's licensed industry research</td><td>The PM edits and approves it; the content owner approves the sources</td></tr>
             <tr><td>A7 Borrower file builder</td><td>Pulls one borrower's file together, every figure with its source, and lists what's missing or late</td><td>Four page tools in code gather the file; Claude, live, calls them and writes a short summary</td><td>Snowflake and AWS Bedrock (Knowledge Bases)</td><td>The PM; the data owners for the inputs</td></tr>
             <tr><td>A8 Review and memo drafter</td><td>Drafts the routine sections of an annual review or credit memo; leaves the judgment blank</td><td>Claude, live, from A7's file; it states facts with sources and draws no conclusions. Code checks every number, marks gaps and blocks any rating, recommendation or rate commentary</td><td>AWS Bedrock or a Copilot Studio agent, in the bank's Word template</td><td>The PM writes the judgment; the credit officer decides</td></tr>
             <tr><td>A9 Early warning watcher</td><td>Checks each borrower against credit risk's early warning rules and explains each flag</td><td>Five sample rules in code (EW1 to EW5), run in your browser (no AI); Claude explains the top flags. Stops if the data is too old</td><td>Snowflake (Cortex), each night</td><td>The PM decides what to do; credit risk owns the rules</td></tr>
@@ -214,12 +216,13 @@
           <h2 class="h-small">The data</h2>
           <ul class="plain">
             <li><strong>Sample borrowers:</strong> 12 made-up businesses for one PM, each with three years of statement figures, loans, covenants, deposits, payments, due dates, the last review and an RM note; plus 2 borrowers of another PM, used only to show the refusal. One borrower (Chequamegon Timber Works) is missing its FY2025 statements, to show the agents stopping rather than guessing.</li>
+            <li><strong>Sample industry source pack:</strong> three industries (full-service restaurants, industrial distribution, metal fabrication), each with four made-up dated sources such as "Sample industry report, 2026". No real research firm, report or figure is used. It's the only thing A11 reads.</li>
             <li><strong>No outside data feed:</strong> everything the agents read is in the sample borrower file. An earlier version showed an outside interest-rate series as background, but it never entered a draft, so version 4 removed it. In production, our assumption (to confirm with the bank) is that the agents read certified data and the credit file from the bank's own systems.</li>
           </ul>
         </div>
         <div class="panel">
           <h2 class="h-small">How it's tested</h2>
-          <p>Automated tests click through every promise on this page, with a stand-in for Claude: the tour, each agent, the guardrails (risky phrasings blocked and a PM's ordinary credit questions allowed), the judgment sections left blank, approval as final by the PM (the assistant never submits), the number check with planted made-up numbers, the missing-statement stop, laptop and phone layouts, and the recorded-run fallback. In a real build this grows into the test set and quality bar (K9), using real past reviews graded by experienced PMs.</p>
+          <p>Automated tests click through every promise on this page, with a stand-in for Claude: the tour, each agent, the industry section's sources and its refusal of borrower data and credit judgments, the guardrails (risky phrasings blocked and a PM's ordinary credit questions allowed), the judgment sections left blank, approval as final by the PM (the assistant never submits), the number check with planted made-up numbers, the missing-statement stop, laptop and phone layouts, and the recorded-run fallback. In a real build this grows into the test set and quality bar (K9), using real past reviews graded by experienced PMs.</p>
         </div>
         <div class="panel" id="pilotNeeds">
           <h2 class="h-small">What a pilot would need (our assumption, to confirm)</h2>
@@ -231,9 +234,43 @@
         </div>
         <div class="panel">
           <h2 class="h-small">Where it sits in the plan</h2>
-          <p>This is the early clickable mock-up the product workflow calls for, built to test reactions. It follows the PM plan: The PM Assistant's wave 1 capabilities (the borrower file and the review and memo drafts) and a wave 2 preview (early warning), agents A7 to A9, workflows B10 to B14, and controls K1, K2, K3, K4, K7, K8, K12, K22 and K25.</p>
+          <p>This is the early clickable mock-up the product workflow calls for, built to test reactions. It follows the PM plan: The PM Assistant's wave 1 capabilities (the industry background draft, the borrower file and the review and memo drafts) and a wave 2 preview (early warning), agents A7 to A9 and A11, workflows B10 to B14 and B16, and controls K1, K2, K3, K4, K7, K8, K12, K22 and K25.</p>
           <p class="muted">The code is kept like a real team's: source files, a build script, automated tests, a changelog, and every version saved.</p>
         </div>
+      </section>
+
+      <!-- Industry background (workflow B16, agent A11; version 5) -->
+      <section class="screen" id="s-industry" data-screen="industry" hidden>
+        <div class="shead">
+          <span class="eyebrow" title="Workflow B16 in the PM plan, agent A11">Write the credit memo · workflow B16</span>
+          <h1>Industry background</h1>
+          <p class="lede">The Industry background drafter (A11) writes a first draft of a credit memo's industry section: the industry's size and trend, main drivers, main risks and outlook. Today an outside firm writes this section (details to confirm with the bank). Every sentence cites an approved source; you edit and approve it.</p>
+          <p class="reads" id="indReads"><strong>Reads:</strong> approved industry sources only. No borrower data. <span class="muted">It makes no judgment about any borrower: that analysis stays yours.</span></p>
+        </div>
+        <div class="meetings" id="indPick" role="radiogroup" aria-label="Industries"></div>
+        <div class="panel indnote">
+          <form class="ask" id="indNoteForm">
+            <label class="sr" for="indNote">A note for the drafter (optional)</label>
+            <input id="indNote" type="text" autocomplete="off" placeholder="A note for the drafter (optional), such as: focus on labor costs">
+            <button class="btn" type="submit">Check the note</button>
+          </form>
+          <div class="presets" id="indPresets"></div>
+          <div class="answer" id="indNoteOut" aria-live="polite"></div>
+        </div>
+        <div class="runbar">
+          <button class="btn btn-primary" id="replayInd" type="button">Watch it work</button>
+          <button class="btn" id="runInd" type="button">Run live on Claude</button>
+          <button class="btn btn-quiet" id="stopInd" type="button" hidden>Stop</button>
+          <span class="runstate" id="indState" role="status"></span>
+        </div>
+        <div class="split">
+          <div class="panel" id="indStepsPanel">
+            <h2 class="h-small">What the Industry background drafter (A11) did</h2>
+            <ol class="timeline" id="indSteps"></ol>
+          </div>
+          <article class="panel doc" id="indDoc" aria-live="polite"></article>
+        </div>
+        <p class="prod-note">In production (our assumption, to confirm): the source pack is the industry research the bank already licenses, approved by its content owner, and A11 runs on AWS Bedrock (Knowledge Bases), with no access to borrower data.</p>
       </section>
     </main>
   </div>

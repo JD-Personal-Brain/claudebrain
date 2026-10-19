@@ -6,7 +6,7 @@ import base64, glob, json, os, re, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(HERE, "src")
-SCRIPTS = ["data/portfolio.js", "replay.js", "agents.js", "app.js", "tour.js"]  # load order matters
+SCRIPTS = ["data/portfolio.js", "data/industries.js", "replay.js", "agents.js", "app.js", "tour.js"]  # load order matters
 
 def read(p): return open(os.path.join(SRC, p), encoding="utf-8").read()
 
