@@ -11,7 +11,7 @@ assistive first, one job each, read-only by default, every action logged.
 
 ## 1. Decide where it goes
 - **Runs the product machine on any project** (it helps the team do the work): the **agent library**, `playbook/agents.md`, numbered M1, M2 and so on.
-- **Part of one project's product, or only useful to that project:** that project memo's **Appendix A**, numbered A1, A2 and so on.
+- **Part of one project's product, or only useful to that project:** that project memo's **Appendix A**, numbered on from the last product agent of any project (A7 to A10 are the PM plan's), so no number means two things.
 - **Keeps my own reference pages current** (not part of the product machine): the "My research helpers" section at the end of `playbook/agents.md`, numbered H1, H2 and so on.
 
 ## 2. Fill in every field

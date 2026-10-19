@@ -7,7 +7,7 @@ description: Show the Document Library, the one page listing every designed docu
 
 The library lives at https://claude.ai/artifact/LTpbCT4kN4LcyEoYnh7vgj and is
 pinned to the user's claude.ai sidebar. It's built from `designs/library.json`.
-The page is one **index**: every page, one row each with its status; the arrow opens a one-line description and the page's sections, each linked. Sections marked `"numbered": true` in `library.json` (the bank and the role, how we deliver, relationship managers) show plain numbered rows instead, and sections marked `"bulleted": true` (reference, research, my workspace) plain rows with a dot: name and status only, no description or sections; the name opens the page. It's read
+The page is one **index**: every page, one row each with its status; the arrow opens a one-line description and the page's sections, each linked. Sections marked `"numbered": true` in `library.json` (the bank and the role, how we deliver, relationship managers, portfolio managers) show plain numbered rows instead, and sections marked `"bulleted": true` (reference, research, my workspace) plain rows with a dot: name and status only, no description or sections; the name opens the page. It's read
 from each page's own jump menu (or its section headings), so it updates itself
 when the library is rebuilt. A new page must be added to `PAGE_FILE` in
 `designs/library-build.py`, or the build stops and says so.

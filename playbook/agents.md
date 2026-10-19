@@ -5,7 +5,7 @@ reused on every project, so they're specified once here: M1 to M19 run the
 machine's own paperwork and routing, and M20 to M33 do the team's analysis,
 testing and monitoring work (they started as the RM project's helpers and were
 made general on 2026-10-10). A project's own agents (the product users see, or
-agents only that project needs) go in its memo's Appendix A, like A1, A2, A3 and A5 in
+agents only that project needs) go in its memo's Appendix A, like A7 to A10 in the PM memo and A1, A2, A3 and A5 in
 the RM memo. H1 and on are my own research helpers (see "My research helpers" near the end of the Agent Library page):
 they keep my reference pages current and are not part of the product machine.
 
