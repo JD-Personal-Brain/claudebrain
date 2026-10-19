@@ -150,16 +150,7 @@ up (our assumption for Associated, to confirm): access to real client data and s
 partner sees each version as it is built. Weeks are estimates to confirm in
 the first days.
 
-**What lets us move this fast.** Six conditions, each checked in the first days:
-
-| Condition | Why it matters | Checked by |
-|---|---|---|
-| **1. Build from day one** | A working prototype on sample data in week 1; no real client data is needed until it's tested. | Product manager, platform team, week 1 |
-| **2. Standard features only** | Wave 1 configures features already in Salesforce, M365 Copilot and Power Platform, which we assume already have bank approval for this kind of use (⚠️ to confirm with IT and risk in week 1). | Product manager, platform teams, week 1 |
-| **3. Low risk by design** | Internal only, assistive, read-only by default, nothing near credit decisions or pricing. We expect a low rating (⚠️ the risk partner decides). | Risk partner gives an early rating, week 2 |
-| **4. Review as we go** | The risk partner sees each version as it's built, so sign-off confirms what they already know. | Product manager and risk partner, every week |
-| **5. Data access on day one** | Requests go in on day one and wave 1 uses only certified data, because access is often the slowest step. | Data owners sign the data contract, week 2 |
-| **6. Fast decisions** | Each gate is decided within days, in writing when every criterion is met, because waiting for decisions adds weeks. | Sponsor, with the people named for each gate |
+**What lets us move this fast.** The six conditions in the [Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ#what-lets-a-project-move-fast), each checked in the first days. For RMs: condition 2 means features already in Salesforce, M365 Copilot and Power Platform (⚠️ to confirm with IT and risk in week 1); condition 3 holds, because wave 1 suggests only deposit and treasury gaps, so we expect a low rating (⚠️ the risk partner decides); data owners sign the data contract in week 2.
 
 **Backup plan if data access or review runs long.** The meeting follow-up's
 recap and email go first: they're drafted from the RM's own notes in M365 Copilot (Teams transcripts

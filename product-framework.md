@@ -85,6 +85,18 @@ partner. Comes from: our choice, resting on the model risk guidance's
 expectation that changes are reviewed. ⚠️ The bank's model risk policy has the
 final word on what counts as material.
 
+## What lets a project move fast
+Six conditions, each checked in a project's first days (moved here from the RM plan on 2026-10-19, so every plan links to one home). Comes from: our choice, so the pace is set by what really blocks us. Each plan says how they apply to it, and which one doesn't.
+
+| Condition | Why it matters | Checked by |
+|---|---|---|
+| **1. Build from day one** | A working prototype on sample data in week 1; no real client data is needed until it's tested. | Product manager, platform team, week 1 |
+| **2. Standard features only** | Wave 1 configures features already in the platforms the bank runs, which we assume already have bank approval for this kind of use (⚠️ to confirm with IT and risk in week 1). | Product manager, platform teams, week 1 |
+| **3. Low risk by design** | Internal only, assistive, read-only by default, nothing near credit decisions or pricing, so we expect a low rating (⚠️ the risk partner decides). A product that informs credit decisions can't meet this one: it takes the higher-risk path (control K3). | Risk partner gives an early rating, week 2 |
+| **4. Review as we go** | The risk partner sees each version as it's built, so sign-off confirms what they already know. | Product manager and risk partner, every week |
+| **5. Data access on day one** | Requests go in on day one and wave 1 uses only certified data, because access is often the slowest step. | Data owners sign the data contract, by gate 2 |
+| **6. Fast decisions** | Each gate is decided within days, in writing when every criterion is met, because waiting for decisions adds weeks. | Sponsor, with the people named for each gate |
+
 ## The five kinds of measures
 The main outcome measure is agreed in Discover (1.1) and its baseline recorded in
 1.7; the full set is set in Define (2.7) and tracked in Measure and iterate.
