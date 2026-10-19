@@ -48,4 +48,4 @@ question, governance thread and gate from the table above, so they can't drift f
 - **5. Release and adopt:** confirm release readiness · launch the pilot, with a comparison group · build it into routines (the core of adoption) · train users on their own work · recruit champions and celebrate wins · fix fast · scale in user waves after a go/no-go check.
 - **6. Measure and iterate:** track the measures on a live dashboard · compare with the baseline and the comparison group · re-test after every change, and watch for quality slipping ("drift") · hold the monthly keep / change / stop review · feed the next feature wave · improve the machine itself.
 
-_Last updated: 2026-10-18_
+_Last updated: 2026-10-19_

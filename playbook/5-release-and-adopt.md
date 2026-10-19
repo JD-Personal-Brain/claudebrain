@@ -186,4 +186,4 @@ Product Machine page.
 | 5.7 | None: confirming the long-term owner stays with a person | Me | Me | — |
 | 5.7 | M6 Gate pack drafter (shared) | Draft | Draft | Yes, M6 |
 
-_Last updated: 2026-10-18_
+_Last updated: 2026-10-19_

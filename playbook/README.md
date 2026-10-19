@@ -77,7 +77,7 @@ with the bank's risk partner at sub-step 2.4.
 | 1.3 Interview and shadow users | Inherits from the controls it sets, builds, proves or watches: K24 law or regulator | Each control's owner (Controls Catalog) |
 | 2.2 Choose the platform and delivery path | Inherits from the controls it sets, builds, proves or watches: K14 law or regulator; K18 bank policy; K20 bank policy | Each control's owner (Controls Catalog) |
 | 2.3 Data contract | Bank policy on data use ⚠️, resting on customer privacy law (the Gramm-Leach-Bliley Act) | The data owner |
-| 2.4 Risk intake | Regulator: the model risk guidance (SR 11-7, with the OCC's matching Bulletin 2011-12, possibly replaced by SR 26-2: item PL7 in the Open Items log), through the bank's model risk policy; also inherits K4 bank policy, K12 bank policy and K24 law or regulator (ask compliance) | Model risk |
+| 2.4 Risk intake | Regulator: the model risk guidance (SR 11-7, with the OCC's matching Bulletin 2011-12, possibly replaced by SR 26-2: item PL7 in the Open Items log), through the bank's model risk policy; also inherits K4 bank policy, K12 bank policy, K13 law or regulator and K24 law or regulator (ask compliance) | Model risk |
 | 2.7 Set the measures, quality bar and value model | Inherits from the controls it sets, builds, proves or watches: K4 bank policy; K9 law or regulator | Each control's owner (Controls Catalog) |
 | 3.1 Design the solution and choose the AI capabilities | Inherits from the controls it sets, builds, proves or watches: K19 bank policy | Each control's owner (Controls Catalog) |
 | 3.2 Prepare trusted data | Inherits from the controls it sets, builds, proves or watches: K4 bank policy; K6 bank policy | Each control's owner (Controls Catalog) |
@@ -90,7 +90,7 @@ with the bank's risk partner at sub-step 2.4.
 | 4.3 Testing evidence | Regulator: the model risk guidance expects testing; our quality bar sets the thresholds | Model risk |
 | 4.4 Fairness check | Law: fair lending (the Equal Credit Opportunity Act) wherever similar clients could be treated differently ⚠️ (my reading for a tool that doesn't decide credit); always required on the higher-risk path (control K3), where drafts inform credit decisions | Compliance |
 | 4.5 Confirm the controls work | Regulator and bank policy, through the controls it proves | Each control's owner (Controls Catalog) |
-| 4.6 Vendor reviews | Regulator: the US banking regulators' third-party risk guidance (2023); also inherits K19 bank policy | Vendor risk; each control's owner (Controls Catalog) |
+| 4.6 Vendor reviews | Regulator: the US banking regulators' third-party risk guidance (2023); also inherits K14 law or regulator and K19 bank policy | Vendor risk; each control's owner (Controls Catalog) |
 | 4.7 Sign-offs | Bank policy: its approval process for AI and models ⚠️; on the higher-risk path (control K3), also the bank's credit policy ⚠️ | Model risk, as owner of the bank's AI and model approval policy ⚠️ [name needed]; the credit policy owner for the higher-risk path |
 | 4.8 Monitoring plan | Regulator: the model risk guidance expects ongoing monitoring; also inherits the law and bank-policy controls on its control watch list (Controls Catalog) | Model risk |
 | 5.1 Confirm release readiness | Inherits from the controls it sets, builds, proves or watches: K15 bank policy; K16 law or regulator | Each control's owner (Controls Catalog) |
@@ -101,4 +101,4 @@ with the bank's risk partner at sub-step 2.4.
 | Step 4 gate | Regulator and bank policy (the formal approval) | Model risk, as owner of the bank's AI and model approval policy ⚠️ [name needed] |
 | The other five gates | Our choice | The product manager |
 
-_Last updated: 2026-10-18_
+_Last updated: 2026-10-19_

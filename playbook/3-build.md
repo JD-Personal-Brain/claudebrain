@@ -189,4 +189,4 @@ Product Machine page.
 | 3.7 | M26 Test grader | Draft | Auto | Yes, M26 |
 | 3.7 | M6 Gate pack drafter | Draft | Draft | Yes, M6 |
 
-_Last updated: 2026-10-18_
+_Last updated: 2026-10-19_

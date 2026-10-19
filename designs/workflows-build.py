@@ -263,7 +263,7 @@ page = f'''<title>Workflow Maps</title>
 <section id="pm" class="mapwrap">
 <div class="stephead"><span class="label">Map 3 · The PM Assistant</span><h2>How a PM uses the product</h2>
 <p class="intro" style="margin-top:6px;color:var(--muted)">A portfolio manager's (PM's) work, with each of the product's workflows placed where it helps. Every PM-facing workflow (B10 to B14 and B16) has a point where the PM decides; the assistant never rates, approves, declines or prices credit. B15 is the release routine behind them.</p></div>
-<div class="note">⚠️ Grouping the workflows into these three stages is my framing of the first-cut plan (2026-10-19). Confirm it with PMs in Discover.</div>
+<div class="note">⚠️ Grouping the workflows into these three stages is my framing of the plan. Confirm it with PMs in Discover.</div>
 {map3}
 {loop3}
 </section>

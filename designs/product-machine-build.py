@@ -56,10 +56,6 @@ check_html=(f'<p>{inline(" ".join(paras(ck_intro)))}</p><h3>First, cut</h3><ol>{
     +"".join(f'<p>{inline(x)}</p>' for x in paras(ck_cut_after[0] if ck_cut_after else ""))
     +f"<h3>Then, automate what's left</h3><ol start=\"5\">{numbered(ck_auto_list)}</ol>"
     +"".join(f'<p>{inline(x)}</p>' for x in ck_after))
-# The four kinds, read from "## Three kinds of work, plus partner sign-offs" in product-machine.md (their one home)
-_kt=re.findall(r"^- \*\*(Auto|Draft|Me|Partner)(?: \((.+?)\))?:\*\* (.+)$",section("## Three kinds of work, plus partner sign-offs"),re.M)
-if [k for k,_,_ in _kt]!=["Auto","Draft","Me","Partner"]: raise SystemExit("Could not read the four kinds from product-machine.md")
-kinds_html="".join(f'<div class="kind">{chip(k.lower())}<h3>{inline((t or "partner sign-off")[:1].upper()+(t or "partner sign-off")[1:])}</h3><p>{inline(d[:1].upper()+d[1:])}</p></div>' for k,t,d in _kt)
 gates_html="".join(f'<p>{inline(x)}</p>' for x in paras(section("## Gates in writing when they're clean")))
 ms=section("## Measuring the machine")
 ms_lines=ms.strip().split("\n")
@@ -80,6 +76,10 @@ rules_html="".join(f'<div class="rule"><h3>{inline(t.rstrip(".:"))}</h3><p>{inli
 NUMW={1:"One",2:"Two",3:"Three",4:"Four",5:"Five",6:"Six",7:"Seven",8:"Eight"}
 LBL={"auto":"Auto","draft":"Draft","me":"Me","partner":"Partner"}
 def chip(k): return f'<span class="chip k-{k}">{LBL[k]}</span>'
+# The four kinds, read from "## Three kinds of work, plus partner sign-offs" in product-machine.md (their one home)
+_kt=re.findall(r"^- \*\*(Auto|Draft|Me|Partner)(?: \((.+?)\))?:\*\* (.+)$",section("## Three kinds of work, plus partner sign-offs"),re.M)
+if [k for k,_,_ in _kt]!=["Auto","Draft","Me","Partner"]: raise SystemExit("Could not read the four kinds from product-machine.md")
+kinds_html="".join(f'<div class="kind">{chip(k.lower())}<h3>{inline((t or "partner sign-off")[:1].upper()+(t or "partner sign-off")[1:])}</h3><p>{inline(d[:1].upper()+d[1:])}</p></div>' for k,t,d in _kt)
 def cell_num(num):
     # a sub-step number links to its card in the Steps Catalog (idea 49); "Gate" and "All" stay plain
     if re.fullmatch(r"\d\.\d",num):
