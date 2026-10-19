@@ -5,7 +5,7 @@
   "lines": [
     "Meet The PM Assistant: one AI assistant for every portfolio manager. It gathers each borrower's file, drafts the routine parts of reviews, and spots trouble sooner.",
     "You're Sam Okafor, a senior portfolio manager with twelve business borrowers. Everything here is sample data.",
-    "The Borrower File Builder checks Sam may see the borrower, then reads five sources itself, including real Federal Reserve rate data.",
+    "The Borrower File Builder checks Sam may see the borrower, then reads four sources itself: statements, loans, deposits and documents.",
     "Every figure shows its source. Anything missing or late is listed, never filled in.",
     "From the file, Claude drafts the routine sections of the annual review. Then code checks every number, gap and word.",
     "Every draft is marked AI draft, and names the credit officer who decides.",

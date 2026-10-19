@@ -17,7 +17,7 @@ holds the ones worth keeping.
 | 1 | The use case kit | The standard set of pieces every use case has (a leader layer and a working layer), the use case measured against it, and the gaps fixed | 2 (2026-10-18) |
 | 2 | A full product memo | A full product plan for a new use case, from my saved files | 1 (2026-10-09) |
 | 3 | A business briefing on the bank | The Bank Business Briefing, rebuilt from public sources each quarter | 1 (2026-10-09) |
-| 4 | A showcase prototype with live agents | A clickable prototype of a user group's AI assistant, with three agents running live on Claude, a guided tour and a video, built from our framework | 1 (2026-10-18) |
+| 4 | A showcase prototype with live agents | A clickable prototype of a user group's AI assistant, with three agents running live on Claude, a guided tour and a video, built from our framework | 2 (2026-10-19) |
 | 5 | Copy a user group's work to the next group | The whole section for a new user group (such as portfolio managers) as a first cut: plan, three short pages, workflow map, agents, prototype and detail document, copied from the RM section | 1 (2026-10-19) |
 
 ## Prompt 1: the use case kit (organize a use case, find its gaps, fix them)
@@ -359,7 +359,7 @@ Tone:     An analyst's briefing: factual and direct, no selling.
 **What changed:** version 1, written 2026-10-09 as Example 5 in the Prompting Guide; moved here 2026-10-17.
 
 ## Prompt 4: a showcase prototype with live agents (like the RM Assistant Prototype)
-**Version 1** (2026-10-18). First run: relationship managers (RMs).
+**Version 2** (2026-10-19). First run: relationship managers (RMs).
 
 Builds a clickable prototype of a user group's AI assistant to show bank leaders
 we can turn the plan into working code: three agents running live on Claude, a
@@ -415,12 +415,13 @@ Steps:    1. Read the inputs. Write a "done" checklist (below,
              English; A3 drafting the brief; A3 drafting the
              follow-up email and call note]. Show each agent
              working: its steps, the data it read and its sources.
-          4. Feed the agents from one real public data source as
+          4. Where the group's agents use outside data in the
+             plan, feed them from one real public data source as
              well as the sample data (for example, public company
-             filings or economic data), to show a live outside
-             feed. First test which sources the published page
-             can reach; if none, use a dated saved copy and say so
-             on screen.
+             filings or economic data). First test which sources
+             the published page can reach; if none, use a dated
+             saved copy and say so on screen. If no agent uses
+             outside data, leave it out.
           5. Show the controls working on screen: the person
              decides (K1), read-only until the [RM] approves (K2),
              users see only their own clients (K4), every answer
@@ -487,7 +488,7 @@ Tone:     Confident and clear, like a product demo: impressive by
 **The done checklist it starts from** (step 1 adds to it):
 1. The tour starts on first visit, runs under 2 minutes, and can be skipped and replayed.
 2. Each of the three agents runs on a sample client and shows its steps, inputs and sources.
-3. The outside data source shows a live or dated value, labeled with where it came from.
+3. Where an agent uses outside data, the source shows a live or dated value, labeled with where it came from.
 4. Asking for a credit decision or a price is refused, and every agent action lands in the audit log.
 5. Nothing is saved or sent until the persona clicks approve.
 6. Every screen says "sample data", and nothing looks like the bank's own product.
@@ -496,7 +497,7 @@ Tone:     Confident and clear, like a product demo: impressive by
 
 **For a different user group:** change the `[brackets]` (for portfolio managers: their assistant, their wave 1 capabilities and their agents). Everything else stays.
 
-**What changed:** version 1, written 2026-10-18.
+**What changed:** version 1, written 2026-10-18. Version 2 (2026-10-19): an outside data feed only where the plan's agents use one (Elon mode, from the PM prototype, whose feed never entered a draft).
 
 ## Prompt 5: copy a user group's work to the next group (like the portfolio manager section)
 **Version 1** (2026-10-19). First run: portfolio managers (PMs), copied from the relationship manager (RM) work.

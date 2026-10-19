@@ -282,7 +282,7 @@ PAGE_NAMES = [  # name as people write it -> the page's built file
     ("Controls Catalog", "controls.html"), ("Agent Library", "agents.html"), ("Steps Catalog", "steps.html"),
     ("Workflow Maps", "workflows.html"), ("Use Case Library", "use-case-library.html"), ("RM Detail", "rm-ai-reference.html"),
     ("RM Assistant Plan", "rm-analytics-plan.html"), ("RM Assistant Prototype", "prototype-v1.html"), ("RM Executive Summary", "rm-executive-summary.html"),
-    ("PM Detail", "pm-ai-reference.html"), ("PM Assistant Plan", "pm-assistant-plan.html"), ("PM Assistant Prototype", "prototypes/pm-assistant/prototype-v3.html"),
+    ("PM Detail", "pm-ai-reference.html"), ("PM Assistant Plan", "pm-assistant-plan.html"), ("PM Assistant Prototype", "prototypes/pm-assistant/prototype-v4.html"),
     ("PM Executive Summary", "pm-executive-summary.html"),
     ("Product Workflow", "role-workflow.html"), ("Product Framework", "product-framework.html"), ("Product Machine", "product-machine.html"),
     ("Product Playbook", "playbook.html"), ("Elon Mode", "elon-mode.html"), ("Glossary", "glossary.html"), ("Bank Business Briefing", "bank-business.html"),

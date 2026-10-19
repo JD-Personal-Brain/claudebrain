@@ -21,7 +21,7 @@ const STUB = () => {
     if (text.includes("You are A7")) {
       const id = text.match(/\(id (C\d+)\)/)[1];
       if (opts.tools) {
-        for (const t of window.REPLAY.fileSteps) await opts.tools.find(x => x.name === t).execute(t === "get_market_context" ? {} : { borrower_id: id }, {});
+        for (const t of window.REPLAY.fileSteps) await opts.tools.find(x => x.name === t).execute({ borrower_id: id }, {});
         try { await opts.tools.find(x => x.name === "get_financials").execute({ borrower_id: "C201" }, {}); } catch (e) { window.__k4 = e.message; }
       }
       const out = window.REPLAY.fileSummary[id] || "## What's in the file\n- A borrower in your portfolio. [Loan system]";
@@ -31,7 +31,7 @@ const STUB = () => {
     if (text.includes("You are A8")) {
       const id = text.match(/\(id (C\d+)\)/)[1]; const key = (text.includes("credit memo for") ? "memo:" : "review:") + id;
       let out = window.REPLAY.drafts[key];
-      if (window.__marketDraft) out = out.replace("## Changes and items to note\n", "## Changes and items to note\n- The 10-year Treasury yield was 4.68% in August 2026, so rates are rising. [Market: Fed H.15]\n");
+      if (window.__rateDraft) out = out.replace("## Changes and items to note\n", "## Changes and items to note\n- Rates have risen this year, so the rate outlook matters for the renewal.\n");
       if (window.__badDraft) out = out.replace("## Changes and items to note\n", "## Changes and items to note\n- We recommend approval of the renewal.\n") + "\n\n## Risk rating\n- A rating of 4 fits.";
       opts.onText && opts.onText({ text: out, delta: out });
       return { text: out, truncated: false };
@@ -100,15 +100,15 @@ const check = (name, ok, proof) => { results.push({ name, ok: !!ok, proof }); co
   await p.waitForSelector("#watchSummary .live-tag", { timeout: 6000 });
   const wcards = await p.$$eval("#watchList .wcard", n => n.length);
   const wtrace = await p.$$eval("#watchTrace li.done", n => n.map(x => x.textContent));
-  check("2. Each agent runs and shows its steps, inputs and sources", mode === "live" && fileSteps.length >= 6 && fileSrc >= 15 && draft.secs.length === 5 && draft.src >= 15 && wcards === 5 && wtrace.length === 2,
+  check("2. Each agent runs and shows its steps, inputs and sources", mode === "live" && fileSteps.length >= 5 && fileSrc >= 15 && draft.secs.length === 5 && draft.src >= 15 && wcards === 5 && wtrace.length === 2,
     `mode=${mode}; A7: ${fileSteps.length} steps done, ${fileSrc} source tags; A8: ${draft.secs.length} sections, ${draft.src} source tags; A9: ${wcards} flagged borrowers, trace "${wtrace[0]}"`);
 
-  // 3. The outside data source is shown, labeled and dated.
-  const mStep = fileSteps.find(t => /market data/i.test(t)) || "";
-  const mRead = await p.evaluate(() => { const li = [...document.querySelectorAll("#fileSteps li")].find(x => /market data/i.test(x.textContent)); return li ? li.querySelector("pre").textContent : ""; });
-  await p.click('#nav button[data-screen="about"]'); const about = await p.textContent("#marketLine");
-  check("3. Outside data shows a dated value with where it came from", /Fed H\.15/.test(mStep) && /fetched October 19, 2026/.test(mStep) && /2026-08/.test(mRead) && /4\.68/.test(mRead) && /Federal Reserve/.test(about),
-    `"${mStep.trim()}"; it read ${/4\.68/.test(mRead) ? "4.68% for 2026-08" : "?"}; How it's built names the Federal Reserve H.15 release`);
+  // 3. Prompt 4's checklist item about an outside data source: not used (removed in v4). The check now proves the feed is gone.
+  const noFeed = await p.evaluate(() => ({ market: typeof window.MARKET === "undefined", tool: !Object.keys(window.AGENTS.TOOL_PLAIN).some(k => /market/.test(k)) && !window.AGENTS.makeTools(() => ({ done() {}, fail() {} })).some(t => /market/.test(t.name)), file: !("market" in window.AGENTS.buildFile("C101")) }));
+  const noFeedSteps = !fileSteps.some(t => /market|treasury|H\.15/i.test(t));
+  await p.click('#nav button[data-screen="about"]'); const aboutText = await p.textContent("#s-about");
+  check("3. Outside data source: not used (removed in v4)", noFeed.market && noFeed.tool && noFeed.file && noFeedSteps && /No outside data feed/.test(aboutText) && !/treasury|federal reserve|H\.15/i.test(aboutText),
+    `not used (removed in v4): no market data in the page (${noFeed.market}), no market tool for A7 (${noFeed.tool}), no market block in the borrower file (${noFeed.file}); How it's built says "No outside data feed"`);
 
   // 4. Risk ratings, decisions and prices are refused; every action lands in the audit log; K4 holds.
   await p.click('#nav button[data-screen="controls"]');
@@ -156,22 +156,22 @@ const check = (name, ok, proof) => { results.push({ name, ok: !!ok, proof }); co
   check("K3. Every draft names the credit officer and leaves the judgment to the PM; a smuggled rating or recommendation is removed or flagged", /Decision by: Linda Marsh, senior credit officer/.test(draft.meta) && /AI DRAFT|AI draft/.test(draft.meta) && draft.judgment.every(j => /For the PM's judgment/i.test(j)) && !bad.secs.some(s => /rating|recommend/i.test(s)) && bad.removed && bad.flagged && bad.approveOff && bad.jEmpty && /Credit memo/.test(bad.meta),
     `header: "${(draft.meta.match(/Decision by:[^·]*/) || [""])[0].trim()}"; judgment sections marked "For the PM's judgment"; a draft with a "Risk rating" section and "We recommend approval": section removed, sentence flagged, approve turned off`);
 
-  // K3: drafts carry no market data, rate commentary or conclusions; market data stays background in the borrower file.
+  // K3: drafts carry no rate commentary or conclusions.
   const factsOnly = await p.evaluate(() => {
     const d = Object.values(window.REPLAY.drafts).join("\n");
     const a8 = window.AGENTS.a8Prompt({ kind: "review", borrowerId: "C101" });
-    return { noMarket: !/treasury|fed h\.15|\[market/i.test(d), noConclusions: !/no warning signs|not enough to raise|for the PM to judge|would be close to|would add|close to the|so the latest|Risks the numbers show/i.test(d) && (d.match(/## Changes and items to note/g) || []).length === Object.keys(window.REPLAY.drafts).length, a8NoMarket: !("market" in a8.data) && !/Market: Fed/.test(a8.prompt),
-      factRule: /Never draw conclusions for the PM/.test(a8.prompt) && /never comment on rates/.test(a8.prompt) && /## Changes and items to note/.test(a8.prompt) && /plain facts only/.test(a8.prompt) && !/Risks the numbers show/.test(a8.prompt), fileKeepsMarket: "market" in window.AGENTS.buildFile("C101"),
+    return { noRates: !/treasury|fed h\.15|rate outlook|rates? (have|has) (risen|fallen)/i.test(d), noConclusions: !/no warning signs|not enough to raise|for the PM to judge|would be close to|would add|close to the|so the latest|Risks the numbers show/i.test(d) && (d.match(/## Changes and items to note/g) || []).length === Object.keys(window.REPLAY.drafts).length, a8NoMarket: !("market" in a8.data) && !/market|treasury/i.test(a8.prompt),
+      factRule: /Never draw conclusions for the PM/.test(a8.prompt) && /never comment on rates/.test(a8.prompt) && /## Changes and items to note/.test(a8.prompt) && /plain facts only/.test(a8.prompt) && !/Risks the numbers show/.test(a8.prompt),
       rules: window.AGENTS.WARN.map(r => r.id).join() };
   });
-  await p.evaluate(() => { window.__marketDraft = true; }); await p.click("#runReview"); await p.waitForSelector("#reviewDoc .live-tag", { timeout: 6000 });
-  const mk = await p.evaluate(() => ({ flagged: /market or rate commentary/.test(document.querySelector("#reviewDoc").innerText), off: document.querySelector("#approveDraft").disabled, untraced: [...document.querySelectorAll("#reviewDoc .untraced, #reviewDoc mark")].map(x => x.textContent) }));
-  await p.evaluate(() => { window.__marketDraft = false; }); await p.click("#runReview");
-  await p.waitForFunction(() => document.querySelector("#reviewDoc .live-tag") && !/market or rate commentary/.test(document.querySelector("#reviewDoc").innerText), null, { timeout: 6000 });
+  await p.evaluate(() => { window.__rateDraft = true; }); await p.click("#runReview"); await p.waitForSelector("#reviewDoc .live-tag", { timeout: 6000 });
+  const mk = await p.evaluate(() => ({ flagged: /rate commentary/.test(document.querySelector("#reviewDoc").innerText), off: document.querySelector("#approveDraft").disabled, untraced: [...document.querySelectorAll("#reviewDoc .untraced, #reviewDoc mark")].map(x => x.textContent) }));
+  await p.evaluate(() => { window.__rateDraft = false; }); await p.click("#runReview");
+  await p.waitForFunction(() => document.querySelector("#reviewDoc .live-tag") && !/rate commentary/.test(document.querySelector("#reviewDoc").innerText), null, { timeout: 6000 });
   factsOnly.flagged = mk.flagged && mk.off;
   const nav = await p.textContent('#nav button[data-screen="watch"]'); const onScreen = await p.evaluate(() => document.body.innerText);
-  check("K3. Drafts state facts with sources: no market data, rate commentary or conclusions; market data stays in the borrower file", factsOnly.noMarket && factsOnly.noConclusions && factsOnly.a8NoMarket && factsOnly.factRule && factsOnly.fileKeepsMarket && factsOnly.flagged,
-    `every draft's last section is "Changes and items to note", plain facts only; recorded drafts free of Treasury lines and conclusions; a live draft that adds a Treasury line is flagged and approval turned off (${factsOnly.flagged}; untraced: ${mk.untraced.join(", ") || "none"}); A8's data has no market block; its prompt says never draw conclusions or comment on rates; the borrower file still carries the market background`);
+  check("K3. Drafts state facts with sources: no rate commentary or conclusions", factsOnly.noRates && factsOnly.noConclusions && factsOnly.a8NoMarket && factsOnly.factRule && factsOnly.flagged,
+    `every draft's last section is "Changes and items to note", plain facts only; recorded drafts free of rate lines and conclusions; a live draft that adds rate commentary is flagged and approval turned off (${factsOnly.flagged}; untraced: ${mk.untraced.join(", ") || "none"}); A8's prompt has no market data and says never draw conclusions or comment on rates`);
   const tags = await p.evaluate(() => [...document.querySelectorAll("#watchList .wcard")].map(c => ({ b: c.dataset.b, tag: c.querySelector(".wlvl").textContent, breach: [...c.querySelectorAll(".rule")].some(r => /Rule EW3/.test(r.title)), acts: [...c.querySelectorAll(".wact button")].map(x => x.dataset.w).join() })));
   const breachOK = tags.some(t => t.breach) && tags.every(t => t.breach === (t.tag === "Breach: the bank's waiver and rating process applies")) && tags.filter(t => !t.acts.includes("raise")).length === 0 && tags.filter(t => t.breach).every(t => t.acts === "watch,raise,dismiss");
   const sampleNote = /Sample borrowers chosen to show every rule; a real book would flag far fewer\./.test(await p.textContent("#s-watch"));

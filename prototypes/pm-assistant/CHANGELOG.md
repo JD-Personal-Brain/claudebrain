@@ -3,6 +3,14 @@
 Each delivered version is kept as its own file (`prototype-v<N>.html`) and never changed.
 Fixes made before a version is delivered stay in that version.
 
+## Version 4 (2026-10-19)
+The outside data feed is gone, from an Elon mode review the user approved: the 10-year Treasury yield never entered a draft, so it added code and a guardrail with nothing in the plan behind it. Versions 1 to 3 (`prototype-v1.html` to `prototype-v3.html` and their videos) are kept unchanged.
+- Removed `src/data/market.js`, `scripts/fetch_market.py` and A7's market data tool: A7 now reads four sources (financials, loans and covenants, deposits and payments, documents and notes), and the borrower file has no market block. The market freshness rule is gone too.
+- The draft guardrail now flags rate commentary in general ("rate outlook", "rates have risen" and similar), since drafts state facts from the borrower file only; the Treasury-specific patterns are gone.
+- How it's built: the data box and the data list say there is no outside data feed, and why; the A7 and A8 rows and the testing paragraph no longer mention it. The controls screen's freshness row no longer mentions market data.
+- The tour's borrower file step now says it "reads four sources itself"; that one voiceover line was re-voiced with Kokoro and the video re-recorded as `pm-assistant-tour-v4.mp4` (trimmed to 119.5 seconds).
+- Tests: Prompt 4's checklist item 3 (an outside data source) is reported as "not used (removed in v4)", and now proves the feed is gone; the rate-commentary test plants a general rate line instead of a Treasury line.
+
 ## Version 3 (2026-10-19)
 Fixes from an audit. Versions 1 and 2 (`prototype-v1.html`, `prototype-v2.html` and their videos) are kept unchanged.
 - The tour no longer implies the assistant submits: the judgment step now says "Sam writes the judgment and approves the draft as final, then submits it through the bank's normal route. The assistant never submits." (tour and voiceover). That line and the "Try to break it" line were re-voiced with Kokoro, and the video re-recorded as `pm-assistant-tour-v3.mp4`. The test for checklist item 5 now also checks the tour text and the narration script.
