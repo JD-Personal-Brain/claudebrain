@@ -516,7 +516,7 @@
       ["Quality", pct(m.answersWithSources, m.answers), "of summaries, drafts and answers show their sources", "100% with sources; 3 numbers flagged and fixed", [`${pct(m.numbersTraced, m.numbersChecked)} of numbers traced to the file (K7)`, "Accuracy on the test set: zero tolerance on figures, set with the risk partner before the pilot"]],
       ["Business impact", String(m.submitted), "reviews and memos approved as final from AI drafts", "14 drafts approved as final; hours per review measured against the baseline", ["Hours per review and request-to-decision time: measured in the pilot", "Against a comparison group of PMs"]],
       ["Adoption", `${caps} of 3`, "capabilities used this session", "5 of 6 pilot PMs active", ["Weekly active PMs and share of reviews started from a draft: targets set before the pilot"]],
-      ["Risk and controls", String(m.guardrailBlocks + m.outputFlags), "requests blocked or drafts flagged by guardrails", "4 blocked, 0 incidents, 9 overrides", [`${m.needsInput} sections marked "needs input" (K25)`, `${m.flagsActed} early warnings watched or raised`, `${m.permissionRefusals} refused outside the PM's portfolio (K4)`, `${m.changed + m.rejected} overrides (changed, rejected or dismissed)`, `${m.approvals} approved before submitting (K2)`]]
+      ["Risk and controls", String(m.guardrailBlocks + m.outputFlags), "requests blocked or drafts flagged by guardrails", "4 blocked, 0 incidents, 9 overrides", [`${m.needsInput} sections marked "needs input" (K25)`, `${m.flagsActed} early warnings watched or raised`, `${m.permissionRefusals} refused outside the PM's portfolio (K4)`, `${m.changed + m.rejected} overrides (changed, rejected or dismissed)`, `${m.approvals} approved as final by the PM (K2; the assistant never submits)`]]
     ];
     $("#measureGrid").innerHTML = cards.map(([k, big, what, sample, list]) => `<div class="mcard"><span class="kind">${k}</span><span class="big">${esc(big)}</span><span class="what">${esc(what)} <em>(this session)</em></span><p class="sample-week"><strong>Sample pilot week:</strong> ${esc(sample)}</p><ul>${list.map(l => `<li>${esc(l)}</li>`).join("")}</ul></div>`).join("");
   }
@@ -548,7 +548,7 @@
   });
 
   // ---------- How it's built ----------
-  $("#marketLine").innerHTML = `<strong>Outside data:</strong> ${esc(MK.name)}, ${esc(MK.publisher)}, monthly from ${MK.series[0].month} to ${MK.latest.month}, public domain, through a public copy on GitHub (datahub.io). Saved copy fetched ${fmtLong(MK.fetched)}; latest value ${MK.latest.yield}%. The agents use it only as background on floating-rate loans, never as a price.`;
+  $("#marketLine").innerHTML = `<strong>Outside data:</strong> ${esc(MK.name)}, ${esc(MK.publisher)}, monthly from ${MK.series[0].month} to ${MK.latest.month}, public domain, through a public copy on GitHub (datahub.io). Saved copy fetched ${fmtLong(MK.fetched)}; latest value ${MK.latest.yield}%. It is background in the borrower file only (A7 reads it); it never enters a review or memo draft, and the assistant never comments on rates. The loans are Prime-based, so the 10-year yield says nothing direct about their rates.`;
 
   // ---------- Start: fill every screen with the recorded run, without logging it as anyone's action ----------
   A.setQuiet(true);

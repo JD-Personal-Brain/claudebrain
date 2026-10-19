@@ -205,8 +205,8 @@
           <h2 class="h-small">The three agents</h2>
           <div class="tw"><table class="about-table"><thead><tr><th>Agent</th><th>Job</th><th>In this prototype</th><th>In production (our assumption, to confirm)</th><th>Person in charge</th></tr></thead><tbody>
             <tr><td>A7 Borrower file builder</td><td>Pulls one borrower's file together, every figure with its source, and lists what's missing or late</td><td>Five page tools in code gather the file; Claude, live, calls them and writes a short summary</td><td>Snowflake and AWS Bedrock (Knowledge Bases)</td><td>The PM; the data owners for the inputs</td></tr>
-            <tr><td>A8 Review and memo drafter</td><td>Drafts the routine sections of an annual review or credit memo; leaves the judgment blank</td><td>Claude, live, from A7's file; code checks every number, marks gaps and blocks any rating or recommendation</td><td>AWS Bedrock or a Copilot Studio agent, in the bank's Word template</td><td>The PM writes the judgment; the credit officer decides</td></tr>
-            <tr><td>A9 Early warning watcher</td><td>Checks each borrower against credit risk's early warning rules and explains each flag</td><td>Five rules in code, run in your browser (no AI); Claude explains the top flags. Stops if the data is too old</td><td>Snowflake (Cortex), each night</td><td>The PM decides what to do; credit risk owns the rules</td></tr>
+            <tr><td>A8 Review and memo drafter</td><td>Drafts the routine sections of an annual review or credit memo; leaves the judgment blank</td><td>Claude, live, from A7's file without the market data; it states facts with sources and draws no conclusions. Code checks every number, marks gaps and blocks any rating, recommendation or rate commentary</td><td>AWS Bedrock or a Copilot Studio agent, in the bank's Word template</td><td>The PM writes the judgment; the credit officer decides</td></tr>
+            <tr><td>A9 Early warning watcher</td><td>Checks each borrower against credit risk's early warning rules and explains each flag</td><td>Five sample rules in code (EW1 to EW5), run in your browser (no AI); Claude explains the top flags. Stops if the data is too old</td><td>Snowflake (Cortex), each night</td><td>The PM decides what to do; credit risk owns the rules</td></tr>
           </tbody></table></div>
         </div>
         <div class="panel">
@@ -219,7 +219,7 @@
         </div>
         <div class="panel">
           <h2 class="h-small">How it's tested</h2>
-          <p>Automated tests click through every promise on this page, with a stand-in for Claude: the tour, each agent, the outside data, the guardrails (risky phrasings blocked and a PM's ordinary credit questions allowed), the judgment sections left blank, approval before submitting, the number check with planted made-up numbers, the missing-statement stop, laptop and phone layouts, and the recorded-run fallback. In a real build this grows into the test set and quality bar (K9), using real past reviews graded by experienced PMs.</p>
+          <p>Automated tests click through every promise on this page, with a stand-in for Claude: the tour, each agent, the outside data, the guardrails (risky phrasings blocked and a PM's ordinary credit questions allowed), the judgment sections left blank, approval as final by the PM (the assistant never submits), the number check with planted made-up numbers, the missing-statement stop, laptop and phone layouts, and the recorded-run fallback. In a real build this grows into the test set and quality bar (K9), using real past reviews graded by experienced PMs.</p>
         </div>
         <div class="panel" id="pilotNeeds">
           <h2 class="h-small">What a pilot would need (our assumption, to confirm)</h2>

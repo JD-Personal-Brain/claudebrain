@@ -342,6 +342,13 @@ textarea.grow{field-sizing:content;max-height:340px;min-height:120px}
 .doc .tw{margin-bottom:4px}
 .split.wide{grid-template-columns:minmax(0,1fr) minmax(0,2fr)}
 .approvebar.static{position:static}
+/* v2: the sticky bar must never sit on top of the draft. It keeps a solid edge and a shadow, scrolling into
+   view leaves room for it, the draft ends with room to clear it, and on phones it stays in the flow. */
+.approvebar:not(.static){box-shadow:0 -8px 12px -8px rgba(0,0,0,.18);padding:10px 0 10px;margin-top:12px}
+html{scroll-padding-bottom:84px}
+#reviewDoc .docbody{padding-bottom:16px}
+#reviewDoc .docbody, #reviewDoc .judgment{scroll-margin-bottom:84px}
+@media (max-width:700px){.approvebar:not(.static){position:static;box-shadow:none}html{scroll-padding-bottom:0}}
 .meetings .meet small{white-space:nowrap}
 @media (max-width:860px){.split.wide{grid-template-columns:minmax(0,1fr)}.meetings .meet small{white-space:normal}}
 @media (max-width:860px){#borrowerPick{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;scroll-snap-type:x mandatory}#borrowerPick .meet{flex:none;scroll-snap-align:start}}
