@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L42 · 2026-10-19 · A new agent number didn't link to its card
+- **What happened:** agent A11 (the industry background draft) was added to every page, but the page kit's pattern that links agent numbers to their cards still stopped at A10, so "A11" showed as plain text. Claude found it while pointing the pages at the version 5 prototypes.
+- **Root cause:** rule R23 lists the places to update when a term or number changes, but not the page kit's link pattern, so adding a new number didn't prompt a check there, and no automatic check compared the pattern with the agents in the Agent Library.
+- **Fix:** when an agent, control or workflow number is added, update the page kit's link pattern in the same change and confirm the new number links on the rendered page.
+- **Rule:** R23 · **Test:** T53 · **Level:** 1 · **Times it happened:** 1
+
 ### L41 · 2026-10-18 · Merged before GitHub's audit check finished
 - **What happened:** Claude merged a pull request while GitHub's audit check was still running. It passed a few seconds later, but the merge didn't wait for it.
 - **Root cause:** the local checks had passed, so Claude treated GitHub's check as a formality. Rule R18 said audit first but didn't say to wait for the GitHub check.
