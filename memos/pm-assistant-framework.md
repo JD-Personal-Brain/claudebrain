@@ -102,8 +102,8 @@ holding the work up (⚠️ not known yet).
 
 Six steps, each ending in a go/no-go gate, run as the [Product Workflow](https://claude.ai/artifact/8Nm5fkdicn2Gu5VmNVTvYv)
 sets out: its questions, gates and sub-steps aren't repeated here. The first pass overlaps:
-a working prototype in week 1, the industry background draft live in week [X], set at gate 2 once the bank says how long its AI review takes (B21), the borrower
-file in about week 7 and the drafts in about week 12 (later than for RMs, because of the higher-risk path); then steps 3–6
+a working prototype in week 1, the industry background draft and the borrower file live in weeks set at gate 2, once the bank says how long its AI review takes (B21),
+and the drafts in about week 12 (later than for RMs, because of the higher-risk path); then steps 3–6
 repeat in cycles of a week or two, and each new feature wave takes the quick pass through
 Discover and Define. What's different for PMs:
 
@@ -173,14 +173,14 @@ as it is built. No real borrower data goes into the assistant or its tests befor
 | About 4 | **Gate 2:** final baseline, data contract (with the approved industry source list), the product's early risk rating (which capabilities take the higher-risk path), what drafts may contain (credit policy owner), measures and value model; the order of feature waves 2 and 3 agreed; their dates set once the wave 1 drafts' higher-risk review is signed (about week 11), when its real length is known. Aimed for weeks 2 to 4, paced by the data owners' signatures (⚠️) | Sponsor, data owners, content owner of the credit file, risk partner, credit policy owner | Signed data contract; decision log |
 | After gate 2 | Industry background draft: frozen version, sign-offs (as long as the bank's AI review takes, B21); monitoring plan (4.8); readiness: training, incident process (5.1) | Risk partner, vendor risk, product manager | Gate 3 and 4 entries |
 | Week [X] | **Industry background draft live with pilot PMs** (set at gate 2, once the review's length is known) | Product manager | Sections drafted; sections kept with light edits |
-| 5–6 | Borrower file on real data, after gate 2: test set, controls tested, frozen version, sign-offs; monitoring plan (4.8); readiness: training, incident process, comparison group (5.1) | Platform team, risk partner | Gate 3 and 4 entries |
-| About 7 | **Borrower file live with pilot PMs** | Product manager | First weekly usage report |
+| After gate 2 | Borrower file on real data (as long as the bank's AI review takes, B21): test set, controls tested, frozen version, sign-offs; monitoring plan (4.8); readiness: training, incident process, comparison group (5.1) | Platform team, risk partner | Gate 3 and 4 entries |
+| Week [X] | **Borrower file live with pilot PMs** (set at gate 2, once the review's length is known) | Product manager | First weekly usage report |
 | 5–9 | Review and memo drafts on real past reviews, after gate 2; test set graded by PMs, with must-refuse cases; fairness check agreed with compliance; evidence pack | Platform teams, product manager, compliance | Test results against the quality bar |
 | 10–11 | Higher-risk review of the frozen drafts: sign-offs, including the credit policy owner's; readiness (training, incident process, comparison group) | Risk, compliance, privacy, security, credit policy owner | Sign-offs recorded |
 | About 12 | **Annual review and credit memo drafts live with pilot PMs** | Product manager | Drafts used; sections kept with light edits |
 
-**By day 90 (about week 13):** the industry background draft should be live (its week is set at gate 2),
-the borrower file for about seven and the drafts for about one or two; the first leading measures are coming in. Feature waves 2 and 3 get
+**By day 90 (about week 13):** the industry background draft and the borrower file should be live (their weeks are set at gate 2),
+and the drafts for about one or two weeks; the first leading measures are coming in. Feature waves 2 and 3 get
 dates once the drafts' higher-risk review is signed (about week 11), when its real length is known.
 
 ---
