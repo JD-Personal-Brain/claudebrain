@@ -1,6 +1,6 @@
 # NOW: start here
 
-_Last updated: 2026-10-19 · Last review: none yet (first one due around 2026-10-21; I said not yet on 2026-10-14) · Wrap-ups since the last Elon mode review: 1 (last run 2026-10-19, at wrap-up, on the product machine and this system; it runs at 3)_
+_Last updated: 2026-10-19 · Last review: none yet (first one due around 2026-10-21; I said not yet on 2026-10-14) · Wrap-ups since the last Elon mode review: 0 (last run 2026-10-19, in the full program audit (Prompt 6), on the product machine and this system; it runs at 3)_
 
 _Short on purpose (Elon mode, 2026-10-18): open work is in the Open Items log, how Claude works in `CLAUDE.md` and `learning/rules.md`, history in git, the closed items and `learning/lessons.md`._
 
@@ -12,7 +12,7 @@ _Short on purpose (Elon mode, 2026-10-18): open work is in the Open Items log, h
 - **RM prototype (in main):** the RM Assistant Prototype, version 5 (https://claude.ai/artifact/RFM2o7cdren3TxesQBsjky; code in `prototypes/rm-assistant/`): Today, the wave 1 screens (A1 in plain rules; A2 and A3 live on Claude), a wave 2 preview (early warning, refer to treasury), the controls, a spoken tour and a video under 2 minutes (`rm-assistant-tour-v5.mp4`, matched to the PM prototype). Version 4 reviewed and good (C60).
 - **PM work (in main; reviewed and in use, 2026-10-19, C69; shared with Andy, C66):** built by Prompt 5 from the RM section (C61): the PM Executive Summary (https://claude.ai/artifact/Cvw3mkUohNFLwVr4H2wURd), The PM Assistant (https://claude.ai/artifact/BrBLWQzQggQPtqCgLLGf3C), the PM Assistant Plan (https://claude.ai/artifact/UKMBCCxBns8YuCJyEo4Zkv), the PM Assistant Prototype (https://claude.ai/artifact/8vFxUWVwtZbzZs7pL162HE, version 5) and PM Detail (https://claude.ai/artifact/KZ4PEbhCPAj6uWKXmJMCeg), plus Map 3 on the Workflow Maps and agents A7 to A11. Wave 1: industry background draft and the borrower file (weeks [X], set at gate 2 once the bank says how long its AI review takes), then annual review and credit memo drafts (about week 12, higher-risk path, K3). Next: test and improve each page with the credit lead (PM1).
 - **Use cases:** the Use Case Library (https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X, in use).
-- **The bank:** the Bank Business Briefing (https://claude.ai/artifact/7ZVT7LtdqxwAma4UrBgTPX), updated by the bank news scout every Monday (first run succeeded October 19, C65) and on October 23, the day after the Q3 results (out October 22); notices go to my personal email.
+- **The bank:** the Bank Business Briefing (https://claude.ai/artifact/7ZVT7LtdqxwAma4UrBgTPX), updated by the bank news scout every Monday (its first run, October 19, failed: it couldn't reach the repo, W2) and on October 23, the day after the Q3 results (out October 22); notices go to my personal email.
 - **Quality:** every change is audited before main (the audit skill, the GitHub audit check, the Audit Log https://claude.ai/artifact/QnPL82PBx6AfGKB5VgqUPf). The mechanical part of each wrap-up runs by script (`.claude/skills/wrap-up/run.py`).
 - **Working with Claude:** the Prompting Guide and the Prompt Library (six core prompts); the Claude Mastery course comes in by paste (next up: Module 3, Projects, Connectors and Skills).
 
