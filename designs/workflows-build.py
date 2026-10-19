@@ -271,13 +271,13 @@ page = f'''<title>Workflow Maps</title>
 </main>
 <script>
 (function(){{
-  function show(btn){{
+  function show(btn,fromHash){{
     var map=btn.getAttribute('data-map'), panel=document.getElementById(map+'-panel'), t=document.getElementById('t-'+btn.getAttribute('data-id'));
     if(!panel||!t) return;
     panel.innerHTML=t.innerHTML;
     document.querySelectorAll('.branch[data-map="'+map+'"]').forEach(function(b){{b.setAttribute('aria-pressed', b===btn?'true':'false');}});
     var r=panel.getBoundingClientRect();
-    if(r.top>window.innerHeight||r.bottom<0) panel.scrollIntoView({{behavior:'smooth',block:'nearest'}});
+    if(!fromHash&&(r.top>window.innerHeight||r.bottom<0)) panel.scrollIntoView({{behavior:'smooth',block:'nearest'}});
   }}
   document.querySelectorAll('.branch').forEach(function(b){{
     b.setAttribute('aria-pressed','false');
@@ -285,7 +285,7 @@ page = f'''<title>Workflow Maps</title>
   }});
   ['deliver','rm','pm'].forEach(function(m){{var f=document.querySelector('.branch[data-map="'+m+'"]'); if(f) f.setAttribute('aria-pressed','true');}});
   // a link from another page that names a sub-step (#d3-1) shows that sub-step's details
-  function openHash(){{var h=location.hash&&document.getElementById(decodeURIComponent(location.hash.slice(1))); if(h&&h.classList.contains('branch')) show(h);}}
+  function openHash(){{var h=location.hash&&document.getElementById(decodeURIComponent(location.hash.slice(1))); if(h&&h.classList.contains('branch')) show(h,true);}}
   openHash(); window.addEventListener('hashchange',openHash);
 }})();
 </script>
