@@ -5,7 +5,7 @@ How The RM Assistant gets delivered to relationship managers (RMs) · Associated
 [RM Executive Summary](https://claude.ai/artifact/LPPq2gt5PSoiB8GzX8ZBE2) · [The RM Assistant](https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2) · [RM Assistant Prototype](https://claude.ai/artifact/RFM2o7cdren3TxesQBsjky) (see it working) · [RM Detail](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n) (everything in full) · [Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ) (the rules every product follows)
 
 ## The plan at a glance
-The first 13 weeks, as estimates to confirm. Week 1 starts at kickoff; gates (◆) are go/no-go decisions. Each live bar starts once its client data is approved and the bank's AI review signs it off, so the bars move with those approvals. Each row links to its detail in RM Detail.
+The first 13 weeks, as estimates to confirm. Week 1 starts at kickoff; gates (◆) are go/no-go decisions. Each live bar starts once the bank's AI review signs it off (and, where it uses client data, that data is approved), so the bars move with those approvals. Each row links to its detail in RM Detail.
 
 ```gantt
 weeks 13

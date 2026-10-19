@@ -64,7 +64,7 @@ Built once and used by both assistants: data, controls, the AI review and the de
 
 | # | Question | Owner | When |
 |---|---|---|---|
-| RM4 | May client meetings be recorded? Recaps from Teams transcripts and AI sales coaching (wave 3) rest on it; wave 1's follow-up drafts from the RM's own notes | The bank | First conversation |
+| RM4 | May client meetings be recorded? Recaps from Teams transcripts and AI sales coaching (wave 3) rest on it. Wave 1's follow-up doesn't: it drafts from the RM's own notes | The bank | First conversation |
 | RM5 | How many RMs and treasury management officers are there, by market? How are RMs measured, paid and rewarded, and how are referrals to treasury, capital markets and wealth credited? | The bank | Discover |
 | RM6 | The value model's inputs: win rate, first-year revenue per win by product, client-facing hours per RM, the segment's fee income by line (including the $47.6 million not broken down publicly), deposits, the share of borrowing clients who keep their main accounts with the bank, and treasury management use | The bank | Discover |
 | RM7 | Do RMs work mainly in Salesforce? This decides where the assistant appears | The bank | Define |

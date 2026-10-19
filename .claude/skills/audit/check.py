@@ -391,7 +391,7 @@ for f in ['NOW.md','ideas.md','product-framework.md','product-machine.md','gloss
     if f=='learning/tests.md': t='\n'.join(l for l in t.split('\n') if not l.startswith('- **Results:**'))
     if f=='open-items.md': t=t.split('## Closed')[0]
     for m in re.finditer(r'(?<![\w#-])B(\d{1,2})\b',t):
-        if int(m.group(1))>_maxb: print(f,'cites B'+m.group(1),'- workflows stop at B'+str(_maxb)+', so this is an old open-item number: use the new one (the map is in the 2026-10-19 Audit Log entry)'); probs+=1
+        if int(m.group(1))>_maxb: print(f,'cites B'+m.group(1),'- workflows stop at B'+str(_maxb)+', so this is an old open-item number: use the new one (the map is the note under "The record" in memos/audit-log.md)'); probs+=1
 
 # 19. Prompt Library versions (full program audit, 2026-10-19): the version in the index table must match the
 # "**Version N** (date)" line under each prompt's heading, so the index can't fall behind an update.

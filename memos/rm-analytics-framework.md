@@ -11,7 +11,7 @@ until Discover with the bank's RMs.
 **The limiting factor: our working assumption is the length of the bank's AI review (Open Items PL7); not
 confirmed yet.** ⚠️ The real blockers are a first question for the bank (what usually holds up a new AI
 tool there?). The review would matter most for the very first capability (the follow-up's recap and email,
-in M365 Copilot), together with any recording policy the bank has. The other likely one, also to confirm:
+in M365 Copilot); it drafts from the RM's own notes, so no recording is needed. The other likely one, also to confirm:
 approval to use client data (the data contract, the signed list of data the product may use, needs the
 data owners' signatures [names needed]; aimed for week 2).
 
@@ -161,7 +161,7 @@ call is made at gate 2 (week 2).
 | About 4 | **Meeting follow-up live with pilot RMs** | Product manager | First weekly usage report |
 | 3–5 | After gate 2, connect real data in the test environment; build the test set and evidence pack; risk partner reviews each version | Platform teams, product manager | Test results against the quality bar |
 | 4–5 | Sign-offs for the brief, the opportunity list and saving call notes (a material change to the follow-up, back through step 4); release readiness (training, support, incident process, comparison group) | Risk, compliance, privacy, security, operations | Sign-offs recorded; readiness checklist complete |
-| About 4–6 | **Client brief, Monday opportunity list and call notes into Salesforce live with pilot RMs** | Product manager | Usage and act-on rates in Power BI; share of meetings logged |
+| About 6 | **Client brief, Monday opportunity list and call notes into Salesforce live with pilot RMs** | Product manager | Usage and act-on rates in Power BI; share of meetings logged |
 
 **By day 90 (about week 13):** wave 1 has been live with pilot RMs for about
 two months and leading measures are coming in (if the backup plan is used, the recap and email are still live from about week 4; the rest has about three weeks). How far waves 2 and 3 have
