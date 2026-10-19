@@ -380,6 +380,7 @@ mark.uncited{background:var(--amber-bg);color:inherit;border-bottom:2px dashed v
 .indsec h2{font-size:17px;margin:0 0 4px;display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
 .indsec .indbody h2{font-size:15px}
 .pmok{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;background:var(--green-bg);color:var(--green);padding:2px 8px;border-radius:4px;font-weight:500}
+.ctl-grid + .muted{margin-top:12px}
 
 </style>
 <div class="app" id="app">
@@ -434,7 +435,7 @@ mark.uncited{background:var(--amber-bg);color:inherit;border-bottom:2px dashed v
       <!-- Borrower file (workflow B10, agent A7) -->
       <section class="screen" id="s-file" data-screen="file" hidden>
         <div class="shead">
-          <span class="eyebrow" title="Workflow B10 in the PM plan, agent A7">Review and renew · workflow B10</span>
+          <span class="eyebrow" title="Workflow B10 in the PM plan, agent A7">Review and renew</span>
           <h1>Borrower file</h1>
           <p class="lede">Everything about one borrower in one place: the financials, loans and covenants, deposits and payments, documents and notes. Every figure shows its source, and anything missing or late is listed, never filled in.</p>
         </div>
@@ -447,7 +448,7 @@ mark.uncited{background:var(--amber-bg);color:inherit;border-bottom:2px dashed v
         </div>
         <div class="split wide">
           <div class="panel steps-panel">
-            <h2 class="h-small">What the Borrower file builder (A7) did</h2>
+            <h2 class="h-small">What the Borrower file builder did</h2>
             <ol class="timeline" id="fileSteps"></ol>
           </div>
           <article class="panel doc" id="fileDoc" aria-live="polite"></article>
@@ -458,7 +459,7 @@ mark.uncited{background:var(--amber-bg);color:inherit;border-bottom:2px dashed v
       <!-- Review and memo drafts (workflows B11 and B12, agent A8) -->
       <section class="screen" id="s-review" data-screen="review" hidden>
         <div class="shead">
-          <span class="eyebrow" title="Workflows B11 and B12 in the PM plan, agent A8">Review and renew · workflows B11 and B12</span>
+          <span class="eyebrow" title="Workflows B11 and B12 in the PM plan, agent A8">Review and renew</span>
           <h1>Review and memo drafts</h1>
           <p class="lede">The Review and memo drafter writes the routine sections from the borrower file. The borrower risk rating and the recommendation are left blank for you, and the credit officer who decides is named at the top.</p>
         </div>
@@ -484,7 +485,7 @@ mark.uncited{background:var(--amber-bg);color:inherit;border-bottom:2px dashed v
         <div class="shead">
           <span class="eyebrow" title="Workflows B13 and B14 in the PM plan, agent A9, wave 2">Watch the portfolio · wave 2 preview</span>
           <h1>Early warning flags</h1>
-          <p class="lede">Borrowers whose signals are weakening, found by plain rules credit risk owns, with the numbers behind every flag. You dismiss a flag with a reason, watch it, or raise it through the bank's own process.</p>
+          <p class="lede">Borrowers whose signals are weakening, found by plain sample rules (credit risk would own the real ones; to confirm), with the numbers behind every flag. You dismiss a flag with a reason, watch it, or raise it through the bank's own process.</p>
           <p class="muted small" id="sampleNote">Sample borrowers chosen to show every rule; a real book would flag far fewer.</p>
         </div>
         <div class="w2sum" id="watchSummary"></div>
@@ -528,7 +529,7 @@ mark.uncited{background:var(--amber-bg);color:inherit;border-bottom:2px dashed v
           <p class="muted small">Not shown yet: the fairness check (K11) and the credit policy owner's sign-off on the higher-risk path, the formal risk rating of the product and its sign-offs (K13, K15), which come in the Govern and test step.</p>
         </div>
         <div class="panel">
-          <h2 class="h-small">The early warning rules, owned by credit risk</h2>
+          <h2 class="h-small">The early warning rules (sample; owned by credit risk, to confirm)</h2>
           <div class="tw"><table id="ruleTable"><thead><tr><th>Rule</th><th>When it fires</th><th>Priority points</th></tr></thead><tbody></tbody></table></div>
         </div>
         <div class="panel">
@@ -586,7 +587,7 @@ mark.uncited{background:var(--amber-bg);color:inherit;border-bottom:2px dashed v
             <tr><td>A11 Industry background drafter</td><td>Drafts a credit memo's industry section (size and trend, drivers, risks, outlook), the section an outside firm writes today (to confirm)</td><td>Claude, live, from a made-up approved source pack only, never borrower data. Code checks that every sentence cites a source and every number is in the sources, and flags any borrower named or judged</td><td>AWS Bedrock (Knowledge Bases) over the bank's licensed industry research</td><td>The PM edits and approves it; the content owner approves the sources</td></tr>
             <tr><td>A7 Borrower file builder</td><td>Pulls one borrower's file together, every figure with its source, and lists what's missing or late</td><td>Four page tools in code gather the file; Claude, live, calls them and writes a short summary</td><td>Snowflake and AWS Bedrock (Knowledge Bases)</td><td>The PM; the data owners for the inputs</td></tr>
             <tr><td>A8 Review and memo drafter</td><td>Drafts the routine sections of an annual review or credit memo; leaves the judgment blank</td><td>Claude, live, from A7's file; it states facts with sources and draws no conclusions. Code checks every number, marks gaps and blocks any rating, recommendation or rate commentary</td><td>AWS Bedrock or a Copilot Studio agent, in the bank's Word template</td><td>The PM writes the judgment; the credit officer decides</td></tr>
-            <tr><td>A9 Early warning watcher</td><td>Checks each borrower against credit risk's early warning rules and explains each flag</td><td>Five sample rules in code (EW1 to EW5), run in your browser (no AI); Claude explains the top flags. Stops if the data is too old</td><td>Snowflake (Cortex), each night</td><td>The PM decides what to do; credit risk owns the rules</td></tr>
+            <tr><td>A9 Early warning watcher</td><td>Checks each borrower against the early warning rules (a sample set; credit risk would own the real ones, to confirm) and explains each flag</td><td>Five sample rules in code (EW1 to EW5), run in your browser (no AI); Claude explains the top flags. Stops if the data is too old</td><td>Snowflake (Cortex), each night</td><td>The PM decides what to do; credit risk would own the real rules (to confirm)</td></tr>
           </tbody></table></div>
         </div>
         <div class="panel">
@@ -619,7 +620,7 @@ mark.uncited{background:var(--amber-bg);color:inherit;border-bottom:2px dashed v
       <!-- Industry background (workflow B16, agent A11; version 5) -->
       <section class="screen" id="s-industry" data-screen="industry" hidden>
         <div class="shead">
-          <span class="eyebrow" title="Workflow B16 in the PM plan, agent A11">Write the credit memo · workflow B16</span>
+          <span class="eyebrow" title="Workflow B16 in the PM plan, agent A11">Write the credit memo</span>
           <h1>Industry background</h1>
           <p class="lede">The Industry background drafter (A11) writes a first draft of a credit memo's industry section: the industry's size and trend, main drivers, main risks and outlook. Today an outside firm writes this section (details to confirm with the bank). Every sentence cites an approved source; you edit and approve it.</p>
           <p class="reads" id="indReads"><strong>Reads:</strong> approved industry sources only. No borrower data. <span class="muted">It makes no judgment about any borrower: that analysis stays yours.</span></p>
@@ -642,7 +643,7 @@ mark.uncited{background:var(--amber-bg);color:inherit;border-bottom:2px dashed v
         </div>
         <div class="split">
           <div class="panel" id="indStepsPanel">
-            <h2 class="h-small">What the Industry background drafter (A11) did</h2>
+            <h2 class="h-small">What the Industry background drafter did</h2>
             <ol class="timeline" id="indSteps"></ol>
           </div>
           <article class="panel doc" id="indDoc" aria-live="polite"></article>
@@ -1204,7 +1205,7 @@ window.REPLAY = {
     ];
   }
 
-  // ---------- A9 Early warning watcher: the rule set credit risk owns (K22) ----------
+  // ---------- A9 Early warning watcher: a sample rule set; credit risk would own the real one, to confirm (K22) ----------
   const WARN = [
     { id: "EW1", name: "Statements late", plain: "A financial statement, compliance certificate or borrowing base certificate is past its due date and not received.", points: 15,
       test: f => f.documentsAndNotes.dueItems.filter(d => d.daysLate > 0), facts: (f, hits) => ({ lateItems: hits.map(d => ({ item: d.item, due: d.due, daysLate: d.daysLate })) }) },
@@ -1888,7 +1889,7 @@ ${IND_SECTIONS.map(x => "## " + x).join("\n")}`;
     const t = e.target.closest("button[data-w]"); if (!t) return;
     const card = t.closest(".wcard"); const b = A.findBorrower(card.dataset.b); const act = card.querySelector(".wact");
     if (t.dataset.w === "dismiss") { act.innerHTML = `<span class="muted">Why dismiss it?</span>` + ["Seasonal pattern", "Already known", "Not a concern"].map(r => `<button type="button" class="btn btn-sm" data-w="reason" data-r="${r}">${r}</button>`).join(""); return; }
-    if (t.dataset.w === "reason") { watchDone[b.id] = `Dismissed: ${t.dataset.r}. The reason goes to credit risk, who own the rules.`; A.measures.rejected++; A.log("PM", "Dismissed an early warning", `${b.name}: ${t.dataset.r}`, "K1, K22"); }
+    if (t.dataset.w === "reason") { watchDone[b.id] = `Dismissed: ${t.dataset.r}. The reason is logged for the rules' owner (credit risk, to confirm).`; A.measures.rejected++; A.log("PM", "Dismissed an early warning", `${b.name}: ${t.dataset.r}`, "K1, K22"); }
     else if (t.dataset.w === "watch") { watchDone[b.id] = "Watching. It stays in your early warning flags, and A9 tells you if it changes."; A.measures.flagsActed++; A.log("PM", "Chose to watch an early warning", b.name, "K1"); }
     else if (t.dataset.w === "raise") { watchDone[b.id] = `Raised through the bank's own process, and ${b.rm} told (sample: nothing leaves the page). The assistant never changes a borrower risk rating or the bank's watchlist status.`; A.measures.flagsActed++; A.log("PM", "Raised an early warning through the bank's process", `${b.name}; RM ${b.rm} told`, "K1, K2, K3"); }
     A.measures.used.add(`watch:${b.id}`);
@@ -2163,7 +2164,7 @@ ${IND_SECTIONS.map(x => "## " + x).join("\n")}`;
   // ---------- Controls, rules and the audit log ----------
   const CONTROLS = [
     ["The person decides", [["K1", "A person decides", "You use, change or reject every file, draft and flag, and you send every note yourself."], ["K2", "Read-only unless approved", "Nothing is final until you approve, and the assistant never submits: you do, through the bank's normal approval route; the agents never change a record, a borrower risk rating or the bank's watchlist status."], ["K3", "AI drafts or flags; a named credit officer decides", `Every draft names ${P.pm.creditOfficer}; the borrower risk rating and recommendation are left blank for you.`]]],
-    ["Data stays in bounds", [["K4", "Users see only what they're allowed to see", "A7's page tools refuse another PM's borrowers; the early warning flags cover only your 12; A11 reads approved industry sources only, never borrower data."], ["K25", "Agents stop rather than guess", "A missing statement marks a section \"needs input\"; old data stops the early warning flags."], ["K22", "Simple rules first, and the AI explains", "Early warning is five plain rules credit risk owns; AI only explains what fired."]]],
+    ["Data stays in bounds", [["K4", "Users see only what they're allowed to see", "A7's page tools refuse another PM's borrowers; the early warning flags cover only your 12; A11 reads approved industry sources only, never borrower data."], ["K25", "Agents stop rather than guess", "A missing statement marks a section \"needs input\"; old data stops the early warning flags."], ["K22", "Simple rules first, and the AI explains", "Early warning is five plain sample rules (credit risk would own the real ones; to confirm); AI only explains what fired."]]],
     ["Every fact traced", [["K7", "Every answer shows its source", "A document and page, or a system and date, on every figure; every number checked against the file; every sentence of an industry section cites an approved source."], ["K8", "Guardrails", "Code checks block borrower risk ratings, decisions, prices, other PMs' borrowers and off-topic requests; every draft is scanned again."], ["K12", "An audit log", "Every agent action and every decision is logged below, with what it ran on."]]]
   ];
   $("#ctlGrid").innerHTML = CONTROLS.map(([group, list]) => `<div class="ctl-group"><h3>${esc(group)}</h3>${list.map(([k, n, w]) => `<div class="ctl-card"><span><strong>${esc(n)}</strong> <span class="ctl">${k}</span></span><span class="where">${esc(w)}</span></div>`).join("")}</div>`).join("");
@@ -2244,15 +2245,15 @@ ${IND_SECTIONS.map(x => "## " + x).join("\n")}`;
   const STEPS = [
     { screen: "today", target: "#todayStats", title: "Meet The PM Assistant", text: "One AI assistant for every portfolio manager (PM): it drafts industry sections, gathers borrower files, drafts reviews and credit memos, and spots weakening borrowers sooner. Sample data throughout.", dur: 6000 },
     { screen: "today", target: ".persona", title: "You're Sam Okafor", text: "A senior PM with 12 business borrowers, paired with relationship manager (RM) Jordan Ellis. The assistant only ever sees Sam's own borrowers.", dur: 4500 },
-    { screen: "industry", target: "#indStepsPanel", title: "New: the Industry background drafter (A11)", text: "From approved industry sources only, never borrower data, Claude drafts a memo's industry section, with a source on every sentence. Sam edits and approves it before it goes into the memo.", dur: 8500, before: () => { window.APP.show("industry"); return window.APP.selectInd("restaurants", true); } },
-    { screen: "file", target: ".steps-panel", title: "The Borrower file builder (A7)", text: "It checks Sam may see the borrower, then reads four sources itself: the statements, loans and covenants, deposits and payments, and documents and notes.", dur: 8000, before: () => { window.APP.setBorrower("C101"); return window.APP.replayFile(false); } },
+    { screen: "industry", target: "#indStepsPanel", title: "New: the Industry background drafter", text: "From approved industry sources only, never borrower data, Claude drafts a memo's industry section, with a source on every sentence. Sam edits and approves it before it goes into the memo.", dur: 8500, before: () => { window.APP.show("industry"); return window.APP.selectInd("restaurants", true); } },
+    { screen: "file", target: ".steps-panel", title: "The Borrower file builder", text: "It checks Sam may see the borrower, then reads four sources itself: the statements, loans and covenants, deposits and payments, and documents and notes.", dur: 8000, before: () => { window.APP.setBorrower("C101"); return window.APP.replayFile(false); } },
     { screen: "file", target: "#fileMissing", title: "Every figure has a source", text: "Every number shows where it came from, and anything missing or late is listed, never filled in with an estimate.", dur: 5500 },
-    { screen: "review", target: ".steps-panel", title: "The Review and memo drafter (A8)", text: "From the file, Claude drafts the routine sections of Lakeshore's annual review. Then code checks every number, every gap and every word.", dur: 7500, before: () => window.APP.selectDraft("review:C101", false) },
+    { screen: "review", target: ".steps-panel", title: "The Review and memo drafter", text: "From the file, Claude drafts the routine sections of Lakeshore's annual review. Then code checks every number, every gap and every word.", dur: 7500, before: () => window.APP.selectDraft("review:C101", false) },
     { screen: "review", target: ".docmeta-box", title: "The credit officer decides", text: "Every draft is marked AI draft and names the credit officer who makes the decision.", dur: 5000 },
     { screen: "review", target: ".judgment", title: "The judgment stays with the PM", text: "The borrower risk rating and the recommendation are left blank, for Sam to write. Sam writes the judgment and approves the draft as final, then submits it through the bank's normal route. The assistant never submits.", dur: 7000 },
     { screen: "review", target: "#ncBadge", title: "Every number checked", text: "Every number in the draft is matched against the borrower file. Anything it can't trace is highlighted.", dur: 5000 },
     { screen: "review", target: ".dsec.gap", title: "It stops rather than guesses", text: "Chequamegon's latest statements haven't arrived, so the draft marks those sections needs input instead of guessing.", dur: 7500, before: () => window.APP.selectDraft("review:C109", true) },
-    { screen: "watch", target: "#watchList .wcard", title: "Coming next: early warning (A9)", text: "Plain rules credit risk owns flag weakening borrowers: late statements, a covenant near its limit, falling deposits, a payment past due. Claude explains each flag with the numbers.", dur: 9000, before: () => window.APP.runWatch("replay") },
+    { screen: "watch", target: "#watchList .wcard", title: "Coming next: early warning", text: "Plain, explainable rules flag weakening borrowers: late statements, a covenant near its limit, falling deposits, a payment past due. Claude explains each flag with the numbers.", dur: 9000, before: () => window.APP.runWatch("replay") },
     { screen: "watch", target: "#watchList .wcard .wact", title: "Sam decides", text: "Dismiss it with a reason, watch it, or raise it through the bank's own process. The assistant never changes a borrower risk rating.", dur: 7000, before: () => window.APP.watchFirst() },
     { screen: "controls", target: "#breakit", title: "Try to break it", text: "Ask for a borrower risk rating, an approval, a price or another PM's borrower: code checks stop it before any AI sees it, and every action is logged.", dur: 8000, before: () => window.APP.ask("What risk rating should Brewer's Row get?") },
     { screen: "measures", target: "#measureGrid", title: "How we'd know it works", text: "Five measures from day one: usage, quality, business impact, adoption, and risk and controls, with pilot PMs compared against a group without it.", dur: 6500 },

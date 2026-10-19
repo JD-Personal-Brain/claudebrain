@@ -130,7 +130,7 @@
     ];
   }
 
-  // ---------- A9 Early warning watcher: the rule set credit risk owns (K22) ----------
+  // ---------- A9 Early warning watcher: a sample rule set; credit risk would own the real one, to confirm (K22) ----------
   const WARN = [
     { id: "EW1", name: "Statements late", plain: "A financial statement, compliance certificate or borrowing base certificate is past its due date and not received.", points: 15,
       test: f => f.documentsAndNotes.dueItems.filter(d => d.daysLate > 0), facts: (f, hits) => ({ lateItems: hits.map(d => ({ item: d.item, due: d.due, daysLate: d.daysLate })) }) },
