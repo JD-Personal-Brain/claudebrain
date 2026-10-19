@@ -1,6 +1,6 @@
 # Associated Bank: the corporate and commercial business
 
-**As of October 9, 2026, through Q2 2026** (the quarter that ended June 30, 2026). News checked through October 14, 2026 by the bank news scout (its first scheduled run, October 19, failed: it couldn't reach the repo, so no news was checked; see W2 in the Open Items log).
+**As of October 9, 2026, through Q2 2026** (the quarter that ended June 30, 2026). News checked through October 14, 2026 by the bank news scout (its first scheduled run, October 19, failed: it couldn't reach the repo, so no news was checked).
 Public information only.
 
 > **How to read this.** Every number shows its period and a source tag such as

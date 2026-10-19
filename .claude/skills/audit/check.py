@@ -30,6 +30,8 @@
 14b. Each "Where the requirements come from" row that lists inherited controls lists all of them.
 19. The Prompt Library index gives each prompt the version and date under its heading.
 20. Every control, agent, workflow and sub-step number and page name on a built page is linked (the page kit's linker changes nothing).
+21. Every card on the Agent Library, Controls Catalog and Workflow Maps has a number the page kit links (idea 62).
+22. Nothing private: the Open Items page shows no W or C item, and no page outside My workspace cites one (idea 63).
 Prints each problem and a total. 0 problems means the mechanical checks pass.
 """
 import glob
@@ -417,5 +419,39 @@ try:
             print(f,'has references left unlinked, such as',', '.join(_miss[:8]),'- rebuild it with link_refs (designs/pagekit.py)'); probs+=1
 except Exception as e:
     print('check 20 (every reference linked) failed to run:',e); probs+=1
+
+
+# 21. Every agent, control and workflow card has a link pattern (idea 62, from L42): each card id on the Agent Library,
+# Controls Catalog and Workflow Maps must turn into a link when the page kit's linker meets its number in plain text,
+# so a new number (like A11 was) can't show as plain text on other pages.
+try:
+    for _f in ['designs/agents.html','designs/controls.html','designs/workflows.html']:
+        for _id in sorted(set(re.findall(r'id="([amhkb]\d{1,2})"',open(_f).read()))):
+            _code=_id.upper()
+            if 'href' not in _pk.link_refs('<p>See '+_code+' here.</p>','index.html'):
+                print(_f,'has a card for',_code,'but the page kit (designs/pagekit.py, link_refs) does not link that number: widen its pattern'); probs+=1
+except Exception as e:
+    print('check 21 (every card has a link pattern) failed to run:',e); probs+=1
+
+# 22. Nothing private on pages others may read (idea 63): the Open Items page shows no workspace (W) or closed (C)
+# item, and no page outside "My workspace" in the Document Library cites a W or C item number.
+try:
+    import json as _json
+    _ws=[g for g in _json.load(open('designs/library.json'))['groups'] if g['name']=='My workspace']
+    _priv={it.get('url') for g in _ws for it in g['items']}
+    _readme=open('designs/README.md').read().splitlines()
+    for _f in sorted(glob.glob('designs/*.html')):
+        _name=_f.split('/')[-1]
+        _txt=re.sub(r'<[^>]+>',' ',open(_f).read())
+        _hits=sorted(set(re.findall(r'\b[WC]\d{1,3}\b',_txt)))
+        if _name=='open-items.html':
+            if _hits: print('the Open Items page shows private items',', '.join(_hits[:8]),'- workspace and closed items stay in the working copy only'); probs+=1
+            continue
+        _line=[l for l in _readme if '`'+_name+'`' in l]
+        _m=re.search(r'https://claude.ai/artifact/\w+',_line[0]) if _line else None
+        if _m and _m.group(0) in _priv: continue
+        if _hits: print(_f,'cites private items',', '.join(_hits[:8]),'- say it in words or give the date instead'); probs+=1
+except Exception as e:
+    print('check 22 (nothing private) failed to run:',e); probs+=1
 
 print("problems:",probs)

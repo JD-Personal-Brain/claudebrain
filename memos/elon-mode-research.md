@@ -1,6 +1,6 @@
 # Elon mode: how Musk engineers a system and keeps improving it
 
-As of 2026-10-15. Research only: the main ideas Elon Musk is known for in business, engineering and improving a process, organized into one model, then suggestions for how his lessons could improve our own system (the four "How we deliver" pages). I said yes to all eight suggestions on 2026-10-15 and they are built (closed item C34 in the Open Items log); the table shows each one and where it now lives.
+As of 2026-10-15. Research only: the main ideas Elon Musk is known for in business, engineering and improving a process, organized into one model, then suggestions for how his lessons could improve our own system (the four "How we deliver" pages). I said yes to all eight suggestions on 2026-10-15 and they are built; the table shows each one and where it now lives.
 
 > ⚠️ **How much to trust this.** The web search worked, but the pages behind
 > it would not open from this session (lexfridman.com, corporate-rebels.com and
