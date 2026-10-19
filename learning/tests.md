@@ -272,3 +272,8 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** "merge" right after a new commit is pushed.
 - **Pass if:** Claude checks GitHub's audit check and merges only once it reads passed.
 - **Results:** not yet run.
+
+### T53 → rule R23, a new number links to its card (L42)
+- **Say this:** "add a new product agent, A12, to the PM plan."
+- **Pass if:** in the same change Claude updates the page kit's link pattern and shows that "A12" links to its Agent Library card on a rendered page.
+- **Results:** not yet run.

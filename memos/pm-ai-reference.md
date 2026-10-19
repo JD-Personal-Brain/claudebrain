@@ -39,7 +39,7 @@ Later waves add early warning flags and a covenant and statement tracker, then c
 - Time is proven against similar PMs not yet using it; targets are set from the bank's own numbers. [Outside evidence for each credit core use case](https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X#portfolio-managers)
 
 ### How fast
-A first prototype takes days. We expect approval to set the pace (our assumption, to confirm): drafts inform credit decisions, so we expect them to need a deeper review (we call it the higher-risk path), including the credit policy owner's sign-off. On our first estimates, to confirm, that's the industry background draft by about week 6, the borrower file by about week 7 and the drafts by about week 12. [The plan, week by week](https://claude.ai/artifact/UKMBCCxBns8YuCJyEo4Zkv)
+A first prototype takes days. We expect approval to set the pace (our assumption, to confirm): drafts inform credit decisions, so we expect them to need a deeper review (we call it the higher-risk path), including the credit policy owner's sign-off. On our first estimates, to confirm, that's the industry background draft by a week we set once the bank says how long its AI review takes, the borrower file by about week 7 and the drafts by about week 12. [The plan, week by week](https://claude.ai/artifact/UKMBCCxBns8YuCJyEo4Zkv)
 
 **What could slow us down:** not known yet. Possible hold-ups include approval to use borrower data and the deeper credit review. If the review runs long, the borrower file still goes ahead of the drafts (unless the risk partner puts it on the deeper review too), because it gathers and cites but writes no judgment; if data approval runs long, the prototype keeps running on sample borrowers until it lands.
 
@@ -148,7 +148,7 @@ Each capability is one AI product (glossary) and answers one credit core use cas
 
 | Wave | Capability (AI product) | Credit core use case | Agents | Built mainly on | Our measure (target set in Define) |
 |---|---|---|---|---|---|
-| **Wave 1** (industry background draft by about week 6; borrower file by about week 7; drafts by about week 12; each once its approvals are in) | Industry background draft | Credit memo and annual review drafts | A11 | AWS Bedrock (Knowledge Bases over the approved industry sources) or Copilot Studio | Outside fees we could replace; turnaround; share of each section kept with light edits [X] |
+| **Wave 1** (industry background draft by week [X], set at gate 2; borrower file by about week 7; drafts by about week 12; each once its approvals are in) | Industry background draft | Credit memo and annual review drafts | A11 | AWS Bedrock (Knowledge Bases over the approved industry sources) or Copilot Studio | Outside fees we could replace; turnaround; share of each section kept with light edits [X] |
 | | Borrower file | Credit memo and annual review drafts | A7 | Snowflake, AWS Bedrock (Knowledge Bases) | Hours spent gathering per review [X] |
 | | Annual review and credit memo drafts (higher-risk path) | Credit memo and annual review drafts | A7, A8 | AWS Bedrock or Copilot Studio; Word templates | Hours per review; share of sections used with light edits [X] |
 | **Wave 2** (dates set once the wave 1 drafts' review is signed, about week 11) | Early warning flags (higher-risk path) | Early warning on credit quality | A9 | Snowflake signals, Teams | Flags acted on; how much earlier than today [X] |
@@ -220,7 +220,7 @@ Industry background draft: built, tested on public sources and signed off | 0 | 
 Borrower file and drafts built on sample borrowers | 0 | 4 | build | https://claude.ai/artifact/KZ4PEbhCPAj6uWKXmJMCeg#part-5-the-full-delivery-plan-with-every-6-the-project-plan-estimate
 Gate 2: borrower data approved, higher-risk path set, business case agreed | 4 | 4 | gate | https://claude.ai/artifact/KZ4PEbhCPAj6uWKXmJMCeg#part-5-the-full-delivery-plan-with-every-4-how-the-work-flows
 Borrower file: tested on real data and signed off | 4 | 6 | build | https://claude.ai/artifact/KZ4PEbhCPAj6uWKXmJMCeg#part-5-the-full-delivery-plan-with-every-6-the-project-plan-estimate
-**Industry background draft live** | 5 | 13 | live | https://claude.ai/artifact/KZ4PEbhCPAj6uWKXmJMCeg#part-5-the-full-delivery-plan-with-every-6-the-project-plan-estimate
+**Industry background draft live (week to set at gate 2, once the AI review's length is known)** | 5 | 13 | live | https://claude.ai/artifact/KZ4PEbhCPAj6uWKXmJMCeg#part-5-the-full-delivery-plan-with-every-6-the-project-plan-estimate
 **Borrower file live** | 6 | 13 | live | https://claude.ai/artifact/KZ4PEbhCPAj6uWKXmJMCeg#part-5-the-full-delivery-plan-with-every-6-the-project-plan-estimate
 Review and memo drafts: tested on real past reviews | 4 | 9 | build | https://claude.ai/artifact/KZ4PEbhCPAj6uWKXmJMCeg#part-5-the-full-delivery-plan-with-every-6-the-project-plan-estimate
 Higher-risk review and sign-offs, including the credit policy owner | 9 | 11 | build | https://claude.ai/artifact/KZ4PEbhCPAj6uWKXmJMCeg#part-5-the-full-delivery-plan-with-every-6-the-project-plan-estimate
@@ -382,7 +382,7 @@ holding the work up (⚠️ not known yet).
 
 Six steps, each ending in a go/no-go gate, run as the [Product Workflow](https://claude.ai/artifact/8Nm5fkdicn2Gu5VmNVTvYv)
 sets out: its questions, gates and sub-steps aren't repeated here. The first pass overlaps:
-a working prototype in week 1, the industry background draft live in about week 6, the borrower
+a working prototype in week 1, the industry background draft live in week [X], set at gate 2 once the bank says how long its AI review takes (B21), the borrower
 file in about week 7 and the drafts in about week 12 (later than for RMs, because of the higher-risk path); then steps 3–6
 repeat in cycles of a week or two, and each new feature wave takes the quick pass through
 Discover and Define. What's different for PMs:
@@ -451,15 +451,15 @@ as it is built. No real borrower data goes into the assistant or its tests befor
 | 1–4 | Borrower file and drafts built and tested on sample borrowers | Platform team | Prototype test results |
 | 1–5 | Industry background draft built and tested on public sources (it needs no client data): test set graded by PMs, every statement cited and dated (K7); the approved source list and its license terms agreed with the content owner and vendor risk (K5, K14); evidence pack | Platform team, product manager, vendor risk | Test results against the quality bar |
 | About 4 | **Gate 2:** final baseline, data contract (with the approved industry source list), the product's early risk rating (which capabilities take the higher-risk path), what drafts may contain (credit policy owner), measures and value model; the order of feature waves 2 and 3 agreed; their dates set once the wave 1 drafts' higher-risk review is signed (about week 11), when its real length is known. Aimed for weeks 2 to 4, paced by the data owners' signatures (⚠️) | Sponsor, data owners, content owner of the credit file, risk partner, credit policy owner | Signed data contract; decision log |
-| 5 | Industry background draft: frozen version, sign-offs (after gate 2); monitoring plan (4.8); readiness: training, incident process (5.1) | Risk partner, vendor risk, product manager | Gate 3 and 4 entries |
-| About 6 | **Industry background draft live with pilot PMs** | Product manager | Sections drafted; sections kept with light edits |
+| After gate 2 | Industry background draft: frozen version, sign-offs (as long as the bank's AI review takes, B21); monitoring plan (4.8); readiness: training, incident process (5.1) | Risk partner, vendor risk, product manager | Gate 3 and 4 entries |
+| Week [X] | **Industry background draft live with pilot PMs** (set at gate 2, once the review's length is known) | Product manager | Sections drafted; sections kept with light edits |
 | 5–6 | Borrower file on real data, after gate 2: test set, controls tested, frozen version, sign-offs; monitoring plan (4.8); readiness: training, incident process, comparison group (5.1) | Platform team, risk partner | Gate 3 and 4 entries |
 | About 7 | **Borrower file live with pilot PMs** | Product manager | First weekly usage report |
 | 5–9 | Review and memo drafts on real past reviews, after gate 2; test set graded by PMs, with must-refuse cases; fairness check agreed with compliance; evidence pack | Platform teams, product manager, compliance | Test results against the quality bar |
 | 10–11 | Higher-risk review of the frozen drafts: sign-offs, including the credit policy owner's; readiness (training, incident process, comparison group) | Risk, compliance, privacy, security, credit policy owner | Sign-offs recorded |
 | About 12 | **Annual review and credit memo drafts live with pilot PMs** | Product manager | Drafts used; sections kept with light edits |
 
-**By day 90 (about week 13):** the industry background draft has been live for about eight weeks,
+**By day 90 (about week 13):** the industry background draft should be live (its week is set at gate 2),
 the borrower file for about seven and the drafts for about one or two; the first leading measures are coming in. Feature waves 2 and 3 get
 dates once the drafts' higher-risk review is signed (about week 11), when its real length is known.
 

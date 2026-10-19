@@ -31,7 +31,7 @@ Later waves add early warning flags and a covenant and statement tracker, then c
 - Time is proven against similar PMs not yet using it; targets are set from the bank's own numbers. [Outside evidence for each credit core use case](https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X#portfolio-managers)
 
 ## How fast
-A first prototype takes days. We expect approval to set the pace (our assumption, to confirm): drafts inform credit decisions, so we expect them to need a deeper review (we call it the higher-risk path), including the credit policy owner's sign-off. On our first estimates, to confirm, that's the industry background draft by about week 6, the borrower file by about week 7 and the drafts by about week 12. [The plan, week by week](https://claude.ai/artifact/UKMBCCxBns8YuCJyEo4Zkv)
+A first prototype takes days. We expect approval to set the pace (our assumption, to confirm): drafts inform credit decisions, so we expect them to need a deeper review (we call it the higher-risk path), including the credit policy owner's sign-off. On our first estimates, to confirm, that's the industry background draft by a week we set once the bank says how long its AI review takes, the borrower file by about week 7 and the drafts by about week 12. [The plan, week by week](https://claude.ai/artifact/UKMBCCxBns8YuCJyEo4Zkv)
 
 **What could slow us down:** not known yet. Possible hold-ups include approval to use borrower data and the deeper credit review. If the review runs long, the borrower file still goes ahead of the drafts (unless the risk partner puts it on the deeper review too), because it gathers and cites but writes no judgment; if data approval runs long, the prototype keeps running on sample borrowers until it lands.
 
