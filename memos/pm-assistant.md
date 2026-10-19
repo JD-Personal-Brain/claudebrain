@@ -10,7 +10,7 @@ These limits make it safe to give every PM one.
 - **Jobs:** only the capabilities below. Anything else, it says so and stops.
 - **Workflows (where it works):** Word from the bank's templates, Teams and the loan system (⚠️ to confirm). No new app.
 - **Data:** borrower data the bank has approved as trusted (certified) and the credit file's documents, only for the borrowers the PM may already see.
-- **Controls:** it gathers, drafts and flags; the PM writes the judgment and submits. It never sets or suggests a borrower risk rating, never approves or declines credit and never sets a price. Wave 1 drafts leave the recommendation blank; whether a later draft may carry one is the credit policy owner's call at 2.4 (our assumption). Every draft names the credit officer who decides. Everything is logged.
+- **Controls:** it gathers, drafts and flags; the PM writes the judgment and submits. It never sets or suggests a borrower risk rating, never approves or declines credit and never sets a price. The recommendation is left for the PM. Every draft names the credit officer who decides. Everything is logged.
 - **Feedback:** one click on every output (use, change or reject), which steers what gets better next.
 
 ## 2. Capabilities, by moment in the PM's work
@@ -19,7 +19,7 @@ Each capability is one AI product and answers one credit core use case (our prop
 | Moment | Capability | What it does | Credit core use case | Wave |
 |---|---|---|---|---|
 | **Review and renew** | Borrower file | Everything about one borrower in one place, every figure with its source, and what's missing or late | Credit memo and annual review drafts | 1 |
-| | Annual review and credit memo drafts | The routine sections drafted in the bank's template; the borrower risk rating and the recommendation left for the PM (in wave 1 the recommendation is always the PM's) | Credit memo and annual review drafts | 1 |
+| | Annual review and credit memo drafts | The routine sections drafted in the bank's template; the borrower risk rating and the recommendation left for the PM | Credit memo and annual review drafts | 1 |
 | | Renewal radar | Loans coming up for renewal, and borrowers whose results suggest a different line (higher-risk path, our assumption) | Renewals and line changes | 3 |
 | **Watch the portfolio** | Early warning flags | Flags borrowers whose signals are weakening, with the numbers; the PM decides whether a flag goes to the bank's own watchlist or rating review (⚠️ to confirm how that runs today) | Early warning on credit quality | 2 |
 | | Covenant and statement tracker | Covenant tests, and statements and certificates due or late | Spreading, document intake and covenant tracking | 2 |

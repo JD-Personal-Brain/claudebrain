@@ -71,14 +71,12 @@ The roles, what each one decides and the gates each joins are set once in the
 | Sponsor | A credit or commercial banking leader [name needed] ⚠️ (whether credit or the business sponsors it is a first question) |
 | User leaders | PM team leaders and credit managers: they choose the pilot group, decide with the sponsor whether to scale (gate 5), and use the early warning flags in a portfolio review they already run (⚠️ to confirm) |
 | Pilot users | Pilot PMs and credit analysts: they co-design and test, and grade the test set |
-| Credit policy owner | What a draft may contain (for example, whether a later draft may carry a recommendation; wave 1 drafts leave it blank), the must-refuse cases, and a sign-off at step 4 (higher-risk path, control K3) [name needed] |
+| Credit policy owner | What a draft may contain (for example, whether a later feature wave's drafts may carry a recommendation, asked in that wave's quick pass), the must-refuse cases, and a sign-off at step 4 (higher-risk path, control K3) [name needed] |
 | Credit officer | Whoever holds approval authority for that credit under the bank's authority list (it may be the PM; ⚠️ to confirm): makes every credit decision a draft or flag informs; named on every draft (K3) |
-| Data owners | The owners of borrower financials, loan and covenant data and credit files (⚠️ which systems hold them is to confirm) [names needed] |
-| Content owner of the credit file | Signs the list of documents the assistant may read (statements, tax returns, appraisals, prior reviews; sub-step 2.3), for example credit administration ⚠️ (to confirm) [name needed] |
+| Data owners | The owners of borrower financials, loan and covenant data and credit files (⚠️ which systems hold them is to confirm) [names needed], including the credit file's content owner, who signs the list of documents the assistant may read (statements, tax returns, appraisals, prior reviews; sub-step 2.3), for example credit administration (⚠️ to confirm) |
 | Platform teams | Microsoft, AWS, data engineering and the loan system's team (⚠️ which loan system the bank uses is not yet known) |
 | Long-term owner | To be decided by a date set in Define (sub-step 2.8); confirmed before scaling (5.7); for example, someone in credit administration |
-| Also for PMs: credit risk review | Whether early warning flags change how loans are watched, and how a flag relates to the bank's own watchlist process (⚠️ to confirm) |
-| Also for PMs: credit risk | From wave 2, owns the early warning rules and signs the rule set at 4.7 (⚠️ which team owns early warning rules is to confirm) |
+| From feature wave 2: credit risk | Owns the early warning rules and signs the rule set at 4.7; with credit risk review, decides how a flag relates to the bank's own watchlist process (⚠️ which teams, to confirm) |
 
 The risk partner, compliance, privacy and security (who sign off at step 4), vendor
 risk, IT, Finance, Analytics and Operations join as the Product Framework sets out;
@@ -168,7 +166,7 @@ as it is built. No real borrower data goes into the assistant or its tests befor
 | 5–6 | Borrower file on real data, after gate 2: test set, controls tested, frozen version, sign-offs; monitoring plan (4.8); readiness: training, incident process, comparison group (5.1) | Platform team, risk partner | Gate 3 and 4 entries |
 | About 7 | **Borrower file live with pilot PMs** | Product manager | First weekly usage report |
 | 5–9 | Review and memo drafts on real past reviews, after gate 2; test set graded by PMs, with must-refuse cases; fairness check agreed with compliance; evidence pack | Platform teams, product manager, compliance | Test results against the quality bar |
-| 10–11 | Higher-risk review of the frozen drafts: sign-offs, including the credit policy owner's; readiness (training, incident process, comparison group). The frozen drafts are tested on a pinned version of the borrower file; borrower-file changes that reach the drafts wait for sign-off or go through step 4 with them | Risk, compliance, privacy, security, credit policy owner | Sign-offs recorded |
+| 10–11 | Higher-risk review of the frozen drafts: sign-offs, including the credit policy owner's; readiness (training, incident process, comparison group) | Risk, compliance, privacy, security, credit policy owner | Sign-offs recorded |
 | About 12 | **Annual review and credit memo drafts live with pilot PMs** | Product manager | Drafts used; sections kept with light edits |
 
 **By day 90 (about week 13):** the borrower file has been live for about six weeks and the
@@ -203,7 +201,6 @@ This is the one full list; the Executive Summary asks the top few.
 - Which loan system and spreading tool does the bank use, and do they have drafting features already?
 - Where do borrower financials, covenants and credit files live, and who owns them?
 - Is there a standard template for annual reviews and credit memos?
-- May a later draft carry a recommendation, or must it stop at the facts? (Wave 1 drafts leave it blank.)
 - Is there an approval-authority list (who may decide which credits), and who keeps it?
 - Who is the credit officer for each kind of decision?
 - How does the bank watch credit quality today (a watchlist, a portfolio review), and who runs it?
@@ -245,7 +242,7 @@ number means two things. **[X]** values are set in Define.
 - **Job:** draft the routine sections of an annual review or a credit memo in the bank's template, from A7's file: the borrower, the relationship, financial performance, covenant compliance, collateral facts and changes and items to note (plain facts with sources; the PM draws the conclusions).
 - **Inputs:** the borrower file from A7; the bank's template; the bank's approval-authority list (who decides what, to name the credit officer; see To confirm); for a credit memo, the request as the RM or PM wrote it.
 - **Allowed actions:** read the inputs; create a draft for the PM.
-- **Not allowed:** writing a borrower risk rating, an approve or decline, or a price; writing the recommendation (in wave 1 always written by the PM; later only if the credit policy owner allows it at 2.4); stating any number not in the borrower file.
+- **Not allowed:** writing a borrower risk rating, an approve or decline, or a price; writing the recommendation (left for the PM; later only if the credit policy owner allows it at 2.4); stating any number not in the borrower file.
 - **Outputs:** a draft marked "AI draft" with the judgment sections left blank for the PM, every figure linked to its source, and the credit officer who decides named at the top.
 - **Stops when:** the draft is delivered, or the file has a gap a section needs (it marks the section "needs input" and stops there).
 - **Proof it worked:** test-set score meets the quality bar (accuracy zero tolerance, sources, usefulness graded by PMs); every must-refuse case refused.
@@ -267,15 +264,7 @@ number means two things. **[X]** values are set in Define.
 
 **A10. Credit policy Q&A** · wave 3 · runs on a Copilot Studio agent or AWS Bedrock (Knowledge Bases)
 - **Job:** answer PMs' and analysts' questions from the bank's credit policy, citing the section.
-- **Inputs:** the current credit policy and procedures, read-only.
-- **Allowed actions:** read; answer with the section cited.
-- **Not allowed:** deciding whether a specific loan meets policy; answering from anything but the policy.
-- **Outputs:** an answer with its section, or "the policy doesn't say; ask [owner]."
-- **Stops when:** answered, or out of scope.
-- **Proof it worked:** test-set score meets the quality bar; answers checked by the credit policy owner's team.
-- **Starts when:** a PM asks.
-- **Person in charge:** the credit policy owner for content; the product manager for quality.
-- **To confirm:** ⚠️ where the current credit policy and procedures live, and who keeps them current.
+- **To confirm:** the full spec is written at sub-step 3.1, when feature wave 3 is scoped.
 
 ### Agents the team uses
 

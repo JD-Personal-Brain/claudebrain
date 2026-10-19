@@ -16,7 +16,7 @@ Each PM gets **their own AI assistant**, inside the tools we expect they already
 | Capability | What the PM gets | Why it matters |
 |---|---|---|
 | **Borrower file** | Everything about one borrower in one place: financials and their trend, loans, covenants, deposits, payments, the last review and the relationship manager's (RM's) notes, every figure with its source, and a list of what's missing or late | Hours of gathering back on every review; goes live first |
-| **Annual review and credit memo drafts** | The routine sections drafted in the bank's template from the borrower file; the borrower risk rating and the recommendation left blank for the PM (wave 1 drafts always leave the recommendation blank; whether a later draft may carry one is the credit policy owner's call, our assumption) | Faster reviews, and faster answers on new requests |
+| **Annual review and credit memo drafts** | The routine sections drafted in the bank's template from the borrower file; the borrower risk rating and the recommendation left blank for the PM | Faster reviews, and faster answers on new requests |
 
 **See it working:** the [PM Assistant Prototype](https://claude.ai/artifact/8vFxUWVwtZbzZs7pL162HE) runs its agents on sample borrowers, with a short tour.
 

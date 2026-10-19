@@ -28,7 +28,7 @@ No real borrower data goes into the assistant or its tests before gate 2 (sizing
 The real blockers aren't known yet; they're a first question for the bank. Possible ones:
 - **Approval to use borrower data and credit files.** Nothing reaches pilot PMs on real data until the people responsible for it approve which data the assistant may use.
 - **The deeper review for credit drafts.** Nothing goes live until risk, compliance, privacy, security and the credit policy owner sign off. To keep that short, they review each version as it's built.
-- **Backup plan.** If data approval runs long, the prototype keeps running on sample borrowers and the dates are reset at gate 2. If the risk partner puts the borrower file on the higher-risk path too, it goes live with the drafts at about week 12. If the deeper review of the drafts runs long, the borrower file stays live and the version under review stays frozen; improvements ship after sign-off. The frozen drafts are tested on a pinned version of the borrower file; borrower-file changes that reach the drafts wait for sign-off or go through step 4 with them. The call is made at gate 2.
+- **Backup plan.** If data approval runs long, the prototype keeps running on sample borrowers and the dates are reset at gate 2. If the risk partner puts the borrower file on the higher-risk path too, it goes live with the drafts at about week 12. If the deeper review of the drafts runs long, the borrower file stays live and the version under review stays frozen; improvements ship after sign-off. The call is made at gate 2.
 
 Detail: [the backup plan and how we move fast](https://claude.ai/artifact/KZ4PEbhCPAj6uWKXmJMCeg#part-5-the-full-delivery-plan-with-every-6-the-project-plan-estimate).
 

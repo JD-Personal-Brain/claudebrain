@@ -35,7 +35,7 @@ Each capability is one AI product (glossary) and answers one credit core use cas
 | Moment | Capability | What it does | Credit core use case | Wave |
 |---|---|---|---|---|
 | **Review and renew** | Borrower file | Everything about one borrower in one place, every figure with its source, and what's missing or late | Credit memo and annual review drafts | 1 |
-| | Annual review and credit memo drafts | The routine sections drafted in the bank's template; the borrower risk rating and the recommendation left for the PM (in wave 1 the recommendation is always the PM's) | Credit memo and annual review drafts | 1 |
+| | Annual review and credit memo drafts | The routine sections drafted in the bank's template; the borrower risk rating and the recommendation left for the PM | Credit memo and annual review drafts | 1 |
 | | Renewal radar | Loans coming up for renewal, and borrowers whose results suggest a bigger or smaller line (higher-risk path, our assumption) | Renewals and line changes | 3 |
 | **Watch the portfolio** | Early warning flags | Flags borrowers whose signals are weakening, with the numbers | Early warning on credit quality | 2 |
 | | Covenant and statement tracker | Covenant tests from the spread, and statements and certificates due or late | Spreading, document intake and covenant tracking | 2 |
