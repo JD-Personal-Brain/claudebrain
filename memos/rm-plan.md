@@ -5,7 +5,7 @@ How The RM Assistant gets delivered to relationship managers (RMs) · Associated
 [RM Executive Summary](https://claude.ai/artifact/LPPq2gt5PSoiB8GzX8ZBE2) · [The RM Assistant](https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2) · [RM Assistant Prototype](https://claude.ai/artifact/RFM2o7cdren3TxesQBsjky) (see it working) · [RM Detail](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n) (everything in full) · [Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ) (the rules every product follows)
 
 ## The plan at a glance
-The first 13 weeks, as estimates to confirm. Week 1 starts at kickoff; gates (◆) are go/no-go decisions. Each live bar starts once the bank's AI review signs it off (and, where it uses client data, that data is approved), so the bars move with those approvals. Each row links to its detail in RM Detail.
+The first 13 weeks from kickoff, as estimates to confirm. Gates (◆) are go/no-go decisions; each live bar moves with its AI review sign-off (and, where it uses client data, that data's approval). Each row links to its detail.
 
 ```gantt
 weeks 13
@@ -23,10 +23,10 @@ Small releases every week or two | 6 | 13 | ongoing | https://claude.ai/artifact
 
 **Limiting factor (our assumption, to confirm):** how long the bank's AI review takes; every live bar moves with it (section 1).
 
-The recap and email can move first because they're drafted from the RM's own notes, not client account data or meeting recordings (our assumption, to confirm: it needs the least review), and the risk partner reviews each version as it's built. Interviews keep going after gate 1 to refine the target. Waves 2 and 3 get proposed dates at gate 2, once data access and review times are known.
+The recap and email go first: drafted from the RM's own notes, not client account data or recordings, they likely need the least review (our assumption, to confirm). Waves 2 and 3 get proposed dates at gate 2, once data access and review times are known.
 
 ## 1. What could slow us down (to confirm)
-Our working assumption is the AI review, then approval to use client data; the real blockers are a first question for the bank.
+Our working assumption, to confirm with the bank:
 - **Approval to use client data.** Nothing reaches pilot RMs on real client data until the people responsible for it approve which data the assistant may use.
 - **The bank's AI review.** Nothing goes live until risk, compliance, privacy and security sign off; the risk partner sees each version as it's built, so the sign-off has no surprises.
 - **Backup plan.** If either runs long, the meeting recap and email go first, and the rest stays ready in the test environment, live by about week 10. The call is made at gate 2.

@@ -1,10 +1,6 @@
 # Product Framework: the rules every product follows
 
-Page 2 of the four "How we deliver" pages, read in this order:
-1. **Product Workflow** (`memos/role-workflow.md`): the six steps (Discover, Define, Build, Govern and test, Release and adopt, Measure and iterate), what happens in each, and their go/no-go gates.
-2. **Product Framework** (this page): the rules every product follows.
-3. **Product Machine** (`product-machine.md`): every task in every step, marked Auto, Draft, Me or Partner, and how one product manager runs many projects at once.
-4. **Product Playbook** (`playbook/`): how to do each of the 44 sub-steps the first time.
+Page 2 of the four "How we deliver" pages, read in order: Product Workflow, Product Framework, Product Machine, Product Playbook.
 
 ## Who's involved and who decides
 Agree this at the start of Discover (sub-step 1.0), with real names. Gaps are
@@ -167,14 +163,11 @@ What the Product Workflow and the Product Playbook already say is linked, not re
 | Align business, technology, data, risk, compliance and operations partners | Who decides; decision log |
 
 ## Starting a new project
-Start every project with sub-step 1.0 in the Product Playbook (kickoff): name
-the outcome and the sponsor, fill in who's involved and who decides (above) with
-real names, copy the Product Machine's task tables into the shared tracker with
-an owner and a date for each task, brief the risk partner and create the project
-file, with this project's question, governance thread and gate for each of the
-six steps (from the Product Workflow). Then work through Discover with the playbook, writing the steps up in the
-table above. The plan's working copy is `memos/<project>.md`, as the RM memo
-does. People read three short pages (executive summary, product, plan); the full
-plan goes into the project's detail document for AI (RM Detail for RMs, PM Detail for PMs).
+Start every project with sub-step 1.0 in the Product Playbook (kickoff); its
+project file holds this project's question, governance thread and gate for each
+of the six steps. Then work through Discover, writing the steps up in the table
+above. The plan's working copy is `memos/<project>.md`; people read three short
+pages (executive summary, product, plan), and the full plan goes into the
+project's detail document for AI (RM Detail for RMs, PM Detail for PMs).
 
 _Last updated: 2026-10-19_

@@ -14,7 +14,7 @@ Each RM gets **their own AI assistant**, inside the tools we expect they already
 | Capability | What the RM gets | Why it matters |
 |---|---|---|
 | **[Pre-meeting client brief](https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX#b2)** | One page before each client meeting: the relationship, recent activity, open opportunities, talking points | Less prep time, better meetings |
-| **[Meeting follow-up](https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX#b3)** | The recap, follow-up email and Salesforce call notes, drafted from the RM's own notes for the RM to approve (from the Teams transcript later, only where recording is allowed and the client agrees). Recap and email come first; saving call notes follows once signed off | Admin off the RM's plate; better client records |
+| **[Meeting follow-up](https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX#b3)** | The recap, follow-up email and Salesforce call notes, drafted from the RM's own notes for the RM to approve. Recap and email come first | Admin off the RM's plate; better client records |
 | **[Monday opportunity list](https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX#b1)** | Each Monday, the clients to call this week, with the reason and the numbers behind it | New revenue from existing clients |
 
 **See it working:** the [RM Assistant Prototype](https://claude.ai/artifact/RFM2o7cdren3TxesQBsjky) runs all three on sample data, with a tour under 2 minutes.
@@ -29,7 +29,7 @@ Later waves add early warning on clients who may leave, referral prompts and pro
 ## How fast
 The build takes days. What sets the pace is approval: each piece goes live once its client data is approved and the bank's AI review signs it off. On our first estimates, to confirm, that's the meeting recap and email by about week 4, then the client brief, Monday opportunity list and call notes by about week 6. The first read on closed revenue comes at about month 6. [The plan, week by week](https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk)
 
-**What could slow us down:** our working assumption, to confirm with the bank (a first question, below): the bank's AI review, with approval to use client data close behind. If they run long, the recap and email still go first and the rest follows by about week 10.
+**What could slow us down:** our working assumption, to confirm with the bank: its AI review, then approval to use client data. If they run long, the recap and email still go first and the rest follows by about week 10.
 
 ## What I need, and what I'd confirm
 1. A business sponsor for the RM work: about an hour a week, plus each go/no-go decision (our estimate).

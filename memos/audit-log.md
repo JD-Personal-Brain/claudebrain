@@ -1,8 +1,7 @@
 # Audit Log
 
-How we audit our work: what we believe about audit, every check and when it
-runs, the record of every audit so far, and what to improve. Approved 2026-10-15, with all six improvements; every audit adds a row to
-the record below.
+How we audit our work: our principles, every check and when it runs, and the
+record of every audit (each one adds a row).
 
 ## How we think about audit
 

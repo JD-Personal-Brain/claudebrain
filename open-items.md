@@ -1,6 +1,6 @@
 # Open Items
 
-The AI program delivers two personal AI assistants at the same time: one for each relationship manager (RM) and one for each portfolio manager (PM). Both run on one shared platform. This log lists what's still open on each of those three tracks, plus the decisions that cover the whole program.
+Everything still open in the AI program, on three tracks (the shared platform, the RM Assistant and the PM Assistant), plus the decisions that cover the whole program.
 
 > **How to read this.** Each track is numbered on its own (D decisions, PL platform, RM, PM, F later), work first, then questions for the bank, in priority order, so numbers change with priorities. **Owner** moves an item next; ⚠️ marks an assumption to confirm. Full question lists: "What I'd confirm in the first weeks" in RM Detail and PM Detail.
 
@@ -10,7 +10,7 @@ The AI program delivers two personal AI assistants at the same time: one for eac
 
 | Track | Where it is | Next milestone |
 |---|---|---|
-| **The shared platform** (what both assistants run on) | One delivery process (six steps with go/no-go gates), 25 controls and 43 agents specified. The shared foundation is designed: certified data, the bank's documents read with sources, a signals engine, and drafting with every number checked. Nothing is built on bank systems or run end to end yet | A dry run of the delivery process (PL1); confirm the bank's platforms, data owners and AI review |
+| **The shared platform** (what both assistants run on) | One delivery process, 25 controls and 43 agents specified, and the shared foundation designed. Nothing is built on bank systems or run end to end yet | A dry run of the delivery process (PL1); confirm the bank's platforms, data owners and AI review |
 | **The RM Assistant** | Working hypothesis. Three short pages and a clickable prototype with live agents, reviewed. Feature wave 1: the pre-meeting client brief, the meeting follow-up and the Monday list | Test it with the RM lead: how RMs work today, and which team pilots first |
 | **The PM Assistant** | Working hypothesis. Three short pages and a clickable prototype, reviewed and in use. Feature wave 1: the industry background draft, the borrower file, then annual review and credit memo drafts (the higher-risk path) | Test it with the credit lead: today's industry background work, the review of AI that informs credit, and who the credit policy owner is |
 

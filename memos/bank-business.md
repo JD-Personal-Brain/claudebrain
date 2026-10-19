@@ -1,7 +1,7 @@
 # Associated Bank: the corporate and commercial business
 
 **As of October 9, 2026, through Q2 2026** (the quarter that ended June 30, 2026). News checked through October 14, 2026 by the bank news scout (its first scheduled run, October 19, succeeded, C65, but left no entry in its run log, `memos/bank-news-log.md`).
-Built with Prompt 3 in the Prompt Library (`prompt-library.md`). Public information only.
+Public information only.
 
 > **How to read this.** Every number shows its period and a source tag such as
 > [S2], which links to the list in section 10. ⚠️ marks my own conclusion, not

@@ -1,10 +1,7 @@
 # Prompt Library: our core prompts
 
-The prompts we use again and again, kept in one place so we can find them, reuse
-them and improve them over time. Each one is built from the Prompting Guide
-(`prompting.md`): its template, a reason for every rule, long material first and
-the request last. The Prompting Guide teaches how to write a prompt; this page
-holds the ones worth keeping.
+Our reusable prompts, each built from the Prompting Guide (`prompting.md`). The
+guide teaches how to write a prompt; this page keeps the ones worth reusing.
 
 ## How to use this page
 - **To run a prompt:** copy it into a new session, fill in the `[brackets]`, and send it (leave any `{next group: ...}` as written; it names the group that comes after). Or just ask Claude by name, for example "run the use case kit prompt for RMs".

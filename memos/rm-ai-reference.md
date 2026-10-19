@@ -22,7 +22,7 @@ Each RM gets **their own AI assistant**, inside the tools we expect they already
 | Capability | What the RM gets | Why it matters |
 |---|---|---|
 | **[Pre-meeting client brief](https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX#b2)** | One page before each client meeting: the relationship, recent activity, open opportunities, talking points | Less prep time, better meetings |
-| **[Meeting follow-up](https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX#b3)** | The recap, follow-up email and Salesforce call notes, drafted from the RM's own notes for the RM to approve (from the Teams transcript later, only where recording is allowed and the client agrees). Recap and email come first; saving call notes follows once signed off | Admin off the RM's plate; better client records |
+| **[Meeting follow-up](https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX#b3)** | The recap, follow-up email and Salesforce call notes, drafted from the RM's own notes for the RM to approve. Recap and email come first | Admin off the RM's plate; better client records |
 | **[Monday opportunity list](https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX#b1)** | Each Monday, the clients to call this week, with the reason and the numbers behind it | New revenue from existing clients |
 
 **See it working:** the [RM Assistant Prototype](https://claude.ai/artifact/RFM2o7cdren3TxesQBsjky) runs all three on sample data, with a tour under 2 minutes.
@@ -37,7 +37,7 @@ Later waves add early warning on clients who may leave, referral prompts and pro
 ### How fast
 The build takes days. What sets the pace is approval: each piece goes live once its client data is approved and the bank's AI review signs it off. On our first estimates, to confirm, that's the meeting recap and email by about week 4, then the client brief, Monday opportunity list and call notes by about week 6. The first read on closed revenue comes at about month 6. [The plan, week by week](https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk)
 
-**What could slow us down:** our working assumption, to confirm with the bank (a first question, below): the bank's AI review, with approval to use client data close behind. If they run long, the recap and email still go first and the rest follows by about week 10.
+**What could slow us down:** our working assumption, to confirm with the bank: its AI review, then approval to use client data. If they run long, the recap and email still go first and the rest follows by about week 10.
 
 ### What I need, and what I'd confirm
 1. A business sponsor for the RM work: about an hour a week, plus each go/no-go decision (our estimate).
@@ -51,10 +51,10 @@ To confirm in the first weeks: what usually holds up a new AI tool here; which r
 
 Working file: `memos/rm-assistant.md`.
 
-> ⚠️ **A working hypothesis** (agreed 2026-10-17), built from outside research and public Associated job postings. The first interviews with the leaders of relationship managers (RMs) and with RMs confirm or change it.
+> ⚠️ **A working hypothesis**, built from outside research and public Associated job postings. The first interviews with relationship managers (RMs) and their leaders confirm or change it.
 
 ### The product in one line
-Each RM gets **their own AI assistant**, inside the tools we expect they use (Salesforce, Teams and Outlook; ⚠️ to confirm), to help them win business and free up the time to win it. It starts with three **capabilities** and gains more, feature wave by feature wave. Every later AI product for RMs is a new capability of the same assistant.
+Each RM gets **their own AI assistant**, inside the tools we expect they use (Salesforce, Teams and Outlook; ⚠️ to confirm), to help them win business and free up the time to win it. It starts with three **capabilities** and gains more, feature wave by feature wave.
 
 ### 1. Its limits
 These limits make it safe to give every RM one.
@@ -74,7 +74,7 @@ Each capability is one AI product and answers one core use case (see the [Use Ca
 | | Referral prompts | Flags a client need for a partner team, such as treasury management ([how it works](https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX#b6)) | Lead nurturing, including cross-sell | 2 |
 | **Before the meeting** | Pre-meeting client brief | One page before each client meeting ([how it works](https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX#b2)) | Account intelligence and meeting prep | 1 |
 | | Client Q&A | Answers the RM's own questions about a client at any time, with the source for each answer ([how it works](https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX#b7)) | Account intelligence and meeting prep | 3 |
-| **During and after** | Meeting follow-up | Drafts the recap, the follow-up email and the call notes for Salesforce from the RM's own notes (from the Teams transcript later, only where recording is allowed and the client agrees); the RM approves before anything is saved or sent ([how it works](https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX#b3)) | Admin off the RM's plate | 1 |
+| **During and after** | Meeting follow-up | Drafts the recap, the follow-up email and the call notes for Salesforce from the RM's own notes (from the Teams transcript later, only where recording is allowed and the client agrees) ([how it works](https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX#b3)) | Admin off the RM's plate | 1 |
 | | AI sales coaching | Private guidance for the RM after a call | AI sales coaching | 3 |
 | **Keep the book** | Early warning | Flags clients who may be drifting away ([how it works](https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX#b5)) | Keep clients | 2 |
 | **Left out on purpose** | Pricing suggestions; contacting clients or prospects on its own | Kept out to protect fair lending and client trust | Deal scoring and pricing; lead nurturing (the full, automated version) | Out |
@@ -87,7 +87,7 @@ Every capability runs on one shared foundation, built once:
 - a **signals engine**: simple, explainable rules spot opportunities and risks, and AI explains each one in plain English with the numbers;
 - drafting, and the controls and feedback above.
 
-Every detail (the RM's job, the foundation part by part, what to confirm) is in [RM Detail](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n), for AI to read. To see the assistant working, try the [RM Assistant Prototype](https://claude.ai/artifact/RFM2o7cdren3TxesQBsjky).
+Every detail is in [RM Detail](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n); see it working in the [RM Assistant Prototype](https://claude.ai/artifact/RFM2o7cdren3TxesQBsjky).
 
 ## Part 3: The RM Assistant in full detail
 
@@ -219,7 +219,7 @@ How The RM Assistant gets delivered to relationship managers (RMs) · Associated
 [RM Executive Summary](https://claude.ai/artifact/LPPq2gt5PSoiB8GzX8ZBE2) · [The RM Assistant](https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2) · [RM Assistant Prototype](https://claude.ai/artifact/RFM2o7cdren3TxesQBsjky) (see it working) · [RM Detail](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n) (everything in full) · [Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ) (the rules every product follows)
 
 ### The plan at a glance
-The first 13 weeks, as estimates to confirm. Week 1 starts at kickoff; gates (◆) are go/no-go decisions. Each live bar starts once the bank's AI review signs it off (and, where it uses client data, that data is approved), so the bars move with those approvals. Each row links to its detail in RM Detail.
+The first 13 weeks from kickoff, as estimates to confirm. Gates (◆) are go/no-go decisions; each live bar moves with its AI review sign-off (and, where it uses client data, that data's approval). Each row links to its detail.
 
 ```gantt
 weeks 13
@@ -237,10 +237,10 @@ Small releases every week or two | 6 | 13 | ongoing | https://claude.ai/artifact
 
 **Limiting factor (our assumption, to confirm):** how long the bank's AI review takes; every live bar moves with it (section 1).
 
-The recap and email can move first because they're drafted from the RM's own notes, not client account data or meeting recordings (our assumption, to confirm: it needs the least review), and the risk partner reviews each version as it's built. Interviews keep going after gate 1 to refine the target. Waves 2 and 3 get proposed dates at gate 2, once data access and review times are known.
+The recap and email go first: drafted from the RM's own notes, not client account data or recordings, they likely need the least review (our assumption, to confirm). Waves 2 and 3 get proposed dates at gate 2, once data access and review times are known.
 
 ### 1. What could slow us down (to confirm)
-Our working assumption is the AI review, then approval to use client data; the real blockers are a first question for the bank.
+Our working assumption, to confirm with the bank:
 - **Approval to use client data.** Nothing reaches pilot RMs on real client data until the people responsible for it approve which data the assistant may use.
 - **The bank's AI review.** Nothing goes live until risk, compliance, privacy and security sign off; the risk partner sees each version as it's built, so the sign-off has no surprises.
 - **Backup plan.** If either runs long, the meeting recap and email go first, and the rest stays ready in the test environment, live by about week 10. The call is made at gate 2.

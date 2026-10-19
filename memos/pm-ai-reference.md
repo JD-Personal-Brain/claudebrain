@@ -10,20 +10,20 @@ Working file: `memos/pm-executive-summary.md`.
 
 For the leaders of the credit business · Associated Bank · October 2026
 
-> ⚠️ **A working hypothesis** (reviewed and agreed 2026-10-19). Built from outside research and public Associated job postings, not yet from how the bank's portfolio managers (PMs) work today. The first conversations with credit leaders test it.
+> ⚠️ **A working hypothesis.** Built from outside research and public Associated job postings, not yet from how the bank's portfolio managers (PMs) work today. The first conversations with credit leaders test it.
 
 ### The problem
-PMs underwrite and monitor the bank's commercial loans (from the bank's job postings), but we expect much of their time goes to gathering financials from many systems, re-typing numbers and writing the routine parts of annual reviews and credit memos. At DBS, credit memos and related work take up to 40% of its bankers' time (DBS's estimate). ⚠️ How much of a PM's time they take here is a first question. Time spent assembling a review is time not spent judging the credit or watching for trouble.
+PMs underwrite and monitor the bank's commercial loans (from the bank's job postings), but we expect much of their time goes to gathering financials from many systems, re-typing numbers and writing the routine parts of annual reviews and credit memos (⚠️ how much is a first question). That is time not spent judging the credit or watching for trouble.
 
-The bank has said its first AI work in this business includes portfolio management, aiming at faster loan processing and less manual data work (its June 2026 announcement; ⚠️ exact wording to check).
+The bank's June 2026 announcement names portfolio management among its first AI work here, aiming at faster loan processing (⚠️ exact wording to check).
 
 ### The product: The PM Assistant
-Each PM gets **their own AI assistant**, inside the tools we expect they already use (Word, Teams and the loan system; ⚠️ to confirm). It drafts the industry background section of credit memos, gathers the borrower's file, drafts the routine sections of reviews and memos with a source on every number, and later flags borrowers whose signals are weakening. **The PM always writes the judgment, and a named credit officer decides** (no bank we found lets AI make the credit decision). It never sets or suggests a borrower risk rating, never approves or declines credit and never sets a price. [What it is and all its capabilities](https://claude.ai/artifact/BrBLWQzQggQPtqCgLLGf3C).
+Each PM gets **their own AI assistant**, inside the tools we expect they already use (Word, Teams and the loan system; ⚠️ to confirm). It gathers, drafts and later flags, with a source on every number. **The PM always writes the judgment, and a named credit officer decides.** It never sets or suggests a borrower risk rating, never approves or declines credit and never sets a price. [What it is and all its capabilities](https://claude.ai/artifact/BrBLWQzQggQPtqCgLLGf3C).
 
 ### What PMs get first (feature wave 1)
 | Capability | What the PM gets | Why it matters |
 |---|---|---|
-| **Industry background draft** | The industry background section of a credit memo (the industry's size and trend, main drivers and risks, outlook), drafted from approved sources, every statement cited and dated, for the PM to edit and approve | The credit lead told us the bank pays an outside firm to write this section today, and asked for it among the first (2026-10-19; ⚠️ details to confirm); it needs no borrower data, so it goes live first |
+| **Industry background draft** | The industry background section of a credit memo, drafted from approved sources, every statement cited and dated, for the PM to edit and approve | An outside firm writes it today, and the credit lead asked for it among the first (2026-10-19; ⚠️ to confirm); it needs no borrower data, so it goes live first |
 | **Borrower file** | Everything about one borrower in one place: financials and their trend, loans, covenants (the conditions the borrower agreed to in its loan), deposits, payments, the last review and the relationship manager's (RM's) notes, every figure with its source, and a list of what's missing or late | Hours of gathering back on every review |
 | **Annual review and credit memo drafts** | The routine sections drafted in the bank's template from the borrower file; the borrower risk rating and the recommendation left blank for the PM | Faster reviews, and faster answers on new requests |
 
@@ -33,15 +33,15 @@ Later waves add early warning flags and a covenant and statement tracker, then c
 
 ### The value
 - **An outside cost we could replace:** the fees paid today for industry sections written outside (counted once the contract changes; its terms are to confirm), and days of turnaround saved.
-- **More PM time for judgment:** hours saved on each annual review and credit memo. DBS targets cutting that time by at least 30% (a target, not yet a result); Moody's says its agents write about 35–40% of each memo at an unnamed tier-one US bank (the vendor's own claim; a share of the text, not of time). Outside figures, not our targets.
+- **More PM time for judgment:** hours saved on each annual review and credit memo.
 - **Faster answers:** fewer days from a complete request to a decision.
 - **Earlier sight of trouble (wave 2):** flags acted on, and how early they came.
 - Time is proven against similar PMs not yet using it; targets are set from the bank's own numbers. [Outside evidence for each credit core use case](https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X#portfolio-managers)
 
 ### How fast
-A first prototype takes days. We expect approval to set the pace (our assumption, to confirm): drafts inform credit decisions, so we expect them to need a deeper review (we call it the [higher-risk path](https://claude.ai/artifact/7GmH3iBG6jcDkdacUysUrQ#k3)), including the credit policy owner's sign-off. On our first estimates, to confirm, that's the industry background draft and the borrower file by weeks we set once the bank says how long its AI review takes, and the drafts by about week 12. [The plan, week by week](https://claude.ai/artifact/UKMBCCxBns8YuCJyEo4Zkv)
+A first prototype takes days; we expect approval to set the pace (our assumption, to confirm). The drafts inform credit decisions, so we expect a deeper review, the [higher-risk path](https://claude.ai/artifact/7GmH3iBG6jcDkdacUysUrQ#k3), with the credit policy owner's sign-off. First estimates, to confirm: the industry background draft and the borrower file in weeks set once the bank says how long its AI review takes; the drafts by about week 12. [The plan, week by week](https://claude.ai/artifact/UKMBCCxBns8YuCJyEo4Zkv)
 
-**What could slow us down:** not confirmed yet; our working assumption is how long the bank's AI review takes. Possible hold-ups include approval to use borrower data and the deeper credit review. If the review runs long, the borrower file still goes ahead of the drafts (unless the risk partner puts it on the deeper review too), because it gathers and cites but writes no judgment; if data approval runs long, the prototype keeps running on sample borrowers until it lands.
+**What could slow us down:** not confirmed yet; our working assumption is how long the bank's AI review takes, then approval to use borrower data and the deeper credit review. The plan has a backup for each.
 
 ### What I need, and what I'd confirm
 1. A sponsor for the PM work: about an hour a week, plus each go/no-go decision (our estimate).
@@ -55,10 +55,10 @@ To confirm first: today's industry sections (the firm, cost, volume, contract); 
 
 Working file: `memos/pm-assistant.md`.
 
-> ⚠️ **A working hypothesis** (reviewed and agreed 2026-10-19), built from outside research and public Associated job postings. The first interviews with the leaders of portfolio managers (PMs) and with PMs confirm or change it.
+> ⚠️ **A working hypothesis**, built from outside research and public Associated job postings. The first interviews with portfolio managers (PMs) and their leaders confirm or change it.
 
 ### The product in one line
-Each PM gets **their own AI assistant**, inside the tools we expect they use (Word, Teams, the loan system and the bank's data; ⚠️ to confirm), to take the gathering and routine writing off their plate, so their time goes to credit judgment, and to spot weakening borrowers sooner. Its users are PMs and the credit analysts who support them. It starts with three **capabilities** and gains more, feature wave by feature wave. Every later AI product for PMs is a new capability of the same assistant.
+Each PM gets **their own AI assistant**, inside the tools we expect they use (Word, Teams, the loan system and the bank's data; ⚠️ to confirm), to take the gathering and routine writing off their plate, so their time goes to credit judgment, and to spot weakening borrowers sooner. Its users are PMs and the credit analysts who support them. It starts with three **capabilities** and gains more, feature wave by feature wave.
 
 ### 1. Its limits
 These limits make it safe to give every PM one.
@@ -92,7 +92,7 @@ Every capability runs on one shared foundation, built once:
 - a set of warning rules (simple, explainable, agreed with credit risk; ⚠️ which team owns early warning rules is to confirm), with AI explaining each flag in plain English;
 - drafting, with every number checked against its source, and the controls and feedback above.
 
-Every detail (the PM's job, the foundation part by part, what to confirm) is in [PM Detail](https://claude.ai/artifact/KZ4PEbhCPAj6uWKXmJMCeg), for AI to read. To see the assistant working, try the [PM Assistant Prototype](https://claude.ai/artifact/8vFxUWVwtZbzZs7pL162HE).
+Every detail is in [PM Detail](https://claude.ai/artifact/KZ4PEbhCPAj6uWKXmJMCeg); see it working in the [PM Assistant Prototype](https://claude.ai/artifact/8vFxUWVwtZbzZs7pL162HE).
 
 ## Part 3: The PM Assistant in full detail
 
@@ -209,7 +209,7 @@ How The PM Assistant gets delivered to portfolio managers (PMs) · Associated Ba
 [PM Executive Summary](https://claude.ai/artifact/Cvw3mkUohNFLwVr4H2wURd) · [The PM Assistant](https://claude.ai/artifact/BrBLWQzQggQPtqCgLLGf3C) · [PM Assistant Prototype](https://claude.ai/artifact/8vFxUWVwtZbzZs7pL162HE) (see it working) · [PM Detail](https://claude.ai/artifact/KZ4PEbhCPAj6uWKXmJMCeg) (everything in full) · [Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ) (the rules every product follows)
 
 ### The plan at a glance
-The first 13 weeks (about 90 days), as estimates to confirm in the first days. Each capability goes live only once its data is approved and the review signs it off, so the bars move with those approvals; the limiting factor, our working assumption to confirm, is how long the bank's AI review takes. Week 1 starts at kickoff. Gates (◆) are go/no-go decisions; the data contract is the signed list of borrower data the assistant may use. Each row links to its detail.
+The first 13 weeks from kickoff, as estimates to confirm. Gates (◆) are go/no-go decisions; each capability goes live once its data is approved and the review signs it off. **Limiting factor (our assumption, to confirm):** how long the bank's AI review takes. Each row links to its detail.
 
 ```gantt
 weeks 13
@@ -228,10 +228,10 @@ Gates 3 and 4 for the drafts: quality bar met, sign-offs recorded | 11 | 11 | ga
 Small releases every week or two, once a capability is live | 11 | 13 | ongoing | https://claude.ai/artifact/KZ4PEbhCPAj6uWKXmJMCeg#part-5-the-full-delivery-plan-with-every-6-the-project-plan-estimate
 ```
 
-The industry background draft goes first: it uses no borrower data, so it's built on public sources from week 1 (an outside firm writes this section today, the bank's credit lead told us on 2026-10-19; ⚠️ details to confirm). The borrower file goes ahead of the drafts because it writes no judgment; the drafts inform credit decisions and take the deeper review we call the higher-risk path (our assumption; ⚠️ the risk partner decides). Feature waves 2 and 3 get dates once that review is signed (about week 11), when its real length is known.
+The industry background draft goes first because it uses no borrower data, so it's built on public sources from week 1. The borrower file goes ahead of the drafts because it writes no judgment; the drafts inform credit decisions and take the deeper review we call the higher-risk path (our assumption; ⚠️ the risk partner decides). Feature waves 2 and 3 get dates once that review is signed (about week 11).
 
 ### 1. What could slow us down (to confirm)
-The real blockers are a first question for the bank; our working assumption is how long its AI review takes. Possible ones:
+Our working assumption, to confirm with the bank:
 - **Approval to use borrower data and credit files.** Nothing reaches pilot PMs on real data until the people responsible for it approve which data the assistant may use.
 - **The deeper review for credit drafts.** Nothing goes live until risk, compliance, privacy, security and the credit policy owner sign off. To keep that short, they review each version as it's built.
 - **Backup plan** (decided at gate 2). A slow review of the industry background draft is no worse than today: the outside firm keeps writing the section. Slow data approval: the prototype keeps running on sample borrowers and the dates are reset at gate 2. If the risk partner puts the industry background draft or the borrower file on the higher-risk path, it goes live with the drafts at about week 12. A slow review of the drafts: the borrower file stays live, the version under review is kept unchanged, and improvements ship after sign-off.
@@ -246,7 +246,7 @@ Detail: [the backup plan and how we move fast](https://claude.ai/artifact/KZ4PEb
 | Pilot PMs and analysts | Co-design and test, and grade the drafts; their feedback steers what gets built |
 | Credit policy owner | What a draft may contain, and a sign-off before drafts reach PMs [name needed] |
 | Credit officer | Whoever holds approval authority for that credit under the bank's authority list (it may be the PM; ⚠️ to confirm); named on every draft |
-| Data owners | Borrower data and credit files (⚠️ which systems is to confirm) [names needed]: sign the data contract, with the credit file's content owner signing the list of documents |
+| Data owners | Borrower data and credit files (⚠️ which systems is to confirm) [names needed]: sign the data contract (the signed list of borrower data the assistant may use), with the credit file's content owner signing the list of documents |
 | Risk partner | Rates the product's risk and approves it before it reaches PMs; the sponsor can't overrule that approval |
 | Compliance, privacy and security | Sign off before it reaches PMs; compliance runs the fairness check |
 | Owner of the outside firm's contract | Vendor management or procurement (⚠️ to confirm): whether and when the contract for industry sections changes; vendor risk approves any licensed industry source |

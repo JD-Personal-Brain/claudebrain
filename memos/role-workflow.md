@@ -4,16 +4,7 @@ _Working copy of the designed page (https://claude.ai/artifact/8Nm5fkdicn2Gu5VmN
 Claude loads this every session. It is the one home of the six steps, their
 questions, governance threads and gates, and what happens in each step._
 
-Page 1 of the four "How we deliver" pages, read in this order:
-1. **Product Workflow** (this page): the steps and their go/no-go gates.
-2. **Product Framework** (`product-framework.md`): the rules every product follows.
-3. **Product Machine** (`product-machine.md`): every task, marked by who does it.
-4. **Product Playbook** (`playbook/`): how to do each sub-step the first time.
-
-> **Source.** First taken from the RM memo (`memos/rm-analytics-framework.md`, v6,
-> 2026-10-08) without the RM details; the sub-steps come from the Product Playbook.
-> Each project plan writes the six steps up as the Product Framework sets out;
-> marking its tasks Auto, Draft, Me or Partner is open item PL6.
+Page 1 of the four "How we deliver" pages, read in order: Product Workflow, Product Framework, Product Machine, Product Playbook.
 
 ## The six steps at a glance
 Every AI product goes through six steps, each ending in a **go/no-go gate**. The
@@ -39,8 +30,7 @@ limiting factor (usually data access and review), not build time.
 One item per playbook sub-step, in the same order (1.0 to 6.6).
 Each sub-step on the designed page links to its card on the Steps Catalog
 (https://claude.ai/artifact/8UncWMYUq7hsJUhn5NSYEB); the steps as a clickable map are on
-the Workflow Maps (https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX). Both read each step's
-question, governance thread and gate from the table above, so they can't drift from it.
+the Workflow Maps (https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX).
 - **1. Discover:** kick off the project (sponsor, who decides, tracker, risk briefing) · frame the outcome with the sponsor · size the opportunity with real data · interview and shadow users · map where their time goes · understand how they're measured and rewarded · test a rough mock-up · pick the first target and record today's numbers.
 - **2. Define:** write the problem and the outcome (one sentence each, measurable) · choose the platform and delivery path · define the data contract (exact fields, freshness, quality checks) · start the risk intake and list the control requirements · write user stories and acceptance criteria · set priorities and record the trade-offs · set the measures (the five kinds, in the Product Framework), quality bar and value model · scope the first release and the pilot group.
 - **3. Build:** design the solution and choose the AI capabilities (agents, retrieval with sources, data flows, workflow automations or system integrations) · prepare trusted data · build the logic: simple rules first, AI explains (it doesn't invent) · build in the controls · deliver it where users work, with the source behind every answer and one-click feedback · build the test set (real examples with known good answers) · test against the quality bar.

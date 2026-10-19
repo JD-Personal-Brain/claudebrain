@@ -5,7 +5,7 @@ How The PM Assistant gets delivered to portfolio managers (PMs) · Associated Ba
 [PM Executive Summary](https://claude.ai/artifact/Cvw3mkUohNFLwVr4H2wURd) · [The PM Assistant](https://claude.ai/artifact/BrBLWQzQggQPtqCgLLGf3C) · [PM Assistant Prototype](https://claude.ai/artifact/8vFxUWVwtZbzZs7pL162HE) (see it working) · [PM Detail](https://claude.ai/artifact/KZ4PEbhCPAj6uWKXmJMCeg) (everything in full) · [Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ) (the rules every product follows)
 
 ## The plan at a glance
-The first 13 weeks (about 90 days), as estimates to confirm in the first days. Each capability goes live only once its data is approved and the review signs it off, so the bars move with those approvals; the limiting factor, our working assumption to confirm, is how long the bank's AI review takes. Week 1 starts at kickoff. Gates (◆) are go/no-go decisions; the data contract is the signed list of borrower data the assistant may use. Each row links to its detail.
+The first 13 weeks from kickoff, as estimates to confirm. Gates (◆) are go/no-go decisions; each capability goes live once its data is approved and the review signs it off. **Limiting factor (our assumption, to confirm):** how long the bank's AI review takes. Each row links to its detail.
 
 ```gantt
 weeks 13
@@ -24,10 +24,10 @@ Gates 3 and 4 for the drafts: quality bar met, sign-offs recorded | 11 | 11 | ga
 Small releases every week or two, once a capability is live | 11 | 13 | ongoing | https://claude.ai/artifact/KZ4PEbhCPAj6uWKXmJMCeg#part-5-the-full-delivery-plan-with-every-6-the-project-plan-estimate
 ```
 
-The industry background draft goes first: it uses no borrower data, so it's built on public sources from week 1 (an outside firm writes this section today, the bank's credit lead told us on 2026-10-19; ⚠️ details to confirm). The borrower file goes ahead of the drafts because it writes no judgment; the drafts inform credit decisions and take the deeper review we call the higher-risk path (our assumption; ⚠️ the risk partner decides). Feature waves 2 and 3 get dates once that review is signed (about week 11), when its real length is known.
+The industry background draft goes first because it uses no borrower data, so it's built on public sources from week 1. The borrower file goes ahead of the drafts because it writes no judgment; the drafts inform credit decisions and take the deeper review we call the higher-risk path (our assumption; ⚠️ the risk partner decides). Feature waves 2 and 3 get dates once that review is signed (about week 11).
 
 ## 1. What could slow us down (to confirm)
-The real blockers are a first question for the bank; our working assumption is how long its AI review takes. Possible ones:
+Our working assumption, to confirm with the bank:
 - **Approval to use borrower data and credit files.** Nothing reaches pilot PMs on real data until the people responsible for it approve which data the assistant may use.
 - **The deeper review for credit drafts.** Nothing goes live until risk, compliance, privacy, security and the credit policy owner sign off. To keep that short, they review each version as it's built.
 - **Backup plan** (decided at gate 2). A slow review of the industry background draft is no worse than today: the outside firm keeps writing the section. Slow data approval: the prototype keeps running on sample borrowers and the dates are reset at gate 2. If the risk partner puts the industry background draft or the borrower file on the higher-risk path, it goes live with the drafts at about week 12. A slow review of the drafts: the borrower file stays live, the version under review is kept unchanged, and improvements ship after sign-off.
@@ -42,7 +42,7 @@ Detail: [the backup plan and how we move fast](https://claude.ai/artifact/KZ4PEb
 | Pilot PMs and analysts | Co-design and test, and grade the drafts; their feedback steers what gets built |
 | Credit policy owner | What a draft may contain, and a sign-off before drafts reach PMs [name needed] |
 | Credit officer | Whoever holds approval authority for that credit under the bank's authority list (it may be the PM; ⚠️ to confirm); named on every draft |
-| Data owners | Borrower data and credit files (⚠️ which systems is to confirm) [names needed]: sign the data contract, with the credit file's content owner signing the list of documents |
+| Data owners | Borrower data and credit files (⚠️ which systems is to confirm) [names needed]: sign the data contract (the signed list of borrower data the assistant may use), with the credit file's content owner signing the list of documents |
 | Risk partner | Rates the product's risk and approves it before it reaches PMs; the sponsor can't overrule that approval |
 | Compliance, privacy and security | Sign off before it reaches PMs; compliance runs the fairness check |
 | Owner of the outside firm's contract | Vendor management or procurement (⚠️ to confirm): whether and when the contract for industry sections changes; vendor risk approves any licensed industry source |

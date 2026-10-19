@@ -1,11 +1,7 @@
 # Playbook: the field manual under the product machine
 
-Page 4 of the four "How we deliver" pages. The Product Workflow
-shows the steps, the Product Framework
-sets the rules, and the Product Machine
-marks each task Auto, Draft, Me or Partner. This folder
-says **how to do it the first time**, sub-step by sub-step, and what to watch so
-the second time can be automated.
+Page 4 of the four "How we deliver" pages: **how to do each sub-step the first
+time**, and what to watch so the second time can be automated.
 
 **Read it as a designed page:** https://claude.ai/artifact/YPEZ2F4Zp4bYUDmeQPzef4 (built from these files by `designs/playbook-build.py`; edit the .md files here, then rebuild and republish).
 

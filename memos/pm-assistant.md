@@ -1,9 +1,9 @@
 # The PM Assistant
 
-> ⚠️ **A working hypothesis** (reviewed and agreed 2026-10-19), built from outside research and public Associated job postings. The first interviews with the leaders of portfolio managers (PMs) and with PMs confirm or change it.
+> ⚠️ **A working hypothesis**, built from outside research and public Associated job postings. The first interviews with portfolio managers (PMs) and their leaders confirm or change it.
 
 ## The product in one line
-Each PM gets **their own AI assistant**, inside the tools we expect they use (Word, Teams, the loan system and the bank's data; ⚠️ to confirm), to take the gathering and routine writing off their plate, so their time goes to credit judgment, and to spot weakening borrowers sooner. Its users are PMs and the credit analysts who support them. It starts with three **capabilities** and gains more, feature wave by feature wave. Every later AI product for PMs is a new capability of the same assistant.
+Each PM gets **their own AI assistant**, inside the tools we expect they use (Word, Teams, the loan system and the bank's data; ⚠️ to confirm), to take the gathering and routine writing off their plate, so their time goes to credit judgment, and to spot weakening borrowers sooner. Its users are PMs and the credit analysts who support them. It starts with three **capabilities** and gains more, feature wave by feature wave.
 
 ## 1. Its limits
 These limits make it safe to give every PM one.
@@ -37,6 +37,6 @@ Every capability runs on one shared foundation, built once:
 - a set of warning rules (simple, explainable, agreed with credit risk; ⚠️ which team owns early warning rules is to confirm), with AI explaining each flag in plain English;
 - drafting, with every number checked against its source, and the controls and feedback above.
 
-Every detail (the PM's job, the foundation part by part, what to confirm) is in [PM Detail](https://claude.ai/artifact/KZ4PEbhCPAj6uWKXmJMCeg), for AI to read. To see the assistant working, try the [PM Assistant Prototype](https://claude.ai/artifact/8vFxUWVwtZbzZs7pL162HE).
+Every detail is in [PM Detail](https://claude.ai/artifact/KZ4PEbhCPAj6uWKXmJMCeg); see it working in the [PM Assistant Prototype](https://claude.ai/artifact/8vFxUWVwtZbzZs7pL162HE).
 
 _Last updated: 2026-10-19_

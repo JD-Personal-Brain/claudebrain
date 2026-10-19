@@ -1,13 +1,8 @@
 # Product Machine: how one product manager runs many projects
 
-It is the operating model: every task in
-every step, marked by who does it, and how the work moves toward automation.
-Page 3 of the four "How we deliver" pages: the Product Workflow
-(`memos/role-workflow.md`) shows the steps, the Product Framework
-(`product-framework.md`) sets the rules, this page runs the work, and the
-Product Playbook (`playbook/`) says how to do each sub-step the first time.
-Designed page: https://claude.ai/artifact/S8Wbygy24cjguTMxZsN2QF (built from this
-file by `designs/product-machine-build.py`).
+The operating model: every task in every step, marked by who does it, and how
+the work moves toward automation. Page 3 of the four "How we deliver" pages.
+Designed page: https://claude.ai/artifact/S8Wbygy24cjguTMxZsN2QF (built by `designs/product-machine-build.py`).
 
 I'm one person running several projects at once, so the machine has to run
 mostly by itself. Automation does the routine work and pushes tasks to people
@@ -28,8 +23,7 @@ trackers by themselves (open item PL10); it decides how much can be **Auto**.
 One row per task, numbered to match the sub-steps in `playbook/`. **Kind** is the
 target once the machine is running. The first time through, many tasks are
 done one kind closer to a person, so the work can be logged before it's
-automated; each playbook step's review table shows both. The gate check below
-moves tasks toward **Auto** over time. ⚠️ marks an Auto task that sends requests,
+automated; each playbook step's review table shows both. ⚠️ marks an Auto task that sends requests,
 reminders, reports or alerts to people outside the project team, or changes a live
 system, so it depends on the bank allowing that. The project team is the product
 manager, analysts and the data and platform engineers on the product; the sponsor,
