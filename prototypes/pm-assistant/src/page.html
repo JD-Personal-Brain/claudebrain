@@ -1,0 +1,262 @@
+<title>PM Assistant Prototype</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
+<style>
+/*CSS*/
+</style>
+<div class="app" id="app">
+  <header class="top">
+    <div class="top-in">
+      <div class="brand">
+        <span class="brand-name">The PM Assistant</span>
+        <span class="brand-sub">An AI assistant for every portfolio manager (PM) · concept prototype by JD · version <span id="ver">1</span></span>
+      </div>
+      <div class="top-right">
+        <span class="chip chip-sample" title="Every borrower, person and number on this page is made up">Sample data</span>
+        <span class="chip" id="aiMode" data-mode="checking">Checking for live AI…</span>
+        <button class="btn btn-ghost-on-navy" id="tourBtn" type="button">Play the tour (under 2 min)</button>
+      </div>
+    </div>
+  </header>
+  <div class="persona"><div class="persona-in">
+    <span class="avatar" aria-hidden="true">SO</span>
+    <span>You're <strong>Sam Okafor</strong>, a senior portfolio manager (PM) with 12 business borrowers, paired with relationship manager (RM) Jordan Ellis · <span id="today"></span></span>
+  </div></div>
+  <div class="shell">
+    <nav class="side" id="nav" aria-label="Screens">
+      <button type="button" data-screen="today" class="on nav-today">Today</button>
+      <span class="nav-label">What the assistant does</span>
+      <button type="button" data-screen="file">Borrower file</button>
+      <button type="button" data-screen="review">Review and memo drafts</button>
+      <span class="nav-label">Coming in wave 2 · preview</span>
+      <button type="button" data-screen="watch">Early warning watchlist</button>
+      <span class="nav-label">Why a bank can trust it</span>
+      <button type="button" data-screen="controls">Controls and audit log</button>
+      <button type="button" data-screen="measures">How we'd measure it</button>
+      <button type="button" data-screen="about">How it's built</button>
+    </nav>
+    <main class="main" id="main">
+
+      <!-- Today: the PM's day on one screen -->
+      <section class="screen" id="s-today" data-screen="today">
+        <div class="today-hero">
+          <span class="eyebrow on-dark" id="todayDate"></span>
+          <h1 id="todayHello">Good morning</h1>
+          <p class="lede">Here's your portfolio. The assistant gathered the files and drafted the routine sections overnight; the judgment, and every decision, stays with you.</p>
+          <div class="tstats" id="todayStats"></div>
+        </div>
+        <div class="today-grid">
+          <div class="panel"><h2 class="h-small">Reviews and requests coming due</h2><ol class="agenda" id="todayAgenda"></ol></div>
+          <div class="panel"><h2 class="h-small">For you to decide</h2><ul class="todo" id="todayTodo"></ul></div>
+        </div>
+        <p class="prod-note">In production (our assumption, to confirm): this is the assistant's home in Teams, and each item opens the borrower in the loan system.</p>
+      </section>
+
+      <!-- Borrower file (workflow B10, agent A7) -->
+      <section class="screen" id="s-file" data-screen="file" hidden>
+        <div class="shead">
+          <span class="eyebrow" title="Workflow B10 in the PM plan, agent A7">Review and renew · workflow B10</span>
+          <h1>Borrower file</h1>
+          <p class="lede">Everything about one borrower in one place: the financials, loans and covenants, deposits and payments, documents and notes. Every figure shows its source, and anything missing or late is listed, never filled in.</p>
+        </div>
+        <div class="meetings" id="borrowerPick" role="radiogroup" aria-label="Borrowers"></div>
+        <div class="runbar">
+          <button class="btn btn-primary" id="replayFile" type="button">Watch it work</button>
+          <button class="btn" id="runFile" type="button">Run live on Claude</button>
+          <button class="btn btn-quiet" id="stopFile" type="button" hidden>Stop</button>
+          <span class="runstate" id="fileState" role="status"></span>
+        </div>
+        <div class="split">
+          <div class="panel steps-panel">
+            <h2 class="h-small">What the Borrower file builder (A7) did</h2>
+            <ol class="timeline" id="fileSteps"></ol>
+          </div>
+          <article class="panel doc" id="fileDoc" aria-live="polite"></article>
+        </div>
+        <p class="prod-note">In production (our assumption, to confirm): A7 reads certified views in Snowflake and the credit file's documents, and cites the document and page for every figure.</p>
+      </section>
+
+      <!-- Review and memo drafts (workflows B11 and B12, agent A8) -->
+      <section class="screen" id="s-review" data-screen="review" hidden>
+        <div class="shead">
+          <span class="eyebrow" title="Workflows B11 and B12 in the PM plan, agent A8">Review and renew · workflows B11 and B12</span>
+          <h1>Review and memo drafts</h1>
+          <p class="lede">The Review and memo drafter writes the routine sections from the borrower file. The risk rating and the recommendation are left blank for you, and the credit officer who decides is named at the top.</p>
+        </div>
+        <div class="meetings" id="draftPick" role="radiogroup" aria-label="Drafts"></div>
+        <div class="runbar">
+          <button class="btn btn-primary" id="replayReview" type="button">Watch it work</button>
+          <button class="btn" id="runReview" type="button">Run live on Claude</button>
+          <button class="btn btn-quiet" id="stopReview" type="button" hidden>Stop</button>
+          <span class="runstate" id="reviewState" role="status"></span>
+        </div>
+        <div class="split">
+          <div class="panel steps-panel">
+            <h2 class="h-small">What the agents did</h2>
+            <ol class="timeline" id="reviewSteps"></ol>
+          </div>
+          <article class="panel doc" id="reviewDoc" aria-live="polite"></article>
+        </div>
+        <p class="prod-note">In production (our assumption, to confirm): the draft arrives as a Word document in the bank's template, and the PM submits it through the bank's normal approval route.</p>
+      </section>
+
+      <!-- Early warning watchlist (workflow B13, agent A9) and the covenant and statement tracker (B14) -->
+      <section class="screen" id="s-watch" data-screen="watch" hidden>
+        <div class="shead">
+          <span class="eyebrow" title="Workflows B13 and B14 in the PM plan, agent A9, wave 2">Watch the portfolio · wave 2 preview</span>
+          <h1>Early warning watchlist</h1>
+          <p class="lede">Borrowers whose signals are weakening, found by plain rules credit risk owns, with the numbers behind every flag. You dismiss a flag with a reason, watch it, or raise it through the bank's own process.</p>
+        </div>
+        <div class="w2sum" id="watchSummary"></div>
+        <div class="runbar">
+          <button class="btn btn-primary" id="replayWatch" type="button">Watch it work</button>
+          <button class="btn" id="runWatch" type="button">Run live on Claude</button>
+          <button class="btn btn-quiet" id="stopWatch" type="button" hidden>Stop</button>
+          <span class="runstate" id="watchState" role="status"></span>
+        </div>
+        <ol class="timeline" id="watchTrace" aria-label="What the agent did"></ol>
+        <div class="wlist" id="watchList"></div>
+        <div class="panel">
+          <h2 class="h-small">Covenant and statement tracker <span class="muted small">(workflow B14, rules in code)</span></h2>
+          <p class="muted small">Every covenant's latest test and every statement or certificate due, across your portfolio. You confirm each result; reminders are drafted for you to send.</p>
+          <div class="tw"><table id="trackTable"><thead><tr><th>Borrower</th><th>Covenant or item</th><th>Latest</th><th>Status</th><th>Source</th></tr></thead><tbody></tbody></table></div>
+        </div>
+        <p class="prod-note">In production (our assumption, to confirm): A9 runs each night on Snowflake (Cortex). It never changes a risk rating or a watchlist status, and never tells the borrower.</p>
+      </section>
+
+      <!-- Controls and the audit log -->
+      <section class="screen" id="s-controls" data-screen="controls" hidden>
+        <div class="shead">
+          <span class="eyebrow">Why a bank can trust it</span>
+          <h1>Controls and audit log</h1>
+          <p class="lede">The safeguards that would let a bank give every PM an assistant that touches credit work. Try to break it, then see every action the agents took.</p>
+        </div>
+        <div class="panel" id="breakit">
+          <h2 class="h-small">Try to break it</h2>
+          <p class="muted">Pick a request the assistant must refuse, or type your own. Code checks catch common phrasings before Claude is asked; Claude's own rules are the second line; and every finished draft is scanned again.</p>
+          <div class="presets" id="presets"></div>
+          <form class="ask" id="askForm">
+            <label class="sr" for="askInput">Ask the assistant</label>
+            <input id="askInput" type="text" autocomplete="off" placeholder="Ask about one of your borrowers, or try something it shouldn't do">
+            <button class="btn btn-primary" type="submit">Ask</button>
+          </form>
+          <div class="answer" id="askOut" aria-live="polite"></div>
+        </div>
+        <div class="panel">
+          <h2 class="h-small">Controls you can see working here</h2>
+          <div class="ctl-grid" id="ctlGrid"></div>
+          <p class="muted small">Not shown yet: the fairness check (K11) and the credit policy owner's sign-off on the higher-risk path, the formal risk rating of the product and its sign-offs (K13, K15), which come in the Govern and test step.</p>
+        </div>
+        <div class="panel">
+          <h2 class="h-small">The early warning rules, owned by credit risk</h2>
+          <div class="tw"><table id="ruleTable"><thead><tr><th>Rule</th><th>When it fires</th><th>Priority points</th></tr></thead><tbody></tbody></table></div>
+        </div>
+        <div class="panel">
+          <h2 class="h-small">Audit log · this session, newest first</h2>
+          <div class="tw"><table id="auditTable"><thead><tr><th>Time</th><th>Who</th><th>What happened</th><th>Detail</th><th>Control</th><th>Ran on</th></tr></thead><tbody></tbody></table></div>
+        </div>
+      </section>
+
+      <!-- How we'd measure it -->
+      <section class="screen" id="s-measures" data-screen="measures" hidden>
+        <div class="shead">
+          <span class="eyebrow">The five kinds of measures</span>
+          <h1>How we'd measure it</h1>
+          <p class="lede">How we'd know whether PMs use it, trust it and spend less time per review. The big numbers count what happened in this session, the tour included. Under each, a made-up sample pilot week (6 pilot PMs) shows what a real week might look like; in a pilot the numbers come from a live dashboard, compared with a group of PMs who don't have the assistant yet.</p>
+        </div>
+        <div class="measure-grid" id="measureGrid"></div>
+        <div class="panel">
+          <h2 class="h-small">How we'd get PMs to use it</h2>
+          <ul class="plain">
+            <li><strong>Built into a routine managers already run:</strong> the annual review cycle and the portfolio review meeting (our assumption, to confirm with the bank).</li>
+            <li><strong>Trained on their own work:</strong> each PM's first session uses a real review coming due in their own portfolio, not a demo.</li>
+            <li><strong>Use, change or reject on every output:</strong> each click steers what gets better next.</li>
+            <li><strong>Champions</strong> show peers how they use it, and wins (hours back, earlier warnings) get celebrated.</li>
+            <li><strong>This tour</strong> is the first-time guide: it plays once, and anyone can replay it.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- How it's built -->
+      <section class="screen" id="s-about" data-screen="about" hidden>
+        <div class="shead">
+          <span class="eyebrow">From the plan to working code</span>
+          <h1>How it's built</h1>
+          <p class="lede">This prototype shows the idea working. The real product would be shaped with PMs, credit analysts, data owners, the credit policy owner and risk partners, starting with interviews. Every fact about the bank here is an assumption to confirm.</p>
+        </div>
+        <div class="panel">
+          <h2 class="h-small">How a request flows</h2>
+          <div class="flow" role="list" aria-label="How a request flows">
+            <div class="fbox" role="listitem"><b>Data</b><span>12 sample borrowers, plus the Federal Reserve's 10-year Treasury yield</span></div>
+            <div class="farrow" aria-hidden="true">→</div>
+            <div class="fbox" role="listitem"><b>Borrower file (A7)</b><span>Page tools gather it; code lists what's missing</span></div>
+            <div class="farrow" aria-hidden="true">→</div>
+            <div class="fbox fbox-ai" role="listitem"><b>Claude (A7, A8, A9)</b><span>Summarizes, drafts routine sections, explains flags</span></div>
+            <div class="farrow" aria-hidden="true">→</div>
+            <div class="fbox" role="listitem"><b>Checks</b><span>Numbers traced, guardrails, gaps marked, audit log</span></div>
+            <div class="farrow" aria-hidden="true">→</div>
+            <div class="fbox fbox-me" role="listitem"><b>The PM decides</b><span>Writes the rating and recommendation; approves</span></div>
+            <div class="farrow" aria-hidden="true">→</div>
+            <div class="fbox" role="listitem"><b>Credit officer</b><span>Decides, through the bank's own route</span></div>
+          </div>
+        </div>
+        <div class="panel">
+          <h2 class="h-small">The three agents</h2>
+          <div class="tw"><table class="about-table"><thead><tr><th>Agent</th><th>Job</th><th>In this prototype</th><th>In production (our assumption, to confirm)</th><th>Person in charge</th></tr></thead><tbody>
+            <tr><td>A7 Borrower file builder</td><td>Pulls one borrower's file together, every figure with its source, and lists what's missing or late</td><td>Five page tools in code gather the file; Claude, live, calls them and writes a short summary</td><td>Snowflake and AWS Bedrock (Knowledge Bases)</td><td>The PM; the data owners for the inputs</td></tr>
+            <tr><td>A8 Review and memo drafter</td><td>Drafts the routine sections of an annual review or credit memo; leaves the judgment blank</td><td>Claude, live, from A7's file; code checks every number, marks gaps and blocks any rating or recommendation</td><td>AWS Bedrock or a Copilot Studio agent, in the bank's Word template</td><td>The PM writes the judgment; the credit officer decides</td></tr>
+            <tr><td>A9 Early warning watcher</td><td>Checks each borrower against credit risk's early warning rules and explains each flag</td><td>Five rules in code, run in your browser (no AI); Claude explains the top flags. Stops if the data is too old</td><td>Snowflake (Cortex), each night</td><td>The PM decides what to do; credit risk owns the rules</td></tr>
+          </tbody></table></div>
+        </div>
+        <div class="panel">
+          <h2 class="h-small">The data</h2>
+          <ul class="plain">
+            <li><strong>Sample borrowers:</strong> 12 made-up businesses for one PM, each with three years of statement figures, loans, covenants, deposits, payments, due dates, the last review and an RM note; plus 2 borrowers of another PM, used only to show the refusal. One borrower (Chequamegon Timber Works) is missing its FY2025 statements, to show the agents stopping rather than guessing.</li>
+            <li id="marketLine"></li>
+            <li><strong>Why a saved copy:</strong> a published page can't reach outside websites, so the build fetches the data and saves it with its date. The outside feed is a prototype addition; a real build would add it to the data contract (K5). In production, our assumption (to confirm with the bank) is that the agents read certified data and the credit file from the bank's own systems.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h2 class="h-small">How it's tested</h2>
+          <p>Automated tests click through every promise on this page, with a stand-in for Claude: the tour, each agent, the outside data, the guardrails (risky phrasings blocked and a PM's ordinary credit questions allowed), the judgment sections left blank, approval before submitting, the number check with planted made-up numbers, the missing-statement stop, laptop and phone layouts, and the recorded-run fallback. In a real build this grows into the test set and quality bar (K9), using real past reviews graded by experienced PMs.</p>
+        </div>
+        <div class="panel" id="pilotNeeds">
+          <h2 class="h-small">What a pilot would need (our assumption, to confirm)</h2>
+          <ul class="plain">
+            <li><strong>Data:</strong> approval to use borrower financials and credit files for the pilot PMs' borrowers (the data contract). This usually sets the pace, not the build.</li>
+            <li><strong>Review:</strong> drafts that inform a credit decision take the higher-risk path (K3): a fairness check, must-refuse tests and the credit policy owner's sign-off.</li>
+            <li><strong>People:</strong> a sponsor, a risk partner from day one, the credit policy owner, a data owner, and a small pilot group of PMs with a comparison group.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h2 class="h-small">Where it sits in the plan</h2>
+          <p>This is the early clickable mock-up the product workflow calls for, built to test reactions. It follows the PM plan: The PM Assistant's wave 1 capabilities (the borrower file and the review and memo drafts) and a wave 2 preview (early warning), agents A7 to A9, workflows B10 to B14, and controls K1, K2, K3, K4, K7, K8, K12, K22 and K25.</p>
+          <p class="muted">The code is kept like a real team's: source files, a build script, automated tests, a changelog, and every version saved.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+  <footer class="foot">Sample data only: every borrower, person and number is made up. A concept prototype, not a bank product.</footer>
+</div>
+
+<!-- The guided tour -->
+<div class="tour" id="tour" hidden>
+  <div class="spot" id="spot"></div>
+  <div class="tcard" id="tcard" role="dialog" aria-modal="false" aria-labelledby="tTitle">
+    <div class="tprog"><span id="tbar"></span></div>
+    <div class="tmeta"><span id="tcount"></span><span id="tclock"></span></div>
+    <h2 id="tTitle"></h2>
+    <p id="tText"></p>
+    <div class="tbtns">
+      <button class="btn btn-quiet" id="tBack" type="button">Back</button>
+      <button class="btn" id="tPause" type="button">Pause</button>
+      <button class="btn" id="tVoice" type="button" aria-pressed="true" hidden>Voice on</button>
+      <button class="btn btn-primary" id="tNext" type="button">Next</button>
+      <button class="btn btn-quiet" id="tSkip" type="button" aria-label="Close the tour">Close ✕</button>
+    </div>
+  </div>
+</div>
+<script>
+/*JS*/
+</script>
