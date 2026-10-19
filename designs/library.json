@@ -135,7 +135,7 @@
           "kit": "leader-brief",
           "name": "PM Executive Summary",
           "what": "Start here. The portfolio manager work on one page for the leaders of the credit business: the problem, the product, what PMs get first, the value, how fast and what I need.",
-          "status": "Draft",
+          "status": "In use",
           "url": "https://claude.ai/artifact/Cvw3mkUohNFLwVr4H2wURd",
           "source": "memos/pm-executive-summary.md"
         },
@@ -144,7 +144,7 @@
           "kit": "product",
           "name": "The PM Assistant",
           "what": "The product: one AI assistant for each PM, its limits, its capabilities by moment in the PM's work and the credit core use case each answers.",
-          "status": "Draft",
+          "status": "In use",
           "url": "https://claude.ai/artifact/BrBLWQzQggQPtqCgLLGf3C",
           "source": "memos/pm-assistant.md"
         },
@@ -153,7 +153,7 @@
           "kit": "plan",
           "name": "PM Assistant Plan",
           "what": "How The PM Assistant gets delivered: the first 13 weeks as a chart, what could slow us down, who decides, how we prove the value and the risks.",
-          "status": "Draft",
+          "status": "In use",
           "url": "https://claude.ai/artifact/UKMBCCxBns8YuCJyEo4Zkv",
           "source": "memos/pm-plan.md"
         },
@@ -161,7 +161,7 @@
           "id": "pm-prototype",
           "name": "PM Assistant Prototype",
           "what": "The PM Assistant as a clickable prototype (version 5): the industry background draft, the borrower file, the review and memo drafts and an early warning preview, with at least three agents running live on Claude on sample borrowers, the controls working, and a 2-minute voiced tour.",
-          "status": "Draft",
+          "status": "In use",
           "url": "https://claude.ai/artifact/8vFxUWVwtZbzZs7pL162HE",
           "source": "prototypes/pm-assistant/"
         },

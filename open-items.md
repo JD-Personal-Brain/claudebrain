@@ -12,7 +12,7 @@ The AI program delivers two personal AI assistants at the same time: one for eac
 |---|---|---|
 | **The shared platform** (what both assistants run on) | One delivery process (six steps with go/no-go gates), 25 controls and 43 agents specified. The shared foundation is designed: certified data, the bank's documents read with sources, a signals engine, and drafting with every number checked. Nothing is built on bank systems or run end to end yet | A dry run of the delivery process (PL1); confirm the bank's platforms, data owners and AI review |
 | **The RM Assistant** | Working hypothesis. Three short pages and a clickable prototype with live agents, reviewed. Feature wave 1: the pre-meeting client brief, the meeting follow-up and the Monday list | Test it with the RM lead: how RMs work today, and which team pilots first |
-| **The PM Assistant** | First cut. Three short pages and a clickable prototype. Feature wave 1: the industry background draft, the borrower file, then annual review and credit memo drafts (the higher-risk path) | Test it with the credit lead: today's industry background work, the review of AI that informs credit, and who the credit policy owner is |
+| **The PM Assistant** | Working hypothesis. Three short pages and a clickable prototype, reviewed and in use. Feature wave 1: the industry background draft, the borrower file, then annual review and credit memo drafts (the higher-risk path) | Test it with the credit lead: today's industry background work, the review of AI that informs credit, and who the credit policy owner is |
 
 ## Decisions for the program
 
@@ -176,11 +176,12 @@ Upkeep of the reference pages and of how I work with Claude. Not shown on the pa
 | C61 | Is the RM framework ready to copy to other use cases? Yes (said 2026-10-19: the RM section is complete); the portfolio manager work starts (W1) | 2026-10-19 |
 | C62 | The parked credit (portfolio management) plan: started on 2026-10-19 with Prompt 5. Its first cut includes the two open questions it kept: franchise banking as a possible pilot stays a question for the bank (B4), and the PM value model now counts costs saved and tracks loan losses avoided (not counted until Finance and credit risk agree a method) | 2026-10-19 |
 | C63 | The portfolio manager section of the Document Library gets the same plain numbered rows as the RM section, with the group names written the glossary's way | 2026-10-19 |
-| C64 | The industry background section of credit memos, written today by an outside firm the bank pays (the credit lead, 2026-10-19): made the PM Assistant's first capability, the industry background draft (agent A11, workflow B16), first planned live at about week 6, then week [X] set at gate 2 once the AI review's length is known (Elon mode, 2026-10-19) | 2026-10-19 |
+| C64 | The industry background section of credit memos, written today by an outside firm the bank pays (the credit lead, 2026-10-19): made the PM Assistant's first capability, the industry background draft (agent A11, workflow B16), live at about week 6 | 2026-10-19 |
 | C65 | The bank news scout's first weekly run: it ran and succeeded on Monday October 19, 2026; its notice goes to my personal email by the scheduled task itself | 2026-10-19 |
 | C66 | Sharing with Associated: yes. The Document Library and the GitHub repository are shared with Andy (said 2026-10-19). Every page is shared as it is, with no separate edition (idea 33: no, 2026-10-15); sharing the library doesn't share the pages it links to, so each page is shared from its own Share menu | 2026-10-19 |
 | C67 | Ready to share the repo (said 2026-10-19): the two unused interview-prep files (job notes and job prompts) deleted, a README added at the top of the repo, and the pay range taken off the Job Description page; the repo is shared as it is, history included | 2026-10-19 |
 | C68 | Try the newer skills on real work: "prototype X", "write a prompt for X", "new use case: X": done in practice (the prototype skill built both assistants' prototypes, and Prompt 5 built the PM section); closed in the Elon mode review of the Open Items log (said 2026-10-19: apply all five) | 2026-10-19 |
+| C69 | The PM section: reviewed and in use (said 2026-10-19): the PM Executive Summary, The PM Assistant, the PM Assistant Plan and the PM Assistant Prototype are In use in the Document Library; PM Detail stays a reference page for AI | 2026-10-19 |
 
 
 _Last updated: 2026-10-19_
