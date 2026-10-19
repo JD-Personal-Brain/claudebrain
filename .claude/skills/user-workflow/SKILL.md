@@ -1,6 +1,6 @@
 ---
 name: user-workflow
-description: Map how one user group at the bank works today, where each AI product fits into that work, and how the work changes ("today and with AI"). Use when the user says "map the RM workflow", "the credit workflow", "user workflow for X", "how do RMs work today", "where does this product fit in their day", or works on items RM1 or PM2 in the Open Items log. One designed page per user group, in that group's section of the Document Library.
+description: Map how one user group at the bank works today, where each AI product fits into that work, and how the work changes ("today and with AI"). Use when the user says "map the RM workflow", "the credit workflow", "user workflow for X", "how do RMs work today", "where does this product fit in their day", or works on items RM2 or PM2 in the Open Items log. One designed page per user group, in that group's section of the Document Library.
 ---
 
 # Map a user workflow: today and with AI
@@ -46,4 +46,4 @@ List the guesses (every ⚠️) as questions for interviews and shadowing (playb
 - `python3 .claude/skills/audit/check.py` and `node designs/render-check.js` both report 0 problems; look at the page's screenshot, top and bottom.
 
 ## 8. Record it
-Close item RM1 or PM2 in the Open Items log (whichever group is done), NOW.md's "Where things stand", and run the **audit** skill before offering to merge (rule R18).
+Close item RM2 or PM2 in the Open Items log (whichever group is done), NOW.md's "Where things stand", and run the **audit** skill before offering to merge (rule R18).

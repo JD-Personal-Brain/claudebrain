@@ -2,7 +2,7 @@
 
 The AI program delivers two personal AI assistants at the same time: one for each relationship manager (RM) and one for each portfolio manager (PM). Both run on one shared platform. This log lists what's still open on each of those three tracks, plus the decisions that cover the whole program.
 
-> **How to read this.** Each track is numbered on its own, in priority order: D for program decisions, PL for the shared platform, RM and PM for the two assistants, F for later. When priorities change, the numbers change with them. **Owner** says who moves an item next, and ⚠️ marks an assumption to confirm with the bank. Finished items are closed and kept on record. The full question lists live in each plan's "What I'd confirm in the first weeks" (RM Detail and PM Detail).
+> **How to read this.** Each track is numbered on its own (D for program decisions, PL for the shared platform, RM and PM for the two assistants, F for later): work first, then questions for the bank, each in priority order. When priorities change, the numbers change with them. **Owner** says who moves an item next, and ⚠️ marks an assumption to confirm with the bank. Finished items are closed and kept on record in the working copy. The full question lists live in each plan's "What I'd confirm in the first weeks" (RM Detail and PM Detail).
 
 ## Where the program stands
 
@@ -20,10 +20,10 @@ Decisions bank leaders make once, for both assistants.
 
 | # | Decision | Owner | When |
 |---|---|---|---|
-| D1 | Which outcomes matter most right now (revenue, banker capacity, credit quality), how success will be judged in the first 6 months, and where Corporate & Commercial Banking's edges are (commercial real estate, the specialty industries) | Bank leaders, with me | Before Discover |
-| D2 | The order and overlap of the two assistants: both start together, or one leads by a few weeks; and where treasury and payments fits | Bank leaders, with me | Before Discover |
-| D3 | The pilot group. ⚠️ Our assumption: the franchise banking team (launched April 2026), where RMs and PMs work side by side, so one team can pilot both assistants | Bank leaders, with me | Before Define |
-| D4 | The team and budget for the pilot | Bank leaders | Before Define |
+| D1 | Which outcomes matter most right now (revenue, banker capacity, credit quality), how success will be judged in the first 6 months, and where Corporate & Commercial Banking's edges are (commercial real estate, the specialty industries) | Bank leaders, with the product manager | At the start of Discover (sub-step 1.1) |
+| D2 | The order and overlap of the two assistants: both start together, or one leads by a few weeks; and where treasury and payments fits | Bank leaders, with the product manager | At the start of Discover (sub-step 1.1) |
+| D3 | The pilot group. ⚠️ Our assumption: the franchise banking team (launched April 2026), where RMs and PMs work side by side, so one team can pilot both assistants | Bank leaders, with the product manager | By the end of Define (sub-step 2.8) |
+| D4 | The team and budget for the pilot | Bank leaders | By the end of Define (sub-step 2.8) |
 
 ## The shared platform
 
@@ -33,18 +33,18 @@ Built once and used by both assistants: data, controls, the AI review and the de
 
 | # | Work | Owner | When |
 |---|---|---|---|
-| PL1 | Dry run of the delivery process: take one small made-up product through all six steps with the templates and two or three agents built as Claude skills, and log where it breaks. Include a deletion pass: mark every sub-step, agent and control "did it change a decision or catch a problem?" and delete what didn't, until about 1 in 10 has to come back; law and bank-policy items are never cut. Record each sub-step's wait index and the machine's measures as the first baseline. Merge overlapping agents in the deletion pass: M32 into M26 (as an ongoing mode), and M2, M4, M8 and M20 into one notes-to-draft agent (Elon mode, 2026-10-15 and 2026-10-18) | Me, with Claude | Now; needs only the first three PL2 templates |
-| PL2 | Ready-to-fill templates, built as the dry run reaches them: first the brief, the data contract and the gate pack; then the value model, risk intake, decision log, evidence pack, monitoring plan (with the control watch list) and release-readiness checklist | Claude, then me | The first three now; the rest during PL1 |
-| PL3 | The tracker design and the approvals map. Tracker: the fields every task carries, written to work in any tool (PL10 is still open); each project's tracker opens with its limiting factor and owner, and records each sub-step's start and finish dates and hours, so the wait index and the machine's measures come straight from it. Approvals map: who signs what at each gate, typical turnaround ⚠️, and who to go to when a sign-off is stuck | Claude, then me | During PL1 |
-| PL4 | Close the three control gaps the Controls Catalog found in the playbook: K3's guardrails and named credit officer, K19's check against the approved-model list, K23's proof that only approved AI tools are used. Each needs a line in the right playbook step, or a decision that it isn't needed | Claude, then me | During PL1 |
-| PL5 | Support model and incident runbook: who users call, how issues are logged and fixed, and the steps to pause or roll back a product | Claude, then me | After PL1; before the first go-live |
-| PL6 | Apply the delivery process to both plans, once the dry run has cut it down: mark every RM and PM task Auto, Draft, Me or Partner | Me, with Claude | After PL1 |
+| PL1 | Dry run of the delivery process: take one small made-up product through all six steps with the templates and two or three agents built as working prototypes, and log where it breaks. Include a deletion pass: mark every sub-step, agent and control "did it change a decision or catch a problem?" and delete what didn't, until about 1 in 10 has to come back; law and bank-policy items are never cut. Record each sub-step's wait index and the machine's measures as the first baseline. Merge overlapping agents during the deletion pass (the Agent Library lists them) | Product manager, with Claude | Now; needs only the first three PL2 templates |
+| PL2 | Ready-to-fill templates, built as the dry run reaches them: first the brief, the data contract and the gate pack; then the value model, risk intake, decision log, evidence pack, monitoring plan (with the control watch list) and release-readiness checklist | Claude drafts, product manager reviews | The first three now; the rest during PL1 |
+| PL3 | The tracker design and the approvals map. Tracker: the fields every task carries, written to work in any tool (PL10 is still open); each project's tracker opens with its limiting factor and owner, and records each sub-step's start and finish dates and hours, so the wait index and the machine's measures come straight from it. Approvals map: who signs what at each gate, typical turnaround ⚠️, and who to go to when a sign-off is stuck | Claude drafts, product manager reviews | During PL1 |
+| PL4 | Close the three control gaps the Controls Catalog found in the playbook: K3's guardrails and named credit officer, K19's check against the approved-model list, K23's proof that only approved AI tools are used. Each needs a line in the right playbook step, or a decision that it isn't needed (the other nine gaps were closed on 2026-10-18 by the control watch list in the monitoring plan) | Claude drafts, product manager reviews | During PL1 |
+| PL5 | Support model and incident runbook: who users call, how issues are logged and fixed, and the steps to pause or roll back a product | Claude drafts, product manager reviews | After PL1; before the first go-live |
+| PL6 | Apply the delivery process to both plans, once the dry run has cut it down: mark every RM and PM task Auto, Draft, Me or Partner (the per-capability blocks are in RM3) | Product manager, with Claude | After PL1 |
 
 **Questions for the bank**
 
 | # | Question | Owner | When |
 |---|---|---|---|
-| PL7 | What does the AI governance process look like, how long does a review usually take, what usually holds one up, and how is AI that informs credit reviewed? | The bank | First conversations |
+| PL7 | What does the AI governance process look like, how long does a review usually take, what usually holds one up, and how is AI that informs credit reviewed? | The bank | First conversation |
 | PL8 | Which AI models are approved, and where do they run? How is each platform set up (features, licenses and connections; which Salesforce products; the loan system and spreading tool)? Every tool named in the Product Machine is a guess until this is known | The bank | Define |
 | PL9 | Who owns client and borrower data, and what lives where (Snowflake, Fabric, Salesforce, the loan system)? Why both Snowflake and Fabric? Are American National's clients and borrowers on the bank's systems yet? | The bank | Define |
 | PL10 | Who builds (our team, IT, or business staff with click-to-build tools such as Power Platform)? May automations message people or update trackers by themselves? Which tracker tool is used? And the smaller permissions the general agents depend on, listed under "To confirm" in the agent library | The bank | Define |
@@ -56,17 +56,18 @@ Built once and used by both assistants: data, controls, the AI review and the de
 
 | # | Work | Owner | When |
 |---|---|---|---|
-| RM1 | Map how RMs work today, where each capability fits and how the work changes, as a draft of assumptions for the RM lead to correct (the user-workflow routine, idea 41, building on Map 2 on the Workflow Maps) | Me, with Claude | Now |
-| RM2 | The RM plan's remaining detail: one block per AI product with exact measures and controls (`memos/rm-assistant-detail.md`, section 3), and the AI sales coaching agent spec and workflow in the full plan's Appendices A and B (`memos/rm-analytics-framework.md`); both feed RM Detail | Claude, then me | After RM1 |
+| RM1 | Test the RM pages and the RM Assistant Prototype with the RM lead (October 20, 2026), and improve each page from what the bank says. Every fact about how the bank's RMs work stays an assumption until then | Product manager, with Claude | October 20, 2026 |
+| RM2 | Map how RMs work today, where each capability fits and how the work changes, as a draft of assumptions for the RM lead to correct (building on Map 2 on the Workflow Maps; Claude's user-workflow routine, idea 41) | Product manager, with Claude | Now |
+| RM3 | The RM plan's remaining detail: one block per AI product with exact measures and controls, and the AI sales coaching agent spec and workflow (RM Detail: "How each capability is built", and the full plan's Appendices A and B) | Claude drafts, product manager reviews | Now |
 
 **Questions for the bank**
 
 | # | Question | Owner | When |
 |---|---|---|---|
-| RM3 | May client meetings be recorded? The meeting follow-up rests on it | The bank | First conversation |
-| RM4 | How many RMs and treasury management officers are there, by market? How are RMs measured, paid and rewarded, and how are referrals to treasury, capital markets and wealth credited? | The bank | Discover |
-| RM5 | The value model's inputs: win rate, first-year revenue per win by product, client-facing hours per RM, the segment's fee income by line (including the $47.6 million not broken down publicly), deposits, the share of borrowing clients who keep their main accounts with the bank, and treasury management use | The bank | Discover |
-| RM6 | Do RMs work mainly in Salesforce? This decides where the assistant appears | The bank | Define |
+| RM4 | May client meetings be recorded? The meeting follow-up rests on it | The bank | First conversation |
+| RM5 | How many RMs and treasury management officers are there, by market? How are RMs measured, paid and rewarded, and how are referrals to treasury, capital markets and wealth credited? | The bank | Discover |
+| RM6 | The value model's inputs: win rate, first-year revenue per win by product, client-facing hours per RM, the segment's fee income by line (including the $47.6 million not broken down publicly), deposits, the share of borrowing clients who keep their main accounts with the bank, and treasury management use | The bank | Discover |
+| RM7 | Do RMs work mainly in Salesforce? This decides where the assistant appears | The bank | Define |
 
 ## The PM Assistant
 
@@ -74,8 +75,8 @@ Built once and used by both assistants: data, controls, the AI review and the de
 
 | # | Work | Owner | When |
 |---|---|---|---|
-| PM1 | Test the PM section with the credit lead (October 20, 2026) and improve each page from what the bank says: the PM Executive Summary, The PM Assistant, the PM Assistant Plan, the PM Assistant Prototype and PM Detail. Every fact about how the bank's PMs work stays an assumption until then | Me, with Claude | October 20, 2026 |
-| PM2 | Map how PMs work today, where each capability fits and how the work changes, as a draft of assumptions for the credit lead to correct (the user-workflow routine, building on Map 3 on the Workflow Maps) | Me, with Claude | After PM1 |
+| PM1 | Test the PM section with the credit lead (October 20, 2026) and improve each page from what the bank says: the PM Executive Summary, The PM Assistant, the PM Assistant Plan, the PM Assistant Prototype and PM Detail. Every fact about how the bank's PMs work stays an assumption until then | Product manager, with Claude | October 20, 2026 |
+| PM2 | Map how PMs work today, where each capability fits and how the work changes, as a draft of assumptions for the credit lead to correct (building on Map 3 on the Workflow Maps) | Product manager, with Claude | After PM1 |
 
 **Questions for the bank**
 
@@ -91,8 +92,8 @@ Built once and used by both assistants: data, controls, the AI review and the de
 
 | # | Item | Owner | When |
 |---|---|---|---|
-| F1 | A third assistant, for treasury and payments. The bank named it as a starting point for AI; nothing is planned yet | Me | Once the first two run, unless D2 changes the order |
-| F2 | Running several AI products at once: one intake form for new product ideas, a scoring rule to rank them, how many run at once, my week and month across products, and when a live product is retired | Me | Once one product runs end to end |
+| F1 | A third assistant, for treasury and payments. The bank named it as a starting point for AI; nothing is planned yet | Product manager | Once the first two run, unless D2 changes the order |
+| F2 | Running several AI products at once: one intake form for new product ideas, a scoring rule to rank them, how many run at once, my week and month across products, and when a live product is retired | Product manager | Once one product runs end to end |
 
 ## My workspace
 
@@ -101,12 +102,12 @@ Upkeep of the reference pages and of how I work with Claude. Not shown on the pa
 | # | Item | Who | Waits on |
 |---|---|---|---|
 | W1 | First weekly review: what's working, what's annoying, what to change. Also re-check Anthropic's prompting guide for changes | Me, with Claude | About 2026-10-21 (not yet, said 2026-10-14) |
-| W2 | Re-run the Bank Business Briefing after the bank's Q3 2026 results on October 22, 2026, using the saved prompt (Prompt 3 in the Prompt Library). Read the full Q2 earnings call transcript at the same time; only a summary was available the first time. The bank news scout's scheduled run on October 23 does the re-run as a draft. At the same time, the loose ends: loose ends in the Bank Business Briefing: check the exact wording of the bank's AI announcement before quoting it; replace the 2016 description of who the segment serves once the annual report for the 2025 financial year can be opened in full; and confirm two of my guesses, the RM headcount read from an unclear chart and that Omaha came with American National; and from the McKinsey article, two loose ends from the McKinsey article: confirm its publication date (the pasted page showed none), and decide whether role redesign (new RM roles as agents take on work, McKinsey's fifth principle) belongs in the playbook; it isn't covered yet | Claude | October 22, 2026 |
+| W2 | Re-run the Bank Business Briefing after the bank's Q3 2026 results on October 22, 2026, using the saved prompt (Prompt 3 in the Prompt Library). Read the full Q2 earnings call transcript at the same time; only a summary was available the first time. The bank news scout's scheduled run on October 23 does the re-run as a draft. At the same time, close the loose ends in the Bank Business Briefing: check the exact wording of the bank's AI announcement before quoting it; replace the 2016 description of who the segment serves once the annual report for the 2025 financial year can be opened in full; and confirm two of my guesses, the RM headcount read from an unclear chart and that Omaha came with American National; and two from the McKinsey article: confirm its publication date (the pasted page showed none), and decide whether role redesign (new RM roles as agents take on work, McKinsey's fifth principle) belongs in the playbook; it isn't covered yet | Claude | October 22, 2026 |
 | W3 | Run the tests of Claude's rules that need a real session. Each test is a short scenario in `learning/tests.md` that checks one rule still works. Not yet run in a live session: T7, T10, T13, T14 and T17, and the second parts of T2, T3, T9 and T16. Never run at all: T18 to T22, T24 to T27 (including T27's new second part, from 2026-10-14), T30 to T33, T36 to T38, T40, T41 and T44; finish T35 after the bank news scout's first scheduled run on October 19. Re-run T8 (does Claude label every suggestion Needed or Optional?), which failed on 2026-10-09 before its rule was tightened, and T5, whose first run wasn't a fair test | Claude, in a new session | Nothing |
 | W4 | Check the product details marked "(verify)" in the Tech Stack Guide: product names, prices, vendor terms and any update to the regulators' model-risk guidance. Eleven lines carry the mark. New lead (2026-10-13, the credit scan now summarized in the Use Case Library): SR 26-2, issued 17 April 2026, reportedly replaces SR 11-7, which our files cite; sources disagree on whether it covers generative AI, so read the Fed's own text before changing anything | Claude | Nothing |
 | W5 | Claude Mastery course: paste in the next page (Module 3: Projects, Connectors and Skills). Claude starts a course notes file when it arrives (idea 14, approved) | Me, then Claude | Nothing |
 | W6 | Playbooks for my everyday tools (idea 3, approved): name two or three tasks I repeat in email, calendar or documents. Claude turns each into a step-by-step skill | Me, then Claude | Nothing |
-| W7 | Process fixes from the Elon mode reviews of 2026-10-18 not built yet (the wrap-up script, a lighter wrap-up, a shorter NOW.md and audit sizing are done): one list of pages (the library file only); counts inserted from one source; turn repeated reviewer findings into checks (links that don't resolve, a footer date older than the file, and every agent, control or workflow number linking to its card: idea 62, suggested 2026-10-19); a rename command; build the Product Workflow page from its working file; count what each checker check catches and drop the silent ones; run or retire the 30 rule tests never run (one test per rule); one home for repeated rules ("in writing; a meeting only if contested" is in about 35 lines across 11 files). Needs my yes: the GitHub check also runs the render check and the prototype tests | Claude | Nothing (the GitHub check: my yes) |
+| W7 | Process fixes from the Elon mode reviews of 2026-10-18 not built yet (the wrap-up script, a lighter wrap-up, a shorter NOW.md and audit sizing are done): one list of pages (the library file only); counts inserted from one source; turn repeated reviewer findings into checks (links that don't resolve, a footer date older than the file, and every agent, control or workflow number linking to its card: idea 62, suggested 2026-10-19; and a check that no workspace or closed item shows on the Open Items page: idea 63, suggested 2026-10-19); a rename command; build the Product Workflow page from its working file; count what each checker check catches and drop the silent ones; run or retire the 30 rule tests never run (one test per rule); one home for repeated rules ("in writing; a meeting only if contested" is in about 35 lines across 11 files). Needs my yes: the GitHub check also runs the render check and the prototype tests | Claude | Nothing (the GitHub check: my yes) |
 
 ## Closed
 

@@ -5,7 +5,7 @@
 3. Every page built from a working copy is up to date.
 2b. No built page shows a stray underscore left over from Markdown.
 4. Every page in designs/README.md is in the Document Library (designs/library.json), and the other way round.
-5. The Open Items log (open-items.md): no number used twice, counts match, pages and ideas still open are listed, not out of date.
+5. The Open Items log (open-items.md): no number used twice, each track numbered 1, 2, 3 down the page, its section headings present, pages and ideas still open are listed, not out of date.
 5b. Every D/PL/RM/PM/F/W item number cited in the working files is a live open item in open-items.md (dated records excepted)
     (it can't tell whether a reference points to the RIGHT item: after a renumbering, re-read each one).
 6. NOW.md's "What's next" has no unexplained shorthand.
@@ -101,6 +101,7 @@ live=set(nums)
 for f in ['NOW.md','ideas.md','product-framework.md','product-machine.md','glossary.md','tech-stack.md','open-items.md']+sorted(glob.glob('memos/*.md'))+sorted(glob.glob('playbook/*.md'))+sorted(glob.glob('learning/*.md'))+sorted(glob.glob('.claude/skills/*/SKILL.md')):
     if f in ('learning/lessons.md','memos/audit-log.md','memos/bank-news-log.md'): continue  # dated records: they cite the numbers of their day
     t=open(f).read()
+    if f=='learning/tests.md': t='\n'.join(l for l in t.split('\n') if not l.startswith('- **Results:**'))  # dated test results cite the numbers of their day
     if f=='open-items.md': t=t.split('## Closed')[0]  # closed items cite the numbers of their day
     if f=='open-items.md': t='\n'.join(re.sub(r'^\| [A-Z]{1,2}\d+ \|','|',l) for l in t.split('\n'))
     for m in re.finditer(r'\b((?:PL|RM|PM|[DFW])\d{1,2})\b',t):
@@ -121,7 +122,7 @@ if upd('open-items.md')<upd('NOW.md'): print("open-items.md was last updated",up
 now_parts=open('NOW.md').read().split("## What's next")
 if len(now_parts)<2: print("NOW.md has no \"What's next\" heading to check"); probs+=1
 else:
-    CODE=r'\b(?:[RTLDWVBPCKA]\d{1,2}[a-d]?|M\d{1,2}|[Ii]deas? \d+)\b'
+    CODE=r'\b(?:(?:PL|RM|PM)\d{1,2}|[RTLDWVBPCKAF]\d{1,2}[a-d]?|M\d{1,2}|[Ii]deas? \d+)\b'
     for item in re.findall(r'^\d+\. .+$',now_parts[1].split("\n## ")[0],re.M):
         def keep(m):
             inner=re.sub(CODE,'',m.group(0)); return '' if len(re.findall(r"[A-Za-z']{2,}",inner))>=4 else m.group(0)

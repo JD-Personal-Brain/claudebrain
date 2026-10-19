@@ -1,6 +1,6 @@
 # NOW: start here
 
-_Last updated: 2026-10-19 · Last review: none yet (first one due around 2026-10-21; I said not yet on 2026-10-14) · Wrap-ups since the last Elon mode review: 0 (last run 2026-10-19, at wrap-up, on the product machine and this system; it runs at 3)_
+_Last updated: 2026-10-19 · Last review: none yet (first one due around 2026-10-21; I said not yet on 2026-10-14) · Wrap-ups since the last Elon mode review: 1 (last run 2026-10-19, at wrap-up, on the product machine and this system; it runs at 3)_
 
 _Kept short on purpose (Elon mode, 2026-10-18): this note says where things stand and points to the one home of everything else. Open work lives in the Open Items log; how Claude works lives in `CLAUDE.md` and `learning/rules.md`; history lives in git, the log's closed items and `learning/lessons.md`._
 
@@ -17,9 +17,9 @@ _Kept short on purpose (Elon mode, 2026-10-18): this note says where things stan
 - **Working with Claude:** the Prompting Guide and the Prompt Library (five core prompts); the Claude Mastery course comes in by paste (next up: Module 3, Projects, Connectors and Skills).
 
 ## What's next
-_Everything open, in priority order, is in the Open Items log (https://claude.ai/artifact/NsW5AH5XFNHmDNYJvmVDMb). Before Tuesday October 20 I'm going down it from the top, one item at a time. The top two:_
+_Everything open is in the Open Items log (https://claude.ai/artifact/NsW5AH5XFNHmDNYJvmVDMb), as three tracks: the shared platform, the RM Assistant and the PM Assistant. The two things for Tuesday October 20:_
 1. **Before Tuesday (me):** open the RM Assistant Prototype inside claude.ai, press "Run live on Claude" on the Monday list once to confirm the live AI works, the one check that real Claude hasn't been through yet (the prototype itself is reviewed, C60).
-2. **For Tuesday (me):** ask first how long the bank's AI review takes and whether client meetings may be recorded; the RM timeline rests on both (the RM plan's open questions).
+2. **For Tuesday (me):** ask first how long the bank's AI review takes and whether client meetings may be recorded; the RM timeline rests on both (the shared platform's first question, PL7, and the RM Assistant's first question, RM4).
 
 ## Current agreements (and why)
 _Agreements already written as rules or in `CLAUDE.md` are listed there, not repeated here: Claude explains and I decide (`CLAUDE.md` §1); drafts saved without asking, merges only on my yes and only after every check passes (rules R14 and R18); every change audited (R18); short messages (R2); designed pages, never Markdown, for anything a person reads (R16); one source for every page (C42); never state bank facts as fact (R32); my personal email only, never sent to outside services (R35)._
@@ -33,6 +33,7 @@ _Agreements already written as rules or in `CLAUDE.md` are listed there, not rep
 - **A weekly review**, about 5 minutes. Why: often enough to catch problems early.
 - **main stays GitHub's default branch, and the startup check stays on.** Why: otherwise new sessions start from an old copy.
 - **One log for open items, scrubbed in full once a day** (2026-10-09; once a day since 2026-10-18). Why: open items go out of date quickly, and a full scrub at every quick wrap-up found nothing.
+- **Open Items is organized for the bank** (2026-10-19): the shared platform, the RM Assistant and the PM Assistant as three parallel tracks, with program decisions on top and the limiting factor named first; my own workspace items and the closed list stay in the working file but off the page. Why: the bank reads it, and we deliver to RMs and PMs at the same time on one platform.
 - **The Document Library is the front door,** and the checker fails if a page is missing from it. Why: I want to find any document at any moment.
 - **The credit user group is called portfolio managers.** Why: it's the bank's own title, used in its job postings.
 - **Course pages come in by copy-paste or screenshots.** Why: Cloud sessions can't reach my browser or the course site.
