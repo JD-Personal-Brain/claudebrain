@@ -30,7 +30,7 @@
       <button type="button" data-screen="file">Borrower file</button>
       <button type="button" data-screen="review">Review and memo drafts</button>
       <span class="nav-label">Coming in wave 2 · preview</span>
-      <button type="button" data-screen="watch">Early warning watchlist</button>
+      <button type="button" data-screen="watch">Early warning flags</button>
       <span class="nav-label">Why a bank can trust it</span>
       <button type="button" data-screen="controls">Controls and audit log</button>
       <button type="button" data-screen="measures">How we'd measure it</button>
@@ -98,14 +98,14 @@
           </div>
           <article class="panel doc" id="reviewDoc" aria-live="polite"></article>
         </div>
-        <p class="prod-note">In production (our assumption, to confirm): the draft arrives as a Word document in the bank's template, and the PM submits it through the bank's normal approval route.</p>
+        <p class="prod-note">In production (our assumption, to confirm): the draft arrives as a Word document in the bank's template, and the PM submits it through the bank's normal approval route. The assistant never submits anything.</p>
       </section>
 
-      <!-- Early warning watchlist (workflow B13, agent A9) and the covenant and statement tracker (B14) -->
+      <!-- Early warning flags (workflow B13, agent A9) and the covenant and statement tracker (B14) -->
       <section class="screen" id="s-watch" data-screen="watch" hidden>
         <div class="shead">
           <span class="eyebrow" title="Workflows B13 and B14 in the PM plan, agent A9, wave 2">Watch the portfolio · wave 2 preview</span>
-          <h1>Early warning watchlist</h1>
+          <h1>Early warning flags</h1>
           <p class="lede">Borrowers whose signals are weakening, found by plain rules credit risk owns, with the numbers behind every flag. You dismiss a flag with a reason, watch it, or raise it through the bank's own process.</p>
         </div>
         <div class="w2sum" id="watchSummary"></div>
@@ -122,7 +122,7 @@
           <p class="muted small">Every covenant's latest test and every statement or certificate due, across your portfolio. You confirm each result; reminders are drafted for you to send.</p>
           <div class="tw"><table id="trackTable"><thead><tr><th>Borrower</th><th>Covenant or item</th><th>Latest</th><th>Status</th><th>Source</th></tr></thead><tbody></tbody></table></div>
         </div>
-        <p class="prod-note">In production (our assumption, to confirm): A9 runs each night on Snowflake (Cortex). It never changes a risk rating or a watchlist status, and never tells the borrower.</p>
+        <p class="prod-note">In production (our assumption, to confirm): A9 runs each night on Snowflake (Cortex). It never changes a risk rating or the bank's watchlist status, and never tells the borrower.</p>
       </section>
 
       <!-- Controls and the audit log -->
@@ -188,7 +188,7 @@
         <div class="panel">
           <h2 class="h-small">How a request flows</h2>
           <div class="flow" role="list" aria-label="How a request flows">
-            <div class="fbox" role="listitem"><b>Data</b><span>12 sample borrowers, plus the Federal Reserve's 10-year Treasury yield</span></div>
+            <div class="fbox" role="listitem"><b>Data</b><span>12 sample borrowers, plus the Federal Reserve's 10-year Treasury yield as background in the borrower file (it never enters a draft)</span></div>
             <div class="farrow" aria-hidden="true">→</div>
             <div class="fbox" role="listitem"><b>Borrower file (A7)</b><span>Page tools gather it; code lists what's missing</span></div>
             <div class="farrow" aria-hidden="true">→</div>

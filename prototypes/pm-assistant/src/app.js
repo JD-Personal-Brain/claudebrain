@@ -1,5 +1,5 @@
 // The screens: Today, the borrower file (B10), review and memo drafts (B11, B12), the early warning
-// watchlist and the covenant and statement tracker (B13, B14, wave 2 preview), controls and the audit log,
+// flags and the covenant and statement tracker (B13, B14, wave 2 preview), controls and the audit log,
 // how we'd measure it, and "How it's built". Every screen opens filled with the recorded run, so the page
 // is complete at rest; "Run live on Claude" asks Claude for a fresh answer.
 (function () {
@@ -100,11 +100,13 @@
     return { done(out) { st.done(plain.replace("Reading", "Read") + (b ? ` · ${b.name}` : tool === "get_market_context" ? " (Fed H.15, saved copy fetched " + fmtLong(MK.fetched) + ")" : ""), `<details><summary>What it read</summary><pre>${esc(JSON.stringify(out, null, 1))}</pre></details>`); },
       fail(msg) { st.fail("Refused: " + msg); } };
   }
-  const spark = (bal, cls) => {
+  // One window everywhere: the last 3 months (June to September), the same window as early warning rule EW4.
+  const spark = (all, cls) => {
+    const bal = all.slice(-4), mo = P.months.slice(-4);
     const w = 220, h = 46, hi = Math.max(...bal), lo = Math.min(...bal) * 0.9;
-    const pts = bal.map((v, i) => `${(i / 5 * (w - 8) + 4).toFixed(1)},${(h - 6 - (v - lo) / (hi - lo || 1) * (h - 14)).toFixed(1)}`).join(" ");
+    const pts = bal.map((v, i) => `${(i / (bal.length - 1) * (w - 8) + 4).toFixed(1)},${(h - 6 - (v - lo) / (hi - lo || 1) * (h - 14)).toFixed(1)}`).join(" ");
     const last = pts.split(" ").pop().split(",");
-    return `<figure class="spark ${cls || ""}"><svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" role="img" aria-label="Average deposits, April to September: ${bal.map(money).join(", ")}"><polyline points="${pts}" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="${last[0]}" cy="${last[1]}" r="4" fill="currentColor"/></svg><figcaption>Average deposits, ${monthName(P.months[0])} to ${monthName(P.months[5])}: ${money(bal[0])} to ${money(bal[5])}</figcaption></figure>`;
+    return `<figure class="spark ${cls || ""}"><svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" role="img" aria-label="Average deposits over the last 3 months, ${monthName(mo[0])} to ${monthName(mo[3])}: ${bal.map(money).join(", ")}"><polyline points="${pts}" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="${last[0]}" cy="${last[1]}" r="4" fill="currentColor"/></svg><figcaption>Average deposits, last 3 months (${monthName(mo[0])} to ${monthName(mo[3])}): ${money(bal[0])} to ${money(bal[3])}</figcaption></figure>`;
   };
 
   // ========== B10 Borrower file (A7) ==========
@@ -226,11 +228,11 @@
     { key: "memo:C111", kind: "memo", borrowerId: "C111", label: "Credit memo: line increase and extension", flow: "B12" }
   ];
   let draftKey = "review:C101", reviewToken = 0, reviewCtl = null, reviewBusy = false;
-  const draftState = {};   // key -> "submitted" | "rejected"
+  const draftState = {};   // key -> "approved" | "rejected" (the assistant never submits anything)
   const draftItem = () => DRAFTS.find(d => d.key === draftKey);
   function renderDraftPick() {
     $("#draftPick").innerHTML = DRAFTS.map(d => { const b = A.findBorrower(d.borrowerId); const when = d.kind === "memo" ? `request ${fmtShort(b.request.date)}` : `due ${fmtShort(b.nextReview.due)}`;
-      return `<button type="button" class="meet" role="radio" aria-checked="${d.key === draftKey}" data-k="${d.key}"${reviewBusy ? " disabled" : ""}><strong>${esc(b.name)}</strong><small>${esc(d.label)} · ${when}${draftState[d.key] === "submitted" ? " · submitted" : ""}</small></button>`; }).join("");
+      return `<button type="button" class="meet" role="radio" aria-checked="${d.key === draftKey}" data-k="${d.key}"${reviewBusy ? " disabled" : ""}><strong>${esc(b.name)}</strong><small>${esc(d.label)} · ${when}${draftState[d.key] === "approved" ? " · approved as final" : ""}</small></button>`; }).join("");
   }
   $("#draftPick").addEventListener("click", e => { const b = e.target.closest(".meet"); if (!b || reviewBusy || b.dataset.k === draftKey) return; selectDraft(b.dataset.k, true); });
   function selectDraft(key, instant) { draftKey = key; renderDraftPick(); return replayReview(instant); }
@@ -250,17 +252,18 @@
     return { sections: out, removed: removed.map(s => s.title) };
   }
   function finishReview(text, item, mode) {
-    const b = A.findBorrower(item.borrowerId); const f = A.buildFile(b.id);
+    const b = A.findBorrower(item.borrowerId); const f = A.draftFile(b.id);
     const shaped = shapeDraft(text, f);
     const aiText = shaped.sections.map(s => s.body).join("\n");
     const nc = A.numberCheck(aiText, f); const hits = A.outputGuard(aiText); A.sourceCheck(aiText);
+    if (/treasury|fed h\.15|\[market|rate outlook|rates? (have|has) (risen|fallen)/i.test(aiText)) hits.push("market or rate commentary (drafts state facts from the borrower file only)");
     if (shaped.removed.length) A.log("Guardrail", "Removed a section the AI may not write", `${b.name}: ${shaped.removed.join(", ")}`, "K3", mode === "live" ? "Claude, live" : "Recorded run");
     if (hits.length) A.log("Guardrail", "Flagged a draft and sent it to the product manager", `${b.name}: ${hits.join("; ")}`, "K3, K8", mode === "live" ? "Claude, live" : "Recorded run");
     const gaps = shaped.sections.filter(s => s.gap).length;
     if (gaps) { A.measures.needsInput += gaps; A.measures.stops++; }
     outputSeen(`draft:${item.key}`);
     const st = draftState[item.key];
-    $("#reviewDoc").innerHTML = `<div class="docbar">${modeTag(mode)}<span class="status${st === "submitted" ? " saved" : ""}" id="draftStatus">${st === "submitted" ? "Submitted to " + esc(P.pm.creditOfficer) + " (sample)" : st === "rejected" ? "Rejected · nothing submitted" : "AI draft · not submitted"}</span><span id="ncBadge">${checkBadge(nc)}</span></div>
+    $("#reviewDoc").innerHTML = `<div class="docbar">${modeTag(mode)}<span class="status${st === "approved" ? " saved" : ""}" id="draftStatus">${st === "approved" ? esc("Approved by " + P.pm.name + "; the PM submits it through the bank's normal approval route") : st === "rejected" ? "Rejected · nothing approved" : "AI draft · not approved"}</span><span id="ncBadge">${checkBadge(nc)}</span></div>
       <div class="docmeta-box"><span class="aidraft">AI draft</span>
         <p><strong>${esc(item.kind === "memo" ? "Credit memo" : "Annual review")} · ${esc(b.name)}</strong></p>
         <p>Decision by: <strong>${esc(officer)}</strong> <span class="ctl">K3</span> · Prepared for ${esc(P.pm.name)}, portfolio manager (PM) · Drafted by A8 from the borrower file built by A7 on ${fmtLong(P.dataAsOf)} · Template: routine sections</p>
@@ -269,9 +272,9 @@
       ${shaped.removed.length ? `<p class="flagged"><strong>Removed (K3):</strong> the AI wrote a "${esc(shaped.removed.join(", "))}" section. Those sections are the PM's, so the code took it out.</p>` : ""}
       ${gaps ? `<p class="needs"><strong>${plural(gaps, "section")} ${gaps === 1 ? "needs" : "need"} input (K25).</strong> A8 stopped at the gap instead of guessing. Get the missing items (the borrower file lists them), then replace the "Needs input" lines.</p>` : ""}
       <div class="docbody" id="draftBody">${shaped.sections.map(s => `<section class="dsec${s.gap ? " gap" : ""}"><h2>${esc(s.name)}</h2>${markUntraced(md(s.body), nc.untraced)}</section>`).join("")}</div>
-      ${A.JUDGMENT.map(j => `<section class="judgment"><h2>${j} <span class="pmonly">For the PM's judgment</span></h2><p class="muted small">The assistant doesn't draft this section (K3). ${j === "Risk rating" ? "You set the rating under the bank's rating policy." : "You write the recommendation; " + esc(P.pm.creditOfficer) + " decides."}</p><label class="sr" for="j-${j.replace(" ", "")}">${j}</label><textarea id="j-${j.replace(" ", "")}" class="jtext" rows="3" placeholder="Written by you, the PM"${st ? " readonly" : ""}></textarea></section>`).join("")}
-      <div class="approvebar" data-out="draft:${item.key}">${st ? `<span class="done-note">${st === "submitted" ? `Submitted through the bank's approval route (sample: nothing leaves the page).` : "Rejected. The reason goes to the product manager."}</span>` :
-        `<button type="button" class="btn" id="editDraft">Change it</button><button type="button" class="btn btn-primary" id="approveDraft"${hits.length ? " disabled" : ""}>Approve and submit to ${esc(first(P.pm.creditOfficer))}</button><button type="button" class="btn btn-quiet" id="rejectDraft">Reject the draft</button><span class="runstate" id="approveState"></span>`}</div>`;
+      ${A.JUDGMENT.map(j => `<section class="judgment"><h2>${j} <span class="pmonly">For the PM's judgment</span></h2><p class="muted small">The assistant doesn't draft this section (K3). ${j === "Risk rating" ? "You set the rating under the bank's rating policy." : "You write the recommendation; " + esc(P.pm.creditOfficer) + " decides. <span class=\"tbc\">Required only if the bank's credit policy asks for a recommendation (to confirm).</span>"}</p><label class="sr" for="j-${j.replace(" ", "")}">${j}</label><textarea id="j-${j.replace(" ", "")}" class="jtext" rows="3" placeholder="Written by you, the PM"${st ? " readonly" : ""}></textarea></section>`).join("")}
+      <div class="approvebar" data-out="draft:${item.key}">${st ? `<span class="done-note">${st === "approved" ? `Approved as final. The assistant never submits: you submit it through the bank's normal approval route.` : "Rejected. The reason goes to the product manager."}</span>` :
+        `<button type="button" class="btn" id="editDraft">Change it</button><button type="button" class="btn btn-primary" id="approveDraft"${hits.length ? " disabled" : ""}>Approve as final</button><button type="button" class="btn btn-quiet" id="rejectDraft">Reject the draft</button><span class="runstate" id="approveState"></span>`}</div>`;
     current = { item, f, untraced: nc.untraced };
     changed();
   }
@@ -293,16 +296,16 @@
       const j = [...document.querySelectorAll("#reviewDoc .jtext")].map(x => x.value.trim());
       const msg = needs ? `${plural(needs, "line")} still ${needs === 1 ? "says" : "say"} "Needs input". Get the missing items first, then change the draft.` : current.untraced.length ? `Check the highlighted ${plural(current.untraced.length, "number")} first: change the draft so every number matches the file.` : j.some(x => !x) ? "Write the risk rating and the recommendation first: they're yours to write, and the assistant never drafts them (K3)." : "";
       if (msg) { $("#approveState").innerHTML = `<span class="hint">${esc(msg)}</span>`; A.log("PM", "Approval held back", `${b.name}: ${msg}`, needs ? "K25" : current.untraced.length ? "K7" : "K3"); return; }
-      draftState[item.key] = "submitted"; A.measures.approvals++; A.measures.submitted++; A.measures.used.add(`draft:${item.key}`);
+      draftState[item.key] = "approved"; A.measures.approvals++; A.measures.submitted++; A.measures.used.add(`draft:${item.key}`);
       document.querySelectorAll("#reviewDoc .jtext").forEach(x => { x.readOnly = true; });
-      body.insertAdjacentHTML("beforeend", `<p class="stamp">AI draft, completed and approved by ${esc(P.pm.name)} on ${fmtLong(P.today)}; sent to ${esc(officer)} for the decision.</p>`);
-      A.log("PM", "Approved and submitted the draft", `${b.name}: ${item.kind === "memo" ? "credit memo" : "annual review"} to ${P.pm.creditOfficer} (sample: nothing leaves the page)`, "K1, K2, K3");
-      $("#draftStatus").textContent = "Submitted to " + P.pm.creditOfficer + " (sample)"; $("#draftStatus").classList.add("saved");
-      t.closest(".approvebar").innerHTML = `<span class="done-note">Submitted only after your click, through the bank's approval route (sample: nothing leaves the page). ${esc(P.pm.creditOfficer)} decides.</span>`;
+      body.insertAdjacentHTML("beforeend", `<p class="stamp">AI draft, completed and approved by ${esc(P.pm.name)} on ${fmtLong(P.today)}; the PM submits it through the bank's normal approval route, and ${esc(officer)} decides.</p>`);
+      A.log("PM", "Approved the draft as final", `${b.name}: ${item.kind === "memo" ? "credit memo" : "annual review"}; the PM submits it through the bank's normal approval route (the assistant never submits)`, "K1, K2, K3");
+      $("#draftStatus").textContent = "Approved by " + P.pm.name + "; the PM submits it through the bank's normal approval route"; $("#draftStatus").classList.add("saved");
+      t.closest(".approvebar").innerHTML = `<span class="done-note">Approved as final. The assistant never submits: you submit it through the bank's normal approval route, and ${esc(P.pm.creditOfficer)} decides.</span>`;
       renderDraftPick(); changed();
     } else if (t.id === "rejectDraft") {
       draftState[item.key] = "rejected"; A.measures.rejected++; A.log("PM", "Rejected the draft", b.name, "K1");
-      $("#draftStatus").textContent = "Rejected · nothing submitted"; t.closest(".approvebar").innerHTML = `<span class="muted">Rejected. The reason goes to the product manager.</span>`; changed();
+      $("#draftStatus").textContent = "Rejected · nothing approved"; t.closest(".approvebar").innerHTML = `<span class="muted">Rejected. The reason goes to the product manager.</span>`; changed();
     }
   });
   function lockReview(v) { reviewBusy = v; busy["#runReview"] = v; $("#runReview").disabled = v || !liveOK; $("#replayReview").disabled = v; renderDraftPick(); }
@@ -360,12 +363,12 @@
   $("#replayReview").addEventListener("click", () => replayReview(false));
   $("#stopReview").addEventListener("click", () => reviewCtl && reviewCtl.abort());
 
-  // ========== B13 Early warning watchlist (A9) and B14 tracker ==========
+  // ========== B13 Early warning flags (A9) and B14 tracker ==========
   let watchToken = 0, watchCtl = null, lastScan = null;
   const watchDone = {};   // borrowerId -> text of the PM's decision
   function renderWatch(scan, expl, mode) {
     lastScan = scan;
-    if (scan.stopped) { $("#watchSummary").innerHTML = `<span class="big">–</span><span>No watchlist today: the data is ${scan.fresh.dataAge} days old, so A9 alerted the data owner instead of guessing (K25).</span>`; $("#watchList").innerHTML = ""; return; }
+    if (scan.stopped) { $("#watchSummary").innerHTML = `<span class="big">–</span><span>No early warning flags today: the data is ${scan.fresh.dataAge} days old, so A9 alerted the data owner instead of guessing (K25).</span>`; $("#watchList").innerHTML = ""; return; }
     const open = scan.flags.filter(f => !watchDone[f.borrowerId]).length;
     $("#watchSummary").innerHTML = `<span class="big">${scan.flags.length}</span><span>borrowers flagged · ${A.WARN.length} rules checked across ${scan.checked} borrowers · ${open} waiting for your decision · ${modeTag(mode)}</span>`;
     const { data } = A.a9Prompt(scan.flags);
@@ -379,7 +382,7 @@
         <div class="whead"><h3>${esc(b.name)}</h3><span class="wlvl">${lvl === "high" ? "Look at this week" : "Keep an eye on"}</span></div>
         <p class="wmeta">${esc(b.industry)} · ${esc(b.city)} · RM ${esc(b.rm)}</p>
         <div class="rules">${fl.hits.map(h => `<span class="rule" title="Rule ${h.rule}: ${esc(A.WARN.find(r => r.id === h.rule).plain)}">${esc(h.name)}</span>`).join("")}</div>
-        ${spark(b.balances, fl.hits.some(h => h.rule === "W4") ? "down" : "flat")}
+        ${spark(b.balances, fl.hits.some(h => h.rule === "EW4") ? "down" : "flat")}
         ${x ? `<p class="headline">${markUntraced(inline(x.headline), nc.untraced)}</p><p>${markUntraced(inline(x.explanation), nc.untraced)}</p><p class="srcline"><strong>To check:</strong> ${markUntraced(inline(x.toCheck), nc.untraced)}</p>${flagBanner(hits)}` : `<p class="muted">${fl.hits.map(h => esc(h.name)).join(", ")}. ${liveOK ? "Run live on Claude for the explanation." : ""}</p>`}
         <div class="wact">${d ? `<span class="done-note">${esc(d)}</span>` : `<button type="button" class="btn btn-sm" data-w="watch">Watch it</button><button type="button" class="btn btn-sm btn-primary" data-w="raise">Raise it through the bank's process</button><button type="button" class="btn btn-sm btn-quiet" data-w="dismiss">Dismiss</button>`}<span class="sp"></span>${nc ? checkBadge(nc) : ""}</div>
       </article>`;
@@ -391,8 +394,8 @@
     const card = t.closest(".wcard"); const b = A.findBorrower(card.dataset.b); const act = card.querySelector(".wact");
     if (t.dataset.w === "dismiss") { act.innerHTML = `<span class="muted">Why dismiss it?</span>` + ["Seasonal pattern", "Already known", "Not a concern"].map(r => `<button type="button" class="btn btn-sm" data-w="reason" data-r="${r}">${r}</button>`).join(""); return; }
     if (t.dataset.w === "reason") { watchDone[b.id] = `Dismissed: ${t.dataset.r}. The reason goes to credit risk, who own the rules.`; A.measures.rejected++; A.log("PM", "Dismissed an early warning", `${b.name}: ${t.dataset.r}`, "K1, K22"); }
-    else if (t.dataset.w === "watch") { watchDone[b.id] = "Watching. It stays on your watchlist, and A9 tells you if it changes."; A.measures.flagsActed++; A.log("PM", "Chose to watch an early warning", b.name, "K1"); }
-    else if (t.dataset.w === "raise") { watchDone[b.id] = `Raised through the bank's own process, and ${b.rm} told (sample: nothing leaves the page). The assistant never changes a rating or watchlist status.`; A.measures.flagsActed++; A.log("PM", "Raised an early warning through the bank's process", `${b.name}; RM ${b.rm} told`, "K1, K2, K3"); }
+    else if (t.dataset.w === "watch") { watchDone[b.id] = "Watching. It stays in your early warning flags, and A9 tells you if it changes."; A.measures.flagsActed++; A.log("PM", "Chose to watch an early warning", b.name, "K1"); }
+    else if (t.dataset.w === "raise") { watchDone[b.id] = `Raised through the bank's own process, and ${b.rm} told (sample: nothing leaves the page). The assistant never changes a rating or the bank's watchlist status.`; A.measures.flagsActed++; A.log("PM", "Raised an early warning through the bank's process", `${b.name}; RM ${b.rm} told`, "K1, K2, K3"); }
     A.measures.used.add(`watch:${b.id}`);
     act.innerHTML = `<span class="done-note">${esc(watchDone[b.id])}</span>`; card.classList.add("done");
     renderWatchSummaryOnly(); changed();
@@ -491,8 +494,8 @@
 
   // ---------- Controls, rules and the audit log ----------
   const CONTROLS = [
-    ["The person decides", [["K1", "A person decides", "You use, change or reject every file, draft and flag, and you send every note yourself."], ["K2", "Read-only unless approved", "Nothing is submitted until you approve; the agents never change a record, rating or watchlist status."], ["K3", "AI drafts or flags; a named credit officer decides", `Every draft names ${P.pm.creditOfficer}; the risk rating and recommendation are left blank for you.`]]],
-    ["Data stays in bounds", [["K4", "Users see only what they're allowed to see", "A7's page tools refuse another PM's borrowers; the watchlist covers only your 12."], ["K25", "Agents stop rather than guess", "A missing statement marks a section \"needs input\"; old data stops the watchlist."], ["K22", "Simple rules first, and the AI explains", "Early warning is five plain rules credit risk owns; AI only explains what fired."]]],
+    ["The person decides", [["K1", "A person decides", "You use, change or reject every file, draft and flag, and you send every note yourself."], ["K2", "Read-only unless approved", "Nothing is final until you approve, and the assistant never submits: you do, through the bank's normal approval route; the agents never change a record, a rating or the bank's watchlist status."], ["K3", "AI drafts or flags; a named credit officer decides", `Every draft names ${P.pm.creditOfficer}; the risk rating and recommendation are left blank for you.`]]],
+    ["Data stays in bounds", [["K4", "Users see only what they're allowed to see", "A7's page tools refuse another PM's borrowers; the early warning flags cover only your 12."], ["K25", "Agents stop rather than guess", "A missing statement marks a section \"needs input\"; old data stops the watchlist."], ["K22", "Simple rules first, and the AI explains", "Early warning is five plain rules credit risk owns; AI only explains what fired."]]],
     ["Every fact traced", [["K7", "Every answer shows its source", "A document and page, or a system and date, on every figure; every number checked against the file."], ["K8", "Guardrails", "Code checks block ratings, decisions, prices, other PMs' borrowers and off-topic requests; every draft is scanned again."], ["K12", "An audit log", "Every agent action and every decision is logged below, with what it ran on."]]]
   ];
   $("#ctlGrid").innerHTML = CONTROLS.map(([group, list]) => `<div class="ctl-group"><h3>${esc(group)}</h3>${list.map(([k, n, w]) => `<div class="ctl-card"><span><strong>${esc(n)}</strong> <span class="ctl">${k}</span></span><span class="where">${esc(w)}</span></div>`).join("")}</div>`).join("");
@@ -511,7 +514,7 @@
     const cards = [
       ["Usage", `${m.used.size} of ${m.outputs.size}`, "files, drafts and flag explanations used, of those on screen", "41 of 58 used (71%)", [`${plural(m.runs, "agent run")} you started, ${m.liveRuns} live on Claude`]],
       ["Quality", pct(m.answersWithSources, m.answers), "of summaries, drafts and answers show their sources", "100% with sources; 3 numbers flagged and fixed", [`${pct(m.numbersTraced, m.numbersChecked)} of numbers traced to the file (K7)`, "Accuracy on the test set: zero tolerance on figures, set with the risk partner before the pilot"]],
-      ["Business impact", String(m.submitted), "reviews and memos submitted from AI drafts", "14 drafts submitted; hours per review measured against the baseline", ["Hours per review and request-to-decision time: measured in the pilot", "Against a comparison group of PMs"]],
+      ["Business impact", String(m.submitted), "reviews and memos approved as final from AI drafts", "14 drafts approved as final; hours per review measured against the baseline", ["Hours per review and request-to-decision time: measured in the pilot", "Against a comparison group of PMs"]],
       ["Adoption", `${caps} of 3`, "capabilities used this session", "5 of 6 pilot PMs active", ["Weekly active PMs and share of reviews started from a draft: targets set before the pilot"]],
       ["Risk and controls", String(m.guardrailBlocks + m.outputFlags), "requests blocked or drafts flagged by guardrails", "4 blocked, 0 incidents, 9 overrides", [`${m.needsInput} sections marked "needs input" (K25)`, `${m.flagsActed} early warnings watched or raised`, `${m.permissionRefusals} refused outside the PM's portfolio (K4)`, `${m.changed + m.rejected} overrides (changed, rejected or dismissed)`, `${m.approvals} approved before submitting (K2)`]]
     ];
@@ -527,16 +530,16 @@
     const flagsOpen = lastScan && !lastScan.stopped ? lastScan.flags.filter(f => !watchDone[f.borrowerId]) : [];
     const draftsWaiting = DRAFTS.filter(d => !draftState[d.key]);
     const missing = A.mine().reduce((a, b) => a + A.buildFile(b.id).missing.filter(m => m.severity !== "older").length, 0);
-    $("#todayStats").innerHTML = [[due.length, due.length === 1 ? "review due in 60 days" : "reviews due in 60 days", "review"], [flagsOpen.length, flagsOpen.length === 1 ? "borrower on the watchlist" : "borrowers on the watchlist", "watch"],
+    $("#todayStats").innerHTML = [[due.length, due.length === 1 ? "review due in 60 days" : "reviews due in 60 days", "review"], [flagsOpen.length, flagsOpen.length === 1 ? "borrower with early warning flags" : "borrowers with early warning flags", "watch", true],
       [draftsWaiting.length, draftsWaiting.length === 1 ? "draft waiting for you" : "drafts waiting for you", "review"], [missing, missing === 1 ? "item missing or late" : "items missing or late", "file"]]
-      .map(([n, t, s]) => `<button type="button" class="tstat" data-go="${s}"><span class="big">${n}</span><span>${t}</span></button>`).join("");
+      .map(([n, t, s, w2]) => `<button type="button" class="tstat" data-go="${s}"><span class="big">${n}</span><span>${t}</span>${w2 ? `<span class="w2tag">Wave 2 preview</span>` : ""}</button>`).join("");
     const rows = due.map(b => ({ b, date: b.nextReview.due, what: b.nextReview.type, key: DRAFTS.find(d => d.borrowerId === b.id && d.kind === "review") }))
       .concat(req.map(b => ({ b, date: b.request.date, what: "Credit request: line increase", key: DRAFTS.find(d => d.borrowerId === b.id && d.kind === "memo"), req: true })));
-    $("#todayAgenda").innerHTML = rows.map(r => `<li><span class="when">${r.req ? "Received" : "Due"} ${esc(fmtShort(r.date))}<br><b>${r.req ? "request" : daysTo(r.date) + " days"}</b></span><span class="what"><b>${esc(r.b.name)}</b><br><small>${esc(r.what)}</small></span>${r.key ? `<button type="button" class="btn btn-sm${draftState[r.key.key] ? "" : " btn-primary"}" data-draft="${r.key.key}">${draftState[r.key.key] === "submitted" ? "Submitted" : "Draft ready"}</button>` : `<button type="button" class="btn btn-sm" data-file="${r.b.id}">Open the file</button>`}</li>`).join("");
+    $("#todayAgenda").innerHTML = rows.map(r => `<li><span class="when">${r.req ? "Received" : "Due"} ${esc(fmtShort(r.date))}<br><b>${r.req ? "request" : daysTo(r.date) + " days"}</b></span><span class="what"><b>${esc(r.b.name)}</b><br><small>${esc(r.what)}</small></span>${r.key ? `<button type="button" class="btn btn-sm${draftState[r.key.key] ? "" : " btn-primary"}" data-draft="${r.key.key}">${draftState[r.key.key] === "approved" ? "Approved" : "Draft ready"}</button>` : `<button type="button" class="btn btn-sm" data-file="${r.b.id}">Open the file</button>`}</li>`).join("");
     const todo = [];
     draftsWaiting.forEach(d => { const b = A.findBorrower(d.borrowerId); todo.push([`Finish the ${d.kind === "memo" ? "credit memo" : "annual review"} for ${b.name}`, `draft:${d.key}`, Object.keys(A.buildFile(b.id).gaps).length ? "Needs input" : "Draft ready"]); });
-    flagsOpen.forEach(f => todo.push([`Decide on the early warning for ${f.borrower}`, "watch", f.score >= 30 ? "This week" : "Keep an eye on"]));
-    $("#todayTodo").innerHTML = todo.map(([t, s, w]) => `<li><button type="button" ${s.startsWith("draft:") ? `data-draft="${s.slice(6)}"` : `data-go="${s}"`}><span>${esc(t)}</span><small>${esc(w)}</small></button></li>`).join("") || `<li class="muted">All clear. Time for judgment work.</li>`;
+    flagsOpen.forEach(f => todo.push([`Decide on the early warning for ${f.borrower}`, "watch", f.score >= 30 ? "This week" : "Keep an eye on", true]));
+    $("#todayTodo").innerHTML = todo.map(([t, s, w, w2]) => `<li><button type="button" ${s.startsWith("draft:") ? `data-draft="${s.slice(6)}"` : `data-go="${s}"`}><span>${esc(t)}${w2 ? ` <span class="w2tag">Wave 2 preview</span>` : ""}</span><small>${esc(w)}</small></button></li>`).join("") || `<li class="muted">All clear. Time for judgment work.</li>`;
   }
   $("#s-today").addEventListener("click", e => {
     const d = e.target.closest("[data-draft]"); if (d) { show("review"); if (d.dataset.draft !== draftKey) selectDraft(d.dataset.draft, true); return; }

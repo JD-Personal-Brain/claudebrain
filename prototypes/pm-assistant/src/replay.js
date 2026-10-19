@@ -11,7 +11,7 @@ window.REPLAY = {
 - Metal fabrication in Milwaukee, a client since 2014 with 210 employees; RM is Jordan Ellis. [Loan system]
 - Revenue grew from $41.2M in FY2023 to $48.0M in FY2025, up 7.6% last year, with EBITDA of $6.2M (a 12.9% margin). [FS FY2025, p. 4] [A7 calculation]
 - A $3M line ($0.4M drawn) and a $1.85M equipment term loan; debt service coverage of 2.4x against a 1.25x minimum. [Compliance certificate Q2 2026]
-- Deposits rose from $2.41M in April to $3.16M in September; 24 of 24 payments on time. [Deposit system]`,
+- Deposits rose from $2.78M in June to $3.16M in September; 24 of 24 payments on time. [Deposit system]`,
     C109: `## What's in the file
 - Sawmill and lumber in Ashland, a client since 2015 with 110 employees; RM is Jordan Ellis. [Loan system]
 - Only FY2023 and FY2024 are on file: revenue of $32.8M in FY2024, up 7.5%, with EBITDA of $4.1M. [FS FY2024, p. 4]
@@ -46,9 +46,8 @@ window.REPLAY = {
 - Secured by a blanket lien on business assets, and CNC equipment appraised at $2.6M on March 15, 2024. [Equipment appraisal, 2024]
 
 ## Risks the numbers show
-- The line is floating; market rates have risen, with the 10-year Treasury yield at 4.68% in August 2026, up 0.55 points in six months. [Market: Fed H.15]
 - New equipment financing in 2027 would add debt to a balance sheet that now carries $2.25M. [RM note, Sep 12] [FS FY2025, p. 4]
-- Deposits rose 13.7% over the last 3 months and every payment was on time: no warning signs in the account. [Deposit system]`,
+- Deposits rose 13.7% over the last 3 months and every payment was on time. [Deposit system] [Loan system]`,
     "review:C109": `## Borrower and relationship
 - Chequamegon Timber Works runs a sawmill and lumber business in Ashland with 110 employees, a client since 2015. [Loan system]
 - Jordan Ellis is the relationship manager. The RM notes the CFO left in July, and the new controller expects the delayed FY2025 audit in November. [RM note, Oct 2]
@@ -69,7 +68,7 @@ window.REPLAY = {
 
 ## Risks the numbers show
 - The FY2025 audited statements are 172 days late, so the latest full year can't be reviewed yet. [Documents]
-- Deposits eased from $1.24M in June to $1.12M in September, down 9.7%, not enough to raise an early warning. [Deposit system]
+- Deposits eased from $1.24M in June to $1.12M in September, down 9.7%. [Deposit system]
 - All payments in the last 12 months were on time. [Loan system]`,
     "memo:C111": `## Borrower and relationship
 - The request, as written by Jordan Ellis on October 14: increase the line of credit from $3.5M to $4.5M and extend its maturity to 2028-09-30, at Prime + 0.50% (floating), unchanged. [Request, Oct 14]
@@ -90,8 +89,7 @@ window.REPLAY = {
 - Secured by eligible receivables and inventory, with a borrowing base of $5.2M on September 30, 2026. [Borrowing base certificate, Sep]
 
 ## Risks the numbers show
-- The requested $4.5M line would be close to the $5.2M borrowing base; how much of it the new inventory supports is for the PM to judge. [Request, Oct 14] [Borrowing base certificate, Sep]
-- The line is floating, and the 10-year Treasury yield was 4.68% in August 2026, up 0.55 points in six months. [Market: Fed H.15]
+- The requested $4.5M line would be close to the $5.2M borrowing base. [Request, Oct 14] [Borrowing base certificate, Sep]
 - Deposits rose 18.6% over the last 3 months, and every payment was on time. [Deposit system]`
   },
   // A9: plain-English explanations of the top flags.
