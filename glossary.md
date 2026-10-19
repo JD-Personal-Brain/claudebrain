@@ -105,7 +105,7 @@ agent spec. The audit checks the core documents against it.
 | **Project file** | The project's working document (`memos/<project>.md`), created at kickoff (1.0): the plan, the who-decides list and the approved AI tools. People read the short pages built from it; the full file goes into the project's detail document for AI. |
 | **Automation review** | The table at the end of each playbook step that lists each sub-step's agent (or None) with its first-time kind and the kind to aim for; at the gate, the automation check runs through it. |
 | **Tracker** | The one task list for a project (its section of the one shared tracker): each task with its owner, date and status. |
-| **Open item** | Anything unfinished, kept in the Open Items log and numbered in priority order within its kind (W1 is the first piece of work). Numbers change when priorities change; closed items (C) keep theirs. |
+| **Open item** | Anything unfinished, kept in the Open Items log and numbered in priority order within its track (D for program decisions, PL for the shared platform, RM and PM for the two assistants, F for later, W for my own workspace; PL1 is the platform's first item). Numbers change when priorities change; closed items (C) keep theirs. |
 
 ## Words we don't use
 

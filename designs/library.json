@@ -264,7 +264,7 @@
         {
           "id": "open-items",
           "name": "Open Items",
-          "what": "Everything still open in one list: decisions and reading waiting on me, work to do, questions for the bank, and what's parked.",
+          "what": "What is still open on the shared platform, the RM Assistant and the PM Assistant, and the decisions that cover both, with the questions for the bank on each track.",
           "status": "In use",
           "url": "https://claude.ai/artifact/NsW5AH5XFNHmDNYJvmVDMb",
           "source": "open-items.md"

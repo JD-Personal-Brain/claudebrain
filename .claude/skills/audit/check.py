@@ -5,8 +5,8 @@
 3. Every page built from a working copy is up to date.
 2b. No built page shows a stray underscore left over from Markdown.
 4. Every page in designs/README.md is in the Document Library (designs/library.json), and the other way round.
-5. The Open Items log (open-items.md): no number used twice, counts match, pages and ideas still open are listed, not out of date.
-5b. Every V/D/W/P item number cited in the working files is a live open item in open-items.md
+5. The Open Items log (open-items.md): no number used twice, each track numbered 1, 2, 3 down the page, its section headings present, pages and ideas still open are listed, not out of date.
+5b. Every D/PL/RM/PM/F/W item number cited in the working files is a live open item in open-items.md (dated records excepted)
     (it can't tell whether a reference points to the RIGHT item: after a renumbering, re-read each one).
 6. NOW.md's "What's next" has no unexplained shorthand.
 7. Alignment across documents (from L18): counts of agents, sub-steps, controls and workflow branches
@@ -89,27 +89,24 @@ for g in lib['groups']:
             if k not in have: print('designs/library.json: the',repr(g['name']),'section is missing the use case kit piece',repr(k),'(add its page, or a "to build" row with "kit":',repr(k)+')'); probs+=1
 # 5. the Open Items log is in step with the rest of the repo (open-items.md)
 oi=open('open-items.md').read()
-nums=re.findall(r'^\| ([A-Z]\d+) \|',oi,re.M)
+nums=re.findall(r'^\| ([A-Z]{1,2}\d+) \|',oi,re.M)
 for n in sorted({x for x in nums if nums.count(x)>1}): print("open-items.md uses the number",n,"twice"); probs+=1
-# items are numbered in priority order (L22): within each kind (V, D, W, B, P) the numbers run 1, 2, 3... down the page, with no gaps
-for k in 'VDWBP':
-    seq=[int(x[1:]) for x in nums if x[0]==k]
+# items are numbered in priority order (L22): within each track (D, PL, RM, PM, F, W) the numbers run 1, 2, 3... down the page, with no gaps
+for k in ['D','PL','RM','PM','F','W']:
+    seq=[int(x[len(k):]) for x in nums if re.fullmatch(k+r'\d+',x)]
     if seq!=list(range(1,len(seq)+1)): print("open-items.md: the",k,"items aren't numbered 1, 2, 3... in order down the page:",' '.join(k+str(n) for n in seq)); probs+=1
 # numbers change with priorities, so every item number cited elsewhere must still be a live item (L22)
 live=set(nums)
 # it only checks that a cited number exists; after a renumbering, re-read each reference to confirm it names the right item
 for f in ['NOW.md','ideas.md','product-framework.md','product-machine.md','glossary.md','tech-stack.md','open-items.md']+sorted(glob.glob('memos/*.md'))+sorted(glob.glob('playbook/*.md'))+sorted(glob.glob('learning/*.md'))+sorted(glob.glob('.claude/skills/*/SKILL.md')):
+    if f in ('learning/lessons.md','memos/audit-log.md','memos/bank-news-log.md'): continue  # dated records: they cite the numbers of their day
     t=open(f).read()
-    if f=='open-items.md': t='\n'.join(re.sub(r'^\| [A-Z]\d+ \|','|',l) for l in t.split('\n'))
-    for m in re.finditer(r'\b([VDWP]\d{1,2})\b(?! Labs)',t):
+    if f=='learning/tests.md': t='\n'.join(l for l in t.split('\n') if not l.startswith('- **Results:**'))  # dated test results cite the numbers of their day
+    if f=='open-items.md': t=t.split('## Closed')[0]  # closed items cite the numbers of their day
+    if f=='open-items.md': t='\n'.join(re.sub(r'^\| [A-Z]{1,2}\d+ \|','|',l) for l in t.split('\n'))
+    for m in re.finditer(r'\b((?:PL|RM|PM|[DFW])\d{1,2})\b',t):
         if m.group(1) not in live: print(f,"cites",m.group(1),"but the Open Items log has no such open item: update the reference"); probs+=1
-# the log is organized by stage (agreed 2026-10-10): each "At a glance" count must match the rows in its section
-secs=re.split(r'^## ',oi,flags=re.M)
-for m in re.finditer(r'^\| ((?:Stage \d\. )?[A-Z][^|]+?) \| (\d+) \| [^|]+ \|$',oi.split('## At a glance')[1].split('\n## ')[0] if '## At a glance' in oi else '',re.M):
-    sec=[x for x in secs if x.startswith(m.group(1).strip()+'\n')]
-    rows=len(re.findall(r'^\| [A-Z]\d+ \|',sec[0],re.M)) if sec else -1
-    if rows!=int(m.group(2)): print("open-items.md 'At a glance' count for",m.group(1).strip(),"should be",rows if rows>=0 else '(no such section)'); probs+=1
-if '## At a glance' not in oi or '## Now' not in oi or '## Closed' not in oi: print("open-items.md is missing one of its section headings (At a glance, Now, Closed)"); probs+=1
+if '## Where the program stands' not in oi or '## My workspace' not in oi or '## Closed' not in oi: print("open-items.md is missing one of its section headings (Where the program stands, My workspace, Closed)"); probs+=1
 oi_live=oi.split('## Closed')[0]                                   # everything still open
 oi_rev=oi_work=oi_live
 where=lambda st: oi_live
@@ -125,7 +122,7 @@ if upd('open-items.md')<upd('NOW.md'): print("open-items.md was last updated",up
 now_parts=open('NOW.md').read().split("## What's next")
 if len(now_parts)<2: print("NOW.md has no \"What's next\" heading to check"); probs+=1
 else:
-    CODE=r'\b(?:[RTLDWVBPCKA]\d{1,2}[a-d]?|M\d{1,2}|[Ii]deas? \d+)\b'
+    CODE=r'\b(?:(?:PL|RM|PM)\d{1,2}|[RTLDWVBPCKAF]\d{1,2}[a-d]?|M\d{1,2}|[Ii]deas? \d+)\b'
     for item in re.findall(r'^\d+\. .+$',now_parts[1].split("\n## ")[0],re.M):
         def keep(m):
             inner=re.sub(CODE,'',m.group(0)); return '' if len(re.findall(r"[A-Za-z']{2,}",inner))>=4 else m.group(0)

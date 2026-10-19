@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L43 · 2026-10-19 · Framed the program around RMs only
+- **What happened:** my first sample of the new Open Items layout put the portfolio manager (PM) work under "Later". I had to be told that the program serves RMs and PMs at the same time, on one shared platform.
+- **Root cause:** I drafted from this session's copy of the repo. Another session had merged the PM work into main in the meantime, and I didn't check main before describing where the program stands. I also fell back on the old "RM first, PM later" framing, even though my profile says the program is organized around both groups.
+- **Fix:** before describing where the program stands or proposing how to organize it, fetch main and read its NOW.md. Then organize by the shared platform plus every user group being served, never one group with the others as "later" unless NOW.md says so.
+- **Rule:** R6 · **Test:** T54 · **Level:** 1 · **Times it happened:** 1
+
 ### L42 · 2026-10-19 · A new agent number didn't link to its card
 - **What happened:** agent A11 (the industry background draft) was added to every page, but the page kit's pattern that links agent numbers to their cards still stopped at A10, so "A11" showed as plain text. Claude found it while pointing the pages at the version 5 prototypes.
 - **Root cause:** rule R23 lists the places to update when a term or number changes, but not the page kit's link pattern, so adding a new number didn't prompt a check there, and no automatic check compared the pattern with the agents in the Agent Library.
