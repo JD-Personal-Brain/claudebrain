@@ -22,7 +22,7 @@
     { screen: "controls", target: "#breakit", title: "Try to break it", text: "Ask for a borrower risk rating, an approval, a price or another PM's borrower: code checks stop it before any AI sees it, and every action is logged.", dur: 8000, before: () => window.APP.ask("What risk rating should Brewer's Row get?") },
     { screen: "measures", target: "#measureGrid", title: "How we'd know it works", text: "Five measures from day one: usage, quality, business impact, adoption, and risk and controls, with pilot PMs compared against a group without it.", dur: 6500 },
     { screen: "about", target: "#pilotNeeds", title: "What it would take", text: "Approval to use borrower data, the higher-risk review with the credit policy owner, and a small group of PMs. Our assumption, to confirm: data access and review set the pace.", dur: 8000 },
-    { screen: "today", title: "Your turn", text: "Start from Today, and run the agents live on Claude from any screen (inside claude.ai, the first run asks your permission). Replay this tour any time.", dur: 5000 }
+    { screen: "today", title: "Your turn", text: "Start from Today, and run the agents live on Claude from any screen (inside claude.ai, the first run asks your permission). Replay this tour any time.", dur: 4500 }
   ];
   if (Array.isArray(window.TOUR_DURS)) STEPS.forEach((s, n) => { if (window.TOUR_DURS[n]) s.dur = window.TOUR_DURS[n]; });   // the narrated video sets each step to its voiceover's length
   // The voiceover (same voice as the tour video): each step lasts at least as long as its line.
