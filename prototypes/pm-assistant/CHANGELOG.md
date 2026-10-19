@@ -3,6 +3,16 @@
 Each delivered version is kept as its own file (`prototype-v<N>.html`) and never changed.
 Fixes made before a version is delivered stay in that version.
 
+## Version 3 (2026-10-19)
+Fixes from an audit. Versions 1 and 2 (`prototype-v1.html`, `prototype-v2.html` and their videos) are kept unchanged.
+- The tour no longer implies the assistant submits: the judgment step now says "Sam writes the judgment and approves the draft as final, then submits it through the bank's normal route. The assistant never submits." (tour and voiceover). That line and the "Try to break it" line were re-voiced with Kokoro, and the video re-recorded as `pm-assistant-tour-v3.mp4`. The test for checklist item 5 now also checks the tour text and the narration script.
+- The draft's last section is renamed "Changes and items to note" (A8's prompt, the recorded drafts, the screens) and lists plain facts with sources only, for example "Requested line $4.5M; borrowing base $5.2M (Sep 30)", with no "would be close to" or other judgments. The live prompt says so; the tests check the name and that no conclusion phrases are left.
+- A covenant breach (rule EW3) gets its own tag, "Breach: the bank's waiver and rating process applies", instead of "Look at this week"; the PM's choices (watch, raise, dismiss) are unchanged. New test.
+- "Borrower risk rating" wherever the screen means a borrower's credit grade: the judgment box, the hold message, the guardrail replies and labels, the prompts, the tour, the controls and the How it's built page. The product's own risk rating (Govern and test) keeps its wording.
+- The internal counter `submitted` is renamed `approvedFinal`.
+- The early warning flags screen says "Sample borrowers chosen to show every rule; a real book would flag far fewer."
+- Wave 1 drafts still leave the recommendation for the PM: the recommendation box stays, with its "required only if the bank's credit policy asks" note.
+
 ## Version 2 (2026-10-19)
 Fixes from a review. Version 1 (`prototype-v1.html`, `pm-assistant-tour-v1.mp4`) is kept unchanged.
 - The assistant never submits: the review button is now "Approve as final", and the status after approval reads "Approved by Sam Okafor; the PM submits it through the bank's normal approval route". The stamp, audit log, Today, controls and measures say the same; the tests check the new wording and that nothing is logged as submitted.
