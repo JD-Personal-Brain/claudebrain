@@ -50,7 +50,7 @@ Each capability is one AI product (glossary) and answers one credit core use cas
 
 | Wave | Capability (AI product) | Credit core use case | Agents | Built mainly on | Our measure (target set in Define) |
 |---|---|---|---|---|---|
-| **Wave 1** (industry background draft by about week 6; borrower file by about week 7; drafts by about week 12; each once its approvals are in) | Industry background draft | Credit memo and annual review drafts | A11 | AWS Bedrock (Knowledge Bases over the approved industry sources) or Copilot Studio | Outside fees we could replace; turnaround; share of each section kept with light edits [X] |
+| **Wave 1** (industry background draft by week [X], set at gate 2; borrower file by about week 7; drafts by about week 12; each once its approvals are in) | Industry background draft | Credit memo and annual review drafts | A11 | AWS Bedrock (Knowledge Bases over the approved industry sources) or Copilot Studio | Outside fees we could replace; turnaround; share of each section kept with light edits [X] |
 | | Borrower file | Credit memo and annual review drafts | A7 | Snowflake, AWS Bedrock (Knowledge Bases) | Hours spent gathering per review [X] |
 | | Annual review and credit memo drafts (higher-risk path) | Credit memo and annual review drafts | A7, A8 | AWS Bedrock or Copilot Studio; Word templates | Hours per review; share of sections used with light edits [X] |
 | **Wave 2** (dates set once the wave 1 drafts' review is signed, about week 11) | Early warning flags (higher-risk path) | Early warning on credit quality | A9 | Snowflake signals, Teams | Flags acted on; how much earlier than today [X] |
