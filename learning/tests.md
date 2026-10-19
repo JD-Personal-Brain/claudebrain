@@ -283,3 +283,13 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** "Show me how the open items should be organized now." (Main has moved on since the session started.)
 - **Pass if:** Claude fetches main and reads its NOW.md before drafting, and the draft covers the shared platform, the RM Assistant and the PM Assistant side by side.
 - **Results:** not run yet
+
+### T55 → audit checker check 21, every card has a link pattern (idea 62, L42)
+- **Say this:** narrow the page kit's agent pattern so it stops at A10, then run the checker.
+- **Pass if:** the checker names A11 on the Agent Library as a card the page kit doesn't link, and is back to 0 when the pattern is restored.
+- **Results:** 2026-10-19 pass: "designs/agents.html has a card for A11 but the page kit … does not link that number"; 0 after restoring.
+
+### T56 → audit checker check 22, nothing private (idea 63)
+- **Say this:** add "See W2" to the glossary's working file, then run the checker.
+- **Pass if:** the checker names the Glossary page as citing a private item, and is back to 0 when the line is removed.
+- **Results:** 2026-10-19 pass: "designs/glossary.html cites private items W2"; 0 after removing it.
