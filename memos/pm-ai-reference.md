@@ -13,29 +13,31 @@ For the leaders of the credit business · Associated Bank · October 2026
 > ⚠️ **A working hypothesis** (first cut, 2026-10-19). Built from outside research and public Associated job postings, not yet from how the bank's portfolio managers (PMs) work today. The first conversations with credit leaders test it.
 
 ### The problem
-PMs underwrite and monitor the bank's commercial loans, but we expect much of their time goes to gathering financials from many systems, re-typing numbers and writing the routine parts of annual reviews and credit memos. At DBS, where the bankers write their own credit memos, the bank estimates memos and related work take up to 40% of those bankers' time (DBS's estimate). ⚠️ How much of a PM's time they take here is a first question. Time spent assembling a review is time not spent judging the credit or watching for trouble.
+PMs underwrite and monitor the bank's commercial loans (from the bank's job postings), but we expect much of their time goes to gathering financials from many systems, re-typing numbers and writing the routine parts of annual reviews and credit memos. At DBS, the bank estimates credit memos and related work take up to 40% of a relationship manager's time (DBS's estimate). ⚠️ How much of a PM's time they take here is a first question. Time spent assembling a review is time not spent judging the credit or watching for trouble.
+
+The bank has said its first AI work in this business includes portfolio management, aiming at faster loan processing and less manual data work (its June 2026 announcement; ⚠️ exact wording to check).
 
 ### The product: The PM Assistant
-Each PM gets **their own AI assistant**, inside the tools we expect they already use (Word, Teams and the loan system; ⚠️ to confirm). It gathers the borrower's file, drafts the routine sections of reviews and memos with a source on every number, and later flags borrowers whose signals are weakening. **The PM always writes the judgment, and a named credit officer decides.** It never sets a risk rating, never approves or declines credit and never sets a price. [What it is and all its capabilities](https://claude.ai/artifact/BrBLWQzQggQPtqCgLLGf3C).
+Each PM gets **their own AI assistant**, inside the tools we expect they already use (Word, Teams and the loan system; ⚠️ to confirm). It gathers the borrower's file, drafts the routine sections of reviews and memos with a source on every number, and later flags borrowers whose signals are weakening. **The PM always writes the judgment, and a named credit officer decides** (no bank we found lets AI make the credit decision). It never sets or suggests a borrower risk rating, never approves or declines credit and never sets a price. [What it is and all its capabilities](https://claude.ai/artifact/BrBLWQzQggQPtqCgLLGf3C).
 
-### What PMs get first (wave 1)
+### What PMs get first (feature wave 1)
 | Capability | What the PM gets | Why it matters |
 |---|---|---|
-| **Borrower file** | Everything about one borrower in one place: financials and their trend, loans, covenants, deposits, payments, the last review and the RM's notes, every figure with its source, and a list of what's missing or late | Hours of gathering back on every review; goes live first |
-| **Annual review and credit memo drafts** | The routine sections drafted in the bank's template from the borrower file; the risk rating and recommendation left blank for the PM | Faster reviews and faster answers to RMs and clients |
+| **Borrower file** | Everything about one borrower in one place: financials and their trend, loans, covenants, deposits, payments, the last review and the relationship manager's (RM's) notes, every figure with its source, and a list of what's missing or late | Hours of gathering back on every review; goes live first |
+| **Annual review and credit memo drafts** | The routine sections drafted in the bank's template from the borrower file; the borrower risk rating and the recommendation left blank for the PM (wave 1 drafts always leave the recommendation blank; whether a later draft may carry one is the credit policy owner's call, our assumption) | Faster reviews, and faster answers on new requests |
 
 **See it working:** the [PM Assistant Prototype](https://claude.ai/artifact/8vFxUWVwtZbzZs7pL162HE) runs its agents on sample borrowers, with a short tour.
 
 Later waves add early warning flags and a covenant and statement tracker, then credit policy Q&A, a renewal radar and deal screening.
 
 ### The value
-- **More PM time for judgment:** hours saved on each annual review and credit memo. DBS targets at least 30% less time; Moody's says its agents write about 35–40% of each memo at a tier-one US bank (outside figures, not our targets).
+- **More PM time for judgment:** hours saved on each annual review and credit memo. DBS targets at least 30% less credit assessment time (a target, not yet a result); Moody's says its agents write about 35–40% of each memo at an unnamed tier-one US bank (the vendor's own claim; a share of the text, not of time). Outside figures, not our targets.
 - **Faster answers:** fewer days from a complete request to a decision.
 - **Earlier sight of trouble (wave 2):** flags acted on, and how early they came.
 - Time is proven against similar PMs not yet using it; targets are set from the bank's own numbers. [Outside evidence for each credit core use case](https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X#portfolio-managers)
 
 ### How fast
-A first prototype takes days. What sets the pace is approval: drafts inform credit decisions, so they take the bank's deeper review, including the credit policy owner's sign-off. On our first estimates, to confirm, that's the borrower file by about week 7 and the drafts by about week 12. [The plan, week by week](https://claude.ai/artifact/UKMBCCxBns8YuCJyEo4Zkv)
+A first prototype takes days. We expect approval to set the pace (our assumption, to confirm): drafts inform credit decisions, so we expect them to need a deeper review (we call it the higher-risk path), including the credit policy owner's sign-off. On our first estimates, to confirm, that's the borrower file by about week 7 and the drafts by about week 12. These dates assume the bank's reviews run alongside the build and take weeks, not months; if its model validation takes longer, the drafts move out and the borrower file still goes first (unless it is put on the deeper review too). [The plan, week by week](https://claude.ai/artifact/UKMBCCxBns8YuCJyEo4Zkv)
 
 **What could slow us down:** not known yet. Possible hold-ups include approval to use borrower data and the deeper credit review. If the review runs long, the borrower file still goes first (unless the risk partner puts it on the deeper review too), because it gathers and cites but writes no judgment; if data approval runs long, the prototype keeps running on sample borrowers until it lands.
 
@@ -45,7 +47,7 @@ A first prototype takes days. What sets the pace is approval: drafts inform cred
 3. The credit policy owner, early: what a draft may contain, and their sign-off.
 4. Named owners for borrower data and the credit file, and the review and memo templates.
 
-To confirm in the first weeks: what usually holds up a new AI tool here; how many reviews and memos PMs write a year and how long each takes; which loan system and spreading tool the bank uses; and whether a draft may carry a recommendation.
+To confirm in the first weeks: how long the bank's AI and model review takes; what usually holds up a new AI tool here; how many reviews and memos PMs write a year and how long each takes; which loan system and spreading tool the bank uses; and whether a later draft may carry a recommendation.
 
 ## Part 2: The product: The PM Assistant (short version for people)
 
@@ -54,36 +56,36 @@ Working file: `memos/pm-assistant.md`.
 > ⚠️ **A working hypothesis** (first cut, 2026-10-19), built from outside research and public Associated job postings. The first interviews with the leaders of portfolio managers (PMs) and with PMs confirm or change it.
 
 ### The product in one line
-Each PM gets **their own AI assistant**, inside the tools we expect they use (Word, Teams, the loan system and the bank's data; ⚠️ to confirm), to take the gathering and routine writing off their plate, so their time goes to credit judgment, and to spot weakening borrowers sooner. It starts with two **capabilities** and gains more, feature wave by feature wave. Every later AI product for PMs is a new capability of the same assistant.
+Each PM gets **their own AI assistant**, inside the tools we expect they use (Word, Teams, the loan system and the bank's data; ⚠️ to confirm), to take the gathering and routine writing off their plate, so their time goes to credit judgment, and to spot weakening borrowers sooner. Its users are PMs and the credit analysts who support them; what they get back is time for judgment and for watching the portfolio. It starts with two **capabilities** and gains more, feature wave by feature wave. Every later AI product for PMs is a new capability of the same assistant.
 
 ### 1. Its limits
 These limits make it safe to give every PM one.
 - **Jobs:** only the capabilities below. Anything else, it says so and stops.
 - **Workflows (where it works):** Word from the bank's templates, Teams and the loan system (⚠️ to confirm). No new app.
 - **Data:** borrower data the bank has approved as trusted (certified) and the credit file's documents, only for the borrowers the PM may already see.
-- **Controls:** it gathers, drafts and flags; the PM writes the judgment and submits. It never sets or suggests a risk rating, never approves or declines credit and never sets a price. Every draft names the credit officer who decides. Everything is logged.
+- **Controls:** it gathers, drafts and flags; the PM writes the judgment and submits. It never sets or suggests a borrower risk rating, never approves or declines credit and never sets a price. Wave 1 drafts leave the recommendation blank; whether a later draft may carry one is the credit policy owner's call at 2.4 (our assumption). Every draft names the credit officer who decides. Everything is logged.
 - **Feedback:** one click on every output (use, change or reject), which steers what gets better next.
 
 ### 2. Capabilities, by moment in the PM's work
-Each capability is one AI product and answers one credit core use case (the pairing with the RM core use cases is our proposal, to agree; see the [Use Case Library](https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X#portfolio-managers) for the value and the research).
+Each capability is one AI product and answers one credit core use case (our proposal, to agree; see the [Use Case Library](https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X#portfolio-managers) for the value and the research).
 
 | Moment | Capability | What it does | Credit core use case | Wave |
 |---|---|---|---|---|
 | **Review and renew** | Borrower file | Everything about one borrower in one place, every figure with its source, and what's missing or late | Credit memo and annual review drafts | 1 |
-| | Annual review and credit memo drafts | The routine sections drafted in the bank's template; the risk rating and recommendation left for the PM | Credit memo and annual review drafts | 1 |
+| | Annual review and credit memo drafts | The routine sections drafted in the bank's template; the borrower risk rating and the recommendation left for the PM (in wave 1 the recommendation is always the PM's) | Credit memo and annual review drafts | 1 |
 | | Renewal radar | Loans coming up for renewal, and borrowers whose results suggest a different line | Renewals and line changes | 3 |
-| **Watch the portfolio** | Early warning flags | Flags borrowers whose signals are weakening, with the numbers | Early warning on credit quality | 2 |
+| **Watch the portfolio** | Early warning flags | Flags borrowers whose signals are weakening, with the numbers; the PM decides whether a flag goes to the bank's own watchlist or rating review (⚠️ to confirm how that runs today) | Early warning on credit quality | 2 |
 | | Covenant and statement tracker | Covenant tests, and statements and certificates due or late | Spreading, document intake and covenant tracking | 2 |
-| **New requests** | Deal screening | A quick check that a request fits the bank's credit appetite | Deal screening | 3 |
+| **New requests** | Deal screening | A quick check that a request fits the bank's credit appetite; on the higher-risk path, it never declines, only notes where a request sits against the published appetite | Deal screening | 3 |
 | **Know the policy** | Credit policy Q&A | Answers from the credit policy, citing the section | Credit policy Q&A and coaching | 3 |
-| **Left out on purpose** | Risk rating support; approve or decline; pricing | Kept out because they are the credit decision itself | Risk rating support | Out |
+| **Left out on purpose** | Borrower risk rating support; approve or decline; pricing | Kept out because they are the credit decision itself | Risk rating support | Out |
 
 ### 3. What it's built on
 Every capability runs on one shared foundation, built once:
 - borrower data: loans, covenants, deposits and payments (⚠️ where they live is to confirm);
-- the credit file: financial statements, the spread (the borrower's statements entered in the bank's standard format), prior reviews and other documents, read with the page cited;
+- the credit file: financial statements, the spread (the borrower's statements entered in the bank's standard format), prior reviews and other documents, read with the page cited. Wave 1 reads the spread already in the bank's spreading tool; it doesn't spread statements itself (⚠️ to confirm);
 - the bank's review and memo templates and its credit policy;
-- a **signals engine**: simple, explainable rules agreed with credit risk, with AI explaining each flag in plain English;
+- a set of warning rules (simple, explainable, agreed with credit risk; ⚠️ which team owns early warning rules is to confirm), with AI explaining each flag in plain English;
 - drafting, with every number checked against its source, and the controls and feedback above.
 
 Every detail (the PM's job, the foundation part by part, what to confirm) is in [PM Detail](https://claude.ai/artifact/KZ4PEbhCPAj6uWKXmJMCeg), for AI to read. To see the assistant working, try the [PM Assistant Prototype](https://claude.ai/artifact/8vFxUWVwtZbzZs7pL162HE).
@@ -106,8 +108,8 @@ The assistant is personal to each PM, and it is constrained in five ways. These 
 |---|---|
 | **Jobs** | It does only the capabilities listed on this page. Anything else, it says so and stops. |
 | **Workflows** | It works where we expect the PM already works (to confirm in Discover): Word from the bank's templates, Teams, the loan system. No new app to learn. |
-| **Data** | Certified borrower data only (financials, loans, covenants, deposits, payments), the credit file's documents and the RM's approved notes, always limited to the borrowers the PM may already see. |
-| **Controls** | It gathers, drafts and flags; the PM writes the judgment and submits. It never sets or suggests a risk rating, never approves or declines credit, never sets a price, and writes a recommendation only if the credit policy owner allows it. Every draft names the credit officer who decides. Everything is logged. |
+| **Data** | Certified borrower data only (financials, loans, covenants, deposits, payments), the credit file's documents and the relationship manager's (RM's) approved notes, always limited to the borrowers the PM may already see. |
+| **Controls** | It gathers, drafts and flags; the PM writes the judgment and submits. It never sets or suggests a borrower risk rating, never approves or declines credit and never sets a price. Wave 1 drafts leave the recommendation blank; whether a later draft may carry one is the credit policy owner's call at 2.4 (our assumption). Every draft names the credit officer who decides. Everything is logged. |
 | **Feedback** | Every output has one-click feedback (use, change or reject, with a reason). The feedback steers what gets better next. |
 
 ### 2. What a PM's job is
@@ -116,26 +118,26 @@ From Associated's public PM postings (seen through search results on job boards,
 | Part of the job | What it means | Where the assistant helps |
 |---|---|---|
 | **Underwrite new credit** | Analyze a borrower's financials and write the credit memo for a new loan, renewal or line change | Borrower file, credit memo draft |
-| **Review the portfolio** | Annual reviews of each borrower: financial performance, covenants, collateral, risk rating | Borrower file, annual review draft |
+| **Review the portfolio** | Annual reviews of each borrower: financial performance, covenants, collateral, borrower risk rating | Borrower file, annual review draft |
 | **Monitor credit quality** | Watch for weakening borrowers; track statements, compliance certificates and covenants | Early warning flags, covenant and statement tracker |
 | **Partner with RMs** | Work closely with the RM on each relationship and each request | Faster drafts mean faster answers for the RM |
 | **Know the policy** | Apply the bank's credit policy and procedures | Credit policy Q&A |
 
 ### 3. Capabilities, by moment in the PM's work
-Each capability is one AI product (glossary) and answers one credit core use case, the credit counterpart of an RM core use case (the Use Case Library's portfolio manager section; the pairing is our proposal, to agree).
+Each capability is one AI product (glossary) and answers one credit core use case, the credit counterpart of an RM core use case (the Use Case Library's portfolio manager section; the pairing is our proposal, to agree). The core use case "Credit memo and annual review drafts" covers both wave 1 capabilities: the borrower file, and the drafts.
 
 | Moment | Capability | What it does | Credit core use case | Wave |
 |---|---|---|---|---|
 | **Review and renew** | Borrower file | Everything about one borrower in one place, every figure with its source, and what's missing or late | Credit memo and annual review drafts | 1 |
-| | Annual review and credit memo drafts | The routine sections drafted in the bank's template; the rating and recommendation left for the PM | Credit memo and annual review drafts | 1 |
-| | Renewal radar | Loans coming up for renewal, and borrowers whose results suggest a bigger or smaller line | Renewals and line changes | 3 |
+| | Annual review and credit memo drafts | The routine sections drafted in the bank's template; the borrower risk rating and the recommendation left for the PM (in wave 1 the recommendation is always the PM's) | Credit memo and annual review drafts | 1 |
+| | Renewal radar | Loans coming up for renewal, and borrowers whose results suggest a bigger or smaller line (higher-risk path, our assumption) | Renewals and line changes | 3 |
 | **Watch the portfolio** | Early warning flags | Flags borrowers whose signals are weakening, with the numbers | Early warning on credit quality | 2 |
 | | Covenant and statement tracker | Covenant tests from the spread, and statements and certificates due or late | Spreading, document intake and covenant tracking | 2 |
-| **New requests** | Deal screening | A quick check that a request fits the bank's credit appetite before the RM pitches | Deal screening | 3 |
+| **New requests** | Deal screening | A quick check that a request fits the bank's credit appetite before the RM pitches (higher-risk path, our assumption) | Deal screening | 3 |
 | **Know the policy** | Credit policy Q&A | Answers from the bank's credit policy, citing the section | Credit policy Q&A and coaching | 3 |
-| **Left out on purpose** | Risk rating support; approve or decline; pricing | Closest to the credit decision; kept out under control K3 | Risk rating support | Out |
+| **Left out on purpose** | Borrower risk rating support; approve or decline; pricing | Closest to the credit decision; kept out under control K3 | Risk rating support | Out |
 
-**Wave 1 at a glance:** two capabilities that work as one flow: the borrower file, then the draft built from it. Together they cover the PM's most frequent writing job, the annual review, and the credit memo for a request. The order follows the agreed credit order (closed item C33): memo and review drafts first, early warning second, risk ratings out of the first waves.
+**Wave 1 at a glance:** two capabilities that work as one flow: the borrower file, then the draft built from it. Together they cover the PM's most frequent writing job, the annual review, and the credit memo for a request. The order follows the agreed credit order (closed item C33): memo and review drafts first, early warning second, borrower risk ratings out of the first waves.
 
 **How each capability is built.** Our measures' targets are set in Define; outside figures are benchmarks in the Use Case Library, never our targets.
 
@@ -146,13 +148,15 @@ Each capability is one AI product (glossary) and answers one credit core use cas
 | **Wave 2** (dates proposed at gate 2) | Early warning flags (higher-risk path) | Early warning on credit quality | A9 | Snowflake signals, Teams | Flags acted on; how much earlier than today [X] |
 | | Covenant and statement tracker | Spreading, document intake and covenant tracking | Rules in code (workflow B14) | Snowflake, the spreading tool (⚠️ to confirm) | Late items; analyst hours saved [X] |
 | **Wave 3** (dates proposed at gate 2) | Credit policy Q&A | Credit policy Q&A and coaching | A10 | Copilot Studio or Bedrock Knowledge Bases | Questions answered; answer ratings [X] |
-| | Renewal radar; deal screening | Renewals and line changes; deal screening | Specs to come | Snowflake, the loan system | Renewals on time; screening turnaround [X] |
+| | Renewal radar; deal screening (higher-risk path, our assumption) | Renewals and line changes; deal screening | Specs to come | Snowflake, the loan system | Renewals on time; screening turnaround [X] |
 
-**Why the borrower file is its own capability (our call, 2026-10-19):** it gathers and cites but writes no judgment, so we assume it needs the least review (⚠️ the risk partner decides) and can go live first if the higher-risk review of the drafts runs long. It also saves PMs time on its own.
+**Why the borrower file is its own capability (our call, 2026-10-19):** it gathers and cites but writes no judgment, so we assume it needs the least review (⚠️ the risk partner decides) and can go live first if the higher-risk review of the drafts runs long. It also saves PMs time on its own. K3's wording (output that informs a credit decision) could cover it, which is why it is the first question for the risk partner at 2.4, and why the backup plan covers it.
 
-**Why the judgment sections stay blank:** the risk rating and the recommendation are where the credit decision lives. Leaving them to the PM keeps the AI on the right side of control K3 and keeps the PM accountable. Whether a draft may carry a recommendation at all is the credit policy owner's call at sub-step 2.4.
+**Why the judgment sections stay blank:** the borrower risk rating and the recommendation are where the credit decision lives. Leaving them to the PM keeps the AI on the right side of control K3 and keeps the PM accountable. Wave 1 drafts leave the recommendation blank; whether a later draft may carry one is the credit policy owner's call at 2.4 (our assumption).
 
-**Why early warning is wave 2:** it is where most banks are working (the Use Case Library), but it needs agreed rules from credit risk and its own fairness check, and it touches the bank's own watchlist process, which we don't know yet. We call ours "early warning flags" so they are never mistaken for the bank's watchlist.
+**Why early warning is wave 2:** it is the area most credit risk leaders in McKinsey's survey of 24 institutions are pursuing (the Use Case Library), but it needs agreed rules from credit risk (⚠️ which team owns early warning rules is to confirm) and its own fairness check, and it touches the bank's own watchlist process, which we don't know yet. We call ours "early warning flags" so they are never mistaken for the bank's watchlist.
+
+**Why deal screening and the renewal radar's line suggestions wait for wave 3:** both sit close to a credit decision, so we assume they take the higher-risk path (K3); the risk partner rates each at 2.4 before it is specified ⚠️.
 
 ### 4. The foundation underneath
 Built once and shared by every capability.
@@ -162,10 +166,12 @@ Built once and shared by every capability.
 | **Borrower data** | Loans, covenants, deposits and payments, which we expect in Snowflake (⚠️ or Fabric; certified data only) | Every capability |
 | **The credit file** | Financial statements, the spread (the statements in the bank's standard format), prior reviews, appraisals and other documents (⚠️ where they live is to confirm), read with their page cited | Borrower file, drafts |
 | **The bank's templates and policy** | The annual review and credit memo templates; the credit policy | Drafts, policy Q&A |
-| **Signals engine** | Simple, explainable rules agreed with credit risk; AI explains each flag with the numbers | Early warning, covenant tracker, renewal radar |
+| **Signals engine** | Simple, explainable rules agreed with credit risk (⚠️ which team owns early warning rules is to confirm); AI explains each flag with the numbers | Early warning, covenant tracker, renewal radar |
 | **Drafting** | Drafts marked as AI drafts, with every number checked against its source in code | Drafts |
 | **Controls and logs** | The limits in section 1, built once and tested for every capability | Every capability |
 | **Feedback loop** | One-click feedback on every output, sorted and fed into the next release | Every capability |
+
+Spreading and document intake stay with the bank's spreading tool (⚠️ to confirm); the tracker reads its spread, as the Evalueserve covenant case does (vendor case study).
 
 ### 5. How we'll know it works
 - **More PM time for judgment:** hours per annual review and credit memo, against PMs not yet using it [X].
@@ -193,7 +199,7 @@ How The PM Assistant gets delivered to portfolio managers (PMs) · Associated Ba
 [PM Executive Summary](https://claude.ai/artifact/Cvw3mkUohNFLwVr4H2wURd) · [The PM Assistant](https://claude.ai/artifact/BrBLWQzQggQPtqCgLLGf3C) · [PM Assistant Prototype](https://claude.ai/artifact/8vFxUWVwtZbzZs7pL162HE) (see it working) · [PM Detail](https://claude.ai/artifact/KZ4PEbhCPAj6uWKXmJMCeg) (everything in full) · [Product Framework](https://claude.ai/artifact/HJnqf9A7R2jQ5iEZCYpMaZ) (the rules every product follows)
 
 ### The plan at a glance
-The first 13 weeks (about 90 days), as estimates to confirm in the first days. Each live bar starts only once its borrower data is approved and the bank's review signs it off, so the bars move with those approvals. Week 1 starts at kickoff. Gates (◆) are go/no-go decisions; the data contract is the signed list of borrower data the assistant may use. Each row links to its detail in PM Detail.
+The first 13 weeks (about 90 days), as estimates to confirm in the first days. Each live bar starts only once its borrower data is approved and the review signs it off, so the bars move with those approvals. Week 1 starts at kickoff. Gates (◆) are go/no-go decisions; the data contract is the signed list of borrower data the assistant may use. Each row links to its detail in PM Detail.
 
 ```gantt
 weeks 13
@@ -210,13 +216,13 @@ Higher-risk review and sign-offs, including the credit policy owner | 9 | 11 | b
 Small releases every week or two | 7 | 13 | ongoing | https://claude.ai/artifact/KZ4PEbhCPAj6uWKXmJMCeg#part-5-the-full-delivery-plan-with-every-6-the-project-plan-estimate
 ```
 
-No real borrower data is used before gate 2. The borrower file can move first because it gathers and cites but writes no judgment (our assumption, to confirm: it needs less review). The drafts inform credit decisions, so they take the deeper review the bank's process calls the higher-risk path: a fairness check, tests that it refuses a rating, a decision or a price, and the credit policy owner's sign-off. The risk partner and the credit policy owner see each version as it's built. Waves 2 and 3 get proposed dates at gate 2.
+No real borrower data goes into the assistant or its tests before gate 2 (sizing counts and watching PMs at work aside). The borrower file can move first because it gathers and cites but writes no judgment (our assumption, to confirm: it needs less review). The drafts inform credit decisions, so they take the deeper review we call the higher-risk path (⚠️ how the bank reviews AI that informs credit is a first question): a fairness check, tests that it refuses a borrower risk rating, a decision or a price, and the credit policy owner's sign-off. The risk partner and the credit policy owner see each version as it's built. Feature waves 2 and 3 get proposed dates at gate 2.
 
 ### 1. What could slow us down (to confirm)
 The real blockers aren't known yet; they're a first question for the bank. Possible ones:
 - **Approval to use borrower data and credit files.** Nothing reaches pilot PMs on real data until the people responsible for it approve which data the assistant may use.
 - **The deeper review for credit drafts.** Nothing goes live until risk, compliance, privacy, security and the credit policy owner sign off. To keep that short, they review each version as it's built.
-- **Backup plan.** If data approval runs long, the prototype keeps running on sample borrowers and the dates are reset at gate 2. If the risk partner puts the borrower file on the higher-risk path too, it goes live with the drafts at about week 12. If the deeper review of the drafts runs long, the borrower file stays live and the version under review stays frozen; improvements ship after sign-off. The call is made at gate 2.
+- **Backup plan.** If data approval runs long, the prototype keeps running on sample borrowers and the dates are reset at gate 2. If the risk partner puts the borrower file on the higher-risk path too, it goes live with the drafts at about week 12. If the deeper review of the drafts runs long, the borrower file stays live and the version under review stays frozen; improvements ship after sign-off. The frozen drafts are tested on a pinned version of the borrower file; borrower-file changes that reach the drafts wait for sign-off or go through step 4 with them. The call is made at gate 2.
 
 Detail: [the backup plan and how we move fast](https://claude.ai/artifact/KZ4PEbhCPAj6uWKXmJMCeg#part-5-the-full-delivery-plan-with-every-6-the-project-plan-estimate).
 
@@ -227,7 +233,7 @@ Detail: [the backup plan and how we move fast](https://claude.ai/artifact/KZ4PEb
 | User leaders | PM team leaders and credit managers: choose the pilot group, use the early warning flags in a portfolio review they already run (⚠️ to confirm), and decide with the sponsor whether to scale |
 | Pilot PMs and analysts | Co-design and test, and grade the drafts; their feedback steers what gets built |
 | Credit policy owner | What a draft may contain, and a sign-off before drafts reach PMs [name needed] |
-| Credit officer | Makes every credit decision a draft informs; named on every draft |
+| Credit officer | Whoever holds approval authority for that credit under the bank's authority list (it may be the PM; ⚠️ to confirm); named on every draft |
 | Data owners | Borrower data and credit files (⚠️ which systems is to confirm) [names needed]: sign the data contract, with the credit file's content owner signing the list of documents |
 | Risk partner | Rates the product's risk and approves it before it reaches PMs; the sponsor can't overrule that approval |
 | Compliance, privacy and security | Sign off before it reaches PMs; compliance runs the fairness check |
@@ -248,11 +254,12 @@ Detail: [the value model](https://claude.ai/artifact/KZ4PEbhCPAj6uWKXmJMCeg#part
 | Risk | How I'd handle it |
 |---|---|
 | A wrong number in a credit draft | Every number traced to its source and checked before the PM sees it; zero tolerance in testing |
-| The AI drifts into the credit decision | It never writes the rating or the recommendation; tests that it refuses; the credit officer named on every draft |
+| The AI drifts into the credit decision | It never writes the borrower risk rating or the recommendation; tests that it refuses; the credit officer named on every draft |
 | Approval to use borrower data takes longer | Request it on day one; keep the prototype running on sample borrowers |
 | The deeper review takes longer | Brief the credit policy owner in week one; the borrower file goes first (section 1) |
 | Documents are scanned, messy or in many systems (⚠️ to confirm) | Start with documents already in a standard form; the file lists what's missing instead of guessing |
 | PMs don't trust the drafts | A source on every figure; built with pilot PMs on their own past reviews |
+| Loan review or examiners question AI-drafted text in the credit file | Every draft stamped AI-drafted and approved by the named PM, with sources kept; brief loan review early |
 
 Detail: [every risk and how I'd handle it](https://claude.ai/artifact/KZ4PEbhCPAj6uWKXmJMCeg#part-5-the-full-delivery-plan-with-every-7-top-risks-and-how-i-d-handle-them).
 
@@ -274,7 +281,7 @@ for the bank (what usually holds up a new AI tool there, and how long does the
 credit policy owner's review take?). Possible ones, our assumptions to confirm:
 approval to use borrower financials and credit files (the data contract, signed by
 the data owners [names needed]; aimed for weeks 2 to 4), and the higher-risk review. Credit
-memo and annual review drafts inform a credit decision, so the wave 1 drafts take the
+memo and annual review drafts inform a credit decision, so the feature wave 1 drafts take the
 higher-risk path (control K3): a fairness check, must-refuse tests and the credit
 policy owner's sign-off as well as the usual ones.
 
@@ -285,14 +292,14 @@ policy owner's sign-off as well as the usual ones.
 The assistant has two goals that work together:
 
 - **More PM time for judgment ("banker capacity"):** less time gathering financials, re-typing numbers and writing the routine parts of annual reviews and credit memos.
-- **Earlier sight of credit trouble:** spotting a weakening borrower sooner, so the PM and RM can act while there are still options.
+- **Earlier sight of credit trouble:** spotting a weakening borrower sooner, so the PM and the relationship manager (RM) can act while there are still options.
 
 The return comes from three places. Finding out which is biggest is the first job:
 
 | Lever | What the assistant does | Capabilities |
 |---|---|---|
 | **Save time on each review** | Gathers the borrower's file and drafts the routine sections of the annual review or credit memo, with a source on every number | Borrower file, review and memo drafts |
-| **Faster answers for RMs and clients** | Shorter time from a credit request to a decision, because the first draft is ready sooner | Review and memo drafts, deal screening |
+| **Faster reviews, and faster answers on new requests** | Shorter time from a credit request to a decision, because the first draft is ready sooner | Review and memo drafts, deal screening |
 | **Fewer surprises in the portfolio** | Flags borrowers whose signals are weakening (late statements, a covenant near its limit, falling deposits) | Early warning flags, covenant and statement tracker |
 
 ---
@@ -303,7 +310,7 @@ The business case is built in Discover from real data. The structure is set now,
 and the **[X]** values are filled in with the bank's numbers, not invented here.
 Unlike the RM model, the PM model counts **costs saved** and tracks **loan losses
 avoided**, because the bank has said its first AI work in this business includes
-portfolio management, with goals that include faster loan processing (Bank
+portfolio management (we read this as loan portfolio management, PMs' work; to confirm), with goals that include faster loan processing (Bank
 Business Briefing, section 4; ⚠️ check the release's exact wording).
 
 | Part | How it's calculated |
@@ -331,20 +338,21 @@ The roles, what each one decides and the gates each joins are set once in the
 | Sponsor | A credit or commercial banking leader [name needed] ⚠️ (whether credit or the business sponsors it is a first question) |
 | User leaders | PM team leaders and credit managers: they choose the pilot group, decide with the sponsor whether to scale (gate 5), and use the early warning flags in a portfolio review they already run (⚠️ to confirm) |
 | Pilot users | Pilot PMs and credit analysts: they co-design and test, and grade the test set |
-| Credit policy owner | What a draft may contain (for example, whether it may carry a recommendation), the must-refuse cases, and a sign-off at step 4 (higher-risk path, control K3) [name needed] |
-| Credit officer | Makes every credit decision a draft or flag informs; named on every draft (K3) ⚠️ (may be the PM or a credit approver; to map) |
+| Credit policy owner | What a draft may contain (for example, whether a later draft may carry a recommendation; wave 1 drafts leave it blank), the must-refuse cases, and a sign-off at step 4 (higher-risk path, control K3) [name needed] |
+| Credit officer | Whoever holds approval authority for that credit under the bank's authority list (it may be the PM; ⚠️ to confirm): makes every credit decision a draft or flag informs; named on every draft (K3) |
 | Data owners | The owners of borrower financials, loan and covenant data and credit files (⚠️ which systems hold them is to confirm) [names needed] |
-| Content owner of the credit file | Signs the list of documents the assistant may read (statements, tax returns, appraisals, prior reviews; sub-step 2.3), for example credit administration [name needed] |
+| Content owner of the credit file | Signs the list of documents the assistant may read (statements, tax returns, appraisals, prior reviews; sub-step 2.3), for example credit administration ⚠️ (to confirm) [name needed] |
 | Platform teams | Microsoft, AWS, data engineering and the loan system's team (⚠️ which loan system the bank uses is not yet known) |
 | Long-term owner | To be decided by a date set in Define (sub-step 2.8); confirmed before scaling (5.7); for example, someone in credit administration |
-| Also for PMs: credit risk review | Whether early warning flags change how loans are watched, and how a flag relates to the bank's own watchlist process (⚠️ to confirm); from wave 2, owns the early warning rules and signs them at 4.7 |
+| Also for PMs: credit risk review | Whether early warning flags change how loans are watched, and how a flag relates to the bank's own watchlist process (⚠️ to confirm) |
+| Also for PMs: credit risk | From wave 2, owns the early warning rules and signs the rule set at 4.7 (⚠️ which team owns early warning rules is to confirm) |
 
 The risk partner, compliance, privacy and security (who sign off at step 4), vendor
 risk, IT, Finance, Analytics and Operations join as the Product Framework sets out;
 the risk partner's step 4 approval can't be overruled by the sponsor. **The review and memo drafts take
 the higher-risk path**, so the credit policy owner joins at 2.4 and signs at 4.7, and
 compliance runs the fairness check (4.4). We assume the borrower file does not, because
-it gathers and cites but drafts nothing (⚠️ the risk partner decides at 2.4).
+it gathers and cites but drafts nothing (⚠️ the risk partner decides at 2.4). K3's wording (output that informs a credit decision) could cover it, which is why it is the first question for the risk partner at 2.4, and why the backup plan covers it.
 
 **Keeping partners aligned.** Decisions go in the decision log, and dependencies,
 risks and issues in the risk and issue list (Product Framework). Its top item is the
@@ -364,12 +372,12 @@ Discover and Define. What's different for PMs:
 
 | Step | Gate for PMs | What's specific to PMs | General agents used (M20 to M33; M1 to M19 run every step as the Product Machine sets out) |
 |---|---|---|---|
-| **1. Discover** | The sponsor, with the risk partner, agrees the target lever, the main measure (hours per review is our first guess) and today's baseline (provisional; confirmed at gate 2), and confirms wave 1 | Count reviews and memos per PM per year and time each part (gathering, spreading, writing, approvals); interview and shadow PMs and credit analysts through one real annual review, starting from the PM user workflow; collect the bank's review and memo templates; learn how PMs are measured; test the prototype on sample borrowers every few days | M20 interview synthesizer, M21 opportunity sizer, M22 time-use analyst |
-| **2. Define** | The brief, data contract and risk rating agreed (higher-risk path set); the credit policy owner agrees what drafts may contain; the value model shows payback within [X] months | The data contract covers documents (financial statements, tax returns, appraisals, prior reviews: their source, owner and who may see them) and the bank's approval-authority list; the risk intake marks the drafts for the higher-risk path (K3) and lists the must-refuse cases (a risk rating, approve or decline, a price, a recommendation if the policy owner says no); Finance agrees how hours are valued | M23 requirements drafter, M24 data contract checker, M25 risk intake assistant |
-| **3. Build** | Meets the quality bar in testing; every control is built and passes its control test | Every number in a draft traces to a source document or system (K7) and is checked in code; the "judgment" sections (risk rating, recommendation) are left for the PM, clearly marked; each PM sees only borrowers they may already see (K4); the test set uses real past reviews graded by experienced PMs, with must-refuse cases | M26 test grader |
-| **4. Govern and test** | All sign-offs recorded, including the credit policy owner's, and the monitoring plan agreed | Register the product in the model inventory (⚠️ to confirm) and confirm its rating (SR 11-7; ⚠️ SR 26-2 may replace it, item W17); red-team for a credit decision, a rating, a price and other PMs' borrowers; fairness check, with the groups set by compliance (4.4; are drafts equally complete and accurate across borrower types and sizes? is our first proposal ⚠️); every draft names the credit officer who decides, from the bank's approval-authority list | M27 red-team agent, M28 fairness monitor, M29 evidence pack assembler |
-| **5. Release and adopt** | Weekly use and leading results hit targets (at least [X]% of pilot PMs using the assistant weekly; at least [X]% of draft sections kept with light edits); no serious incidents; long-term owner confirmed before scaling. Hours per review and turnaround are judged in step 6, once enough reviews are done | A pilot group of PMs, with a comparison group; build it into the annual review cycle and the portfolio review managers already run (⚠️ to confirm); train on PMs' own borrowers; champions answer "how do I…?" | M30 feedback triage |
-| **6. Measure and iterate** | Each month, keep, change or stop each AI product; each quarter, the sponsor with Finance decides to invest more, adjust or stop | Leading measures first (drafts used, hours per review, turnaround), visible within weeks; early warning judged on flags acted on and how early they came, not on losses avoided until Finance and credit risk agree a method | M31 impact analyst, M32 quality watchdog, M33 improvement scout |
+| **1. Discover** | The sponsor, with the risk partner, agrees the target lever, the main measure (hours per review is our first guess) and today's baseline (provisional, from the first sizing in 1.2; final baseline checked at gate 2), and confirms wave 1 | Count reviews and memos per PM per year and time each part (gathering, spreading, writing, approvals); interview and shadow PMs and credit analysts through one real annual review (with consent before recording any shadowing session, K24), starting from Map 3 on the Workflow Maps (the PM user workflow, how PMs work today, is not written yet); collect the bank's review and memo templates; learn how PMs are measured; test the prototype on sample borrowers every few days | M20 interview synthesizer, M21 opportunity sizer, M22 time-use analyst |
+| **2. Define** | The brief, data contract (K5) and the product's risk rating agreed (higher-risk path set); the final baseline; the credit policy owner agrees what drafts may contain; dates proposed for waves 2 and 3; the value model shows payback within [X] months | The data contract covers documents (financial statements, tax returns, appraisals, prior reviews: their source, owner and who may see them), which fields are sensitive and hidden or labeled (K6: guarantors' personal financial statements, tax-return identifiers; privacy confirms which laws apply ⚠️), and the bank's approval-authority list ⚠️ (to confirm); M24 checks the data fields; the content owner of the credit file checks the documents' re-indexing and permissions by hand until M24 gains a documents mode; the risk intake marks the drafts for the higher-risk path (K3) and lists the must-refuse cases (a borrower risk rating, approve or decline, a price, and a recommendation: always in wave 1, later if the policy owner says no); Finance agrees how hours are valued | M23 requirements drafter, M24 data contract checker (then on every data refresh), M25 risk intake assistant |
+| **3. Build** | Meets the quality bar in testing; every control is built and passes its control test | Every number in a draft traces to a source document or system (K7) and is checked in code; the "judgment" sections (borrower risk rating, recommendation) are left for the PM, clearly marked; each PM sees only borrowers they may already see (K4); the test set uses real past reviews graded by experienced PMs, with must-refuse cases | M26 test grader |
+| **4. Govern and test** | All sign-offs recorded, including the credit policy owner's, and the monitoring plan agreed | Register the product in the model inventory (⚠️ to confirm) and confirm its rating (SR 11-7; ⚠️ SR 26-2 may replace it, item W17); privacy compares the documents retrieved with the contract's sources by hand (M13 doesn't cover documents yet); red-team for a credit decision, a borrower risk rating, a price, other PMs' borrowers, instructions hidden inside a borrower-supplied document, one borrower's figures leaking into another's draft and a number with no source (M27, K10); fairness check (4.4; compliance sets the fair-lending groups and what data exists for them ⚠️; we'd also compare draft accuracy and completeness across borrower types and sizes as a quality check); every draft names the credit officer who decides, from the bank's approval-authority list | M26 test grader (on the frozen version), M27 red-team agent, M28 fairness monitor (then monthly), M29 evidence pack assembler |
+| **5. Release and adopt** | Weekly use and leading results hit targets (at least [X]% of pilot PMs using the assistant weekly; at least [X]% of draft sections kept with light edits); no serious incidents; long-term owner confirmed before scaling. Hours per review and turnaround are judged in step 6, once enough reviews are done | A pilot group of PMs, with a comparison group; build it into the annual review cycle and the portfolio review managers already run (⚠️ to confirm); train on PMs' own borrowers; champions show peers how they use it (5.5) | M30 feedback triage |
+| **6. Measure and iterate** | Each month (and at the end of each feature wave), keep, change or stop each AI product, on results against the comparison group; each quarter, the sponsor with Finance decides to invest more, adjust or stop | Leading measures first (drafts used, hours per review, turnaround), visible within weeks; early warning judged on flags acted on and how early they came, not on losses avoided until Finance and credit risk agree a method | M31 impact analyst, M32 quality watchdog, M33 improvement scout |
 
 ---
 
@@ -387,9 +395,9 @@ in Word from a bank template and work in a loan system and a spreading tool (⚠
 ones is not yet known). If so: gather the borrower file from Snowflake (or Fabric) and the
 document store, read documents with AWS Bedrock (with a Knowledge Base for the credit
 file, citing pages), and deliver the draft as a Word document in the PM's own workspace
-through a Copilot Studio agent in Teams. If the bank's loan system has its own drafting
+through a Copilot Studio agent in Teams. Each search is limited to the one borrower and to borrowers the PM may see (K4; how the index enforces this is a question for the platform team ⚠️). If the bank's loan system has its own drafting
 features, compare it first: building where the work already happens comes before a new
-path.
+path. Vendors already sell memo drafting and policy Q&A (nCino Banking Advisor, Moody's agents, S&P Global); compare them with vendor risk at 2.2 before building (K14). Microsoft publishes a Copilot Studio credit memo pattern close to our starting point (a how-to scenario, not a bank result).
 
 **What ships when:** in feature waves of capabilities (the capabilities and their waves
 are in PM Detail, Part 3), with a release every week or two in between.
@@ -406,32 +414,32 @@ permissions mean no PM sees a borrower they aren't allowed to see (zero toleranc
 Building starts on day one, on sample borrowers. The plan is organized around what most
 often holds banks up (our assumption for Associated, to confirm): access to borrower data
 and the higher-risk review. The risk partner and the credit policy owner see each version
-as it is built. No real borrower data, past reviews included, is used before gate 2.
+as it is built. No real borrower data goes into the assistant or its tests before gate 2 (sizing counts and watching PMs at work aside).
 
 **What lets us move this fast.** The same six conditions as every product (build from day
 one, standard features, low risk by design, review as we go, data access on day one, fast
 decisions), with one change: the drafts are **not** low risk by design, because they inform
 credit decisions. What keeps them moving is that the AI never writes the judgment: the
-rating and the recommendation stay with the PM.
+borrower risk rating and the recommendation stay with the PM. Wave 1 drafts leave the recommendation blank; whether a later draft may carry one is the credit policy owner's call at 2.4 (our assumption).
 
 **The backup plan, for three things that could run long** (the call is made at gate 2):
 - **Approval to use borrower data.** Everything waits for it; the prototype keeps running on sample borrowers with pilot PMs, and the live dates are reset at gate 2.
 - **The borrower file is put on the higher-risk path too** (the risk partner's call at 2.4). Then it goes through step 4 with the drafts and both go live together, at about week 12.
-- **The higher-risk review of the drafts.** The borrower file stays live on its own. The version under review is frozen; improvements wait in the backlog and ship after sign-off through the release routine (B15), and any material change goes back through step 4.
+- **The higher-risk review of the drafts.** The borrower file stays live on its own. The version under review is frozen (K17); the frozen drafts are tested on a pinned version of the borrower file, and borrower-file changes that reach the drafts wait for sign-off or go through step 4 with them. Improvements wait in the backlog and ship after sign-off through the release routine (B15), and any material change goes back through step 4.
 
 **Wave 1: the first 13 weeks**
 
 | Week | What gets done | Owner | Proof it's done |
 |---|---|---|---|
-| Days 1–5 | Sponsor kickoff; risk partner and credit policy owner briefed; data access and test environments requested; vendor risk asked whether AWS Bedrock and the model provider are approved for borrower data; IT asked to approve each connection (2.2); working prototype on sample borrowers; the review templates collected; a first count of reviews per PM, from credit administration's review calendar if one exists (⚠️ to confirm) | Product manager, platform team | Prototype shown to the sponsor |
+| Days 1–5 | Sponsor kickoff; risk partner and credit policy owner briefed; data access and test environments requested; vendor risk asked whether AWS Bedrock and the model provider are approved for borrower data (K14, K19); IT asked to approve each connection (2.2, K20); working prototype on sample borrowers; the review templates collected; a first count of reviews per PM, from credit administration's review calendar if one exists (⚠️ to confirm) | Product manager, platform team | Prototype shown to the sponsor |
 | 1 | **Gate 1:** target lever, main measure and provisional baseline agreed; wave 1 confirmed | Sponsor, with the risk partner | Decision log entry |
 | 1–3 | Shadow 4–6 PMs and analysts through a real review (our estimate); time each part, which gives the final baseline; improve the prototype every few days | Product manager, pilot PMs, analyst | Time map; feedback log |
 | 1–4 | Borrower file and drafts built and tested on sample borrowers | Platform team | Prototype test results |
-| About 4 | **Gate 2:** final baseline, data contract, early risk rating (which capabilities take the higher-risk path), what drafts may contain (credit policy owner), measures and value model. Aimed for weeks 2 to 4, paced by the data owners' signatures (⚠️) | Sponsor, data owners, content owner of the credit file, risk partner, credit policy owner | Signed data contract; decision log |
-| 5–6 | Borrower file on real data, after gate 2: test set, controls tested, frozen version, sign-offs | Platform team, risk partner | Gate 3 and 4 entries |
+| About 4 | **Gate 2:** final baseline, data contract, the product's early risk rating (which capabilities take the higher-risk path), what drafts may contain (credit policy owner), measures and value model; dates proposed for waves 2 and 3. Aimed for weeks 2 to 4, paced by the data owners' signatures (⚠️) | Sponsor, data owners, content owner of the credit file, risk partner, credit policy owner | Signed data contract; decision log |
+| 5–6 | Borrower file on real data, after gate 2: test set, controls tested, frozen version, sign-offs; monitoring plan (4.8); readiness: training, incident process, comparison group (5.1) | Platform team, risk partner | Gate 3 and 4 entries |
 | About 7 | **Borrower file live with pilot PMs** | Product manager | First weekly usage report |
 | 5–9 | Review and memo drafts on real past reviews, after gate 2; test set graded by PMs, with must-refuse cases; fairness check agreed with compliance; evidence pack | Platform teams, product manager, compliance | Test results against the quality bar |
-| 10–11 | Higher-risk review of the frozen drafts: sign-offs, including the credit policy owner's; readiness (training, incident process, comparison group) | Risk, compliance, privacy, security, credit policy owner | Sign-offs recorded |
+| 10–11 | Higher-risk review of the frozen drafts: sign-offs, including the credit policy owner's; readiness (training, incident process, comparison group). The frozen drafts are tested on a pinned version of the borrower file; borrower-file changes that reach the drafts wait for sign-off or go through step 4 with them | Risk, compliance, privacy, security, credit policy owner | Sign-offs recorded |
 | About 12 | **Annual review and credit memo drafts live with pilot PMs** | Product manager | Drafts used; sections kept with light edits |
 
 **By day 90 (about week 13):** the borrower file has been live for about six weeks and the
@@ -445,12 +453,13 @@ dates at gate 2.
 | Risk | How I'd handle it |
 |---|---|
 | **A wrong number in a credit draft** | Every number traced to its source and checked in code before the PM sees the draft; zero tolerance in the test set; drafts marked as drafts |
-| **The AI drifts into the credit decision** | It never writes the rating or the recommendation; must-refuse tests; guardrails; the credit officer named on every draft (K3) |
+| **The AI drifts into the credit decision** | It never writes the borrower risk rating or the recommendation; must-refuse tests; guardrails (K8); the credit officer named on every draft (K3) |
 | **Approval to use borrower data takes longer** | Request it on day one; keep the prototype running on sample borrowers; the data contract is aimed at weeks 2 to 4 |
 | **The higher-risk review takes longer** | Brief the credit policy owner in week one; the borrower file goes first (backup plan) |
 | **Documents are scanned, messy or spread across systems** (⚠️ to confirm) | Start with the documents already in a standard form; the borrower file shows what's missing instead of guessing (K25) |
 | **PMs don't trust the drafts** | A source on every figure; build it with pilot PMs on their own past reviews; PMs edit freely |
 | **Uneven quality across borrower types** | The fairness check compares draft accuracy and completeness across borrower types and sizes |
+| **Loan review or examiners question AI-drafted text in the credit file** | Every draft stamped AI-drafted and approved by the named PM, with sources kept; brief loan review early |
 | **Early warning floods PMs with flags** | Few, explainable rules agreed with credit risk; every flag shows its numbers; measure flags acted on and tune |
 
 ---
@@ -465,11 +474,14 @@ This is the one full list; the Executive Summary asks the top few.
 - Which loan system and spreading tool does the bank use, and do they have drafting features already?
 - Where do borrower financials, covenants and credit files live, and who owns them?
 - Is there a standard template for annual reviews and credit memos?
-- May a draft carry a recommendation, or must it stop at the facts?
+- May a later draft carry a recommendation, or must it stop at the facts? (Wave 1 drafts leave it blank.)
+- Is there an approval-authority list (who may decide which credits), and who keeps it?
 - Who is the credit officer for each kind of decision?
 - How does the bank watch credit quality today (a watchlist, a portfolio review), and who runs it?
-- Which PM teams would make a good pilot group? Is the new franchise banking team, where RMs and PMs sit together, a good first one (B4)?
+- Which PM teams would make a good pilot group? Is the new Franchise Banking team, announced with a portfolio manager working alongside a relationship manager (Bank Business Briefing, section 4), a good first one (open item B4 in the Open Items log)?
 - How are PMs measured, and what team and budget does the pilot have?
+- Does Finance accept costs saved and loan losses avoided as returns, and how are PM hours valued?
+- Are American National's borrowers and credit files on the bank's systems yet?
 
 ---
 
@@ -480,43 +492,49 @@ number means two things. **[X]** values are set in Define.
 
 **Rules for every agent:**
 - **One job.** If a request falls outside it, the agent says so and stops.
-- **Read-only by default.** Any change to a record needs a named person's click.
-- **Approved models and data only.** Uses only AI models and data sources approved for this product.
-- **Never guesses.** If its inputs are missing, stale or fail a check, it stops and says what's missing (K25).
-- **Never decides credit.** It never sets or suggests a risk rating, never approves or declines, never sets a price, and writes a recommendation only if the credit policy owner allows it (K3).
+- **Read-only by default.** Any change to a record, or anything that reaches a borrower or client, needs a named person's click (K1, K2).
+- **Approved models and data only.** Uses only AI models and data sources approved for this product (K19, K5).
+- **Never guesses.** If its inputs are missing, stale or fail a check, it stops, says what's missing and alerts its owner (K25).
+- **Never decides credit.** It never sets or suggests a borrower risk rating, never approves or declines and never sets a price (K3). Wave 1 drafts leave the recommendation blank; whether a later draft may carry one is the credit policy owner's call at 2.4 (our assumption).
 - **Everything logged.** Each run records who, what, when, which sources and what it produced.
 
 #### Agents PMs use (the product)
 
 **A7. Borrower file builder** · wave 1 · runs on Snowflake and AWS Bedrock (Knowledge Bases)
 - **Job:** pull everything about one borrower into one file: the financials and their trend, loans and their terms, covenants and their latest tests, deposits and payment history, the last review and the RM's recent notes; list what's missing or late. (Public news about the borrower would be a later addition, through the data contract and a vendor review.)
-- **Inputs:** certified views of loans, covenants, deposits and payments; the spread of the financial statements; the credit file documents; the RM's approved call notes, if the bank's RM tools hold them (optional; the file works without them) (⚠️ which systems hold each is to confirm).
+- **Inputs:** certified views of loans, covenants, deposits and payments; the spread of the financial statements; the credit file documents; the RM's approved call notes, if the bank's RM tools hold them (optional; the file works without them).
 - **Allowed actions:** read the inputs; write the file to the assistant's own workspace.
-- **Not allowed:** changing any record; filling a gap with an estimate; reading borrowers outside the PM's permissions.
+- **Not allowed:** changing any record; filling a gap with an estimate; reading borrowers outside the PM's permissions; showing a field the data contract marks as hidden (K6).
 - **Outputs:** one borrower file, every figure with its source (document and page, or system and date), and a "missing or late" list.
 - **Stops when:** the file is built, or a required input is missing or older than [X] days (it says which and stops).
 - **Proof it worked:** a sample of files matches the source systems exactly; missing items are listed, never filled.
+- **Starts when:** a review comes due in [X] days, a credit request arrives or the PM asks (B10).
 - **Person in charge:** the PM; the data owners for the inputs.
+- **To confirm:** ⚠️ which systems hold each input.
 
 **A8. Review and memo drafter** · wave 1 · runs on AWS Bedrock or a Copilot Studio agent · higher-risk path (K3)
-- **Job:** draft the routine sections of an annual review or a credit memo in the bank's template, from A7's file: the borrower, the relationship, financial performance, covenant compliance, collateral facts and the risks the numbers show.
-- **Inputs:** the borrower file from A7; the bank's template; the bank's approval-authority list (who decides what, to name the credit officer); for a credit memo, the request as the RM or PM wrote it.
+- **Job:** draft the routine sections of an annual review or a credit memo in the bank's template, from A7's file: the borrower, the relationship, financial performance, covenant compliance, collateral facts and changes and items to note (plain facts with sources; the PM draws the conclusions).
+- **Inputs:** the borrower file from A7; the bank's template; the bank's approval-authority list (who decides what, to name the credit officer; see To confirm); for a credit memo, the request as the RM or PM wrote it.
 - **Allowed actions:** read the inputs; create a draft for the PM.
-- **Not allowed:** writing a risk rating, an approve or decline, or a price; writing a recommendation unless the credit policy owner allows it; stating any number not in the borrower file.
+- **Not allowed:** writing a borrower risk rating, an approve or decline, or a price; writing the recommendation (in wave 1 always written by the PM; later only if the credit policy owner allows it at 2.4); stating any number not in the borrower file.
 - **Outputs:** a draft marked "AI draft" with the judgment sections left blank for the PM, every figure linked to its source, and the credit officer who decides named at the top.
 - **Stops when:** the draft is delivered, or the file has a gap a section needs (it marks the section "needs input" and stops there).
 - **Proof it worked:** test-set score meets the quality bar (accuracy zero tolerance, sources, usefulness graded by PMs); every must-refuse case refused.
+- **Starts when:** a borrower file is ready (B11, B12).
 - **Person in charge:** the PM writes the judgment and owns the final document; the credit officer decides.
+- **To confirm:** ⚠️ the bank's review and memo templates; whether an approval-authority list exists and who keeps it.
 
 **A9. Early warning watcher** · wave 2 · runs on Snowflake (Cortex) · higher-risk path (K3)
 - **Job:** each night, check each PM's borrowers against the agreed early warning rules (for example: financial statements late, a covenant within [X]% of its limit or breached, deposits down [X]%, overdrafts, a payment past due) and explain each flag in plain English.
 - **Inputs:** certified views of covenants, deposits, payments and statement due dates; the rule set owned by credit risk.
 - **Allowed actions:** read; write flags to the assistant's own list of flags.
-- **Not allowed:** changing a risk rating or a watchlist status; inventing flags outside the rule set; telling the borrower.
+- **Not allowed:** changing a borrower risk rating or a watchlist status; inventing flags outside the rule set; telling the borrower.
 - **Outputs:** a list of flags per PM, each flag with the rule that fired and the numbers behind it.
 - **Stops when:** every borrower is checked, or the data is older than [X] hours (it alerts the data owner and produces nothing).
 - **Proof it worked:** a sample of flags matches the source numbers; flags acted on ≥ [X]%.
+- **Starts when:** nightly.
 - **Person in charge:** the PM decides what to do; credit risk owns the rules.
+- **To confirm:** ⚠️ which team owns early warning rules; how a flag relates to the bank's own watchlist process.
 
 **A10. Credit policy Q&A** · wave 3 · runs on a Copilot Studio agent or AWS Bedrock (Knowledge Bases)
 - **Job:** answer PMs' and analysts' questions from the bank's credit policy, citing the section.
@@ -526,7 +544,9 @@ number means two things. **[X]** values are set in Define.
 - **Outputs:** an answer with its section, or "the policy doesn't say; ask [owner]."
 - **Stops when:** answered, or out of scope.
 - **Proof it worked:** test-set score meets the quality bar; answers checked by the credit policy owner's team.
+- **Starts when:** a PM asks.
 - **Person in charge:** the credit policy owner for content; the product manager for quality.
+- **To confirm:** ⚠️ where the current credit policy and procedures live, and who keeps them current.
 
 #### Agents the team uses
 
@@ -552,7 +572,7 @@ Each PM-facing capability as a step-by-step flow. Every PM-facing flow (B10–B1
 
 **B12. Credit memo draft** (wave 1)
 - **Trigger:** a new request, renewal or line change with a borrower file ready.
-- **Steps:** 1. A8 drafts the memo's routine sections, restating the requested terms as written. 2. The number check runs. 3. **Decision point:** the PM writes the analysis and recommendation (if any) and sends it to the credit officer through the bank's normal approval route.
+- **Steps:** 1. A8 drafts the memo's routine sections, restating the requested terms as written. 2. The number check runs. 3. **Decision point:** the PM writes the analysis and the recommendation (in wave 1 always written by the PM) and sends it to the credit officer through the bank's normal approval route.
 - **Logged:** drafts, edits, time from request to submission.
 - **Measures:** turnaround; hours per memo.
 
@@ -572,7 +592,7 @@ Wave 3 workflows (credit policy Q&A, renewal radar, deal screening) are not writ
 
 **B15. Every release (every week or two)**
 - **Trigger:** any change to prompts, rules, templates, data or models.
-- **Steps:** 1. M32 re-runs the test set, including every must-refuse case. 2. If the score is below the quality bar, the release stops. 3. If the change is material (Product Framework), it goes back through step 4, with the credit policy owner. 4. Release; M32 watches live quality for [X] days.
+- **Steps:** 1. M32 re-runs the test set, including every must-refuse case. 2. If the score is below the quality bar, the release stops. 3. If the change is material (Product Framework), it goes back through step 4, with the credit policy owner on the higher-risk path. 4. Release; M32 watches live quality for [X] days.
 - **Logged:** test scores, approvals, release notes.
 - **Measures:** quality trend; releases rolled back.
 
@@ -583,17 +603,17 @@ Working file: `memos/use-case-library.md`.
 
 **The need in one line:** PMs are the bank's credit people paired with RMs. The value is in drafting credit memos and reviews and in monitoring credit quality, with a person always deciding. At DBS, credit memos and related work take up to 40% of an RM's time (DBS's estimate); ⚠️ how much of a PM's time goes to them here is to confirm.
 
-> ⚠️ **A proposal, not yet agreed.** Each RM core use case has a credit counterpart; the pairing is our own. Built from a web scan on 2026-10-13 through search summaries; the primary pages would not open.
+> ⚠️ **A proposal, not yet agreed.** Each RM core use case has a credit counterpart; the pairing is our own, used in the PM plan's first cut (2026-10-19), not yet reviewed. Built from a web scan on 2026-10-13 through search summaries; the primary pages would not open.
 
-| Core use case (credit counterpart) | Where the value is | Outside evidence | Strength |
-|---|---|---|---|
-| **Credit memo and annual review drafts** (account intelligence) | A review-ready first draft from many systems, with sources | DBS: live for about 1,500 bankers (August 2026), targets at least 30% less time. Moody's: writes about 35–40% of each memo at a tier-one US bank. nCino, S&P and Microsoft all offer it | **Strongest.** First in our order |
-| **Early warning on credit quality** (keep clients) | Spotting a weakening borrower early | Nearly 60% of credit risk leaders are pursuing it, more than any other area (McKinsey survey of 24 institutions). Moody's live across 19 countries at a large Asian bank | **Strong.** Second in our order |
-| **Spreading, document intake and covenant tracking** (admin) | Analyst hours back | Vendors claim 40–60% less analyst time per deal (vendor claims; Evalueserve and nCino sell these tools) | Vendor claims |
-| **Renewals and line changes** (lead nurturing) | Renewals caught on time; lines matched to results | Part of most memo tools (vendor material) | Thin |
-| **Credit policy Q&A and coaching** (coaching) | Newer analysts up to speed faster | nCino Banking Advisor answers policy questions; American Banker reports AI helps newer bankers most | Thin |
-| **Deal screening** (prospecting) | Checking fit with credit appetite before the RM pitches | Vendor claims only | Thin |
-| **Risk rating support** (deal scoring) | Faster, consistent rationale | Little public evidence | Out of the first waves: closest to a credit decision |
+| Core use case (credit counterpart) | Where the value is | Outside evidence | Strength | Our AI product (wave) |
+|---|---|---|---|---|
+| **Credit memo and annual review drafts** (account intelligence) | A review-ready first draft from many systems, with sources | DBS: live for about 1,500 bankers (August 2026), targets at least 30% less time. Moody's: writes about 35–40% of each memo at a tier-one US bank (Moody's investor remarks; bank not named). nCino, S&P and Microsoft all offer it | **Strongest** | Borrower file (1); annual review and credit memo drafts (1) |
+| **Early warning on credit quality** (keep clients) | Spotting a weakening borrower early | Nearly 60% of credit risk leaders are pursuing it, more than any other area (McKinsey survey of 24 institutions). Moody's live across 19 countries at a large Asian bank (Moody's earnings call) | **Strong** | Early warning flags (2) |
+| **Spreading, document intake and covenant tracking** (admin) | Analyst hours back | Vendors claim 40–60% less analyst time per deal (vendor pages: multimodal.dev, V7 Labs). Evalueserve's covenant module is live at a Middle East commercial bank (vendor case study); nCino also sells these tools | Vendor claims | Covenant and statement tracker (2) |
+| **Renewals and line changes** (lead nurturing) | Renewals caught on time; lines matched to results | Part of most memo tools (vendor material) | Thin | Renewal radar (3) |
+| **Credit policy Q&A and coaching** (coaching) | Newer analysts up to speed faster | nCino Banking Advisor answers policy questions; American Banker reports AI helps newer bankers most | Thin | Credit policy Q&A (3) |
+| **Deal screening** (prospecting) | Checking fit with credit appetite before the RM pitches | Vendor claims only | Thin | Deal screening (3) |
+| **Risk rating support** (deal scoring) | Faster, consistent rationale | Little public evidence | Closest to a credit decision | Out on purpose (control K3) |
 
 **What the market shows.** No bank reports letting AI make the credit decision: every example has the AI draft or flag and a person decide. We found no public announcement from a large US bank naming its own AI tool for commercial credit memos (search of 2026-10-13); Moody's reports one unnamed tier-one US bank using its agents.
 
