@@ -91,7 +91,7 @@ Fill in the first-time log (see the Product Playbook's opening page) for every s
 - **Know first:**
   - The bank's AI or model risk intake process and form. ⚠️ Not known yet.
   - Your risk partner from 1.0.
-  - The governance basics in the Tech Stack Guide (SR 11-7, possibly replaced by SR 26-2: item W4 in the Open Items log; privacy; fair lending).
+  - The governance basics in the Tech Stack Guide (SR 11-7, possibly replaced by SR 26-2: item PL7 in the Open Items log; privacy; fair lending).
 - **First time, step by step:**
   1. Get the intake form and ask the risk partner how long a review usually takes.
   2. Fill it in from the brief so far (2.1) and the Discover gate pack: what the product does, which data (the first field list from 2.3), who uses it, what it can change, and whether anything reaches a client.

@@ -121,7 +121,7 @@ def build(src, out, name, label, lede, short=None):
 <main class="wrap">
 <div class="intro-block">{render_blocks(intro, kinds=True)}</div>
 {"".join(secs)}
-<footer>Built from the working copy <code>{E(src)}</code>{f" · last updated {E(updated.group(1))}" if updated else ""}. Lines marked ⚠️ are guesses to confirm; [X] marks numbers still to be set.</footer>
+<footer>Built from the working copy <code>{E(src)}</code>{f" · last updated {E(updated.group(1))}" if updated else ""}. Lines marked ⚠️ are guesses to confirm{"; [X] marks numbers still to be set" if "[X]" in s else ""}.</footer>
 </main>
 '''
     open(os.path.join(ROOT, "designs", out), "w").write(link_refs(page, out))
