@@ -31,7 +31,7 @@ Each PM gets **their own AI assistant**, inside the tools we expect they already
 Later waves add early warning flags and a covenant and statement tracker, then credit policy Q&A, a renewal radar and deal screening.
 
 ### The value
-- **More PM time for judgment:** hours saved on each annual review and credit memo. DBS targets at least 30% less credit assessment time (a target, not yet a result); Moody's says its agents write about 35–40% of each memo at an unnamed tier-one US bank (the vendor's own claim; a share of the text, not of time). Outside figures, not our targets.
+- **More PM time for judgment:** hours saved on each annual review and credit memo. DBS targets cutting that time by at least 30% (a target, not yet a result); Moody's says its agents write about 35–40% of each memo at an unnamed tier-one US bank (the vendor's own claim; a share of the text, not of time). Outside figures, not our targets.
 - **Faster answers:** fewer days from a complete request to a decision.
 - **Earlier sight of trouble (wave 2):** flags acted on, and how early they came.
 - Time is proven against similar PMs not yet using it; targets are set from the bank's own numbers. [Outside evidence for each credit core use case](https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X#portfolio-managers)
@@ -73,10 +73,10 @@ Each capability is one AI product and answers one credit core use case (our prop
 |---|---|---|---|---|
 | **Review and renew** | Borrower file | Everything about one borrower in one place, every figure with its source, and what's missing or late | Credit memo and annual review drafts | 1 |
 | | Annual review and credit memo drafts | The routine sections drafted in the bank's template; the borrower risk rating and the recommendation left for the PM (in wave 1 the recommendation is always the PM's) | Credit memo and annual review drafts | 1 |
-| | Renewal radar | Loans coming up for renewal, and borrowers whose results suggest a different line | Renewals and line changes | 3 |
+| | Renewal radar | Loans coming up for renewal, and borrowers whose results suggest a different line (higher-risk path, our assumption) | Renewals and line changes | 3 |
 | **Watch the portfolio** | Early warning flags | Flags borrowers whose signals are weakening, with the numbers; the PM decides whether a flag goes to the bank's own watchlist or rating review (⚠️ to confirm how that runs today) | Early warning on credit quality | 2 |
 | | Covenant and statement tracker | Covenant tests, and statements and certificates due or late | Spreading, document intake and covenant tracking | 2 |
-| **New requests** | Deal screening | A quick check that a request fits the bank's credit appetite; on the higher-risk path, it never declines, only notes where a request sits against the published appetite | Deal screening | 3 |
+| **New requests** | Deal screening | A quick check that a request fits the bank's credit appetite (higher-risk path, our assumption; the risk partner rates it at 2.4); it never declines, only notes where a request sits against the appetite | Deal screening | 3 |
 | **Know the policy** | Credit policy Q&A | Answers from the credit policy, citing the section | Credit policy Q&A and coaching | 3 |
 | **Left out on purpose** | Borrower risk rating support; approve or decline; pricing | Kept out because they are the credit decision itself | Risk rating support | Out |
 

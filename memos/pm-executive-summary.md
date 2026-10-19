@@ -23,7 +23,7 @@ Each PM gets **their own AI assistant**, inside the tools we expect they already
 Later waves add early warning flags and a covenant and statement tracker, then credit policy Q&A, a renewal radar and deal screening.
 
 ## The value
-- **More PM time for judgment:** hours saved on each annual review and credit memo. DBS targets at least 30% less credit assessment time (a target, not yet a result); Moody's says its agents write about 35–40% of each memo at an unnamed tier-one US bank (the vendor's own claim; a share of the text, not of time). Outside figures, not our targets.
+- **More PM time for judgment:** hours saved on each annual review and credit memo. DBS targets cutting that time by at least 30% (a target, not yet a result); Moody's says its agents write about 35–40% of each memo at an unnamed tier-one US bank (the vendor's own claim; a share of the text, not of time). Outside figures, not our targets.
 - **Faster answers:** fewer days from a complete request to a decision.
 - **Earlier sight of trouble (wave 2):** flags acted on, and how early they came.
 - Time is proven against similar PMs not yet using it; targets are set from the bank's own numbers. [Outside evidence for each credit core use case](https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X#portfolio-managers)

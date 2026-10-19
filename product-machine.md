@@ -41,7 +41,7 @@ partners and users are outside it. Dashboards people open themselves don't count
 **1. Discover**
 | # | Task | Kind | Tool (guess) | Goes to |
 |---|---|---|---|---|
-| 1.0 | Agree the sponsor's role and who decides; brief the risk partner | Me | Meeting | Sponsor, risk |
+| 1.0 | Agree the sponsor's role and who decides; brief the risk partner (and the credit policy owner when a higher-risk path is likely) | Me | Meeting | Sponsor, risk |
 | 1.0 | Set up the tracker, decision log and project file | Draft | M1 Kickoff pack builder | Me |
 | 1.0 | Confirm the AI tools the team may use and record them in the project file | Me | Meeting with IT and risk | Project file |
 | 1.1 | Agree the outcome and measure | Me | Meeting | Sponsor |
