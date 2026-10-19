@@ -98,7 +98,7 @@ if missing:
 PM_STAGES = [
     # Stage 1 is wave 1's first capability, so Map 3 opens on wave 1 like Map 2
     ("1", "Gather the file", "Do I have everything about this borrower, with its source?", ["B10"]),
-    ("2", "Write the review or memo", "What do the numbers say, and what is my judgment?", ["B11", "B12"]),
+    ("2", "Write the review or memo", "What do the numbers say, and what is my judgment?", ["B16", "B11", "B12"]),
     ("3", "Watch the portfolio", "Which borrowers need my attention, and why?", ["B13", "B14"]),
 ]
 pflat = [b for *_, bs in PM_STAGES for b in bs] + ["B15"]
@@ -262,7 +262,7 @@ page = f'''<title>Workflow Maps</title>
 </section>
 <section id="pm" class="mapwrap">
 <div class="stephead"><span class="label">Map 3 · The PM Assistant</span><h2>How a PM uses the product</h2>
-<p class="intro" style="margin-top:6px;color:var(--muted)">A portfolio manager's (PM's) work, with each of the product's workflows placed where it helps. Every PM-facing workflow (B10 to B14) has a point where the PM decides; the assistant never rates, approves, declines or prices credit. B15 is the release routine behind them.</p></div>
+<p class="intro" style="margin-top:6px;color:var(--muted)">A portfolio manager's (PM's) work, with each of the product's workflows placed where it helps. Every PM-facing workflow (B10 to B14 and B16) has a point where the PM decides; the assistant never rates, approves, declines or prices credit. B15 is the release routine behind them.</p></div>
 <div class="note">⚠️ Grouping the workflows into these three stages is my framing of the first-cut plan (2026-10-19). Confirm it with PMs in Discover.</div>
 {map3}
 {loop3}

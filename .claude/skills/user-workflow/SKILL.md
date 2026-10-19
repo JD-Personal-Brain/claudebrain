@@ -10,11 +10,11 @@ routine meets them where they are: it lays out how a user group works today,
 marks where each AI product touches that work, and shows the work afterwards.
 Many AI products fix one discrete step; the map makes clear which steps change
 and which don't. *(Idea 41, approved 2026-10-14. Glossary term: **user
-workflow**, not the plans' numbered workflows (B1 to B9 for RMs, B10 to B15 for PMs).)*
+workflow**, not the plans' numbered workflows (B1 to B9 for RMs, B10 to B16 for PMs).)*
 
 ## 1. Gather what we already have
 Read before asking the user anything (rule R6):
-- **The group's plan and use cases:** for RMs, `memos/rm-assistant-detail.md` (the capabilities by moment, the core use case each answers, and the RM's job, sections 2 and 3), the full plan's Appendix B (`memos/rm-analytics-framework.md`, workflows B1 to B9) and `memos/mckinsey-frontline-ai.md`; for PMs, `memos/pm-assistant-detail.md`, the PM plan's Appendix B (`memos/pm-assistant-framework.md`, workflows B10 to B15) and `memos/credit-market-scan.md` (the full credit research).
+- **The group's plan and use cases:** for RMs, `memos/rm-assistant-detail.md` (the capabilities by moment, the core use case each answers, and the RM's job, sections 2 and 3), the full plan's Appendix B (`memos/rm-analytics-framework.md`, workflows B1 to B9) and `memos/mckinsey-frontline-ai.md`; for PMs, `memos/pm-assistant-detail.md`, the PM plan's Appendix B (`memos/pm-assistant-framework.md`, workflows B10 to B16) and `memos/credit-market-scan.md` (the full credit research).
 - **What the group's week looks like:** Map 2 on the Workflow Maps (`designs/workflows-build.py`, "How an RM uses the product") shows an RM's week with AI only, and Map 3 ("How a PM uses the product") a PM's work with AI only; the user's notes in `job-notes.md`; the bank's terms in `glossary.md` ("Bank terms to map").
 - **The bank itself:** `memos/bank-business.md`, `tech-stack.md` (the tools the group works in).
 
@@ -26,7 +26,7 @@ List the group's work as 6 to 10 stages, in the order it happens (for RMs, somet
 Everything about how *this bank's* people work is a guess until it's confirmed with them: mark it ⚠️ and add the question to step 5's list.
 
 ## 3. Where AI fits
-For each stage, name every AI product from the plan that touches it (for PMs, use the PM plan: The PM Assistant's capabilities in `memos/pm-assistant-detail.md` and workflows B10 to B15 in `memos/pm-assistant-framework.md`; never invent products), its core use case, and what exactly it changes (what the AI drafts or finds, what the person still decides). Then mark the stages **no AI product touches**, and say so plainly: we change only what's listed, not the whole flow. Check (where a plan exists): every AI product in the plan appears at one stage or more; if one doesn't fit anywhere, flag it.
+For each stage, name every AI product from the plan that touches it (for PMs, use the PM plan: The PM Assistant's capabilities in `memos/pm-assistant-detail.md` and workflows B10 to B16 in `memos/pm-assistant-framework.md`; never invent products), its core use case, and what exactly it changes (what the AI drafts or finds, what the person still decides). Then mark the stages **no AI product touches**, and say so plainly: we change only what's listed, not the whole flow. Check (where a plan exists): every AI product in the plan appears at one stage or more; if one doesn't fit anywhere, flag it.
 
 ## 4. With AI: the work afterwards
 Rewrite only the changed stages: what the person does now, what the AI does, and who decides (assistive first: AI drafts or suggests, a person decides). Time saved per stage is [X] until measured (sub-step 1.7's baseline). End with one short summary: which stages change, which stay the same, and what that means for the group's week.

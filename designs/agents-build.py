@@ -1,7 +1,7 @@
 """Builds designs/agents.html, the Agent Library: every agent in one place,
 filterable, each opening to its full spec. Reads playbook/agents.md (M1-M33,
 the product machine's general agents) and the RM and PM memos' Appendix A (A1, A2, A3, A5, the product RMs use;
-A7 to A10, the product PMs use). Run: python3 designs/agents-build.py"""
+A7 to A11, the product PMs use). Run: python3 designs/agents-build.py"""
 import os, re
 from pagekit import CSS, E, inline, chipify, render_blocks, link_refs
 
@@ -66,7 +66,7 @@ for block in re.split(r"\n\*\*(?=A\d+\. )", appa.split("### Agents the team uses
                    "fields": [(k, f[k]) for k in ["Inputs", "Allowed actions", "Not allowed", "Outputs", "Stops when", "Proof it worked", "Person in charge"] if k in f],
                    "source": "RM Detail · full plan, Appendix A"})
 
-# A7 to A10: the product PMs use (numbered on from the RM ones, so no number means two things)
+# A7 to A11: the product PMs use (numbered on from the RM ones, so no number means two things)
 pm_appa = read("memos/pm-assistant-framework.md").split("## Appendix A: Agent specs")[1].split("## Appendix B")[0]
 for block in re.split(r"\n\*\*(?=A\d+\. )", pm_appa.split("### Agents the team uses")[0])[1:]:
     head, _, body = block.partition("\n")

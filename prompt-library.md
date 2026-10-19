@@ -516,7 +516,8 @@ main without my yes.
 Its first run set three things: the product's name ("The PM Assistant"), agent and
 workflow numbers that carry on from the RM ones (A7 and B10 onward), and wave 1 as
 the borrower file, then credit memo and annual review drafts on the higher-risk
-path (control K3).
+path (control K3). Later the same day the credit lead's request put a new capability
+at the front of wave 1: the industry background draft (agent A11, workflow B16; C64).
 
 ```
 Inputs:   <model_to_copy>

@@ -187,7 +187,7 @@
           "id": "glossary",
           "name": "Glossary",
           "what": "The words we use, one meaning each, the old wording we've retired, and the bank's terms still to map.",
-          "count": "82 terms",
+          "count": "83 terms",
           "status": "Reference",
           "url": "https://claude.ai/artifact/LRQHSz65beh9XewB6qsQvQ",
           "source": "glossary.md"
@@ -205,7 +205,7 @@
           "id": "workflows",
           "name": "Workflow Maps",
           "what": "Each process drawn left to right, with its sub-processes branching off. Click any box for details.",
-          "count": "3 maps · 59 branches",
+          "count": "3 maps · 60 branches",
           "status": "Reference",
           "url": "https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX",
           "source": "memos/role-workflow.md, playbook/, product-machine.md, RM and PM memos Appendix B"
@@ -214,7 +214,7 @@
           "id": "agents",
           "name": "Agent Library",
           "what": "Every agent in one place: what it does, what it may and may not do, and who's in charge. Filter by step or by who it serves.",
-          "count": "42 agents",
+          "count": "43 agents",
           "status": "Reference",
           "url": "https://claude.ai/artifact/Cn9nANQoqp2BP7yrmy61zn",
           "source": "playbook/agents.md, RM and PM memos Appendix A"
