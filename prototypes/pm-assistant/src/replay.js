@@ -5,7 +5,7 @@
 window.REPLAY = {
   recorded: "2026-10-19",
   // A7: the page tools it calls, in order, and the summary it writes.
-  fileSteps: ["get_financials", "get_loans_and_covenants", "get_deposits_and_payments", "get_documents_and_notes", "get_market_context"],
+  fileSteps: ["get_financials", "get_loans_and_covenants", "get_deposits_and_payments", "get_documents_and_notes"],
   fileSummary: {
     C101: `## What's in the file
 - Metal fabrication in Milwaukee, a client since 2014 with 210 employees; RM is Jordan Ellis. [Loan system]

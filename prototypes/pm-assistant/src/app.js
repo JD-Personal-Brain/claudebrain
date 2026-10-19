@@ -3,7 +3,7 @@
 // how we'd measure it, and "How it's built". Every screen opens filled with the recorded run, so the page
 // is complete at rest; "Run live on Claude" asks Claude for a fresh answer.
 (function () {
-  const P = window.PORTFOLIO, R = window.REPLAY, MK = window.MARKET, A = window.AGENTS, AI = A.AI;
+  const P = window.PORTFOLIO, R = window.REPLAY, A = window.AGENTS, AI = A.AI;
   const $ = s => document.querySelector(s);
   const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const wait = ms => new Promise(r => setTimeout(r, ms));
@@ -96,8 +96,8 @@
   function toolStep(list, tool, input) {
     const plain = "Reading " + (A.TOOL_PLAIN[tool] || tool);
     const b = input && input.borrower_id && A.findBorrower(String(input.borrower_id));
-    const st = addStep(list, "File builder", plain + (b ? ` · ${b.pm === P.pm.id ? b.name : "a borrower outside your portfolio"}` : tool === "get_market_context" ? " (Fed H.15)" : ""));
-    return { done(out) { st.done(plain.replace("Reading", "Read") + (b ? ` · ${b.name}` : tool === "get_market_context" ? " (Fed H.15, saved copy fetched " + fmtLong(MK.fetched) + ")" : ""), `<details><summary>What it read</summary><pre>${esc(JSON.stringify(out, null, 1))}</pre></details>`); },
+    const st = addStep(list, "File builder", plain + (b ? ` · ${b.pm === P.pm.id ? b.name : "a borrower outside your portfolio"}` : ""));
+    return { done(out) { st.done(plain.replace("Reading", "Read") + (b ? ` · ${b.name}` : ""), `<details><summary>What it read</summary><pre>${esc(JSON.stringify(out, null, 1))}</pre></details>`); },
       fail(msg) { st.fail("Refused: " + msg); } };
   }
   // One window everywhere: the last 3 months (June to September), the same window as early warning rule EW4.
@@ -179,7 +179,7 @@
     const tools = A.makeTools(({ tool, input }) => toolStep(list, tool, input));
     const access = addStep(list, "File builder", "Checking you may see this borrower (K4)…"); if (!instant) await wait(350);
     access.done(`Access checked: ${b.name} is in your portfolio (K4)`);
-    for (const t of R.fileSteps) { if (!instant) await wait(380); if (token !== fileToken) return; await tools.find(x => x.name === t).execute(t === "get_market_context" ? {} : { borrower_id: b.id }); }
+    for (const t of R.fileSteps) { if (!instant) await wait(380); if (token !== fileToken) return; await tools.find(x => x.name === t).execute({ borrower_id: b.id }); }
     const f = A.buildFile(b.id);
     const ms = addStep(list, "File builder", "Listing what's missing or late…"); if (!instant) await wait(300);
     ms.done(f.missing.length ? `${plural(f.missing.length, "item")} missing or late, listed and not filled in (K25)` : "Nothing missing or late");
@@ -256,7 +256,7 @@
     const shaped = shapeDraft(text, f);
     const aiText = shaped.sections.map(s => s.body).join("\n");
     const nc = A.numberCheck(aiText, f); const hits = A.outputGuard(aiText); A.sourceCheck(aiText);
-    if (/treasury|fed h\.15|\[market|rate outlook|rates? (have|has) (risen|fallen)/i.test(aiText)) hits.push("market or rate commentary (drafts state facts from the borrower file only)");
+    if (/rate outlook|rate environment|rates? (have|has) (risen|fallen)|rates are (rising|falling)/i.test(aiText)) hits.push("rate commentary (drafts state facts from the borrower file only)");
     if (shaped.removed.length) A.log("Guardrail", "Removed a section the AI may not write", `${b.name}: ${shaped.removed.join(", ")}`, "K3", mode === "live" ? "Claude, live" : "Recorded run");
     if (hits.length) A.log("Guardrail", "Flagged a draft and sent it to the product manager", `${b.name}: ${hits.join("; ")}`, "K3, K8", mode === "live" ? "Claude, live" : "Recorded run");
     const gaps = shaped.sections.filter(s => s.gap).length;
@@ -500,7 +500,7 @@
   ];
   $("#ctlGrid").innerHTML = CONTROLS.map(([group, list]) => `<div class="ctl-group"><h3>${esc(group)}</h3>${list.map(([k, n, w]) => `<div class="ctl-card"><span><strong>${esc(n)}</strong> <span class="ctl">${k}</span></span><span class="where">${esc(w)}</span></div>`).join("")}</div>`).join("");
   $("#ruleTable tbody").innerHTML = A.WARN.map(r => `<tr><td><strong>${esc(r.name)}</strong> <span class="code">${r.id}</span></td><td>${esc(r.plain)}</td><td class="num">${r.points}</td></tr>`).join("")
-    + `<tr><td><strong>Freshness stop</strong></td><td>If the borrower data is more than ${A.FRESH.dataDays} days old, A9 stops and alerts the data owner (K25). Market data older than ${A.FRESH.marketMonths} months is left out.</td><td class="num">–</td></tr>`;
+    + `<tr><td><strong>Freshness stop</strong></td><td>If the borrower data is more than ${A.FRESH.dataDays} days old, A9 stops and alerts the data owner (K25).</td><td class="num">–</td></tr>`;
   function renderAudit() {
     $("#auditTable tbody").innerHTML = A.audit.length ? A.audit.map(a => `<tr><td>${a.time}</td><td>${esc(a.agent)}</td><td>${esc(a.action)}</td><td>${esc(a.detail)}</td><td>${esc(a.control)}</td><td>${esc([a.ranOn, a.version].filter(Boolean).join(" · "))}</td></tr>`).join("")
       : `<tr><td colspan="6" class="empty">Nothing yet. Run an agent or play the tour, and every action appears here.</td></tr>`;
@@ -548,7 +548,6 @@
   });
 
   // ---------- How it's built ----------
-  $("#marketLine").innerHTML = `<strong>Outside data:</strong> ${esc(MK.name)}, ${esc(MK.publisher)}, monthly from ${MK.series[0].month} to ${MK.latest.month}, public domain, through a public copy on GitHub (datahub.io). Saved copy fetched ${fmtLong(MK.fetched)}; latest value ${MK.latest.yield}%. It is background in the borrower file only (A7 reads it); it never enters a review or memo draft, and the assistant never comments on rates. The loans are Prime-based, so the 10-year yield says nothing direct about their rates.`;
 
   // ---------- Start: fill every screen with the recorded run, without logging it as anyone's action ----------
   A.setQuiet(true);
