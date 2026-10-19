@@ -6,7 +6,7 @@ Claude updates it at every wrap-up: finished items move to "Closed" with the dat
 
 > **How to read this.** Work top to bottom: "Now" first, then the stages (stage 2 runs alongside stage 1).
 > Items are numbered in priority order within each kind: W1 is the first piece
-> of work, D1 the first decision, and so on for each letter. When priorities
+> of work, and so on for each letter. When priorities
 > change, the numbers change with them, so the top of each list is always
 > what's next. Closed items (C) keep their number. Say "close W7" or "what's W7?". The letter says what kind of item it is: **D** a decision,
 > **V** something to read, **W** work, **B** a question for the bank (not the plans' workflows B1 to B15), **P** parked, **C** closed.

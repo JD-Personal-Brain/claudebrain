@@ -24,7 +24,7 @@ documents against it.
 | **User workflow** | How a user group (RMs, portfolio managers) works today, and how that work changes with AI. Not the same as the plans' numbered workflows (B1 to B9 for RMs, B10 to B15 for PMs) on the Workflow Maps. |
 | **AI product** | A specific capability we build and release, such as the pre-meeting client brief. Each sits under one core use case. |
 | **RM Assistant** | The core RM product (a hypothesis since 2026-10-17): one personal AI assistant for each RM, with limits on its jobs, workflows, data and controls, and capabilities added feature wave by feature wave on a shared foundation (the RM Assistant page). The RM plan's "RM assistant" (wave 3) is now its **Client Q&A** capability. |
-| **PM Assistant** | The core portfolio manager product (a first cut since 2026-10-19): one personal AI assistant for each PM, the credit counterpart of the RM Assistant, with the same limits and capabilities added feature wave by feature wave (The PM Assistant page). It gathers, drafts and flags; the PM writes the judgment and a named credit officer decides. |
+| **PM Assistant** | The core portfolio manager product (a first cut since 2026-10-19): one personal AI assistant for each PM, the credit counterpart of the RM Assistant, with the same kinds of limits and capabilities added feature wave by feature wave (The PM Assistant page). It gathers, drafts and flags; the PM writes the judgment and a named credit officer decides. |
 | **Capability** | One specific job an assistant does, such as the RM Assistant's pre-meeting client brief or the PM Assistant's borrower file. Each capability is one AI product. |
 | **Borrower file** | The PM Assistant's first capability: everything about one borrower (financials, loans, covenants, deposits, payments, the last review, the RM's notes) in one place, every figure with its source, and a list of what's missing or late. |
 | **Wave** | Used two ways, so say which: a **feature wave** is a set of AI products released together, after a quick pass through Discover and Define; a **user wave** is the next group of users when a product scales (sub-step 5.7). |
@@ -171,6 +171,7 @@ Our plans depend on these, but the definitions belong to the bank. Each stays
 | Client, relationship | A business client and everything the bank does with it | ⚠️ to map |
 | Segment and market | How clients and bankers are grouped (for example, by size or region) | ⚠️ to map |
 | AI-sourced opportunity | An opportunity in the CRM that started from an AI insight, tagged so results can be counted | ⚠️ to map |
+| Complete credit request | The date a credit request has everything needed for a decision, the start of the PM plan's turnaround measure | ⚠️ to map |
 | Win rate | The share of opportunities that close as won | ⚠️ to map |
 | First-year revenue per win | The revenue a won deal brings in its first year | ⚠️ to map |
 | Active user (weekly) | A user who used the product in a given week | ⚠️ to map |

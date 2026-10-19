@@ -111,9 +111,9 @@ def render_gantt(lines):
             bar = f'<span class="gdia" style="left:calc({left:.2f}% - 7px)"></span>'
         else:
             bar = f'<span class="gbar g-{k}" style="left:{left:.2f}%;width:{(b - a) / n * 100:.2f}%"></span>'
-        more = f' <a class="gmore" href="{E(url)}" target="_blank" rel="noopener" title="Open the detail in RM Detail">detail&nbsp;↗</a>' if url else ""
+        more = f' <a class="gmore" href="{E(url)}" target="_blank" rel="noopener" title="Open the detail">detail&nbsp;↗</a>' if url else ""
         body += f'<div class="grow"><span class="glab">{inline(lab)}{more}</span><span class="gtrack">{bar}</span></div>'
-    key = ('<div class="gkey"><span><i class="gbar g-build"></i>Build and test</span><span><i class="gbar g-live"></i>Live with pilot RMs</span>'
+    key = ('<div class="gkey"><span><i class="gbar g-build"></i>Build and test</span><span><i class="gbar g-live"></i>Live with pilot users</span>'
            '<span><i class="gbar g-ongoing"></i>Ongoing</span><span><i class="gdia"></i>Gate (go/no-go)</span></div>')
     return (f'<style>{GANTT_CSS}</style><div class="tw gantt"><div class="ginner"><div class="grow ghead"><span class="glab">Week</span><span class="gtrack gweeks">{head}</span></div>'
             f'{body}</div></div>{key}')

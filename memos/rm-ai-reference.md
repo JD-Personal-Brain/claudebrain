@@ -207,7 +207,7 @@ Built once and shared by every capability, and later by portfolio managers.
 Targets are [X] until the bank's own numbers are in.
 
 ### 6. Portfolio managers next
-Portfolio managers (PMs) get the same kind of assistant on the same foundation, with their own capabilities: credit memo and annual review drafts first, early warning second (decided 2026-10-15). It waits until we move into PM work. The credit request draft (section 3) would be where the two assistants meet.
+Portfolio managers (PMs) get the same kind of assistant on the same foundation, with their own capabilities: credit memo and annual review drafts first, early warning second (decided 2026-10-15). It now exists as a first cut (2026-10-19): The PM Assistant page and PM Detail. The credit request draft (section 3) would be where the two assistants meet.
 
 ### 7. What to confirm
 The one full list is in the full plan, section 8 ("What I'd confirm in the first weeks").
