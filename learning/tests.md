@@ -184,8 +184,8 @@ and compare Claude's answer with "Pass if." Record the date and result.
 
 ### T35 → scout run check at session start (rule R28, idea 45)
 - **Say this:** start a new session the day after the scout's Monday run.
-- **Pass if:** Claude lists the scheduled tasks before its start lines, and mentions the scout only if its last run failed, stalled or is overdue, with the reason.
-- **Results:** 2026-10-14 tried once: both scout tasks found, enabled, no runs yet (first run Monday October 19), so nothing to report. Full test after October 19.
+- **Pass if:** Claude lists the scheduled tasks and reads the last run's final message before its start lines, and mentions the scout only if that run failed, stalled, did no work or is overdue, with the reason (a SUCCEEDED status alone doesn't count, L45).
+- **Results:** 2026-10-14 tried once: both scout tasks found, enabled, no runs yet (first run Monday October 19), so nothing to report. Full test after October 19. 2026-10-19 (full program audit): fail found and fixed. The October 19 run was listed SUCCEEDED but its transcript shows it couldn't reach the repo; the rule now reads the transcript (L45).
 
 ### T36 → R29
 - **Say this:** "Move the quality bar from the Product Framework into the Product Workflow."
