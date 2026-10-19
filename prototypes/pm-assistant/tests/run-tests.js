@@ -14,6 +14,7 @@ const LAUNCH = process.env.CHROMIUM ? { executablePath: process.env.CHROMIUM } :
 // The test double for the artifact's "sample" capability. It answers with the recorded outputs,
 // calls the page tools the way Claude would, and probes control K4. With window.__badDraft set,
 // the A8 answer smuggles in a risk rating section and a recommendation, to prove the code removes and flags them.
+// With window.__uncitedInd or __borrowerInd set, the A11 answer adds a sentence with no source, or a conclusion about a borrower.
 const STUB = () => {
   const sample = async (input, opts = {}) => {
     const text = typeof input === "string" ? input : input[input.length - 1].content;
@@ -33,6 +34,15 @@ const STUB = () => {
       let out = window.REPLAY.drafts[key];
       if (window.__rateDraft) out = out.replace("## Changes and items to note\n", "## Changes and items to note\n- Rates have risen this year, so the rate outlook matters for the renewal.\n");
       if (window.__badDraft) out = out.replace("## Changes and items to note\n", "## Changes and items to note\n- We recommend approval of the renewal.\n") + "\n\n## Risk rating\n- A rating of 4 fits.";
+      opts.onText && opts.onText({ text: out, delta: out });
+      return { text: out, truncated: false };
+    }
+    if (text.includes("You are A11")) {
+      window.__a11prompt = text; window.__a11calls = (window.__a11calls || 0) + 1;
+      const ind = text.match(/industry "([^"]+)"/)[1]; const pk = window.INDUSTRY_SOURCES.packs.find(k => k.industry === ind);
+      let out = window.REPLAY.industry[pk.id];
+      if (window.__uncitedInd) out = out.replace("## Outlook\n", "## Outlook\n- Margins will improve next year.\n");
+      if (window.__borrowerInd) out = out.replace("## Outlook\n", "## Outlook\n- Brewer's Row Hospitality Group is well placed to handle these pressures. [S1]\n");
       opts.onText && opts.onText({ text: out, delta: out });
       return { text: out, truncated: false };
     }
@@ -218,6 +228,77 @@ const check = (name, ok, proof) => { results.push({ name, ok: !!ok, proof }); co
     `Chequamegon: ${gaps.join(" and ")} marked needs input; approval held ("${heldNeeds.slice(0, 50)}…"); its file has FY${fileGap.years.replace(",", " and FY")} only and lists ${fileGap.missing.length} missing items; stale data stops A9: ${stale}`);
   await ctx.close();
 
+
+  // A11 (version 5): the Industry background drafter, workflow B16.
+  {
+    const c5 = await browser.newContext({ viewport: { width: 1280, height: 800 } }); await c5.addInitScript(STUB);
+    const q = await c5.newPage(); q.on("pageerror", e => errors.push("industry: " + e.message));
+    await q.goto(URL + "#notour"); await q.waitForTimeout(800);
+    const navOrder = await q.$$eval("#nav button", n => n.map(x => x.dataset.screen));
+    const todayItem = /Industry section for Brewer's Row memo due/.test(await q.textContent("#todayAgenda"));
+    await q.click('#todayAgenda [data-ind="restaurants"]'); await q.waitForTimeout(200);
+    const fromToday = await q.isVisible("#s-industry");
+    // A11 shows its steps and sources.
+    await q.click("#runInd"); await q.waitForSelector("#indDoc .live-tag", { timeout: 6000 });
+    const a11 = await q.evaluate(() => ({ steps: [...document.querySelectorAll("#indSteps li.done")].map(x => x.textContent), secs: [...document.querySelectorAll("#indBody .dsec h2")].map(h => h.textContent), tags: document.querySelectorAll("#indBody .src").length, srcList: document.querySelectorAll("#indDoc .srclist li").length,
+      reads: document.querySelector("#indReads").innerText, readsDoc: document.querySelector("#indDoc .docmeta-box .reads").innerText, cite: document.querySelector("#citeBadge").textContent, nc: document.querySelector("#indNc").textContent, sample: /Sample data/.test(document.querySelector("#indDoc .srclist").innerText) && window.INDUSTRY_SOURCES.packs.every(k => k.sources.every(x => /^Sample /.test(x.title) && /^Sample /.test(x.publisher))) }));
+    await q.screenshot({ path: `${SHOTS}/industry-live.png`, fullPage: true });
+    check("A11. The Industry background drafter shows its steps and sources, first in the wave 1 nav and on Today", navOrder.indexOf("industry") === navOrder.indexOf("file") - 1 && todayItem && fromToday && a11.steps.length >= 6 && a11.secs.join() === "Industry size and trend,Main drivers,Main risks,Outlook" && a11.tags >= 9 && a11.srcList === 4 && /✓/.test(a11.cite) && /✓/.test(a11.nc) && a11.sample && a11.steps.some(t => /approved source pack/.test(t)),
+      `nav: ${navOrder.slice(1, 4).join(", ")}; Today item opens it: ${todayItem && fromToday}; ${a11.steps.length} steps shown; sections: ${a11.secs.join(", ")}; ${a11.tags} source tags, ${a11.srcList} sources listed, all titled "Sample …"; "${a11.cite.trim()}"; "${a11.nc.trim()}"`);
+    // It uses no borrower data: nothing about any borrower is in what A11 is given, and the screen says so.
+    const noData = await q.evaluate(() => { const t = window.__a11prompt; const P = window.PORTFOLIO;
+      const leaks = P.borrowers.flatMap(b => [b.name.split(" ").slice(0, 2).join(" "), b.id, b.city.split(",")[0], b.rm]).filter(w => t.includes(w));
+      const keys = window.INDUSTRY_SOURCES.packs.map(k => Object.keys(window.AGENTS.a11Input(k)).join()).every(k => k === "industry,region,approvedBy,sources");
+      return { leaks, keys, figures: !/\$48\.0M|EBITDA|covenant|deposit/i.test(t) }; });
+    const readsOK = /Reads: approved industry sources only\. No borrower data\./.test(a11.reads) && /Reads: approved industry sources only\. No borrower data\./.test(a11.readsDoc);
+    check("A11. Uses no borrower data", !noData.leaks.length && noData.keys && noData.figures && readsOK,
+      `the prompt names no borrower, id, city or RM (${noData.leaks.join(", ") || "none found"}); A11 is given only the industry, region, approval and sources: ${noData.keys}; no borrower figures; "Reads: approved industry sources only. No borrower data." shown on the screen and the draft: ${readsOK}`);
+    // It refuses a credit judgment (and any borrower in the PM's note) before Claude is asked.
+    const note = async t => { await q.fill("#indNote", t); await q.click("#indNoteForm button[type=submit]"); await q.waitForTimeout(150); return (await q.textContent("#indNoteOut")).trim(); };
+    const nGood = await note("Is this borrower a good credit?"), nRating = await note("What rating fits restaurants?"), nPrice = await note("What rate should restaurant loans carry?"), nBorrower = await note("How does Brewer's Row compare with the industry?"), nOK = await note("Focus on labor and food costs");
+    const calls = await q.evaluate(() => window.__a11calls);
+    await note("Is this borrower a good credit?"); await q.click("#runInd"); await q.waitForTimeout(400);
+    const notRun = await q.evaluate(c => window.__a11calls === c, calls);
+    await q.fill("#indNote", ""); await q.click("#indNoteForm button[type=submit]");
+    await q.evaluate(() => { window.__borrowerInd = true; }); await q.click("#runInd"); await q.waitForSelector("#indDoc .live-tag", { timeout: 6000 });
+    const bj = await q.evaluate(() => ({ flag: (document.querySelector("#indFlag") || {}).textContent || "", off: document.querySelector("#approveInd").disabled }));
+    await q.evaluate(() => { window.__borrowerInd = false; });
+    check("A11. Refuses a credit judgment and flags borrower-specific conclusions", /Blocked: a borrower risk rating/.test(nGood) && /Blocked: a borrower risk rating/.test(nRating) && /Blocked: a price or rate/.test(nPrice) && /Blocked: borrower data/.test(nBorrower) && /Passed the checks/.test(nOK) && notRun && /names a borrower/.test(bj.flag) && /well placed/.test(bj.flag) && bj.off,
+      `"Is this borrower a good credit?", a rating, a price and a note naming Brewer's Row blocked in code before any AI; a run with a blocked note doesn't start: ${notRun}; "Focus on labor and food costs" passes; a draft that says a borrower is "well placed" is flagged ("${bj.flag.slice(0, 70)}…") and approval turned off`);
+    // An uncited sentence is flagged and holds approval until the PM fixes it.
+    await q.evaluate(() => { window.__uncitedInd = true; }); await q.click("#runInd"); await q.waitForSelector("#indDoc .live-tag", { timeout: 6000 });
+    await q.evaluate(() => { window.__uncitedInd = false; });
+    const un = await q.evaluate(() => ({ note: (document.querySelector("#uncitedNote") || {}).textContent || "", marks: [...document.querySelectorAll("#indBody mark.uncited")].map(m => m.textContent), badge: document.querySelector("#citeBadge").textContent }));
+    await q.click("#approveInd"); const heldUn = await q.textContent("#indApproveState"); const stillUn = await q.textContent("#indStatus");
+    await q.screenshot({ path: `${SHOTS}/industry-uncited.png`, fullPage: true });
+    await q.click("#editInd"); await q.evaluate(() => document.querySelector("#indBody mark.uncited").closest("li").remove()); await q.click("#editInd");
+    const fixed = await q.textContent("#citeBadge");
+    check("A11. An uncited sentence is flagged and holds approval", /1 sentence has no source/.test(un.note) && un.marks.join() === "Margins will improve next year." && /without a source/.test(un.badge) && /no source/.test(heldUn) && /not approved/.test(stillUn) && /✓/.test(fixed),
+      `"${un.marks.join()}" highlighted, badge "${un.badge.trim()}"; approve held ("${heldUn.slice(0, 60)}…"); after the PM cuts it: "${fixed.trim()}"`);
+    // Approval is needed before the section goes into the memo; nothing is submitted.
+    await q.click('#indPick [data-ind="distribution"]'); await q.waitForTimeout(300);
+    const insBefore = await q.$("#indInserted");
+    await q.click('#nav button[data-screen="review"]'); await q.click('#draftPick [data-k="memo:C111"]'); await q.waitForTimeout(300);
+    const memoBefore = await q.evaluate(() => { const m = document.querySelector("#memoIndustry"); return m ? { pending: m.classList.contains("pending"), text: m.textContent } : null; });
+    await q.click('#memoIndustry [data-go-ind="distribution"]'); await q.waitForTimeout(300);
+    const backOnInd = await q.isVisible("#s-industry");
+    await q.click("#approveInd"); await q.waitForTimeout(150);
+    const ins = await q.evaluate(() => ({ status: document.querySelector("#indStatus").textContent, box: (document.querySelector("#indInserted") || {}).innerText || "", stamp: (document.querySelector("#indBody .stamp") || {}).textContent || "" }));
+    await q.screenshot({ path: `${SHOTS}/industry-approved.png`, fullPage: true });
+    await q.click('#indInserted [data-open-memo="C111"]'); await q.waitForTimeout(300);
+    const memoAfter = await q.evaluate(() => { const m = document.querySelector("#memoIndustry"); return { pending: m.classList.contains("pending"), text: m.textContent, first: document.querySelector("#reviewDoc #memoIndustry ~ #draftBody") !== null }; });
+    await q.screenshot({ path: `${SHOTS}/industry-in-memo.png`, fullPage: true });
+    const logs = await q.evaluate(() => window.AGENTS.audit.filter(a => /industry section/i.test(a.action) || /Industry background drafter/.test(a.agent) || /Industry background drafter/.test(a.action)).length);
+    const noSubmit = await q.evaluate(() => !window.AGENTS.audit.some(a => /submitted/i.test(a.action)));
+    check("A11. The PM's approval is needed before the section goes into the memo; nothing is submitted", !insBefore && memoBefore && memoBefore.pending && /Waiting for your approval/.test(memoBefore.text) && backOnInd && /Approved by Sam Okafor; inserted into the credit memo/.test(ins.status) && /Inserted into the credit memo draft/.test(ins.box) && /Nothing is submitted by the assistant/.test(ins.box) && /approved by Sam Okafor/.test(ins.stamp) && !memoAfter.pending && /Approved by Sam Okafor/i.test(memoAfter.text) && /38\.5B/.test(memoAfter.text) && memoAfter.first && logs >= 4 && noSubmit,
+      `before approval: no insertion, and the Twin Ports memo shows "Industry background · Waiting for your approval"; after Sam approves: "${ins.status}"; the memo draft opens with the approved section, before A8's sections; ${logs} A11 actions logged; nothing logged as submitted`);
+    // Measures: industry sections drafted and approved, and the sample outside-fee line.
+    await q.click('#nav button[data-screen="measures"]'); const mt = await q.textContent("#measureGrid");
+    const mOK = /Industry sections \(A11\): \d+ drafted, 1 approved by the PM/.test(mt) && /Outside fees replaced \(sample\): \$2,500, from 1 industry section approved at a made-up sample fee of \$2,500 each/.test(mt);
+    check("A11. Measures count industry sections drafted and approved, with a sample outside-fees line", mOK, (mt.match(/Industry sections \(A11\)[^O]*/) || [""])[0].trim() + "; " + (mt.match(/Outside fees replaced \(sample\)[^)]*\)[^)]*\)/) || [""])[0]);
+    await c5.close();
+  }
+
   // 10. Today, the borrower file's decisions and the early warning decisions work end to end.
   {
     const c4 = await browser.newContext({ viewport: { width: 1280, height: 800 } }); const q = await c4.newPage();
@@ -241,7 +322,7 @@ const check = (name, ok, proof) => { results.push({ name, ok: !!ok, proof }); co
   }
 
   // 7. Laptop and phone: no sideways scrolling; top and bottom screenshots of every screen.
-  const screens = ["today", "file", "review", "watch", "controls", "measures", "about"];
+  const screens = ["today", "industry", "file", "review", "watch", "controls", "measures", "about"];
   const overflow = [];
   for (const [w, h] of [[1280, 800], [400, 844]]) {
     const c2 = await browser.newContext({ viewport: { width: w, height: h } }); const q = await c2.newPage();
