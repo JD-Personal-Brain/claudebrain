@@ -1,0 +1,23 @@
+{
+  "voice": "af_heart",
+  "speed": 1.1,
+  "note": "The voiceover script for the tour, one line per tour step (same order as src/tour.js). Read by Kokoro, an open-source voice (code MIT, model Apache 2.0). Keep the total under about 105 seconds so the tour stays under 2 minutes.",
+  "lines": [
+    "Meet The PM Assistant: one AI assistant for every portfolio manager, on sample data throughout.",
+    "You're Sam Okafor, a senior portfolio manager with twelve business borrowers.",
+    "New: the Industry Background Drafter. From approved industry sources only, never borrower data, it drafts a memo's industry section, every sentence sourced. Sam approves it.",
+    "The Borrower File Builder checks Sam may see the borrower, then reads four sources itself: statements, loans, deposits and documents.",
+    "Every figure shows its source. Anything missing or late is listed, never filled in.",
+    "From the file, Claude drafts the routine sections of the annual review. Then code checks every number, gap and word.",
+    "Every draft is marked AI draft, and names the credit officer who decides.",
+    "The borrower risk rating and the recommendation are left blank for Sam. Sam writes them, approves the draft as final, and submits it through the bank's normal route. The assistant never submits.",
+    "Every number is matched against the file. Anything it can't trace is highlighted.",
+    "Here the latest statements haven't arrived, so the draft says needs input, instead of guessing.",
+    "Coming next: early warning. Plain rules flag late statements, tight covenants, falling deposits and late payments, and Claude explains each one.",
+    "Sam decides: dismiss it with a reason, watch it, or raise it through the bank's own process.",
+    "Try to break it. Ask for a borrower risk rating, an approval, or a price, and the guardrails stop it before any AI sees it.",
+    "Five measures from day one, with pilot portfolio managers compared against a group without it.",
+    "A pilot needs approval to use borrower data, and the higher-risk review. Our assumption, to confirm: those set the pace.",
+    "Your turn: start from Today, and run the agents live on Claude."
+  ]
+}

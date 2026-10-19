@@ -33,7 +33,9 @@ PAGE_FILE = {"open-items": "open-items.html", "job-description": "job-descriptio
              "rm-plan": "rm-analytics-plan.html", "rm-assistant": "rm-assistant.html", "use-case-library": "use-case-library.html", "rm-executive-summary": "rm-executive-summary.html", "rm-ai-reference": "rm-ai-reference.html",
              "prompting": "prompting.html", "credit-market-scan": "credit-market-scan.html", "workflows": "workflows.html", "agents": "agents.html", "steps": "steps.html",
              "controls": "controls.html", "glossary": "glossary.html", "elon-mode": "elon-mode.html", "audit-log": "audit-log.html",
-             "prompt-library": "prompt-library.html", "rm-prototype": None}
+             "prompt-library": "prompt-library.html", "rm-prototype": None,
+             "pm-executive-summary": "pm-executive-summary.html", "pm-assistant": "pm-assistant.html", "pm-plan": "pm-assistant-plan.html",
+             "pm-ai-reference": "pm-ai-reference.html", "pm-prototype": None}
 
 def text(h):
     h = re.sub(r'<span class="g?count">.*?</span>', "", h)  # drop item counts like "19"
@@ -138,7 +140,7 @@ page = f'''<title>Document Library</title>
 <main class="wrap">
 <section id="index"><div class="index">{index}</div></section>
 <p class="empty" id="none" hidden>No documents match that word.</p>
-<footer>Built from <code>designs/library.json</code>. Say <strong>/documents</strong> to Claude to refresh it. Every page is private until you share it from its Share menu.</footer>
+<footer>Built from the working files; every page is listed here.</footer>
 </main>
 <script>
 (function(){{

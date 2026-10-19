@@ -24,6 +24,7 @@
     or watches a law, regulator or bank-policy control is in the playbook's "Where the requirements come from" table.
 16. The settings file (.claude/settings.json) is valid, so the startup and pre-merge checks keep working (lesson L32).
 18. One user group per people page (idea 61, from L38): the three short RM pages for people (executive summary, RM Assistant, plan) don't mention portfolio managers or PMs; cross-group notes go in RM Detail.
+    18b. The PM twin: the three short PM pages don't mention the RM Assistant, the RM core use cases or the RM plan.
 15. Agent names: every "M<number> <Name>" in the Product Machine and the playbook steps matches the Agent Library.
 Prints each problem and a total. 0 problems means the mechanical checks pass.
 """
@@ -108,7 +109,7 @@ for m in re.finditer(r'^\| ((?:Stage \d\. )?[A-Z][^|]+?) \| (\d+) \| [^|]+ \|$',
     sec=[x for x in secs if x.startswith(m.group(1).strip()+'\n')]
     rows=len(re.findall(r'^\| [A-Z]\d+ \|',sec[0],re.M)) if sec else -1
     if rows!=int(m.group(2)): print("open-items.md 'At a glance' count for",m.group(1).strip(),"should be",rows if rows>=0 else '(no such section)'); probs+=1
-if '## At a glance' not in oi or '## Stage 1.' not in oi or '## Closed' not in oi: print("open-items.md is missing one of its section headings (At a glance, Stage 1, Closed)"); probs+=1
+if '## At a glance' not in oi or '## Now' not in oi or '## Closed' not in oi: print("open-items.md is missing one of its section headings (At a glance, Now, Closed)"); probs+=1
 oi_live=oi.split('## Closed')[0]                                   # everything still open
 oi_rev=oi_work=oi_live
 where=lambda st: oi_live
@@ -147,10 +148,13 @@ H=len(re.findall(r'^### H\d+\. ',open('playbook/agents.md').read(),re.M))  # my 
 memo=open('memos/rm-analytics-framework.md').read()
 appa=memo.split('## Appendix A')[1].split('## Appendix B')[0]
 A=len(set(re.findall(r'\bA(\d+)\. ',appa)))
+pm_memo=open('memos/pm-assistant-framework.md').read()  # the PM product's agents (A7 on) and workflows (B10 on), since 2026-10-19
+PA=len(set(re.findall(r'\bA(\d+)\. ',pm_memo.split('## Appendix A')[1].split('## Appendix B')[0])))
+PB=len(re.findall(r'^\*\*B\d+\. ',pm_memo.split('## Appendix B')[1],re.M))
 TEAM=M-MACH; PROD=A  # team agents (M20+) live in the agent library; Appendix A holds only the product's agents
 B=len(re.findall(r'^\*\*B\d+\. ',memo.split('## Appendix B')[1],re.M))
 lib=_json.load(open('designs/library.json'))
-want={'agents':f'{M+A+H} agents','steps':f'{SUB} sub-steps','controls':f'{CTL} controls','workflows':f'2 maps · {SUB+B} branches'}
+want={'agents':f'{M+A+PA+H} agents','steps':f'{SUB} sub-steps','controls':f'{CTL} controls','workflows':f'3 maps · {SUB+B+PB} branches'}
 _PR=len(re.findall(r'^## Prompt \d+:', open('prompt-library.md').read(), re.M)); want['prompt-library']=f'{_PR} prompts'  # 2026-10-18: the count went stale when Prompt 4 was added
 for b in lib_docs:
     if b['id'] in want and b['count']!=want[b['id']]: print('designs/library.json count for',b['name'],'is',repr(b['count']),'but the sources give',repr(want[b['id']])); probs+=1
@@ -162,10 +166,10 @@ for f in ['NOW.md','open-items.md','product-framework.md','product-machine.md','
         num,mid,noun=int(m.group(1)),(m.group(2) or '').lower(),m.group(3)
         before=t[max(0,m.start()-6):m.start()].lower(); after=t[m.end():m.end()+40].lower()
         if noun.startswith('agent'):
-            if before.endswith('all '): ok={M+A+H}
+            if before.endswith('all '): ok={M+A+PA+H}
             elif 'machine' in mid+after: ok={M,MACH}
-            elif 'project' in mid+after or 'rm' in mid or 'product' in mid: ok={A,PROD}
-            else: ok={M,A,M+A,M+A+H,MACH,TEAM,PROD}
+            elif 'project' in mid+after or 'rm' in mid or 'pm' in mid or 'product' in mid: ok={A,PROD,PA,A+PA}
+            else: ok={M,A,M+A,M+A+H,MACH,TEAM,PROD,PA,A+PA,M+A+PA,M+A+PA+H}
         elif noun=='sub-steps': ok={SUB}
         else: ok={CTL} | ({UNCOV} if after.startswith(' of the') or 'have a stage' in after or 'not covered' in after else set())
         if num not in ok: print(f,'says',repr(m.group(0)),'but the sources give',sorted(ok)); probs+=1
@@ -229,7 +233,7 @@ else:
         if m: ret.append((m.group(1).strip(),m.group(2).strip()))
         else: print('glossary.md: could not read this "Old wording we\'ve retired" row:',row[:60]); probs+=1
     if not ret: print('glossary.md: the "Old wording we\'ve retired" table is empty'); probs+=1
-    where=sorted(set(core+glob.glob('memos/*.md')+['NOW.md','glossary.md','prompting.md','prompt-library.md','job-notes.md','job-description.md','designs/library.json','designs/README.md','designs/role-workflow.html','designs/rm-analytics-plan.html']+glob.glob('designs/*-build.py')+glob.glob('.claude/skills/*/SKILL.md')))
+    where=sorted(set(core+glob.glob('memos/*.md')+['NOW.md','glossary.md','prompting.md','prompt-library.md','job-description.md','designs/library.json','designs/README.md','designs/role-workflow.html','designs/rm-analytics-plan.html']+glob.glob('designs/*-build.py')+glob.glob('.claude/skills/*/SKILL.md')))
     for f in where:
         txt=open(f).read()
         if f=='glossary.md': txt=txt.split("## Old wording we've retired")[0]
@@ -251,6 +255,9 @@ import html as _h2
 for _row in [d for g in json.load(open('designs/library.json'))['groups'] for d in g['items'] if d.get('id')=='rm-assistant']:
     if _row['name']!='The RM Assistant': print('designs/library.json names the product page',repr(_row['name']),'- the name is "The RM Assistant"'); probs+=1
 if '<title>The RM Assistant</title>' not in open('designs/rm-assistant.html').read(): print('designs/rm-assistant.html: the page title must be "The RM Assistant"'); probs+=1
+for _row in [d for g in json.load(open('designs/library.json'))['groups'] for d in g['items'] if d.get('id')=='pm-assistant']:
+    if _row['name']!='The PM Assistant': print('designs/library.json names the PM product page',repr(_row['name']),'- the name is "The PM Assistant"'); probs+=1
+if '<title>The PM Assistant</title>' not in open('designs/pm-assistant.html').read(): print('designs/pm-assistant.html: the page title must be "The PM Assistant"'); probs+=1
 OLD_NAMES=['six-step product workflow','six-step workflow','delivery machine','delivery playbook','elon mode research']
 _named=['NOW.md','CLAUDE.md','open-items.md','product-framework.md','product-machine.md','tech-stack.md','prompting.md','prompt-library.md','designs/library.json','designs/README.md']+glob.glob('memos/*.md')+glob.glob('playbook/*.md')+glob.glob('learning/rules.md')+glob.glob('learning/tests.md')+glob.glob('designs/*.py')+glob.glob('designs/*.html')+glob.glob('.claude/skills/*/SKILL.md')
 for f in _named+['glossary.md']:
@@ -350,5 +357,16 @@ for f in ['memos/rm-executive-summary.md','memos/rm-assistant.md','memos/rm-plan
                 print(f+':'+str(i),'a page for RMs mentions portfolio managers; move it to RM Detail or a shared page (rule R31)'); probs+=1
     except FileNotFoundError:
         print('check 18: missing',f); probs+=1
+
+# 18b. The PM twin (added 2026-10-19): the three short PM pages for people don't talk about the RM product or plan.
+# PMs work with RMs, so plain mentions of RMs ("the RM's notes", "relationship manager (RM)") stay allowed;
+# the RM Assistant, the RM core use cases and the RM plan belong in PM Detail or the shared pages.
+for f in ['memos/pm-executive-summary.md','memos/pm-assistant.md','memos/pm-plan.md']:
+    try:
+        for i,line in enumerate(open(f).read().splitlines(),1):
+            if re.search(r'RM Assistant|RM core use case|RM side|RM plan', line):
+                print(f+':'+str(i),'a page for PMs talks about the RM product or plan; move it to PM Detail or a shared page (rule R31)'); probs+=1
+    except FileNotFoundError:
+        print('check 18b: missing',f); probs+=1
 
 print("problems:",probs)

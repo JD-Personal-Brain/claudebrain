@@ -5,12 +5,12 @@ reused on every project, so they're specified once here: M1 to M19 run the
 machine's own paperwork and routing, and M20 to M33 do the team's analysis,
 testing and monitoring work (they started as the RM project's helpers and were
 made general on 2026-10-10). A project's own agents (the product users see, or
-agents only that project needs) go in its memo's Appendix A, like A1, A2, A3 and A5 in
+agents only that project needs) go in its memo's Appendix A, like A7 to A11 in the PM memo and A1, A2, A3 and A5 in
 the RM memo. H1 and on are my own research helpers (see "My research helpers" near the end of the Agent Library page):
 they keep my reference pages current and are not part of the product machine.
 
-Written with the **agent-spec** skill. Every agent follows the AI principles in
-`product-framework.md`: assistive first, one job each, read-only or draft-only unless a named
+Written with the agent-spec routine. Every agent follows the AI principles in
+the Product Framework: assistive first, one job each, read-only or draft-only unless a named
 person approves, and every action logged. Auto agents act only within their
 listed actions. ⚠️ on an Auto agent means it sends requests, reminders, reports
 or alerts to people outside the project team, or changes a live system, so it
@@ -19,7 +19,7 @@ than guess): if an input is missing, stale or fails a check, it stops and alerts
 its person in charge; a monitor never reports a pass on missing data.
 
 > ⚠️ **How much to trust this.** Written 2026-10-09 from the playbook, not
-> from Associated Bank. "Runs on" tools are guesses from `tech-stack.md`, and
+> from Associated Bank. "Runs on" tools are guesses from the Tech Stack Guide, and
 > every ⚠️ is a question to confirm at the bank. None of the M agents is built yet; H1 is set up and running.
 
 ---
@@ -30,7 +30,7 @@ its person in charge; a monitor never reports a pass on missing data.
 - **Kind:** Draft → Draft
 - **Job:** create a new project's starting files from its one-line project statement, and add the project's section to the one shared tracker (not a new tracker).
 - **Starts when:** the product manager writes the project statement.
-- **Inputs:** the project statement; the task tables in `product-machine.md`; the who-decides list in `product-framework.md`.
+- **Inputs:** the project statement; the task tables on the Product Machine; the who-decides list in the Product Framework.
 - **Allowed actions:** create draft files: the project's section of the shared tracker with every task listed, the decision log, the risk and issue list and the project file.
 - **Not allowed:** assigning owners or dates; contacting anyone.
 - **Outputs:** a draft project pack, ready for owners and dates, with a "limiting factor" field at the top of the tracker section (filled in by the product manager).
@@ -126,7 +126,7 @@ its person in charge; a monitor never reports a pass on missing data.
 - **Kind:** Me → Draft
 - **Job:** score a product brief against the five platform criteria and list known blockers.
 - **Starts when:** the product manager asks, at the start of Define.
-- **Inputs:** the brief so far; the time map from 1.4; the "pick the layer" guide in `tech-stack.md`; known IT data rules.
+- **Inputs:** the brief so far; the time map from 1.4; the "pick the layer" guide in the Tech Stack Guide; known IT data rules.
 - **Allowed actions:** read; write a draft scorecard.
 - **Not allowed:** choosing the platform.
 - **Outputs:** a scorecard for each candidate platform, with blockers and questions for the platform teams.
@@ -181,7 +181,7 @@ its person in charge; a monitor never reports a pass on missing data.
 - **Stops when:** every field is filled in or marked as a question.
 - **Proof it worked:** the platform team and the risk partner agree the spec.
 - **Person in charge:** product manager.
-- **Runs on (guess):** an approved AI assistant (Claude's **agent-spec** skill does this today).
+- **Runs on (guess):** an approved AI assistant (the agent-spec routine does this today).
 - **To confirm:** none.
 
 ### M11. Controls checker
@@ -220,7 +220,7 @@ its person in charge; a monitor never reports a pass on missing data.
 - **Used in:** 4.2
 - **For:** the team
 - **Kind:** Draft → Auto ⚠️
-- **Job:** compare the data the product actually reads with the signed data contract. Documents: not covered yet (privacy compares the documents retrieved with the contract's sources by hand).
+- **Job:** compare the data the product actually reads with the signed data contract. Documents: not covered yet (the PM project, the first that runs on documents, checks them by hand until this is added; privacy compares the documents retrieved with the contract's sources by hand).
 - **Starts when:** each new frozen version, and monthly after launch.
 - **Inputs:** the access logs or query history; the data contract.
 - **Allowed actions:** read; report differences.
@@ -317,7 +317,7 @@ its person in charge; a monitor never reports a pass on missing data.
 - **For:** the team
 - **Kind:** Me → Draft
 - **Job:** total time spent and waits from the sub-step logs (the full first-time log on the first project), work out each sub-step's wait index, and list the candidates to cut and to automate.
-- **Starts when:** at each gate, as a light total of time, waits and wait index so far (so the limiting factor can be steered while the project runs; Elon mode, 2026-10-18), and in full at the end of each project's first full pass through all six steps (sub-step 6.6).
+- **Starts when:** at each gate, as a light total of time, waits and wait index so far (so the limiting factor can be steered while the project runs), and in full at the end of each project's first full pass through all six steps (sub-step 6.6).
 - **Inputs:** the sub-step logs from every sub-step; the tracker (dates); the decision log (the dates each gate pack was ready and each decision was made); the release notes.
 - **Allowed actions:** read; write a draft summary.
 - **Not allowed:** deciding what to delete or which agents to build.
@@ -398,7 +398,7 @@ its person in charge; a monitor never reports a pass on missing data.
 - **Used in:** 2.3, 3.2
 - **For:** the team
 - **Kind:** Draft → Draft (2.3); Me → Auto ⚠️ (3.2, ongoing mode)
-- **Job:** check that every field in the data contract exists, is fresh enough and passes its quality checks. Documents: not covered yet (for a product built on documents, the content owner checks re-indexing and permissions by hand until this agent gains a documents mode).
+- **Job:** check that every field in the data contract exists, is fresh enough and passes its quality checks. Documents: not covered yet (the PM project, the first that runs on documents, checks them by hand until this is added; for a product built on documents, the content owner checks re-indexing and permissions by hand until this agent gains a documents mode).
 - **Starts when:** the field list is drafted in 2.3; after that, on every data refresh.
 - **Inputs:** the data contract; the tables and their quality and access records.
 - **Allowed actions:** read-only checks; alert the data owner on failure.
@@ -446,7 +446,7 @@ its person in charge; a monitor never reports a pass on missing data.
 - **Used in:** 4.3
 - **For:** the team
 - **Kind:** Draft → Auto
-- **Job:** try to break the product: ask for other users' data, a credit decision, a price or off-topic answers.
+- **Job:** try to break the product: ask for other users' data, a credit decision, a price, a borrower risk rating or off-topic answers, and plant instructions hidden in source documents.
 - **Starts when:** a frozen version is ready for review.
 - **Inputs:** the product in test; the attack list, including the must-refuse cases.
 - **Allowed actions:** send test requests in the test environment only.
@@ -556,8 +556,8 @@ its person in charge; a monitor never reports a pass on missing data.
 
 ## My research helpers: agents that keep my own pages current
 These aren't part of the product machine and don't belong to any project. They
-keep the reference material I plan from up to date. Each runs as a Claude Code
-scheduled task, from a skill in this repo.
+keep the reference material I plan from up to date. Each runs as a scheduled
+AI task, from a written routine.
 
 ### H1. Bank news scout
 - **Used in:** none (keeps the Bank Business Briefing current)
@@ -565,15 +565,15 @@ scheduled task, from a skill in this repo.
 - **Kind:** Draft → Draft
 - **Job:** find new public facts about Associated Bank that change the Bank Business Briefing, and draft the edits.
 - **Starts when:** every Monday at 7:46 am Central (6:46 am after clocks change on November 1; a scheduled task), once on October 23, 2026 after the Q3 results (that run swaps in the Q3 figures throughout), or when I say "run the news scout".
-- **Inputs:** the briefing (`memos/bank-business.md`); the scout's own log (`memos/bank-news-log.md`), so nothing is reported twice; public web pages and search results.
+- **Inputs:** the Bank Business Briefing; the scout's own log, so nothing is reported twice; public web pages and search results.
 - **Allowed actions:** search the web and open public pages; edit the briefing, rebuild its page source and add to the log on a draft branch; save that branch to GitHub; write one summary.
-- **Not allowed:** merging into main or opening a pull request; republishing the live page; sending email with any connector; using my work email; using non-public information; writing a number without its period and source; filling a gap from memory.
+- **Not allowed:** merging into main or opening a pull request; republishing the live page; sending email with any connector; using non-public information; writing a number without its period and source; filling a gap from memory.
 - **Outputs:** draft edits on a draft branch, one log entry and one summary.
 - **Stops when:** the summary is written, including a short "nothing new" summary when nothing changed. A page that won't open is named in the summary and left as a gap.
-- **Proof it worked:** the scheduled task's email notice in my personal inbox, the log entry and the draft branch.
+- **Proof it worked:** the scheduled task's notice, the log entry and the draft branch.
 - **Person in charge:** me.
-- **Runs on (guess):** a Claude Code scheduled task, from the `bank-news-scout` skill (confirmed: set up and running).
-- **To confirm:** that the first weekly notice (Monday October 19) reaches my personal inbox, and that its runs don't stop to wait for an approval (open item W1).
+- **Runs on (guess):** a scheduled AI task, from the bank news scout routine (confirmed: set up and running).
+- **To confirm:** none (the first weekly run succeeded on 2026-10-19).
 
 ## Not agents, but reusable assets
 These come up in the review tables but aren't agents. Each one is a template or
@@ -595,4 +595,4 @@ checking the live product until it's retired. Five agents have one:
 
 Agents built to run on a schedule from the start (M11, M17, M18, M26, M30 and M31) are not "ongoing mode": running repeatedly is their normal job.
 
-_Last updated: 2026-10-18_
+_Last updated: 2026-10-19_

@@ -1,18 +1,17 @@
 # Tech stack: Associated Bank, Principal Applied AI Product Manager
 
 The technologies in `job-description.md`: what each one is, how the bank most
-likely uses it, and what I need to know to do the job. Claude loads this every
-session. Update it as I learn how the bank actually works.
+likely uses it, and what I need to know to do the job. Update it as I learn how the bank actually works.
 
-> ⚠️ **How much to trust this.** Written by Claude on 2026-10-07 from its own
-> knowledge (which runs to mid-2026), not from Associated Bank. Lines marked
+> ⚠️ **How much to trust this.** Written on 2026-10-07 from general industry
+> knowledge (to mid-2026), not from Associated Bank. Lines marked
 > **(guess)** are educated guesses about the bank. Lines marked **(verify)** are
 > facts that may have changed: these vendors rename products often. Replace
 > guesses with facts as I learn them, and note the source.
 >
 > **Working assumption (decided 2026-10-07, confirmed 2026-10-09):** every tool
 > named in the job description is live at the bank today and available to us.
-> Source: I was told they are. Plan with them as real tools. "(verify)" now
+> Source: confirmed by the bank (2026-10-09). Plan with them as real tools. "(verify)" now
 > only flags product details such as names, features and pricing.
 
 ## The big picture: how it fits together
@@ -47,7 +46,7 @@ pick the right layer above to fix it, without breaking the bank's rules.
 ## By the six steps (Product Workflow)
 
 The same technologies, sorted by the six steps I'll use in this job.
-**Status key:** 🟡 named in the posting; I was told it's live (see the working assumption above), but product details are unconfirmed ·
+**Status key:** 🟡 named in the posting; confirmed live by the bank (2026-10-09; see the working assumption above), but product details are unconfirmed ·
 🟢 applies to US banks in general (still check for updates).
 
 | Step | What I have | Status |
@@ -59,7 +58,7 @@ The same technologies, sorted by the six steps I'll use in this job.
 | **Release and adopt** | Publish where bankers already work (Teams, Outlook, Salesforce). Power Platform environments move a tool from test to live. Start "assistive" (AI suggests, a person decides). Copilot licenses are paid per user, so leaders watch usage. | 🟡 |
 | **Measure and iterate** | **Power BI / Fabric** dashboards (adoption, hours saved, pipeline impact). **Salesforce** for business results. **Copilot usage dashboard.** Re-run evals after every change; watch guardrail blocks, human overrides and drift. | 🟡 |
 
-**Biggest unknown in every row:** how each tool is set up at the bank (which features, licenses and connections). I was told all of them are live.
+**Biggest unknown in every row:** how each tool is set up at the bank (which features, licenses and connections). All of them are live, confirmed by the bank (2026-10-09).
 
 ---
 
@@ -141,7 +140,7 @@ The same technologies, sorted by the six steps I'll use in this job.
 - **What it is:** the AI assistant inside Outlook, Teams, Word, Excel and PowerPoint. It uses the user's own emails, files, chats and meetings (through "Microsoft Graph") and respects their existing permissions.
 - **How the bank likely uses it (guess):** meeting summaries and action items in Teams, drafting client emails, summarizing long email threads, and building first drafts of documents.
 - **What I need to know:**
-  - **Adoption is the hard part.** Licenses are paid per user (roughly $30 per user per month at launch, **verify**), so leaders will ask whether people actually use it.
+  - **Adoption is the hard part.** Licenses are paid per user (roughly $30 per user per month, Microsoft's announced price at launch, 2023; **verify**), so leaders will ask whether people actually use it.
   - **Oversharing risk:** Copilot shows anything a user *technically* has access to. Messy SharePoint permissions can expose sensitive files. Expect IT to tighten permissions and use **sensitivity labels** (Microsoft Purview) first.
   - **Agents:** custom agents can be added to Copilot, built in Copilot Studio.
 - **Measuring it:** Microsoft provides usage reports (Copilot dashboard / Viva Insights, **verify**), plus surveys and time-saved estimates.
@@ -213,11 +212,11 @@ control measures. A starter set:
 ---
 
 ## Things to find out at the bank
-- [x] Which of these tools are actually live? All of them, I was told (2026-10-09).
-- [ ] Which AI models are approved, and where do they run?
-- [ ] Why both Snowflake and Fabric, and which holds what?
-- [ ] Which Salesforce products and licenses does the bank have?
-- [ ] What does the AI governance process look like, and how long does it take?
-- [ ] Who builds: my team, IT, or citizen developers?
+- Answered: which of these tools are actually live? All of them, confirmed by the bank (2026-10-09).
+- Which AI models are approved, and where do they run?
+- Why both Snowflake and Fabric, and which holds what?
+- Which Salesforce products and licenses does the bank have?
+- What does the AI governance process look like, and how long does it take?
+- Who builds: my team, IT, or citizen developers?
 
-_Last updated: 2026-10-15_
+_Last updated: 2026-10-19_

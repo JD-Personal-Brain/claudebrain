@@ -1,7 +1,6 @@
 # Product Framework: the rules every product follows
 
-Claude loads this every session and applies these rules whenever we plan or
-work on a product.
+These rules apply whenever we plan or work on a product.
 
 Page 2 of the four "How we deliver" pages, read in this order:
 1. **Product Workflow** (`memos/role-workflow.md`): the six steps (Discover, Define, Build, Govern and test, Release and adopt, Measure and iterate), what happens in each, and their go/no-go gates.
@@ -20,10 +19,12 @@ written as [name needed] until they're filled.
 | Product manager (this role) | Scope, priorities and trade-offs; owns the product until a long-term owner is named; brings the gate pack and recommends at every gate | Every step |
 | Long-term owner | Holds the product after launch, for example someone in a revenue line; identified during the project | Named in Define if known (2.8), confirmed before scaling (5.7) |
 | Data owners | What data may be used; they sign the data contract | Define (2.3; they agree at the Define gate), Build (3.2) |
+| Content owner | Which documents a product may read; signs that list with the data contract | Define (2.3) |
 | Platform teams | The technical design | Define (2.2), Build |
 | Model risk (the risk partner) | The risk rating and the approval | Briefed in Discover (1.0); agrees at the Discover and Define gates; rating in Define (2.4); approval at the step 4 gate, which the sponsor can't overrule |
 | Compliance, privacy and security | The controls and their sign-off | Told the control requirements in Define (2.4); sign-off in Govern and test (4.2 to 4.7) |
-| Credit policy owner (higher-risk path only) | Whether a product that informs credit decisions may go live, and what its drafts may contain (control K3) ⚠️ [name needed] | Define (2.4), Govern and test (4.7) |
+| Credit policy owner (higher-risk path only) | Whether a product that informs credit decisions may go live, and what its drafts may contain (control K3) ⚠️ [name needed] | Briefed at 1.0 when a higher-risk path is likely; Define (2.4; agrees at the Define gate), Govern and test (4.7) |
+| Credit risk (when a product has early warning rules) | Owns the rules and signs them at 4.7 ⚠️ (which team, to confirm) | Define (2.4), Govern and test (4.7) |
 | Vendor risk | Whether the vendors and AI models we use are approved | Define (2.2, starts any missing review), Govern and test (4.6) |
 | IT | The AI tools the team may use, and every connection the product makes | Discover (1.0), Define (2.2), Govern and test (4.5) |
 | Finance | How impact is counted, and the impact numbers | Define (2.7), the Measure and iterate gate |
@@ -43,8 +44,7 @@ factor**: the one thing holding the project back right now, named with its
 owner. It opens the tracker and the weekly status note.
 
 ## Projects, AI products and feature waves
-How the work is cut up, so every gate knows what it decides (gaps 1 to 3 from the
-2026-10-15 audit, decided 2026-10-15).
+How the work is cut up, so every gate knows what it decides (agreed 2026-10-15).
 
 | Level | What it is | Example (RM plan) |
 |---|---|---|
@@ -68,7 +68,7 @@ a new project, with the full pass:
 - **Reused unless something changed:** 1.0 to 1.7 (record a baseline in 1.7 for any new measure, and show users a short 1.6 mock-up of any new AI product), 2.1, 2.2 (redone if the wave needs a different platform or delivery path), 2.6, and 2.8, where only the wave's scope and pilot group are updated. The product manager lists in the gate pack what was reused and what was redone.
 - **Gates 1 and 2 together, in writing,** from one short gate pack, with a meeting only if a criterion is contested.
 
-**The overlapping first pass** (decided 2026-10-18, C55). On a project's first pass, gate 1 may be passed early in writing on a first sizing (1.2) and a provisional baseline, so building can start; the rest of Discover (interviews, the time map, the mock-up reactions, 1.3 to 1.6) keeps running, and the final baseline (1.7) is recorded before gate 2, which checks it. Comes from: our choice, so the pace is set by what really blocks us. The risk partner still agrees at gate 1, and no real client data is used before gate 2.
+**The overlapping first pass** (agreed 2026-10-18). On a project's first pass, gate 1 may be passed early in writing on a first sizing (1.2) and a provisional baseline, so building can start; the rest of Discover (interviews, the time map, the mock-up reactions, 1.3 to 1.6) keeps running, and the final baseline (1.7) is recorded before gate 2, which checks it. Comes from: our choice, so the pace is set by what really blocks us. The risk partner still agrees at gate 1, and no real client data is used before gate 2.
 
 **Change after launch.** A **material change** goes back through step 4 before
 it reaches users: new data, a new action the product can take, users outside the
@@ -82,6 +82,18 @@ change is re-tested (6.3), logged in the release notes and told to the risk
 partner. Comes from: our choice, resting on the model risk guidance's
 expectation that changes are reviewed. ⚠️ The bank's model risk policy has the
 final word on what counts as material.
+
+## What lets a project move fast
+Six conditions, each checked in a project's first days (moved here from the RM plan on 2026-10-19, so every plan links to one home). Comes from: our choice, so the pace is set by what really blocks us. Each plan says how they apply to it, and which one doesn't.
+
+| Condition | Why it matters | Checked by |
+|---|---|---|
+| **1. Build from day one** | A working prototype on sample data in week 1; no real client data is needed until it's tested. | Product manager, platform team, week 1 |
+| **2. Standard features only** | Wave 1 configures features already in the platforms the bank runs, which we assume already have bank approval for this kind of use (⚠️ to confirm with IT and risk in week 1). | Product manager, platform teams, week 1 |
+| **3. Low risk by design** | Internal only, assistive, read-only by default, nothing near credit decisions or pricing, so we expect a low rating (⚠️ the risk partner decides). A product that informs credit decisions can't meet this one: it takes the higher-risk path (control K3). | Risk partner gives an early rating, week 2 |
+| **4. Review as we go** | The risk partner sees each version as it's built, so sign-off confirms what they already know. | Product manager and risk partner, every week |
+| **5. Data access on day one** | Requests go in on day one and wave 1 uses only certified data, because access is often the slowest step. | Data owners sign the data contract, by gate 2 |
+| **6. Fast decisions** | Each gate is decided within days, in writing when every criterion is met, because waiting for decisions adds weeks. | Sponsor, with the people named for each gate |
 
 ## The five kinds of measures
 The main outcome measure is agreed in Discover (1.1) and its baseline recorded in
@@ -135,7 +147,7 @@ These apply to every agent and every AI product, in every step.
 
 ## How each step is written up
 Every project plan writes its six steps as one table, so plans are easy to compare;
-the full RM plan does this in its section 4 (`memos/rm-analytics-framework.md`, read in RM Detail, Part 5).
+the full RM plan does this in RM Detail, Part 5, and the PM plan in PM Detail, Part 5.
 What the Product Workflow and the Product Playbook already say is linked, not repeated
 (simplified 2026-10-18, when the RM plan was cut back).
 
@@ -170,4 +182,4 @@ table above. The plan's working copy is `memos/<project>.md`, as the RM memo
 does. People read three short pages (executive summary, product, plan); the full
 plan goes into the project's detail document for AI (RM Detail for RMs).
 
-_Last updated: 2026-10-18_
+_Last updated: 2026-10-19_

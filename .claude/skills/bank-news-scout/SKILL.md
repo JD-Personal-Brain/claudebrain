@@ -29,7 +29,7 @@ and the briefing's section 11 says how it keeps the page current. Keep all three
 | **Person in charge** | The user |
 | **Runs on** | A Claude Code scheduled task (fresh cloud session each time), with email and phone notices turned on and no connectors |
 
-**How the summary reaches the user:** the scheduled task's own completion notice (email and phone), sent by claude.ai to the account's email, the user's personal address jeremydrane2021@gmail.com. Never use the Gmail connector or the work address (jeremy@audiopool.io): the user wants this work kept on their personal email only (decided 2026-10-14).
+**How the summary reaches the user:** the scheduled task's own completion notice (email and phone), sent by claude.ai to the account's email, the user's personal email. Never use the Gmail connector or the work address: the user wants this work kept on their personal email only (decided 2026-10-14).
 
 ## 1. Read what we already know
 - Open `memos/bank-business.md`: note its "As of" date, the latest quarter it covers and its sources.

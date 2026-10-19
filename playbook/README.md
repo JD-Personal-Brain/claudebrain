@@ -1,9 +1,9 @@
 # Playbook: the field manual under the product machine
 
 Page 4 of the four "How we deliver" pages. The Product Workflow
-(`memos/role-workflow.md`) shows the steps, the Product Framework
-(`product-framework.md`) sets the rules, and the Product Machine
-(`product-machine.md`) marks each task Auto, Draft, Me or Partner. This folder
+shows the steps, the Product Framework
+sets the rules, and the Product Machine
+marks each task Auto, Draft, Me or Partner. This folder
 says **how to do it the first time**, sub-step by sub-step, and what to watch so
 the second time can be automated.
 
@@ -32,7 +32,7 @@ in order, and fill in its **first-time log** as you go.
 - **Output:** what it produces (a document, a number, a decision).
 - **Done when:** how to tell it's finished.
 - **Automation watch:** what to note while doing it, the agent it could become, the kind to use the first time and the kind to aim for (Auto, Draft or Me).
-- **For the RM Assistant:** a short worked example from the first project. Where it cites the "memo" (a section, a step or Appendix A), that means the full RM plan, `memos/rm-analytics-framework.md`, read in RM Detail, Part 5.
+- **For the RM Assistant:** a short worked example from the first project. Where it cites the "memo" (a section, a step or Appendix A), that means the full RM plan, in RM Detail, Part 5.
 
 ## The first-time log (fill in for every sub-step)
 This is what makes automation possible later: you can't automate work you
@@ -58,7 +58,7 @@ finish, hours and waits), so the machine's measures can be counted every time.
 - **No client data in an AI tool the bank hasn't approved**, even for a quick test.
 - **Guesses about the bank are marked ⚠️** until confirmed. Replace them with facts as I learn them, and note the source.
 - **Numbers we don't have yet are [X].** Never invent them.
-- **At the gate,** run the automation check from `product-machine.md` on every Me and Draft task (cut first, then automate), and update the step's table there.
+- **At the gate,** run the automation check from the Product Machine on every Me and Draft task (cut first, then automate), and update the step's table there.
 - **Gates are decided in writing when they're clean:** if every criterion is met, the decider approves the gate pack in writing and the approval goes in the decision log; a meeting happens only when a criterion is contested or a decider asks for one. Partner sign-offs in step 4 don't change, and at the step 4 gate the risk partner and the sponsor approve the signed evidence pack (⚠️ the bank's approval policy may require a committee meeting).
 - **Every sub-step is our choice** (ask the product manager to change it) unless the table below says it comes from law, a regulator or bank policy. A sub-step that sets, builds, proves or watches a law or bank-policy control inherits that control's source. Law and bank policy are never deleted by the automation check.
 

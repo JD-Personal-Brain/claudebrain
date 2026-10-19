@@ -7,7 +7,7 @@
 This step never really ends: it runs every month for as long as the product
 lives. The last sub-step (6.6) improves the product machine itself, so the
 next project starts more automated than this one did. Fill in the first-time
-log (see `README.md`) for every sub-step.
+log (see the Product Playbook's opening page) for every sub-step.
 
 > ⚠️ **How much to trust this.** Written 2026-10-09 from my framework, the RM
 > memo and general practice, not from Associated Bank. Lines marked ⚠️ are
@@ -156,7 +156,7 @@ log (see `README.md`) for every sub-step.
 Run the automation check from the Product Machine on every Me and Draft task,
 using your first-time logs: cut first (should it exist, delete, simplify, make
 it faster), then automate what's left (repeat? stable? safe alone?). Then update this shortlist and the Measure and iterate
-table in `product-machine.md`.
+table on the Product Machine page.
 
 | Sub-step | Agent | First time | Aim for | Already specified? |
 |---|---|---|---|---|
@@ -169,6 +169,6 @@ table in `product-machine.md`.
 | 6.6 | M19 Log summarizer | Me | Draft | Yes, M19 |
 | 6.6 | None: improving the machine stays with a person | Me | Me | — |
 
-**First time** = how the task is done on the first project. **Aim for** = its kind in `product-machine.md`.
+**First time** = how the task is done on the first project. **Aim for** = its kind on the Product Machine page.
 
 _Last updated: 2026-10-18_

@@ -1,6 +1,6 @@
 # Product Machine: how one product manager runs many projects
 
-Claude loads this every session. It is the operating model: every task in
+It is the operating model: every task in
 every step, marked by who does it, and how the work moves toward automation.
 Page 3 of the four "How we deliver" pages: the Product Workflow
 (`memos/role-workflow.md`) shows the steps, the Product Framework
@@ -41,7 +41,7 @@ partners and users are outside it. Dashboards people open themselves don't count
 **1. Discover**
 | # | Task | Kind | Tool (guess) | Goes to |
 |---|---|---|---|---|
-| 1.0 | Agree the sponsor's role and who decides; brief the risk partner | Me | Meeting | Sponsor, risk |
+| 1.0 | Agree the sponsor's role and who decides; brief the risk partner (and the credit policy owner when a higher-risk path is likely) | Me | Meeting | Sponsor, risk |
 | 1.0 | Set up the tracker, decision log and project file | Draft | M1 Kickoff pack builder | Me |
 | 1.0 | Confirm the AI tools the team may use and record them in the project file | Me | Meeting with IT and risk | Project file |
 | 1.1 | Agree the outcome and measure | Me | Meeting | Sponsor |
@@ -74,7 +74,7 @@ partners and users are outside it. Dashboards people open themselves don't count
 | 2.8 | Scope release 1 and the pilot group | Me | Backlog tool | Sponsor, user leaders |
 | 2.8 | Record the long-term owner, or "to be decided" with a date to decide by | Me | Meeting | Sponsor |
 | 2.8 | Complete the brief and the gate pack | Draft | M6 Gate pack drafter | Sponsor |
-| Gate | Go/no-go | Me | In writing; a meeting only if contested | Sponsor, risk, data owner |
+| Gate | Go/no-go | Me | In writing; a meeting only if contested | Sponsor, risk, data owner; the credit policy owner on the higher-risk path |
 
 On the quick pass for a later feature wave, gates 1 and 2 are decided together in writing (Product Framework).
 
@@ -107,7 +107,7 @@ On the quick pass for a later feature wave, gates 1 and 2 are decided together i
 | 4.5 | Show the controls working to risk; confirm the release route and IT's approval of every connection | Me | Meeting, audit log | Risk, IT |
 | 4.6 | Confirm the vendor reviews | Me | Approved vendors list | Vendor risk |
 | 4.7 | Put together the evidence pack | Draft | M29 Evidence pack assembler | Me, then risk |
-| 4.7 | Send sign-off requests and chase them | Auto ⚠️ | M14 Sign-off router (Power Automate approvals) | Risk, compliance, privacy, security; the credit policy owner on the higher-risk path |
+| 4.7 | Send sign-off requests and chase them | Auto ⚠️ | M14 Sign-off router (Power Automate approvals) | Risk, compliance, privacy, security; the credit policy owner on the higher-risk path; credit risk for early warning rules |
 | 4.7 | The sign-offs themselves | Partner | — | Recorded in the tracker |
 | 4.7 | Unblock a stuck sign-off | Me | Meeting | — |
 | 4.8 | Draft the monitoring plan alongside 4.5 (it goes into the evidence pack), then finalise it | Draft | Monitoring plan template | Risk, operations |
@@ -164,13 +164,12 @@ The step 4 gate is a Partner decision: the risk partner's approval can't be over
 
 ## The automation check at every gate
 At each gate, before go/no-go, take every **Me** and **Draft** task through the
-check in this order: **cut first, then automate** (the order Elon Musk's
-"algorithm" uses; see the Elon Mode page). Automating a task that
+check in this order: **cut first, then automate** (see the Elon Mode page). Automating a task that
 shouldn't exist only locks in the waste.
 
 **First, cut:**
 1. **Should it exist?** Who required it, and where does the requirement come from: law or regulator, bank policy, or our choice (each control's "Comes from" line in the Controls Catalog or, for sub-steps and gates, "Where the requirements come from" in the Product Playbook)? Law and bank policy stay. Our choices can be challenged.
-2. **Can we delete it?** If yes, delete it, and record in the decision log what it did and who agreed. If nothing we delete ever has to come back, we aren't cutting enough (Musk's rule of thumb: about 1 in 10 comes back; ⚠️ sources give 10% or 20%).
+2. **Can we delete it?** If yes, delete it, and record in the decision log what it did and who agreed. If nothing we delete ever has to come back, we aren't cutting enough (a rule of thumb: about 1 in 10 comes back; ⚠️ sources give 10% or 20%, Elon Mode page).
 3. **Can we simplify it?** Fewer steps, fewer hand-offs, fewer people to wait on.
 4. **Can we make it faster?** Shorten the longest wait first; the wait index (below) shows where.
 
@@ -215,4 +214,4 @@ Every project keeps a light log per sub-step (start, finish, hours, waits); the 
 - **Stagger the gates.** No two gate packs from different projects land in the same week.
 - **Plan the product manager's week.** [X] hours on decisions and gates, [X] on users, [X] on partners and sign-offs, [X] checking drafts. If person-only work runs over, the automation check comes first.
 
-_Last updated: 2026-10-18_
+_Last updated: 2026-10-19_

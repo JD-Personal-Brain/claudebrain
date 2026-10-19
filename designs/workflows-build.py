@@ -2,7 +2,7 @@
 left-to-right spine of stages, with its sub-processes branching underneath.
 Click a branch to see its details. Reads memos/role-workflow.md (each step's
 question, gate and governance thread, via pagekit.six_steps()), playbook/*.md,
-product-machine.md and the RM memo's Appendix B, so the maps never drift from the documents.
+product-machine.md and the RM and PM memos' Appendix B, so the maps never drift from the documents.
 Run: python3 designs/workflows-build.py"""
 import os, re
 from pagekit import CSS, E, inline, chipify, six_steps, WORKFLOW_URL, STEPS_URL, PLAYBOOK_URL, link_refs
@@ -10,6 +10,7 @@ from pagekit import CSS, E, inline, chipify, six_steps, WORKFLOW_URL, STEPS_URL,
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 read = lambda p: open(os.path.join(ROOT, p)).read()
 RM_PLAN_URL = "https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n"  # RM Detail, which holds the full plan and its Appendix B
+PM_PLAN_URL = "https://claude.ai/artifact/KZ4PEbhCPAj6uWKXmJMCeg"  # PM Detail, the same for portfolio managers
 SIX = six_steps()  # each step's question, governance thread and gate come from the Product Workflow, their one home
 
 # ---------- Map 1: delivering a product (six steps -> 44 sub-steps) ----------
@@ -57,21 +58,25 @@ for fn in sorted(f for f in os.listdir(os.path.join(ROOT, "playbook")) if re.mat
     stages1.append({"n": n, "name": name, "q": q, "gate": gate, "gov": gov, "branches": branches})
 
 # ---------- Map 2: an RM's week (The RM Assistant's workflows) ----------
-memo = read("memos/rm-analytics-framework.md")
-appb = memo.split("## Appendix B: Workflows")[1]
-flows = {}
-for block in re.split(r"\n\*\*(?=B\d+\. )", appb)[1:]:
-    head, _, body = block.partition("\n")
-    m = re.match(r"(B\d+)\. (.+?)\*\*\s*(?:\((.+?)\))?", head)
-    bid, title, wave = m.group(1), m.group(2).strip(), (m.group(3) or "").strip()
-    steps_txt = field(body, "Steps")
-    steps = [st.strip() for st in re.split(r"\s*\d+\.\s+", steps_txt) if st.strip()]
-    flows[bid] = {"id": bid.lower(), "num": bid, "title": title, "wave": wave,
-                  "trigger": field(body, "Trigger"), "steps": steps,
-                  "logged": field(body, "Logged"), "measures": field(body, "Measures"),
-                  "check": field(body, "Check"),
-                  "agents": sorted(set(re.findall(r"\b(?:A\d|M\d{1,2})\b", body)), key=lambda a: int(a[1:])),
-                  "link": f"{RM_PLAN_URL}#part-5-the-full-delivery-plan-with-every-appendix-b-workflows"}
+def parse_flows(src, url):
+    appb = read(src).split("## Appendix B: Workflows")[1]
+    flows = {}
+    for block in re.split(r"\n\*\*(?=B\d+\. )", appb)[1:]:
+        head, _, body = block.partition("\n")
+        m = re.match(r"(B\d+)\. (.+?)\*\*\s*(?:\((.+?)\))?", head)
+        bid, title, wave = m.group(1), m.group(2).strip(), (m.group(3) or "").strip()
+        steps_txt = field(body, "Steps")
+        steps = [st.strip() for st in re.split(r"\s*\d+\.\s+", steps_txt) if st.strip()]
+        flows[bid] = {"id": bid.lower(), "num": bid, "title": title, "wave": wave,
+                      "trigger": field(body, "Trigger"), "steps": steps,
+                      "logged": field(body, "Logged"), "measures": field(body, "Measures"),
+                      "check": field(body, "Check"),
+                      "agents": sorted(set(re.findall(r"\b(?:A\d{1,2}|M\d{1,2})\b", body)), key=lambda a: int(a[1:])),
+                      "link": f"{url}#part-5-the-full-delivery-plan-with-every-appendix-b-workflows",
+                      "detail": "RM Detail" if url == RM_PLAN_URL else "PM Detail"}
+    return flows
+flows = parse_flows("memos/rm-analytics-framework.md", RM_PLAN_URL)
+pm_flows = parse_flows("memos/pm-assistant-framework.md", PM_PLAN_URL)
 
 # The RM's week as the main process. This grouping is my framing of the
 # memo's workflows; confirm it with RMs in Discover.
@@ -89,6 +94,17 @@ missing = set(flows) - used
 if missing:
     raise SystemExit(f"Workflows not placed on the RM map: {sorted(missing)}")
 
+# A portfolio manager's (PM's) work as the main process: my framing too, to confirm with PMs in Discover.
+PM_STAGES = [
+    # Stage 1 is wave 1's first capability, so Map 3 opens on wave 1 like Map 2
+    ("1", "Gather the file", "Do I have everything about this borrower, with its source?", ["B10"]),
+    ("2", "Write the review or memo", "What do the numbers say, and what is my judgment?", ["B16", "B11", "B12"]),
+    ("3", "Watch the portfolio", "Which borrowers need my attention, and why?", ["B13", "B14"]),
+]
+pflat = [b for *_, bs in PM_STAGES for b in bs] + ["B15"]
+if len(pflat) != len(set(pflat)) or set(pm_flows) - set(pflat):
+    raise SystemExit(f"Every PM workflow must sit once on the PM map: {sorted(set(pm_flows) - set(pflat))}")
+
 # ---------- rendering ----------
 def chips(ts):
     seen, out = [], []
@@ -101,8 +117,11 @@ def chips(ts):
 def delivery_detail(b):
     tasks = "".join(f"<li>{chipify(k)} {inline(t)}</li>" for t, k in b["tasks"])
     auto = any(kind.split()[0] in ("Auto", "Draft") for _, kind in b["tasks"])
-    # Map 1 is for every product, so an RM plan product agent (A1, A2, A3, A5) says where it comes from
-    ag = ", ".join([a + " (a product agent in the RM plan)" if a.startswith("A") else a for a in b["agents"]] + [f"{a.replace(' (template)', '')} (a reusable template)" for a in b["assets"]])
+    # Map 1 is for every product, so a product agent says which plan it comes from: A1 to A6 RM, A7 and up PM
+    def plan_of(a):
+        m = re.match(r"A(\d+)", a)
+        return "PM" if m and int(m.group(1)) >= 7 else "RM"
+    ag = ", ".join([a + f" (a product agent in the {plan_of(a)} plan)" if a.startswith("A") else a for a in b["agents"]] + [f"{a.replace(' (template)', '')} (a reusable template)" for a in b["assets"]])
     if not ag:
         ag = "No named agent yet" if auto else "None: this stays with a person"
     return (f'<h4><span class="num">{b["num"]}</span> {inline(b["title"])}</h4>'
@@ -128,7 +147,7 @@ def rm_detail(f):
             f'<h5>Step by step</h5><ol class="flow">{steps}</ol>'
             f'<dl class="facts"><div><dt>Logged</dt><dd>{inline(f["logged"][:1].upper() + f["logged"][1:])}</dd></div>'
             f'<div><dt>Measured by</dt><dd>{inline(f["measures"][:1].upper() + f["measures"][1:])}</dd></div></dl>'
-            f'<a class="more" href="{E(f["link"])}" target="_blank" rel="noopener">Open the workflows in RM Detail</a>')
+            f'<a class="more" href="{E(f["link"])}" target="_blank" rel="noopener">Open the workflows in {f["detail"]}</a>')
 
 def spine_map(mid, stages, branch_html, detail_html, tag):
     cols = ""
@@ -158,9 +177,16 @@ rm_stages = [{"n": n, "name": nm, "q": q, "gate": "", "branches": [flows[b] for 
 map2 = spine_map("rm", rm_stages, r_branch, rm_detail, "Stage")
 b9 = flows["B9"]
 loop = (f'<div class="loop"><span class="label">Behind the scenes, every release</span>'
-        f'<button type="button" class="branch wide" data-map="rm" data-id="{b9["id"]}" aria-controls="rm-panel">{r_branch(b9)}</button>'
+        f'<button type="button" class="branch wide" id="{b9["id"]}" data-map="rm" data-id="{b9["id"]}" aria-controls="rm-panel">{r_branch(b9)}</button>'
         f'<p>Runs under every workflow above: no change reaches RMs until it passes the test set.</p></div>'
         f'<template id="t-{b9["id"]}">{rm_detail(b9)}</template>')
+pm_stages = [{"n": n, "name": nm, "q": q, "gate": "", "branches": [pm_flows[b] for b in bs]} for n, nm, q, bs in PM_STAGES]
+map3 = spine_map("pm", pm_stages, r_branch, rm_detail, "Stage")
+b15 = pm_flows["B15"]
+loop3 = (f'<div class="loop"><span class="label">Behind the scenes, every release</span>'
+        f'<button type="button" class="branch wide" id="{b15["id"]}" data-map="pm" data-id="{b15["id"]}" aria-controls="pm-panel">{r_branch(b15)}</button>'
+        f'<p>Runs under every workflow above: no change reaches PMs until it passes the test set, including every must-refuse case.</p></div>'
+        f'<template id="t-{b15["id"]}">{rm_detail(b15)}</template>')
 n_sub = sum(len(s["branches"]) for s in stages1)
 
 page = f'''<title>Workflow Maps</title>
@@ -217,11 +243,11 @@ page = f'''<title>Workflow Maps</title>
 <span class="label">Reference · workflows</span>
 <h1>Workflow Maps</h1>
 <p class="lede">Each main process runs left to right. The sub-processes hang underneath the stage where they happen. Click any box to see its details, then open the full document if you need more.</p>
-<nav class="stepnav" aria-label="Maps"><a href="#deliver">How we deliver a product</a><a href="#rm">How an RM uses the product</a></nav>
+<nav class="stepnav" aria-label="Maps"><a href="#deliver">How we deliver a product</a><a href="#rm">How an RM uses the product</a><a href="#pm">How a PM uses the product</a></nav>
 <nav class="stepnav" aria-label="Related pages"><a href="{WORKFLOW_URL}" target="_blank" rel="noopener">Product Workflow: the steps and their gates ↗</a><a href="{STEPS_URL}" target="_blank" rel="noopener">Steps Catalog: look up any sub-step ↗</a></nav>
 </div></div>
 <main class="wrap">
-<div class="howto"><span>Reading the maps:</span><span>Big navy box = a step (Map 1) or a stage of the RM's week (Map 2)</span><span>Small box = a sub-process</span><span><span class="chip k-auto">Auto</span><span class="chip k-draft">Draft</span><span class="chip k-me">Me</span><span class="chip k-partner">Partner</span> = who does its tasks</span><span>◆ = a go/no-go gate</span><span><span class="govkey">Governance</span> = the risk work in that step</span></div>
+<div class="howto"><span>Reading the maps:</span><span>Big navy box = a step (Map 1) or a stage of the user's work (Maps 2 and 3)</span><span>Small box = a sub-process</span><span><span class="chip k-auto">Auto</span><span class="chip k-draft">Draft</span><span class="chip k-me">Me</span><span class="chip k-partner">Partner</span> = who does its tasks</span><span>◆ = a go/no-go gate</span><span><span class="govkey">Governance</span> = the risk work in that step</span></div>
 <section id="deliver" class="mapwrap">
 <div class="stephead"><span class="label">Map 1 · every product</span><h2>How we deliver a product</h2>
 <p class="intro" style="margin-top:6px;color:var(--muted)">The six steps of the Product Workflow, each ending in a gate, with its {n_sub} sub-steps underneath and the governance thread (the risk work) under each gate. After the first pass, steps 3 to 6 repeat in short cycles.</p></div>
@@ -234,7 +260,14 @@ page = f'''<title>Workflow Maps</title>
 {map2}
 {loop}
 </section>
-<footer>Built from <code>memos/role-workflow.md</code> (each step's question, gate and governance thread), <code>playbook/</code>, <code>product-machine.md</code> and the RM memo's Appendix B by <code>designs/workflows-build.py</code>. Tasks marked ⚠️ depend on the bank allowing automations.</footer>
+<section id="pm" class="mapwrap">
+<div class="stephead"><span class="label">Map 3 · The PM Assistant</span><h2>How a PM uses the product</h2>
+<p class="intro" style="margin-top:6px;color:var(--muted)">A portfolio manager's (PM's) work, with each of the product's workflows placed where it helps. Every PM-facing workflow (B10 to B14 and B16) has a point where the PM decides; the assistant never rates, approves, declines or prices credit. B15 is the release routine behind them.</p></div>
+<div class="note">⚠️ Grouping the workflows into these three stages is my framing of the first-cut plan (2026-10-19). Confirm it with PMs in Discover.</div>
+{map3}
+{loop3}
+</section>
+<footer>Built from <code>memos/role-workflow.md</code> (each step's question, gate and governance thread), <code>playbook/</code>, <code>product-machine.md</code> and the RM and PM memos' Appendix B by <code>designs/workflows-build.py</code>. Tasks marked ⚠️ depend on the bank allowing automations.</footer>
 </main>
 <script>
 (function(){{
@@ -250,7 +283,7 @@ page = f'''<title>Workflow Maps</title>
     b.setAttribute('aria-pressed','false');
     b.addEventListener('click',function(){{show(b);}});
   }});
-  ['deliver','rm'].forEach(function(m){{var f=document.querySelector('.branch[data-map="'+m+'"]'); if(f) f.setAttribute('aria-pressed','true');}});
+  ['deliver','rm','pm'].forEach(function(m){{var f=document.querySelector('.branch[data-map="'+m+'"]'); if(f) f.setAttribute('aria-pressed','true');}});
   // a link from another page that names a sub-step (#d3-1) shows that sub-step's details
   function openHash(){{var h=location.hash&&document.getElementById(decodeURIComponent(location.hash.slice(1))); if(h&&h.classList.contains('branch')) show(h);}}
   openHash(); window.addEventListener('hashchange',openHash);

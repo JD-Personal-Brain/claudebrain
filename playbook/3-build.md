@@ -6,7 +6,7 @@
 
 Build runs in short cycles: build a piece, test it, show users, repeat.
 Start the test set (3.6) on day one, not at the end. Fill in the first-time
-log (see `README.md`) for every sub-step.
+log (see the Product Playbook's opening page) for every sub-step.
 
 > ⚠️ **How much to trust this.** Written 2026-10-09 from my framework, the RM
 > memo and general practice, not from Associated Bank. In this step platform
@@ -21,10 +21,10 @@ log (see `README.md`) for every sub-step.
 - **Why it matters:** a one-page design stops each team building its own idea of the product.
 - **Know first:**
   - The release 1 scope, data contract and control requirements from Define.
-  - The AI principles in `product-framework.md`: assistive first, one job each, built where the work happens.
+  - The AI principles in the Product Framework: assistive first, one job each, built where the work happens.
 - **First time, step by step:**
   1. Draw the flow on one page: data in → logic → AI writing → where the user sees it → feedback back in.
-  2. For each AI piece, write an agent spec: mission, inputs, allowed actions, outputs, stop condition, proof it worked, person in charge, and the AI model it uses, from the bank's approved list. The agent library (`playbook/agents.md`) is the pattern.
+  2. For each AI piece, write an agent spec: mission, inputs, allowed actions, outputs, stop condition, proof it worked, person in charge, and the AI model it uses, from the bank's approved list. The Agent Library is the pattern.
   3. Keep every agent read-only unless a user clicks to approve an action.
   4. Give each agent a stop rule: if its inputs are missing, stale or fail a check, it stops and alerts its owner instead of guessing.
   5. Review the design with the platform team and the risk partner.
@@ -69,7 +69,7 @@ log (see `README.md`) for every sub-step.
   2. Have them built as rules or scores, not as AI.
   3. Build only on the approved model named in the design (3.1).
   4. Use AI only to explain each result in plain English and suggest a next step, citing the numbers.
-  5. Write the prompts using `prompting.md`, and keep every version.
+  5. Write the prompts using the Prompting Guide, and keep every version.
   6. Check 10 to 20 outputs by hand with a user after every change.
   7. **If the product works from documents,** "simple rules first" means retrieval first: the AI answers only from the documents it finds (retrieval with sources), quotes or cites each one, and says so when nothing answers the question.
 - **Output:** working rules and prompts, with every version kept.
@@ -181,7 +181,7 @@ log (see `README.md`) for every sub-step.
 Run the automation check from the Product Machine on every Me and Draft task,
 using your first-time logs: cut first (should it exist, delete, simplify, make
 it faster), then automate what's left (repeat? stable? safe alone?). Then update this shortlist and the Build
-table in `product-machine.md`.
+table on the Product Machine page.
 
 | Sub-step | Agent | First time | Aim for | Already specified? |
 |---|---|---|---|---|
@@ -194,6 +194,6 @@ table in `product-machine.md`.
 | 3.7 | M26 Test grader | Draft | Auto | Yes, M26 |
 | 3.7 | M6 Gate pack drafter | Draft | Draft | Yes, M6 |
 
-**First time** = how the task is done on the first project. **Aim for** = its kind in `product-machine.md`.
+**First time** = how the task is done on the first project. **Aim for** = its kind on the Product Machine page.
 
 _Last updated: 2026-10-18_

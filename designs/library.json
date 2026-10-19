@@ -128,32 +128,66 @@
     {
       "id": "credit",
       "name": "Portfolio managers",
-      "why": "Portfolio managers (PMs): the bank's credit people paired with RMs, and the credit team around them.",
+      "why": "Portfolio managers (PMs): the bank's credit people paired with RMs (from its job postings), and the credit team around them.",
       "items": [
         {
-          "todo": true,
-          "name": "Portfolio manager user workflow: today and with AI",
-          "what": "How PMs work today, where each AI product fits, and how their work changes.",
-          "status": "To build"
+          "id": "pm-executive-summary",
+          "kit": "leader-brief",
+          "name": "PM Executive Summary",
+          "what": "Start here. The portfolio manager work on one page for the leaders of the credit business: the problem, the product, what PMs get first, the value, how fast and what I need.",
+          "status": "Draft",
+          "url": "https://claude.ai/artifact/Cvw3mkUohNFLwVr4H2wURd",
+          "source": "memos/pm-executive-summary.md"
         },
         {
-          "todo": true,
-          "name": "Portfolio manager plan",
-          "what": "The portfolio manager plan, built the same way as the RM plan.",
-          "status": "Later"
+          "id": "pm-assistant",
+          "kit": "product",
+          "name": "The PM Assistant",
+          "what": "The product: one AI assistant for each PM, its limits, its capabilities by moment in the PM's work and the credit core use case each answers.",
+          "status": "Draft",
+          "url": "https://claude.ai/artifact/BrBLWQzQggQPtqCgLLGf3C",
+          "source": "memos/pm-assistant.md"
+        },
+        {
+          "id": "pm-plan",
+          "kit": "plan",
+          "name": "PM Assistant Plan",
+          "what": "How The PM Assistant gets delivered: the first 13 weeks as a chart, what could slow us down, who decides, how we prove the value and the risks.",
+          "status": "Draft",
+          "url": "https://claude.ai/artifact/UKMBCCxBns8YuCJyEo4Zkv",
+          "source": "memos/pm-plan.md"
+        },
+        {
+          "id": "pm-prototype",
+          "name": "PM Assistant Prototype",
+          "what": "The PM Assistant as a clickable prototype (version 5): the industry background draft, the borrower file, the review and memo drafts and an early warning preview, with at least three agents running live on Claude on sample borrowers, the controls working, and a 2-minute voiced tour.",
+          "status": "Draft",
+          "url": "https://claude.ai/artifact/8vFxUWVwtZbzZs7pL162HE",
+          "source": "prototypes/pm-assistant/"
+        },
+        {
+          "id": "pm-ai-reference",
+          "kit": "detail",
+          "name": "PM Detail",
+          "what": "Everything about the PM work in one document, for an AI to read: give it to an AI for the full picture. Built from the working files.",
+          "status": "Reference",
+          "url": "https://claude.ai/artifact/KZ4PEbhCPAj6uWKXmJMCeg",
+          "source": "designs/pm-ai-build.py"
         }
-      ]
+      ],
+      "numbered": true,
+      "kit": true
     },
     {
       "id": "reference",
       "name": "Reference",
-      "why": "Pages to look things up in, in the order of the process: our words, the steps, the workflows, the agents and the controls. Claude keeps them in line with the plans.",
+      "why": "Pages to look things up in, in the order of the process: our words, the steps, the workflows, the agents and the controls. Kept in line with the plans by the audit.",
       "items": [
         {
           "id": "glossary",
           "name": "Glossary",
           "what": "The words we use, one meaning each, the old wording we've retired, and the bank's terms still to map.",
-          "count": "75 terms",
+          "count": "83 terms",
           "status": "Reference",
           "url": "https://claude.ai/artifact/LRQHSz65beh9XewB6qsQvQ",
           "source": "glossary.md"
@@ -171,19 +205,19 @@
           "id": "workflows",
           "name": "Workflow Maps",
           "what": "Each process drawn left to right, with its sub-processes branching off. Click any box for details.",
-          "count": "2 maps · 53 branches",
+          "count": "3 maps · 60 branches",
           "status": "Reference",
           "url": "https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX",
-          "source": "memos/role-workflow.md, playbook/, product-machine.md, RM memo Appendix B"
+          "source": "memos/role-workflow.md, playbook/, product-machine.md, RM and PM memos Appendix B"
         },
         {
           "id": "agents",
           "name": "Agent Library",
           "what": "Every agent in one place: what it does, what it may and may not do, and who's in charge. Filter by step or by who it serves.",
-          "count": "38 agents",
+          "count": "43 agents",
           "status": "Reference",
           "url": "https://claude.ai/artifact/Cn9nANQoqp2BP7yrmy61zn",
-          "source": "playbook/agents.md, RM memo Appendix A"
+          "source": "playbook/agents.md, RM and PM memos Appendix A"
         },
         {
           "id": "controls",
@@ -254,8 +288,8 @@
         {
           "id": "prompt-library",
           "name": "Prompt Library",
-          "what": "Our core prompts in one place, each with its version and what changed: the use case kit, a full product memo, the bank briefing and the showcase prototype.",
-          "count": "4 prompts",
+          "what": "Our core prompts in one place, each with its version and what changed: the use case kit, a full product memo, the bank briefing, the showcase prototype, and copying a user group's work to the next.",
+          "count": "5 prompts",
           "status": "In use",
           "url": "https://claude.ai/artifact/W96baXJf665MJ4qtHmkrks",
           "source": "prompt-library.md"

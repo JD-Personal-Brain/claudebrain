@@ -42,7 +42,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 
 ### K3. AI drafts or flags; a named credit officer decides
 - **Group:** People in charge
-- **What it is:** the AI may draft or flag credit work (a credit memo draft, an early-warning flag), but a named credit officer makes every credit decision, and the product never sets or suggests a price (restating terms a person already proposed, from the deal file, is allowed). A borrower's credit risk rating stays out of the first feature waves (closed item C33); whether a draft may carry a recommendation is decided at 2.4 with the credit policy owner, and the test set (3.6) follows that decision. The intake says plainly what the product does not do. A product whose output informs a credit decision takes the **higher-risk path** in step 4, set at 2.4. For the RM Assistant, any insight that suggests a credit product goes to compliance review. (Restated 2026-10-15, gap 4 from the audit, so credit memo drafts can be built.)
+- **What it is:** the AI may draft or flag credit work (a credit memo draft, an early-warning flag), but a named credit officer makes every credit decision, and the product never sets or suggests a price (restating terms a person already proposed, from the deal file, is allowed). A borrower risk rating stays out of the first feature waves (agreed 2026-10-15); whether a draft may carry a recommendation is decided at 2.4 with the credit policy owner, and the test set (3.6) follows that decision. The intake says plainly what the product does not do. A product whose output informs a credit decision takes the **higher-risk path** in step 4, set at 2.4. For the RM Assistant, any insight that suggests a credit product goes to compliance review. For the PM Assistant, the review and memo drafts and the early warning flags take the higher-risk path; whether the borrower file does is the risk partner's call at 2.4; deal screening and line-size suggestions are rated at 2.4 before they are specified. (Restated 2026-10-15, so credit memo drafts can be built.)
 - **Why it matters:** fair-lending rules apply to business credit too, and they set a much higher bar.
 - **Set in:** 2.4 (including whether the product takes the higher-risk path)
 - **Built in:** 3.6 (test cases the product must refuse). Guardrails for this, and showing the named credit officer on each credit draft, are not covered in the playbook yet
@@ -60,7 +60,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 - **Built in:** 3.2, 3.4, 3.6
 - **Proved in:** 3.7, 4.2, 4.3
 - **Watched in:** 6.3
-- **Tool (guess):** Snowflake access rules and Salesforce sharing rules
+- **Tool (guess):** Snowflake access rules and Salesforce sharing rules; document-store permissions and per-borrower filters on any document index
 - **Proof:** a test where one user tries to see another user's clients and fails
 - **Comes from:** Bank policy: the bank's access rules and client confidentiality ⚠️; customer privacy law (the Gramm-Leach-Bliley Act) covers individuals' personal (consumer) relationships with the bank; whether it reaches business owners' and guarantors' data in commercial lending is for privacy to confirm ⚠️. Bank policy protects it either way. To change it, ask privacy.
 
@@ -139,7 +139,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 ### K11. A fairness check
 - **Group:** Quality
 - **What it is:** a check that the product treats similar clients alike, reviewed by compliance.
-- **Why it matters:** an AI that surfaces opportunities for some kinds of client and not others can create a fair-lending risk if the opportunities touch credit, and a reputational risk either way.
+- **Why it matters:** an AI that surfaces opportunities for some kinds of client and not others can create a fair-lending risk if the opportunities touch credit, and a reputational risk either way, or if credit drafts or flags are less accurate or complete for some borrowers than others.
 - **Set in:** 4.4 (the groups and thresholds are agreed with compliance)
 - **Built in:** 4.4
 - **Proved in:** 4.4
@@ -316,4 +316,4 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 - **Proof:** a test where an agent is given a missing or stale input on purpose and stops with an alert
 - **Comes from:** Our choice: our agent specs. To change it, ask the product manager.
 
-_Last updated: 2026-10-18_
+_Last updated: 2026-10-19_

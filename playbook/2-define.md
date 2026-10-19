@@ -6,7 +6,7 @@
 
 Work through 2.1 to 2.8. 2.3 (data) and 2.4 (risk) take the longest because
 they wait on other people, so **start both in your first week**, alongside 2.1.
-Fill in the first-time log (see `README.md`) for every sub-step.
+Fill in the first-time log (see the Product Playbook's opening page) for every sub-step.
 
 > ⚠️ **How much to trust this.** Written 2026-10-09 from my framework, the RM
 > memo and general practice, not from Associated Bank. Lines marked ⚠️ are
@@ -40,7 +40,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
 - **Why it matters:** the platform decides what's possible, what it costs, which approvals apply and how fast you can pilot.
 - **Know first:**
   - Where users spend their day (from 1.3 and 1.4).
-  - The "pick the layer" rule of thumb in `tech-stack.md`.
+  - The "pick the layer" rule of thumb in the Tech Stack Guide.
   - Platform team contacts for Salesforce, Microsoft and AWS.
   - IT's data rules (DLP) for Power Platform connectors. ⚠️ Check these early, because they often block ideas.
 - **First time, step by step:**
@@ -91,7 +91,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
 - **Know first:**
   - The bank's AI or model risk intake process and form. ⚠️ Not known yet.
   - Your risk partner from 1.0.
-  - The governance basics in `tech-stack.md` (SR 11-7, possibly replaced by SR 26-2: item W16 in the Open Items log; privacy; fair lending).
+  - The governance basics in the Tech Stack Guide (SR 11-7, possibly replaced by SR 26-2: item W16 in the Open Items log; privacy; fair lending).
 - **First time, step by step:**
   1. Get the intake form and ask the risk partner how long a review usually takes.
   2. Fill it in from the brief so far (2.1) and the Discover gate pack: what the product does, which data (the first field list from 2.3), who uses it, what it can change, and whether anything reaches a client.
@@ -155,7 +155,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
 - **Goal:** decide how success is measured, how good is good enough, and whether it pays for itself.
 - **Why it matters:** this is what the Release and Measure gates will judge against. Set it now, before results come in, so no one moves the goalposts.
 - **Know first:**
-  - The five kinds of measures and the quality bar in `product-framework.md`.
+  - The five kinds of measures and the quality bar in the Product Framework.
   - The baseline and the first value model from 1.7.
   - A Finance contact, to agree how impact is counted.
 - **First time, step by step:**
@@ -200,7 +200,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
 
 ## The Define gate
 
-- **Who decides:** the sponsor, with the risk partner and the data owner (in writing when the gate is clean; a meeting only if a criterion is contested or a decider asks for one; see the Product Machine).
+- **Who decides:** the sponsor, with the risk partner and the data owner, and on the higher-risk path the credit policy owner (in writing when the gate is clean; a meeting only if a criterion is contested or a decider asks for one; see the Product Machine).
 - **Bring:** the gate pack from 2.8.
 - **Go means:** brief, data contract and risk rating agreed, and the value model shows payback within [X] months.
 - **No-go means:** fix the gap (often data or risk), or narrow the scope.
@@ -213,7 +213,7 @@ Fill in the first-time log (see `README.md`) for every sub-step.
 Run the automation check from the Product Machine on every Me and Draft task,
 using your first-time logs: cut first (should it exist, delete, simplify, make
 it faster), then automate what's left (repeat? stable? safe alone?). Then update this shortlist and the Define
-table in `product-machine.md`.
+table on the Product Machine page.
 
 | Sub-step | Agent | First time | Aim for | Already specified? |
 |---|---|---|---|---|
@@ -228,6 +228,6 @@ table in `product-machine.md`.
 | 2.8 | None: recording the long-term owner stays with a person | Me | Me | — |
 | 2.8 | M6 Gate pack drafter (shared with Discover) | Draft | Draft | Yes, M6 |
 
-**First time** = how the task is done on the first project. **Aim for** = its kind in `product-machine.md`.
+**First time** = how the task is done on the first project. **Aim for** = its kind on the Product Machine page.
 
-_Last updated: 2026-10-18_
+_Last updated: 2026-10-19_

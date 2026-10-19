@@ -5,7 +5,7 @@
 // Screenshots go to $SHOTS (default /tmp/rm-assistant-shots).
 const path = require("path"), fs = require("fs");
 const { chromium } = require(process.env.PW || "playwright");
-const FILE = path.resolve(process.argv[2] || "prototype-v4.html");
+const FILE = path.resolve(process.argv[2] || "prototype-v5.html");
 const SHOTS = process.env.SHOTS || "/tmp/rm-assistant-shots";
 fs.mkdirSync(SHOTS, { recursive: true });
 const URL = "file://" + FILE;
@@ -48,7 +48,7 @@ const check = (name, ok, proof) => { results.push({ name, ok: !!ok, proof }); co
   const browser = await chromium.launch();
   const errors = [];
 
-  // 1. The tour: starts on a first visit, about 2½ minutes with the voice (under 2:40), can be skipped and replayed, and speaks each step.
+  // 1. The tour: starts on a first visit, under 2 minutes with the voice, can be skipped and replayed, and speaks each step.
   {
     const ctx = await browser.newContext({ viewport: { width: 1280, height: 800 } });
     const p = await ctx.newPage(); p.on("pageerror", e => errors.push("tour: " + e.message));
@@ -65,7 +65,7 @@ const check = (name, ok, proof) => { results.push({ name, ok: !!ok, proof }); co
     await p.click("#tVoice"); const muted = await p.evaluate(() => window.TOUR.audio.paused && document.querySelector("#tVoice").textContent === "Voice off");
     await p.click("#tVoice");
     await p.screenshot({ path: `${SHOTS}/tour-step3.png` });
-    check("1. Tour starts on first visit, about 2½ minutes, skippable, replayable and spoken", visible && total < 160000 && hidden && notAgain && replay && step3.includes("3 of") && voice.playing && voice.src && muted,
+    check("1. Tour starts on first visit, under 2 minutes, skippable, replayable and spoken", visible && total < 120000 && hidden && notAgain && replay && step3.includes("3 of") && voice.playing && voice.src && muted,
       `starts=${visible}, length=${(total / 1000).toFixed(1)} s, skip=${hidden}, not again after skip=${notAgain}, replay=${replay}, ${step3}, voice playing=${voice.playing} (${voice.btn}), voice off works=${muted}`);
     await ctx.close();
   }
@@ -179,7 +179,7 @@ const check = (name, ok, proof) => { results.push({ name, ok: !!ok, proof }); co
     const c4 = await browser.newContext({ viewport: { width: 1280, height: 800 } }); const q = await c4.newPage();
     q.on("pageerror", e => errors.push("wave 2: " + e.message));
     await q.goto(URL + "#notour"); await q.waitForTimeout(800);
-    const today = await q.evaluate(() => ({ stats: [...document.querySelectorAll("#todayStats .big")].map(x => x.textContent), agenda: document.querySelectorAll("#todayAgenda li").length, todo: document.querySelectorAll("#todayTodo li").length }));
+    const today = await q.evaluate(() => ({ stats: [...document.querySelectorAll("#todayStats .big")].map(x => x.textContent), agenda: document.querySelectorAll("#todayAgenda li").length, todo: document.querySelectorAll("#todayTodo li").length, w2stats: document.querySelectorAll("#todayStats .w2tag").length, w2todo: document.querySelectorAll("#todayTodo .w2tag").length }));
     await q.click('#todayStats [data-go="warn"]'); const warnShown = await q.isVisible("#s-warn");
     const warn = await q.evaluate(() => ({ n: document.querySelectorAll("#warnList .wcard").length, high: document.querySelectorAll("#warnList .wcard.high").length, text: document.querySelector("#warnList").innerText }));
     await q.click('#warnList .wcard [data-w="call"]'); const planned = /added to your plan/.test(await q.textContent("#warnList"));
@@ -192,8 +192,8 @@ const check = (name, ok, proof) => { results.push({ name, ok: !!ok, proof }); co
     const logged = await q.evaluate(() => window.AGENTS.audit.filter(a => /referral|early warning/i.test(a.action)).length);
     await q.click('#nav button[data-screen="today"]'); const after = await q.evaluate(() => [...document.querySelectorAll("#todayStats .big")].map(x => x.textContent));
     const noCredit = !/approv|credit limit|loan amount/i.test(warn.text);
-    check("10. Today, early warning and referrals: flags with their numbers, the RM decides, every action logged", todayFirst && today.agenda >= 2 && today.todo >= 3 && warnShown && warn.n >= 2 && warn.high >= 1 && planned && refs >= 2 && g === 0 && accepted && logged >= 2 && after[2] !== today.stats[2] && noCredit,
-      `Today opens first with 4 numbers (${today.stats.join(", ")}), ${today.agenda} meetings, ${today.todo} to-dos; ${warn.n} early warnings (${warn.high} to check this week); ${refs} referrals, the draft passes the guardrail scan, sent and accepted; ${logged} actions logged; Today updates after (${after.join(", ")})`);
+    check("10. Today, early warning and referrals: flags with their numbers, the RM decides, every action logged", todayFirst && today.w2stats === 2 && today.w2todo >= 2 && today.agenda >= 2 && today.todo >= 3 && warnShown && warn.n >= 2 && warn.high >= 1 && planned && refs >= 2 && g === 0 && accepted && logged >= 2 && after[2] !== today.stats[2] && noCredit,
+      `Today opens first with 4 numbers (${today.stats.join(", ")}; ${today.w2stats} tagged Wave 2 preview, and ${today.w2todo} to-dos), ${today.agenda} meetings, ${today.todo} to-dos; ${warn.n} early warnings (${warn.high} to check this week); ${refs} referrals, the draft passes the guardrail scan, sent and accepted; ${logged} actions logged; Today updates after (${after.join(", ")})`);
     await c4.close();
   }
 

@@ -111,15 +111,15 @@
     const refs = referrals().filter(x => !refState[x.c.id]).length;
     $("#todayStats").innerHTML = [
       [listLeft, "clients worth a call", "list"], [meets.length, meets.length === 1 ? "meeting this week" : "meetings this week", "brief"],
-      [warn, warn === 1 ? "client may be drifting" : "clients may be drifting", "warn"], [refs, refs === 1 ? "referral to make" : "referrals to make", "refer"]
-    ].map(([n, t, s]) => `<button type="button" class="tstat" data-go="${s}"><span class="big">${n}</span><span>${t}</span></button>`).join("");
+      [warn, warn === 1 ? "client may be drifting" : "clients may be drifting", "warn", true], [refs, refs === 1 ? "referral to make" : "referrals to make", "refer", true]
+    ].map(([n, t, s, w2]) => `<button type="button" class="tstat" data-go="${s}"><span class="big">${n}</span><span>${t}</span>${w2 ? `<span class="w2tag">Wave 2 preview</span>` : ""}</button>`).join("");   // wave 2 items carry a tag, as in the PM prototype
     $("#todayAgenda").innerHTML = meets.map(({ c, mt }) => `<li><span class="when">${esc(fmtDay(mt.date))}<br><b>${fmtTime(mt.time)}</b></span><span class="what"><b>${esc(c.name)}</b><br><small>${esc(mt.purpose)} · ${esc(mt.where)}</small></span>${c.id === "C101" ? `<button type="button" class="btn btn-sm btn-primary" data-go="brief">Brief ready</button>` : `<button type="button" class="btn btn-sm" data-go="brief">Prepare</button>`}</li>`).join("");
     const todo = [];
     if (followWaiting) todo.push(["Approve the follow-up for Lakeshore Precision Tooling", "followup", "Waiting for you"]);
     if (listLeft) todo.push([`Decide on ${listLeft} ${listLeft === 1 ? "suggestion" : "suggestions"} on the Monday list`, "list", "This week"]);
-    warnings().filter(x => !warnDone[x.c.id]).forEach(x => todo.push([`Check in with ${x.c.name}`, "warn", x.hits.length >= 2 ? "This week" : "Keep an eye on"]));
-    referrals().filter(x => !refState[x.c.id]).slice(0, 2).forEach(x => todo.push([`Refer ${x.c.name} to treasury`, "refer", "When you're ready"]));
-    $("#todayTodo").innerHTML = todo.map(([t, s, w]) => `<li><button type="button" data-go="${s}"><span>${esc(t)}</span><small>${esc(w)}</small></button></li>`).join("") || `<li class="muted">All clear. Time for clients.</li>`;
+    warnings().filter(x => !warnDone[x.c.id]).forEach(x => todo.push([`Check in with ${x.c.name}`, "warn", x.hits.length >= 2 ? "This week" : "Keep an eye on", true]));
+    referrals().filter(x => !refState[x.c.id]).slice(0, 2).forEach(x => todo.push([`Refer ${x.c.name} to treasury`, "refer", "When you're ready", true]));
+    $("#todayTodo").innerHTML = todo.map(([t, s, w, w2]) => `<li><button type="button" data-go="${s}"><span>${esc(t)}${w2 ? ` <span class="w2tag">Wave 2 preview</span>` : ""}</span><small>${esc(w)}</small></button></li>`).join("") || `<li class="muted">All clear. Time for clients.</li>`;
   }
   $("#s-today").addEventListener("click", e => { const b = e.target.closest("[data-go]"); if (b && window.APP) window.APP.show(b.dataset.go); });
 

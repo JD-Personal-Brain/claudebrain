@@ -6,7 +6,7 @@
 
 Adoption comes from changing how teams work, not from a training event. The
 core of this step is 5.3: building the product into a routine that managers
-already run. Fill in the first-time log (see `README.md`) for every sub-step.
+already run. Fill in the first-time log (see the Product Playbook's opening page) for every sub-step.
 
 > ⚠️ **How much to trust this.** Written 2026-10-09 from my framework, the RM
 > memo and general change-management practice, not from Associated Bank.
@@ -173,7 +173,7 @@ already run. Fill in the first-time log (see `README.md`) for every sub-step.
 Run the automation check from the Product Machine on every Me and Draft task,
 using your first-time logs: cut first (should it exist, delete, simplify, make
 it faster), then automate what's left (repeat? stable? safe alone?). Then update this shortlist and the Release and adopt
-table in `product-machine.md`.
+table on the Product Machine page.
 
 | Sub-step | Agent | First time | Aim for | Already specified? |
 |---|---|---|---|---|
@@ -191,7 +191,7 @@ table in `product-machine.md`.
 | 5.7 | None: confirming the long-term owner stays with a person | Me | Me | — |
 | 5.7 | M6 Gate pack drafter (shared) | Draft | Draft | Yes, M6 |
 
-**First time** = how the task is done on the first project. **Aim for** = its kind in `product-machine.md`.
+**First time** = how the task is done on the first project. **Aim for** = its kind on the Product Machine page.
 
 **Stays with a person:** working with managers on routines (5.3) and recruiting champions (5.5).
 

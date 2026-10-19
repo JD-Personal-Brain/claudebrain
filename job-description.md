@@ -1,10 +1,9 @@
 # Job description: Principal Applied AI Product Manager, Associated Bank
 
-Saved 2026-10-07 from the posting I pasted. Requisition JR106344.
+From the public posting (requisition JR106344), saved 2026-10-07.
 Benefits, equal-opportunity and legal boilerplate left out.
 
 - **Locations:** Minneapolis, Chicago, Omaha, Milwaukee, Green Bay. Remote, hybrid or on-site.
-- **Pay range (base):** $103,670 to $177,720 per year.
 
 ## The role in one line
 Discover, build and deliver AI-enabled products that improve revenue workflows,

@@ -2,11 +2,12 @@
 
 A clickable concept of **The RM Assistant**: one AI assistant for each relationship manager (RM).
 It shows the plan's wave 1 capabilities working, with three agents running live on Claude, on
-made-up sample data. It's a prototype to show we can build; the real product comes from the six
+made-up sample data. Current version: **5** (`prototype-v5.html`; versions 1 to 4 are kept unchanged). It's a prototype to show we can build; the real product comes from the six
 steps (Discover onward), so every fact about the bank in it is an assumption to confirm.
 
 - **Live page:** https://claude.ai/artifact/RFM2o7cdren3TxesQBsjky (private until shared from its Share menu)
-- **The tour as a video:** `rm-assistant-tour-v4.mp4` (version 4, about 2½ minutes, with a voiceover read by Kokoro, an open-source voice; the script is `video/narration.json`). The version 1 video is kept as `rm-assistant-tour-v1.mp4`.
+- **The tour as a video:** `rm-assistant-tour-v5.mp4` (version 5, under 2 minutes, with a voiceover read by Kokoro, an open-source voice; the script is `video/narration.json`). The version 1 and 4 videos are kept as `rm-assistant-tour-v1.mp4` and `rm-assistant-tour-v4.mp4`.
+- **One set with the PM Assistant Prototype** (`prototypes/pm-assistant/`, version 5): the same house style, a tour under 2 minutes, wave 2 items tagged "Wave 2 preview" on Today, and the same sticky approve bar.
 - **Built from:** Prompt 4 in `prompt-library.md`; the product page (`memos/rm-assistant.md`), agents A1 to A3 and
   workflows B1 to B4 in the full plan (`memos/rm-analytics-framework.md`); controls in `playbook/controls.md`.
 - **Added for the prototype only:** the outside data feed (the 10-year Treasury yield) and its "Rates context" rule. They
@@ -16,7 +17,7 @@ steps (Discover onward), so every fact about the bank in it is an assumption to 
 
 | Screen | Plan reference | What happens |
 |---|---|---|
-| Today (since version 4) | Ties the wave 1 capabilities together | The RM's day on one screen: four numbers to click, this week's meetings with their briefs, and what's waiting for a decision. |
+| Today (since version 4) | Ties the wave 1 capabilities together | The RM's day on one screen: four numbers to click, this week's meetings with their briefs, and what's waiting for a decision. The "clients may be drifting" and "referrals to make" numbers and the early warning and referral to-dos are tagged "Wave 2 preview" (version 5). |
 | Monday opportunity list | Workflow B1, agents A1 and A2 | A1 checks the 12 clients against 5 rules, plus the rates context (code, no AI). A2 (Claude) explains the top 5. The RM accepts, changes or dismisses each one. |
 | Pre-meeting client brief | Workflow B2, agent A3 | A3 (Claude) calls four page tools (client record, open insights, recent activity, market data), then writes a one-page brief with a source on every fact. |
 | Meeting follow-up | Workflows B3 and B4, agent A3 | A3 (Claude) turns the RM's notes into a recap, a follow-up email, a CRM call note and next steps. Nothing is saved until the RM approves; the RM sends the email. |
@@ -26,7 +27,7 @@ steps (Discover onward), so every fact about the bank in it is an assumption to 
 | Early warning (wave 2 preview, version 4) | Workflow B5 | Three rules in code (falling balances, payroll moved out, gone quiet) flag clients who may be drifting away, with a balance chart and the numbers. Never a credit signal. The RM plans a call or dismisses it. |
 | Refer to treasury (wave 2 preview, version 4) | Workflow B6 | The Signal finder's treasury rules spot needs the treasury team serves; a drafted hand-off the RM changes, sends or skips, tracked from spotted to accepted (sample: nothing leaves the page). |
 
-The **guided tour** plays on a first visit (under 2 minutes), and anyone can pause, skip or replay it.
+The **guided tour** plays on a first visit (15 voiced steps, under 2 minutes since version 5), and anyone can pause, skip, mute or replay it.
 
 ## How it works
 
@@ -71,9 +72,10 @@ The **guided tour** plays on a first visit (under 2 minutes), and anyone can pau
 1. Edit the files in `src/` (or refresh the outside data: `python3 scripts/fetch_market.py`).
 2. Build the next version: `python3 build.py 2` writes `prototype-v2.html`. Delivered versions are never
    overwritten, so every step is kept.
-3. Test it: `PW=/opt/node-tools/node_modules/playwright node tests/run-tests.js prototype-v2.html`
-   (screenshots go to `$SHOTS`).
+3. Test it: `PW=$(npm root -g)/playwright node tests/run-tests.js prototype-v2.html`
+   (screenshots go to `$SHOTS`; set `PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers` if Chromium isn't found). Check 1 fails if the tour runs 2 minutes or more.
 4. Add a line to `CHANGELOG.md`, publish the new file to the same page link, and save a draft to GitHub.
-- **Voice:** `voice/` holds the tour's voice, one MP3 per step (Kokoro, from `video/narration.json`) and their lengths; `build.py` puts them into the page.
+- **Voice:** `voice/` holds the tour's voice, one MP3 per step (Kokoro, from `video/narration.json`) and their lengths; `build.py` puts them into the page. Keep the clips under about 100 seconds in all so the tour and its video stay under 2 minutes. When you change a line, re-voice only that clip and update its length in `voice/lens.json`.
+- **Video:** `node tests/record-video.js prototype-v<N>.html` with `NARRATION=voice/lens.json` and `OUT=<folder>`, then `python3 video/make-video.py <folder> <clips folder> rm-assistant-tour-v<N>.mp4` (the clips folder holds the `.wav` clips and `lens.json`).
 
-_Last updated: 2026-10-18_
+_Last updated: 2026-10-19_

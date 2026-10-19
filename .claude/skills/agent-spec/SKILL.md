@@ -11,7 +11,7 @@ assistive first, one job each, read-only by default, every action logged.
 
 ## 1. Decide where it goes
 - **Runs the product machine on any project** (it helps the team do the work): the **agent library**, `playbook/agents.md`, numbered M1, M2 and so on.
-- **Part of one project's product, or only useful to that project:** that project memo's **Appendix A**, numbered A1, A2 and so on.
+- **Part of one project's product, or only useful to that project:** that project memo's **Appendix A**, numbered on from the last product agent of any project (A7 to A11 are the PM plan's), so no number means two things.
 - **Keeps my own reference pages current** (not part of the product machine): the "My research helpers" section at the end of `playbook/agents.md`, numbered H1, H2 and so on.
 
 ## 2. Fill in every field
@@ -43,7 +43,7 @@ assistive first, one job each, read-only by default, every action logged.
 ## 4. Update the references
 - In the playbook review table, change "Already specified?" from "New" to "Yes, M#" (or "Yes, A#").
 - If the agent changes how a task is done, update that task row's tool in `product-machine.md`.
-- Rebuild and republish the designed pages: the playbook page (`python3 designs/playbook-build.py`; it lists the general agents) and the Agent Library (`python3 designs/agents-build.py`). For a project agent in a memo's Appendix A, also rebuild RM Detail, which holds the full memo (`python3 designs/rm-ai-build.py`, then `python3 designs/md-page-build.py`). Then run `python3 .claude/skills/audit/check.py`.
+- Rebuild and republish the designed pages: the playbook page (`python3 designs/playbook-build.py`; it lists the general agents) and the Agent Library (`python3 designs/agents-build.py`). For a project agent in a memo's Appendix A, also rebuild RM Detail, which holds the full memo (`python3 designs/rm-ai-build.py`, then `python3 designs/md-page-build.py`) for the RM memo, or PM Detail (`python3 designs/pm-ai-build.py`) for the PM memo. Then run `python3 .claude/skills/audit/check.py`.
 
 ## 5. Audit, then merge
 Run the **audit** skill (rule R18) before offering to merge.

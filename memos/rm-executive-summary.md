@@ -10,7 +10,7 @@ RMs win the bank's commercial business, but at many commercial banks they spend 
 ## The product: The RM Assistant
 Each RM gets **their own AI assistant**, inside the tools we expect they already use (Salesforce, Teams and Outlook; ⚠️ to confirm). It helps the RM win business and frees up the time to win it. It drafts and suggests; **the RM always decides**. It never contacts a client on its own, never sets or suggests a price and never makes a credit decision. [What it is and all its capabilities](https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2).
 
-## What RMs get first (wave 1)
+## What RMs get first (feature wave 1)
 | Capability | What the RM gets | Why it matters |
 |---|---|---|
 | **Pre-meeting client brief** | One page before each client meeting: the relationship, recent activity, open opportunities, talking points | Less prep time, better meetings |
