@@ -236,4 +236,4 @@ The plans rest on these, but only someone at the bank can answer them. Ask once 
 | C59 | Read the three short RM pages: reviewed and good (said 2026-10-19); the RM pages are now In use in the Document Library | 2026-10-19 |
 | C60 | The RM mock-up: the RM Assistant Prototype, version 4, reviewed and good (said 2026-10-19) | 2026-10-19 |
 
-_Last updated: 2026-10-18_
+_Last updated: 2026-10-19_
