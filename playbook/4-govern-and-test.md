@@ -11,7 +11,7 @@ at once, so start 4.1, 4.2 and 4.6 on the first day. Fill in the first-time
 log (see `README.md`) for every sub-step.
 
 > ⚠️ **How much to trust this.** Written 2026-10-09 from my framework, the RM
-> memo and general US banking practice (SR 11-7 model risk guidance, possibly replaced by SR 26-2: item W17
+> memo and general US banking practice (SR 11-7 model risk guidance, possibly replaced by SR 26-2: item W16
 > in the Open Items log; NIST AI RMF; fair-lending law), not from Associated Bank's own process. The bank's
 > review steps, forms and timings are unknown, so every bank-specific line here
 > is a guess ⚠️. Replace them on the first project.

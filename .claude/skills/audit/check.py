@@ -109,7 +109,7 @@ for m in re.finditer(r'^\| ((?:Stage \d\. )?[A-Z][^|]+?) \| (\d+) \| [^|]+ \|$',
     sec=[x for x in secs if x.startswith(m.group(1).strip()+'\n')]
     rows=len(re.findall(r'^\| [A-Z]\d+ \|',sec[0],re.M)) if sec else -1
     if rows!=int(m.group(2)): print("open-items.md 'At a glance' count for",m.group(1).strip(),"should be",rows if rows>=0 else '(no such section)'); probs+=1
-if '## At a glance' not in oi or '## Stage 1.' not in oi or '## Closed' not in oi: print("open-items.md is missing one of its section headings (At a glance, Stage 1, Closed)"); probs+=1
+if '## At a glance' not in oi or '## Now' not in oi or '## Closed' not in oi: print("open-items.md is missing one of its section headings (At a glance, Now, Closed)"); probs+=1
 oi_live=oi.split('## Closed')[0]                                   # everything still open
 oi_rev=oi_work=oi_live
 where=lambda st: oi_live

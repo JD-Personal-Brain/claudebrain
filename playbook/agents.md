@@ -573,7 +573,7 @@ scheduled task, from a skill in this repo.
 - **Proof it worked:** the scheduled task's email notice in my personal inbox, the log entry and the draft branch.
 - **Person in charge:** me.
 - **Runs on (guess):** a Claude Code scheduled task, from the `bank-news-scout` skill (confirmed: set up and running).
-- **To confirm:** that the first weekly notice (Monday October 19) reaches my personal inbox, and that its runs don't stop to wait for an approval (open item W1).
+- **To confirm:** that the first weekly notice (Monday October 19) reaches my personal inbox, and that its runs don't stop to wait for an approval (open item C65).
 
 ## Not agents, but reusable assets
 These come up in the review tables but aren't agents. Each one is a template or

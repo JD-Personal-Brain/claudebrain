@@ -111,7 +111,7 @@ If a mistake happens again, its fix moves up a level:
 - **Rule:** R29 · **Test:** T36 · **Level:** 1 · **Times it happened:** 1
 
 ### L24 · 2026-10-14 · A merged branch kept an item number from the old numbering
-- **What happened:** I merged the bank news scout branch, which was written before the Open Items log was renumbered. I shifted the item numbers only in the files that clashed, so the scout's new news log still said "W4" for the Briefing re-run (by then W12, later W13). The audit's reviewer caught it as a Must fix.
+- **What happened:** I merged the bank news scout branch, which was written before the Open Items log was renumbered. I shifted the item numbers only in the files that clashed, so the scout's new news log still said "W1" for the Briefing re-run (by then W11, later W12). The audit's reviewer caught it as a Must fix.
 - **Root cause:** rule R23 says to sweep the whole repo when numbers change, but I swept only the files I was resolving. The files the branch added never clashed, so I never looked at them. Rule R23 failed, so this is a repeat of L20.
 - **Fix:** rule R23 is sharper and moves to the top: after any renumbering, and whenever a branch written under older numbers is merged, search every file (including files the branch adds) for each item number and check that each one still points to the right item.
 - **Rule:** R23 · **Test:** T27 · **Level:** 2 · **Times it happened:** 2
