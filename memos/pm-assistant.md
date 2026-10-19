@@ -1,6 +1,6 @@
 # The PM Assistant
 
-> ⚠️ **A working hypothesis** (first cut, 2026-10-19), built from outside research and public Associated job postings. The first interviews with the leaders of portfolio managers (PMs) and with PMs confirm or change it.
+> ⚠️ **A working hypothesis** (reviewed and agreed 2026-10-19), built from outside research and public Associated job postings. The first interviews with the leaders of portfolio managers (PMs) and with PMs confirm or change it.
 
 ## The product in one line
 Each PM gets **their own AI assistant**, inside the tools we expect they use (Word, Teams, the loan system and the bank's data; ⚠️ to confirm), to take the gathering and routine writing off their plate, so their time goes to credit judgment, and to spot weakening borrowers sooner. Its users are PMs and the credit analysts who support them; what they get back is time for judgment and for watching the portfolio. It starts with three **capabilities** and gains more, feature wave by feature wave. Every later AI product for PMs is a new capability of the same assistant.

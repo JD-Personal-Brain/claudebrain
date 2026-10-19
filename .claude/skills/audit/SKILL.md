@@ -48,7 +48,7 @@ where it is, a quote as proof, and the exact fix.
 5. **Logic:** would anything stall or go in a circle if someone followed it for real? Is each output used, and does each gate have what it needs?
 6. **Drift:** does each working copy (.md) match its designed page?
 7. **Plain English:** could a newcomer follow it (rule R2)? Include NOW.md: every "What's next" item must say what the thing is and why it matters, not just its name (from L10d).
-8. **Open items (scrub the whole log):** read every open item in `open-items.md`, not only the ones this session touched. For each: is it finished (then it belongs under "Closed" with the date), still open but changed (then its wording, "Who" or "Waits on" needs updating), or unchanged? Does it still match the file it came from? Did this session create anything unfinished that isn't in the log?
+8. **Open items (scrub the whole log):** read every open item in `open-items.md`, not only the ones this session touched. For each: is it finished (then it belongs under "Closed" with the date), still open but changed (then its wording, its "Owner" and "When" (or "Who" and "Waits on" in My workspace) need updating), or unchanged? Does it still match the file it came from? Did this session create anything unfinished that isn't in the log?
 
 ## 4. Fix
 - Fix every Must fix and Should fix. Fix Minor ones too, unless a fix would change a decision the user made.

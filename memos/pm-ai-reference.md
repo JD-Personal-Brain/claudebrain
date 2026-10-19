@@ -10,7 +10,7 @@ Working file: `memos/pm-executive-summary.md`.
 
 For the leaders of the credit business · Associated Bank · October 2026
 
-> ⚠️ **A working hypothesis** (first cut, 2026-10-19). Built from outside research and public Associated job postings, not yet from how the bank's portfolio managers (PMs) work today. The first conversations with credit leaders test it.
+> ⚠️ **A working hypothesis** (reviewed and agreed 2026-10-19). Built from outside research and public Associated job postings, not yet from how the bank's portfolio managers (PMs) work today. The first conversations with credit leaders test it.
 
 ### The problem
 PMs underwrite and monitor the bank's commercial loans (from the bank's job postings), but we expect much of their time goes to gathering financials from many systems, re-typing numbers and writing the routine parts of annual reviews and credit memos. At DBS, credit memos and related work take up to 40% of its bankers' time (DBS's estimate). ⚠️ How much of a PM's time they take here is a first question. Time spent assembling a review is time not spent judging the credit or watching for trouble.
@@ -55,7 +55,7 @@ To confirm in the first weeks: which firm writes the industry sections today, wh
 
 Working file: `memos/pm-assistant.md`.
 
-> ⚠️ **A working hypothesis** (first cut, 2026-10-19), built from outside research and public Associated job postings. The first interviews with the leaders of portfolio managers (PMs) and with PMs confirm or change it.
+> ⚠️ **A working hypothesis** (reviewed and agreed 2026-10-19), built from outside research and public Associated job postings. The first interviews with the leaders of portfolio managers (PMs) and with PMs confirm or change it.
 
 ### The product in one line
 Each PM gets **their own AI assistant**, inside the tools we expect they use (Word, Teams, the loan system and the bank's data; ⚠️ to confirm), to take the gathering and routine writing off their plate, so their time goes to credit judgment, and to spot weakening borrowers sooner. Its users are PMs and the credit analysts who support them; what they get back is time for judgment and for watching the portfolio. It starts with three **capabilities** and gains more, feature wave by feature wave. Every later AI product for PMs is a new capability of the same assistant.
@@ -100,7 +100,7 @@ Working file: `memos/pm-assistant-detail.md`.
 
 The detailed working file behind The PM Assistant page. People read the short page (The PM Assistant); this file goes into PM Detail.
 
-> ⚠️ **A hypothesis, not a plan yet** (first cut, 2026-10-19). Built from our commercial credit research, the Use Case Library and public Associated job postings, not from how the bank's portfolio managers work today. The first conversations with credit leaders test it; Discover confirms or changes the rest.
+> ⚠️ **A hypothesis, not a plan yet** (reviewed and agreed 2026-10-19). Built from our commercial credit research, the Use Case Library and public Associated job postings, not from how the bank's portfolio managers work today. The first conversations with credit leaders test it; Discover confirms or changes the rest.
 
 ### The product in one line
 Each portfolio manager (PM) gets **their own AI assistant**, inside the tools we expect the PM already uses (Word, Teams, the loan system and the bank's data; ⚠️ to confirm). Its job is to take the gathering and routine writing off the PM's plate, so the PM's time goes to credit judgment, and to spot weakening borrowers sooner. It starts with three **capabilities**, each doing one specific job in the PM's work, and gains more feature wave by feature wave. Every later AI product for PMs is a new capability of the same assistant.
@@ -631,7 +631,7 @@ Working file: `memos/use-case-library.md`.
 
 **The need in one line:** PMs are the bank's credit people paired with RMs. The value is in drafting credit memos and reviews and in monitoring credit quality, with a person always deciding. At DBS, credit memos and related work take up to 40% of its bankers' time (DBS's estimate); ⚠️ how much of a PM's time goes to them here is to confirm.
 
-> ⚠️ **A proposal, not yet agreed.** Each RM core use case has a credit counterpart; the pairing is our own, used in the PM plan's first cut (2026-10-19), not yet reviewed. Built from a web scan on 2026-10-13 through search summaries; the primary pages would not open.
+> ⚠️ **A proposal, not yet agreed.** Each RM core use case has a credit counterpart; the pairing is our own, used in the PM plan (reviewed 2026-10-19). Built from a web scan on 2026-10-13 through search summaries; the primary pages would not open.
 
 | Core use case (credit counterpart) | Where the value is | Outside evidence | Strength | Our AI product (wave) |
 |---|---|---|---|---|

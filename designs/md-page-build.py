@@ -8,6 +8,9 @@ from pagekit import CSS, E, inline, render_blocks, series, SERIES_CSS, link_refs
 # Pages whose ### headings get ids, so other pages can link straight to them (RM Detail: the plan links into it).
 ANCHORED = {"memos/rm-ai-reference.md", "memos/pm-ai-reference.md"}
 
+# Sections kept in the working copy but left off the page (Open Items: my own workspace items and the closed list).
+HIDDEN = {"open-items.md": ("My workspace", "Closed")}
+
 # Pages that are one of the four "How we deliver" pages get the reading-order strip.
 SERIES_KEY = {"product-framework.md": "framework"}
 
@@ -21,8 +24,8 @@ PAGES = [
      "Each technology in the job: what it is, how the bank likely uses it, and what I need to know."),
     ("job-description.md", "job-description.html", "Job Description", "Associated Bank · the role",
      "The Principal Applied AI Product Manager posting: what the role owns, what it requires, and the tools it names."),
-    ("open-items.md", "open-items.html", "Open Items", "My workspace · where things stand",
-     "Everything still open in one log: decisions and reviews waiting on me, work to do, questions for the bank, and what's parked."),
+    ("open-items.md", "open-items.html", "Open Items", "AI program · RMs and PMs",
+     "What is still open on the shared platform, the RM Assistant and the PM Assistant, and the decisions that cover both."),
     ("memos/bank-business.md", "bank-business.html", "Bank Business Briefing", "Associated Bank · the business",
      "How the bank earns money, the corporate segment in depth, and where AI work lines up with each revenue line."),
     ("prompting.md", "prompting.html", "Prompting Guide", "My workspace · working with Claude",
@@ -95,6 +98,7 @@ def build(src, out, name, label, lede, short=None):
     nav, secs = [], []
     for sec in sections:
         head, _, text = sec.partition("\n")
+        if head.strip() in HIDDEN.get(src, ()): continue
         sid = slug(head)
         nav.append(f'<a href="#{sid}">{inline((short or {}).get(head, head))}</a>')
         secs.append(f'<section id="{sid}"><div class="stephead"><h2>{inline(head)}</h2></div>'

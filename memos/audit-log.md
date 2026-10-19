@@ -93,6 +93,7 @@ saved history, so their counts are approximate.
 | 2026-10-10 | Deep audit before merging: every core document | 5 reviewers, second reviewer | About 60 | Fixed; rule R23 and the retired-wording check added |
 | 2026-10-10 | Alignment audit against the four reference pages | Reviewers per reference page | About 44 | Fixed; the alignment sweep became a standard audit step |
 | 2026-10-09 | The Product Playbook, all six steps | Reviewer, second reviewer | 20, then 8 follow-ups | Fixed; the audit became step 0 of every wrap-up |
+| 2026-10-19 | The PM work marked reviewed and in use (said 2026-10-19): the PM Executive Summary, The PM Assistant, the PM Assistant Plan and the PM Assistant Prototype set to In use in the Document Library (PM Detail stays Reference); "first cut" status wording updated in the PM working files, the glossary, the Use Case Library, the Bank Business Briefing, RM and PM Detail, the Open Items log (closed as C69) and NOW.md | Quick: checker, render check, nothing-lost | 0 findings; lost lines: 18, all the "first cut" and "not yet reviewed" wording reworded on purpose | Draft saved, waiting for my yes to merge |
 
 ## Entry: 2026-10-18, the RM, How we deliver and Reference sections, and Elon mode on the whole system
 

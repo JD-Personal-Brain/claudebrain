@@ -122,7 +122,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 - **Watched in:** 6.3
 - **Tool (guess):** a test grader agent
 - **Proof:** the test report for the version being released
-- **Comes from:** Law or regulator: the regulators' model risk guidance (SR 11-7, with the OCC's matching Bulletin 2011-12; possibly replaced by SR 26-2: item W16 in the Open Items log) expects testing; the thresholds themselves are our choice. ⚠️ Whether the bank treats this AI product as a "model" under its model risk policy is the bank's call. To change it, ask model risk.
+- **Comes from:** Law or regulator: the regulators' model risk guidance (SR 11-7, with the OCC's matching Bulletin 2011-12; possibly replaced by SR 26-2: item W4 in the Open Items log) expects testing; the thresholds themselves are our choice. ⚠️ Whether the bank treats this AI product as a "model" under its model risk policy is the bank's call. To change it, ask model risk.
 
 ### K10. Red-teaming
 - **Group:** Quality
