@@ -2,7 +2,7 @@
 
 For the leaders of the credit business · Associated Bank · October 2026
 
-> ⚠️ **A working hypothesis** (first cut, 2026-10-19). Built from outside research and public Associated job postings, not yet from how the bank's portfolio managers (PMs) work today. The first conversations with credit leaders test it.
+> ⚠️ **A working hypothesis** (reviewed and agreed 2026-10-19). Built from outside research and public Associated job postings, not yet from how the bank's portfolio managers (PMs) work today. The first conversations with credit leaders test it.
 
 ## The problem
 PMs underwrite and monitor the bank's commercial loans (from the bank's job postings), but we expect much of their time goes to gathering financials from many systems, re-typing numbers and writing the routine parts of annual reviews and credit memos. At DBS, credit memos and related work take up to 40% of its bankers' time (DBS's estimate). ⚠️ How much of a PM's time they take here is a first question. Time spent assembling a review is time not spent judging the credit or watching for trouble.

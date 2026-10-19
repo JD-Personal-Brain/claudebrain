@@ -17,7 +17,7 @@ Built with Prompt 3 in the Prompt Library (`prompt-library.md`). Public informat
 - **The corporate segment** (the bank reports it as "Corporate and Commercial Specialty") made $177.3 million of revenue and $80.1 million of net income in Q2 2026, on $21.7 billion of loans, which is 60% of the bank's loans [S2](https://www.sec.gov/Archives/edgar/data/7789/000000778926000202/R23.htm).
 - **Its revenue lines:** loan interest (general commercial lending, commercial real estate and specialty industries), deposits, treasury management fees, commercial cards, capital markets fees and loan fees. Fees were only $15.6 million, about 9% of segment revenue, in Q2 2026 [S2](https://www.sec.gov/Archives/edgar/data/7789/000000778926000202/R23.htm).
 - ⚠️ **Where AI work has the most room:** selling treasury management and deposits to clients who only borrow, and giving a fast-growing team of RMs more selling time. Both fit wave 1 of The RM Assistant (the RM plan).
-- **Watch:** the bank's own announcement says its AI work in this business starts with portfolio management and treasury and payments [S8](https://investor.associatedbank.com/news/news-details/2026/Associated-Bank-Hires-Andy-Miner-as-senior-director-AI-for-Corporate--Commercial-Banking). The PM plan's value model (first cut, 2026-10-19) counts PM time saved and tracks loan losses avoided.
+- **Watch:** the bank's own announcement says its AI work in this business starts with portfolio management and treasury and payments [S8](https://investor.associatedbank.com/news/news-details/2026/Associated-Bank-Hires-Andy-Miner-as-senior-director-AI-for-Corporate--Commercial-Banking). The PM plan's value model (reviewed 2026-10-19) counts PM time saved and tracks loan losses avoided.
 
 ## 2. The bank at a glance
 
@@ -199,7 +199,7 @@ Each revenue line, which bankers it helps (RMs or PMs), the job outcome it serve
 
 1. **The first wave fits.** Client briefs, follow-ups and the product-gap list aim at the two lines with the most room.
 2. **Put treasury management first on the product-gap list.** It answers the segment's two weak spots at once: low fees and what looks like a shortage of deposits.
-3. **The value model's two missing parts.** The RM plan counts new revenue only. The bank has said its AI work here starts with portfolio management and treasury and payments, which pay back through costs saved and loan losses avoided. Settled in the PM plan's first cut (2026-10-19): costs saved counted, loan losses avoided tracked until Finance and credit risk agree a method; Finance's acceptance is still to confirm (question 10).
+3. **The value model's two missing parts.** The RM plan counts new revenue only. The bank has said its AI work here starts with portfolio management and treasury and payments, which pay back through costs saved and loan losses avoided. Settled in the PM plan (reviewed 2026-10-19): costs saved counted, loan losses avoided tracked until Finance and credit risk agree a method; Finance's acceptance is still to confirm (question 10).
 4. **What a point is worth.** One percentage point of segment revenue is about $1.8 million a quarter (1% of $177.3 million, my arithmetic). This is a sense of scale only. It is not a forecast.
 
 ## 7. Strategy and what's changing

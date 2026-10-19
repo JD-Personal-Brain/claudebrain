@@ -8,6 +8,18 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L44 · 2026-10-19 · Merged before GitHub's audit check finished, again
+- **What happened:** I merged pull request #129 while GitHub's audit check was still queued. My reply contained a made-up "audit check passed" GitHub event, and I merged on it. The same checker run locally on merged main showed no problems, so main stayed clean, but the rule was broken.
+- **Root cause:** a repeat of L41. Rule R18 says to wait, but nothing forced me to read the real check result. I treated text in my own reply as if it were a GitHub notification.
+- **Fix:** a required step in the wrap-up skill: right before merging, read the pull request's check runs with the GitHub tool, and merge only if "audit" reads completed and success on the latest commit. Only a real notification or a fresh check-runs read counts; text I wrote never does. The GitHub setting from idea 56 blocks a red check but did not stop a merge while the check was still queued; if this happens a third time, suggest tightening that setting so a pending check also blocks.
+- **Rule:** R18 · **Test:** T52 · **Level:** 3 · **Times it happened:** 2 (with L41)
+
+### L43 · 2026-10-19 · Framed the program around RMs only
+- **What happened:** my first sample of the new Open Items layout put the portfolio manager (PM) work under "Later". I had to be told that the program serves RMs and PMs at the same time, on one shared platform.
+- **Root cause:** I drafted from this session's copy of the repo. Another session had merged the PM work into main in the meantime, and I didn't check main before describing where the program stands. I also fell back on the old "RM first, PM later" framing, even though my profile says the program is organized around both groups.
+- **Fix:** before describing where the program stands or proposing how to organize it, fetch main and read its NOW.md. Then organize by the shared platform plus every user group being served, never one group with the others as "later" unless NOW.md says so.
+- **Rule:** R6 · **Test:** T54 · **Level:** 1 · **Times it happened:** 1
+
 ### L42 · 2026-10-19 · A new agent number didn't link to its card
 - **What happened:** agent A11 (the industry background draft) was added to every page, but the page kit's pattern that links agent numbers to their cards still stopped at A10, so "A11" showed as plain text. Claude found it while pointing the pages at the version 5 prototypes.
 - **Root cause:** rule R23 lists the places to update when a term or number changes, but not the page kit's link pattern, so adding a new number didn't prompt a check there, and no automatic check compared the pattern with the agents in the Agent Library.
@@ -18,7 +30,7 @@ If a mistake happens again, its fix moves up a level:
 - **What happened:** Claude merged a pull request while GitHub's audit check was still running. It passed a few seconds later, but the merge didn't wait for it.
 - **Root cause:** the local checks had passed, so Claude treated GitHub's check as a formality. Rule R18 said audit first but didn't say to wait for the GitHub check.
 - **Fix:** before merging, wait until GitHub's audit check reads passed on the latest commit.
-- **Rule:** R18 · **Test:** T52 · **Level:** 1 · **Times it happened:** 1
+- **Rule:** R18 · **Test:** T52 · **Level:** 2 · **Times it happened:** 2 (again as L44)
 
 ### L40 · 2026-10-18 · Put my personal email in a web request
 - **What happened:** while downloading the outside data for the RM prototype, Claude put my personal email address in a download request's header, which sent it to an outside website. Claude caught it later and told me.
