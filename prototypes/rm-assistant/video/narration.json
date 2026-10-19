@@ -1,24 +1,22 @@
 {
   "voice": "af_heart",
   "speed": 1.08,
-  "note": "The voiceover script for the tour video, one line per tour step (same order as src/tour.js). Read by Kokoro, an open-source voice (code MIT, model Apache 2.0).",
+  "note": "The voiceover script for the tour video, one line per tour step (same order as src/tour.js). Read by Kokoro, an open-source voice (code MIT, model Apache 2.0). Keep the total under about 100 seconds so the tour and its video stay under 2 minutes.",
   "lines": [
-    "Meet The RM Assistant: one AI assistant for every relationship manager. Each morning starts on Today: the clients worth calling, the week's meetings, and what's waiting for a decision.",
-    "You're Jordan Ellis, a senior relationship manager with twelve business clients. Everything here is sample data.",
-    "Each Monday starts here: the clients worth a call this week, and every number checked against its source.",
-    "First, the Signal Finder runs plain rules the business owns, like idle cash or check fraud exposure. It also reads real Federal Reserve rate data.",
-    "Then Claude explains each one in plain English, with talking points and a next step, using only the numbers behind it.",
-    "Before Jordan can use a draft, every number is checked against the data. Anything that can't be traced is flagged.",
-    "Jordan decides: use it, change it, or reject it. Using it creates an opportunity tagged as AI-sourced, so the results can be counted.",
-    "Before Tuesday's meeting, the assistant looks up four sources on its own, and shows every step it took.",
-    "The result is a one-page brief, with a source on every fact.",
-    "After the meeting, it drafts the recap, the email, and the CRM call note. There's no recording without the client's consent, so it works from Jordan's notes.",
+    "Meet The RM Assistant: one AI assistant for every relationship manager, starting each day on Today.",
+    "You're Jordan Ellis, a relationship manager with twelve business clients, all sample data.",
+    "Each Monday starts here: the clients worth a call this week.",
+    "First, the Signal Finder runs plain rules the business owns, like idle cash, and reads real Federal Reserve rate data.",
+    "Then Claude explains each one in plain English, and every number is checked. Anything it can't trace is flagged.",
+    "Jordan decides: use it, change it, or reject it. Using it creates an AI-sourced opportunity, so results can be counted.",
+    "Before Tuesday's meeting, it checks four sources and writes a one-page brief, with a source on every fact.",
+    "After the meeting, it drafts the recap, email and CRM note from Jordan's notes. No recording without the client's consent.",
     "Nothing is saved or sent until Jordan approves. Anything unclear comes back marked check, instead of guessed.",
-    "Coming next, in wave two: early warning. Plain rules flag clients who may be drifting away, like falling balances or payroll moved to another bank. It's a reason to call, never a credit signal.",
-    "It also spots needs the treasury team serves, and drafts the hand-off. Jordan sends it, and the referral is tracked from spotted to accepted.",
+    "Coming in wave two: early warning flags clients who may be drifting away. It's a reason to call, never a credit signal.",
+    "It also spots needs the treasury team serves, and drafts the hand-off. Jordan sends it, and it's tracked to accepted.",
     "Try to break it. Ask for a credit decision, a price, or another banker's client, and the guardrails stop it before any AI sees it.",
-    "Five measures from day one: usage, quality, business impact, adoption, and risk. A pilot compares bankers who have the assistant with bankers who don't.",
-    "A pilot needs access to client data, a risk partner from day one, and a small group of relationship managers. Our assumption, to confirm: data access sets the pace.",
-    "Now it's your turn. Start from Today, and run the agents live on Claude, from any screen."
+    "Five measures from day one: usage, quality, business impact, adoption, and risk. A pilot compares bankers with and without the assistant.",
+    "A pilot needs client data, a risk partner from day one, and a few relationship managers. Our assumption, to confirm: data access sets the pace.",
+    "Now it's your turn: start from Today, and run the agents live on Claude."
   ]
 }

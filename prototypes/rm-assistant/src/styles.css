@@ -272,7 +272,9 @@ textarea.grow{field-sizing:content;max-height:340px;min-height:120px}
 .tstat{display:flex;flex-direction:column;gap:2px;text-align:left;padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.07);color:var(--onnavy);cursor:pointer;transition:background .15s,transform .15s}
 .tstat:hover{background:rgba(255,255,255,.14);transform:translateY(-1px)}
 .tstat .big{font-family:var(--serif);font-size:34px;line-height:1}
-.tstat span:last-child{font-size:13.5px;color:var(--onnavy-muted)}
+.tstat span:nth-child(2){font-size:13.5px;color:var(--onnavy-muted)}
+.w2tag{display:inline-block;align-self:flex-start;margin-top:4px;padding:1px 7px;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:.02em;background:var(--amber-bg);color:var(--amber);white-space:nowrap}
+.tstat .w2tag{font-size:11px}
 .today-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:16px;margin-top:16px}
 .agenda,.todo{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
 .agenda li{display:grid;grid-template-columns:110px minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
@@ -306,3 +308,10 @@ textarea.grow{field-sizing:content;max-height:340px;min-height:120px}
 .refnote{width:100%;border:1px solid var(--line);border-radius:8px;padding:10px;background:var(--bg);resize:vertical}
 @media (max-width:860px){.tstats{grid-template-columns:repeat(2,minmax(0,1fr))}.today-grid{grid-template-columns:1fr}.agenda li{grid-template-columns:minmax(0,1fr) auto}.agenda .when{grid-column:1/-1}}
 @media (prefers-reduced-motion:reduce){.tstat{transition:none}}
+/* v5 (from the PM prototype): the sticky bar must never sit on top of the draft. It keeps a solid edge and a shadow,
+   scrolling into view leaves room for it, the brief and the follow-up end with room to clear it, and on phones it stays in the flow. */
+.approvebar:not(.static){box-shadow:0 -8px 12px -8px rgba(0,0,0,.18);padding:10px 0 10px;margin-top:12px}
+html{scroll-padding-bottom:84px}
+#briefDoc .docbody, #followOut .out > :has(+ .approvebar){padding-bottom:16px}
+#briefDoc .docbody, #followOut textarea, #followOut .out > div{scroll-margin-bottom:84px}
+@media (max-width:700px){.approvebar:not(.static){position:static;box-shadow:none}html{scroll-padding-bottom:0}}
