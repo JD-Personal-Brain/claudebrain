@@ -16,7 +16,7 @@ Ask these questions in order and stop at the first yes:
 | Is it a job with steps that will come up again, on its own? | **New skill** in `.claude/skills/<name>/SKILL.md` |
 | Is it part of a job a skill already does? | **A step in that skill** |
 | Is it about how Claude behaves every time? | **A rule** in `learning/rules.md`, with a test in `learning/tests.md` |
-| Does it only need doing once? | **A one-off task**: do it now, or put it on "What's next" in NOW.md |
+| Does it only need doing once? | **A one-off task**: do it now, or add it to the Open Items log (the right track, or My workspace) |
 
 Some ideas need two homes, for example a one-off fix plus a check so the
 problem can't come back. Before adding a new skill, check the list of
@@ -36,7 +36,7 @@ Tell the user the home in one line, with the reason, before building.
 
 **A rule:** one line, written as what to do, with "(from …)" naming its source. Rules at Level 2 or higher go at the top.
 
-**A one-off task:** do it now if it's small. Otherwise add it to "What's next" in NOW.md with the one next step.
+**A one-off task:** do it now if it's small. Otherwise add it to the Open Items log under the right track (or My workspace), with the one next step.
 
 ## 3. Test it
 - **A skill or step:** add a test to `learning/tests.md` ("Say this" and "Pass if"). Then try it once on a real or sample case, and show the result.

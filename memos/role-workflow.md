@@ -10,13 +10,10 @@ Page 1 of the four "How we deliver" pages, read in this order:
 3. **Product Machine** (`product-machine.md`): every task, marked by who does it.
 4. **Product Playbook** (`playbook/`): how to do each sub-step the first time.
 
-> **Source.** The six steps and gates were first taken from my RM analytics memo
-> (`memos/rm-analytics-framework.md`, memo v6, 2026-10-08) with the RM details
-> removed; the sub-steps below come from the Product Playbook. The full RM plan (memo v11,
-> 2026-10-18, read in RM Detail) follows the same six steps and gates in one table,
-> with agent specs and workflows in its appendices. It links to the playbook's
-> sub-steps rather than repeating them; marking its tasks Auto, Draft or Me is part
-> of applying the product machine to the RM memo (item PL6 in the Open Items log).
+> **Source.** First taken from the RM memo (`memos/rm-analytics-framework.md`, v6,
+> 2026-10-08) without the RM details; the sub-steps come from the Product Playbook.
+> Each project plan writes the six steps up as the Product Framework sets out;
+> marking its tasks Auto, Draft, Me or Partner is open item PL6.
 
 ## The six steps at a glance
 Every AI product goes through six steps, each ending in a **go/no-go gate**. The

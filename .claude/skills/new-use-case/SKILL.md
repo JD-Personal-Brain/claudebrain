@@ -37,4 +37,4 @@ show the user a pass or fail list with proof.
 ## 4. Save and hand over
 - Save it as `memos/<short-name>.md`. This is the working copy only.
 - Build the designed version with the **designed-doc** skill without asking, because the user will read it (rule R16). Then show the link and a 5-line summary.
-- Add it to NOW.md, save a draft to GitHub, and ask before merging into main.
+- Add it to the Document Library and `designs/README.md` (the designed-doc skill does this), save a draft to GitHub, and ask before merging into main.

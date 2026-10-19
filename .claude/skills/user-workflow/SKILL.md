@@ -32,7 +32,7 @@ For each stage, name every AI product from the plan that touches it (for PMs, us
 Rewrite only the changed stages: what the person does now, what the AI does, and who decides (assistive first: AI drafts or suggests, a person decides). Time saved per stage is [X] until measured (sub-step 1.7's baseline). End with one short summary: which stages change, which stay the same, and what that means for the group's week.
 
 ## 5. What to confirm with the group
-List the guesses (every ⚠️) as questions for interviews and shadowing (playbook sub-steps 1.3 and 1.4). Add any the bank must answer to the Open Items log, as a question for the bank under that group's track (the next RM or PM number), ending with "(from: <group> user workflow)". First check it isn't already there (for RMs, see the questions on how RMs are paid, the value model's inputs, whether RMs work mainly in Salesforce, and the playbook's ⚠️ guesses).
+List the guesses (every ⚠️) as questions for interviews and shadowing (playbook sub-steps 1.3 and 1.4). Add any the bank must answer to the Open Items log, as a question for the bank under that group's track (the next RM or PM number), ending with "(from: <group> user workflow)". First check it isn't already there (for RMs: RM5 on pay and referrals, RM6 on the value model's inputs, RM7 on Salesforce; for PMs: PM3 to PM7).
 
 ## 6. Show a sample, then build the page (rule R27)
 1. Before the first page for any group, make a small sample of the layout from real content (for example, three stages with today → AI → with AI), send a screenshot, and wait for a yes. Later groups reuse the approved layout.

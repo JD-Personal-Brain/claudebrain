@@ -43,7 +43,7 @@ Seven principles, drawn from what we already do and the lessons behind it.
 ## The record
 
 Every audit so far, newest first. Earlier entries are rebuilt from NOW.md and the
-saved history, so their counts are approximate. Item numbers in entries written before the 2026-10-19 renumbering are the old ones; today's homes: dry run PL1, templates PL2, tracker and approvals map PL3, control gaps PL4, support model PL5, applying the machine to both plans PL6, the RM user workflow RM2, SR 26-2 PL7 and W4, rule tests W3, process fixes W7, everyday playbooks W6, bank question B22 PL10.
+saved history, so their counts are approximate. Item numbers in entries written before the 2026-10-19 renumbering are the old ones; today's homes: dry run PL1, templates PL2, tracker and approvals map PL3, control gaps PL4, support model PL5, applying the machine to both plans PL6, the RM user workflow RM2, SR 26-2 PL7 and W4, the AI review question (B21) PL7, rule tests W3, process fixes W7, everyday playbooks W6, bank question B22 PL10.
 
 | Date | What was audited | Size and how | Findings (and lost lines by reason) | Result |
 |---|---|---|---|---|

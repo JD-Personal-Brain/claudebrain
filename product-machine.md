@@ -12,20 +12,17 @@ file by `designs/product-machine-build.py`).
 I'm one person running several projects at once, so the machine has to run
 mostly by itself. Automation does the routine work and pushes tasks to people
 against the timeline, so my time goes only where a person is needed.
-Every project uses the same steps, tracker and templates, so they all run the
-same way side by side. *(Added 2026-10-09. Tool choices are guesses until I see
-the bank's setup: verify each one.)*
+Tool choices are guesses until I see the bank's setup.
 
 ## Three kinds of work, plus partner sign-offs
 Every task in every step is marked as one of these:
 - **Auto (runs on its own):** a workflow or agent does it and tells the right person. No one has to remember it.
 - **Draft (AI drafts, a person checks):** AI does the first version, and a named person approves it.
-- **Me (only a person):** decisions, agreement between people, relationships and trade-offs. This is where my hours go.
+- **Me (only a person):** decisions, agreement between people, relationships and trade-offs. This is where the product manager's hours go.
 - **Partner:** a decision only a named partner can make, such as a risk or compliance sign-off. Never automated.
 
 **Not sure yet:** whether the bank lets automations message people or update
-trackers by themselves. Confirm this at the first project, because it decides
-how much can be **Auto**.
+trackers by themselves (open item PL10); it decides how much can be **Auto**.
 
 ## Each step's tasks, by kind
 One row per task, numbered to match the sub-steps in `playbook/`. **Kind** is the

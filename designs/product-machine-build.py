@@ -56,6 +56,10 @@ check_html=(f'<p>{inline(" ".join(paras(ck_intro)))}</p><h3>First, cut</h3><ol>{
     +"".join(f'<p>{inline(x)}</p>' for x in paras(ck_cut_after[0] if ck_cut_after else ""))
     +f"<h3>Then, automate what's left</h3><ol start=\"5\">{numbered(ck_auto_list)}</ol>"
     +"".join(f'<p>{inline(x)}</p>' for x in ck_after))
+# The four kinds, read from "## Three kinds of work, plus partner sign-offs" in product-machine.md (their one home)
+_kt=re.findall(r"^- \*\*(Auto|Draft|Me|Partner)(?: \((.+?)\))?:\*\* (.+)$",section("## Three kinds of work, plus partner sign-offs"),re.M)
+if [k for k,_,_ in _kt]!=["Auto","Draft","Me","Partner"]: raise SystemExit("Could not read the four kinds from product-machine.md")
+kinds_html="".join(f'<div class="kind">{chip(k.lower())}<h3>{inline((t or "partner sign-off")[:1].upper()+(t or "partner sign-off")[1:])}</h3><p>{inline(d[:1].upper()+d[1:])}</p></div>' for k,t,d in _kt)
 gates_html="".join(f'<p>{inline(x)}</p>' for x in paras(section("## Gates in writing when they're clean")))
 ms=section("## Measuring the machine")
 ms_lines=ms.strip().split("\n")
@@ -189,10 +193,7 @@ footer{{color:var(--muted);font-size:14px;border-top:1px solid var(--line);paddi
 <h2 id="kinds">Three kinds of work, plus partner sign-offs</h2>
 <p>Each project moves through the same six steps. Every task in every step is marked by who does it. Each project leaves the machine more automated than it found it.</p>
 <div class="kinds">
-<div class="kind">{chip("auto")}<h3>Runs on its own</h3><p>A workflow or agent does it and tells the right person. No one has to remember it.</p></div>
-<div class="kind">{chip("draft")}<h3>AI drafts, a person checks</h3><p>AI does the first version, and a named person approves it.</p></div>
-<div class="kind">{chip("me")}<h3>Only a person</h3><p>Decisions, agreement between people, relationships and trade-offs. This is where the product manager's hours go.</p></div>
-<div class="kind">{chip("partner")}<h3>Partner sign-off</h3><p>A decision only a named partner can make, such as risk or compliance. Never automated.</p></div>
+{kinds_html}
 </div>
 </section>
 <section>
@@ -237,7 +238,7 @@ footer{{color:var(--muted);font-size:14px;border-top:1px solid var(--line);paddi
 {rules_html}
 </div>
 </section>
-<footer>In use: reviewed 2026-10-14; cut-first check, gates in writing and the machine's measures added 2026-10-15. Tool choices are guesses until confirmed against the bank's setup. [X] marks numbers still to be set. The RM Assistant Plan is the first project to run through this machine.</footer>
+<footer>In use. Tool choices are guesses until confirmed against the bank's setup; [X] marks numbers still to be set. The RM and PM plans run through this machine; it hasn't been run end to end yet (the dry run, PL1).</footer>
 </main>
 '''
 open(os.path.join(ROOT,'designs','product-machine.html'),'w').write(link_refs(page.replace('</style>', XREF_CSS + '</style>', 1), 'product-machine.html'))

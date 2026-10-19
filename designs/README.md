@@ -1,7 +1,7 @@
 # Designed pages: source files
 
 The HTML behind each designed page, so any session can rebuild or edit it.
-Edit here, publish to the same link, then save a draft.
+Edit the working file, rebuild, publish to the same link, then save a draft.
 
 | Page | Link | Source |
 |---|---|---|
@@ -25,8 +25,8 @@ Edit here, publish to the same link, then save a draft.
 | Bank Business Briefing (how the bank earns money, the corporate segment, and where AI work lines up) | https://claude.ai/artifact/7ZVT7LtdqxwAma4UrBgTPX | `bank-business.html` (built by `md-page-build.py` from `memos/bank-business.md`; re-run Prompt 3 in `prompt-library.md` each quarter to refresh the words) |
 | Prompting Guide | https://claude.ai/artifact/Secfj5fBtpVA1veroUU7A7 | `prompting.html` (built by `md-page-build.py` from `prompting.md`) |
 | Prompt Library (our core prompts, each with its version) | https://claude.ai/artifact/W96baXJf665MJ4qtHmkrks | `prompt-library.html` (built by `md-page-build.py` from `prompt-library.md`) |
-| Workflow Maps (reference page) | https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX | `workflows.html` (built by `workflows-build.py` from `memos/role-workflow.md` (questions, gates, governance), `playbook/`, `product-machine.md` and the RM memo's Appendix B) |
-| Agent Library (reference page) | https://claude.ai/artifact/Cn9nANQoqp2BP7yrmy61zn | `agents.html` (built by `agents-build.py` from `playbook/agents.md` and the RM memo's Appendix A) |
+| Workflow Maps (reference page) | https://claude.ai/artifact/CPLGBN1h9wdr3yP673PqyX | `workflows.html` (built by `workflows-build.py` from `memos/role-workflow.md` (questions, gates, governance), `playbook/`, `product-machine.md` and the RM and PM memos' Appendix B) |
+| Agent Library (reference page) | https://claude.ai/artifact/Cn9nANQoqp2BP7yrmy61zn | `agents.html` (built by `agents-build.py` from `playbook/agents.md` and the RM and PM memos' Appendix A) |
 | Steps Catalog (reference page) | https://claude.ai/artifact/8UncWMYUq7hsJUhn5NSYEB | `steps.html` (built by `catalogs-build.py` from `memos/role-workflow.md` (questions, gates, governance), `playbook/` and `product-machine.md`) |
 | Controls Catalog (reference page) | https://claude.ai/artifact/7GmH3iBG6jcDkdacUysUrQ | `controls.html` (built by `catalogs-build.py` from `playbook/controls.md`) |
 | Use Case Library (research: where the value is for RMs and PMs, and the outside research; replaced the RM Core Use Cases and Portfolio Manager Core Use Cases pages on 2026-10-18, at the RM Core Use Cases link) | https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X | `use-case-library.html` (built by `md-page-build.py` from `memos/use-case-library.md`) |

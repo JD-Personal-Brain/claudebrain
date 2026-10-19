@@ -32,9 +32,9 @@ in order, and fill in its **first-time log** as you go.
 - **Output:** what it produces (a document, a number, a decision).
 - **Done when:** how to tell it's finished.
 - **Automation watch:** what to note while doing it, the agent it could become, the kind to use the first time and the kind to aim for (Auto, Draft or Me).
+- **For the RM Assistant:** a short worked example from the first project, the RM Assistant for relationship managers (RMs). Where it cites the "memo" (a section, a step or Appendix A), that means the full RM plan, in RM Detail, Part 5.
 
 Each step closes with its gate and an automation review table. In that table, **First time** = how the task is done on the first project; **Aim for** = its kind on the Product Machine page.
-- **For the RM Assistant:** a short worked example from the first project, the RM Assistant for relationship managers (RMs). Where it cites the "memo" (a section, a step or Appendix A), that means the full RM plan, in RM Detail, Part 5.
 
 ## The first-time log (fill in for every sub-step)
 This is what makes automation possible later: you can't automate work you
