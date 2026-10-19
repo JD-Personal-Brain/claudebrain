@@ -107,7 +107,7 @@
         {
           "id": "rm-prototype",
           "name": "RM Assistant Prototype",
-          "what": "The RM Assistant as a clickable prototype: three agents running live on Claude on sample data, the controls working, and a 2-minute guided tour.",
+          "what": "The RM Assistant as a clickable prototype: three agents (A1 in plain rules, A2 and A3 live on Claude) on sample data, the controls working, and a guided tour under 2 minutes.",
           "status": "In use",
           "url": "https://claude.ai/artifact/RFM2o7cdren3TxesQBsjky",
           "source": "prototypes/rm-assistant/"
@@ -160,7 +160,7 @@
         {
           "id": "pm-prototype",
           "name": "PM Assistant Prototype",
-          "what": "The PM Assistant as a clickable prototype (version 5): the industry background draft, the borrower file, the review and memo drafts and an early warning preview, with at least three agents running live on Claude on sample borrowers, the controls working, and a 2-minute voiced tour.",
+          "what": "The PM Assistant as a clickable prototype (version 5): the industry background draft, the borrower file, the review and memo drafts and an early warning preview, with at least three agents running live on Claude on sample borrowers, the controls working, and a voiced tour under 2 minutes.",
           "status": "In use",
           "url": "https://claude.ai/artifact/8vFxUWVwtZbzZs7pL162HE",
           "source": "prototypes/pm-assistant/"
@@ -288,8 +288,8 @@
         {
           "id": "prompt-library",
           "name": "Prompt Library",
-          "what": "Our core prompts in one place, each with its version and what changed: the use case kit, a full product memo, the bank briefing, the showcase prototype, and copying a user group's work to the next.",
-          "count": "5 prompts",
+          "what": "Our core prompts in one place, each with its version and what changed: the use case kit, a full product memo, the bank briefing, the showcase prototype, copying a user group's work to the next, and the full program audit.",
+          "count": "6 prompts",
           "status": "In use",
           "url": "https://claude.ai/artifact/W96baXJf665MJ4qtHmkrks",
           "source": "prompt-library.md"

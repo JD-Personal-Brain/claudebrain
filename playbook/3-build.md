@@ -5,13 +5,9 @@
 **Governance thread:** controls built in; test set created.
 
 Build runs in short cycles: build a piece, test it, show users, repeat.
-Start the test set (3.6) on day one, not at the end. Fill in the first-time
-log (see the Product Playbook's opening page) for every sub-step.
-
-> ⚠️ **How much to trust this.** Written 2026-10-09 from my framework, the RM
-> memo and general practice, not from Associated Bank. In this step platform
-> teams or engineers do much of the building; the product manager sets requirements, checks
-> quality and makes the calls. Lines marked ⚠️ are guesses about the bank.
+Start the test set (3.6) on day one, not at the end. Platform teams or engineers
+do much of the building; the product manager sets requirements, checks quality
+and makes the calls.
 
 ---
 
@@ -168,7 +164,7 @@ log (see the Product Playbook's opening page) for every sub-step.
 
 ## The Build gate
 
-- **Who decides:** the sponsor (the product manager brings the gate pack and recommends) (in writing when the gate is clean; a meeting only if a criterion is contested or a decider asks for one; see the Product Machine).
+- **Who decides:** the sponsor, after the product manager brings the gate pack and recommends (in writing when the gate is clean: Product Machine).
 - **Bring:** the gate pack from 3.7.
 - **Go means:** it meets the quality bar in testing, and every control is built and passes its control test.
 - **No-go means:** another build cycle on the failures, or a smaller scope.
@@ -178,10 +174,9 @@ log (see the Product Playbook's opening page) for every sub-step.
 
 ## Build automation review (do this at the gate)
 
-Run the automation check from the Product Machine on every Me and Draft task,
-using your first-time logs: cut first (should it exist, delete, simplify, make
-it faster), then automate what's left (repeat? stable? safe alone?). Then update this shortlist and the Build
-table on the Product Machine page.
+Run the automation check (Product Machine) on every Me and Draft task, using
+your first-time logs, then update this shortlist and the Build table on the
+Product Machine page.
 
 | Sub-step | Agent | First time | Aim for | Already specified? |
 |---|---|---|---|---|
@@ -194,6 +189,4 @@ table on the Product Machine page.
 | 3.7 | M26 Test grader | Draft | Auto | Yes, M26 |
 | 3.7 | M6 Gate pack drafter | Draft | Draft | Yes, M6 |
 
-**First time** = how the task is done on the first project. **Aim for** = its kind on the Product Machine page.
-
-_Last updated: 2026-10-18_
+_Last updated: 2026-10-19_

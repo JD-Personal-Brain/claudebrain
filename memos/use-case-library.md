@@ -32,9 +32,9 @@ The pattern: signals from data, shown inside the CRM, with the reason visible an
 
 ## Portfolio managers
 
-**The need in one line:** PMs are the bank's credit people paired with RMs. The value is in drafting credit memos and reviews and in monitoring credit quality, with a person always deciding. At DBS, credit memos and related work take up to 40% of its bankers' time (DBS's estimate); ⚠️ how much of a PM's time goes to them here is to confirm.
+**The need in one line:** PMs are, by our reading of the bank's job postings, its credit people paired with RMs (⚠️ to confirm). The value is in drafting credit memos and reviews and in monitoring credit quality, with a person always deciding. At DBS, credit memos and related work take up to 40% of its bankers' time (DBS's estimate); ⚠️ how much of a PM's time goes to them here is to confirm.
 
-> ⚠️ **A proposal, not yet agreed.** Each RM core use case has a credit counterpart; the pairing is our own, used in the PM plan (reviewed 2026-10-19). Built from a web scan on 2026-10-13 through search summaries; the primary pages would not open.
+> ⚠️ **Our own pairing, to test with the credit lead.** Each RM core use case has a credit counterpart; the pairing is ours, and the PM plan uses it (reviewed 2026-10-19, C69). Built from a web scan on 2026-10-13 through search summaries; the primary pages would not open.
 
 | Core use case (credit counterpart) | Where the value is | Outside evidence | Strength | Our AI product (wave) |
 |---|---|---|---|---|

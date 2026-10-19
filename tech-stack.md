@@ -58,7 +58,7 @@ The same technologies, sorted by the six steps I'll use in this job.
 | **Release and adopt** | Publish where bankers already work (Teams, Outlook, Salesforce). Power Platform environments move a tool from test to live. Start "assistive" (AI suggests, a person decides). Copilot licenses are paid per user, so leaders watch usage. | 🟡 |
 | **Measure and iterate** | **Power BI / Fabric** dashboards (adoption, hours saved, pipeline impact). **Salesforce** for business results. **Copilot usage dashboard.** Re-run evals after every change; watch guardrail blocks, human overrides and drift. | 🟡 |
 
-**Biggest unknown in every row:** how each tool is set up at the bank (which features, licenses and connections). All of them are live, confirmed by the bank (2026-10-09).
+**Biggest unknown in every row:** how each tool is set up at the bank (which features, licenses and connections; Open Items PL8).
 
 ---
 
@@ -184,7 +184,7 @@ matters as much as *what* you ship.
 - **Model risk management:** US bank regulators expect banks to check, test and monitor their models. The key guidance is **SR 11-7** (Federal Reserve, 2011, with the OCC's matching Bulletin 2011-12). Banks increasingly apply it to AI. It may have been replaced by **SR 26-2** (April 2026, reportedly; item PL7 in the Open Items log) **(verify)**.
 - **Third-party risk:** using Microsoft, AWS, Salesforce or an AI vendor needs vendor risk reviews (US interagency guidance, 2023).
 - **Privacy:** customer financial data is protected by law (for example, the **Gramm-Leach-Bliley Act**). Decide early what data an AI may see.
-- **Fair lending:** if AI touches credit decisions, fair-lending laws apply (for example, the **Equal Credit Opportunity Act**). That's a much higher bar, so keep early products away from credit decisions.
+- **Fair lending:** if AI touches credit decisions, fair-lending laws apply (for example, the **Equal Credit Opportunity Act**). That's a much higher bar, so AI only drafts or flags and a named credit officer decides, with a deeper review for anything that informs a credit decision (the higher-risk path, control K3).
 - **Responsible AI:** fairness, transparency, human oversight and clear accountability. The **NIST AI Risk Management Framework** (2023) is a common reference. The bank probably has its own policy too **(guess)**.
 
 **What a "governed release" likely includes (guess):**
@@ -212,11 +212,6 @@ control measures. A starter set:
 ---
 
 ## Things to find out at the bank
-- Answered: which of these tools are actually live? All of them, confirmed by the bank (2026-10-09).
-- Which AI models are approved, and where do they run?
-- Why both Snowflake and Fabric, and which holds what?
-- Which Salesforce products and licenses does the bank have?
-- What does the AI governance process look like, and how long does it take?
-- Who builds: my team, IT, or citizen developers?
+The open questions are tracked in the Open Items log: the AI review and how long it takes (PL7); approved AI models and how each platform is set up, including Salesforce products and licenses (PL8); why both Snowflake and Fabric, and what lives where (PL9); who builds: our team, IT or citizen developers (PL10). Whether the tools are live is answered: all of them, confirmed by the bank (2026-10-09).
 
 _Last updated: 2026-10-19_

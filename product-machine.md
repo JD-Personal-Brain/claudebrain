@@ -1,38 +1,29 @@
 # Product Machine: how one product manager runs many projects
 
-It is the operating model: every task in
-every step, marked by who does it, and how the work moves toward automation.
-Page 3 of the four "How we deliver" pages: the Product Workflow
-(`memos/role-workflow.md`) shows the steps, the Product Framework
-(`product-framework.md`) sets the rules, this page runs the work, and the
-Product Playbook (`playbook/`) says how to do each sub-step the first time.
-Designed page: https://claude.ai/artifact/S8Wbygy24cjguTMxZsN2QF (built from this
-file by `designs/product-machine-build.py`).
+The operating model: every task in every step, marked by who does it, and how
+the work moves toward automation. Page 3 of the four "How we deliver" pages.
+Designed page: https://claude.ai/artifact/S8Wbygy24cjguTMxZsN2QF (built by `designs/product-machine-build.py`).
 
 I'm one person running several projects at once, so the machine has to run
 mostly by itself. Automation does the routine work and pushes tasks to people
 against the timeline, so my time goes only where a person is needed.
-Every project uses the same steps, tracker and templates, so they all run the
-same way side by side. *(Added 2026-10-09. Tool choices are guesses until I see
-the bank's setup: verify each one.)*
+Tool choices are guesses until I see the bank's setup.
 
 ## Three kinds of work, plus partner sign-offs
 Every task in every step is marked as one of these:
 - **Auto (runs on its own):** a workflow or agent does it and tells the right person. No one has to remember it.
 - **Draft (AI drafts, a person checks):** AI does the first version, and a named person approves it.
-- **Me (only a person):** decisions, agreement between people, relationships and trade-offs. This is where my hours go.
+- **Me (only a person):** decisions, agreement between people, relationships and trade-offs. This is where the product manager's hours go.
 - **Partner:** a decision only a named partner can make, such as a risk or compliance sign-off. Never automated.
 
 **Not sure yet:** whether the bank lets automations message people or update
-trackers by themselves. Confirm this at the first project, because it decides
-how much can be **Auto**.
+trackers by themselves (open item PL10); it decides how much can be **Auto**.
 
 ## Each step's tasks, by kind
 One row per task, numbered to match the sub-steps in `playbook/`. **Kind** is the
 target once the machine is running. The first time through, many tasks are
 done one kind closer to a person, so the work can be logged before it's
-automated; each playbook step's review table shows both. The gate check below
-moves tasks toward **Auto** over time. ⚠️ marks an Auto task that sends requests,
+automated; each playbook step's review table shows both. ⚠️ marks an Auto task that sends requests,
 reminders, reports or alerts to people outside the project team, or changes a live
 system, so it depends on the bank allowing that. The project team is the product
 manager, analysts and the data and platform engineers on the product; the sponsor,

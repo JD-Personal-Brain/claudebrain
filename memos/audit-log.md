@@ -1,8 +1,7 @@
 # Audit Log
 
-How we audit our work: what we believe about audit, every check and when it
-runs, the record of every audit so far, and what to improve. Approved 2026-10-15, with all six improvements; every audit adds a row to
-the record below.
+How we audit our work: our principles, every check and when it runs, and the
+record of every audit (each one adds a row).
 
 ## How we think about audit
 
@@ -43,10 +42,13 @@ Seven principles, drawn from what we already do and the lessons behind it.
 ## The record
 
 Every audit so far, newest first. Earlier entries are rebuilt from NOW.md and the
-saved history, so their counts are approximate.
+saved history, so their counts are approximate. Item numbers in entries written before the 2026-10-19 renumbering are the old ones; today's homes: dry run PL1, templates PL2, tracker and approvals map PL3, control gaps PL4, support model PL5, applying the machine to both plans PL6, the RM user workflow RM2, SR 26-2 PL7 and W4, the AI review question (B21) PL7, rule tests W3, process fixes W7, everyday playbooks W6, bank question B22 PL10.
 
 | Date | What was audited | Size and how | Findings (and lost lines by reason) | Result |
 |---|---|---|---|---|
+| 2026-10-19 | Wrap-up after the full program audit: lesson L45 (the scout's failed run reported as a success), rule R28 and test T35 sharpened, idea 64, the Audit Log and Open Items | Quick: checker, render check, nothing-lost, the RM prototype tests | 1 finding (idea 64 not yet in the Open Items log), fixed; lost lines: only the R28 and T35 wording, reworded | Merged on my yes once GitHub's audit check passed |
+| 2026-10-19 | The whole program, every page and working file, with the new Prompt 6 (the full program audit), after the three-track Open Items rebuild came into main | Deep, beyond the usual: checker, render check, nothing-lost; six reviewers in parallel (How we deliver and reference, RM, PM, bank and workspace, numbers and time, links); five fixers, each on its own files; a second reviewer; Elon mode over the whole program, its 39 safe cuts applied; checker and render check again | About 140 findings (11 Must, 51 Should, the rest Minor and trims). Mattered most: real RM client data shown before gate 2 on the Gantt chart; the PM Gantt chart still drawing live weeks 6 and 7 after they became [X]; the old item number B21 (now PL7) in PM Detail; the bank news scout's October 19 run listed as succeeded though it failed (it couldn't reach the repo). New checks: old item numbers, unlinked numbers on built pages, Prompt Library versions, requirement sources naming every law or policy control. Workflow and sub-step numbers now link to their cards. About 2,400 words cut, no fact lost (second reviewer). Lost lines: about 400, all reworded, moved or repeated text cut on purpose | Fixed; open decisions: RM go-live weeks as [X] like the PM plan, M11's monthly watch, the PM drafts' fixed week 12, and five Elon mode cuts; waiting for my yes to merge |
+| 2026-10-19 | The PM work marked reviewed and in use (said 2026-10-19): the PM Executive Summary, The PM Assistant, the PM Assistant Plan and the PM Assistant Prototype set to In use in the Document Library (PM Detail stays Reference); "first cut" status wording updated in the PM working files, the glossary, the Use Case Library, the Bank Business Briefing, RM and PM Detail, the Open Items log (closed as C69) and NOW.md | Quick: checker, render check, nothing-lost | 0 findings; lost lines: 18, all the "first cut" and "not yet reviewed" wording reworded on purpose | Draft saved, waiting for my yes to merge |
 | 2026-10-19 | Open Items rebuilt for the bank (said 2026-10-19): three parallel tracks (the shared platform, the RM Assistant, the PM Assistant) with program decisions on top, then the five Elon mode findings applied; workspace and closed items kept in the working file but off the page; item numbers changed across the repo; the checker, the page builder and the wrap-up and audit skills updated to the new tracks | Standard: checker, render check, nothing-lost, a fresh reviewer, fixes, a second reviewer | 2 Must fix (the wrap-up skill still described the old sections; two dropped items, judged covered by the approved deletion), 11 Should fix (internal wording on the page, stale skill and checker wording, dated test results renumbered), 6 Minor, then 4 new from the second review (pages the bank reads cited a hidden item, now PL7); all fixed. Lost lines: about 140, all reworded or merged into the new items, or cut on purpose (the ratings table, source tags, the catch-all item). GitHub's check sat in its queue on the first try and was started again | Merged on my yes |
 | 2026-10-19 | The PM plan's live dates for the industry background draft and the borrower file changed to week [X], set at gate 2 once the bank says how long its AI review takes (Elon mode finding, my yes) | Quick: checker, render check | 0 findings | Waiting for GitHub's audit check, then merged on my yes |
 | 2026-10-19 | The industry background draft (agent A11, workflow B16, live about week 6) built into the PM plan, pages and prototype; a thorough PM audit for sharing with Andy (every page, the repo, the Open Items log scrubbed, the prep files deleted, a README added, the pay range removed); RM and PM prototypes at version 5 (tours under 2 minutes, same layout); merged into main; wrap-up (lesson L42) | Deep: checker, render check, nothing-lost; reviewers on the PM section, share-readiness and the prototypes; prototype tests (PM 23 of 23, RM 13 of 13); videos checked; changed pages compared with their live versions before republishing | Main findings: wording that stated bank facts as fact, interview and personal wording on shared pages, open items that were prep for Andy, the RM tour at 2:27, agent A11 not linking to its card (L42). All fixed; checker and render check 0 problems; lost lines all reworded or cut on purpose for sharing. Elon mode at wrap-up: 5 findings (2 Needed: run the dry run, W8, before adding more; the PM plan's industry background live date assumes a one-week AI review), waiting for my choice | Merged into main (pull request #125); wrap-up edits waiting for my yes to merge |
@@ -94,7 +96,6 @@ saved history, so their counts are approximate.
 | 2026-10-10 | Deep audit before merging: every core document | 5 reviewers, second reviewer | About 60 | Fixed; rule R23 and the retired-wording check added |
 | 2026-10-10 | Alignment audit against the four reference pages | Reviewers per reference page | About 44 | Fixed; the alignment sweep became a standard audit step |
 | 2026-10-09 | The Product Playbook, all six steps | Reviewer, second reviewer | 20, then 8 follow-ups | Fixed; the audit became step 0 of every wrap-up |
-| 2026-10-19 | The PM work marked reviewed and in use (said 2026-10-19): the PM Executive Summary, The PM Assistant, the PM Assistant Plan and the PM Assistant Prototype set to In use in the Document Library (PM Detail stays Reference); "first cut" status wording updated in the PM working files, the glossary, the Use Case Library, the Bank Business Briefing, RM and PM Detail, the Open Items log (closed as C69) and NOW.md | Quick: checker, render check, nothing-lost | 0 findings; lost lines: 18, all the "first cut" and "not yet reviewed" wording reworded on purpose | Draft saved, waiting for my yes to merge |
 
 ## Entry: 2026-10-18, the RM, How we deliver and Reference sections, and Elon mode on the whole system
 
@@ -233,4 +234,4 @@ Three reviewers, read-only: the product machine and reference pages, the RM work
 14. **Optional:** run or retire the 30 of 50 rule tests never run; one test per rule.
 15. **Optional:** count what each checker check catches, and merge or drop the silent ones.
 
-_Last updated: 2026-10-18_
+_Last updated: 2026-10-19_

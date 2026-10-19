@@ -47,7 +47,7 @@ Each capability is one AI product (glossary). The **Need it answers** column nam
 
 **Wave 1 at a glance:** three capabilities: the pre-meeting client brief, the meeting follow-up and the Monday opportunity list. Together they cover the RM's whole meeting, before, during and after, plus the Monday call list. The order is the hypothesis; dates for waves 2 and 3 are proposed at gate 2 (the Define go/no-go) and confirmed at each wave's own quick-pass gates, once data access and review times are known. How the waves get delivered is in the [RM Assistant Plan](https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk).
 
-**How each capability is built** (moved here from the full plan on 2026-10-18). Our measures' targets are set in Define; McKinsey's returns for each core use case are outside benchmarks in the [Use Case Library](https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X), never our targets.
+**How each capability is built**, with our measures, whose targets are set in Define; McKinsey's returns for each core use case are outside benchmarks in the [Use Case Library](https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X), never our targets.
 
 | Wave | Capability (AI product) | Core use case it answers | Agents | Built mainly on | Our measure (target set in Define) |
 |---|---|---|---|---|---|
@@ -64,16 +64,15 @@ Each capability is one AI product (glossary). The **Need it answers** column nam
 **Why wave 1's Monday list suggests only deposit and treasury gaps (decided 2026-10-18):** credit products, such as a line of credit, wait for the portfolio manager work, which avoids a fair-lending review in wave 1 (control K3).
 
 **Why the follow-up and call notes are one capability (decided 2026-10-17):** both
-come from the same meeting recap and the same agent (A3), so RMs get one flow:
-the recap and email first (live by about week 4: drafted from the RM's own notes,
-which we assume needs the least new data and review, ⚠️ to confirm), then saving the call
-notes to Salesforce once that's signed off (by about week 6). Teams transcripts come
-later, only where the bank allows recording and the client agrees (control K24), so
-recording isn't on wave 1's critical path (Elon mode, 2026-10-18). Call notes are in
+come from the same meeting recap and the same agent (A3), so RMs get one flow: the recap
+and email first (about week 4), then saving call notes once signed off (about week 6).
+Teams transcripts come later, only where the bank allows recording and the client agrees
+(control K24), so recording isn't on wave 1's critical path (Elon mode, 2026-10-18; why the
+recap goes first: the full plan, section 6). Call notes are in
 wave 1 because in McKinsey's survey of about 400 bankers, admin is one of the top
 two problems at every stage of the sales funnel (decided 2026-10-10).
 
-**How the follow-up passes its gates.** Because the recap and email go live first, the follow-up passes gates 3 and 4 twice: first for the recap and email (weeks 2–3), then for saving call notes to Salesforce, which is a material change (a new action, a record write) and goes back through step 4 (weeks 4–5; Product Framework, change after launch). Gate 5 is decided once, for wave 1 as a whole, after the brief, the list and call notes have been live for [X] weeks.
+**How the follow-up passes its gates.** Because the recap and email go live first, the follow-up passes gates 3 and 4 twice: first for the recap and email (week 3, after gate 2), then for saving call notes to Salesforce, which is a material change (a new action, a record write) and goes back through step 4 (weeks 4–5; Product Framework, change after launch). Gate 5 is decided once, for wave 1 as a whole, after the brief, the list and call notes have been live for [X] weeks.
 
 **Why there's no how-to helper (decided 2026-10-17):** a pilot group of a few RMs
 learns from training on their own clients, champions and a Teams channel. A
@@ -107,19 +106,15 @@ Built once and shared by every capability, and later by portfolio managers.
 | **Feedback loop** | One-click feedback on every output, sorted and fed into the next release | Every capability |
 
 ## 5. How we'll know it works
-- **More revenue per RM:** pipeline and wins from the assistant's suggestions, against RMs not yet using it [X].
-- **More time with clients:** hours saved per week and client-facing hours [X].
-- **Use:** RMs using it every week, and the share of suggestions acted on [X].
-
-Targets are [X] until the bank's own numbers are in.
+The measures and value model are in the full plan (sections 2 and 4); targets are [X] until the bank's own numbers are in.
 
 ## 6. Portfolio managers next
-Portfolio managers (PMs) get the same kind of assistant on the same foundation, with their own capabilities: credit memo and annual review drafts first, early warning second (decided 2026-10-15). It now exists, reviewed (2026-10-19): The PM Assistant page and PM Detail. The credit request draft (section 3) would be where the two assistants meet.
+Portfolio managers (PMs) get the same kind of assistant on the same foundation, with their own capabilities (wave 1: the industry background draft and the borrower file, then annual review and credit memo drafts; early warning flags in wave 2). Details: [The PM Assistant](https://claude.ai/artifact/BrBLWQzQggQPtqCgLLGf3C) page and PM Detail. The credit request draft (section 3) would be where the two assistants meet.
 
 ## 7. What to confirm
 The one full list is in the full plan, section 8 ("What I'd confirm in the first weeks").
 
 ## 8. How it maps to the agents
-The seven core use cases are the **needs** the capabilities answer, and each capability is one AI product. The product agents do the work: A1 finds signals and A2 writes the reason for each (the **signals engine**); A3 does the **drafting** (briefs, recaps, emails and call notes); A5 answers client questions (wave 3). The Monday send is a scheduled step in workflow B1, not an agent (A4 was merged into B1 on 2026-10-18).
+The seven core use cases are the **needs** the capabilities answer, and each capability is one AI product. The product agents do the work: A1 finds signals and A2 writes the reason for each (the **signals engine**); A3 does the **drafting** (briefs, recaps, emails and call notes); A5 answers client questions (wave 3). The Monday send is a step in workflow B1, not an agent (full plan, Appendix A).
 
-_Last updated: 2026-10-18_
+_Last updated: 2026-10-19_

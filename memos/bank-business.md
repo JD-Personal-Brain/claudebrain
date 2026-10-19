@@ -1,7 +1,7 @@
 # Associated Bank: the corporate and commercial business
 
-**As of October 9, 2026, through Q2 2026** (the quarter that ended June 30, 2026). News checked through October 14, 2026 by the bank news scout.
-Built with Prompt 3 in the Prompt Library (`prompt-library.md`). Public information only.
+**As of October 9, 2026, through Q2 2026** (the quarter that ended June 30, 2026). News checked through October 14, 2026 by the bank news scout (its first scheduled run, October 19, failed: it couldn't reach the repo, so no news was checked; see W2 in the Open Items log).
+Public information only.
 
 > **How to read this.** Every number shows its period and a source tag such as
 > [S2], which links to the list in section 10. ⚠️ marks my own conclusion, not
@@ -12,12 +12,12 @@ Built with Prompt 3 in the Prompt Library (`prompt-library.md`). Public informat
 
 ## 1. Summary
 
-- **Who the work serves:** two groups, two mandates. **Relationship managers (RMs)** own client relationships and bring in revenue. **Portfolio managers (PMs)** are the credit partners paired with RMs, who underwrite and monitor the loans. The AI work has to support both.
+- **Who the work serves:** two groups, two mandates. **Relationship managers (RMs)** own client relationships and bring in revenue. **Portfolio managers (PMs)** are, by the bank's job postings, the credit partners paired with RMs, who underwrite and monitor the loans (⚠️ the bank hasn't defined the role publicly; see section 4). The AI work has to support both.
 - **The bank:** $51.8 billion in assets at June 30, 2026 [S1](https://www.sec.gov/Archives/edgar/data/0000007789/000000778926000191/asb06302026ex991.htm). It earns about 82% of its revenue from interest and 18% from fees (Q2 2026, my arithmetic from [S2](https://www.sec.gov/Archives/edgar/data/7789/000000778926000202/R23.htm)).
 - **The corporate segment** (the bank reports it as "Corporate and Commercial Specialty") made $177.3 million of revenue and $80.1 million of net income in Q2 2026, on $21.7 billion of loans, which is 60% of the bank's loans [S2](https://www.sec.gov/Archives/edgar/data/7789/000000778926000202/R23.htm).
 - **Its revenue lines:** loan interest (general commercial lending, commercial real estate and specialty industries), deposits, treasury management fees, commercial cards, capital markets fees and loan fees. Fees were only $15.6 million, about 9% of segment revenue, in Q2 2026 [S2](https://www.sec.gov/Archives/edgar/data/7789/000000778926000202/R23.htm).
 - ⚠️ **Where AI work has the most room:** selling treasury management and deposits to clients who only borrow, and giving a fast-growing team of RMs more selling time. Both fit wave 1 of The RM Assistant (the RM plan).
-- **Watch:** the bank's own announcement says its AI work in this business starts with portfolio management and treasury and payments [S8](https://investor.associatedbank.com/news/news-details/2026/Associated-Bank-Hires-Andy-Miner-as-senior-director-AI-for-Corporate--Commercial-Banking). The PM plan's value model (reviewed 2026-10-19) counts PM time saved and tracks loan losses avoided.
+- **Watch:** the bank's own announcement says its AI work in this business starts with portfolio management and treasury and payments [S8](https://investor.associatedbank.com/news/news-details/2026/Associated-Bank-Hires-Andy-Miner-as-senior-director-AI-for-Corporate--Commercial-Banking). How the PM plan counts this: section 6, point 3.
 
 ## 2. The bank at a glance
 
@@ -191,15 +191,15 @@ Each revenue line, which bankers it helps (RMs or PMs), the job outcome it serve
 | **General commercial (C&I) lending** | RMs | Banker capacity; revenue workflows | Time freed (hours, not revenue); revenue from insights | Client briefs, meeting follow-ups and call notes into Salesforce (wave 1), prospect lookalikes (wave 2) | **High.** Many new RMs in new markets need to become productive quickly |
 | **Capital markets** | RMs | Revenue workflows | Revenue from insights | Not in wave 1 (the Monday opportunity list suggests only deposit and treasury gaps, decided 2026-10-18). A later wave could add hedging and foreign exchange gaps (⚠️ not planned yet) | **Medium.** Small bank-wide ($7.5 million in Q2 2026) and growing. Its size inside the segment is [X] |
 | **Specialty industries** | RMs | Revenue workflows | Revenue from insights | Prospect lookalikes within one industry, where clients resemble each other | **Medium.** Fewer bankers, but the pattern repeats nationally |
-| **Commercial real estate lending** | PMs (real estate RMs sell it) | Operating efficiency | PM time saved | The PM Assistant: borrower file and review drafts (feature wave 1) | **Medium.** Growth is capped by concentration limits, so the gain is cost and time |
+| **Commercial real estate lending** | PMs (real estate RMs sell it) | Operating efficiency | PM time saved | The PM Assistant: the industry background draft, the borrower file and review drafts (feature wave 1) | **Medium.** Growth is capped by concentration limits, so the gain is cost and time |
 | **Credit quality** (the $21.3 million quarterly provision) | PMs | Operating efficiency | Loan losses avoided (tracked, not counted) | The PM Assistant's early warning flags (feature wave 2); separate from the RM plan's "client may leave" flags | **Unknown.** Potentially large, but hard to prove and higher risk to govern |
 | **All lines** | RMs and PMs | Adoption | Every part: nothing counts until RMs and PMs use it weekly | Training on RMs' own clients, champions, usage reporting | Decides whether any of the above shows up |
 
 **What this means for my plan** ⚠️:
 
-1. **The first wave fits.** Client briefs, follow-ups and the product-gap list aim at the two lines with the most room.
-2. **Put treasury management first on the product-gap list.** It answers the segment's two weak spots at once: low fees and what looks like a shortage of deposits.
-3. **The value model's two missing parts.** The RM plan counts new revenue only. The bank has said its AI work here starts with portfolio management and treasury and payments, which pay back through costs saved and loan losses avoided. Settled in the PM plan (reviewed 2026-10-19): costs saved counted, loan losses avoided tracked until Finance and credit risk agree a method; Finance's acceptance is still to confirm (question 10).
+1. **The first wave fits.** Client briefs, follow-ups and the Monday opportunity list (product gaps) aim at the two lines with the most room.
+2. **Put treasury management first on the Monday opportunity list.** It answers the segment's two weak spots at once: low fees and what looks like a shortage of deposits.
+3. **The value model's two missing parts.** The RM plan counts new revenue only. The bank's AI work here starts with portfolio management and treasury and payments, which pay back through costs saved and loan losses avoided. The PM plan counts costs saved and tracks loan losses avoided until Finance and credit risk agree a method; Finance's acceptance is question 10.
 4. **What a point is worth.** One percentage point of segment revenue is about $1.8 million a quarter (1% of $177.3 million, my arithmetic). This is a sense of scale only. It is not a forecast.
 
 ## 7. Strategy and what's changing
@@ -225,7 +225,7 @@ Each revenue line, which bankers it helps (RMs or PMs), the job outcome it serve
 
 - The split of fee lines between segments is public only once a year (FY2025, [S5](https://www.sec.gov/Archives/edgar/data/7789/000000778926000071/R29.htm)), and capital markets and loan fees are not split out at all.
 - The FY2025 annual report was too long to open in full. Its segment description and segment tables came through cut off, so I used the Q2 2026 quarterly report for segment figures and the bank's website for products.
-- Three sources are news summaries, not the bank's own documents: [S9], [S10] and [S12]. One news summary of the Q2 slides gave fee figures that disagreed with the earnings release, so I used the release and left that summary out.
+- Three sources are news summaries, not the bank's own documents: [S9], [S10] and [S12], plus the news report in [S11]; [S16] was found by search but never opened. One news summary of the Q2 slides gave fee figures that disagreed with the earnings release, so I used the release and left that summary out.
 - The Q2 2026 earnings call transcript was not available to me, only a summary. As of October 14, 2026, third-party sites list a transcript, but the pages could not be opened from my research tools.
 
 ## 9. To confirm inside the bank
@@ -234,11 +234,11 @@ Each revenue line, which bankers it helps (RMs or PMs), the job outcome it serve
 2. How many RMs, treasury management officers and PMs are there today, by market, including American National?
 3. What is the segment's fee income by line today? Public figures stop at FY2025: service charges $12.9 million and cards $0.6 million, with capital markets and loan fees not split out.
 4. What are the segment's deposits, and what share of borrowing clients keep their main operating accounts with the bank?
-5. What share of commercial clients use treasury management? This sizes the product-gap list.
+5. What share of commercial clients use treasury management? This sizes the Monday opportunity list.
 6. How are RMs paid and measured, and how are referrals to treasury, capital markets and wealth credited?
 7. The value model's inputs: win rate, average first-year revenue per win by product, and today's client-facing hours per RM.
 8. Has the American National conversion happened, and are acquired clients in Salesforce and Snowflake?
-9. Which use cases come first, and how do The RM Assistant and The PM Assistant rank against portfolio management and treasury and payments?
+9. Which use cases come first: the bank named portfolio management and treasury and payments; where does The RM Assistant rank, and does The PM Assistant match what it meant by portfolio management?
 10. Does Finance accept costs saved and loan losses avoided as returns, as well as new revenue?
 
 ## 10. Sources

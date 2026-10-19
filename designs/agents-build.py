@@ -50,7 +50,7 @@ for block in re.split(r"\n### ", read("playbook/agents.md"))[1:]:
     f = dict(re.findall(r"^- \*\*([^*]+):\*\*\s*(.*)$", body.split("\n## ")[0], re.M))
     agents.append({"id": m.group(1), "name": m.group(2), "group": "helpers", "steps": ["My research helpers"], "aim": f["Kind"].split("→")[-1].strip().split()[0],
                    "job": f["Job"], "meta": f"Runs on a schedule · {f['Kind']}",
-                   "fields": [(k, f[k]) for k in ["Starts when", "Inputs", "Allowed actions", "Not allowed", "Outputs", "Stops when", "Proof it worked", "Person in charge", "Runs on (guess)", "To confirm"]],
+                   "fields": [(k, f[k]) for k in ["Starts when", "Inputs", "Allowed actions", "Not allowed", "Outputs", "Stops when", "Proof it worked", "Person in charge", "Runs on" if "Runs on" in f else "Runs on (guess)", "To confirm"]],
                    "source": "Product Playbook · agent library"})
 
 memo = read("memos/rm-analytics-framework.md")

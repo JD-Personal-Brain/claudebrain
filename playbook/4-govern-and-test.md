@@ -7,14 +7,10 @@
 This is the formal approval, not the first time risk partners see the
 product: they've been involved since 1.0. The product is **frozen** during
 this step, so reviewers test what will actually ship. Several reviews can run
-at once, so start 4.1, 4.2 and 4.6 on the first day. Fill in the first-time
-log (see the Product Playbook's opening page) for every sub-step.
+at once, so start 4.1, 4.2 and 4.6 on the first day.
 
-> ⚠️ **How much to trust this.** Written 2026-10-09 from my framework, the RM
-> memo and general US banking practice (SR 11-7 model risk guidance, possibly replaced by SR 26-2: item PL7
-> in the Open Items log; NIST AI RMF; fair-lending law), not from Associated Bank's own process. The bank's
-> review steps, forms and timings are unknown, so every bank-specific line here
-> is a guess ⚠️. Replace them on the first project.
+> ⚠️ The bank's review steps, forms and timings are unknown, so every
+> bank-specific line here is a guess. Replace them on the first project.
 
 ---
 
@@ -197,10 +193,9 @@ log (see the Product Playbook's opening page) for every sub-step.
 
 ## Govern and test automation review (do this at the gate)
 
-Run the automation check from the Product Machine on every Me and Draft task,
-using your first-time logs: cut first (should it exist, delete, simplify, make
-it faster), then automate what's left (repeat? stable? safe alone?). Then update this shortlist and the Govern and test
-table on the Product Machine page.
+Run the automation check (Product Machine) on every Me and Draft task, using
+your first-time logs, then update this shortlist and the Govern and test table on the
+Product Machine page.
 
 | Sub-step | Agent | First time | Aim for | Already specified? |
 |---|---|---|---|---|
@@ -215,8 +210,6 @@ table on the Product Machine page.
 | 4.7 | M14 Sign-off router | Me | Auto ⚠️ | Yes, M14 |
 | 4.7 | None: unblocking a stuck sign-off stays with a person | Me | Me | — |
 | 4.8 | None (the monitoring plan template, an asset) | Draft | Draft | Asset: agent library |
-
-**First time** = how the task is done on the first project. **Aim for** = its kind on the Product Machine page.
 
 **Never automated:** the sign-offs themselves. Risk partners make every call.
 

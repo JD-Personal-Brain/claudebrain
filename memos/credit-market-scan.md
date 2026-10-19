@@ -57,7 +57,7 @@ proposal, not something a source says.
 | **4. Deal scoring and pricing** | **Risk rating support:** AI drafts the rationale and checks it against policy; a person sets the rating | Risk ratings | Little public evidence; it is the closest to a credit decision, so fair-lending rules apply (the same reason pricing is out of the RM plan for now) |
 | **5. AI sales coaching** | **Credit policy Q&A and coaching for analysts:** answers from the bank's credit policy, with the page cited | New (not on our list) | nCino Banking Advisor answers policy questions; American Banker reports AI helps newer bankers most |
 | **Admin off the RM's plate** | **Spreading, document intake and covenant tracking:** read financial statements into the bank's spread, file documents, test covenants and chase compliance certificates | Spreading financial statements; covenant checks | Vendor case studies (Evalueserve, nCino); widely sold |
-| **Keep clients** | **Early warning on credit quality:** signals that a borrower is weakening (late statements, falling deposits, news) | Early warning | McKinsey's most-pursued area (about 60%); Moody's live at a large Asian bank. Shares signals with the RM plan's "Early warning: client may leave" AI product |
+| **Keep clients** | **Early warning on credit quality:** signals that a borrower is weakening (late statements, falling deposits, news) | Early warning | McKinsey's most-pursued area (nearly 60%); Moody's live at a large Asian bank. Shares signals with the RM plan's "Early warning: client may leave" AI product |
 
 **What this shows:** all six parked processes are covered, and two new ones
 appear (deal screening, and policy Q&A and coaching). The evidence is strongest

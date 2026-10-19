@@ -26,6 +26,10 @@
 18. One user group per people page (idea 61, from L38): the three short RM pages for people (executive summary, RM Assistant, plan) don't mention portfolio managers or PMs; cross-group notes go in RM Detail.
     18b. The PM twin: the three short PM pages don't mention the RM Assistant, the RM core use cases or the RM plan.
 15. Agent names: every "M<number> <Name>" in the Product Machine and the playbook steps matches the Agent Library.
+5c. No retired open-item number (B17 and up; B numbers are workflows now) outside dated records.
+14b. Each "Where the requirements come from" row that lists inherited controls lists all of them.
+19. The Prompt Library index gives each prompt the version and date under its heading.
+20. Every control, agent, workflow and sub-step number and page name on a built page is linked (the page kit's linker changes nothing).
 Prints each problem and a total. 0 problems means the mechanical checks pass.
 """
 import glob
@@ -156,7 +160,7 @@ _PR=len(re.findall(r'^## Prompt \d+:', open('prompt-library.md').read(), re.M));
 for b in lib_docs:
     if b['id'] in want and b['count']!=want[b['id']]: print('designs/library.json count for',b['name'],'is',repr(b['count']),'but the sources give',repr(want[b['id']])); probs+=1
 # Each count is read with up to one word in front of the noun ("25 governance controls"). A total is
-# checked against its own number: "all 40 agents" must be every agent, "19 ... machine" agents the machine's.
+# checked against its own number: "all N agents" must be every agent, "N ... machine" agents the machine's.
 for f in ['NOW.md','open-items.md','product-framework.md','product-machine.md','playbook/README.md','designs/library.json','memos/role-workflow.md','tech-stack.md']:
     t=open(f).read()
     for m in re.finditer(r'\b(\d+)[ -](?:([A-Za-z]+) )?(agents?|sub-steps|controls)\b',t):
@@ -294,6 +298,7 @@ _rd=open('playbook/README.md').read()
 if "## Where the requirements come from" not in _rd: print("playbook/README.md: 'Where the requirements come from' section missing"); probs+=1
 _tab=_rd.split("## Where the requirements come from")[-1]
 _listed=set(re.findall(r"^\| (\d\.\d) ",_tab,re.M))
+_ties={}  # sub-step -> the law, regulator and bank-policy controls tied to it (for 14b)
 for _b in re.split(r"\n### ",_ctl)[1:]:
     _cid=_b.split(".")[0]; _m=re.search(r"\*\*Comes from:\*\* ([^:]+):",_b)
     if not _m: print("playbook/controls.md:",_cid,"has no 'Comes from' line"); probs+=1; continue
@@ -302,6 +307,15 @@ for _b in re.split(r"\n### ",_ctl)[1:]:
         _fm=re.search(r"\*\*"+_f+r":\*\* (.+)",_b)
         for _n in re.findall(r"\b\d\.\d\b",_fm.group(1) if _fm else ""):
             if _n not in _listed: print("playbook/README.md: sub-step",_n,"sets, builds, proves or watches",_cid,"("+_m.group(1).strip()+") but isn't in 'Where the requirements come from'"); probs+=1
+            _ties.setdefault(_n,set()).add(_cid)
+# 14b. (full program audit, 2026-10-19) A row that lists the controls it inherits ("K18 bank policy; ...") must list
+# every law, regulator or bank-policy control the Controls Catalog ties to that sub-step, not just some of them.
+# Rows that name no K number, or don't say "inherits" (they give their own source), are left alone.
+for _row in re.finditer(r"^\| (\d\.\d) [^|]*\| ([^|]+)\|",_tab,re.M):
+    _named_k=set(re.findall(r"\bK\d+\b",_row.group(2)))
+    if not _named_k or 'inherits' not in _row.group(2).lower(): continue  # a K number cited only as context (e.g. "control K3") doesn't make a list
+    for _k in sorted(_ties.get(_row.group(1),set())-_named_k,key=lambda x:int(x[1:])):
+        print("playbook/README.md: the 'Where the requirements come from' row for",_row.group(1),"lists inherited controls but leaves out",_k,"(the Controls Catalog ties it to that sub-step)"); probs+=1
 
 # 15. Agent names (audit 2026-10-15): every "M<number> <Name>" in the Product Machine and the playbook step files
 # uses the number and exact name from the Agent Library (playbook/agents.md), so they can't drift apart.
@@ -365,5 +379,43 @@ for f in ['memos/pm-executive-summary.md','memos/pm-assistant.md','memos/pm-plan
                 print(f+':'+str(i),'a page for PMs talks about the RM product or plan; move it to PM Detail or a shared page (rule R31)'); probs+=1
     except FileNotFoundError:
         print('check 18b: missing',f); probs+=1
+
+# 5c. Retired open-item numbers (full program audit, 2026-10-19). Open items were renumbered on 2026-10-19 into the
+# D, PL, RM, PM, F and W tracks; "B" numbers now mean workflows only, and workflows stop at B16. So B17 and up is an
+# old open-item number left behind (check 5b already catches W, D, PL, RM, PM and F numbers that aren't live).
+# Dated records (lessons, the Audit Log, the news log, test results and closed items) keep the numbers of their day.
+_maxb=max(int(x) for x in re.findall(r'^\*\*B(\d+)\. ',open('memos/rm-analytics-framework.md').read()+open('memos/pm-assistant-framework.md').read(),re.M))
+for f in ['NOW.md','ideas.md','product-framework.md','product-machine.md','glossary.md','tech-stack.md','open-items.md','prompt-library.md','prompting.md']+sorted(glob.glob('memos/*.md'))+sorted(glob.glob('playbook/*.md'))+sorted(glob.glob('learning/*.md'))+sorted(glob.glob('.claude/skills/*/SKILL.md'))+sorted(glob.glob('designs/*.html')):
+    if f in ('learning/lessons.md','memos/audit-log.md','memos/bank-news-log.md','designs/audit-log.html'): continue
+    t=open(f).read()
+    if f=='learning/tests.md': t='\n'.join(l for l in t.split('\n') if not l.startswith('- **Results:**'))
+    if f=='open-items.md': t=t.split('## Closed')[0]
+    for m in re.finditer(r'(?<![\w#-])B(\d{1,2})\b',t):
+        if int(m.group(1))>_maxb: print(f,'cites B'+m.group(1),'- workflows stop at B'+str(_maxb)+', so this is an old open-item number: use the new one (the map is the note under "The record" in memos/audit-log.md)'); probs+=1
+
+# 19. Prompt Library versions (full program audit, 2026-10-19): the version in the index table must match the
+# "**Version N** (date)" line under each prompt's heading, so the index can't fall behind an update.
+_pl=open('prompt-library.md').read()
+_idx={m.group(1):(m.group(2),m.group(3)) for m in re.finditer(r'^\| (\d+) \|[^|]+\|[^|]+\| (\d+) \((\d{4}-\d\d-\d\d)\) \|',_pl,re.M)}
+_hd={m.group(1):(m.group(2),m.group(3)) for m in re.finditer(r'^## Prompt (\d+):.*\n\*\*Version (\d+)\*\* \((\d{4}-\d\d-\d\d)\)',_pl,re.M)}
+for _n in sorted(set(_idx)|set(_hd),key=int):
+    if _idx.get(_n)!=_hd.get(_n): print('prompt-library.md: Prompt',_n,'is version',_hd.get(_n),'under its heading but',_idx.get(_n),'in the index table (version, date)'); probs+=1
+
+# 20. Every reference on a built page is linked (full program audit, 2026-10-19; rule R23): running the page kit's
+# linker again on a built page must change nothing. If it does, a control, agent, workflow or sub-step number, or a
+# page name, was left as plain text (usually because the page was built without link_refs or by hand).
+import sys as _sys; _sys.path.insert(0,'designs')
+try:
+    import pagekit as _pk
+    for f in sorted(glob.glob('designs/*.html')):
+        _src=open(f).read()
+        if 'class="xref"' not in _src: continue  # pages the linker doesn't run on (made by hand, or the library)
+        _again=_pk.link_refs(_src,f.split('/')[-1])
+        if _again!=_src:
+            _new=re.findall(r'<a class="xref"[^>]*>([^<]+)</a>',_again); _old=re.findall(r'<a class="xref"[^>]*>([^<]+)</a>',_src)
+            _miss=sorted(set(_new)-set(_old)) or ['(see the page)']
+            print(f,'has references left unlinked, such as',', '.join(_miss[:8]),'- rebuild it with link_refs (designs/pagekit.py)'); probs+=1
+except Exception as e:
+    print('check 20 (every reference linked) failed to run:',e); probs+=1
 
 print("problems:",probs)

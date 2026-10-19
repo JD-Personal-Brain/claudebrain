@@ -5,7 +5,7 @@ a safeguard built into a product so the bank can trust it: who must approve,
 what the AI may not do, and how we prove it.
 
 > ⚠️ **How much to trust this.** Gathered on 2026-10-09 from my product
-> framework, the playbook and the tech stack guide, not from Associated Bank.
+> framework, the playbook and the Tech Stack Guide, not from Associated Bank.
 > The bank's own control list comes from its risk partner at sub-step 2.4, and
 > it replaces this one where they differ. "Tool" lines are guesses.
 
@@ -32,7 +32,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 - **Group:** People in charge
 - **What it is:** every agent only reads by default and has a short list of things it may do.
 - **Why it matters:** the more an agent can do, the more review it needs. ⚠️ I expect a short list to help keep the risk rating low.
-- **Set in:** 3.1 ("keep every agent read-only unless a user clicks to approve an action"; it comes from the AI principles in my product framework, and the risk intake doesn't name it yet)
+- **Set in:** 3.1 (not in the 2.4 risk intake list yet)
 - **Built in:** 3.1, 3.4 (a test that a blocked action fails)
 - **Proved in:** 3.4, 4.5
 - **Watched in:** 4.8 (the control watch list in the monitoring plan; M11 Controls checker re-runs it monthly after launch)
@@ -42,7 +42,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 
 ### K3. AI drafts or flags; a named credit officer decides
 - **Group:** People in charge
-- **What it is:** the AI may draft or flag credit work (a credit memo draft, an early-warning flag), but a named credit officer makes every credit decision, and the product never sets or suggests a price (restating terms a person already proposed, from the deal file, is allowed). A borrower risk rating stays out of the first feature waves (agreed 2026-10-15); whether a draft may carry a recommendation is decided at 2.4 with the credit policy owner, and the test set (3.6) follows that decision. The intake says plainly what the product does not do. A product whose output informs a credit decision takes the **higher-risk path** in step 4, set at 2.4. For the RM Assistant, any insight that suggests a credit product goes to compliance review. For the PM Assistant, the review and memo drafts and the early warning flags take the higher-risk path; whether the borrower file does is the risk partner's call at 2.4; deal screening and line-size suggestions are rated at 2.4 before they are specified. (Restated 2026-10-15, so credit memo drafts can be built.)
+- **What it is:** the AI may draft or flag credit work (a credit memo draft, an early-warning flag), but a named credit officer makes every credit decision, and the product never sets or suggests a price (restating terms a person already proposed, from the deal file, is allowed). A borrower risk rating stays out of the first feature waves; whether a draft may carry a recommendation is decided at 2.4 with the credit policy owner, and the test set (3.6) follows that decision. The intake says plainly what the product does not do. A product whose output informs a credit decision takes the **higher-risk path** in step 4, set at 2.4. For the PM Assistant, the review and memo drafts and the early warning flags take the higher-risk path; whether the borrower file does is the risk partner's call at 2.4; deal screening and line-size suggestions are rated at 2.4 before they are specified.
 - **Why it matters:** fair-lending rules apply to business credit too, and they set a much higher bar.
 - **Set in:** 2.4 (including whether the product takes the higher-risk path)
 - **Built in:** 3.6 (test cases the product must refuse). Guardrails for this, and showing the named credit officer on each credit draft, are not covered in the playbook yet
@@ -79,7 +79,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 ### K6. Sensitive data is hidden or labeled
 - **Group:** Data
 - **What it is:** sensitive fields are hidden ("masked") and sensitive files carry labels that limit who can open them.
-- **Why it matters:** data about individuals, such as business owners and guarantors, needs protecting. Customer privacy law (the Gramm-Leach-Bliley Act) covers individuals' personal (consumer) relationships with the bank; whether it reaches business owners' and guarantors' data in commercial lending is for privacy to confirm ⚠️. Bank policy protects it either way.
+- **Why it matters:** data about individuals, such as business owners and guarantors, needs protecting (how far privacy law reaches is under K4).
 - **Set in:** 2.3 (who may see each field)
 - **Built in:** 3.2, 3.4
 - **Proved in:** 4.2
@@ -226,7 +226,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 - **Why it matters:** nothing untested reaches bankers, and automated tests never run against live data.
 - **Set in:** 2.2
 - **Built in:** 2.2 (the path is written there)
-- **Proved in:** 4.5 (the frozen version reached test by the agreed path, there is a named approver and an agreed route for the move to live (the approval itself is recorded in 5.2), and IT has approved every connection)
+- **Proved in:** 4.5 (the frozen version reached test by the agreed path, and the move to live has a named approver and route; the approval itself is recorded in 5.2)
 - **Watched in:** 5.2
 - **Tool (guess):** Power Platform environments and the bank's release process
 - **Proof:** the written delivery path, and the approval recorded for each move
@@ -250,7 +250,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 - **Why it matters:** they often block an idea outright, so they are checked before the platform is chosen.
 - **Set in:** 2.2
 - **Built in:** 2.2 (checked there, not built)
-- **Proved in:** 4.5 (the frozen version reached test by the agreed path, there is a named approver and an agreed route for the move to live (the approval itself is recorded in 5.2), and IT has approved every connection)
+- **Proved in:** 4.5 (IT has approved every connection)
 - **Watched in:** 4.8 (the control watch list in the monitoring plan; M11 Controls checker re-runs it monthly after launch)
 - **Tool (guess):** Power Platform data policies
 - **Proof:** IT's confirmation that every connection the product uses is allowed
@@ -272,7 +272,7 @@ Each also says where it **comes from**: **law or regulator** (fixed; ask the par
 - **Group:** Quality
 - **What it is:** the logic that finds an insight is simple and explainable. The AI's job is to explain it in plain words, not to invent facts.
 - **Why it matters:** bankers and reviewers can both see why the product said what it said.
-- **Set in:** 3.3 (not set any earlier in the playbook yet; it comes from the AI principles in my product framework)
+- **Set in:** 3.3
 - **Built in:** 3.3
 - **Proved in:** 3.3 (outputs checked by hand with a user), 3.7
 - **Watched in:** 6.3

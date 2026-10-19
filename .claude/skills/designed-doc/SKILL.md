@@ -11,7 +11,7 @@ The .md in `memos/` is only Claude's working copy of the words.
 ## 1. Start
 - **First, decide who reads it (rule R16).** If any person will read it, me included (memos, plans, manuals, playbooks, summaries), it's a designed page: use this skill without being asked. Only files that only Claude uses (rules, skills, NOW.md, logs) stay plain.
 - Ask only what's missing: who reads it, and is it a **one-pager** (to print or send as a PDF) or a **long doc** (to scroll)?
-- If a designed version already exists (check NOW.md and the Artifact list), **update it in place** so the link stays the same.
+- If a designed version already exists (check `designs/README.md` and the Artifact list), **update it in place** so the link stays the same.
 - **Before editing an existing page, check that the live page isn't newer than its saved file (required, idea 38).** Another session may have published changes it hasn't merged into main yet. Do it inside the publish, not with separate reads (each read is an approval prompt for the user, lesson L30): publish the rebuilt page to its link; if the live page has changed since this conversation last saw it, the publish is refused and hands back the live version. Compare that version's text with the page's file on main (`git show origin/main:designs/<file>`); if they match apart from the publish wrapper, publish again. For a page published from several files (a canvas), list its published files (Artifact tool, `action: "list"`, `scope: "files"`), read each with `path`, and compare each with its saved file. If they match, go ahead. If the live page has wording the repo copy lacks, first run `git fetch origin` and look for that wording on main and on other branches (for example, `git grep -n "<wording>" $(git branch -r)`). Then either build on the newer version, so its changes are kept, or stop and tell the user which page differs and how. Never publish a page built from a copy older than what's live. *(From 2026-10-10, when the RM design page (retired 2026-10-17), the scrolling plan page and five other pages all had newer live edits than the repo.)*
 
 - **New layout, look or structure? Show a sample first (required, rule R27).** Before building or publishing a new page layout, a new look or a reorganized page, make a small sample (a screenshot of the key part, built from real content), send it, and wait for a yes. Small fixes to an approved layout don't need one. *(From 2026-10-14, when a full index layout was published unseen and rejected.)*
@@ -39,7 +39,7 @@ Before saying it's done:
 
 ## 5. Deliver
 - Publish, then open it for the user. Say it's private until they share it from the page's Share menu.
-- Put the link in NOW.md, save a draft, and ask before merging into main.
+- Save a draft, and ask before merging into main.
 - If the words changed, update the .md working copy too.
 - Save the page's HTML source in `designs/` and add it to `designs/README.md`, so any session can rebuild it.
 - Add it to the Document Library: an item in `designs/library.json` under the right section's `items` (id, name, what, status, url, source), its .html file in `PAGE_FILE` in `designs/library-build.py`, then `python3 designs/library-build.py` and republish the library (the **documents** skill).

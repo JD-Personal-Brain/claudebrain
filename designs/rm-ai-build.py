@@ -29,6 +29,7 @@ def body(src, keep):
     if keep:
         s = s.split(f"## {keep}\n", 1)[1]
         s = re.split(r"\n## ", s, maxsplit=1)[0]
+    s = re.sub(r" Full exhibit data and every RM detail: \[RM Detail\]\([^)]*\)\.", "", s)  # a link to this document from inside it
     return re.sub(r"^(#{2,3}) ", lambda m: "#" + m.group(1) + " ", s, flags=re.M)  # one level down
 
 def build():

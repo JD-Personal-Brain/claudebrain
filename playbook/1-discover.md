@@ -5,12 +5,7 @@
 **Governance thread:** risk partner briefed on the idea.
 
 Work through 1.0 to 1.7 in order. The risk partner is briefed on the idea before any build uses real client data. Some can overlap: 1.3, 1.4 and 1.5 usually
-run in the same weeks. Fill in the first-time log (see the Product Playbook's opening page) for every
-sub-step. At the end, run the automation review.
-
-> ⚠️ **How much to trust this.** Written 2026-10-09 from my framework, the relationship managers (RMs)
-> memo and general practice, not from Associated Bank. Lines marked ⚠️ are
-> guesses about how the bank works. Tools are named from the Tech Stack Guide.
+run in the same weeks. At the end, run the automation review.
 
 ---
 
@@ -21,7 +16,7 @@ sub-step. At the end, run the automation review.
 - **Know first:**
   - Who is asking for this, and who owns the budget.
   - The bank's process for starting an AI project: is there an intake form or a review board? ⚠️ Not known yet.
-  - Which tracker the bank uses for projects. ⚠️ Not known yet (see "Things to find out" in the Tech Stack Guide).
+  - Which tracker the bank uses for projects. ⚠️ Not known yet (open item PL10 in the Open Items log).
 - **First time, step by step:**
   1. Write one sentence about the project: "We want to [outcome] for [users], measured by [measure]."
   2. Meet the sponsor (30 minutes). Confirm that they own the outcome and the funding, and that they make the go/no-go call at each gate.
@@ -37,7 +32,7 @@ sub-step. At the end, run the automation review.
   - First time: **Me** (sponsor and risk conversations) and **Draft** (setting up the tracker and files).
   - Note: how long setting up the tracker took, and what you copied by hand.
   - Agent: **M1 Kickoff pack builder** (agent library) that creates the tracker, decision log, project file and who-decides template from one project statement. *Draft*: you check it.
-- **For the RM Assistant:** the plan for relationship managers (RMs). Sponsor = a commercial banking leader [name needed]. The statement: "more new revenue from RMs, by finding opportunities and freeing time to act on them." The memo's "Who's involved" table (section 3) is the who-decides list.
+- **For the RM Assistant:** sponsor = a commercial banking leader [name needed]. The statement: "more new revenue from RMs, by finding opportunities and freeing time to act on them." The memo's "Who's involved" table (section 3) is the who-decides list.
 
 ---
 
@@ -213,13 +208,13 @@ sub-step. At the end, run the automation review.
   - Agents:
     - **M5 Baseline recorder** (agent library; Power BI) that snapshots the measure for the target users on a schedule from today on (the pilot and comparison groups are confirmed in 2.8). *Auto*.
     - **M6 Gate pack drafter** (agent library) pulls each sub-step's outputs into one document. *Draft*.
-- **For the RM Assistant:** feature wave 1 = three capabilities: the pre-meeting client brief, the meeting follow-up (recap, email and call notes into Salesforce) and the Monday opportunity list ([RM Detail](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-3-the-rm-assistant-in-full-detail), Part 3, section 3).
+- **For the RM Assistant:** feature wave 1 = three capabilities: the pre-meeting client brief, the meeting follow-up (recap, email and call notes into Salesforce) and the Monday opportunity list ([RM Detail](https://claude.ai/artifact/PhUyGc16TmNNXBsn6Yo25n#part-3-the-rm-assistant-in-full-detail-3-capabilities-by-moment-in-the-rm-s-wor)).
 
 ---
 
 ## The Discover gate
 
-- **Who decides:** the sponsor, with the risk partner's agreement (in writing when the gate is clean; a meeting only if a criterion is contested or a decider asks for one; see the Product Machine).
+- **Who decides:** the sponsor, with the risk partner's agreement (in writing when the gate is clean: Product Machine).
 - **Bring:** the gate pack from 1.7.
 - **Go means:** the sponsor agrees on the target, the measure and today's baseline. The risk partner has no blocking concern. On a project's first pass, the gate may pass early on a first sizing and a provisional baseline (the overlapping first pass, in the Product Framework); the final baseline is then recorded before gate 2.
 - **No-go means:** go back to the sub-step that fell short (usually 1.2 or 1.7), or stop the project and record why.
@@ -229,10 +224,9 @@ sub-step. At the end, run the automation review.
 
 ## Discover automation review (do this at the gate)
 
-Run the automation check from the Product Machine on every Me and Draft task,
-using your first-time logs: cut first (should it exist, delete, simplify, make
-it faster), then automate what's left (repeat? stable? safe alone?). Then update this shortlist and the Discover
-table on the Product Machine page.
+Run the automation check (Product Machine) on every Me and Draft task, using
+your first-time logs, then update this shortlist and the Discover table on the
+Product Machine page.
 
 | Sub-step | Agent | First time | Aim for | Already specified? |
 |---|---|---|---|---|
@@ -246,8 +240,6 @@ table on the Product Machine page.
 | 1.6 | M4 Reaction summarizer | Me | Draft | Yes, M4 |
 | 1.7 | M5 Baseline recorder | Me | Auto ⚠️ | Yes, M5 (ongoing mode) |
 | 1.7 | M6 Gate pack drafter | Draft | Draft | Yes, M6 |
-
-**First time** = how the task is done on the first project. **Aim for** = its kind on the Product Machine page.
 
 **Rule for this table:** a new agent gets a full spec (mission, inputs,
 allowed actions, outputs, stop condition, proof it worked, person in charge)

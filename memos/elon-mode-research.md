@@ -17,7 +17,7 @@ As of 2026-10-15. Research only: the main ideas Elon Musk is known for in busine
 - **Around it sit eight thinking habits:** reason from first principles, measure waste with the "idiot index", attack the limiting factor, treat the process as the product, iterate fast, act with urgency, cut bureaucracy, and seek negative feedback.
 - **His own record shows the limits:** too much automation at Tesla in 2018 (he said so himself), timelines that slip year after year ("Elon time"), and deep cuts at Twitter that broke things.
 - **Our read:** Musk treats a system as something to be stripped down before it is sped up, with the slowest part always getting the attention. The method is strong; the risks are speed without care and promises without dates that hold.
-- **For us:** our machine already automates last and paces work by what blocks it. What Musk adds is subtraction: question and delete before automating, tag every requirement with where it comes from, and measure the machine itself. Eight suggestions below, all adopted and built on 2026-10-15.
+- **For us:** our machine already automates last and paces work by what blocks it. What Musk adds is subtraction: question and delete before automating, tag every requirement with where it comes from, and measure the machine itself. Eight suggestions below.
 
 ## The core: "the algorithm" (five rules, in order)
 Isaacson's biography describes this as Musk's method for cutting waste at Tesla and SpaceX; Musk also walked through it on camera on a 2021 tour of SpaceX's Starbase with the YouTuber Everyday Astronaut (Tim Dodd). The order matters: each rule assumes the one before it is done.
@@ -76,7 +76,7 @@ Our product machine (the Product Workflow, Product Framework, Product Machine an
 | Musk idea | Where it already lives in our system |
 |---|---|
 | Automate last (rule 5) | The automation check at every gate: a task moves toward Auto only when it repeats, is stable and is safe alone (Product Machine). |
-| Attack the limiting factor | "The pace is set by data access and review, not build time" (Product Workflow); plans paced by what really blocks us (my profile). |
+| Attack the limiting factor | "The pace is set by the limiting factor (usually data access and review), not build time" (Product Workflow); plans paced by what really blocks us (my profile). |
 | Iterate fast | A working prototype in week 1; steps 3 to 6 repeat in short cycles (Product Workflow). |
 | The process is the product | Sub-step 6.6, "Improve the machine itself" (Product Playbook). |
 | Seek negative feedback | The audit before every merge, the lessons log, and one-click feedback in every AI product. |
@@ -124,4 +124,4 @@ Search summaries only; none of these pages opened from this session.
 - Missed timelines: [Reuters factbox via KFGO, April 2025](https://kfgo.com/2025/04/22/factbox-elon-musks-late-and-unfulfilled-tesla-promises/).
 - Twitter cuts and outages (2022): [Boston Globe](https://www.bostonglobe.com/2022/11/15/business/elon-musk-fires-twitter-employees-who-criticized-him), [Outlook Business](https://www.outlookbusiness.com/amp/story/news/-unfortunately-there-is-no-choice-elon-musk-in-response-to-backlash-on-layoffs-at-twitter-news-234911), [Refactoring](https://refactoring.fm/p/is-elon-right).
 
-_Last updated: 2026-10-15_
+_Last updated: 2026-10-19_
