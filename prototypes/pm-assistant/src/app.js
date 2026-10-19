@@ -47,7 +47,7 @@
   const checkBadge = r => r.total === 0 ? `<span class="ncheck" title="Control K7">No numbers to check</span>`
     : r.untraced.length ? `<span class="ncheck bad" title="Control K7. Not found in the borrower file: ${esc(r.untraced.join(", "))}">Check ${plural(r.untraced.length, "number")}: ${esc(r.untraced.join(", "))}</span>`
     : `<span class="ncheck" title="Control K7: every number in this draft appears in the borrower file">✓ ${r.total} of ${plural(r.total, "number")} ${r.total === 1 ? "matches" : "match"} the file</span>`;
-  const flagBanner = hits => hits.length ? `<p class="flagged"><strong>Flagged by the guardrail (K3, K8):</strong> this draft contains "${esc(hits.join("; "))}", which reads as a rating, a decision or a price. It's held back and sent to the product manager; change it before you use it.</p>` : "";
+  const flagBanner = hits => hits.length ? `<p class="flagged"><strong>Flagged by the guardrail (K3, K8):</strong> this draft contains "${esc(hits.join("; "))}", which reads as a borrower risk rating, a decision or a price. It's held back and sent to the product manager; change it before you use it.</p>` : "";
   const modeTag = mode => mode === "live" ? `<span class="live-tag">Live run on Claude</span>` : `<span class="rec-tag" title="Recorded by Claude while the prototype was built">Recorded run · ${fmtLong(R.recorded)}</span>`;
   const outputSeen = id => A.measures.outputs.add(id);
 
@@ -267,7 +267,7 @@
       <div class="docmeta-box"><span class="aidraft">AI draft</span>
         <p><strong>${esc(item.kind === "memo" ? "Credit memo" : "Annual review")} · ${esc(b.name)}</strong></p>
         <p>Decision by: <strong>${esc(officer)}</strong> <span class="ctl">K3</span> · Prepared for ${esc(P.pm.name)}, portfolio manager (PM) · Drafted by A8 from the borrower file built by A7 on ${fmtLong(P.dataAsOf)} · Template: routine sections</p>
-        <p class="muted small">Higher-risk path: this draft informs a credit decision, so it's checked for numbers, gaps and anything that reads as a rating, decision or price.</p></div>
+        <p class="muted small">Higher-risk path: this draft informs a credit decision, so it's checked for numbers, gaps and anything that reads as a borrower risk rating, decision or price.</p></div>
       ${flagBanner(hits)}
       ${shaped.removed.length ? `<p class="flagged"><strong>Removed (K3):</strong> the AI wrote a "${esc(shaped.removed.join(", "))}" section. Those sections are the PM's, so the code took it out.</p>` : ""}
       ${gaps ? `<p class="needs"><strong>${plural(gaps, "section")} ${gaps === 1 ? "needs" : "need"} input (K25).</strong> A8 stopped at the gap instead of guessing. Get the missing items (the borrower file lists them), then replace the "Needs input" lines.</p>` : ""}
@@ -336,7 +336,7 @@
     const gaps = Object.keys(f.gaps).length;
     addStep(list, "Checks", "").done(gaps ? `Gap check (K25): ${plural(gaps, "section")} marked "needs input"` : "Gap check (K25): every section has its inputs");
     const hits = A.outputGuard(text, false);
-    addStep(list, "Checks", "").done(hits.length ? `Guardrail scan (K3, K8): flagged "${hits.join("; ")}"` : "Guardrail scan (K3, K8): no rating, decision or price");
+    addStep(list, "Checks", "").done(hits.length ? `Guardrail scan (K3, K8): flagged "${hits.join("; ")}"` : "Guardrail scan (K3, K8): no borrower risk rating, decision or price");
   }
   async function runReview() {
     const token = ++reviewToken; const item = draftItem(); const b = A.findBorrower(item.borrowerId); const list = $("#reviewSteps"), doc = $("#reviewDoc");
@@ -496,7 +496,7 @@
   const CONTROLS = [
     ["The person decides", [["K1", "A person decides", "You use, change or reject every file, draft and flag, and you send every note yourself."], ["K2", "Read-only unless approved", "Nothing is final until you approve, and the assistant never submits: you do, through the bank's normal approval route; the agents never change a record, a borrower risk rating or the bank's watchlist status."], ["K3", "AI drafts or flags; a named credit officer decides", `Every draft names ${P.pm.creditOfficer}; the borrower risk rating and recommendation are left blank for you.`]]],
     ["Data stays in bounds", [["K4", "Users see only what they're allowed to see", "A7's page tools refuse another PM's borrowers; the early warning flags cover only your 12."], ["K25", "Agents stop rather than guess", "A missing statement marks a section \"needs input\"; old data stops the early warning flags."], ["K22", "Simple rules first, and the AI explains", "Early warning is five plain rules credit risk owns; AI only explains what fired."]]],
-    ["Every fact traced", [["K7", "Every answer shows its source", "A document and page, or a system and date, on every figure; every number checked against the file."], ["K8", "Guardrails", "Code checks block ratings, decisions, prices, other PMs' borrowers and off-topic requests; every draft is scanned again."], ["K12", "An audit log", "Every agent action and every decision is logged below, with what it ran on."]]]
+    ["Every fact traced", [["K7", "Every answer shows its source", "A document and page, or a system and date, on every figure; every number checked against the file."], ["K8", "Guardrails", "Code checks block borrower risk ratings, decisions, prices, other PMs' borrowers and off-topic requests; every draft is scanned again."], ["K12", "An audit log", "Every agent action and every decision is logged below, with what it ran on."]]]
   ];
   $("#ctlGrid").innerHTML = CONTROLS.map(([group, list]) => `<div class="ctl-group"><h3>${esc(group)}</h3>${list.map(([k, n, w]) => `<div class="ctl-card"><span><strong>${esc(n)}</strong> <span class="ctl">${k}</span></span><span class="where">${esc(w)}</span></div>`).join("")}</div>`).join("");
   $("#ruleTable tbody").innerHTML = A.WARN.map(r => `<tr><td><strong>${esc(r.name)}</strong> <span class="code">${r.id}</span></td><td>${esc(r.plain)}</td><td class="num">${r.points}</td></tr>`).join("")
