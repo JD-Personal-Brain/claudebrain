@@ -9,7 +9,7 @@ Claude adds ideas as it notices them and suggests 1 to 3 at each wrap-up.
 |---|---|---|---|---|
 | 1 | A "run-tests" skill | Check every rule in tests.md with one request | Skill: `run-tests` | done (2026-10-09: `run-tests` skill) |
 | 2 | Fewer approval pop-ups | Pre-approve safe "only reads" actions so I see fewer pop-ups | Done: the page rule in `.claude/settings.json` (closed C37) | done (2026-10-15) |
-| 3 | Playbooks for my everyday tools | Turn tasks I repeat in email, calendar or documents into step-by-step routines | Task: item W20 in the Open Items log (I name the tasks I repeat); each becomes a skill | yes (2026-10-09): waiting on W20 |
+| 3 | Playbooks for my everyday tools | Turn tasks I repeat in email, calendar or documents into step-by-step routines | Task: item W19 in the Open Items log (I name the tasks I repeat); each becomes a skill | yes (2026-10-09): waiting on W19 |
 | 4 | Settle the "save to GitHub" reminder (it nagged 5 times on 2026-10-09) | An automatic check asks Claude to save after every reply, which clashes with "ask before saving". Decide whether small saves to the draft branch can happen without asking | Rule R3; CLAUDE.md; wrap-up step 6 | done (2026-10-09): Claude saves drafts without asking and asks before merging. CLAUDE.md, rules and NOW.md updated; wrap-up step 6 updated 2026-10-09 |
 | 5 | Saved prompts for thinking through the new job | Start a new session on any part of the job by pasting a ready-made prompt | File: `job-prompts.md` | done (job-prompts.md) |
 | 6 | A "prototype" skill | Say "prototype X" and Claude follows the prototyping process in NOW.md step by step | Skill: `prototype` | done (2026-10-09: `prototype` skill) |

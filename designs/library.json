@@ -82,7 +82,7 @@
           "kit": "leader-brief",
           "name": "RM Executive Summary",
           "what": "Start here. The RM work on one page for the leaders of the RM business: the problem, the product, what RMs get first, the value, how fast and what I need.",
-          "status": "Waiting for review",
+          "status": "In use",
           "url": "https://claude.ai/artifact/LPPq2gt5PSoiB8GzX8ZBE2",
           "source": "memos/rm-executive-summary.md"
         },
@@ -90,7 +90,7 @@
           "id": "rm-assistant",
           "name": "The RM Assistant",
           "what": "The product: one AI assistant for each RM, its limits, its capabilities by moment in the RM's work and the core use case each answers.",
-          "status": "Waiting for review",
+          "status": "In use",
           "url": "https://claude.ai/artifact/RBaZS636CtycDwZyDrgum2",
           "source": "memos/rm-assistant.md",
           "kit": "product"
@@ -99,7 +99,7 @@
           "id": "rm-plan",
           "name": "RM Assistant Plan",
           "what": "How The RM Assistant gets delivered: the first 13 weeks as a chart, what could slow us down, who decides, how we prove the value and the risks.",
-          "status": "Waiting for review",
+          "status": "In use",
           "url": "https://claude.ai/artifact/KxPNQLCj6HASThmQpYtfhk",
           "source": "memos/rm-plan.md",
           "kit": "plan"
@@ -108,7 +108,7 @@
           "id": "rm-prototype",
           "name": "RM Assistant Prototype",
           "what": "The RM Assistant as a clickable prototype: three agents running live on Claude on sample data, the controls working, and a 2-minute guided tour.",
-          "status": "Waiting for review",
+          "status": "In use",
           "url": "https://claude.ai/artifact/RFM2o7cdren3TxesQBsjky",
           "source": "prototypes/rm-assistant/"
         },
