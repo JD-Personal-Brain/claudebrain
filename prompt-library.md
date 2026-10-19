@@ -144,7 +144,7 @@ Rules:    Change no existing files in stage 1; the only new thing is
           designs/README.md and the Document Library until stage 2,
           because I approve the structure before anything is built.
           Keep the order of work already agreed in <decisions> (for
-          [RMs]: [the workflow map is W2]) and say which
+          [RMs]: [the workflow map is RM1]) and say which
           open items the kit covers, because those are already
           planned.
           Give every fact one home and link to it from everywhere
@@ -540,7 +540,7 @@ Inputs:   <model_to_copy>
           section of designs/library.json, and every open item and
           closed decision about credit or PMs in open-items.md
           (for PMs: the parked credit plan, the open decision on
-          copying the RM framework, W2, B3, B4, B8, C22, C33 and the rest)
+          copying the RM framework, the user workflow map, the use case order, the pilot team, headcounts, C22, C33 and the rest)
           </pm_material>
           <base>
           memos/role-workflow.md, product-framework.md,
@@ -613,7 +613,7 @@ Steps:    1. Read everything above. Write a "done" checklist (below,
              as a new map on the Workflow Maps (Map 3, like the RM
              product's Map 2), every bank fact a question to confirm.
              The user workflow (how PMs work today, with the
-             user-workflow skill) comes later, as for RMs (W2).
+             user-workflow skill) comes later, as for RMs (RM1 and PM2).
           8. The agents: add the PM product agents to the Agent
              Library (designs/agents-build.py), linking to PM Detail.
           9. The prototype: run Prompt 4 for PMs, building The PM
@@ -704,7 +704,7 @@ Tone:     A senior product leader's working draft: clear, direct and
 2. Each short page has the same sections as its RM twin; the plan opens with a Gantt chart.
 3. The full plan has the six steps as one table, Appendix A (agents from A7) and Appendix B (workflows from B10).
 4. Wave 1 is the borrower file, then credit memo and annual review drafts on the higher-risk path (K3); wave 2 is early warning; risk ratings are out.
-5. The product's workflows are a map on the Workflow Maps (Map 3, like Map 2); the user workflow (how PMs work today) comes later, as for RMs (W2); the PM agents are in the Agent Library.
+5. The product's workflows are a map on the Workflow Maps (Map 3, like Map 2); the user workflow (how PMs work today) comes later, as for RMs (RM1 and PM2); the PM agents are in the Agent Library.
 6. The prototype runs three agents on a sample borrower, refuses a credit decision or a borrower risk rating, logs every action, has a tour under 2 minutes, a video, passing tests, a README and a changelog.
 7. Every bank fact is an assumption with a question; every outside number has a source.
 8. The render check passes on every changed page; the audit passes; a draft is saved on GitHub; nothing is merged.

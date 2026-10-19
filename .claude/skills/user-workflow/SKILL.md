@@ -1,6 +1,6 @@
 ---
 name: user-workflow
-description: Map how one user group at the bank works today, where each AI product fits into that work, and how the work changes ("today and with AI"). Use when the user says "map the RM workflow", "the credit workflow", "user workflow for X", "how do RMs work today", "where does this product fit in their day", or works on item W2 in the Open Items log. One designed page per user group, in that group's section of the Document Library.
+description: Map how one user group at the bank works today, where each AI product fits into that work, and how the work changes ("today and with AI"). Use when the user says "map the RM workflow", "the credit workflow", "user workflow for X", "how do RMs work today", "where does this product fit in their day", or works on items RM1 or PM2 in the Open Items log. One designed page per user group, in that group's section of the Document Library.
 ---
 
 # Map a user workflow: today and with AI
@@ -32,7 +32,7 @@ For each stage, name every AI product from the plan that touches it (for PMs, us
 Rewrite only the changed stages: what the person does now, what the AI does, and who decides (assistive first: AI drafts or suggests, a person decides). Time saved per stage is [X] until measured (sub-step 1.7's baseline). End with one short summary: which stages change, which stay the same, and what that means for the group's week.
 
 ## 5. What to confirm with the group
-List the guesses (every ⚠️) as questions for interviews and shadowing (playbook sub-steps 1.3 and 1.4). Add any the bank must answer to the Open Items log, under "Inside the bank", as the next B number, ending with "(from: <group> user workflow)". First check it isn't already there (for RMs, see the questions on how RMs are paid, the value model's inputs, whether RMs work mainly in Salesforce, and the playbook's ⚠️ guesses).
+List the guesses (every ⚠️) as questions for interviews and shadowing (playbook sub-steps 1.3 and 1.4). Add any the bank must answer to the Open Items log, as a question for the bank under that group's track (the next RM or PM number), ending with "(from: <group> user workflow)". First check it isn't already there (for RMs, see the questions on how RMs are paid, the value model's inputs, whether RMs work mainly in Salesforce, and the playbook's ⚠️ guesses).
 
 ## 6. Show a sample, then build the page (rule R27)
 1. Before the first page for any group, make a small sample of the layout from real content (for example, three stages with today → AI → with AI), send a screenshot, and wait for a yes. Later groups reuse the approved layout.
@@ -46,4 +46,4 @@ List the guesses (every ⚠️) as questions for interviews and shadowing (playb
 - `python3 .claude/skills/audit/check.py` and `node designs/render-check.js` both report 0 problems; look at the page's screenshot, top and bottom.
 
 ## 8. Record it
-Update item W2 in the Open Items log (which group is done), NOW.md's "Where things stand", and run the **audit** skill before offering to merge (rule R18).
+Close item RM1 or PM2 in the Open Items log (whichever group is done), NOW.md's "Where things stand", and run the **audit** skill before offering to merge (rule R18).

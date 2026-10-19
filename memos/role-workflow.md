@@ -16,7 +16,7 @@ Page 1 of the four "How we deliver" pages, read in this order:
 > 2026-10-18, read in RM Detail) follows the same six steps and gates in one table,
 > with agent specs and workflows in its appendices. It links to the playbook's
 > sub-steps rather than repeating them; marking its tasks Auto, Draft or Me is part
-> of applying the product machine to the RM memo (work item W9 in the Open Items log).
+> of applying the product machine to the RM memo (item RM3 in the Open Items log).
 
 ## The six steps at a glance
 Every AI product goes through six steps, each ending in a **go/no-go gate**. The
