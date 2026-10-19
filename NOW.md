@@ -17,7 +17,7 @@ _Kept short on purpose (Elon mode, 2026-10-18): this note says where things stan
 - **Working with Claude:** the Prompting Guide and the Prompt Library (five core prompts); the Claude Mastery course comes in by paste (next up: Module 3, Projects, Connectors and Skills).
 
 ## What's next
-_Everything open is in the Open Items log (https://claude.ai/artifact/NsW5AH5XFNHmDNYJvmVDMb), as three tracks: the shared platform, the RM Assistant and the PM Assistant. The two things for Tuesday October 20:_
+_The program's open work is in the Open Items log (https://claude.ai/artifact/NsW5AH5XFNHmDNYJvmVDMb), as three tracks: the shared platform, the RM Assistant and the PM Assistant. The two things for Tuesday October 20:_
 1. **Before Tuesday (me):** open the RM Assistant Prototype inside claude.ai, press "Run live on Claude" on the Monday list once to confirm the live AI works, the one check that real Claude hasn't been through yet (the prototype itself is reviewed, C60).
 2. **For Tuesday (me):** ask first how long the bank's AI review takes and whether client meetings may be recorded; the RM timeline rests on both (the shared platform's first question, PL7, and the RM Assistant's first question, RM4).
 
