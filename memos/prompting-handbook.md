@@ -82,7 +82,7 @@ Tone:     One main feel, said specifically: "friendly but direct" ...
 
 | Piece | What it does | Get it right |
 |---|---|---|
-| **Role** | Sets the expertise and point of view | One sentence; name the field and the audience ("writing for its finance leaders") |
+| **Role** | Sets the expertise and point of view | One sentence; name the field and the audience ("writing for a company's finance leaders") |
 | **Goal** | Says what the answer is for | Always include "Done means ...": a test the human could apply to the answer |
 | **Context** | Background the colleague would need | Who it's for, why it matters, what's already decided, any working assumptions stated as assumptions |
 | **Inputs** | The material to work from | Wrap each in its own tag (`<notes>`, `<data>`); if Claude can read files itself, list the paths in tags instead of pasting |
@@ -97,7 +97,7 @@ documents or data, put **Inputs first** and **Goal and Output last**, so Claude
 reads everything before it sees the request (tip 6). Short prompts can run in
 the template's order.
 
-**Patterns we've found worth reusing** (from our six saved prompts):
+**Patterns we've found worth reusing** (from the six saved prompts in the project this memo came from):
 - **Fill-in blanks:** reusable prompts mark the parts that change in
   `[square brackets]`, so a new run only touches those.
 - **Honest placeholders:** use `[X]` for any number nobody knows yet, never an
@@ -114,7 +114,7 @@ the template's order.
   stays.
 
 ## 4. The steps for creating a great prompt
-Work through these in order. Steps 1 and 3 involve the human; section 5 says how.
+Work through these in order. Steps 1 and 5 involve the human; section 5 says how.
 
 1. **Find out what it's for.** You need three answers. Ask only for what the
    conversation hasn't already told you, and ask one question at a time:
@@ -133,7 +133,7 @@ Work through these in order. Steps 1 and 3 involve the human; section 5 says how
    before showing it.
 5. **Hand it over.** Show the prompt in a code block, so it's easy to copy. Add
    one line on how to use it and one on how to ask for changes if the answer is
-   off. If it will be reused, ask whether to save it to the library (yes/no).
+   off (section 5, "When the answer is off"). If it will be reused, ask whether to save it to the library (yes/no).
 6. **Watch for a better home.** If the same setup would be re-typed every
    time, say so once: it may belong in a saved file or a skill instead of a
    prompt.
@@ -171,19 +171,21 @@ what to change, one thing at a time, and teach the human to do the same:
 - [ ] **Done and format:** does it say what "done" looks like, and the output format?
 - [ ] **Reasons:** does every rule have a reason?
 - [ ] **Tone:** if the feel matters, is the tone specific (one main feel)?
-- [ ] **Order:** if there's long material, is it first and the request last?
+- [ ] **Order:** if there's long material, is it first and the request last? (our addition to the original four checks, from tip 6)
 
 Show the result to the human in one line, for example:
 "Checklist: newcomer ✅ done-and-format ✅ reasons ✅ tone ✅ order ✅".
 
 ## 7. Which model to use
-Pick the smallest model that does the job well. The human usually chooses the
-model when starting a session; at the start of a big or unusual task, say in
-one line if a different model would suit it better.
+Pick the smallest model that does the job well. The human chooses the model
+when starting a session; Claude can't switch its own. At the start of a big or
+unusual task, say in one line if a different model would suit it better.
 1. **Small, fast jobs** (classifying, tagging, short summaries, bulk cleanup) → the smallest, fastest model.
 2. **Everyday work** (drafting, cleanup, quick back-and-forth) → the mid-sized model.
 3. **Real reasoning, or a mediocre answer won't do** (memos, plans, designed documents) → the most capable everyday model.
-4. **The most capable model fell short on a hard, long-running problem** → the top model, if the plan includes it.
+4. **The most capable model fell short on a hard, long-running problem** → the top model, if the plan includes it and the human is willing to spend the extra usage.
+
+Not sure? Stay on the default.
 
 Model names and versions change often, so check the model picker for the
 current ones rather than relying on names written here.
@@ -196,7 +198,9 @@ when a prompt is reusable, ask "Save it in the Prompt Library? (yes/no)".
 **The library file has three parts:**
 1. **How to use this page:** how to run a prompt (copy it into a new session,
    fill in the `[brackets]`, send it; or ask Claude for it by name), how to
-   improve one, and how one gets added.
+   improve one, how one gets added, and what the tip numbers in each prompt
+   point to (the nine tips in the prompting guide, such as tip 6, long
+   material first).
 2. **The index table:** one row per prompt.
 3. **One section per prompt**, in number order.
 
@@ -271,7 +275,8 @@ Context:  I'm new to the team. [Customers] are busy and skeptical
           conversation, not a survey.
 
 Rules:    Use plain, everyday words, because people tune out
-          jargon. Keep each question to one sentence.
+          jargon. Keep each question to one sentence, because
+          short questions get fuller answers.
 
 Example:  A question I like: "Walk me through what you did after
           your last [meeting with a client]."
@@ -306,7 +311,9 @@ Steps:    1. Read the notes and list every time-wasting task
 
 Rules:    Use only what's in the notes, because my boss will act on
           this and made-up details would mislead them. If something
-          is unclear, flag it instead of guessing. Use plain words.
+          is unclear, flag it instead of guessing, because a flagged
+          gap is easy to fill and a wrong guess is not. Use plain
+          words, because my boss will skim it.
 
 Example:  A finding I like: "Status reports: about 3 hours a week
           copying updates into a slide. A tool could draft them
@@ -320,7 +327,8 @@ Output:   A heading, then the top 3 problems as short paragraphs,
           then one line: "Open questions to ask next time."
 ```
 
-**Example 3: meeting notes into a follow-up email.** Ready to reuse. Notes
+**Example 3: meeting notes into a follow-up email.** Ready to reuse; the Tone
+line is added here to show that piece in use. Notes
 first, request last (tip 6). `[CHECK: ...]` marks anything unclear, so nothing
 made up reaches the recipient.
 
@@ -347,7 +355,8 @@ Rules:    Use only facts from the notes, because the recipient will
           unclear (a date, a number, who owns a task), put
           [CHECK: ...] in the email instead of guessing.
           Keep it under 200 words, because busy people skim.
-          Use plain, friendly words and no jargon.
+          Use plain, friendly words and no jargon, because the
+          email should read like a person, not a form.
 
 Goal:     Using the notes above, write a follow-up email I can send
           after a quick read. Done means the recipient knows exactly
@@ -363,6 +372,6 @@ Tone:     Warm but businesslike.
 ## Sources
 - Anthropic's prompting guide (the two links in section 2), read 2026-10-09; the tips in section 2 are our plain-English summary, not Anthropic's wording, except the golden rule, which is quoted.
 - The Tone advice and "ask for changes, don't start over" come from the Claude Mastery course (an online course the human bought), noted 2026-10-09.
-- Everything else (the nine-piece template, the steps, the checklist, the library layout and the reuse patterns) is our own method, built and used in this project's Prompting Guide, write-prompt skill and Prompt Library between 2026-10-09 and 2026-10-19.
+- Everything else (the nine-piece template, the steps, the checklist, the library layout, its versioning conventions and the reuse patterns) is our own method, built and used in the source project's Prompting Guide, write-prompt skill and Prompt Library between 2026-10-09 and 2026-10-19.
 
 _Last updated: 2026-10-23_
