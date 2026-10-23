@@ -1,0 +1,203 @@
+<title>Prompting Handbook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
+<style>
+/* Layout: navy header band, a pill nav of the six steps, then one reading column; each sub-step is a card with a two-column body. */
+:root{--bg:#F4F6F8;--card:#FFFFFF;--line:#D9DEE5;--fg:#1B2433;--muted:#4D5868;--navy:#14213D;--onnavy:#FFFFFF;--onnavy-muted:#C9D3E3;--teal:#0F5F59;--teal-bg:#E1F0EE;--amber-bg:#FDF3E1;--amber:#8A4B00;--me:#14213D;--me-fg:#FFFFFF;--partner-bg:#E6E9EE;--partner:#3B4656;--label-on-navy:#8FD3CA;
+--serif:"IBM Plex Serif",Georgia,"Times New Roman",serif;--sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1420;--card:#161E2C;--line:#2A3446;--fg:#E6EAF0;--muted:#A3AEBF;--navy:#0A1830;--onnavy:#FFFFFF;--onnavy-muted:#B4C1D6;--teal:#5FC4B8;--teal-bg:#123A37;--amber-bg:#3A2A10;--amber:#F2C27A;--me:#C9D6F0;--me-fg:#0E1420;--partner-bg:#2A3446;--partner:#C6CFDC;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0E1420;--card:#161E2C;--line:#2A3446;--fg:#E6EAF0;--muted:#A3AEBF;--navy:#0A1830;--onnavy:#FFFFFF;--onnavy-muted:#B4C1D6;--teal:#5FC4B8;--teal-bg:#123A37;--amber-bg:#3A2A10;--amber:#F2C27A;--me:#C9D6F0;--me-fg:#0E1420;--partner-bg:#2A3446;--partner:#C6CFDC;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.55}
+a{color:var(--teal)}
+a:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+code{font-family:var(--mono);font-size:.88em;background:var(--teal-bg);color:var(--teal);padding:1px 5px;border-radius:4px}
+.band{background:var(--navy);color:var(--onnavy);padding-block:48px 36px;padding-inline:20px}
+.wrap{max-width:1080px;margin:0 auto}
+.label{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--teal)}
+.band .label{color:var(--label-on-navy)}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(32px,5vw,46px);line-height:1.15;margin:10px 0 12px;text-wrap:balance}
+.lede{font-size:18px;color:var(--onnavy-muted);max-width:66ch;margin:0}
+.stepnav{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.stepnav a{color:var(--onnavy);text-decoration:none;border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:7px 14px;font-size:14px;display:flex;gap:8px;align-items:center}
+.stepnav a:hover{background:rgba(255,255,255,.08)}
+.stepnav .num{color:var(--label-on-navy)}
+main.wrap{padding-block:32px 64px;padding-inline:20px;display:flex;flex-direction:column;gap:56px}
+h2{font-family:var(--serif);font-weight:600;font-size:34px;line-height:1.2;margin:6px 0 0;text-wrap:balance}
+h3{font-family:var(--serif);font-weight:600;font-size:22px;margin:0}
+h4{font-family:var(--serif);font-weight:600;font-size:20px;margin:0;text-wrap:balance}
+h5{font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+p{margin:0 0 8px;max-width:72ch}
+ul,ol{margin:0;padding-left:22px}
+li{margin:3px 0}
+.num{font-family:var(--mono);font-size:13px;color:var(--teal);font-variant-numeric:tabular-nums}
+section{display:flex;flex-direction:column;gap:18px}
+.use{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:20px;min-width:0}
+.stephead{border-top:4px solid var(--navy);padding-top:22px}
+.meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0 0}
+.meta div{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 14px;min-width:0}
+.meta dt{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:4px}
+.meta dd{margin:0;font-size:15px}
+.intro p{color:var(--muted)}
+.note{background:var(--amber-bg);border-radius:8px;padding:14px 18px;font-size:15px;max-width:none}
+.warn{font-size:.9em}
+.toc{display:flex;flex-wrap:wrap;gap:8px}
+.toc a{display:flex;gap:8px;align-items:baseline;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:14px;color:var(--fg);text-decoration:none}
+.toc a:hover{border-color:var(--teal)}
+.sub{background:var(--card);border:1px solid var(--line);border-radius:8px;overflow:hidden;scroll-margin-top:16px}
+.sub>header{display:flex;gap:14px;align-items:baseline;padding:16px 20px;border-bottom:1px solid var(--line)}
+.sub>header .num{font-size:15px}
+.subgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0}
+.col{padding:16px 20px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.col.steps{border-left:1px solid var(--line)}
+.col.steps ol{display:flex;flex-direction:column;gap:6px}
+.fld p,.fld li{font-size:15px}
+.auto{background:var(--teal-bg);padding:14px 20px;font-size:15px}
+.auto h5{color:var(--teal)}
+.rm{padding:12px 20px;font-size:14px;color:var(--muted);border-top:1px solid var(--line);display:flex;gap:10px;flex-wrap:wrap;align-items:baseline}
+.rm p{margin:0}
+.rmlabel{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);background:var(--amber-bg);padding:2px 8px;border-radius:4px;white-space:nowrap}
+.gate{background:var(--navy);color:var(--onnavy);border-radius:8px;padding:22px 24px;display:flex;flex-direction:column;gap:8px}
+.gate .label{color:var(--label-on-navy)}
+.gate h3{color:var(--onnavy)}
+.gate li{color:var(--onnavy-muted)}
+.gate strong{color:var(--onnavy)}
+.review{display:flex;flex-direction:column;gap:10px}
+.review>p{color:var(--muted);font-size:15px}
+.tw{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:8px}
+table{width:100%;border-collapse:collapse;font-size:15px;min-width:600px}
+th{text-align:left;font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:10px 16px;border-bottom:1px solid var(--line)}
+td{padding:10px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+.chip{display:inline-block;font-family:var(--mono);font-size:12px;padding:2px 9px;border-radius:999px;white-space:nowrap;font-weight:500;margin-right:4px}
+.k-auto{background:var(--teal-bg);color:var(--teal)}
+.k-draft{background:var(--amber-bg);color:var(--amber)}
+.k-me{background:var(--me);color:var(--me-fg)}
+.k-partner{background:var(--partner-bg);color:var(--partner)}
+.agents{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.agent{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:18px 20px;display:flex;flex-direction:column;gap:10px;min-width:0;scroll-margin-top:16px}
+.agent header{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline}
+.agent .used{font-family:var(--mono);font-size:12px;color:var(--muted);margin-left:auto}
+.agent .job{margin:0;font-size:16px}
+.kindrow{font-size:14px;color:var(--muted)}
+.spec{margin:0;display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding-top:10px}
+.spec div{display:grid;grid-template-columns:140px minmax(0,1fr);gap:10px}
+.spec dt{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.spec dd{margin:0;font-size:14px}
+pre.diagram{font-family:var(--mono);font-size:13px;line-height:1.5;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px 18px;overflow-x:auto;margin:0}
+.md-h{margin:8px 0 2px}
+footer{color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:760px){.subgrid,.use,.meta,.agents{grid-template-columns:1fr}.spec div{grid-template-columns:1fr;gap:2px}.col.steps{border-left:0;border-top:1px solid var(--line)}}
+.xref{color:inherit;text-decoration:underline;text-decoration-color:var(--teal);text-underline-offset:2px}.xref:hover{color:var(--teal)}code{overflow-wrap:anywhere}p,li,dd{overflow-wrap:break-word}
+.mdbody{display:flex;flex-direction:column;gap:12px}
+.mdbody>ul,.mdbody>ol{max-width:78ch}
+.mdbody li{margin:4px 0}
+.intro-block{display:flex;flex-direction:column;gap:12px}
+</style>
+<div class="band"><div class="wrap">
+<span class="label">My workspace · working with Claude</span>
+<h1>Prompting Handbook: how we write prompts, for any project</h1>
+<p class="lede">Our whole way of prompting in one portable memo, for another Claude to follow in any project: the framework, the steps, working with the person, and saving to a prompt library.</p>
+<nav class="stepnav" aria-label="Sections"><a href="#0-how-to-use-this-memo">0. How to use this memo</a><a href="#1-how-we-think-about-prompting">1. How we think about prompting</a><a href="#2-anthropic-s-advice-in-plain-english">2. Anthropic's advice, in plain English</a><a href="#3-the-framework-nine-pieces">3. The framework: nine pieces</a><a href="#4-the-steps-for-creating-a-great-prompt">4. The steps for creating a great prompt</a><a href="#5-working-with-the-human">5. Working with the human</a><a href="#6-the-checklist-run-it-before-handing-an">6. The checklist (run it before handing any prompt over)</a><a href="#7-which-model-to-use">7. Which model to use</a><a href="#8-saving-to-the-prompt-library">8. Saving to the prompt library</a><a href="#prompt-n-short-name-what-it-s-for">Prompt [n]: [short name] ([what it's for])</a><a href="#9-setting-this-up-in-a-new-project">9. Setting this up in a new project</a><a href="#10-worked-examples">10. Worked examples</a><a href="#sources">Sources</a></nav>
+</div></div>
+<main class="wrap">
+<div class="intro-block"><p>A memo for another Claude to read and follow. It packs our whole way of prompting into one basic framework that any project using Claude can adopt. Written 2026-10-23 from our <a class="xref" href="https://claude.ai/artifact/Secfj5fBtpVA1veroUU7A7" target="_blank" rel="noopener">Prompting Guide</a> (<code>prompting.md</code>), the write-prompt skill (<code>.claude/skills/write-prompt/</code>) and what we learned building six prompts in our <a class="xref" href="https://claude.ai/artifact/W96baXJf665MJ4qtHmkrks" target="_blank" rel="noopener">Prompt Library</a> (<code>prompt-library.md</code>).</p></div>
+<section id="0-how-to-use-this-memo"><div class="stephead"><h2>0. How to use this memo</h2></div><div class="mdbody"><p>You are Claude, working with a person (called "the human" below) on a project. This memo tells you four things: how we think about prompting, the structure every prompt follows, how you and the human build a prompt together, and how a finished prompt is saved in the project's prompt library so it can be reused and improved.</p><ul><li><strong>Follow it whenever</strong> the human asks you to write, fix or save a prompt, or asks for something reusable (an email routine, a summary, an analysis, a memo), even if they don't say the word "prompt".</li><li><strong>Adapt the names, not the method.</strong> Where this memo says <code>prompting.md</code> or <code>prompt-library.md</code>, use whatever files the project keeps (section 9 sets them up if there are none).</li><li><strong>The human decides.</strong> You explain, recommend and draft; the human approves. If they say no, don't find another way around it: ask what they'd prefer.</li></ul></div></section><section id="1-how-we-think-about-prompting"><div class="stephead"><h2>1. How we think about prompting</h2></div><div class="mdbody"><p>A prompt is a briefing for a capable colleague who knows nothing about the task except what you write down. Everything below follows from that one idea.</p><p><strong>The golden rule</strong> (Anthropic's words, from its prompting guide): "Show your prompt to a colleague with minimal context on the task and ask them to follow it. If they'd be confused, Claude will be too."</p><p>Five beliefs sit underneath the method:</p><ol><li><strong>Clear beats clever.</strong> Say exactly what you want: the length, the format, the limits, and what "done" looks like.</li><li><strong>Reasons beat rules.</strong> A rule with a "because" is applied sensibly in cases the rule didn't foresee; a bare rule is applied blindly.</li><li><strong>Structure beats prose.</strong> The same named pieces, in the same order, make prompts easy to write, review, compare and improve.</li><li><strong>Collaboration beats guessing.</strong> The human holds context you don't have. Ask for it, one question at a time, instead of filling gaps with assumptions.</li><li><strong>Prompts are assets.</strong> A prompt that worked once is saved, numbered and versioned, so the next run starts from the best version, not from memory.</li></ol></div></section><section id="2-anthropic-s-advice-in-plain-english"><div class="stephead"><h2>2. Anthropic's advice, in plain English</h2></div><div class="mdbody"><p>These nine tips are our summary of Anthropic's official prompting guide, last read on 2026-10-09. Anthropic updates the guide often, so re-check it now and then:</p><ul><li>https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview</li><li>https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices</li></ul><ol><li><strong>Be clear and direct.</strong> Say exactly what you want: length, format, limits. Number the steps when order matters.</li><li><strong>Explain why.</strong> Give the reason behind a rule, and Claude applies it more sensibly.</li><li><strong>Show examples.</strong> 3 to 5 good ones that differ from each other.</li><li><strong>Use tags to separate parts</strong>, like <code>&lt;context&gt;</code> and <code>&lt;example&gt;</code>. Any clear names work; keep them consistent.</li><li><strong>Give a role.</strong> One sentence, like "You are a product manager at a software company."</li><li><strong>Long documents first, the question last.</strong></li><li><strong>Say what to do, not what not to do.</strong> "Write in short paragraphs" beats "don't use bullets."</li><li><strong>Ask for extra effort out loud</strong> if you want Claude to go above and beyond.</li><li><strong>Big jobs: draft, check, improve.</strong> Write a draft, review it against the goal, then refine.</li></ol><p>Anthropic does not publish a fixed list of prompt "pieces". The template in section 3 is our own checklist, built on this advice. When a saved prompt cites "tip 4", "tip 6" or "tip 9", it means the numbers above.</p></div></section><section id="3-the-framework-nine-pieces"><div class="stephead"><h2>3. The framework: nine pieces</h2></div><div class="mdbody"><p>Use the pieces the task needs. <strong>Goal, Context and Output matter most</strong> and are in every prompt; add the rest for big, risky or reusable tasks.</p><pre class="diagram">Role:     You are a ...
+Goal:     I want ... Done means ...
+Context:  Background, who it&#x27;s for, and why it matters ...
+Inputs:   The document, data or link to use ...
+Steps:    1. ... 2. ... 3. ...
+Rules:    Do ... Keep it under ... Because ...
+Examples: Here&#x27;s one I like: ...
+Output:   Give me ... in this form: ...
+Tone:     One main feel, said specifically: &quot;friendly but direct&quot; ...</pre><div class="tw"><table><thead><tr><th>Piece</th><th>What it does</th><th>Get it right</th></tr></thead><tbody><tr><td><strong>Role</strong></td><td>Sets the expertise and point of view</td><td>One sentence; name the field and the audience ("writing for a company's finance leaders")</td></tr><tr><td><strong>Goal</strong></td><td>Says what the answer is for</td><td>Always include "Done means ...": a test the human could apply to the answer</td></tr><tr><td><strong>Context</strong></td><td>Background the colleague would need</td><td>Who it's for, why it matters, what's already decided, any working assumptions stated as assumptions</td></tr><tr><td><strong>Inputs</strong></td><td>The material to work from</td><td>Wrap each in its own tag (<code>&lt;notes&gt;</code>, <code>&lt;data&gt;</code>); if Claude can read files itself, list the paths in tags instead of pasting</td></tr><tr><td><strong>Steps</strong></td><td>The order of work</td><td>Number them; make the last step "check the draft against the Goal, then improve it" (tip 9)</td></tr><tr><td><strong>Rules</strong></td><td>Limits and must-dos</td><td>Every rule ends with a reason ("because ..."); say what to do, not what to avoid (tip 7)</td></tr><tr><td><strong>Examples</strong></td><td>Shows the target</td><td>One short example of a good line or finding; 3 to 5 varied ones for repeated formats</td></tr><tr><td><strong>Output</strong></td><td>The exact shape of the answer</td><td>Sections in order, length, format (table, list, code block, page)</td></tr><tr><td><strong>Tone</strong></td><td>The feel</td><td>One main feel, said specifically: "confident but not salesy." Plain "professional" leaves Claude guessing. Skip it when tone doesn't matter</td></tr></tbody></table></div><p><strong>Order matters when there's long material.</strong> If the prompt includes notes, documents or data, put <strong>Inputs first</strong> and <strong>Goal and Output last</strong>, so Claude reads everything before it sees the request (tip 6). Short prompts can run in the template's order.</p><p><strong>Patterns we've found worth reusing</strong> (from the six saved prompts in the project this memo came from):</p><ul><li><strong>Fill-in blanks:</strong> reusable prompts mark the parts that change in <code>[square brackets]</code>, so a new run only touches those.</li><li><strong>Honest placeholders:</strong> use <code>[X]</code> for any number nobody knows yet, never an invented one, because readers check numbers and one made-up figure spoils trust in the rest.</li><li><strong>Facts vs. assumptions:</strong> tell Claude to mark anything only the client or organization knows (its people, data, policies) as "assumption, to confirm", with the question to ask.</li><li><strong>Stages with a stop:</strong> when a prompt would create a new structure or layout, split it into Stage 1 (a small sample) and Stage 2 (the full build), and tell Claude to stop for the human's yes between them.</li><li><strong>A "for a different case" line:</strong> under a reusable prompt, one line says which pieces to change to point it at a new case and that everything else stays.</li></ul></div></section><section id="4-the-steps-for-creating-a-great-prompt"><div class="stephead"><h2>4. The steps for creating a great prompt</h2></div><div class="mdbody"><p>Work through these in order. Steps 1 and 5 involve the human; section 5 says how.</p><ol><li><strong>Find out what it's for.</strong> You need three answers. Ask only for what the conversation hasn't already told you, and ask one question at a time:<ul><li><strong>Goal:</strong> what should the answer let them do? What does "done" look like?</li><li><strong>Inputs:</strong> is there long material (notes, a document, data)? If yes, it goes first and the request last.</li><li><strong>Reuse:</strong> a one-off, or a prompt they'll run again? Reusable ones get <code>[brackets]</code> and are offered for the library.</li></ul></li><li><strong>Pick the pieces.</strong> Goal, Context and Output always; Tone when the feel matters; Role, Inputs, Steps, Rules and Examples for big, risky or reusable prompts.</li><li><strong>Draft it with the template.</strong> Fill each piece. Give every rule a reason. Wrap pasted material in tags. If you assume something, say so in one line so the human can correct it.</li><li><strong>Check it against the checklist</strong> (section 6). Fix anything that fails before showing it.</li><li><strong>Hand it over.</strong> Show the prompt in a code block, so it's easy to copy. Add one line on how to use it and one on how to ask for changes if the answer is off (section 5, "When the answer is off"). If it will be reused, ask whether to save it to the library (yes/no).</li><li><strong>Watch for a better home.</strong> If the same setup would be re-typed every time, say so once: it may belong in a saved file or a skill instead of a prompt.</li></ol></div></section><section id="5-working-with-the-human"><div class="stephead"><h2>5. Working with the human</h2></div><div class="mdbody"><p>Building a prompt is a short collaboration, not a questionnaire. The human knows the situation; you know how to turn it into a prompt that works.</p><ul><li><strong>One question at a time, and only what's missing.</strong> Never re-ask something the conversation already answers. A long list of questions feels like a form; one good question keeps things moving.</li><li><strong>Explain, recommend, let them choose.</strong> When there's a choice (a one-off or reusable prompt, one stage or two), give your recommendation with a one-line reason and let the human decide.</li><li><strong>Show the pieces as you go.</strong> If the human is learning, name the piece you're filling ("this is the Context: why it matters") so the framework becomes theirs, not only yours.</li><li><strong>Keep your messages small.</strong> Everything around the prompt stays short: about five lines and one question. The prompt itself can be as long as the job needs.</li><li><strong>Don't fill gaps with guesses.</strong> If something is unclear, ask. If you must assume to keep moving, say the assumption plainly so it can be corrected.</li><li><strong>Use plain words.</strong> Explain any technical term the first time you use it.</li><li><strong>If they say no, stop.</strong> Don't route around a "no"; ask what they'd prefer.</li></ul><p><strong>When the answer is off, ask for changes; don't start over.</strong> Never just say "try again" or "make it better": that tells Claude nothing. Say what to keep and what to change, one thing at a time, and teach the human to do the same:</p><ol><li><strong>First draft:</strong> use the full template and expect a solid start, not perfection.</li><li><strong>Change the direction:</strong> "Keep the structure. Replace the generic points with three real examples."</li><li><strong>Polish:</strong> "The intro is too long. Cut it to two sentences."</li></ol></div></section><section id="6-the-checklist-run-it-before-handing-an"><div class="stephead"><h2>6. The checklist (run it before handing any prompt over)</h2></div><div class="mdbody"><ul><li>[ ] <strong>Newcomer:</strong> would a colleague with no context understand it? (the golden rule)</li><li>[ ] <strong>Done and format:</strong> does it say what "done" looks like, and the output format?</li><li>[ ] <strong>Reasons:</strong> does every rule have a reason?</li><li>[ ] <strong>Tone:</strong> if the feel matters, is the tone specific (one main feel)?</li><li>[ ] <strong>Order:</strong> if there's long material, is it first and the request last? (our addition to the original four checks, from tip 6)</li></ul><p>Show the result to the human in one line, for example: "Checklist: newcomer ✅ done-and-format ✅ reasons ✅ tone ✅ order ✅".</p></div></section><section id="7-which-model-to-use"><div class="stephead"><h2>7. Which model to use</h2></div><div class="mdbody"><p>Pick the smallest model that does the job well. The human chooses the model when starting a session; Claude can't switch its own. At the start of a big or unusual task, say in one line if a different model would suit it better.</p><ol><li><strong>Small, fast jobs</strong> (classifying, tagging, short summaries, bulk cleanup) → the smallest, fastest model.</li><li><strong>Everyday work</strong> (drafting, cleanup, quick back-and-forth) → the mid-sized model.</li><li><strong>Real reasoning, or a mediocre answer won't do</strong> (memos, plans, designed documents) → the most capable everyday model.</li><li><strong>The most capable model fell short on a hard, long-running problem</strong> → the top model, if the plan includes it and the human is willing to spend the extra usage.</li></ol><p>Not sure? Stay on the default.</p><p>Model names and versions change often, so check the model picker for the current ones rather than relying on names written here.</p></div></section><section id="8-saving-to-the-prompt-library"><div class="stephead"><h2>8. Saving to the prompt library</h2></div><div class="mdbody"><p>A prompt worth reusing goes into the project's <strong>prompt library</strong>, one file (<code>prompt-library.md</code>) that holds every saved prompt. Never save without asking: when a prompt is reusable, ask "Save it in the <a class="xref" href="https://claude.ai/artifact/W96baXJf665MJ4qtHmkrks" target="_blank" rel="noopener">Prompt Library</a>? (yes/no)".</p><p><strong>The library file has three parts:</strong></p><ol><li><strong>How to use this page:</strong> how to run a prompt (copy it into a new session, fill in the <code>[brackets]</code>, send it; or ask Claude for it by name), how to improve one, how one gets added, and what the tip numbers in each prompt point to (the nine tips in the prompting guide, such as tip 6, long material first).</li><li><strong>The index table:</strong> one row per prompt.</li><li><strong>One section per prompt</strong>, in number order.</li></ol><p><strong>The index table:</strong></p><div class="tw"><table><thead><tr><th>#</th><th>Prompt</th><th>What it gives me</th><th>Version</th></tr></thead><tbody><tr><td>1</td><td>[short name]</td><td>[what the human gets from running it]</td><td>1 ([date])</td></tr></tbody></table></div><p><strong>Each prompt's section follows this layout:</strong></p></div></section><section id="prompt-n-short-name-what-it-s-for"><div class="stephead"><h2>Prompt [n]: [short name] ([what it's for])</h2></div><div class="mdbody"><p><strong>Version [v]</strong> ([date]). [First run: ... / Say "run the ... prompt".]</p><p>[Two to five sentences: what the prompt does, why it's built the way it is, and which tips it uses, such as "inputs first and the request last (tip 6)".]</p><pre class="diagram">[the prompt itself, in the nine-piece template]</pre><p><strong>For a different [case]:</strong> change [which pieces]. Everything else stays.</p><p><strong>What changed:</strong> version 1, written [date]. Version 2 ([date]): [what changed and why].</p></div></section><section id="9-setting-this-up-in-a-new-project"><div class="stephead"><h2>9. Setting this up in a new project</h2></div><div class="mdbody"><p>If the project has no prompting files yet, propose this setup to the human and build it on their yes:</p><ol><li><strong><code>prompting.md</code>:</strong> the prompting guide: sections 1 to 7 of this memo, plus the worked examples in section 10, adapted to the project's own work.</li><li><strong><code>prompt-library.md</code>:</strong> the library, starting with the "How to use this page" part and an empty index table (section 8).</li><li><strong>Make Claude read the guide every session:</strong> in Claude Code, add <code>@prompting.md</code> to the project's <code>CLAUDE.md</code>, so every session loads it.</li><li><strong>Optional, a write-prompt routine:</strong> in Claude Code, a skill (<code>.claude/skills/write-prompt/SKILL.md</code>) holding the steps in section 4, so the human can say "write a prompt for X" and get this method every time.</li></ol><p>Before naming a file, check the project's existing conventions and use those.</p></div></section><section id="10-worked-examples"><div class="stephead"><h2>10. Worked examples</h2></div><div class="mdbody"><p>Three teaching examples, from simple to full. Fill the <code>[brackets]</code> for your project.</p><p><strong>Example 1: a basic prompt.</strong> Six pieces; no Inputs or Steps, because there's no document and no set order.</p><pre class="diagram">Role:     You are a product manager at [a software company].
+
+Goal:     Write 5 questions I can ask [our customers] to find
+          where they lose time each week. Done means I could use
+          them in a 20-minute chat tomorrow.
+
+Context:  I&#x27;m new to the team. [Customers] are busy and skeptical
+          of new tools, so the questions should feel like a
+          conversation, not a survey.
+
+Rules:    Use plain, everyday words, because people tune out
+          jargon. Keep each question to one sentence, because
+          short questions get fuller answers.
+
+Example:  A question I like: &quot;Walk me through what you did after
+          your last [meeting with a client].&quot;
+
+Output:   A numbered list of 5 questions. Under each, one line on
+          what it helps me learn.</pre><p><strong>Example 2: the full framework.</strong> Eight pieces. The notes come first and the request (Goal and Output) last (tip 6); tags mark where the notes start and end (tip 4); step 5 is "draft, check, improve" (tip 9).</p><pre class="diagram">Inputs:   &lt;notes&gt;
+          [paste your interview notes here]
+          &lt;/notes&gt;
+
+Role:     You are a product manager at [a software company].
+
+Context:  The notes above are from my interview with [a customer]
+          about where they lose time. My boss will use the summary
+          to decide what we build first, so the problems need to be
+          clear and ranked.
+
+Steps:    1. Read the notes and list every time-wasting task
+             mentioned.
+          2. Group similar tasks together.
+          3. Rank the groups by hours lost per week, biggest first.
+          4. For the top 3, say whether a tool could realistically
+             help.
+          5. Check your draft against the Goal, then improve it.
+
+Rules:    Use only what&#x27;s in the notes, because my boss will act on
+          this and made-up details would mislead them. If something
+          is unclear, flag it instead of guessing, because a flagged
+          gap is easy to fill and a wrong guess is not. Use plain
+          words, because my boss will skim it.
+
+Example:  A finding I like: &quot;Status reports: about 3 hours a week
+          copying updates into a slide. A tool could draft them
+          from the project tracker.&quot;
+
+Goal:     Using the notes above, write a 1-page findings summary for
+          my boss. Done means they can read it in 2 minutes and see
+          the top problems worth solving.
+
+Output:   A heading, then the top 3 problems as short paragraphs,
+          then one line: &quot;Open questions to ask next time.&quot;</pre><p><strong>Example 3: meeting notes into a follow-up email.</strong> Ready to reuse; the Tone line is added here to show that piece in use. Notes first, request last (tip 6). <code>[CHECK: ...]</code> marks anything unclear, so nothing made up reaches the recipient.</p><pre class="diagram">Inputs:   &lt;notes&gt;
+          [paste your meeting notes here]
+          &lt;/notes&gt;
+
+Role:     You are an experienced [account manager] who writes
+          clear, warm emails.
+
+Context:  The notes above are from my meeting with [name, company]
+          on [date]. The email goes from me to them, so it must be
+          accurate and sound like a real person wrote it.
+
+Steps:    1. Pull out what we discussed, what we agreed, and who
+             owes what by when.
+          2. Write the email.
+          3. Check it against the notes and fix anything that
+             doesn&#x27;t match.
+
+Rules:    Use only facts from the notes, because the recipient will
+          take anything I send as a commitment. If something is
+          unclear (a date, a number, who owns a task), put
+          [CHECK: ...] in the email instead of guessing.
+          Keep it under 200 words, because busy people skim.
+          Use plain, friendly words and no jargon, because the
+          email should read like a person, not a form.
+
+Goal:     Using the notes above, write a follow-up email I can send
+          after a quick read. Done means the recipient knows exactly
+          what happens next and who does it.
+
+Output:   A subject line, then the email: a one-line thank-you,
+          a short recap, a &quot;Next steps&quot; list (owner + date for each),
+          and a closing line.
+
+Tone:     Warm but businesslike.</pre></div></section><section id="sources"><div class="stephead"><h2>Sources</h2></div><div class="mdbody"><ul><li>Anthropic's prompting guide (the two links in section 2), read 2026-10-09; the tips in section 2 are our plain-English summary, not Anthropic's wording, except the golden rule, which is quoted.</li><li>The Tone advice and "ask for changes, don't start over" come from the Claude Mastery course (an online course the human bought), noted 2026-10-09.</li><li>Everything else (the nine-piece template, the steps, the checklist, the library layout, its versioning conventions and the reuse patterns) is our own method, built and used in the source project's <a class="xref" href="https://claude.ai/artifact/Secfj5fBtpVA1veroUU7A7" target="_blank" rel="noopener">Prompting Guide</a>, write-prompt skill and <a class="xref" href="https://claude.ai/artifact/W96baXJf665MJ4qtHmkrks" target="_blank" rel="noopener">Prompt Library</a> between 2026-10-09 and 2026-10-19.</li></ul></div></section>
+<footer>Built from the working copy <code>memos/prompting-handbook.md</code> · last updated 2026-10-23. Lines marked ⚠️ are guesses to confirm; [X] marks numbers still to be set.</footer>
+</main>

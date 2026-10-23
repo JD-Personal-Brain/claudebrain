@@ -30,6 +30,8 @@ PAGES = [
      "How the bank earns money, the corporate segment in depth, and where AI work lines up with each revenue line."),
     ("prompting.md", "prompting.html", "Prompting Guide", "My workspace · working with Claude",
      "How we write prompts: Anthropic's advice in plain English, a fill-in template, three worked examples and a checklist."),
+    ("memos/prompting-handbook.md", "prompting-handbook.html", "Prompting Handbook", "My workspace · working with Claude",
+     "Our whole way of prompting in one portable memo, for another Claude to follow in any project: the framework, the steps, working with the person, and saving to a prompt library."),
     ("prompt-library.md", "prompt-library.html", "Prompt Library", "My workspace · working with Claude",
      "Our core prompts in one place, each with its version and what changed, so we can reuse them and improve them over time."),
     ("memos/use-case-library.md", "use-case-library.html", "Use Case Library", "Research · use cases",

@@ -33,7 +33,7 @@ PAGE_FILE = {"open-items": "open-items.html", "job-description": "job-descriptio
              "rm-plan": "rm-analytics-plan.html", "rm-assistant": "rm-assistant.html", "use-case-library": "use-case-library.html", "rm-executive-summary": "rm-executive-summary.html", "rm-ai-reference": "rm-ai-reference.html",
              "prompting": "prompting.html", "credit-market-scan": "credit-market-scan.html", "workflows": "workflows.html", "agents": "agents.html", "steps": "steps.html",
              "controls": "controls.html", "glossary": "glossary.html", "elon-mode": "elon-mode.html", "audit-log": "audit-log.html",
-             "prompt-library": "prompt-library.html", "rm-prototype": None,
+             "prompt-library": "prompt-library.html", "prompting-handbook": "prompting-handbook.html", "rm-prototype": None,
              "pm-executive-summary": "pm-executive-summary.html", "pm-assistant": "pm-assistant.html", "pm-plan": "pm-assistant-plan.html",
              "pm-ai-reference": "pm-ai-reference.html", "pm-prototype": None}
 

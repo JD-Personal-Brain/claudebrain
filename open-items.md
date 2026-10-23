@@ -108,6 +108,7 @@ Upkeep of the reference pages and of how I work with Claude. Not shown on the pa
 | W5 | Claude Mastery course: paste in the next page (Module 3: Projects, Connectors and Skills). Claude starts a course notes file when it arrives (idea 14, approved) | Me, then Claude | Nothing |
 | W6 | Playbooks for my everyday tools (idea 3, approved): name two or three tasks I repeat in email, calendar or documents. Claude turns each into a step-by-step skill | Me, then Claude | Nothing |
 | W7 | Process fixes from the 2026-10-18 Elon mode reviews still to build: one list of pages (the library file only); counts inserted from one source; turn repeated reviewer findings into checks (links that don't resolve, a footer date older than the file). The user-workflow routine (idea 41) gets its first use on RM2 and PM2; a rename command; build the Product Workflow page from its working file; count what each checker check catches and drop the silent ones; run or retire the rule tests never run (W3; one test per rule); one home for repeated rules (such as "in writing; a meeting only if contested"). Needs my yes: the GitHub check also runs the render check and the prototype tests | Claude | Nothing (the GitHub check: my yes) |
+| W8 | Decide ideas 65 and 66, put forward at the 2026-10-23 wrap-up: a checker rule that keeps the Prompting Handbook free of client names, and a general write-prompt skill to copy into other projects | Me | Nothing |
 
 ## Closed
 
@@ -182,6 +183,7 @@ Upkeep of the reference pages and of how I work with Claude. Not shown on the pa
 | C67 | Ready to share the repo (said 2026-10-19): the two unused interview-prep files (job notes and job prompts) deleted, a README added at the top of the repo, and the pay range taken off the Job Description page; the repo is shared as it is, history included | 2026-10-19 |
 | C68 | Try the newer skills on real work: "prototype X", "write a prompt for X", "new use case: X": done in practice (the prototype skill built both assistants' prototypes, and Prompt 5 built the PM section); closed in the Elon mode review of the Open Items log (said 2026-10-19: apply all five) | 2026-10-19 |
 | C69 | The PM section: reviewed and in use (said 2026-10-19): the PM Executive Summary, The PM Assistant, the PM Assistant Plan and the PM Assistant Prototype are In use in the Document Library; PM Detail stays a reference page for AI | 2026-10-19 |
+| C70 | The Prompting Handbook: our prompting method as one portable memo for another Claude, for any project that uses Claude; reviewed and in use (said 2026-10-23), in My workspace beside the Prompting Guide | 2026-10-23 |
 
 
-_Last updated: 2026-10-19_
+_Last updated: 2026-10-23_
