@@ -293,6 +293,14 @@
           "status": "In use",
           "url": "https://claude.ai/artifact/W96baXJf665MJ4qtHmkrks",
           "source": "prompt-library.md"
+        },
+        {
+          "id": "prompting-handbook",
+          "name": "Prompting Handbook",
+          "what": "Our whole way of prompting in one portable memo, for another Claude to follow in projects outside the bank: the framework, the steps, working with the person, and saving to a prompt library.",
+          "status": "Draft",
+          "url": "https://claude.ai/artifact/NDuEoSU8CeZF1NDnZbaUzQ",
+          "source": "memos/prompting-handbook.md"
         }
       ]
     }

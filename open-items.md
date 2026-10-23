@@ -108,6 +108,7 @@ Upkeep of the reference pages and of how I work with Claude. Not shown on the pa
 | W5 | Claude Mastery course: paste in the next page (Module 3: Projects, Connectors and Skills). Claude starts a course notes file when it arrives (idea 14, approved) | Me, then Claude | Nothing |
 | W6 | Playbooks for my everyday tools (idea 3, approved): name two or three tasks I repeat in email, calendar or documents. Claude turns each into a step-by-step skill | Me, then Claude | Nothing |
 | W7 | Process fixes from the 2026-10-18 Elon mode reviews still to build: one list of pages (the library file only); counts inserted from one source; turn repeated reviewer findings into checks (links that don't resolve, a footer date older than the file). The user-workflow routine (idea 41) gets its first use on RM2 and PM2; a rename command; build the Product Workflow page from its working file; count what each checker check catches and drop the silent ones; run or retire the rule tests never run (W3; one test per rule); one home for repeated rules (such as "in writing; a meeting only if contested"). Needs my yes: the GitHub check also runs the render check and the prototype tests | Claude | Nothing (the GitHub check: my yes) |
+| W8 | Review the Prompting Handbook (our way of prompting as one portable memo, for another Claude to use in projects outside the bank), then mark it In use | Me | Nothing |
 
 ## Closed
 
