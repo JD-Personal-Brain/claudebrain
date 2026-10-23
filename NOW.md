@@ -1,6 +1,6 @@
 # NOW: start here
 
-_Last updated: 2026-10-19 · Last review: none yet (first one due around 2026-10-21; I said not yet on 2026-10-14) · Wrap-ups since the last Elon mode review: 0 (last run 2026-10-19, in the full program audit (Prompt 6), on the product machine and this system; it runs at 3)_
+_Last updated: 2026-10-23 · Last review: none yet (first one due around 2026-10-21; I said not yet on 2026-10-14) · Wrap-ups since the last Elon mode review: 1 (last run 2026-10-19, in the full program audit (Prompt 6), on the product machine and this system; it runs at 3)_
 
 _Short on purpose (Elon mode, 2026-10-18): open work is in the Open Items log, how Claude works in `CLAUDE.md` and `learning/rules.md`, history in git, the closed items and `learning/lessons.md`._
 
@@ -14,7 +14,7 @@ _Short on purpose (Elon mode, 2026-10-18): open work is in the Open Items log, h
 - **Use cases:** the Use Case Library (https://claude.ai/artifact/RpZD7TtRQb9WYD8GdAYu6X, in use).
 - **The bank:** the Bank Business Briefing (https://claude.ai/artifact/7ZVT7LtdqxwAma4UrBgTPX), updated by the bank news scout every Monday (its first run, October 19, failed: it couldn't reach the repo; until that's solved, Claude re-runs the briefing by hand after the Q3 results, W2) and on October 23, the day after the Q3 results (out October 22); notices go to my personal email.
 - **Quality:** every change is audited before main (the audit skill, the GitHub audit check, the Audit Log https://claude.ai/artifact/QnPL82PBx6AfGKB5VgqUPf). The mechanical part of each wrap-up runs by script (`.claude/skills/wrap-up/run.py`).
-- **Working with Claude:** the Prompting Guide and the Prompt Library (six core prompts); the Claude Mastery course comes in by paste (next up: Module 3, Projects, Connectors and Skills).
+- **Working with Claude:** the Prompting Guide, the Prompt Library (six core prompts) and the Prompting Handbook (https://claude.ai/artifact/NDuEoSU8CeZF1NDnZbaUzQ, in use since 2026-10-23: our prompting method as one general framework any project using Claude can adopt; give another Claude `memos/prompting-handbook.md`); the Claude Mastery course comes in by paste (next up: Module 3, Projects, Connectors and Skills).
 
 ## What's next
 _The program's open work is in the Open Items log (https://claude.ai/artifact/NsW5AH5XFNHmDNYJvmVDMb), as three tracks: the shared platform, the RM Assistant and the PM Assistant. The two things for Tuesday October 20:_

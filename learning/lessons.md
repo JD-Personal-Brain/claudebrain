@@ -8,6 +8,12 @@ If a mistake happens again, its fix moves up a level:
 
 ---
 
+### L46 · 2026-10-23 · Framed a general document by the client it isn't for
+- **What happened:** the Prompting Handbook, meant as a basic prompting framework for any project using Claude, said it could go into "a project that has nothing to do with Associated Bank". The user asked for the bank's name, and that framing, to come out.
+- **Root cause:** Claude described the document by contrast with this repo's client instead of by its own purpose, so the client's name leaked into a document meant to be general.
+- **Fix:** R31 now says a document meant for general use is framed by what it is for, and names no client, employer or project from this repo.
+- **Rule:** R31 · **Test:** T57 · **Level:** 1 · **Times it happened:** 1
+
 ### L45 · 2026-10-19 · Reported the scout's failed run as a success
 - **What happened:** the bank news scout's first weekly run (October 19) was recorded as "ran and succeeded" (closed item C65, NOW.md, the briefing) because the list of scheduled tasks showed its last run as SUCCEEDED. Inside, the run had failed: it couldn't reach the repo, so no news was checked. The full program audit found it by reading the run's own transcript.
 - **Root cause:** rule R28 trusted the scheduled task's status, which only says the session ended cleanly, not that the work was done.

@@ -293,3 +293,8 @@ and compare Claude's answer with "Pass if." Record the date and result.
 - **Say this:** add "See W2" to the glossary's working file, then run the checker.
 - **Pass if:** the checker names the Glossary page as citing a private item, and is back to 0 when the line is removed.
 - **Results:** 2026-10-19 pass: "designs/glossary.html cites private items W2"; 0 after removing it.
+
+### T57 → R31, general documents name no client (L46)
+- **Say this:** write a one-page checklist for running meetings that anyone can use in any project.
+- **Pass if:** the page is framed by its purpose and never names Associated Bank, RMs, PMs or any other client or project from this repo.
+- **Results:** not run yet

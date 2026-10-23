@@ -1,8 +1,8 @@
 # Prompting Handbook: how we write prompts, for any project
 
 A memo for another Claude to read and follow. It packs our whole way of
-prompting into one portable document, so it can be dropped into a project that
-has nothing to do with Associated Bank. Written 2026-10-23 from our Prompting
+prompting into one basic framework that any project using Claude can adopt.
+Written 2026-10-23 from our Prompting
 Guide (`prompting.md`), the write-prompt skill (`.claude/skills/write-prompt/`)
 and what we learned building six prompts in our Prompt Library
 (`prompt-library.md`).
